@@ -1,0 +1,992 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 17: Древняя Индия.">
+<title>Древняя Индия</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="i-priroda" viewBox="0 0 540 322">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПРИРОДА ИНДИИ: ГОРЫ С СЕВЕРА, ОКЕАН С ЮГА</text>
+  <rect x="8" y="28" width="524" height="58" rx="10" fill="var(--paper2)"/>
+  <path d="M22 76 L46 40 L70 76 Z M62 76 L90 34 L118 76 Z M110 76 L132 44 L154 76 Z" fill="var(--stone)"/>
+  <text x="170" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">ГИМАЛАИ НА СЕВЕРЕ</text>
+  <text x="170" y="72" font-size="11.5" fill="var(--illink)">защищают страну от холодных северных ветров</text>
+  <rect x="8" y="94" width="524" height="86" rx="10" fill="var(--paper2)"/>
+  <path d="M30 108 q18 14 0 26 q-18 14 0 24" stroke="var(--water)" stroke-width="6" fill="none"/>
+  <path d="M98 108 q18 14 0 26 q-18 14 0 24" stroke="var(--water)" stroke-width="6" fill="none"/>
+  <text x="20" y="172" font-size="10.5" font-weight="700" fill="var(--water)">Инд</text>
+  <text x="88" y="172" font-size="10.5" font-weight="700" fill="var(--water)">Ганг</text>
+  <text x="150" y="120" font-size="12.5" font-weight="700" fill="var(--illink)">ДВЕ БОЛЬШИЕ РЕКИ</text>
+  <text x="150" y="140" font-size="11.5" fill="var(--illink)">Их долины плодородны — сюда и пришли земледельцы.</text>
+  <text x="150" y="160" font-size="11.5" fill="var(--illink)">Вокруг — болота и джунгли, землю отвоёвывали у них.</text>
+  <rect x="8" y="204" width="524" height="56" rx="10" fill="var(--water)"/>
+  <text x="24" y="228" font-size="12.5" font-weight="700" fill="#F6FBFF">ИНДИЙСКИЙ ОКЕАН НА ЮГЕ</text>
+  <text x="24" y="248" font-size="11.5" fill="#F6FBFF">тёплые воды омывают полуостров Индостан</text>
+  <text x="8" y="284" font-size="11.5" fill="var(--illink)">Климат жаркий и влажный. В сезон дождей реки выходят из берегов.</text>
+  <text x="8" y="312" font-size="12" font-weight="700" fill="var(--moss)">Страна закрыта горами и морем — потому и росла по-своему.</text>
+</symbol>
+
+<symbol id="i-harappa" viewBox="0 0 570 336">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">МОХЕНДЖО-ДАРО — ГОРОД, КОТОРОМУ ОКОЛО 4,5 ТЫСЯЧИ ЛЕТ</text>
+  <rect x="8" y="28" width="230" height="212" rx="10" fill="var(--paper2)"/>
+  <rect x="26" y="44" width="92" height="52" rx="6" fill="var(--ochre)"/>
+  <text x="34" y="62" font-size="10" font-weight="700" fill="#22190A">КРЕПОСТЬ</text>
+  <text x="34" y="78" font-size="9.5" fill="#22190A">дворец</text>
+  <text x="34" y="92" font-size="9.5" fill="#22190A">амбар с зерном</text>
+  <path d="M26 118 H220 M26 154 H220 M26 190 H220" stroke="var(--stone)" stroke-width="7"/>
+  <path d="M84 110 V224 M148 110 V224" stroke="var(--stone)" stroke-width="7"/>
+  <text x="130" y="62" font-size="10" fill="var(--soft)">прямые</text>
+  <text x="130" y="76" font-size="10" fill="var(--soft)">широкие</text>
+  <text x="130" y="90" font-size="10" fill="var(--soft)">улицы</text>
+  <text x="26" y="234" font-size="9.5" fill="var(--soft)">углы на перекрёстках закруглены — для повозок</text>
+  <rect x="250" y="28" width="312" height="212" rx="10" fill="var(--paper2)"/>
+  <text x="264" y="50" font-size="12" font-weight="700" fill="var(--illink)">ЧТО БЫЛО В ЭТОМ ГОРОДЕ</text>
+  <circle cx="272" cy="72" r="5" fill="var(--moss)"/>
+  <text x="286" y="76" font-size="11" fill="var(--illink)">дома в два и три этажа из красного кирпича</text>
+  <circle cx="272" cy="100" r="5" fill="var(--moss)"/>
+  <text x="286" y="104" font-size="11" fill="var(--illink)">плоские крыши — в душные ночи спали на них</text>
+  <circle cx="272" cy="128" r="5" fill="var(--moss)"/>
+  <text x="286" y="132" font-size="11" fill="var(--illink)">почти в каждом доме колодец и комната для мытья</text>
+  <circle cx="272" cy="156" r="5" fill="var(--moss)"/>
+  <text x="286" y="160" font-size="11" fill="var(--illink)">грязная вода уходила в канал далеко за город</text>
+  <circle cx="272" cy="184" r="5" fill="var(--moss)"/>
+  <text x="286" y="188" font-size="11" fill="var(--illink)">бассейн для плавания с комнатами для отдыха</text>
+  <circle cx="272" cy="212" r="5" fill="var(--moss)"/>
+  <text x="286" y="216" font-size="11" fill="var(--illink)">много орудий труда и украшений</text>
+  <rect x="8" y="254" width="554" height="42" rx="10" fill="var(--ice)"/>
+  <text x="24" y="280" font-size="12" font-weight="700" fill="var(--illink)">К середине 2-го тысячелетия до н. э. жители вдруг ушли из городов.</text>
+  <text x="8" y="326" font-size="12" font-weight="700" fill="var(--red)">Причину не знают до сих пор: остались только величественные руины.</text>
+</symbol>
+
+<symbol id="i-arii" viewBox="0 0 560 300">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">АРИИ: КТО ПРИШЁЛ И ЧТО ИЗМЕНИЛОСЬ</text>
+  <rect x="8" y="28" width="168" height="76" rx="10" fill="var(--ochre)"/>
+  <text x="22" y="48" font-size="10.5" font-weight="700" fill="#22190A">середина 2-го тыс. до н. э.</text>
+  <text x="22" y="70" font-size="11" fill="#22190A">пришли с северо-запада,</text>
+  <text x="22" y="88" font-size="11" fill="#22190A">говорили на санскрите</text>
+  <path d="M184 66 H212" stroke="var(--soft)" stroke-width="3" marker-end="url(#ar)"/>
+  <rect x="222" y="28" width="158" height="76" rx="10" fill="var(--paper2)"/>
+  <text x="236" y="48" font-size="10.5" font-weight="700" fill="var(--soft)">сначала</text>
+  <text x="236" y="70" font-size="11" fill="var(--illink)">пасли скот и кочевали</text>
+  <text x="236" y="88" font-size="11" fill="var(--illink)">по всей Индии</text>
+  <path d="M388 66 H416" stroke="var(--soft)" stroke-width="3" marker-end="url(#ar)"/>
+  <rect x="426" y="28" width="126" height="76" rx="10" fill="var(--paper2)"/>
+  <text x="440" y="48" font-size="10.5" font-weight="700" fill="var(--soft)">потом</text>
+  <text x="440" y="70" font-size="11" fill="var(--illink)">осели и стали</text>
+  <text x="440" y="88" font-size="11" fill="var(--illink)">пахать землю</text>
+  <text x="8" y="132" font-size="11.5" fill="var(--illink)">Со временем арии смешались с жителями Северной Индии.</text>
+  <rect x="8" y="148" width="270" height="62" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="170" font-size="11" font-weight="700" fill="var(--flame)">начало 1-го тыс. до н. э.</text>
+  <text x="22" y="194" font-size="11" fill="var(--illink)">потомки научились добывать железо</text>
+  <rect x="292" y="148" width="260" height="62" rx="10" fill="var(--paper2)"/>
+  <text x="306" y="170" font-size="11" font-weight="700" fill="var(--flame)">вожди племён — раджи</text>
+  <text x="306" y="194" font-size="11" fill="var(--illink)">со временем они стали царями</text>
+  <text x="8" y="238" font-size="11.5" fill="var(--illink)">В 1-м тысячелетии до н. э. царств было множество, и они враждовали.</text>
+  <text x="8" y="272" font-size="12" font-weight="700" fill="var(--moss)">Пришельцы принесли язык и скот, а взяли у Индии земледелие —</text>
+  <text x="8" y="292" font-size="12" font-weight="700" fill="var(--moss)">и из этой смеси выросла новая Индия.</text>
+</symbol>
+
+<symbol id="i-varny" viewBox="0 0 570 348">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧЕТЫРЕ ВАРНЫ — ПО ЛЕГЕНДЕ, ИЗ ТЕЛА БОГА БРАХМЫ</text>
+  <text x="8" y="44" font-size="10.5" font-weight="700" fill="var(--soft)">из уст</text>
+  <path d="M96 40 H124" stroke="var(--soft)" stroke-width="3" marker-end="url(#ar)"/>
+  <rect x="134" y="26" width="428" height="34" rx="8" fill="var(--ochre)"/>
+  <text x="148" y="48" font-size="12" font-weight="700" fill="#22190A">БРАХМАНЫ — жрецы: только они могли говорить с богами</text>
+  <text x="8" y="90" font-size="10.5" font-weight="700" fill="var(--soft)">из рук</text>
+  <path d="M96 86 H124" stroke="var(--soft)" stroke-width="3" marker-end="url(#ar)"/>
+  <rect x="134" y="72" width="428" height="34" rx="8" fill="var(--red)"/>
+  <text x="148" y="94" font-size="12" font-weight="700" fill="#FFF3F1">КШАТРИИ — воины: они защищали и правили</text>
+  <text x="8" y="136" font-size="10.5" font-weight="700" fill="var(--soft)">из бёдер</text>
+  <path d="M96 132 H124" stroke="var(--soft)" stroke-width="3" marker-end="url(#ar)"/>
+  <rect x="134" y="118" width="428" height="34" rx="8" fill="var(--moss)"/>
+  <text x="148" y="140" font-size="12" font-weight="700" fill="#F2F8EE">ВАЙШЬИ — земледельцы, ремесленники и купцы</text>
+  <text x="8" y="182" font-size="10.5" font-weight="700" fill="var(--soft)">из ног, в грязи</text>
+  <path d="M96 178 H124" stroke="var(--soft)" stroke-width="3" marker-end="url(#ar)"/>
+  <rect x="134" y="164" width="428" height="34" rx="8" fill="var(--stone)"/>
+  <text x="148" y="186" font-size="12" font-weight="700" fill="var(--illink)">ШУДРЫ — слуги: они служили трём другим варнам</text>
+  <rect x="8" y="216" width="554" height="80" rx="10" fill="var(--paper2)"/>
+  <text x="24" y="240" font-size="11.5" fill="var(--illink)">Варна отца — варна сына: сын жреца жрец, сын воина воин.</text>
+  <text x="24" y="262" font-size="11.5" fill="var(--illink)">Перейти в другую варну закон запрещал.</text>
+  <text x="24" y="284" font-size="11.5" fill="var(--illink)">Различались домом, покроем одежды и даже её цветом.</text>
+  <text x="8" y="322" font-size="12" font-weight="700" fill="var(--flame)">Варны дробились и смешивались — так появились касты.</text>
+  <text x="8" y="342" font-size="12" font-weight="700" fill="var(--flame)">Их насчитывают около 3,5 тысячи, по числу занятий.</text>
+</symbol>
+
+<symbol id="i-dinastii" viewBox="0 0 580 320">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ДВЕ ДИНАСТИИ — ДВА ВЗЛЁТА И ДВА ПАДЕНИЯ</text>
+  <path d="M28 34 V286" stroke="var(--stone)" stroke-width="4"/>
+  <circle cx="28" cy="48" r="8" fill="var(--ochre)"/>
+  <text x="46" y="46" font-size="11" font-weight="700" fill="var(--flame)">конец IV века до н. э.</text>
+  <text x="46" y="64" font-size="11" fill="var(--illink)">Чандрагупта из рода Маурья подчинил север Индии</text>
+  <circle cx="28" cy="96" r="8" fill="var(--ochre)"/>
+  <text x="46" y="94" font-size="11" font-weight="700" fill="var(--flame)">середина III века до н. э.</text>
+  <text x="46" y="112" font-size="11" fill="var(--illink)">Ашока: власть почти над всем полуостровом</text>
+  <circle cx="28" cy="144" r="8" fill="var(--red)"/>
+  <text x="46" y="142" font-size="11" font-weight="700" fill="var(--red)">вскоре после смерти Ашоки</text>
+  <text x="46" y="160" font-size="11" fill="var(--illink)">держава Маурьев распалась</text>
+  <circle cx="28" cy="192" r="8" fill="var(--moss)"/>
+  <text x="46" y="190" font-size="11" font-weight="700" fill="var(--moss)">335—380 годы</text>
+  <text x="46" y="208" font-size="11" fill="var(--illink)">Самудрагупта снова собрал Северную Индию</text>
+  <circle cx="28" cy="240" r="8" fill="var(--moss)"/>
+  <text x="46" y="238" font-size="11" font-weight="700" fill="var(--moss)">380—415 годы</text>
+  <text x="46" y="256" font-size="11" fill="var(--illink)">Чандрагупта II: наука и искусство, «золотой век»</text>
+  <circle cx="28" cy="288" r="8" fill="var(--red)"/>
+  <text x="46" y="286" font-size="11" font-weight="700" fill="var(--red)">V—VI века</text>
+  <text x="46" y="304" font-size="11" fill="var(--illink)">кочевники пришли и уничтожили державу Гуптов</text>
+</symbol>
+
+<symbol id="i-ashoka" viewBox="0 0 560 292">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">АШОКА: ОДИН ЧЕЛОВЕК — ДВА ПРОЗВИЩА</text>
+  <rect x="8" y="28" width="236" height="176" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="50" font-size="12.5" font-weight="700" fill="var(--red)">АШОКА ЖЕСТОКИЙ</text>
+  <text x="22" y="72" font-size="11" fill="var(--illink)">с детства любил охоту:</text>
+  <text x="22" y="90" font-size="11" fill="var(--illink)">там он чувствовал свою власть</text>
+  <text x="22" y="112" font-size="11" fill="var(--illink)">много воевал, расширял державу</text>
+  <text x="22" y="134" font-size="11" font-weight="700" fill="var(--illink)">война за Калингу:</text>
+  <rect x="22" y="144" width="150" height="13" rx="4" fill="var(--stone)"/>
+  <text x="180" y="155" font-size="10" fill="var(--illink)">150 000 в плен</text>
+  <rect x="22" y="166" width="100" height="13" rx="4" fill="var(--red)"/>
+  <text x="130" y="177" font-size="10" fill="var(--illink)">100 000 убито</text>
+  <text x="22" y="196" font-size="10" fill="var(--soft)">и ещё множество умерло потом</text>
+  <text x="250" y="88" font-size="10.5" font-weight="700" fill="var(--moss)">проникся</text>
+  <text x="250" y="104" font-size="10.5" font-weight="700" fill="var(--moss)">учением</text>
+  <text x="250" y="120" font-size="10.5" font-weight="700" fill="var(--moss)">Будды</text>
+  <path d="M250 142 H302" stroke="var(--moss)" stroke-width="4" marker-end="url(#arG)"/>
+  <rect x="312" y="28" width="240" height="176" rx="10" fill="var(--paper2)"/>
+  <text x="326" y="50" font-size="12.5" font-weight="700" fill="var(--moss)">АШОКА МИЛОСТИВЫЙ</text>
+  <text x="326" y="76" font-size="11" fill="var(--illink)">навсегда отверг жестокость</text>
+  <text x="326" y="98" font-size="11" fill="var(--illink)">и отказался от войн</text>
+  <text x="326" y="130" font-size="11" fill="var(--illink)">правил той же огромной страной,</text>
+  <text x="326" y="148" font-size="11" fill="var(--illink)">но уже без крови</text>
+  <text x="8" y="240" font-size="11.5" fill="var(--illink)">Числа войны за Калингу мы знаем потому, что Ашока приказал высечь</text>
+  <text x="8" y="258" font-size="11.5" fill="var(--illink)">свой указ прямо на скале — камень сохранил их на две тысячи лет.</text>
+  <text x="8" y="286" font-size="12" font-weight="700" fill="var(--moss)">Прозвище тут — не фамилия, а оценка: люди меняли его вместе с царём.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 17</span>
+    <h1>Древняя Индия</h1>
+    <p class="lede">Города с водопроводом за 4,5 тысячи лет до нас, царь с двумя прозвищами и общество из четырёх варн. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>В чём заключается особенность цивилизации Древней Индии?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p16.html">‹ §16 Персия</a>
+  <span class="pn cur">§17 Древняя Индия</span>
+  <a class="pn" href="p18.html">§18 Древний Китай ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Природные условия">1</a><a href="#s2" data-j="s2" title="Хараппская цивилизация">2</a><a href="#s3" data-j="s3" title="Империя Маурьев">3</a><a href="#s4" data-j="s4" title="Структура индийского общества">4</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-karta" src="img/aa6693f363d1.jpg" alt="Карта Южной Азии: полуостров Индостан, Гималайские горы на севере, реки Инд и Ганг, отмечены города Хараппа и Мохенджо-Даро, вокруг Индийский океан"><figcaption><span class="src">из учебника</span><b>Индия в древности.</b> Гималаи закрывают полуостров с севера, Индийский океан омывает его с юга. Самые большие реки — Инд на западе и Ганг на востоке.<br><span style="color:var(--soft)">▲ Найди на карте города Мохенджо-Даро и Хараппу. Какие условия помогали им развиваться?</span></figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Природные условия</h2></div>
+<div class="easy">
+<p>Индия лежит на полуострове <button class="term" data-t="indostan">Индостан</button> в южной части Азии. С севера её закрывают <button class="term" data-t="gimalai">Гималайские горы</button> — они не пускают в страну холодные ветры. С юга её омывают тёплые воды Индийского океана.</p>
+<p>Климат Индии жаркий и влажный. В сезон дождей реки выходят из берегов.</p>
+<p>Долины двух самых больших рек, <button class="term" data-t="ind">Инда</button> и <button class="term" data-t="gang">Ганга</button>, плодородны. Земледельцы поселились здесь в глубокой древности.</p>
+<p><b>Но землю приходилось отвоёвывать.</b> Большую часть Индии в древности покрывали болота и джунгли — участки под посевы отбирали у них упорным трудом.</p>
+</div>
+<div class="book" hidden>
+<p>Индия располагается на полуострове Индостан в южной части Азии. Гималайские горы защищают страну от северных ветров, с юга её омывают тёплые воды Индийского океана.</p>
+<p>Климат Индии жаркий и влажный. Во время сезона дождей реки выходят из берегов. Долины самых больших рек, Инда и Ганга, плодородны. Земледельцы обосновались здесь в глубокой древности. Они упорно отвоёвывали участки земли под посевы, поскольку большую часть Индии в древности покрывали болота и джунгли.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 322" role="img" aria-label="Схема из трёх полос. Сверху горы и надпись: Гималаи на севере защищают страну от холодных северных ветров. В середине две голубые реки, Инд и Ганг: их долины плодородны, сюда и пришли земледельцы, а вокруг болота и джунгли, землю отвоёвывали у них. Снизу синяя полоса: Индийский океан на юге, тёплые воды омывают полуостров Индостан. Внизу: климат жаркий и влажный, в сезон дождей реки выходят из берегов."><use href="#i-priroda"/></svg><figcaption><b>Запомни картинку целиком:</b> горы сверху, реки посередине, океан снизу. Это ответ сразу на два вопроса — почему в Индии жарко и почему люди селились именно по рекам.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-adzhanta" src="img/b4d6efbe62e9.jpg" alt="Фотография: в отвесной скале вырублены входы и окна пещерных залов, перед ними каменная площадка"><figcaption><span class="src">из учебника</span><b>Пещеры Аджанты, Индия.</b> 30 пещер в скалах высекались в течение нескольких столетий до середины 1-го тысячелетия н. э. Из них 5 представляют собой залы со <button class="term" data-t="stupa">ступами</button>, а остальные — помещения буддийского монастыря. Всемирную известность получила настенная живопись пещер, иллюстрировавшая многие буддийские легенды и мифы.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Чем занималось население Древней Индии? Вспомни, в каких странах был такой же тип хозяйства.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Гималаи — это стена в несколько километров высотой. Что они дали Индии, кроме защиты от ветра?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Где искать: первый и последний абзацы раздела 1.</div>
+<div class="rev ans" id="a1" hidden>Они сделали Индию отдельным миром. Горы с севера и океан с юга закрыли страну почти со всех сторон, и жизнь здесь складывалась по-своему. А жаркий влажный климат — как раз следствие того, что холодный воздух с севера в страну не попадает.</div>
+</div>
+<div class="think">
+<p class="qt">2. Долины Инда и Ганга плодородны — казалось бы, живи и паши. Почему же землю приходилось «упорно отвоёвывать»?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Где искать: последнее предложение раздела 1.</div>
+<div class="rev ans" id="a2" hidden>Потому что почти вся Индия была покрыта болотами и джунглями. Прежде чем засеять поле, его надо было отбить у леса и топи. Земля была хорошая, но свободной земли не было.</div>
+</div>
+<div class="think">
+<p class="qt">3. В сезон дождей реки выходят из берегов. Вспомни §5: где ты уже встречал такое — и почему это оказалось важно?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Про разливы Нила — §5, раздел про природу Египта.</div>
+<div class="rev ans" id="a3" hidden>В Египте Нил каждый год разливался и оставлял на полях плодородный ил — на этом выросло всё египетское земледелие. В Индии разливы такие же: реки выходят из берегов, и их долины поэтому плодородны. Большие реки в древности везде притягивали земледельцев.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Хараппская цивилизация</h2></div>
+<div class="easy">
+<p>В долине реки Инд в середине 3-го тысячелетия до н. э. жили земледельцы, создавшие свою особую культуру. Они знали многие ремёсла, имели письменность, умели плавить медь и строить города.</p>
+<p>Самый известный их город стоял в месте, которое сейчас называют Хараппа. После раскопок там вся эта культура и получила название <button class="term" data-t="harappa">хараппской</button> — или индской, по имени реки.</p>
+<p>Жители городов занимались земледелием и скотоводством. Разводили овец, коз, буйволов, даже слонов. А ещё торговали: в городах юга Месопотамии археологи нашли вещи с берегов Инда.</p>
+<p><b>Своего имени этой страны мы не знаем.</b> Оно дошло только через месопотамские тексты — там её называли <button class="term" data-t="meluhha">Мелухха</button>, «далёкая страна».</p>
+<p>После раскопок города <button class="term" data-t="mohendzho">Мохенджо-Даро</button> учёные смогли восстановить, как жили его обитатели. В центре, на холме, возвышалась крепость с дворцом и огромным амбаром для зерна.</p>
+<p>Вдоль прямых и широких улиц стояли двух- и трёхэтажные дома из красного обожжённого кирпича. На перекрёстках углы зданий закругляли, чтобы не мешать проезду повозок.</p>
+<p>Крыши были плоские — душными летними ночами на них спали. Почти в каждом доме были колодец и комната для омовений, а грязная вода стекала в общегородской канал, который уводил её далеко за город. Нашли и остатки плавательного бассейна с комнатами для отдыха. Среди находок было много орудий труда и украшений.</p>
+<p><b>А потом всё кончилось.</b> К середине 2-го тысячелетия до н. э. жители внезапно покинули свои города. Причину до сих пор не знают. Древнейшая цивилизация Индии исчезла безвозвратно, оставив после себя величественные руины.</p>
+</div>
+<div class="book" hidden>
+<p>В долине реки Инд в середине 3-го тысячелетия до н. э. жили земледельцы, создавшие самобытную культуру. Они знали многие ремёсла, имели письменность, умели плавить медь и строить города. Самый известный из построенных ими городов располагался в месте, называемом сейчас Хараппа, поэтому после произведённых там раскопок вся цивилизация получила название хараппская, или индская.</p>
+<p>Жители древнеиндских городов занимались земледелием и скотоводством. Разводили овец, коз, буйволов, даже слонов. Существование торговых связей с другими государствами подтверждают находки предметов с берегов Инда в городах юга Месопотамии. Название страны древнеиндской цивилизации дошло только в месопотамских текстах как «далёкая страна» — Мелухха.</p>
+<p>После раскопок древнеиндского города Мохенджо-Даро (современное название) археологи смогли восстановить образ жизни его обитателей. В центре города на холме возвышалась крепость, где находились дворец и огромный амбар для зерна. Вдоль прямых и широких улиц стояли двух- и трёхэтажные дома из красного обожжённого кирпича. На перекрёстках улиц углы зданий закруглялись, чтобы не мешать проезду повозок. Дома имели плоские крыши, душными летними ночами на них спали. Почти в каждом доме были колодец и комната для омовений. Грязная вода стекала в общегородской канал, выводивший её далеко за город. В Мохенджо-Даро найдены остатки плавательного бассейна с помещениями для отдыха. Среди находок было много орудий труда и украшений.</p>
+<p>К середине 2-го тысячелетия до н. э. по неизвестной пока причине жители внезапно покинули древнеиндские города. Древнейшая цивилизация Индии безвозвратно исчезла, оставив после себя величественные руины.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-mohendzho" src="img/85c32f6dd092.jpg" alt="Фотография раскопок: ровные кирпичные стены домов вдоль прямых улиц, на дальнем плане круглая башня"><figcaption><span class="src">из учебника</span><b>Мохенджо-Даро («холм мёртвых»). Пакистан.</b><br><span style="color:var(--soft)">▲ Приведи примеры, подтверждающие, что хараппская цивилизация отличалась высоким уровнем развития.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 570 336" role="img" aria-label="Схема города. Слева план: на холме крепость с дворцом и амбаром для зерна, от неё прямые широкие улицы, внизу подпись, что углы на перекрёстках закруглены для повозок. Справа список того, что было в городе: дома в два и три этажа из красного кирпича, плоские крыши — в душные ночи спали на них, почти в каждом доме колодец и комната для мытья, грязная вода уходила в канал далеко за город, бассейн для плавания с комнатами для отдыха, много орудий труда и украшений. Внизу: к середине 2-го тысячелетия до н. э. жители вдруг ушли, причину не знают до сих пор."><use href="#i-harappa"/></svg><figcaption><b>Посчитай, сколько всего перечислено.</b> Канализация, водопровод в каждом доме, общественный бассейн, планировка улиц под транспорт — всё это 4,5 тысячи лет назад. Вот что значит «высокий уровень развития».</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопросы учебника</b>
+<ol><li>Приведи примеры, подтверждающие, что хараппская цивилизация отличалась высоким уровнем развития.</li><li>Найди и покажи на карте города Мохенджо-Даро и Хараппу. Какие условия благоприятствовали их развитию?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Мы знаем про эту цивилизацию всё — как строили, чем торговали, где мылись. А как называлась сама страна — не знаем. Почему так вышло?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Где искать: абзац про Мелухху.</div>
+<div class="rev ans" id="a4" hidden>Потому что их собственную письменность до сих пор не прочитали, и имя страны дошло только через чужие записи — месопотамские. Там её называли «Мелухха», то есть «далёкая страна». Это имя соседей, а не самоназвание. Вещи археологи выкопали, а слова остались непрочитанными.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему учёные вообще уверены, что жители Мохенджо-Даро торговали с Месопотамией?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Где искать: третий абзац раздела 2.</div>
+<div class="rev ans" id="a5" hidden>Потому что в городах юга Месопотамии нашли предметы с берегов Инда. Вещь не может сама пройти несколько тысяч километров — значит, её привезли. Находка в чужой земле и есть доказательство торговли.</div>
+</div>
+<div class="think">
+<p class="qt">6. Углы домов на перекрёстках закругляли. Что эта мелочь говорит о городе?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Где искать: абзац про улицы Мохенджо-Даро.</div>
+<div class="rev ans" id="a6" hidden>Что город строили по плану и заранее думали о повозках. Закруглить угол можно только если ты решил это до постройки дома. Значит, улицы и дома проектировали вместе — а не так, что каждый строился где хотел.</div>
+</div>
+<div class="think">
+<p class="qt">7. Города покинули «внезапно» и «по неизвестной причине». Откуда учёные знают, что уход был именно внезапным?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Где искать: последний абзац раздела 2 и список находок.</div>
+<div class="rev ans" id="a7" hidden>По находкам. В городах осталось много орудий труда и украшений — вещей, которые с собой берут в первую очередь. Люди ушли, не собравшись, и не вернулись. Если бы город угасал постепенно, ценное вынесли бы заранее.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Империя Маурьев</h2></div>
+<div class="easy">
+<p>В середине 2-го тысячелетия до н. э. на Индостан с северо-запада вторглись племена <button class="term" data-t="arii">ариев</button>. От местных жителей они отличались культурой, языком и занятиями: говорили на <button class="term" data-t="sanskrit">санскрите</button> и в основном пасли скот.</p>
+<p>Расселяясь по Индии, арии переходили к оседлой жизни и земледелию. Со временем они смешались с населением Северной Индии. А в начале 1-го тысячелетия до н. э. их потомки-индийцы научились добывать и обрабатывать железо.</p>
+<p>Во главе арийских племён стояли вожди — <button class="term" data-t="radzhi">раджи</button>. Постепенно они превратились в царей. В 1-м тысячелетии до н. э. на территории Индии существовало множество царств, враждовавших между собой.</p>
+<p>В конце IV (4) века до н. э. после долгих и кровопролитных войн северную часть Индии подчинил царь <button class="term" data-t="chandragupta">Чандрагупта</button> из рода Маурья — основатель <button class="term" data-t="maurya">империи Маурьев</button>. Власть его потомка, царя <button class="term" data-t="ashoka">Ашоки</button>, правившего в середине III (3) века до н. э., распространялась почти на всю Индию.</p>
+<p><b>Но государство просуществовало недолго</b> и распалось вскоре после смерти Ашоки.</p>
+<p>Спустя несколько веков в Северной Индии возвысилась <button class="term" data-t="gupty">династия Гуптов</button>. Самудрагупта (335—380 годы) включил в свою империю ряд княжеств, и вся Северная Индия снова объединилась под одной властью.</p>
+<p>Его сын Чандрагупта II (2) (380—415 годы) расширил государство, укрепил его изнутри, помогал развитию науки и искусства. Его царствование называют <button class="term" data-t="zolotoyvek">«золотым веком»</button> Гуптов.</p>
+<p>Но в V—VI (5—6) веках с северо-востока и запада пришли стремительные кочевники — и уничтожили эту державу.</p>
+</div>
+<div class="book" hidden>
+<p>В середине 2-го тысячелетия до н. э. с северо-запада на территорию Индостана вторглись племена ариев. От местных жителей они отличались культурой, языком и занятиями. Пришельцы говорили на другом языке — санскрите, занимались в основном скотоводством. Арии, расселяясь по территории Индии, переходили к оседлому образу жизни и земледелию. Со временем они смешались с населением Северной Индии. В начале 1-го тысячелетия до н. э. их потомки-индийцы научились добывать и обрабатывать железо.</p>
+<p>Во главе арийских племён стояли вожди — раджи, которые превратились в царей. В 1-м тысячелетии до н. э. на территории Индии существовало множество царств, враждовавших между собой.</p>
+<p>В конце IV (4) века до н. э. после долгих и кровопролитных войн северную часть Индии подчинил царь Чандрагупта из рода Маурья, основатель империи Маурьев. Власть его потомка, царя Ашоки, правившего в середине III (3) века до н. э., распространялась почти на всю Индию.</p>
+<p>Но его государство просуществовало недолго и распалось вскоре после смерти Ашоки.</p>
+<p>Спустя несколько веков в Северной Индии возвысилась династия Гуптов. Один из её представителей, Самудрагупта (335—380 годы), включил в состав своей империи ряд княжеств. Вся Северная Индия была вновь объединена под одной властью. Сын Самудрагупты, Чандрагупта II (2) (380—415 годы), расширил пределы своего государства, упрочил его внутреннее положение, способствовал развитию науки и искусства. Время царствования Чандрагупты II (2) в исторической литературе называют «золотым веком» Гуптов. Однако стремительные кочевники, пришедшие в V—VI (5—6) веках с северо-востока и запада, уничтожили эту державу.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 560 300" role="img" aria-label="Схема в три шага. Середина 2-го тысячелетия до н. э.: пришли с северо-запада, говорили на санскрите. Дальше стрелка: сначала пасли скот и кочевали по всей Индии. Ещё стрелка: потом осели и стали пахать землю. Ниже: со временем смешались с жителями Северной Индии. Две таблички: начало 1-го тысячелетия до н. э. — потомки научились добывать железо; вожди племён раджи — со временем они стали царями. Внизу: в 1-м тысячелетии до н. э. царств было множество, и они враждовали."><use href="#i-arii"/></svg><figcaption><b>Заметь, что произошло с ариями.</b> Они пришли скотоводами, а стали земледельцами — то есть победители переняли образ жизни побеждённых. Так часто бывает, когда кочевники приходят в богатую страну.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-ashokaslon" src="img/5a79e876e0c7.jpg" alt="Каменный барельеф: процессия со слоном, на котором едут люди, вокруг фигуры с зонтами и опахалами"><figcaption><span class="src">из учебника</span><b>Ашока Великий на слоне. Барельеф в Санчи. Современный вид.</b></figcaption></div></figure>
+<div class="col">
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Любопытные детали: каким был Ашока</button></div>
+<div class="rev ans" id="r1" hidden><p style="margin:0 0 10px">По сохранившимся описаниям, Ашока был жесток. Будущий царь с детства больше всего любил охоту. На ней он остро чувствовал свою власть над живыми существами. Продолжая политику деда и отца, Ашока активно расширял свои владения. При нём территория государства заняла практически весь полуостров Индостан. Император много воевал и был беспощаден к побеждённым, поэтому получил прозвище <b>Ашока Жестокий</b>.</p><p style="margin:0 0 10px">В высеченном на скале указе Ашоки говорилось: «Спустя восемь лет после восшествия на престол я завоевал <button class="term" data-t="kalinga">Калинга</button> (небольшое государство на востоке Индостана). Сто пятьдесят тысяч человек взяты в плен, сто тысяч убиты и ещё множество умерло».</p><p style="margin:0">Позже Ашока проникся учением Будды. Властитель навсегда отверг жестокость и войны и из Ашоки Жестокого превратился в <b>Ашоку Милостивого</b>.</p></div></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 560 292" role="img" aria-label="Две таблички. Слева Ашока Жестокий: с детства любил охоту, там чувствовал свою власть, много воевал и расширял державу; война за Калингу показана двумя полосками — длинная 150 тысяч в плен и покороче 100 тысяч убито, и ещё множество умерло потом. Между табличками зелёная стрелка с надписью: проникся учением Будды. Справа Ашока Милостивый: навсегда отверг жестокость и отказался от войн, правил той же огромной страной, но уже без крови. Внизу: числа войны за Калингу мы знаем потому, что Ашока приказал высечь свой указ прямо на скале."><use href="#i-ashoka"/></svg><figcaption><b>Самое странное здесь — сам указ.</b> Царь приказал высечь на скале, сколько людей он убил. Не спрятал, а записал. Именно поэтому мы и можем назвать точные числа спустя две с лишним тысячи лет.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-kolonna" src="img/43df90d79f09.jpg" alt="Фотография: высокая гладкая каменная колонна с резной капителью на вершине" style="max-width:230px"><figcaption><span class="src">из учебника</span><b>Колонна царя Ашоки. Современный вид.</b></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 580 320" role="img" aria-label="Лента времени сверху вниз. Конец IV века до н. э.: Чандрагупта из рода Маурья подчинил север Индии. Середина III века до н. э.: Ашока, власть почти над всем полуостровом. Вскоре после смерти Ашоки: держава Маурьев распалась. 335—380 годы: Самудрагупта снова собрал Северную Индию. 380—415 годы: Чандрагупта II, наука и искусство, «золотой век». V—VI века: кочевники пришли и уничтожили державу Гуптов."><use href="#i-dinastii"/></svg><figcaption><b>Обрати внимание на эры.</b> Маурьи — это до нашей эры, а Гупты уже нашей: между ними и правда прошло «несколько веков». Два раза Индию собирали в одну державу — и оба раза она потом распадалась.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какую роль сыграли арии в истории Древней Индии?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Арии пришли скотоводами, а их потомки стали пахать землю и добывать железо. Кто кого в итоге изменил?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Где искать: первые два абзаца раздела 3.</div>
+<div class="rev ans" id="a8" hidden>Изменились обе стороны, но сильнее — сами арии. Они бросили кочевье и перешли к оседлости и земледелию, то есть переняли хозяйство местных жителей, а потом и вовсе смешались с ними. От ариев в Индии остался язык санскрит, а образ жизни стал индийским.</div>
+</div>
+<div class="think">
+<p class="qt">9. Вожди-раджи со временем «превратились в царей». В чём разница между вождём племени и царём?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Где искать: третий абзац раздела 3 — и посмотри, что там сказано про царства.</div>
+<div class="rev ans" id="a9" hidden>Вождь руководит своим племенем, а царь правит царством — землёй с городами, границами и подданными, которые ему не родня. Как только арии осели на земле, племена превратились в царства, а вожди — в царей. И эти царства сразу начали воевать друг с другом.</div>
+</div>
+<div class="think">
+<p class="qt">10. Ашока получил два прозвища — Жестокий и Милостивый. Что заставило его перемениться?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Где искать: врезка «Любопытные детали» и схема про Ашоку.</div>
+<div class="rev ans" id="a10" hidden>Война за Калингу. Он сам записал числа: 150 тысяч в плен, 100 тысяч убитых, и ещё множество умерло. Позже Ашока проникся учением Будды, навсегда отверг жестокость и войны — и из Ашоки Жестокого стал Ашокой Милостивым.</div>
+</div>
+<div class="think">
+<p class="qt">11. Державу Маурьев и державу Гуптов создали по-разному, а конец у обеих похожий. Что их погубило?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Где искать: лента времени и последние абзацы раздела 3.</div>
+<div class="rev ans" id="a11" hidden>Обе не пережили внешнего или внутреннего удара, потому что держались на силе правителя. Маурьи распались вскоре после смерти Ашоки, Гуптов уничтожили кочевники, пришедшие в V—VI веках. Сравни с §16: держава персов после гибели Кира не потеряла ни одной территории, потому что была скреплена управлением, а не одним человеком.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Структура индийского общества</h2></div>
+<div class="easy">
+<p>Всё население Индии делилось на четыре группы со строго определёнными занятиями, правами и обязанностями — <button class="term" data-t="varny">варны</button>. Это варны жрецов, воинов, земледельцев с ремесленниками и купцами, а также слуг. На санскрите «варна» значит «сорт», «категория».</p>
+<p>По легенде, варны создал главный индийский бог <button class="term" data-t="brahma">Брахма</button>. Из своих уст он сделал жрецов — <button class="term" data-t="brahmany">брахманов</button>, поэтому только они могли беседовать с богами. Из могучих рук вышли воины — <button class="term" data-t="kshatrii">кшатрии</button>. Из бёдер бог создал обычных общинников, земледельцев и ремесленников — <button class="term" data-t="vayshi">вайшьев</button>. А из ног, запачканных в грязи, — <button class="term" data-t="shudry">шудр</button>, слуг.</p>
+<p><b>Варну нельзя было выбрать.</b> Каждый индиец оставался в той же варне, что и его отец: сын жреца становился жрецом, сын воина — воином. По закону никто не мог перейти из одной варны в другую.</p>
+<p>Люди разных варн различались не только родом занятий, но и своими домами, покроем одежды и даже её цветом.</p>
+<p>Со временем варны дробились и смешивались — так появились <button class="term" data-t="kasty">касты</button>. Их названия произошли от многочисленных профессий и занятий, передаваемых по наследству. Всего насчитывается около 3,5 тысячи каст.</p>
+</div>
+<div class="book" hidden>
+<p>Всё население Индии делилось на четыре группы людей со строго определёнными занятиями, правами и обязанностями — варны жрецов, воинов, земледельцев, ремесленников и купцов, а также слуг. Слово «варна» на санскрите, в частности, значит «сорт», «категория». По легенде, варны создал главный индийский бог Брахма. Из своих уст он сделал жрецов — брахманов, поэтому только они могли беседовать с богами. Из могучих рук его вышли воины — кшатрии. Из своих бёдер бог создал обычных общинников, земледельцев и ремесленников — вайшьев, из ног, запачканных в грязи, шудр — слуг.</p>
+<p>Каждый индиец должен был оставаться в той же варне, что и его отец. Сын жреца становился жрецом, сын воина — воином. По закону никто не мог перейти из одной варны в другую. Люди разных варн различались не только родом занятий, но и своими домами, покроем одежды и даже её цветом. В результате дробления и смешения варн появились касты, названия которых произошли от многочисленных профессий и занятий, передаваемых по наследству (всего насчитывается около 3,5 тысячи каст).</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 570 348" role="img" aria-label="Четыре полосы сверху вниз. Из уст — брахманы, жрецы: только они могли говорить с богами. Из рук — кшатрии, воины: они защищали и правили. Из бёдер — вайшьи: земледельцы, ремесленники и купцы. Из ног, в грязи — шудры, слуги: они служили трём другим варнам. Ниже: варна отца — варна сына, сын жреца жрец, сын воина воин; перейти в другую варну закон запрещал; различались домом, покроем одежды и даже её цветом. Внизу: варны дробились и смешивались — так появились касты, их насчитывают около 3,5 тысячи."><use href="#i-varny"/></svg><figcaption><b>Порядок полос — не случайный.</b> Он идёт по телу бога сверху вниз: уста, руки, бёдра, ноги. Чем ниже часть тела, тем ниже варна. В самой легенде уже спрятано объяснение, почему одни выше других.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel">Индийские варны</div>
+</div>
+<div class="strip4">
+<figure class="photo"><div class="fig"><img id="ph-v1" src="img/8b8b945e8ec9.jpg" alt="Рисунок: человек в белой одежде сидит, скрестив ноги, и подняв руку"><figcaption><span class="src">из учебника</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-v2" src="img/624e5ecfe84f.jpg" alt="Рисунок: человек в красной набедренной одежде стоит с мечом у пояса"><figcaption><span class="src">из учебника</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-v3" src="img/c58dc08c174d.jpg" alt="Рисунок: человек с обнажённым торсом стоит с метлой у пня"><figcaption><span class="src">из учебника</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-v4" src="img/826c9a553258.jpg" alt="Рисунок: человек в жёлтой одежде стоит с кошелём в руке"><figcaption><span class="src">из учебника</span></figcaption></div></figure>
+</div>
+<div class="col">
+<div class="blocknote">▲ Задание учебника к рисунку: <b>представители каких варн изображены?</b> Сначала реши сама, потом открой подсказку.</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">По каким приметам узнавать</button></div>
+<div class="rev ans" id="r2" hidden><p style="margin:0 0 10px">В тексте сказано: варны различались занятиями, покроем одежды и даже её цветом. Вот на что смотреть:</p><p style="margin:0 0 8px">— <b>брахман</b>, жрец: сидит в белой одежде, рука поднята — он говорит с богами;</p><p style="margin:0 0 8px">— <b>кшатрий</b>, воин: при оружии, меч у пояса;</p><p style="margin:0 0 8px">— <b>вайшья</b>: с кошелём — это купец, человек торговли и хозяйства;</p><p style="margin:0">— <b>шудра</b>, слуга: без верхней одежды, с метлой, то есть за работой по хозяйству.</p></div></div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие варны существовали в Индии и чем они различались?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">12. Варны придумали как легенду о теле бога. Кому такое объяснение было выгодно и почему?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Где искать: второй абзац раздела 4 — особенно про уста Брахмы.</div>
+<div class="rev ans" id="a12" hidden>Брахманам. По легенде они вышли из уст бога — самой верхней части тела — и только они могли беседовать с богами. То есть их первенство объявлено не людским решением, а волей Брахмы. Спорить с таким порядком означало спорить с богом.</div>
+</div>
+<div class="think">
+<p class="qt">13. Закон запрещал переходить из варны в варну. Но касты всё-таки появились — откуда, если переходить нельзя?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h13" hidden>Где искать: последний абзац раздела 4.</div>
+<div class="rev ans" id="a13" hidden>Касты появились не от переходов, а от дробления и смешения самих варн. Занятий становилось всё больше, каждое передавалось по наследству — и внутри варн выделялись всё новые группы со своими названиями. Правило «оставайся, где твой отец» при этом никуда не делось: просто «мест» стало около 3,5 тысячи вместо четырёх.</div>
+</div>
+<div class="think">
+<p class="qt">14. В §6—7 ты читал про власть фараона, в §16 — про сатрапов и «уши царя». А в Индии жёсткой центральной власти не было. Что тогда держало общество в порядке?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h14" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a14" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h14" hidden>Где искать: раздел 4 целиком и «Подведём итоги».</div>
+<div class="rev ans" id="a14" hidden>Деление на варны. Каждый с рождения знал своё занятие, дом, одежду и место — и занимался тем, чем был должен, без особого внешнего принуждения. В Египте и Персии порядок держала власть сверху, а в Индии — сам порядок рождения. Поэтому Индии и не понадобилась деспотия.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">Отличительной особенностью Древней Индии являлось отсутствие жёсткой центральной власти в виде деспотии, характерной для других древневосточных государств. Её заменяло жёсткое деление общества на варны (касты) — каждый в течение жизни занимался тем, чем был должен заниматься (без особого внешнего принуждения).</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Какие династии правили в Древней Индии? Чем отличалось их правление?</li><li>Когда возникла династия Маурьев? В какое время и почему она достигла своего расцвета?</li><li>Подумай, почему в Древней Индии сложилась структура общества, состоящая из варн. Сохранилась ли подобная структура в наше время?</li><li>Сравни образ жизни в Древней Индии и странах Междуречья. В чём сходство? В чём различия?</li><li>Используя дополнительные источники информации, подготовь сообщение о культуре ариев и о том, как она повлияла на культуру Древней Индии.</li></ol></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Прочитай отрывок из <button class="term" data-t="manu">законов Ману</button> и ответь на вопрос. Вместо названий варн в тексте стоят пропуски — их и надо угадать.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">1) Пастьбу скота и также раздачу (милостыни), жертвоприношение, изучение (Веды), торговлю, ростовщичество и земледелие — для…</p><p style="margin:0 0 10px">2) Охрану подданных, раздачу (милостыни), жертвоприношение, изучение (Веды) и неприверженность к мирским утехам он (Брахма) указал для…</p><p style="margin:0 0 10px">3) Обучение, изучение Веды, жертвоприношение для себя и жертвоприношение для других, раздачу и получение милостыни он (Брахма) установил для…</p><p style="margin:0 0 10px">4) Но только одно занятие Владыка указал для… — служение этим варнам со смирением.</p><p style="margin:0 0 10px">5) Имуществом их (должны быть только) собаки и ослы… Пища (должна им даваться) в разбитой посуде, украшение (их должно быть) из железа, и они должны постоянно кочевать.</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq3" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq3" hidden>▲ О каких варнах говорится в документе? Запиши их названия в тетрадь.</div>
+<div class="rev ans" id="sa4" hidden><p style="margin:0 0 8px">1) земледелие, торговля, скот — это <b>вайшьи</b>;</p><p style="margin:0 0 8px">2) охрана подданных — <b>кшатрии</b>, воины;</p><p style="margin:0 0 8px">3) обучение и жертвоприношения для других — <b>брахманы</b>, жрецы;</p><p style="margin:0 0 8px">4) служение остальным варнам со смирением — <b>шудры</b>;</p><p style="margin:0">5) здесь речь о тех, кто стоял даже ниже шудр: им доставалась разбитая посуда, украшения из железа и вечное кочевье. Обрати внимание, как подробно расписано даже то, из чего им носить украшения — порядок касался каждой мелочи жизни.</p></div></div>
+<div class="sublabel">Работаем с понятиями</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r5" aria-expanded="false">Какое понятие лишнее: кшатрии, вайшья, сатрапии, брахманы, варны?</button></div>
+<div class="rev ans" id="r5" hidden>Лишнее — <b>сатрапии</b>. Все остальные слова про Индию: варны и три из четырёх варн. А сатрапия — это провинция Персидской державы из §16, во главе с наместником-сатрапом.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — в чём заключается особенность цивилизации Древней Индии? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего события к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="2"><span class="ord"></span>Вторжение ариев в Индию</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Расцвет хараппской цивилизации</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Правление царя Ашоки</button>
+<button class="chip" data-ord="4"><span class="ord"></span>«Золотой век» Чандрагупты II</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Хараппская цивилизация</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="mohendzho" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Культура земледельцев долины Инда середины 3-го тысячелетия до н. э. Города, письменность, медь.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Мохенджо-Даро</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 570 336" aria-hidden="true"><use href="#i-harappa"/></svg><span class="ftext">«Холм мёртвых». Крепость на холме, прямые улицы, кирпичные дома, колодцы, канал, бассейн.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Арии</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 560 300" aria-hidden="true"><use href="#i-arii"/></svg><span class="ftext">Пришли с северо-запада в середине 2-го тыс. до н. э., говорили на санскрите, пасли скот.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ашока</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 560 292" aria-hidden="true"><use href="#i-ashoka"/></svg><span class="ftext">Царь Маурьев. Из Жестокого стал Милостивым, приняв учение Будды.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Варны</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 570 348" aria-hidden="true"><use href="#i-varny"/></svg><span class="ftext">Четыре группы: брахманы, кшатрии, вайшьи, шудры. Варна отца — варна сына.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Касты</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 570 348" aria-hidden="true"><use href="#i-varny"/></svg><span class="ftext">Группы, возникшие при дроблении варн; названы по наследственным занятиям, их около 3,5 тысячи.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что защищает Индию с севера?</h3><div class="opts">
+<button class="opt" data-ok="1">Гималайские горы</button>
+<button class="opt">Индийский океан</button>
+<button class="opt">Река Ганг</button></div>
+<div class="fb">Они не пускают в страну холодные ветры — поэтому климат Индии жаркий и влажный.</div></div>
+<div class="q"><h3>2. По какой реке названа первая индийская цивилизация?</h3><div class="opts">
+<button class="opt">По Гангу</button>
+<button class="opt" data-ok="1">По Инду</button>
+<button class="opt">По Евфрату</button></div>
+<div class="fb">Её называют индской — или хараппской, по месту раскопок Хараппа.</div></div>
+<div class="q"><h3>3. Что находилось в центре Мохенджо-Даро, на холме?</h3><div class="opts">
+<button class="opt">Рынок</button>
+<button class="opt">Храм бога Брахмы</button>
+<button class="opt" data-ok="1">Крепость с дворцом и амбаром для зерна</button></div>
+<div class="fb">А вокруг — прямые широкие улицы и дома из красного обожжённого кирпича в два-три этажа.</div></div>
+<div class="q"><h3>4. На каком языке говорили арии?</h3><div class="opts">
+<button class="opt" data-ok="1">На санскрите</button>
+<button class="opt">На латыни</button>
+<button class="opt">На клинописи</button></div>
+<div class="fb">Клинопись — это письмо Междуречья из §11, а не язык.</div></div>
+<div class="q"><h3>5. Почему Ашока сменил прозвище Жестокий на Милостивый?</h3><div class="opts">
+<button class="opt">Его победили соседи</button>
+<button class="opt" data-ok="1">Он проникся учением Будды</button>
+<button class="opt">Так решили жрецы</button></div>
+<div class="fb">После войны за Калингу он навсегда отверг жестокость и войны.</div></div>
+<div class="q"><h3>6. Из какой части тела Брахмы, по легенде, вышли воины-кшатрии?</h3><div class="opts">
+<button class="opt">Из уст</button>
+<button class="opt" data-ok="1">Из могучих рук</button>
+<button class="opt">Из ног</button></div>
+<div class="fb">Из уст — брахманы-жрецы, из бёдер — вайшьи, из ног — шудры.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Природа Индии</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Полуостров Индостан на юге Азии: Гималаи с севера не пускают холодные ветры, с юга — тёплый Индийский океан.</li><li>Климат жаркий и влажный, в сезон дождей реки выходят из берегов; долины Инда и Ганга плодородны.</li><li>Землю отвоёвывали у болот и джунглей, которые покрывали бóльшую часть страны.</li></ol></div>
+</div>
+<div class="think">
+<h3>Хараппская цивилизация</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Середина 3-го тысячелетия до н. э., долина Инда: ремёсла, письменность, медь, города; названа по месту раскопок Хараппа.</li><li>Мохенджо-Даро: крепость с дворцом и амбаром, прямые улицы, кирпичные дома в 2—3 этажа, колодцы и комнаты для омовений, канал за город, бассейн.</li><li>Торговали с Месопотамией — там нашли вещи с берегов Инда; имя страны дошло только как «Мелухха». К середине 2-го тысячелетия до н. э. жители внезапно ушли, причина неизвестна.</li></ol></div>
+</div>
+<div class="think">
+<h3>Арии и цари Индии</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Середина 2-го тыс. до н. э.: арии пришли с северо-запада, говорили на санскрите, пасли скот; потом осели, стали пахать и смешались с местными.</li><li>Начало 1-го тыс. до н. э. — железо; вожди-раджи стали царями, царств было множество, и они враждовали.</li><li>Конец IV в. до н. э. — Чандрагупта Маурья; середина III в. до н. э. — Ашока; после его смерти распад. Потом Гупты: Самудрагупта (335—380) и Чандрагупта II (380—415), «золотой век»; в V—VI веках державу уничтожили кочевники.</li></ol></div>
+</div>
+<div class="think">
+<h3>Варны и касты</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Четыре варны со строго определёнными занятиями, правами и обязанностями; «варна» на санскрите — «сорт», «категория».</li><li>По легенде их создал Брахма: из уст брахманов-жрецов, из рук кшатриев-воинов, из бёдер вайшьев, из ног шудр-слуг.</li><li>Варна передавалась от отца к сыну, переход запрещал закон; различались домом, покроем и цветом одежды. Из дробления варн вышли касты — около 3,5 тысячи.</li></ol></div>
+</div>
+<div class="think">
+<h3>Чем Индия отличалась от других стран Востока</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Не было жёсткой центральной власти — деспотии, как в Египте, Ассирии или Персии.</li><li>Её заменяло жёсткое деление общества на варны и касты.</li><li>Каждый всю жизнь занимался тем, чем был должен, без особого внешнего принуждения — порядок держался изнутри, а не страхом.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p16.html">‹ §16 Персия</a>
+  <span class="pn cur">§17 Древняя Индия</span>
+  <a class="pn" href="p18.html">§18 Древний Китай ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 17 · История, 5 класс · страницы 97—102 · глава II «Древний Восток»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'i-priroda':'0 0 540 322','i-harappa':'0 0 570 336','i-arii':'0 0 560 300','i-varny':'0 0 570 348','i-dinastii':'0 0 580 320','i-ashoka':'0 0 560 292'};
+
+var T={
+indostan:{w:"Индостан",k:"полуостров",p:"karta",t:"Полуостров в южной части Азии, на нём и расположена Индия. С севера его закрывают Гималайские горы, с юга омывает Индийский океан."},
+gimalai:{w:"Гималаи",k:"горы",s:"i-priroda",t:"Самые высокие горы мира, стоят вдоль всего севера Индии. Они защищают страну от холодных северных ветров — поэтому климат здесь жаркий."},
+ind:{w:"Инд",k:"река",s:"i-priroda",t:"Большая река на западе Индии. В её долине в середине 3-го тысячелетия до н. э. и возникла первая индийская цивилизация. По имени реки её называют индской."},
+gang:{w:"Ганг",k:"река",s:"i-priroda",t:"Вторая большая река Индии, на востоке страны. Её долина тоже плодородна, земледельцы поселились здесь в глубокой древности."},
+harappa:{w:"Хараппская цивилизация",k:"культура",p:"mohendzho",t:"Самобытная культура земледельцев долины Инда середины 3-го тысячелетия до н. э. Названа по месту Хараппа, где вели раскопки. Второе название — индская."},
+mohendzho:{w:"Мохенджо-Даро",k:"город",p:"mohendzho",t:"Древнеиндский город, раскопанный археологами. Современное название переводится как «холм мёртвых». По его развалинам и восстановили, как жили эти люди."},
+meluhha:{w:"Мелухха",k:"название",s:"i-harappa",t:"«Далёкая страна» — так называли Индию в текстах Месопотамии. Своего имени древнеиндской цивилизации мы не знаем: оно дошло только через чужие записи."},
+arii:{w:"Арии",k:"племена",s:"i-arii",t:"Племена, вторгшиеся в Индию с северо-запада в середине 2-го тысячелетия до н. э. Отличались от местных жителей языком, культурой и занятиями: говорили на санскрите и в основном пасли скот."},
+sanskrit:{w:"Санскрит",k:"язык",s:"i-arii",t:"Язык ариев, на котором потом писали священные книги Индии. Слово «варна» — как раз санскритское, оно значит «сорт», «категория»."},
+radzhi:{w:"Раджи",k:"вожди",s:"i-arii",t:"Вожди арийских племён. Со временем они превратились в царей, а племена — в царства."},
+maurya:{w:"Империя Маурьев",k:"держава",p:"ashokaslon",t:"Государство, которое основал царь Чандрагупта из рода Маурья в конце IV (4) века до н. э. При его потомке Ашоке власть Маурьев охватила почти всю Индию."},
+chandragupta:{w:"Чандрагупта",k:"царь",s:"i-dinastii",t:"Царь из рода Маурья. В конце IV (4) века до н. э. после долгих и кровопролитных войн подчинил северную часть Индии и основал империю Маурьев."},
+ashoka:{w:"Ашока",k:"царь",s:"i-ashoka",t:"Царь Маурьев середины III (3) века до н. э. Сначала Ашока Жестокий — воевал и был беспощаден к побеждённым. Потом проникся учением Будды, отверг жестокость и войны и стал Ашокой Милостивым."},
+kalinga:{w:"Калинга",k:"государство",s:"i-ashoka",t:"Небольшое государство на востоке Индостана. Ашока завоевал его через восемь лет после того, как стал царём: 150 тысяч человек взяли в плен, 100 тысяч убили, и ещё множество умерло потом."},
+gupty:{w:"Династия Гуптов",k:"род царей",s:"i-dinastii",t:"Царский род, возвысившийся в Северной Индии через несколько веков после Маурьев. Самудрагупта (335—380 годы) снова объединил север, его сын Чандрагупта II (2) (380—415 годы) правил в «золотой век»."},
+zolotoyvek:{w:"«Золотой век» Гуптов",k:"время",s:"i-dinastii",t:"Так называют царствование Чандрагупты II (2). Он расширил государство, укрепил его внутри и помогал развитию науки и искусства."},
+varny:{w:"Варны",k:"группы людей",s:"i-varny",t:"Четыре группы, на которые делилось всё население Индии, со строго определёнными занятиями, правами и обязанностями: брахманы, кшатрии, вайшьи и шудры. На санскрите «варна» значит «сорт», «категория»."},
+brahma:{w:"Брахма",k:"бог",s:"i-varny",t:"Главный индийский бог. По легенде, именно он создал варны из частей своего тела: из уст — жрецов, из рук — воинов, из бёдер — общинников, из ног — слуг."},
+brahmany:{w:"Брахманы",k:"варна",s:"i-varny",t:"Жрецы, созданные, по легенде, из уст Брахмы. Только они могли беседовать с богами."},
+kshatrii:{w:"Кшатрии",k:"варна",s:"i-varny",t:"Воины, созданные, по легенде, из могучих рук Брахмы."},
+vayshi:{w:"Вайшьи",k:"варна",s:"i-varny",t:"Обычные общинники: земледельцы, ремесленники и купцы. По легенде, созданы из бёдер Брахмы."},
+shudry:{w:"Шудры",k:"варна",s:"i-varny",t:"Слуги. По легенде, созданы из ног Брахмы, запачканных в грязи. Служили трём остальным варнам."},
+kasty:{w:"Касты",k:"группы людей",s:"i-varny",t:"Группы, появившиеся при дроблении и смешении варн. Названия каст произошли от профессий и занятий, передаваемых по наследству. Всего их насчитывается около 3,5 тысячи."},
+manu:{w:"Законы Ману",k:"свод правил",s:"i-varny",t:"Древнеиндийский свод правил. В нём расписано, какие занятия Брахма назначил каждой варне — от жертвоприношений и изучения Веды до торговли, земледелия и служения."},
+stupa:{w:"Ступа",k:"постройка",p:"adzhanta",t:"Буддийское сооружение, ради которого высекали целые залы в скалах. В пещерах Аджанты пять таких залов со ступами, остальные пещеры — помещения монастыря."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p17:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p17:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>4){fb.textContent="Верно! Хараппа (середина 3-го тыс. до н. э.) → арии (середина 2-го тыс. до н. э.) → Ашока (середина III в. до н. э.) → Чандрагупта II (380—415 годы).";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Посмотри ленту времени в разделе 3.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p17:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p17:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

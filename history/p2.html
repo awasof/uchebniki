@@ -1,0 +1,1614 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 2: первобытные охотники и собиратели, огонь, орудия, род и племя.">
+<title>Первобытные охотники и собиратели</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+.task{display:block;margin-top:6px;color:var(--ink)}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/>
+</marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/>
+</marker>
+</defs>
+
+<!-- 1. присваивающее хозяйство -->
+<symbol id="i-brat" viewBox="0 0 320 152">
+  <rect x="2" y="2" width="152" height="148" rx="14" fill="var(--paper2)"/>
+  <rect x="166" y="2" width="152" height="148" rx="14" fill="var(--paper2)"/>
+  <circle cx="24" cy="26" r="12" fill="var(--moss)"/>
+  <path d="M18 26 l4 5 l9 -10" stroke="#FFF8EA" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="188" cy="26" r="12" fill="var(--no)"/>
+  <path d="M183 21 l10 10 M193 21 l-10 10" stroke="#FFF8EA" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="42" y="31" font-size="12.5" font-weight="700" fill="var(--moss)">БЕРУ ГОТОВОЕ</text>
+  <text x="206" y="31" font-size="12.5" font-weight="700" fill="var(--no)">РАЩУ САМ</text>
+  <ellipse cx="92" cy="86" rx="44" ry="29" fill="var(--green)"/>
+  <circle cx="74" cy="78" r="6" fill="var(--red)"/><circle cx="100" cy="72" r="6" fill="var(--red)"/>
+  <circle cx="112" cy="92" r="6" fill="var(--red)"/><circle cx="82" cy="98" r="6" fill="var(--red)"/>
+  <path d="M14 122 L48 100" stroke="var(--brown)" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <circle cx="54" cy="96" r="10" fill="var(--brown)"/>
+  <text x="78" y="140" text-anchor="middle" font-size="11.5" fill="var(--illink)">природа сделала сама</text>
+  <path d="M196 112 h120" stroke="var(--brown)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M256 112 V72" stroke="var(--green)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M256 88 C244 74 228 78 228 78 C230 92 246 96 256 88Z" fill="var(--green)"/>
+  <path d="M256 80 C268 66 284 70 284 70 C286 84 268 90 256 80Z" fill="var(--green)"/>
+  <text x="242" y="140" text-anchor="middle" font-size="11.5" fill="var(--illink)">так ещё не умели</text>
+</symbol>
+
+<!-- 2. собирательство -->
+<symbol id="i-sbor" viewBox="0 0 240 150">
+  <path d="M46 70 L194 70 L176 136 L64 136 Z" fill="var(--brown)"/>
+  <path d="M56 88 H184 M62 106 H178" stroke="var(--brownD)" stroke-width="4"/>
+  <path d="M120 70 V38" stroke="var(--brownD)" stroke-width="5" fill="none"/>
+  <path d="M74 70 C74 30 166 30 166 70" stroke="var(--brownD)" stroke-width="6" fill="none"/>
+  <circle cx="80" cy="62" r="9" fill="var(--red)"/><circle cx="98" cy="56" r="9" fill="var(--red)"/>
+  <circle cx="90" cy="46" r="8" fill="var(--red)"/>
+  <path d="M122 64 c-16 0 -22 -12 -8 -16 c4 -12 24 -12 26 0 c12 5 6 16 -8 16Z" fill="var(--paper2)"/>
+  <rect x="126" y="54" width="9" height="14" rx="4" fill="var(--paper2)"/>
+  <circle cx="156" cy="58" r="10" fill="var(--ochre)"/><circle cx="174" cy="64" r="9" fill="var(--ochre)"/>
+  <path d="M186 118 c14 -4 22 -16 16 -26 c-6 -10 -22 -6 -24 4 c-8 -6 -18 2 -14 12 c3 8 14 12 22 10Z" fill="var(--moss)"/>
+  <text x="120" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink)">ягоды · грибы · орехи · коренья</text>
+</symbol>
+
+<!-- 3. лента времени -->
+<symbol id="i-lenta" viewBox="0 0 330 126">
+  <rect x="8" y="34" width="196" height="32" rx="8" fill="var(--ochre)"/>
+  <rect x="207" y="34" width="60" height="32" rx="8" fill="var(--red)"/>
+  <rect x="270" y="34" width="50" height="32" rx="8" fill="var(--moss)"/>
+  <text x="106" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="#22190A">ПАЛЕОЛИТ</text>
+  <text x="106" y="86" text-anchor="middle" font-size="11.5" fill="var(--illink)">древний каменный век</text>
+  <text x="237" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="var(--red)">мезолит</text>
+  <text x="237" y="100" text-anchor="middle" font-size="11" fill="var(--illink)">средний</text>
+  <text x="295" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="var(--moss)">неолит</text>
+  <text x="295" y="100" text-anchor="middle" font-size="11" fill="var(--illink)">новый</text>
+  <text x="8" y="24" font-size="11.5" fill="var(--soft)">раньше</text>
+  <text x="320" y="24" text-anchor="end" font-size="11.5" fill="var(--soft)">ближе к нам</text>
+  <path d="M8 116 H316" stroke="var(--soft)" stroke-width="3" marker-end="url(#ar)" fill="none"/>
+</symbol>
+
+<!-- 4. рубило в руке -->
+<symbol id="i-rubilo" viewBox="0 0 220 158">
+  <path d="M110 8 C138 22 146 54 140 86 C136 110 124 132 110 150 C96 132 84 110 80 86 C74 54 82 22 110 8 Z" fill="var(--stone)" stroke="var(--illink)" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M104 22 C96 56 100 96 110 128 M126 34 C132 64 128 92 120 112" stroke="var(--illink)" stroke-width="2.5" opacity=".4" fill="none"/>
+  <rect x="58" y="64" width="98" height="42" rx="20" fill="var(--brown)"/>
+  <g stroke="var(--brownD)" stroke-width="3" stroke-linecap="round"><path d="M72 78 h68"/><path d="M72 92 h68"/></g>
+  <ellipse cx="62" cy="74" rx="13" ry="9" fill="var(--brown)"/>
+  <text x="10" y="26" font-size="12.5" font-weight="700" fill="var(--illink)">кулак сжат вокруг камня</text>
+  <text x="212" y="150" text-anchor="end" font-size="13" font-weight="700" fill="var(--red)">острый край</text>
+  <path d="M176 138 L126 132" stroke="var(--red)" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+</symbol>
+
+<!-- 5. охота загоном -->
+<symbol id="i-zagon" viewBox="0 0 330 150">
+  <path d="M0 126 H330" stroke="var(--brown)" stroke-width="8"/>
+  <path d="M196 126 h62 l-8 22 h-46 Z" fill="var(--brownD)"/>
+  <path d="M206 148 v-14 M222 148 v-18 M238 148 v-14" stroke="var(--stone)" stroke-width="5" stroke-linecap="round"/>
+  <g fill="var(--illink)">
+    <circle cx="26" cy="72" r="10"/><rect x="19" y="84" width="15" height="28" rx="6"/>
+    <path d="M26 112 l-9 14 M26 112 l9 14 M24 92 l-14 -16" stroke="var(--illink)" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="66" cy="78" r="10"/><rect x="59" y="90" width="15" height="26" rx="6"/>
+    <path d="M66 116 l-9 12 M66 116 l9 12 M64 96 l-14 -14" stroke="var(--illink)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  </g>
+  <path d="M10 76 l6 -18" stroke="var(--flame)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M50 82 l6 -18" stroke="var(--flame)" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="150" cy="96" rx="40" ry="24" fill="var(--brown)"/>
+  <path d="M186 86 c14 -6 20 -2 20 -2 c-6 8 -14 10 -14 10Z" fill="var(--brown)"/>
+  <circle cx="196" cy="84" r="12" fill="var(--brown)"/>
+  <path d="M192 76 c-6 -12 2 -18 2 -18 M204 76 c6 -12 -2 -18 -2 -18" stroke="var(--brownD)" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M126 118 v10 M144 118 v10 M160 118 v10 M176 118 v10" stroke="var(--brownD)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M84 60 H186" stroke="var(--red)" stroke-width="3.5" stroke-dasharray="9 7" fill="none" marker-end="url(#arR)"/>
+  <text x="130" y="48" text-anchor="middle" font-size="14" font-weight="700" fill="var(--red)">гонят зверя к ловушке</text>
+</symbol>
+
+<!-- 6. орудия труда и охоты -->
+<symbol id="i-instr" viewBox="0 0 330 140">
+  <g stroke-linecap="round">
+    <path d="M28 112 L44 44" stroke="var(--brown)" stroke-width="13"/>
+    <ellipse cx="46" cy="36" rx="16" ry="20" fill="var(--brown)"/>
+    <text x="40" y="134" text-anchor="middle" font-size="14" font-weight="600" fill="var(--illink)">дубина</text>
+    <path d="M118 112 L126 56" stroke="var(--brown)" stroke-width="11"/>
+    <path d="M126 56 L108 26 M126 56 L148 30" stroke="var(--brown)" stroke-width="10" fill="none"/>
+    <text x="126" y="134" text-anchor="middle" font-size="14" font-weight="600" fill="var(--illink)">рогатина</text>
+    <path d="M214 34 L232 62 L224 104 L202 96 L200 52 Z" fill="var(--stone)" stroke="var(--illink)" stroke-width="3" stroke-linejoin="round"/>
+    <text x="216" y="134" text-anchor="middle" font-size="14" font-weight="600" fill="var(--illink)">рубило</text>
+    <path d="M286 48 L316 62 L306 100 L280 92 Z" fill="var(--stone)" stroke="var(--illink)" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M280 92 L306 100" stroke="var(--red)" stroke-width="4"/>
+    <text x="292" y="134" text-anchor="middle" font-size="14" font-weight="600" fill="var(--illink)">скребок</text>
+  </g>
+</symbol>
+
+<!-- 7. четыре дела огня -->
+<symbol id="i-ogon4" viewBox="0 0 330 150">
+  <g>
+    <rect x="2" y="8" width="76" height="110" rx="14" fill="var(--paper2)"/>
+    <path d="M40 92 c-14 -8 -10 -24 -2 -30 c0 10 8 10 8 2 c10 8 12 22 -6 28Z" fill="var(--flame)"/>
+    <path d="M22 92 h36" stroke="var(--brownD)" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="40" cy="44" rx="19" ry="9" fill="var(--brown)"/>
+    <text x="40" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink)">еда</text>
+  </g>
+  <g>
+    <rect x="86" y="8" width="76" height="110" rx="14" fill="var(--paper2)"/>
+    <path d="M124 90 c-13 -8 -9 -24 -1 -30 c0 10 8 10 8 2 c9 8 11 22 -7 28Z" fill="var(--flame)"/>
+    <circle cx="104" cy="52" r="9" fill="var(--illink)"/>
+    <rect x="97" y="64" width="15" height="26" rx="6" fill="var(--illink)"/>
+    <circle cx="146" cy="52" r="9" fill="var(--illink)"/>
+    <rect x="139" y="64" width="15" height="26" rx="6" fill="var(--illink)"/>
+    <text x="124" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink)">тепло</text>
+  </g>
+  <g>
+    <rect x="170" y="8" width="76" height="110" rx="14" fill="var(--paper2)"/>
+    <path d="M190 88 c-12 -8 -8 -22 0 -28 c0 9 7 9 7 2 c9 8 10 20 -7 26Z" fill="var(--flame)"/>
+    <path d="M216 76 l14 -8 l16 4 l-4 16 l-18 2 Z" fill="var(--stone)"/>
+    <path d="M230 68 l-2 -10 l8 6 M246 72 l6 -8 l0 10" fill="var(--stone)"/>
+    <circle cx="238" cy="80" r="2.6" fill="var(--illink)"/>
+    <path d="M224 94 l-4 12 M240 94 l4 12" stroke="var(--stone)" stroke-width="4" stroke-linecap="round"/>
+    <text x="208" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink)">защита</text>
+  </g>
+  <g>
+    <rect x="254" y="8" width="74" height="110" rx="14" fill="var(--paper2)"/>
+    <path d="M262 100 c0 -40 16 -60 30 -60 c14 0 28 20 28 60 Z" fill="var(--stone)"/>
+    <circle cx="291" cy="72" r="24" fill="var(--ochre)" opacity=".55"/>
+    <path d="M291 88 c-12 -8 -8 -22 0 -28 c0 9 7 9 7 2 c9 8 10 20 -7 26Z" fill="var(--flame)"/>
+    <text x="291" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink)">свет</text>
+  </g>
+</symbol>
+
+<!-- 8. как добывали огонь -->
+<symbol id="i-dobycha" viewBox="0 0 330 150">
+  <rect x="2" y="2" width="158" height="120" rx="14" fill="var(--paper2)"/>
+  <rect x="170" y="2" width="158" height="120" rx="14" fill="var(--paper2)"/>
+  <path d="M80 30 V86" stroke="var(--brown)" stroke-width="10" stroke-linecap="round"/>
+  <ellipse cx="80" cy="92" rx="40" ry="10" fill="var(--brownD)"/>
+  <path d="M52 44 C68 34 92 34 108 44" stroke="var(--brown)" stroke-width="5" fill="none"/>
+  <path d="M52 44 C62 58 98 58 108 44" stroke="var(--brownD)" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <circle cx="80" cy="92" r="7" fill="var(--flame)"/>
+  <path d="M96 72 a20 20 0 0 1 -32 0" stroke="var(--red)" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+  <text x="80" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink)">трением</text>
+  <path d="M212 56 l30 -14 l16 18 l-24 20 Z" fill="var(--stone)" stroke="var(--illink)" stroke-width="2.5"/>
+  <path d="M280 44 l24 8 l-6 24 l-26 -8 Z" fill="var(--stone)" stroke="var(--illink)" stroke-width="2.5"/>
+  <path d="M258 62 l14 4" stroke="var(--illink)" stroke-width="2.5"/>
+  <g stroke="var(--ochre)" stroke-width="3.5" stroke-linecap="round">
+    <path d="M266 78 l-6 12"/><path d="M276 80 l2 14"/><path d="M256 76 l-12 8"/>
+  </g>
+  <ellipse cx="266" cy="102" rx="34" ry="9" fill="var(--moss)"/>
+  <text x="249" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink)">высекая искры</text>
+  <text x="165" y="142" text-anchor="middle" font-size="11.5" fill="var(--soft)">первый огонь брали от дерева, подожжённого молнией</text>
+</symbol>
+
+<!-- 9. шесть метров золы -->
+<symbol id="i-zola" viewBox="0 0 230 172">
+  <path d="M8 150 C8 60 60 18 115 18 C170 18 222 60 222 150 Z" fill="var(--stone)"/>
+  <path d="M40 150 C40 92 74 62 115 62 C156 62 190 92 190 150 Z" fill="var(--paper2)"/>
+  <rect x="58" y="96" width="114" height="54" fill="var(--soft)" opacity=".55"/>
+  <path d="M58 106 H172 M58 118 H172 M58 130 H172 M58 142 H172" stroke="var(--illink)" stroke-width="2" opacity=".35"/>
+  <circle cx="86" cy="86" r="7" fill="var(--illink)"/>
+  <rect x="79" y="96" width="14" height="30" rx="6" fill="var(--illink)"/>
+  <path d="M86 126 l-7 16 M86 126 l7 16" stroke="var(--illink)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M190 96 V150" stroke="var(--red)" stroke-width="3" marker-start="url(#arR)" marker-end="url(#arR)" fill="none"/>
+  <text x="198" y="126" font-size="16" font-weight="700" fill="var(--red)">6 м</text>
+  <text x="115" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink)">слой золы в пещере</text>
+  <text x="115" y="166" text-anchor="middle" font-size="12" fill="var(--soft)">выше двух этажей</text>
+</symbol>
+
+<!-- 10. ледниковый период до/после -->
+<symbol id="i-lednik" viewBox="0 0 330 156">
+  <clipPath id="clipL"><rect x="2" y="2" width="156" height="124" rx="14"/></clipPath>
+  <clipPath id="clipR"><rect x="172" y="2" width="156" height="124" rx="14"/></clipPath>
+  <g clip-path="url(#clipL)">
+    <rect x="2" y="2" width="156" height="124" fill="var(--sky)"/>
+    <path d="M2 96 C40 66 70 104 110 78 C134 62 152 76 158 84 V126 H2Z" fill="var(--green)"/>
+    <circle cx="34" cy="30" r="15" fill="var(--ochre)"/>
+    <path d="M118 92 v-22" stroke="var(--brownD)" stroke-width="5"/><circle cx="118" cy="62" r="14" fill="var(--moss)"/>
+    <ellipse cx="60" cy="106" rx="18" ry="11" fill="var(--brown)"/>
+    <circle cx="44" cy="96" r="7" fill="var(--brown)"/>
+    <path d="M40 90 l-5 -9 M48 90 l5 -9" stroke="var(--brownD)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g clip-path="url(#clipR)">
+    <rect x="172" y="2" width="156" height="124" fill="var(--paper2)"/>
+    <path d="M172 92 C210 64 240 100 280 74 C304 58 322 74 328 82 V126 H172Z" fill="var(--snow)"/>
+    <g fill="var(--water)" opacity=".8"><circle cx="196" cy="26" r="3"/><circle cx="222" cy="40" r="3"/><circle cx="252" cy="22" r="3"/><circle cx="288" cy="38" r="3"/><circle cx="310" cy="20" r="3"/></g>
+    <ellipse cx="250" cy="104" rx="30" ry="19" fill="var(--brownD)"/>
+    <circle cx="219" cy="96" r="14" fill="var(--brownD)"/>
+    <path d="M212 104 C200 116 196 104 200 96" stroke="var(--brownD)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M210 92 C196 92 192 80 196 76" stroke="var(--snow)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M232 118 v8 M248 118 v8 M266 118 v8" stroke="var(--brownD)" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <rect x="2" y="2" width="156" height="124" rx="14" fill="none" stroke="var(--line)" stroke-width="3"/>
+  <rect x="172" y="2" width="156" height="124" rx="14" fill="none" stroke="var(--line)" stroke-width="3"/>
+  <text x="80" y="148" text-anchor="middle" font-size="15" font-weight="700" fill="var(--moss)">было тепло</text>
+  <text x="250" y="148" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ice)">пришёл холод</text>
+  <path d="M160 64 H170" stroke="var(--illink)" stroke-width="3" marker-end="url(#ar)" fill="none"/>
+</symbol>
+
+<!-- 11. звери ледникового периода -->
+<symbol id="i-zveri" viewBox="0 0 330 140">
+  <g>
+    <ellipse cx="46" cy="66" rx="34" ry="24" fill="var(--brown)"/>
+    <circle cx="16" cy="60" r="16" fill="var(--brown)"/>
+    <path d="M10 70 C0 84 -2 70 2 62" stroke="var(--brown)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M8 56 C-4 58 -6 44 2 40" stroke="var(--paper2)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M30 88 v14 M46 88 v14 M62 88 v14" stroke="var(--brownD)" stroke-width="8" stroke-linecap="round"/>
+    <text x="42" y="126" text-anchor="middle" font-size="13" font-weight="600" fill="var(--illink)">мамонт</text>
+  </g>
+  <g>
+    <ellipse cx="132" cy="70" rx="32" ry="21" fill="var(--brownD)"/>
+    <path d="M100 66 l-16 4 l4 12 l16 -4Z" fill="var(--brownD)"/>
+    <path d="M86 70 c-8 -14 4 -18 8 -8" stroke="var(--stone)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M118 90 v12 M134 90 v12 M150 90 v12" stroke="var(--brown)" stroke-width="8" stroke-linecap="round"/>
+    <text x="124" y="126" text-anchor="middle" font-size="13" font-weight="600" fill="var(--illink)">носорог</text>
+  </g>
+  <g>
+    <ellipse cx="222" cy="70" rx="30" ry="20" fill="var(--brown)"/>
+    <path d="M196 56 c-12 0 -14 16 -4 18 l14 2Z" fill="var(--brownD)"/>
+    <path d="M194 54 c-10 -8 -18 0 -12 8" stroke="var(--illink)" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M206 88 v14 M222 88 v14 M238 88 v14" stroke="var(--brownD)" stroke-width="8" stroke-linecap="round"/>
+    <text x="216" y="126" text-anchor="middle" font-size="13" font-weight="600" fill="var(--illink)">бизон</text>
+  </g>
+  <g>
+    <ellipse cx="300" cy="74" rx="26" ry="16" fill="var(--ochre)"/>
+    <circle cx="278" cy="58" r="10" fill="var(--ochre)"/>
+    <path d="M272 50 c-4 -14 -14 -12 -14 -12 M284 50 c4 -14 14 -12 14 -12" stroke="var(--brownD)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M286 88 v14 M302 88 v14 M316 88 v14" stroke="var(--brownD)" stroke-width="7" stroke-linecap="round"/>
+    <text x="296" y="126" text-anchor="middle" font-size="13" font-weight="600" fill="var(--illink)">олень</text>
+  </g>
+</symbol>
+
+<!-- 12. оружие охоты -->
+<symbol id="i-oruzhie" viewBox="0 0 330 140">
+  <g stroke-linecap="round">
+    <path d="M18 104 L74 30" stroke="var(--brown)" stroke-width="8"/>
+    <path d="M74 30 l12 -16 l-4 20 Z" fill="var(--stone)" stroke="var(--illink)" stroke-width="2.5"/>
+    <text x="52" y="128" text-anchor="middle" font-size="14" font-weight="600" fill="var(--illink)">копьё</text>
+    <path d="M128 100 L164 42" stroke="var(--brown)" stroke-width="6"/>
+    <path d="M164 42 l9 -13 l-3 16 Z" fill="var(--stone)" stroke="var(--illink)" stroke-width="2.5"/>
+    <path d="M128 100 l-10 4 M128 100 l-4 10" stroke="var(--brownD)" stroke-width="4"/>
+    <text x="146" y="128" text-anchor="middle" font-size="14" font-weight="600" fill="var(--illink)">дротик</text>
+    <path d="M240 104 L286 34" stroke="var(--brown)" stroke-width="7"/>
+    <path d="M286 34 l10 -14 l-3 17 Z" fill="var(--stone)" stroke="var(--illink)" stroke-width="2.5"/>
+    <path d="M280 42 l14 2 M272 54 l14 2 M264 66 l14 2" stroke="var(--stone)" stroke-width="5"/>
+    <text x="264" y="128" text-anchor="middle" font-size="14" font-weight="600" fill="var(--illink)">гарпун</text>
+  </g>
+</symbol>
+
+<!-- 13. копьеметалка: сравнение дальности -->
+<symbol id="i-kopmet" viewBox="0 0 330 176">
+  <path d="M8 74 H322" stroke="var(--line)" stroke-width="3" stroke-dasharray="5 6"/>
+  <circle cx="30" cy="26" r="10" fill="var(--illink)"/>
+  <rect x="23" y="38" width="15" height="26" rx="6" fill="var(--illink)"/>
+  <path d="M30 64 l-8 12 M30 64 l8 12" stroke="var(--illink)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M34 44 l16 -10" stroke="var(--illink)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M50 34 l30 -8" stroke="var(--brown)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M66 20 C110 4 140 22 152 52" stroke="var(--soft)" stroke-width="3" stroke-dasharray="7 6" fill="none" marker-end="url(#ar)"/>
+  <text x="112" y="62" text-anchor="middle" font-size="14" font-weight="700" fill="var(--soft)">рукой — близко</text>
+  <circle cx="30" cy="112" r="10" fill="var(--illink)"/>
+  <rect x="23" y="124" width="15" height="26" rx="6" fill="var(--illink)"/>
+  <path d="M30 150 l-8 12 M30 150 l8 12" stroke="var(--illink)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M34 130 l14 -8" stroke="var(--illink)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M46 124 l26 -14" stroke="var(--red)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M72 110 l36 -10" stroke="var(--brown)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M90 96 C160 62 250 78 300 132" stroke="var(--red)" stroke-width="3.5" stroke-dasharray="8 6" fill="none" marker-end="url(#arR)"/>
+  <text x="186" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="var(--red)">с копьеметалкой — далеко</text>
+  <text x="52" y="104" font-size="13" font-weight="700" fill="var(--red)">палка-рычаг</text>
+  <text x="8" y="169" font-size="12" fill="var(--soft)">рука как будто стала длиннее</text>
+</symbol>
+
+<!-- 14. гарпун крупно -->
+<symbol id="i-garpun" viewBox="0 0 240 150">
+  <path d="M18 116 L186 40" stroke="var(--brown)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M186 40 l22 -12 l-8 24 Z" fill="var(--stone)" stroke="var(--illink)" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="var(--stone)" stroke-width="7" stroke-linecap="round">
+    <path d="M176 54 l22 6"/><path d="M152 65 l22 6"/><path d="M128 76 l22 6"/><path d="M104 87 l22 6"/>
+  </g>
+  <path d="M60 30 l26 -4" stroke="var(--moss)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <text x="14" y="26" font-size="13" font-weight="700" fill="var(--moss)">заходит легко</text>
+  <path d="M96 140 l-26 4" stroke="var(--red)" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+  <text x="100" y="144" font-size="13" font-weight="700" fill="var(--red)">назад — никак</text>
+  <path d="M28 60 c22 -16 46 -16 58 0 c-12 16 -36 16 -58 0Z" fill="var(--water)"/>
+  <path d="M28 60 l-14 -10 v20Z" fill="var(--water)"/>
+  <circle cx="72" cy="56" r="3" fill="var(--illink)"/>
+</symbol>
+
+<!-- 15. игла из кости -->
+<symbol id="i-igla" viewBox="0 0 240 150">
+  <path d="M20 40 C60 26 110 26 150 40 C140 78 140 100 150 126 C110 140 60 140 20 126 C30 100 30 78 20 40Z" fill="var(--brown)"/>
+  <path d="M84 30 V136" stroke="var(--brownD)" stroke-width="3" stroke-dasharray="9 8"/>
+  <g stroke="var(--paper2)" stroke-width="3.5" stroke-linecap="round">
+    <path d="M76 44 l16 8"/><path d="M76 64 l16 8"/><path d="M76 84 l16 8"/><path d="M76 104 l16 8"/>
+  </g>
+  <path d="M168 122 L224 42" stroke="var(--paper2)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M168 122 L224 42" stroke="var(--illink)" stroke-width="2" stroke-linecap="round" opacity=".35" fill="none"/>
+  <circle cx="218" cy="50" r="4.5" fill="var(--illink)"/>
+  <text x="178" y="142" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink)">игла из кости</text>
+  <text x="96" y="18" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink)">шкуры сшиты в одежду</text>
+</symbol>
+
+<!-- 16. бивни: из чего что -->
+<symbol id="i-bivni" viewBox="0 0 330 150">
+  <path d="M14 38 C56 40 92 68 96 116" stroke="var(--paper2)" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <path d="M14 38 C56 40 92 68 96 116" stroke="var(--illink)" stroke-width="2" fill="none" stroke-linecap="round" opacity=".3"/>
+  <text x="64" y="140" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink)">бивень мамонта</text>
+  <path d="M116 76 H150" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="160" y="16" width="160" height="34" rx="10" fill="var(--paper2)"/>
+  <path d="M172 33 h16 l6 -8 l6 16 l6 -8 h6" stroke="var(--illink)" stroke-width="3" fill="none"/>
+  <text x="216" y="38" font-size="12.5" font-weight="600" fill="var(--illink)">орудия труда</text>
+  <rect x="160" y="58" width="160" height="34" rx="10" fill="var(--paper2)"/>
+  <path d="M174 84 l14 -20 l14 20" stroke="var(--illink)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <text x="216" y="80" font-size="12.5" font-weight="600" fill="var(--illink)">каркас дома</text>
+  <rect x="160" y="100" width="160" height="34" rx="10" fill="var(--paper2)"/>
+  <path d="M176 126 l18 -18" stroke="var(--illink)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="193" cy="109" r="3" fill="var(--illink)"/>
+  <text x="216" y="122" font-size="12.5" font-weight="600" fill="var(--illink)">иглы для шкур</text>
+</symbol>
+
+<!-- 17. грот и пещера -->
+<symbol id="i-grot" viewBox="0 0 330 152">
+  <path d="M0 130 H330" stroke="var(--brownD)" stroke-width="6"/>
+  <path d="M6 130 C6 52 54 16 110 16 C166 16 214 52 214 130 Z" fill="var(--stone)"/>
+  <path d="M214 130 C214 60 262 26 300 26 C318 26 326 34 326 34 V130Z" fill="var(--stone)"/>
+  <path d="M40 130 C40 100 58 84 80 84 C102 84 118 100 118 130 Z" fill="var(--paper2)"/>
+  <path d="M238 130 C238 84 256 60 282 60 C296 60 302 68 302 82 C288 84 286 96 288 130 Z" fill="var(--paper2)"/>
+  <circle cx="79" cy="112" r="8" fill="var(--illink)"/>
+  <rect x="72" y="122" width="14" height="14" rx="5" fill="var(--illink)"/>
+  <text x="79" y="70" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink)">ГРОТ</text>
+  <text x="79" y="144" text-anchor="middle" font-size="12.5" fill="var(--soft)">неглубокая ниша</text>
+  <text x="268" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink)">ПЕЩЕРА</text>
+  <text x="264" y="144" text-anchor="middle" font-size="12.5" fill="var(--soft)">уходит вглубь горы</text>
+  <path d="M290 104 c-10 -6 -6 -18 0 -22 c0 8 6 8 6 2 c7 6 8 16 -6 20Z" fill="var(--flame)"/>
+</symbol>
+
+<!-- 18. дом из костей в три шага -->
+<symbol id="i-dom" viewBox="0 0 330 152">
+  <text x="54" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="var(--soft)">1 · КАРКАС</text>
+  <text x="165" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="var(--soft)">2 · ШКУРЫ</text>
+  <text x="276" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="var(--soft)">3 · ОЧАГ</text>
+  <g stroke="var(--paper2)" stroke-width="7" stroke-linecap="round" fill="none">
+    <path d="M18 116 C22 62 86 62 90 116"/><path d="M32 116 C36 74 72 74 76 116"/>
+    <path d="M54 116 V62"/>
+  </g>
+  <path d="M14 116 H94" stroke="var(--brownD)" stroke-width="6" stroke-linecap="round"/>
+  <text x="54" y="140" text-anchor="middle" font-size="12.5" fill="var(--illink)">кости зверей</text>
+  <path d="M126 116 C130 58 200 58 204 116 Z" fill="var(--brown)"/>
+  <path d="M138 116 C142 76 188 76 192 116" stroke="var(--brownD)" stroke-width="3" fill="none"/>
+  <path d="M165 116 V60" stroke="var(--brownD)" stroke-width="3"/>
+  <path d="M122 116 H208" stroke="var(--brownD)" stroke-width="6" stroke-linecap="round"/>
+  <text x="165" y="140" text-anchor="middle" font-size="12.5" fill="var(--illink)">сверху накрыли</text>
+  <path d="M236 116 C240 58 312 58 316 116 Z" fill="var(--brown)"/>
+  <path d="M258 116 C258 92 268 82 276 82 C284 82 294 92 294 116Z" fill="var(--illink)" opacity=".25"/>
+  <path d="M276 110 c-11 -7 -7 -21 0 -26 c0 9 7 9 7 2 c8 7 9 18 -7 24Z" fill="var(--flame)"/>
+  <path d="M232 116 H320" stroke="var(--brownD)" stroke-width="6" stroke-linecap="round"/>
+  <g stroke="var(--soft)" stroke-width="2.5" opacity=".7" fill="none">
+    <path d="M270 54 c-6 -8 6 -12 0 -20"/><path d="M282 54 c-6 -8 6 -12 0 -20"/>
+  </g>
+  <text x="276" y="140" text-anchor="middle" font-size="12.5" fill="var(--illink)">внутри огонь</text>
+</symbol>
+
+<!-- 19. род и племя -->
+<symbol id="i-rod" viewBox="0 0 330 178">
+  <circle cx="74" cy="84" r="60" fill="none" stroke="var(--red)" stroke-width="4"/>
+  <g fill="var(--illink)">
+    <circle cx="74" cy="50" r="9"/><circle cx="44" cy="72" r="9"/><circle cx="104" cy="72" r="9"/>
+    <circle cx="56" cy="108" r="9"/><circle cx="92" cy="108" r="9"/>
+    <rect x="67" y="61" width="14" height="20" rx="6"/><rect x="37" y="83" width="14" height="20" rx="6"/>
+    <rect x="97" y="83" width="14" height="20" rx="6"/><rect x="49" y="119" width="14" height="18" rx="6"/>
+    <rect x="85" y="119" width="14" height="18" rx="6"/>
+  </g>
+  <text x="74" y="166" text-anchor="middle" font-size="16" font-weight="700" fill="var(--red)">РОД</text>
+  <text x="74" y="18" text-anchor="middle" font-size="13" fill="var(--soft)">родственники</text>
+  <path d="M142 84 H166" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <circle cx="254" cy="84" r="70" fill="none" stroke="var(--ice)" stroke-width="4"/>
+  <g fill="none" stroke="var(--red)" stroke-width="3">
+    <circle cx="254" cy="46" r="24"/><circle cx="222" cy="106" r="24"/><circle cx="288" cy="106" r="24"/>
+  </g>
+  <g fill="var(--illink)">
+    <circle cx="246" cy="40" r="5"/><circle cx="262" cy="40" r="5"/><circle cx="254" cy="54" r="5"/>
+    <circle cx="214" cy="100" r="5"/><circle cx="230" cy="100" r="5"/><circle cx="222" cy="114" r="5"/>
+    <circle cx="280" cy="100" r="5"/><circle cx="296" cy="100" r="5"/><circle cx="288" cy="114" r="5"/>
+  </g>
+  <text x="254" y="166" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ice)">ПЛЕМЯ</text>
+  <text x="254" y="18" text-anchor="middle" font-size="13" fill="var(--soft)">несколько родов</text>
+</symbol>
+
+<!-- 20. старейшина и вождь -->
+<symbol id="i-star" viewBox="0 0 330 176">
+  <rect x="2" y="2" width="156" height="128" rx="14" fill="var(--paper2)"/>
+  <rect x="172" y="2" width="156" height="128" rx="14" fill="var(--paper2)"/>
+  <circle cx="80" cy="70" r="44" fill="none" stroke="var(--red)" stroke-width="3.5"/>
+  <g fill="var(--illink)">
+    <circle cx="62" cy="52" r="6"/><circle cx="98" cy="52" r="6"/>
+    <circle cx="54" cy="84" r="6"/><circle cx="106" cy="84" r="6"/><circle cx="80" cy="98" r="6"/>
+  </g>
+  <circle cx="80" cy="66" r="10" fill="var(--ochre)" stroke="var(--illink)" stroke-width="2.5"/>
+  <path d="M70 52 l4 -9 l6 5 l6 -5 l4 9Z" fill="var(--ochre)"/>
+  <text x="80" y="124" text-anchor="middle" font-size="11.5" fill="var(--soft)">один род</text>
+  <text x="80" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink)">старейшина</text>
+  <text x="80" y="166" text-anchor="middle" font-size="11.5" fill="var(--soft)">самый опытный в роду</text>
+  <circle cx="250" cy="66" r="52" fill="none" stroke="var(--ice)" stroke-width="3.5"/>
+  <g fill="none" stroke="var(--red)" stroke-width="2.5">
+    <circle cx="250" cy="40" r="17"/><circle cx="224" cy="88" r="18"/><circle cx="276" cy="88" r="18"/>
+  </g>
+  <g fill="var(--illink)">
+    <circle cx="242" cy="36" r="4"/><circle cx="258" cy="36" r="4"/>
+    <circle cx="217" cy="84" r="4"/><circle cx="231" cy="84" r="4"/><circle cx="224" cy="95" r="4"/>
+    <circle cx="269" cy="84" r="4"/><circle cx="283" cy="84" r="4"/><circle cx="276" cy="95" r="4"/>
+  </g>
+  <circle cx="250" cy="47" r="8" fill="var(--ochre)" stroke="var(--illink)" stroke-width="2.5"/>
+  <path d="M242 35 l3 -8 l5 4 l5 -4 l3 8Z" fill="var(--ochre)"/>
+  <text x="250" y="124" text-anchor="middle" font-size="11.5" fill="var(--soft)">несколько родов</text>
+  <text x="250" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink)">вождь</text>
+  <text x="250" y="166" text-anchor="middle" font-size="11.5" fill="var(--soft)">во главе всего племени</text>
+</symbol>
+
+<!-- 21. человеческие расы -->
+
+<!-- 22. солнце и климат -->
+<symbol id="i-solnce" viewBox="0 0 290 162">
+  <circle cx="136" cy="84" r="64" fill="var(--water)"/>
+  <path d="M74 62 h124 M74 106 h124" stroke="var(--paper2)" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <path d="M74 84 h124" stroke="#FFF3E2" stroke-width="3.5"/>
+  <ellipse cx="128" cy="76" rx="32" ry="24" fill="var(--moss)"/>
+  <ellipse cx="168" cy="110" rx="18" ry="13" fill="var(--moss)"/>
+  <circle cx="30" cy="28" r="17" fill="var(--ochre)"/>
+  <g stroke="var(--ochre)" stroke-width="4" stroke-linecap="round">
+    <path d="M47 44 L72 84" marker-end="url(#ar)"/>
+    <path d="M48 34 L78 62"/>
+  </g>
+  <path d="M244 84 L204 84" stroke="var(--illink)" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+  <text x="240" y="80" font-size="12.5" font-weight="700" fill="var(--illink)">много</text>
+  <text x="236" y="94" font-size="12.5" font-weight="700" fill="var(--illink)">солнца</text>
+  <text x="92" y="30" font-size="12.5" font-weight="700" fill="var(--illink)">мало солнца</text>
+  <text x="140" y="154" text-anchor="middle" font-size="12" fill="var(--soft)">разный климат — разный внешний облик</text>
+</symbol>
+
+<symbol id="i-dolgo" viewBox="0 0 330 168">
+  <text x="8" y="22" font-size="13" font-weight="700" fill="var(--ice)">ЛЕДНИКОВЫЙ ПЕРИОД</text>
+  <rect x="8" y="30" width="300" height="30" rx="8" fill="var(--ice)"/>
+  <text x="158" y="51" text-anchor="middle" font-size="14" font-weight="700" fill="#FFF8EA">около 60 000 лет</text>
+  <text x="8" y="88" font-size="13" font-weight="700" fill="var(--ochre)">ОТ ЕГО КОНЦА ДО СЕГОДНЯ</text>
+  <rect x="8" y="96" width="60" height="30" rx="8" fill="var(--ochre)"/>
+  <text x="76" y="117" font-size="14" font-weight="700" fill="var(--illink)">около 12 000 лет</text>
+  <text x="8" y="144" font-size="12" fill="var(--soft)">70 тысяч лет назад начался,</text>
+  <text x="8" y="160" font-size="12" fill="var(--soft)">15—10 тысяч лет назад кончился.</text>
+</symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 2</span>
+    <h1>Первобытные охотники и собиратели</h1>
+    <p class="lede">Параграф целиком, в картинках. Каждое трудное слово можно нажать — покажу, как оно выглядит.</p>
+    <div class="qbox">
+      <span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Что помогло древнему человеку выжить в трудных природных условиях?</div>
+    </div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p1.html">‹ §1 Древнейшие люди</a>
+  <span class="pn cur">§2 Первобытные охотники</span>
+  <a class="pn" href="p3.html">§3 Верования и искусство ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы">
+      <a href="#s1" data-j="s1">1</a><a href="#s2" data-j="s2">2</a><a href="#s3" data-j="s3">3</a>
+      <a href="#s4" data-j="s4">4</a><a href="#s5" data-j="s5">5</a><a href="#sit" title="Подведём итоги">≡</a><a href="#s6" title="Проверь себя">✓</a><a href="#s7" title="Расскажи вслух">!</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-ohota" src="img/d0d43dfa2f59.jpg" alt="Картина: охотники с копьями у туши зверя в траве">
+    <figcaption><span class="src">из учебника</span><b>Охота в древности. Художник З. Буриан.</b> Промыслом, связанным с высоким риском для жизни, обычно занимались мужчины. Женщины оставались с детьми на стоянках.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="shead"><span class="snum">1</span><h2>Занятия первобытного человека</h2></div>
+
+   <div class="easy">
+    <p>Древние люди ничего не выращивали. Они брали то, что природа уже приготовила сама.</p>
+    <p>Они охотились, ловили рыбу и собирали ягоды, грибы, орехи, коренья. Такое хозяйство называют <button class="term" data-t="prisv">присваивающим</button>.</p>
+    <p>Так люди жили почти весь <button class="term" data-t="paleo">палеолит</button> — древний каменный век, и мезолит — средний.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Хозяйство людей древнего каменного века основывалось на том, что давала им природа. Основой жизнедеятельности были охота, рыболовство, собирательство дикорастущих съедобных растений и кореньев. Такой тип хозяйства называется <button class="term" data-t="prisv">присваивающим</button>.</p>
+    <p>Он господствовал на протяжении почти всего древнего (<button class="term" data-t="paleo">палеолит</button>) и среднего (мезолит) каменного века.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 320 152" role="img" aria-label="Слева человек срывает ягоду с куста — берёт готовое. Справа перечёркнутый росток — выращивать ещё не умели."><use href="#i-brat"/></svg>
+    <figcaption><b>Присваивающее хозяйство.</b> «Присвоил» — значит взял себе то, что природа уже сделала. Сажать и выращивать люди научатся намного позже.</figcaption>
+   </div>
+  </figure>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 126" role="img" aria-label="Лента времени: длинный палеолит, короткий мезолит, ещё более короткий неолит."><use href="#i-lenta"/></svg>
+    <figcaption><b>Палеолит и мезолит.</b> Палеолит — древний, он самый длинный. Мезолит — средний. Запоминай по длине полоски, а не по слову.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Много тысяч лет люди жили в Африке, где тепло и много растений. Еда вокруг заканчивалась — люди уходили на новое место. Это и есть <button class="term" data-t="sbor">собирательство</button>.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Многие тысячи лет древние люди жили в Африке, зонах тропиков и субтропиков. Климат здесь был тёплым. Разнообразие растений позволяло прокормиться, собирая ягоды, фрукты, грибы, орехи, коренья. Первобытные люди, занимаясь <button class="term" data-t="sbor">собирательством</button>, меняли места обитания.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 240 150" role="img" aria-label="Корзина с ягодами, грибами, орехами и корешком."><use href="#i-sbor"/></svg>
+    <figcaption><b>Собирательство.</b> Собрал то, что уже выросло. Ничего не сажал, не поливал, не ждал урожая.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Охотиться на крупного зверя в одиночку нельзя. Одни гнали зверя, другие ждали у <button class="term" data-t="lovushka">ловушки</button>. Поэтому охотились все вместе.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Другим занятием была охота. Она имела большое значение в жизни первобытного человека. Охотиться на крупных животных (устраивать <button class="term" data-t="lovushka">ловушки</button>, загонять зверя) можно было только коллективно. Успешная охота обеспечивала людей мясной пищей.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 150" role="img" aria-label="Двое людей с факелами гонят зверя к яме-ловушке."><use href="#i-zagon"/></svg>
+    <figcaption><b>Загонная охота.</b> Одному не справиться: нужны те, кто гонит, и те, кто ждёт. Вот почему охота была делом всей группы.</figcaption>
+   </div>
+  </figure>
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-mamont" src="img/158ab65ce42c.jpg" alt="Картина: люди с камнями и копьями окружили мамонта">
+    <figcaption><span class="src">из учебника</span><b>Охота на мамонта. Художник З. Буриан.</b><span class="task">▲ Назови орудия, которые древние люди использовали на охоте.</span></figcaption>
+   </div>
+  </figure>
+
+
+  <div class="col">
+   <div class="easy">
+    <p>Орудия делали из камня и дерева: <button class="term" data-t="rubilo">рубило</button>, дубина, <button class="term" data-t="rogatina">рогатина</button>. Как их делать, показывали детям — и с каждым разом выходило лучше.</p>
+    <p>От работы руки становились ловкими, пальцы — умелыми. Мозг тоже менялся и работал лучше. А пока люди договаривались между собой, у них появилась речь.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Орудия труда (оббитые с одного конца куски гальки, грубые ручные <button class="term" data-t="rubilo">рубила</button>) и охоты (дубины, <button class="term" data-t="rogatina">рогатины</button>) древние люди делали из камня и дерева. Навыки их обработки передавались из поколения в поколение и совершенствовались.</p>
+    <p>Трудовая деятельность меняла древнего человека. Руки становились более подвижными, ловкими, пальцы — более умелыми. Труд способствовал развитию мышления человека, его мозг становился более совершенным. В ходе общения с себе подобными развивалась речь.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 140" role="img" aria-label="Четыре орудия: дубина, рогатина, рубило, скребок."><use href="#i-instr"/></svg>
+    <figcaption><b>Первобытные инструменты.</b> Слово «орудие» пришло из латинского языка. Дубиной били, рогатиной останавливали зверя, рубилом резали, скребком чистили шкуру.</figcaption>
+   </div>
+  </figure>
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-instr" src="img/476e6800cc0c.jpg" alt="Каменные наконечники, рубила и топор на деревянной рукояти">
+    <figcaption><span class="src">из учебника</span><b>Первобытные инструменты</b> (от латинского «орудие»).<span class="task">▲ Для чего могли использоваться изображённые на рисунке инструменты?</span></figcaption>
+   </div>
+  </figure>
+
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 220 158" role="img" aria-label="Рука держит каменное рубило с острым нижним краем."><use href="#i-rubilo"/></svg>
+    <figcaption><b>Рубило.</b> Держали прямо в кулаке — рукоятки ещё не было. Это первый нож древнего человека.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Вопросы учебника</b>
+    <ol><li>Какие способы охоты использовали первобытные люди?</li>
+        <li>Почему охота была коллективным занятием?</li></ol>
+   </div>
+      <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">1. Почему это хозяйство называют присваивающим, а не производящим?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h1" hidden>Где искать: самое начало раздела 1.</div>
+    <div class="rev ans" id="a1" hidden>Люди ничего не производили сами: не сажали растения и не разводили животных. Они присваивали — то есть брали готовое: охотились, ловили рыбу, собирали ягоды и коренья.</div>
+   </div>
+   <div class="think">
+    <p class="qt">2. Почему первобытные люди часто уходили с одного места на другое?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h2" hidden>Где искать: абзац про Африку и собирательство.</div>
+    <div class="rev ans" id="a2" hidden>Они жили собирательством и охотой, то есть брали то, что уже есть вокруг. Когда еда в одном месте заканчивалась, приходилось уходить туда, где она ещё была.</div>
+   </div>
+   <div class="think">
+    <p class="qt">3. Как труд связан с появлением речи?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h3" hidden>Где искать: последний абзац раздела 1.</div>
+    <div class="rev ans" id="a3" hidden>От работы руки становились ловкими, а мозг — совершеннее. Работали и охотились люди вместе, а значит, им надо было договариваться. Вот в общении друг с другом речь и развивалась.</div>
+   </div>
+   <div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">2</span><h2>Использование огня</h2></div>
+   <div class="easy">
+    <p><button class="term" data-t="ogon">Огонь</button> дал людям сразу четыре вещи: горячую еду, тепло ночью, защиту от зверей и свет в тёмной пещере.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Важным открытием первобытного человека стало использование <button class="term" data-t="ogon">огня</button> для приготовления пищи, обогрева холодными ночами, отпугивания диких зверей, освещения тёмной пещеры.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 150" role="img" aria-label="Четыре дела огня: готовит еду, греет ночью, отгоняет зверей, светит в пещере."><use href="#i-ogon4"/></svg>
+    <figcaption><b>Четыре дела огня.</b> Это самый частый вопрос по параграфу — запомни картинку из четырёх окошек.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Сначала огонь не умели добывать. Молния поджигала дерево — от него брали пламя и не давали ему погаснуть.</p>
+    <p>Под Пекином нашли пещеру, где слой золы 6 метров. Это выше двухэтажного дома. Значит, огонь там горел очень-очень долго.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Сначала человек не умел добывать огонь и непрерывно поддерживал пламя, добытое, например, от загоревшегося в грозу дерева. Археологи открыли под Пекином пещеру, где толщина слоя золы и углей от костра достигала 6 метров.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 230 172" role="img" aria-label="Разрез пещеры: слой золы высотой шесть метров, рядом человек для сравнения."><use href="#i-zola"/></svg>
+    <figcaption><b>6 метров золы.</b> Человек ростом меньше двух метров. Значит, зола выше трёх человек, поставленных друг на друга.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Потом человек научился <button class="term" data-t="dobycha">добывать огонь сам</button>: тереть деревянную палочку или высекать искры из камня. А ещё — переносить огонь с собой далеко.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Позднее человек научился <button class="term" data-t="dobycha">получать огонь трением или высеканием искр из камня</button>, а также сохранять и переносить на большие расстояния.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 150" role="img" aria-label="Слева добывание огня трением палочки, справа высекание искр двумя камнями."><use href="#i-dobycha"/></svg>
+    <figcaption><b>Два способа добыть огонь.</b> Трением — крутим палочку. Высеканием — бьём камнем о камень, искра падает на сухую траву.</figcaption>
+   </div>
+  </figure>
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-ogon" src="img/ee66c94354ff.jpg" alt="Первобытный человек добывает огонь с помощью лучкового сверла">
+    <figcaption><span class="src">из учебника</span><b>Огонь в жизни древнего человека.</b><span class="task">▲ 1. Каким образом человек смог узнать свойства огня? 2. Какие способы получения огня изображены на рисунках? 3. Как применяли огонь на охоте?</span></figcaption>
+   </div>
+  </figure>
+
+
+  <div class="col">
+   <div class="ask"><b>Вопрос учебника</b>
+    <ol><li>Какое значение в жизни древнего человека имел огонь?</li></ol>
+   </div>
+      <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">4. Почему люди так берегли огонь, пока не научились его добывать?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h4" hidden>Где искать: второй абзац раздела 2.</div>
+    <div class="rev ans" id="a4" hidden>Добывать огонь они ещё не умели. Пламя брали, например, от дерева, которое загорелось в грозу, а гроза бывает не каждый день. Поэтому огонь поддерживали непрерывно, чтобы не остаться без него.</div>
+   </div>
+   <div class="think">
+    <p class="qt">5. О чём говорит слой золы в 6 метров в пещере под Пекином?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h5" hidden>Где искать: конец второго абзаца раздела 2.</div>
+    <div class="rev ans" id="a5" hidden>О том, что огонь в этой пещере горел очень долго. Зола от костра копилась годами, и слой вырос выше двух этажей.</div>
+   </div>
+   <div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">3</span><h2>Орудия и жилище</h2></div>
+   <div class="easy">
+    <p>Примерно 70 тысяч лет назад начался <button class="term" data-t="lednik">ледниковый период</button>. Стало очень холодно.</p>
+    <p>Одни звери исчезли, другие появились — в тёплых шубах: мамонты, шерстистые носороги, бизоны, олени.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Примерно 70 тысяч лет назад начался <button class="term" data-t="lednik">ледниковый период</button>. Климат стал более суровым. Исчезли многие виды животных, но появились другие — приспособленные к новым условиям: мамонты, шерстистые носороги, бизоны, олени.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 156" role="img" aria-label="Два кадра одной долины: слева зелёная и тёплая, справа заснеженная, с мамонтом."><use href="#i-lednik"/></svg>
+    <figcaption><b>Ледниковый период.</b> Одно и то же место до и после. Было тепло и зелено — стало холодно и белo. Значит, поменялись и звери, и люди.</figcaption>
+   </div>
+  </figure>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 140" role="img" aria-label="Мамонт, шерстистый носорог, бизон и олень."><use href="#i-zveri"/></svg>
+    <figcaption><b>Звери в шубах.</b> Выжили те, у кого густая шерсть. Одна картинка — и сразу видно, почему их называют «приспособленными к новым условиям».</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Главным занятием стала охота. Люди научились делать копья, дротики и <button class="term" data-t="garpun">гарпуны</button> с острыми наконечниками — гарпуном ловили рыбу.</p>
+    <p>А ещё придумали <button class="term" data-t="kopmet">копьеметалку</button>. Копьё летит дальше, и близко к зверю подходить не надо.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Основным занятием в жизни первобытных людей стала охота. Они научились делать копья, дротики, <button class="term" data-t="garpun">гарпуны</button> с острыми наконечниками для ловли рыбы. <button class="term" data-t="kopmet">Копьеметалка</button> позволяла охотиться с большого расстояния, не приближаясь в целях безопасности к крупному животному.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 140" role="img" aria-label="Копьё, дротик и гарпун рядом."><use href="#i-oruzhie"/></svg>
+    <figcaption><b>Копьё, дротик, гарпун.</b> Копьё — самое тяжёлое, дротик — лёгкий, гарпун — с зубцами.</figcaption>
+   </div>
+  </figure>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 176" role="img" aria-label="Сверху человек бросает копьё рукой — оно падает близко. Снизу тот же человек с копьеметалкой — копьё летит далеко."><use href="#i-kopmet"/></svg>
+    <figcaption><b>Копьеметалка.</b> Это палка-рычаг: рука как будто стала длиннее. Копьё летит дальше — и к зверю можно не подходить.</figcaption>
+   </div>
+  </figure>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 240 150" role="img" aria-label="Гарпун с зубцами, направленными назад, и рыба."><use href="#i-garpun"/></svg>
+    <figcaption><b>Гарпун.</b> Зубцы смотрят назад: внутрь заходит легко, а обратно — никак. Поэтому рыба не срывается.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Охота давала не только еду. Из <button class="term" data-t="bivni">бивней</button> мамонта и оленьих рогов делали орудия труда. Из мелких костей — <button class="term" data-t="igla">иглы</button>, чтобы сшивать шкуры. Получалась одежда.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Охота давала древнему человеку не только пищу. Из <button class="term" data-t="bivni">бивней</button> мамонта и оленьих рогов изготавливали орудия труда. Мелкие кости использовали в качестве <button class="term" data-t="igla">игл</button> для сшивания шкур животных, которые носили как одежду.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 150" role="img" aria-label="Бивень мамонта и стрелка к трём вещам: орудия труда, каркас дома, иглы."><use href="#i-bivni"/></svg>
+    <figcaption><b>Из чего — что.</b> Мамонт был не только едой: бивни и кости шли в дело целиком.</figcaption>
+   </div>
+  </figure>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 240 150" role="img" aria-label="Две сшитые шкуры и костяная игла с ушком."><use href="#i-igla"/></svg>
+    <figcaption><b>Игла из кости.</b> Маленькая косточка с дырочкой. Ею сшивали шкуры — так появилась одежда.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Прятались от холода и дождя в <button class="term" data-t="grot">гротах</button> и пещерах. Потом научились строить дом сами: <button class="term" data-t="karkas">каркас</button> из костей, сверху шкуры, внутри <button class="term" data-t="ochag">очаг</button>.</p>
+    <p>Ледниковый период кончился 15—10 тысяч лет назад.</p>
+    <p>Посчитай: начался 70 тысяч лет назад, кончился 15—10 тысяч назад. Значит, люди прожили во льдах <b>около 60 тысяч лет</b>. Это очень долго: с тех пор как ледник ушёл, до сегодняшнего дня прошло всего около 12 тысяч лет — в пять раз меньше.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Люди укрывались от холода и дождей в <button class="term" data-t="grot">гротах</button> и пещерах. Со временем они научились сооружать жилища. Кости крупных животных служили строительным материалом для возведения <button class="term" data-t="karkas">каркаса</button>, который сверху накрывали шкурами. Внутри такого жилища устраивали <button class="term" data-t="ochag">очаг</button>. Ледниковый период закончился 15—10 тысяч лет назад.</p>
+   </div>
+  </div>
+
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 168" role="img" aria-label="Длинная полоса в шестьдесят тысяч лет — ледниковый период, и короткая в двенадцать тысяч — всё время от его конца до сегодня."><use href="#i-dolgo"/></svg>
+    <figcaption><b>60 тысяч лет во льдах.</b> Ледниковый период длился в пять раз дольше, чем всё время от его окончания до наших дней. Люди жили так десятки тысяч лет — и приспособились.</figcaption>
+   </div>
+  </figure>
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 152" role="img" aria-label="Разрез горы: слева неглубокая ниша — грот, справа глубокий ход — пещера."><use href="#i-grot"/></svg>
+    <figcaption><b>Грот и пещера.</b> Грот — неглубокая ниша под навесом. Пещера уходит вглубь горы, там темно и нужен огонь.</figcaption>
+   </div>
+  </figure>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 152" role="img" aria-label="Три шага постройки жилища: каркас из костей, шкуры сверху, очаг внутри."><use href="#i-dom"/></svg>
+    <figcaption><b>Дом в три шага.</b> У дома есть скелет (кости) и кожа (шкуры), а внутри — очаг, огонь в кольце камней.</figcaption>
+   </div>
+  </figure>
+  <div class="grid2">
+   <figure class="photo">
+   <div class="fig">
+    <img id="ph-dom1" src="img/dc98b802ad03.jpg" alt="Люди у костра в пещере, рисунок">
+    <figcaption><span class="src">из учебника</span><b>Жилище в пещере.</b></figcaption>
+   </div>
+   </figure>
+   <figure class="photo">
+   <div class="fig">
+    <img id="ph-dom2" src="img/0d9d8c588718.jpg" alt="Жилище из жердей и шкур, присыпанное землёй, снаружи">
+    <figcaption><span class="src">из учебника</span><b>Жилище первобытного племени.</b></figcaption>
+   </div>
+   </figure>
+  </div>
+  <div class="col"><div class="ask"><b>Задание учебника</b><p style="margin:0">▲ Сравни два вида жилищ первобытного человека. Назови преимущества и недостатки каждого. Аргументируй свой ответ.</p></div></div>
+
+
+  <div class="col">
+   <div class="ask"><b>Вопрос учебника</b>
+    <ol><li>Что происходило в жизни древних людей в последний ледниковый период?</li>
+        <li>Сравните грот и жилище из костей. У чего какие плюсы и минусы?</li></ol>
+   </div>
+      <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">6. Почему огонь стал особенно нужен именно в ледниковый период?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h6" hidden>Где искать: соедини раздел 2 и раздел 3.</div>
+    <div class="rev ans" id="a6" hidden>В ледниковый период климат стал суровым. А огонь как раз грел холодными ночами, готовил пищу, отпугивал зверей и светил в тёмной пещере — без него в таком холоде было не выжить.</div>
+   </div>
+   <div class="think">
+    <p class="qt">7. Почему охотники старались не подходить близко к крупному зверю?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h7" hidden>Где искать: абзац про копьеметалку.</div>
+    <div class="rev ans" id="a7" hidden>Это было опасно для жизни. Копьеметалка позволяла охотиться с большого расстояния — можно было бить зверя, не приближаясь к нему.</div>
+   </div>
+   <div class="think">
+    <p class="qt">8. Что из добытого зверя шло в дело, кроме мяса?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h8" hidden>Где искать: абзац про бивни и иглы.</div>
+    <div class="rev ans" id="a8" hidden>Из бивней мамонта и оленьих рогов делали орудия труда. Мелкие кости шли на иглы, которыми сшивали шкуры, — так получалась одежда. А кости крупных животных служили каркасом для жилища.</div>
+   </div>
+   <div class="think">
+    <p class="qt">9. Сколько лет длился ледниковый период? Посчитай сам.</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h13" hidden>Где искать: первое и последнее предложения раздела 3. Из 70 тысяч вычти 10—15 тысяч.</div>
+    <div class="rev ans" id="a13" hidden>Начался примерно 70 тысяч лет назад, а закончился 15—10 тысяч лет назад — значит, длился около 60 тысяч лет. Для сравнения: с его окончания до наших дней прошло всего около 12 тысяч лет, то есть в пять раз меньше.</div>
+   </div>
+   <div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">4</span><h2>Род и племя</h2></div>
+   <div class="easy">
+    <p>Самые первые большие группы древних людей учёные называют <button class="term" data-t="praob">праобщинами</button>.</p>
+    <p>Родственники, у которых общие предки, — это <button class="term" data-t="rod">род</button>, или родовая община. В роду всё общее: мужчины охотились, женщины собирали, добычу делили на всех.</p>
+    <p>Взрослые собирались вместе и выбирали <button class="term" data-t="star">старейшину</button> — самого опытного.</p>
+    <p>Несколько родов вместе — это <button class="term" data-t="plemya">племя</button>. У племени общая земля, язык и обычаи, а главный в нём — <button class="term" data-t="vozhd">вождь</button>.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Сообщества древних людей современного вида учёные называют термином «<button class="term" data-t="praob">праобщины</button>». Коллектив кровных родственников, которые происходили от общих предков, называют «<button class="term" data-t="rod">род</button>» или «родовая община». Члены рода вели общее хозяйство: мужчины охотились, женщины занимались собирательством. Добыча отдельных членов рода поступала в распоряжение всего коллектива. На общем сходе взрослых членов рода выбирали <button class="term" data-t="star">старейшину</button>, самого опытного и авторитетного человека.</p>
+    <p>Несколько родов составляли <button class="term" data-t="plemya">племя</button>. Его возглавлял совет, в который входили старейшины родов. Племя имело общую территорию, язык, обычаи и <button class="term" data-t="vozhd">вождя</button>. Им был старейшина одного из родов, входивших в состав племени.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 178" role="img" aria-label="Слева круг из пяти человек — род. Справа большой круг, внутри которого три таких круга — племя."><use href="#i-rod"/></svg>
+    <figcaption><b>Род и племя — это матрёшка.</b> Род — родственники в одном круге. Племя — несколько родов в круге побольше.</figcaption>
+   </div>
+  </figure>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 176" role="img" aria-label="Слева один круг рода с выделенной точкой — старейшина. Справа большой круг племени из трёх родов с одной выделенной точкой — вождь."><use href="#i-star"/></svg>
+    <figcaption><b>Старейшина и вождь.</b> Жёлтая точка с короной — главный. Разница только в том, сколько людей за ним: у старейшины один род, у вождя всё племя.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Вопросы учебника</b>
+    <ol><li>Что такое родовая община?</li>
+        <li>Что предшествовало родовой общине в процессе развития человека?</li></ol>
+   </div>
+      <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">10. Почему добыча одного охотника доставалась всему роду?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h9" hidden>Где искать: абзац про общее хозяйство.</div>
+    <div class="rev ans" id="a9" hidden>Род — это кровные родственники, которые вели общее хозяйство. Мужчины охотились, женщины занимались собирательством, и всё добытое поступало в распоряжение всего коллектива.</div>
+   </div>
+   <div class="think">
+    <p class="qt">11. Чем старейшина отличается от вождя?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h10" hidden>Где искать: оба абзаца раздела 4.</div>
+    <div class="rev ans" id="a10" hidden>Старейшина — самый опытный человек в роду, его выбирали на общем сходе взрослых. Вождь — главный во всём племени, и им становился старейшина одного из родов, входивших в племя.</div>
+   </div>
+   <div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">5</span><h2>Расы</h2></div>
+   <div class="easy">
+    <p>Люди жили в разных местах: где-то много солнца, где-то мало, где-то жара, где-то холод. Тело постепенно подстраивалось, и внешность менялась.</p>
+    <p>Так появились <button class="term" data-t="rasa">расы</button>. Раса — большая группа людей с похожими внешними признаками: цвет кожи, разрез глаз, вид волос.</p>
+    <p>Раньше называли три расы: европеоидную, монголоидную, негроидную. Сейчас выделяют четыре — добавили австралоидную.</p>
+    <p><span class="big">Все расы равны. Ни одна не лучше и не хуже другой.</span></p>
+   </div>
+   <div class="book" hidden>
+    <p>В течение многих веков человек приспосабливался к климатическим условиям своего обитания. Недостаток или избыток солнечного света, холод или жара привели к изменениям во внешнем облике. Учёные считают, что человеческие <button class="term" data-t="rasa">расы</button> стали формироваться с появлением человека разумного.</p>
+    <p>Раса — это большая группа людей, обладающих общими внешними признаками (цвет кожи, разрез глаз, вид волос). Раньше учёные выделяли три основные расы: европеоидная, монголоидная, негроидная. Современные исследователи выделяют четыре основные расы: европеоидная, монголоидная, негроидная, австралоидная. Все расы обладают равными возможностями для развития, ни одна раса не превосходит другую.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 290 162" role="img" aria-label="Земля и солнце: у экватора лучи падают прямо, ближе к северу — косо."><use href="#i-solnce"/></svg>
+    <figcaption><b>Почему люди выглядят по-разному.</b> У экватора солнце светит прямо и очень сильно, а далеко на севере — вскользь. Тело веками подстраивалось под свой климат.</figcaption>
+   </div>
+  </figure>
+
+  
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-rasy" src="img/47e0304582ff.jpg" alt="Четыре портрета представителей разных рас">
+    <figcaption><span class="src">из учебника</span><b>Человеческие расы.</b> Различия — только во внешних признаках, возможности у всех людей одинаковые.<span class="task">▲ Какие условия оказали влияние на формирование рас, представители которых изображены на рисунке?</span></figcaption>
+   </div>
+  </figure>
+
+
+  <div class="col">
+   <div class="ask"><b>Подробнее</b>
+    <p style="margin:0">Раньше негроидов и австралоидов считали одной расой — они внешне похожи. Но <button class="term" data-t="antro">антропология</button> и наука о <button class="term" data-t="genom">геноме</button> показали: различий между ними больше, чем между негроидами и европеоидами. А похожий вид объясняется жарким экваториальным климатом.</p>
+   </div>
+   <div class="ask"><b>Вопрос учебника</b>
+    <ol><li>Выделите характерные черты каждой расы.</li></ol>
+   </div>
+      <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">12. Почему люди в разных частях Земли стали выглядеть по-разному?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h11" hidden>Где искать: первый абзац раздела 5.</div>
+    <div class="rev ans" id="a11" hidden>Веками человек приспосабливался к климату своего места. Где солнца слишком много или слишком мало, где жара или холод — менялся внешний облик: цвет кожи, разрез глаз, вид волос. Так и сложились расы.</div>
+   </div>
+   <div class="think">
+    <p class="qt">13. Почему раньше выделяли три расы, а сейчас четыре?</p>
+    <div class="revbtns">
+      <button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button>
+      <button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="h12" hidden>Где искать: блок «Подробнее».</div>
+    <div class="rev ans" id="a12" hidden>Раньше негроидов и австралоидов считали одной расой — они внешне похожи. Но генетика показала, что различий между ними больше, чем между негроидами и европеоидами. А похожий вид объясняется жарким экваториальным климатом.</div>
+   </div>
+   <div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<style>
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+</style>
+
+<section id="sit">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+   <div class="blocknote">Первобытные люди занимались охотой и собирательством. Научились пользоваться огнём. Появился первый коллектив — родовая община. С появлением человека разумного стали формироваться человеческие расы.</div>
+
+   <div class="ask"><b>Вопросы и задания учебника</b>
+    <ol>
+     <li>Что помогало древним людям в охоте и собирательстве? Какую роль играли эти занятия в жизни древнейших людей?</li>
+     <li>Подумайте, почему древние люди жили, объединяясь в большие группы.</li>
+     <li>Дайте определение понятия «присваивающее хозяйство». Приведите примеры такого типа хозяйства.</li>
+     <li>С помощью дополнительных источников информации выясните, существуют ли в наше время народы, у которых сохранился племенной строй. Как вы думаете, почему?</li>
+     <li>Сравните жизнь древних людей до открытия огня и после. Сделайте вывод о том, как использование огня изменило жизнь человека.</li>
+     <li>Объясните, как природные условия повлияли на развитие человека.</li>
+    </ol>
+   </div>
+
+   <div class="sublabel">Работаем с источником</div>
+   <div class="think">
+    <p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Отрывок из книги «На берегу Маклая» русского путешественника и учёного XIX века Н. Н. Миклухо-Маклая. Он изучал жизнь папуасов — древнейшего населения Новой Гвинеи.</p>
+    <div class="rev plan" style="margin-top:0">
+     <p style="margin:0 0 10px">Большей же частью кубу живут кочевой жизнью и беспрестанно бродят по своей области в поисках созревших лесных плодов. Там, где застаёт их вечер, они сплетают из веток дерева простой зонт, который защищает их от непогоды.</p>
+     <p style="margin:0">Я осматривал содержимое одной из сумок… носимых мужчинами на перевязи через левое плечо. Кроме двух больших донганов (ножей), тут были кости, отточенные на одном конце, служившие как рычаг или нож, и нашлись четыре заострённые кости, очевидно, инструменты, способные заменить ланцет, иглу или шило. Затем обнаружил раковину… имевшую зубчатый нижний край и служившую у туземцев для выскрёбывания кокосов. Был также удлинённый кусок скорлупы молодого кокосового ореха, заменявший ложку… Был принесён кусок старого бамбука, каменным топором обрублены оба конца и затем расколоты на тонкие длинные пластинки, которые, будучи согреты в угольях, получили такую твёрдость, что ими можно было резать не только мягкое таро и ямс (растения наподобие картофеля), но также мясо и даже волосы…</p>
+    </div>
+    <div class="revbtns" style="margin-top:12px">
+      <button class="revbtn" data-rev="src1" aria-expanded="false">Вопросы к тексту</button>
+    </div>
+    <div class="rev hint" id="src1" hidden><b>1.</b> Какие орудия труда папуасов напоминали орудия труда первобытных людей?<br><b>2.</b> С помощью дополнительной литературы выясните, в каких условиях живут папуасы Новой Гвинеи в наше время.</div>
+   </div>
+
+   <div class="qbox" style="margin-top:22px">
+     <span class="qm">?</span>
+     <div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — что помогло древнему человеку выжить в трудных природных условиях? Приведи два-три довода.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+   <p style="color:var(--soft);font-size:17px">Сначала вспомни слова: нажми на карточку и проверь, та ли картинка была у тебя в голове.</p>
+  </div>
+
+  <div class="cards">
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Присваивающее хозяйство</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 320 152" aria-hidden="true"><use href="#i-brat"/></svg>
+     <span class="ftext">Взял готовое у природы. Выращивать ещё не умели.</span></span></button></div>
+
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Собирательство</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 240 150" aria-hidden="true"><use href="#i-sbor"/></svg>
+     <span class="ftext">Ягоды, грибы, орехи, коренья — всё, что уже выросло само.</span></span></button></div>
+
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Рубило</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 220 158" aria-hidden="true"><use href="#i-rubilo"/></svg>
+     <span class="ftext">Камень с острым краем прямо в кулаке. Первый нож.</span></span></button></div>
+
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Копьеметалка</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 330 176" aria-hidden="true"><use href="#i-kopmet"/></svg>
+     <span class="ftext">Палка-рычаг. Рука как будто длиннее — копьё летит дальше.</span></span></button></div>
+
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Гарпун</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 240 150" aria-hidden="true"><use href="#i-garpun"/></svg>
+     <span class="ftext">Зубцы назад: заходит легко, обратно — никак.</span></span></button></div>
+
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Очаг</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 330 152" aria-hidden="true"><use href="#i-dom"/></svg>
+     <span class="ftext">Огонь в кольце камней внутри жилища.</span></span></button></div>
+
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Род и племя</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 330 178" aria-hidden="true"><use href="#i-rod"/></svg>
+     <span class="ftext">Род — родственники. Племя — несколько родов вместе.</span></span></button></div>
+
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Вождь</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 330 176" aria-hidden="true"><use href="#i-star"/></svg>
+     <span class="ftext">Старейшина одного рода, который стал главным во всём племени.</span></span></button></div>
+  </div>
+
+  <div class="col" id="quiz">
+   <h3 style="font-size:20px;margin:28px 0 14px">Шесть вопросов</h3>
+
+   <div class="q"><h3>1. Что значит «присваивающее хозяйство»?</h3><div class="opts">
+     <button class="opt">Люди сами выращивали еду</button>
+     <button class="opt" data-ok="1">Люди брали готовое у природы</button>
+     <button class="opt">Люди меняли еду на шкуры</button></div>
+     <div class="fb">«Присвоил» — взял себе то, что природа уже сделала: ягоду, рыбу, зверя.</div></div>
+
+   <div class="q"><h3>2. Зачем нужна копьеметалка?</h3><div class="opts">
+     <button class="opt" data-ok="1">Чтобы копьё летело дальше</button>
+     <button class="opt">Чтобы копьё было острее</button>
+     <button class="opt">Чтобы нести сразу много копий</button></div>
+     <div class="fb">Это рычаг: рука как будто стала длиннее, и к зверю можно не подходить.</div></div>
+
+   <div class="q"><h3>3. Почему рыба не срывается с гарпуна?</h3><div class="opts">
+     <button class="opt">Он очень тяжёлый</button>
+     <button class="opt">Он смазан жиром</button>
+     <button class="opt" data-ok="1">У него зубцы смотрят назад</button></div>
+     <div class="fb">Внутрь заходит легко, а обратно зубцы не пускают.</div></div>
+
+   <div class="q"><h3>4. Что такое род?</h3><div class="opts">
+     <button class="opt">Несколько племён вместе</button>
+     <button class="opt" data-ok="1">Родственники, у которых общие предки</button>
+     <button class="opt">Все, кто живёт в одной пещере</button></div>
+     <div class="fb">Род — это кровные родственники. А несколько родов вместе — уже племя.</div></div>
+
+   <div class="q"><h3>5. Кто был вождём племени?</h3><div class="opts">
+     <button class="opt">Самый сильный охотник</button>
+     <button class="opt">Самый старый человек</button>
+     <button class="opt" data-ok="1">Старейшина одного из родов племени</button></div>
+     <div class="fb">Вождём становился старейшина одного из родов, входивших в племя.</div></div>
+
+   <div class="q"><h3>6. Чего огонь НЕ делал для древнего человека?</h3><div class="opts">
+     <button class="opt">Грел холодными ночами</button>
+     <button class="opt">Отпугивал диких зверей</button>
+     <button class="opt" data-ok="1">Помогал выращивать урожай</button></div>
+     <div class="fb">Урожай ещё не выращивали — хозяйство было присваивающим. Огонь готовил еду, грел, отгонял зверей и светил.</div></div>
+
+   <div class="score" id="score">Отвечено: 0 из 6</div>
+  </div>
+ </div>
+</section>
+
+<section id="s7">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+   <div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+
+      <div class="think">
+    <h3>Чем занимались первобытные люди</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p1" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p1" hidden><ol><li>Хозяйство было присваивающим — брали то, что дала природа.</li><li>Собирательство и охота: что собирали, как охотились и почему вместе.</li><li>Орудия труда и охоты: рубило, дубина, рогатина — из камня и дерева.</li></ol></div>
+   </div>
+   <div class="think">
+    <h3>Огонь в жизни древнего человека</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p2" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p2" hidden><ol><li>Четыре дела огня: еда, тепло, защита от зверей, свет.</li><li>Сначала огонь не добывали, а брали от загоревшегося дерева и берегли — в пещере под Пекином слой золы 6 метров.</li><li>Потом научились сами: трением и высеканием искр, а ещё переносить огонь с собой.</li></ol></div>
+   </div>
+   <div class="think">
+    <h3>Как жили в ледниковый период</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p3" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p3" hidden><ol><li>Начался 70 тысяч лет назад, климат стал суровым, появились мамонты, шерстистые носороги, бизоны, олени.</li><li>Охота стала главным занятием: копья, дротики, гарпуны, копьеметалка — чтобы бить издалека.</li><li>Жильё и одежда: гроты и пещеры, потом дом из костей и шкур с очагом; иглы из мелких костей.</li></ol></div>
+   </div>
+   <div class="think">
+    <h3>Род и племя</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p4" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p4" hidden><ol><li>Праобщина — самые первые сообщества; род, или родовая община, — кровные родственники с общими предками.</li><li>Хозяйство общее, добычу делили на всех; на общем сходе выбирали старейшину — самого опытного.</li><li>Несколько родов — племя: общая территория, язык, обычаи; во главе совет старейшин и вождь.</li></ol></div>
+   </div>
+   <div class="think">
+    <h3>Почему люди относятся к разным расам</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p5" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p5" hidden><ol><li>Человек приспосабливался к климату — от этого менялся внешний облик.</li><li>Раса — большая группа людей с общими признаками: цвет кожи, разрез глаз, вид волос.</li><li>Раньше выделяли три расы, сейчас четыре; все расы равны, ни одна не превосходит другую.</li></ol></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p1.html">‹ §1 Древнейшие люди</a>
+  <span class="pn cur">§2 Первобытные охотники</span>
+  <a class="pn" href="p3.html">§3 Верования и искусство ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 2 · История, 5 класс · страницы 19—22</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+var VB={'i-brat':'0 0 320 152','i-sbor':'0 0 240 150','i-lenta':'0 0 330 126','i-rubilo':'0 0 220 158',
+'i-zagon':'0 0 330 150','i-instr':'0 0 330 140','i-ogon4':'0 0 330 150','i-dobycha':'0 0 330 150',
+'i-zola':'0 0 230 172','i-lednik':'0 0 330 156','i-zveri':'0 0 330 140','i-oruzhie':'0 0 330 140',
+'i-kopmet':'0 0 330 176','i-garpun':'0 0 240 150','i-igla':'0 0 240 150','i-bivni':'0 0 330 150',
+'i-grot':'0 0 330 152','i-dom':'0 0 330 152','i-rod':'0 0 330 178','i-star':'0 0 330 176',
+'i-solnce':'0 0 290 162'};
+
+var T={
+prisv:{w:'Присваивающее хозяйство',k:'тип хозяйства',s:'i-brat',t:'Человек ничего не выращивал. Он брал готовое: ягоду с куста, рыбу из реки, зверя из леса. «Присвоил» — значит взял себе то, что природа уже сделала.'},
+paleo:{w:'Палеолит и мезолит',k:'время',s:'i-lenta',t:'Палеолит — древний каменный век, он самый длинный. Мезолит — средний, короче. Потом будет неолит — новый.'},
+sbor:{w:'Собирательство',k:'занятие',s:'i-sbor',t:'Ходили и собирали то, что уже выросло: ягоды, грибы, орехи, коренья. Когда еда вокруг заканчивалась — уходили на новое место.'},
+lovushka:{w:'Ловушка и загон',k:'способ охоты',s:'i-zagon',t:'Яму накрывали ветками, а зверя пугали огнём и криком и гнали прямо на неё. Одному так не сделать — нужна вся группа.'},
+rubilo:{w:'Рубило',k:'орудие труда',s:'i-rubilo',t:'Кусок камня, оббитый с одного конца до острого края. Его держали прямо в кулаке — рукоятки ещё не придумали.'},
+rogatina:{w:'Рогатина',k:'орудие охоты',s:'i-instr',t:'Палка с развилкой на конце, похожей на рога. Её упирали в землю — зверь налетал на неё сам.'},
+ogon:{w:'Огонь',k:'открытие',s:'i-ogon4',t:'Огонь делал сразу четыре дела: готовил еду, грел ночью, отпугивал зверей и светил в тёмной пещере.'},
+dobycha:{w:'Как добывали огонь',k:'умение',s:'i-dobycha',t:'Трением — быстро крутили деревянную палочку. Высеканием — били камнем о камень, и искра падала на сухую траву.'},
+lednik:{w:'Ледниковый период',k:'время',s:'i-lednik',t:'Начался примерно 70 тысяч лет назад и кончился 15—10 тысяч лет назад. Стало холодно: одни звери исчезли, другие появились — в густой шерсти.'},
+kopmet:{w:'Копьеметалка',k:'орудие охоты',s:'i-kopmet',t:'Палка-рычаг, в которую вставляли копьё. Рука как будто становилась длиннее, копьё летело дальше — и к зверю можно было не подходить.'},
+garpun:{w:'Гарпун',k:'орудие охоты',s:'i-garpun',t:'Копьё с зубцами, направленными назад. Внутрь заходит легко, а обратно не выходит — поэтому им ловили рыбу.'},
+bivni:{w:'Бивни',k:'материал',s:'i-bivni',t:'Огромные изогнутые зубы мамонта. Из них делали орудия труда и каркас жилища, а из мелких костей — иглы.'},
+igla:{w:'Игла из кости',k:'орудие',s:'i-igla',t:'Маленькая косточка с дырочкой на конце. Ею сшивали шкуры — так получилась первая одежда.'},
+grot:{w:'Грот',k:'жилище',s:'i-grot',t:'Неглубокая ниша в скале, вроде навеса. Пещера, в отличие от грота, уходит далеко вглубь горы.'},
+karkas:{w:'Каркас',k:'часть дома',s:'i-dom',t:'Скелет дома. Его складывали из костей крупных животных, а сверху накрывали шкурами — получались стены и крыша.'},
+ochag:{w:'Очаг',k:'часть дома',s:'i-dom',t:'Место для огня внутри жилища, обложенное камнями, чтобы пламя не разбежалось.'},
+praob:{w:'Праобщина',k:'сообщество',s:null,t:'Самые первые группы древних людей — ещё до того, как появился род. «Пра-» значит «самый первый»: прабабушка, прадедушка, праобщина.'},
+rod:{w:'Род (родовая община)',k:'сообщество',s:'i-rod',t:'Родственники, у которых общие предки. Всё хозяйство общее, и добычу делили на всех.'},
+plemya:{w:'Племя',k:'сообщество',s:'i-rod',t:'Несколько родов вместе. У племени общая земля, язык и обычаи, а управлял им совет старейшин.'},
+star:{w:'Старейшина',k:'человек',s:'i-star',t:'Самый опытный взрослый в роду. Его выбирали на общем сходе — то есть когда собирались все взрослые рода.'},
+vozhd:{w:'Вождь',k:'человек',s:'i-star',t:'Главный во всём племени. Им становился старейшина одного из родов, входивших в племя.'},
+rasa:{w:'Раса',k:'группа людей',p:'rasy',t:'Большая группа людей с общими внешними признаками: цвет кожи, разрез глаз, вид волос. Все расы равны между собой.'},
+antro:{w:'Антропология',k:'наука',s:null,t:'Наука о человеке: как он появился, как менялся и почему люди в разных местах Земли выглядят по-разному.'},
+genom:{w:'Геном',k:'наука',s:null,t:'Это как инструкция внутри каждой клетки. В ней записано, каким будет живое существо. Учёные научились эту инструкцию читать.'}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+/* --- версия текста --- */
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p2:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p2:mode')})==='book')setMode(false);
+
+/* --- карточка слова --- */
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic');
+  pic.innerHTML=d.s?'<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>':'';
+  lastFocus=document.activeElement;
+  sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+/* --- карточки-угадайки --- */
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+/* --- тест --- */
+var answered=0,right=0,score=document.getElementById('score');
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      var ok=o.dataset.ok==='1';if(ok)right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<6?('Отвечено: '+answered+' из 6 · правильных '+right)
+        :(right===6?'Все шесть — верно! 🎉':'Правильных: '+right+' из 6');
+    });
+  });
+});
+
+/* --- раскрытие подсказок и ответов --- */
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+/* --- прочитано --- */
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p2:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p2:read_'+id,on?'1':'0')});
+  });
+});
+</script>
+
+</body>
+</html>

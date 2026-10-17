@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 10: иероглифы и Шампольон, школа при храме, меры и календарь, пирамида Хеопса.">
+<title>Наука и искусство в Древнем Египте</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="n-rozetta" viewBox="0 0 500 250">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК ШАМПОЛЬОН ПРОЧИТАЛ ИЕРОГЛИФЫ</text>
+  <path d="M12 60 q66 -30 132 0 V194 H12 Z" fill="var(--stone)"/>
+  <g stroke="var(--illink)" stroke-width="2" opacity=".55">
+    <path d="M26 78 h104 M26 90 h104 M26 102 h88"/>
+    <path d="M26 124 h104 M26 136 h104 M26 148 h72"/>
+    <path d="M26 170 h104 M26 182 h56"/>
+  </g>
+  <text x="26" y="72" font-size="9.5" font-weight="700" fill="var(--illink)">ИЕРОГЛИФЫ</text>
+  <text x="26" y="118" font-size="9.5" font-weight="700" fill="var(--illink)">ИЕРОГЛИФЫ</text>
+  <text x="26" y="164" font-size="9.5" font-weight="700" fill="var(--red)">ГРЕЧЕСКИЕ БУКВЫ</text>
+  <circle cx="172" cy="48" r="11" fill="var(--ice)"/><text x="172" y="53" text-anchor="middle" font-size="12" font-weight="700" fill="#F2FAFF">1</text>
+  <text x="192" y="46" font-size="12" font-weight="700" fill="var(--illink)">Греческую часть прочитали</text>
+  <text x="192" y="62" font-size="10.5" fill="var(--soft)">в ней имена царя Птолемея и царицы Клеопатры</text>
+  <circle cx="172" cy="92" r="11" fill="var(--ice)"/><text x="172" y="97" text-anchor="middle" font-size="12" font-weight="700" fill="#F2FAFF">2</text>
+  <text x="192" y="90" font-size="12" font-weight="700" fill="var(--illink)">Догадка</text>
+  <text x="192" y="106" font-size="10.5" fill="var(--soft)">почитаемые имена в иероглифах выделены овалом</text>
+  <circle cx="172" cy="136" r="11" fill="var(--moss)"/><text x="172" y="141" text-anchor="middle" font-size="12" font-weight="700" fill="#FFF3E2">3</text>
+  <text x="192" y="134" font-size="12" font-weight="700" fill="var(--illink)">Догадка оказалась верной</text>
+  <text x="192" y="150" font-size="10.5" fill="var(--soft)">первые знаки древнеегипетского письма прочитаны</text>
+  <circle cx="172" cy="180" r="11" fill="var(--moss)"/><text x="172" y="185" text-anchor="middle" font-size="12" font-weight="700" fill="#FFF3E2">4</text>
+  <text x="192" y="178" font-size="12" font-weight="700" fill="var(--illink)">Потом — вся письменность</text>
+  <text x="192" y="194" font-size="10.5" fill="var(--soft)">Египет заговорил спустя тысячи лет молчания</text>
+  <text x="8" y="226" font-size="12" font-weight="700" fill="var(--moss)">Египтяне называли своё письмо «словами бога». Оно было трудным —</text>
+  <text x="8" y="240" font-size="12" font-weight="700" fill="var(--moss)">и со временем его забыли совсем.</text>
+</symbol>
+
+<symbol id="n-shkola" viewBox="0 0 500 236">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ШКОЛА В ДРЕВНЕМ ЕГИПТЕ</text>
+  <rect x="8" y="28" width="476" height="140" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="52" font-size="11.5" font-weight="700" fill="var(--illink)">Где</text>
+  <text x="140" y="52" font-size="11.5" fill="var(--illink)">при храмах</text>
+  <text x="22" y="78" font-size="11.5" font-weight="700" fill="var(--illink)">Кто учил</text>
+  <text x="140" y="78" font-size="11.5" fill="var(--illink)">жрецы</text>
+  <text x="22" y="104" font-size="11.5" font-weight="700" fill="var(--illink)">Кто учился</text>
+  <text x="140" y="104" font-size="11.5" fill="var(--illink)">только мальчики</text>
+  <text x="22" y="130" font-size="11.5" font-weight="700" fill="var(--illink)">Что изучали</text>
+  <text x="140" y="130" font-size="11.5" fill="var(--illink)">астрономию, математику, географию, историю, медицину</text>
+  <text x="22" y="156" font-size="11.5" font-weight="700" fill="var(--illink)">На чём писали</text>
+  <text x="140" y="156" font-size="11.5" fill="var(--illink)">сначала на пластинках известняка, потом на папирусе</text>
+  <text x="8" y="196" font-size="12" font-weight="700" fill="var(--moss)">Иероглифов было несколько сотен, и все их надо было выучить.</text>
+  <text x="8" y="214" font-size="11.5" fill="var(--illink)">Лентяев наказывали палками. Окончивших школу было немного —</text>
+  <text x="8" y="228" font-size="11.5" fill="var(--illink)">их считали образованными людьми.</text>
+</symbol>
+
+<symbol id="n-mery" viewBox="0 0 490 196">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЕГИПЕТСКИЕ МЕРЫ ДЛИНЫ</text>
+  <text x="8" y="46" font-size="12" font-weight="700" fill="var(--illink)">ПАЛЕЦ</text>
+  <rect x="110" y="34" width="8" height="16" rx="2" fill="var(--brown)"/>
+  <text x="8" y="82" font-size="12" font-weight="700" fill="var(--illink)">ЛАДОНЬ</text>
+  <rect x="110" y="70" width="32" height="16" rx="2" fill="var(--ochre)"/>
+  <text x="156" y="82" font-size="11" fill="var(--soft)">= 4 пальца</text>
+  <text x="8" y="118" font-size="12" font-weight="700" fill="var(--illink)">ЛОКОТЬ</text>
+  <rect x="110" y="106" width="224" height="16" rx="2" fill="var(--moss)"/>
+  <text x="346" y="118" font-size="11" fill="var(--soft)">= 7 ладоней = 28 пальцев</text>
+  <text x="8" y="156" font-size="12" font-weight="700" fill="var(--moss)">Локоть — это расстояние от сгиба руки до кончиков пальцев.</text>
+  <text x="8" y="182" font-size="11.5" fill="var(--illink)">Мерили ступнёй, ладонью, пальцем — всё прямо с человека.</text>
+</symbol>
+
+<symbol id="n-kalendar" viewBox="0 0 500 218">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАЛЕНДАРЬ ПО УЧЕБНИКУ</text>
+  <g fill="var(--ice)">
+    <rect x="16" y="34" width="34" height="34" rx="5"/><rect x="56" y="34" width="34" height="34" rx="5"/>
+    <rect x="96" y="34" width="34" height="34" rx="5"/><rect x="136" y="34" width="34" height="34" rx="5"/>
+    <rect x="176" y="34" width="34" height="34" rx="5"/><rect x="216" y="34" width="34" height="34" rx="5"/>
+    <rect x="256" y="34" width="34" height="34" rx="5"/><rect x="296" y="34" width="34" height="34" rx="5"/>
+    <rect x="336" y="34" width="34" height="34" rx="5"/><rect x="376" y="34" width="34" height="34" rx="5"/>
+  </g>
+  <rect x="420" y="34" width="62" height="34" rx="5" fill="var(--ochre)"/>
+  <text x="451" y="56" text-anchor="middle" font-size="11" font-weight="700" fill="#22190A">+5 дней</text>
+  <text x="16" y="88" font-size="11.5" fill="var(--illink)">10 месяцев по 30 дней</text>
+  <text x="420" y="88" font-size="11.5" fill="var(--illink)">праздники</text>
+  <text x="8" y="122" font-size="13" font-weight="700" fill="var(--red)">10 × 30 + 5 = 305 дней. А в году 365.</text>
+  <text x="8" y="148" font-size="11.5" fill="var(--illink)">Похоже, в учебнике опечатка: на самом деле у египтян было</text>
+  <text x="8" y="164" font-size="11.5" fill="var(--illink)">12 месяцев по 30 дней и 5 праздничных — ровно 365.</text>
+  <text x="8" y="196" font-size="12" font-weight="700" fill="var(--moss)">Годы отсчитывали заново — с того дня, как на престол вступал</text>
+  <text x="8" y="210" font-size="12" font-weight="700" fill="var(--moss)">новый фараон.</text>
+</symbol>
+
+<symbol id="n-serdce" viewBox="0 0 470 196">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧЕМ, ПО МНЕНИЮ ЕГИПТЯН, ДУМАЕТ ЧЕЛОВЕК</text>
+  <rect x="8" y="30" width="216" height="110" rx="10" fill="var(--paper2)"/>
+  <path d="M60 66 q-22 0 -22 18 q0 18 22 18 q10 10 26 0 q22 0 22 -18 q0 -18 -22 -18 q-12 -10 -26 0 Z" fill="var(--stone)"/>
+  <path d="M52 84 h60 M60 74 h44 M60 94 h44" stroke="var(--soft)" stroke-width="1.5" fill="none"/>
+  <text x="140" y="80" font-size="12.5" font-weight="700" fill="var(--soft)">МОЗГ</text>
+  <text x="140" y="98" font-size="10.5" fill="var(--soft)">ему не придавали</text>
+  <text x="140" y="112" font-size="10.5" fill="var(--soft)">никакого значения</text>
+  <rect x="238" y="30" width="224" height="110" rx="10" fill="var(--paper2)"/>
+  <path d="M292 108 C268 88 273 62 292 76 C311 62 316 88 292 108 Z" fill="var(--red)"/>
+  <text x="336" y="72" font-size="12.5" font-weight="700" fill="var(--red)">СЕРДЦЕ</text>
+  <text x="336" y="90" font-size="10.5" fill="var(--illink)">главный орган: отвечает</text>
+  <text x="336" y="104" font-size="10.5" fill="var(--illink)">за жизнь и поступки</text>
+  <text x="336" y="122" font-size="10.5" fill="var(--illink)">им человек и думает</text>
+  <text x="8" y="172" font-size="12" font-weight="700" fill="var(--moss)">Вот почему на суде Осириса взвешивали именно сердце —</text>
+  <text x="8" y="188" font-size="12" font-weight="700" fill="var(--moss)">в нём, считали египтяне, все поступки человека.</text>
+</symbol>
+
+<symbol id="n-pravila" viewBox="0 0 530 220">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПО КАКИМ ПРАВИЛАМ ЛЕПИЛИ И РИСОВАЛИ</text>
+  <circle cx="22" cy="46" r="9" fill="var(--ochre)"/>
+  <text x="42" y="44" font-size="12" font-weight="700" fill="var(--illink)">Цвет кожи</text>
+  <text x="42" y="60" font-size="10.5" fill="var(--soft)">мужчин изображали темнее, чем женщин</text>
+  <circle cx="22" cy="90" r="9" fill="var(--ochre)"/>
+  <text x="42" y="88" font-size="12" font-weight="700" fill="var(--illink)">Поза</text>
+  <text x="42" y="104" font-size="10.5" fill="var(--soft)">у сидящего человека руки лежат на коленях</text>
+  <circle cx="22" cy="134" r="9" fill="var(--ochre)"/>
+  <text x="42" y="132" font-size="12" font-weight="700" fill="var(--illink)">Предмет в руке</text>
+  <text x="42" y="148" font-size="10.5" fill="var(--soft)">символ профессии: оружие, свиток, посох, корзина</text>
+  <circle cx="22" cy="178" r="9" fill="var(--red)"/>
+  <text x="42" y="176" font-size="12" font-weight="700" fill="var(--illink)">Размер</text>
+  <text x="42" y="192" font-size="10.5" fill="var(--soft)">фараона делали намного крупнее остальных и с символами власти</text>
+  <text x="8" y="214" font-size="11.5" font-weight="700" fill="var(--moss)">Это не прихоть художника: по таким фигурам статую можно читать, как надпись.</text>
+</symbol>
+
+<symbol id="n-heops" viewBox="0 0 530 252">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПИРАМИДА ХЕОПСА В ЧИСЛАХ</text>
+  <polygon points="98,44 176,186 20,186" fill="var(--ochre)"/>
+  <path d="M188 44 V186" stroke="var(--illink)" stroke-width="2" fill="none"/>
+  <path d="M184 48 L188 40 L192 48 M184 182 L188 190 L192 182" stroke="var(--illink)" stroke-width="2" fill="none"/>
+  <text x="200" y="118" font-size="14" font-weight="700" fill="var(--illink)">147 м</text>
+  <circle cx="268" cy="52" r="7" fill="var(--red)"/>
+  <text x="286" y="56" font-size="11.5" fill="var(--illink)">фараон Хуфу — греки звали его Хеопсом</text>
+  <circle cx="268" cy="86" r="7" fill="var(--red)"/>
+  <text x="286" y="90" font-size="11.5" fill="var(--illink)">одно из семи чудес света</text>
+  <circle cx="268" cy="120" r="7" fill="var(--red)"/>
+  <text x="286" y="124" font-size="11.5" fill="var(--illink)">каменные блоки от 2 до 30 тонн</text>
+  <circle cx="268" cy="154" r="7" fill="var(--red)"/>
+  <text x="286" y="158" font-size="11.5" fill="var(--illink)">строили около 30 лет, тысячи человек</text>
+  <text x="8" y="214" font-size="12" font-weight="700" fill="var(--moss)">А Геродот писал: 20 лет и 100 тысяч человек.</text>
+  <text x="8" y="232" font-size="11.5" fill="var(--illink)">Современные исследователи считают, что эта цифра завышена, —</text>
+  <text x="8" y="246" font-size="11.5" fill="var(--illink)">вот и получается, что даже древним свидетелям верят не на слово.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 10</span>
+    <h1>Наука и искусство в Древнем Египте</h1>
+    <p class="lede">Как прочитали иероглифы, чему учили в школе при храме и из чего сложена пирамида Хеопса. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Что свидетельствовало о высоком уровне развития науки и искусства в Древнем Египте?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p9.html">‹ §9 Религия Египта</a>
+  <span class="pn cur">§10 Наука и искусство</span>
+  <a class="pn" href="p11.html">§11 Междуречье ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Тайна иероглифов">1</a><a href="#s2" data-j="s2" title="Образование">2</a><a href="#s3" data-j="s3" title="Научные знания">3</a><a href="#s4" data-j="s4" title="Искусство">4</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-ieroglify" src="img/59c7ad50daf1.jpg" alt="Каменная стена, покрытая рядами вырезанных иероглифов — фигурками птиц, людей, предметов"><figcaption><span class="src">из учебника</span><b>Иероглифы на стене храма.</b> Слово «иероглиф» происходит от греческих слов «священный» и «то, что вырезано». Иероглифы образуют системы словесно-слогового письма.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Тайна иероглифов</h2></div>
+<div class="easy">
+<p>На стенах пирамид и других гробниц, на листах папируса сохранились таинственные знаки древнеегипетской письменности — <button class="term" data-t="ieroglif">иероглифы</button>.</p>
+<p>Сами египтяне называли это письмо <button class="term" data-t="slovaboga">«словами бога»</button>. Оно было трудным, и со временем его забыли.</p>
+<p>Расшифровка иероглифов связана с именем французского учёного <button class="term" data-t="shampolion">Франсуа Шампольона</button> (1790—1832), одного из основателей <button class="term" data-t="egiptolog">египтологии</button>. Он начал изучать <button class="term" data-t="rozetta">Розеттский камень</button> — стелу с древнеегипетскими и древнегреческими письменами.</p>
+<p>Две надписи на камне были сделаны иероглифами, а третья — греческими буквами. В греческой надписи упоминались имена царя Птолемея и царицы Клеопатры.</p>
+<p>Шампольон предположил, что в иероглифическом тексте эти имена, как особо почитаемые, выделены овалом. Догадка оказалась правильной. Так у учёного появились первые расшифрованные знаки, а позже письменность была прочитана целиком.</p>
+<p>Труды Шампольона нашли отклик и в России: его систему изложили в брошюре «О египетских письменах», изданной в Санкт-Петербурге в 1824 году.</p>
+</div>
+<div class="book" hidden>
+<p>На стенах пирамид и других гробниц, на листах папируса сохранились таинственные знаки древнеегипетской письменности — иероглифы. Это письмо в Древнем Египте называли «словами бога». Оно было трудным, и со временем его забыли.</p>
+<p>Расшифровка иероглифов связана с именем французского учёного Франсуа Шампольона (1790—1832). Он начал изучать Розеттский камень — стелу с древнеегипетскими и древнегреческими письменами.</p>
+<p>Две надписи на камне были сделаны египетскими иероглифами, а третья — греческими буквами. В греческой надписи упоминались имена царя Птолемея и царицы Клеопатры. Шампольон предположил, что в иероглифическом тексте эти имена, как особо почитаемые, выделены овалом. Это была правильная догадка. Так в распоряжении учёного оказались первые расшифрованные знаки древнеегипетской письменности, а позднее она была расшифрована целиком.</p>
+<p>Труды Шампольона нашли положительный отклик в России. Его система была изложена в брошюре «О египетских письменах», изданной в Санкт-Петербурге в 1824 году.</p>
+</div>
+</div>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-shampolion" src="img/10502eb63fd2.jpg" alt="Портрет молодого человека в тёмном сюртуке с высоким воротником — французского учёного Франсуа Шампольона" style="max-width:240px"><figcaption><span class="src">из учебника</span><b>Франсуа Шампольон (1790—1832)</b> — один из основателей египтологии, науки о языке, письменности, истории и культуре Древнего Египта.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-rozetta" src="img/d0cfd20ceae2.jpg" alt="Чёрная каменная плита со сколотым верхом, покрытая мелкими строками надписей" style="max-width:280px"><figcaption><span class="src">из учебника</span><b>Розеттский камень.</b> Две надписи на нём сделаны египетскими иероглифами, а третья — греческими буквами. В греческой части упоминались имена царя Птолемея и царицы Клеопатры.</figcaption></div></figure>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 500 250" role="img" aria-label="Слева каменная стела, разделённая на три части: иероглифы, иероглифы и греческие буквы. Справа четыре пронумерованных шага: прочитали греческую часть с именами Птолемея и Клеопатры; догадка, что имена в иероглифах выделены овалом; догадка оказалась верной, первые знаки прочитаны; потом прочитали всю письменность."><use href="#n-rozetta"/></svg><figcaption><b>Ключ был в именах.</b> Шампольон искал не любые слова, а имена царей: их и в греческой части легко узнать, и в иероглифах они помечены особо.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Каким образом была расшифрована древнеегипетская письменность?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Письменность придумали сами египтяне. Почему же потом её пришлось расшифровывать заново?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Где искать: второй абзац раздела 1.</div>
+<div class="rev ans" id="a1" hidden>Потому что письмо было очень трудным — несколько сотен знаков — и со временем его просто забыли. Люди в Египте остались, а умение читать «слова бога» исчезло вместе с теми, кто ему учился.</div>
+</div>
+<div class="think">
+<p class="qt">2. Чем именно помогла Шампольону греческая часть надписи?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Где искать: четвёртый и пятый абзацы раздела 1 и схема со стелой.</div>
+<div class="rev ans" id="a2" hidden>Греческие буквы он читать умел. Значит, он знал, что написано на камне, — оставалось понять, какими знаками то же самое записано иероглифами. Две надписи об одном и том же: одна понятная, другая нет.</div>
+</div>
+<div class="think">
+<p class="qt">3. Почему Шампольон начал именно с имён, а не с обычных слов?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Где искать: пятый абзац раздела 1.</div>
+<div class="rev ans" id="a3" hidden>Потому что имена царей в иероглифах выделяли овалом — как особо почитаемые. Их легко было найти на глаз, даже не умея читать. А зная, что внутри овала стоит «Клеопатра», можно было понять, какой знак какому звуку соответствует.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Образование</h2></div>
+<div class="easy">
+<p>Школы в Древнем Египте находились при храмах, а учителями были жрецы. Посещали школы только мальчики.</p>
+<p>Изучали астрономию, математику, географию, историю и медицину. Писать иероглифы учились на полированных пластинках известняка, разграфлённых в линейку или в клетку. Иероглифов было несколько сотен: они изображали людей и их действия, животных, растения, предметы.</p>
+<p>На <button class="term" data-t="papirus">папирусе</button> начинали писать только на старшей ступени обучения — заострёнными тростниковыми палочками и разведёнными чернильными порошками разных цветов. На папирусе переписывали целые произведения.</p>
+<p>Порядки были строгими. Вот наставление ученику: «Вставай на своё место! Книги уже лежат перед твоими товарищами. Читай прилежно. Не проводи дни праздно, иначе горе твоему телу! Пиши своей рукой, читай своим ртом, спрашивай совета того, кто знает больше тебя». Лентяев наказывали палками.</p>
+<p>Окончивших школу считали образованными людьми — и таких в Египте было немного.</p>
+</div>
+<div class="book" hidden>
+<p>Школы в Древнем Египте находились при храмах, а учителями были жрецы. Посещали школы только мальчики. Они изучали астрономию, математику, географию, историю и медицину. На полированных пластинках известняка, разграфлённых в линейку или в клетку, мальчики учились писать иероглифы, которых насчитывалось несколько сотен. Иероглифы изображали людей и их действия, животных, растения, предметы.</p>
+<p>Писать на папирусе начинали на старшей ступени обучения и делали это заострёнными тростниковыми палочками и разведёнными чернильными порошками разных цветов. На папирусе учащиеся переписывали целые произведения.</p>
+<p>Порядки в школах были строгими. Наставление ученику предписывало: «Вставай на своё место! Книги уже лежат перед твоими товарищами. Читай прилежно. Не проводи дни праздно, иначе горе твоему телу! Пиши своей рукой, читай своим ртом, спрашивай совета того, кто знает больше тебя». Лентяев наказывали палками.</p>
+<p>Окончившие школу считались образованными людьми, и таких в Древнем Египте было немного.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 500 236" role="img" aria-label="Таблица: где — при храмах; кто учил — жрецы; кто учился — только мальчики; что изучали — астрономию, математику, географию, историю, медицину; на чём писали — сначала на пластинках известняка, потом на папирусе."><use href="#n-shkola"/></svg><figcaption><b>Вся египетская школа на одной карточке.</b> Обрати внимание на строчку «кто учился»: половина страны в школу вообще не ходила.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какую должность мог получить человек, окончивший школу? Объясни свой ответ.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Школы были при храмах, а учили в них жрецы. Вспомни §6—7: почему именно они, а не, скажем, вельможи?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Про жрецов — §6—7, раздел 3.</div>
+<div class="rev ans" id="a4" hidden>Жрецы владели знаниями: астрономией, счётом, они предсказывали разлив Нила, составляли календари. Знания и письменность держались у них — значит, и учить могли только они. А вельможи управляли, а не учили.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему сначала писали на пластинках известняка и лишь потом переходили на папирус?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Где искать: второй и третий абзацы раздела 2. Подумай, чего стоил папирус.</div>
+<div class="rev ans" id="a5" hidden>Известняковую пластинку можно отполировать и писать на ней заново, а папирус делали долго и трудно (вспомни §5) — переводить его на ученические каракули было жалко. Поэтому на папирус пускали только тех, кто уже научился.</div>
+</div>
+<div class="think">
+<p class="qt">6. Почему образованных людей в Египте было немного, хотя школы существовали?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Соедини первый и последний абзацы раздела 2.</div>
+<div class="rev ans" id="a6" hidden>В школу брали только мальчиков — сразу половина страны отпадала. Учиться надо было долго: несколько сотен иероглифов плюс науки, и порядки строгие. Дойти до конца получалось у немногих — поэтому окончивших и считали образованными.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-svitok" src="img/4066e528d7b0.jpg" alt="Длинная узкая полоса папируса, исписанная рядами египетских знаков"><figcaption><span class="src">из учебника</span><b>Фрагмент «Московского математического свитка».</b> Государственный музей изобразительных искусств имени А. С. Пушкина в Москве. Это древнейший из известных в мире математических текстов: середина XIX (19) века до н. э., папирус длиной больше 5 метров и шириной от 4 до 7 сантиметров. В нём 25 математических задач.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Научные знания</h2></div>
+<div class="easy">
+<p>Для строительства пирамид и каналов нужна была математика. Она служила чисто практическим целям: строитель рассчитывал, сколько кирпичей уйдёт на дом, сборщик налогов — сколько зерна должен сдать земледелец, жрец — когда праздновать религиозные праздники.</p>
+<p>Единицами длины служили части человеческого тела: палец, ладонь, ступня и <button class="term" data-t="lokot">локоть</button>. Четыре пальца составляли ладонь, семь ладоней — локоть, то есть расстояние от сгиба руки до кончиков пальцев.</p>
+<p>Был у египтян и <button class="term" data-t="kalendar">календарь</button>, похожий на современный. Год делился на 10 месяцев по 30 дней, а в конце года добавлялись 5 праздничных дней. Годы отсчитывали с момента вступления на престол очередного фараона.</p>
+<p>Строение человеческого тела египтяне знали хорошо, но деятельности мозга значения не придавали. Думать, по их мнению, человек умеет сердцем: это главный орган, отвечающий за жизнь и поступки. <b>Не случайно именно сердце взвешивали на весах на суде Осириса.</b></p>
+<p>Медицину описывают многие папирусы. У врачей была строгая специализация: одни занимались носами, другие ушами, третьи ногами; были зубные врачи и настоящие хирурги. Рецептов в текстах множество, и разобраться в них трудно даже специалистам — медицина была тесно связана с магией.</p>
+<p>Болезни делили на три степени: 1. Те, которые я буду лечить. 2. Те, с которыми я буду бороться. 3. Не поддающиеся лечению.</p>
+<p>Большую роль в развитии медицины сыграл обряд бальзамирования: он помогал изучить строение человеческого тела и внутренних органов.</p>
+</div>
+<div class="book" hidden>
+<p>Для строительства пирамид и каналов были необходимы познания в области математики. Математика служила чисто практическим целям. Строитель рассчитывал, сколько кирпичей пойдёт на сооружение дома, сборщик налогов — сколько зерна должен сдать земледелец. Жрец производил расчёты, связанные с религиозными праздниками.</p>
+<p>В качестве единиц измерения длины египтяне использовали части человеческого тела: палец, ладонь, ступню и локоть. Четыре пальца составляли ладонь. Семь ладоней равнялись одному локтю — расстояние от сгиба руки до кончиков пальцев.</p>
+<p>У египтян существовал календарь, напоминающий современный. Год делился на 10 месяцев, по 30 дней в каждом. В конце года добавлялись 5 праздничных дней. Годы отсчитывали с момента вступления на престол очередного фараона.</p>
+<p>Хорошо зная строение человеческого тела, египтяне тем не менее не придавали значения деятельности мозга. Весь мыслительный процесс приписывался сердцу. Это был, по мнению египтян, главный орган, отвечающий за жизнь и поступки человека. Не случайно именно сердце взвешивали на весах на суде Осириса.</p>
+<p>Подробное описание медицинских опытов поведали многочисленные папирусы. Существовала строгая специализация. Были врачи, которые занимались носами, ушами, ногами. Были врачи, которые лечили зубы, а были и настоящие хирурги. При большом количестве рецептов, встречающихся в текстах, часто даже специалистам трудно разобраться в них, поскольку медицина, как никакая другая наука, была связана с магией. Заболевания классифицировались по трём степеням сложности: 1. Заболевания, которые я буду лечить. 2. Заболевания, с которыми я буду бороться. 3. Заболевание, не поддающееся лечению.</p>
+<p>Большую роль в развитии медицинских знаний сыграл обряд бальзамирования (сохранения тела на длительный срок), который помогал изучить строение человеческого тела и внутренних органов.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 490 196" role="img" aria-label="Три полоски разной длины: палец — короткая, ладонь — вчетверо длиннее, локоть — ещё в семь раз длиннее ладони. Подписи: ладонь равна четырём пальцам, локоть равен семи ладоням, то есть двадцати восьми пальцам."><use href="#n-mery"/></svg><figcaption><b>Приложи к своей руке.</b> Ладонь — четыре пальца в ширину, локоть — от сгиба руки до кончиков пальцев. Мерка всегда была при себе.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 500 218" role="img" aria-label="Десять голубых квадратиков — месяцы по 30 дней, и оранжевый квадратик «+5 дней» — праздники. Ниже подсчёт: 10 на 30 плюс 5 равно 305 дней, а в году 365."><use href="#n-kalendar"/></svg><figcaption><b>Здесь стоит быть внимательной.</b> В учебнике написано «10 месяцев» — так и отвечай на уроке. Но если посчитать, выходит 305 дней вместо 365: похоже на опечатку. У настоящего египетского календаря было 12 месяцев по 30 дней и 5 праздничных — ровно 365.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 470 196" role="img" aria-label="Две таблички. Слева серая фигура мозга: ему не придавали никакого значения. Справа красное сердце: главный орган, отвечает за жизнь и поступки, им человек и думает."><use href="#n-serdce"/></svg><figcaption><b>Мостик к §9.</b> Теперь понятно, почему на суде Осириса на весы клали именно сердце: в нём, считали египтяне, и живут все поступки человека.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-vrach" src="img/27e3fee43ac3.jpg" alt="Рисунок: на ложе лежит человек, рядом сидит врач, вокруг расставлены сосуды и инструменты"><figcaption><span class="src">из учебника</span><b>Древнеегипетский врач.</b> Медицинские опыты описаны во многих папирусах. У врачей была строгая специализация: одни занимались носами, другие ушами, третьи ногами, были зубные врачи и настоящие хирурги. Болезни делили на три степени: 1. Те, которые я буду лечить. 2. Те, с которыми я буду бороться. 3. Не поддающиеся лечению.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопросы учебника</b>
+<ol><li>Какие единицы измерения существовали у египтян?</li><li>Какими знаниями владели древние египтяне?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Учебник говорит, что египетская математика была «чисто практической». Приведи три примера из текста.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Где искать: первый абзац раздела 3.</div>
+<div class="rev ans" id="a7" hidden>Строитель считал, сколько кирпичей уйдёт на дом. Сборщик налогов — сколько зерна должен сдать земледелец. Жрец рассчитывал даты религиозных праздников. Никто не считал «просто так»: за каждым расчётом стояло дело.</div>
+</div>
+<div class="think">
+<p class="qt">8. Меры длины брали с человеческого тела. В чём тут удобство и в чём неудобство?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Где искать: второй абзац раздела 3 и схема с полосками.</div>
+<div class="rev ans" id="a8" hidden>Удобство: мерка всегда с собой, ничего не надо носить и негде потерять. Неудобство: руки у всех разные, и локоть высокого человека длиннее локтя невысокого. Для дома это ещё ничего, а для пирамиды из блоков по 30 тонн уже опасно.</div>
+</div>
+<div class="think">
+<p class="qt">9. Египтяне считали, что человек думает сердцем. Как это объясняет то, что происходило на суде Осириса (§9)?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Где искать: четвёртый абзац раздела 3.</div>
+<div class="rev ans" id="a9" hidden>Раз сердце отвечает за жизнь и поступки, значит именно в нём записано, как человек прожил. Поэтому на весы клали сердце, а не что-то другое: взвешивали, по сути, всю прожитую жизнь.</div>
+</div>
+<div class="think">
+<p class="qt">10. Как обряд бальзамирования помог египетской медицине?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Где искать: последний абзац раздела 3, и вспомни §9 — что делали с телом.</div>
+<div class="rev ans" id="a10" hidden>При бальзамировании из тела вынимали внутренности. Врачи каждый раз видели, как человек устроен внутри, — и постепенно узнали строение тела и органов. Религиозный обряд неожиданно стал школой для врачей.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Искусство</h2></div>
+<div class="easy">
+<p>Египтяне владели приёмами обработки дерева, глины, камня и металла — и создавали из них произведения искусства.</p>
+<p>Скульптуру делали по определённым правилам. Мужчин изображали с более тёмным цветом кожи, чем женщин. Руки сидящего человека лежали на коленях. В руке обязательно был символ профессии: оружие, свиток, посох, корзина. Фараонов изображали намного крупнее остальных людей и с символами власти.</p>
+<p><button class="term" data-t="relief">Рельефы</button>, которыми украшали дворцы и дома фараонов и вельмож, храмы и гробницы, ярко передают жизнь разных людей египетского общества.</p>
+<p>Архитектура Египта — это колоссальные сооружения: храмовые комплексы, пирамиды, гробницы фараонов в скалах.</p>
+<p>В древности считали, что есть <button class="term" data-t="chudesa">семь чудес света</button>: число семь у египтян и у многих других народов было священным. Одно из чудес находится в Египте — это самая высокая пирамида, 147 метров, фараона <button class="term" data-t="hufu">Хуфу</button>, которого греки называли Хеопсом.</p>
+<p>Строительство шло около 30 лет, участвовали тысячи человек. Пирамида сооружена из каменных блоков весом от 2 до 30 тонн. Рядом с ней стоит Большой сфинкс — вырубленный из скалы лев с лицом царя <button class="term" data-t="hafra">Хафра</button>: длина 57 метров, высота 20.</p>
+<p>Как это делали? Сначала расчищали и выравнивали площадку. Известняк для остова вырубали прямо на месте: медными резцами и клиньями рабочие отделяли блок от скалы. Ни лебёдок, ни других подъёмных сооружений не было — камни затаскивали по наклонной плоскости.</p>
+<p>Внутри строили систему погребальных камер и коридоров. Даже массивный гранитный саркофаг ставили в камеру до того, как делали перекрытия. Когда внутренние помещения были готовы, пирамида снаружи ещё напоминала высокую плоскую платформу, окружённую наклонными насыпями. Потом каменщики выравнивали облицовку так, чтобы ни один блок не выделялся, насыпь становилась всё ниже — и в конце пирамида представала отшлифованной и сияющей.</p>
+<p>Сколько времени на это уходило? Геродот сообщает: 20 лет, и на перевозке камня трудились 100 тысяч человек «на периоды по месяцам» — это 400 тысяч человек в год. Современные исследователи считают, что цифра завышена.</p>
+</div>
+<div class="book" hidden>
+<p>Древние египтяне владели приёмами обработки дерева, глины, камня, металла. Из них они создавали произведения искусства. Скульптурные изображения в Древнем Египте выполняли по определённым правилам: мужчин изображали с цветом кожи более тёмным, чем у женщин. Руки сидящего человека лежали на коленях. В руке скульптуры присутствовал символ профессии изображённого человека — оружие, свиток, посох, корзина. Фараонов изображали намного крупнее, чем других людей, и с символами власти. Рельефы, которыми древнеегипетские мастера украшали дворцы и дома фараонов и вельмож, храмы и гробницы, ярко передают особенности жизни разных представителей древнеегипетского общества.</p>
+<p>Архитектура Древнего Египта часто представлена колоссальными сооружениями. Это храмовые комплексы, пирамиды, гробницы фараонов в скалах.</p>
+<p>Люди в древности полагали, что существует семь чудес света. Египтяне, как и многие другие народы, считали число семь священным. Одно из чудес света находится в Египте. Это самая высокая (147 метров) пирамида фараона Хуфу (греки называли его Хеопсом). Её строительство шло около 30 лет, в нём участвовали тысячи человек. Пирамида Хеопса сооружена из каменных блоков, вес каждого из них от 2 до 30 тонн.</p>
+<p>Прежде чем завезти камень, надо было расчистить и выровнять площадку. Для сооружения остова пирамиды использовался известняк, его вырубали прямо на месте. Медными резцами с помощью клиньев рабочие отделяли блок от скалы. У строителей не было ни лебёдок, ни других подъёмных сооружений, поэтому камни надо было затаскивать по наклонной плоскости.</p>
+<p>Внутри пирамиды, в центре, строилась система погребальных камер и коридоров. Даже массивный гранитный саркофаг устанавливался в погребальную камеру до того, как были сделаны перекрытия. Когда внутренние помещения гробницы были готовы, внешне она всё ещё напоминала высокую плоскую платформу, стороны которой были окружены наклонными насыпями. Каменщики, облепив со всех сторон пирамиду, выравнивали облицовку так, чтобы ни один блок не выделялся на фоне соседних. Наклонная плоскость становилась всё ниже и ниже, каменщики, продолжая работу, доходили наконец до самых нижних слоёв камня, и пирамида представала взору во всей своей красе, отшлифованная и сияющая.</p>
+<p>Сколько же времени требовалось для возведения пирамиды? Геродот сообщает, что с момента начала работы до её окончания проходило 20 лет, на строительстве трудились 100 тысяч человек «на периоды по месяцам» для транспортировки камня. Это означает 400 тысяч человек в год. По расчётам современных исследователей, вероятно, эта цифра завышена.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 530 220" role="img" aria-label="Четыре правила египетской скульптуры: цвет кожи — мужчин темнее женщин; поза — у сидящего руки на коленях; предмет в руке — символ профессии: оружие, свиток, посох, корзина; размер — фараона делали намного крупнее остальных и с символами власти."><use href="#n-pravila"/></svg><figcaption><b>Теперь посмотри на статуи из §8 и §9 другими глазами.</b> То, что кажется странностью художника, — на самом деле правила, по которым фигуру можно прочитать.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-gusi" src="img/c7ca7cc42248.jpg" alt="Древняя роспись: три пёстрых гуся идут друг за другом по светлому фону" style="max-width:360px"><figcaption><span class="src">из учебника</span><b>Гуси. Роспись из гробницы в Медуме.</b></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-giza" src="img/23a469df3df0.jpg" alt="Фотография: большой каменный сфинкс на переднем плане, за ним огромная пирамида под синим небом"><figcaption><span class="src">из учебника</span><b>«Великая» пирамида и Сфинкс в Гизе. Современный вид.</b> Большой сфинкс — вырубленный из скалы лев с лицом царя Хафра: длина 57 метров, высота 20. До нас он дошёл уже без полутораметрового носа и церемониальной бороды — их за века источили ветер и вода.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 530 252" role="img" aria-label="Слева треугольник пирамиды со стрелкой высоты 147 метров. Справа четыре факта: фараон Хуфу, греки звали его Хеопсом; одно из семи чудес света; каменные блоки от 2 до 30 тонн; строили около 30 лет, тысячи человек."><use href="#n-heops"/></svg><figcaption><b>И спор о сроках.</b> Учебник говорит «около 30 лет», Геродот — 20 лет и 100 тысяч человек, а современные исследователи считают его цифру завышенной. Историки проверяют даже самых древних свидетелей.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Когда и для кого была построена самая знаменитая пирамида в Египте?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">11. Фараона изображали намного крупнее остальных людей. Вспомни §6—7: что этим хотели сказать?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Про власть фараона — §6—7, раздел 1.</div>
+<div class="rev ans" id="a11" hidden>Что он не такой, как все: он бог, и власть его ничем не ограничена. Размер на рисунке означал не рост, а значение. Тот же приём египтяне использовали и в архитектуре — храмы и статуи делали огромными, чтобы человек рядом с ними чувствовал себя маленьким.</div>
+</div>
+<div class="think">
+<p class="qt">12. Зачем в руку статуи вкладывали символ профессии, если человек и так изображён?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Где искать: второй абзац раздела 4 и схема с правилами.</div>
+<div class="rev ans" id="a12" hidden>Потому что по лицу профессию не угадать, а по предмету — сразу: оружие значит воин, свиток — писец, посох — начальник, корзина — работник. Предмет работал как подпись, которую можно прочитать, даже не умея читать.</div>
+</div>
+<div class="think">
+<p class="qt">13. Учебник говорит: пирамиду строили около 30 лет. Геродот — 20 лет и 100 тысяч человек. Почему историки не верят Геродоту на слово?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h13" hidden>Где искать: последний абзац раздела 4. Вспомни §5: откуда Геродот вообще знал про Египет.</div>
+<div class="rev ans" id="a13" hidden>Геродот был в Египте около 450 года до н. э. — через две тысячи лет после постройки пирамиды. Он записал то, что ему рассказали, а не то, что видел. 100 тысяч человек «на периоды по месяцам» — это 400 тысяч в год, столько людей просто негде было взять и нечем кормить. Поэтому современные исследователи считают цифру завышенной.</div>
+</div>
+<div class="think">
+<p class="qt">14. Внутри пирамиды саркофаг ставили до того, как делали перекрытия. Почему нельзя было наоборот?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h14" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a14" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h14" hidden>Где искать: предпоследний абзац раздела 4 — и вспомни, сколько весил гранитный саркофаг.</div>
+<div class="rev ans" id="a14" hidden>Саркофаг был массивный, гранитный, а подъёмных сооружений у египтян не было — только наклонные насыпи. Занести такую тяжесть в уже закрытую камеру через узкий коридор было невозможно. Поэтому его ставили первым, а потолок делали уже над ним.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">У египтян была развита письменность в виде иероглифов, обозначавших как отдельные звуки, так и целые слова и понятия. Расшифровать их удалось сравнительно недавно благодаря открытию французского учёного Ф. Шампольона. В Древнем Египте существовал календарь, были развиты математика и медицина. Египтяне достигли высокого уровня искусства и строительства: всемирно известные пирамиды относятся к одному из семи чудес света.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Как возникла письменность древних египтян?</li><li>Как проходило обучение в Древнем Египте?</li><li>Какие науки были развиты в Древнем Египте? Как ты думаешь, почему?</li><li>Какое из чудес света было создано древними египтянами? С какой целью?</li><li>В каких видах искусства египтяне добились наибольшего мастерства?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к третьему вопросу</button></div>
+<div class="rev hint" id="r1" hidden>Посмотри, зачем каждая наука была нужна на деле. Математика — считать кирпичи, зерно и праздники. Астрономия — предсказывать разлив Нила. Медицина — лечить, и ей помогло бальзамирование. География и история — управлять страной и помнить её. В Египте развивалось то, без чего нельзя было жить и работать.</div></div>
+<div class="sublabel">Работаем с понятиями</div>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Прочитай список понятий: медицина, иероглифы, налоги, пирамиды, папирус. Какое из них не относится к теме параграфа? Объясни почему.</p>
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Показать ответ</button></div>
+<div class="rev ans" id="r2" hidden><b>Налоги.</b> Медицина, иероглифы, пирамиды и папирус — это наука, письменность, искусство и материал для письма, то есть всё про науку и искусство, о которых этот параграф. А налоги — про хозяйство и власть: это тема §6—7.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — что свидетельствовало о высоком уровне развития науки и искусства в Древнем Египте? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Как расшифровали иероглифы</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от первого шага к последнему.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="2"><span class="ord"></span>Догадка: имена выделены овалом</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Прочитали греческую часть надписи</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Расшифровали всю письменность</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Первые знаки иероглифов прочитаны</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Иероглифы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="ieroglify" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Знаки египетского письма. Их было несколько сотен, и со временем читать их разучились.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Розеттский камень</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="rozetta" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Стела с тремя надписями: две иероглифами, одна греческими буквами. С неё началась расшифровка.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Локоть</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 490 196" aria-hidden="true"><use href="#n-mery"/></svg><span class="ftext">Мера длины: семь ладоней, то есть 28 пальцев. От сгиба руки до кончиков пальцев.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Сердце, а не мозг</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 470 196" aria-hidden="true"><use href="#n-serdce"/></svg><span class="ftext">Египтяне считали, что думает сердце. Поэтому его и взвешивали на суде Осириса.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Правила скульптуры</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 530 220" aria-hidden="true"><use href="#n-pravila"/></svg><span class="ftext">Цвет кожи, руки на коленях, символ профессии в руке, фараон крупнее всех.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пирамида Хеопса</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 530 252" aria-hidden="true"><use href="#n-heops"/></svg><span class="ftext">147 метров, блоки от 2 до 30 тонн, около 30 лет работы. Одно из семи чудес света.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что помогло Шампольону расшифровать иероглифы?</h3><div class="opts">
+<button class="opt" data-ok="1">Надпись на греческом языке на том же камне</button>
+<button class="opt">Словарь, найденный в гробнице</button>
+<button class="opt">Рассказы современных египтян</button></div>
+<div class="fb">В греческой части были имена Птолемея и Клеопатры, а в иероглифах имена выделяли овалом.</div></div>
+<div class="q"><h3>2. Кто учился в египетских школах?</h3><div class="opts">
+<button class="opt">Все дети</button>
+<button class="opt" data-ok="1">Только мальчики</button>
+<button class="opt">Только дети фараона</button></div>
+<div class="fb">Школы были при храмах, а учителями были жрецы.</div></div>
+<div class="q"><h3>3. Чему равнялся египетский локоть?</h3><div class="opts">
+<button class="opt">Двум ладоням</button>
+<button class="opt" data-ok="1">Семи ладоням</button>
+<button class="opt">Десяти пальцам</button></div>
+<div class="fb">А ладонь равнялась четырём пальцам. Значит, в локте 28 пальцев.</div></div>
+<div class="q"><h3>4. Какой орган египтяне считали главным для мыслей и поступков?</h3><div class="opts">
+<button class="opt">Мозг</button>
+<button class="opt">Печень</button>
+<button class="opt" data-ok="1">Сердце</button></div>
+<div class="fb">Поэтому именно сердце и взвешивали на весах на суде Осириса.</div></div>
+<div class="q"><h3>5. Как на статуе можно было узнать профессию человека?</h3><div class="opts">
+<button class="opt" data-ok="1">По предмету в руке</button>
+<button class="opt">По цвету одежды</button>
+<button class="opt">По надписи на лбу</button></div>
+<div class="fb">Оружие, свиток, посох, корзина — каждый предмет говорил, кем был этот человек.</div></div>
+<div class="q"><h3>6. Какой высоты пирамида Хеопса?</h3><div class="opts">
+<button class="opt">47 метров</button>
+<button class="opt" data-ok="1">147 метров</button>
+<button class="opt">247 метров</button></div>
+<div class="fb">Это самая высокая пирамида и одно из семи чудес света. Блоки в ней весят от 2 до 30 тонн.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Тайна иероглифов</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl3" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl3" hidden><ol><li>Иероглифы на стенах гробниц и на папирусе; египтяне звали письмо «словами бога»; оно было трудным и забылось.</li><li>Шампольон и Розеттский камень: две надписи иероглифами, третья греческими буквами; в греческой — Птолемей и Клеопатра.</li><li>Догадка про овал вокруг почитаемых имён оказалась верной; потом расшифровали всю письменность; в России труды издали в 1824 году.</li></ol></div>
+</div>
+<div class="think">
+<h3>Школа в Древнем Египте</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>При храмах, учителя — жрецы, учились только мальчики; изучали астрономию, математику, географию, историю, медицину.</li><li>Писали сначала на пластинках известняка в линейку и клетку, на старшей ступени — на папирусе тростниковыми палочками.</li><li>Строгие порядки, наставление ученику, лентяев били палками; окончивших школу было немного, их считали образованными.</li></ol></div>
+</div>
+<div class="think">
+<h3>Что знали египтяне</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Математика для дела: кирпичи, зерно, праздники. Меры длины с тела: палец, ладонь, ступня, локоть (7 ладоней).</li><li>Календарь, похожий на современный; годы считали от вступления фараона на престол.</li><li>Мозгу значения не придавали, думает сердце — отсюда и весы на суде Осириса. Медицина со специализацией врачей, три степени болезней; бальзамирование помогло узнать строение тела.</li></ol></div>
+</div>
+<div class="think">
+<h3>Искусство и пирамида Хеопса</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Правила скульптуры: цвет кожи, руки на коленях, символ профессии в руке, фараон крупнее всех.</li><li>Архитектура колоссальная: храмовые комплексы, пирамиды, гробницы в скалах; рельефы на стенах.</li><li>Пирамида Хуфу (Хеопса) — 147 метров, блоки 2—30 тонн, около 30 лет; ни лебёдок, ни подъёмников — только наклонные насыпи; Геродот называл 20 лет и 100 тысяч человек.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p9.html">‹ §9 Религия Египта</a>
+  <span class="pn cur">§10 Наука и искусство</span>
+  <a class="pn" href="p11.html">§11 Междуречье ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 10 · История, 5 класс · страницы 61—65 · глава II «Древний Восток»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'n-rozetta':'0 0 500 250','n-shkola':'0 0 500 236','n-mery':'0 0 490 196','n-kalendar':'0 0 500 218','n-serdce':'0 0 470 196','n-pravila':'0 0 530 220','n-heops':'0 0 530 252'};
+
+var T={
+ieroglif:{w:"Иероглифы",k:"письмо",p:"ieroglify",t:"Знаки древнеегипетской письменности. Слово греческое: «священный» и «то, что вырезано». Иероглифы изображали людей и их действия, животных, растения, предметы; их было несколько сотен."},
+slovaboga:{w:"«Слова бога»",k:"название",s:"n-rozetta",t:"Так сами египтяне называли своё письмо. Оно было трудным, и со временем его забыли — пока Шампольон не расшифровал его заново."},
+rozetta:{w:"Розеттский камень",k:"находка",p:"rozetta",t:"Стела с древнеегипетскими и древнегреческими письменами. Две надписи на ней сделаны иероглифами, третья — греческими буквами. Именно с неё началась расшифровка."},
+shampolion:{w:"Франсуа Шампольон",k:"учёный",p:"shampolion",t:"Французский учёный (1790—1832), расшифровавший древнеегипетскую письменность. Один из основателей египтологии. Его систему издали и в России — в Петербурге в 1824 году."},
+egiptolog:{w:"Египтология",k:"наука",p:"shampolion",t:"Наука, которая изучает язык, письменность, историю и культуру Древнего Египта."},
+papirus:{w:"Папирус",k:"материал",p:"svitok",t:"Материал для письма из стеблей тростника (§5). На папирусе начинали писать на старшей ступени обучения — заострёнными тростниковыми палочками и разведёнными чернильными порошками разных цветов."},
+lokot:{w:"Локоть",k:"мера длины",s:"n-mery",t:"Расстояние от сгиба руки до кончиков пальцев. Равнялся семи ладоням, а ладонь — четырём пальцам. Все меры египтяне брали прямо с человеческого тела."},
+kalendar:{w:"Календарь",k:"счёт времени",s:"n-kalendar",t:"У египтян был календарь, похожий на современный. Годы отсчитывали заново — с того дня, как на престол вступал новый фараон."},
+relief:{w:"Рельеф",k:"искусство",p:"gusi",t:"Выпуклое изображение на плоскости. Рельефами украшали дворцы и дома фараонов и вельмож, храмы и гробницы — они ярко передают жизнь разных людей египетского общества."},
+hufu:{w:"Хуфу (Хеопс)",k:"фараон",p:"giza",t:"Фараон, для которого построили самую высокую пирамиду — 147 метров. Греки называли его Хеопсом. Строительство шло около 30 лет, в нём участвовали тысячи человек."},
+hafra:{w:"Хафра",k:"фараон",p:"giza",t:"Царь, чьё лицо у Большого сфинкса в Гизе — вырубленного из скалы льва длиной 57 и высотой 20 метров."},
+chudesa:{w:"Семь чудес света",k:"список",s:"n-heops",t:"Люди в древности считали, что чудес света семь: число семь у египтян и у многих других народов было священным. Одно из чудес — пирамида Хеопса."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p10:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p10:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>4){fb.textContent="Верно! Греческая часть → догадка про овал → первые знаки → вся письменность.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Посмотри схему про Розеттский камень в разделе 1.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p10:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p10:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

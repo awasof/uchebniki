@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 13: Финикия, мореплаватели, колонии, первый алфавит.">
+<title>Финикия</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="f-strana" viewBox="0 0 540 220">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ФИНИКИЯ: ПОЛОСКА МЕЖДУ ГОРАМИ И МОРЕМ</text>
+  <rect x="8" y="34" width="240" height="120" rx="8" fill="var(--sky)"/>
+  <path d="M8 96 q30 -52 62 -8 q26 -44 58 -2 q24 -38 52 6 v62 H8 Z" fill="var(--stone)"/>
+  <rect x="180" y="100" width="24" height="54" fill="var(--green)"/>
+  <rect x="204" y="100" width="44" height="54" fill="var(--water)"/>
+  <text x="66" y="146" text-anchor="middle" font-size="11" font-weight="700" fill="#2B2620">ГОРЫ</text>
+  <text x="226" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#F2FAFF">МОРЕ</text>
+  <path d="M192 96 V78" stroke="var(--illink)" stroke-width="2" fill="none"/>
+  <text x="192" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">узкая полоса земли</text>
+  <circle cx="276" cy="56" r="7" fill="var(--stone)"/>
+  <text x="294" y="60" font-size="11.5" fill="var(--illink)">побережье скалистое</text>
+  <circle cx="276" cy="94" r="7" fill="var(--green)"/>
+  <text x="294" y="98" font-size="11.5" fill="var(--illink)">полоса плодородной земли совсем узкая</text>
+  <circle cx="276" cy="132" r="7" fill="var(--water)"/>
+  <text x="294" y="136" font-size="11.5" fill="var(--illink)">зато в бухтах — удобные гавани</text>
+  <text x="8" y="186" font-size="12" font-weight="700" fill="var(--moss)">Пахать негде — значит, кормиться придётся ремеслом и морем.</text>
+  <text x="8" y="210" font-size="11.5" fill="var(--illink)">В гаванях росли города: Библ, Тир, Сидон. Каждый — отдельное государство.</text>
+</symbol>
+
+<symbol id="f-torg" viewBox="0 0 510 226">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ФИНИКИЯ — ПЕРЕСАДОЧНАЯ СТАНЦИЯ ДРЕВНЕГО МИРА</text>
+  <text x="14" y="56" font-size="10.5" fill="var(--soft)">Малая Азия</text>
+  <text x="14" y="94" font-size="10.5" fill="var(--soft)">Месопотамия</text>
+  <text x="14" y="132" font-size="10.5" fill="var(--soft)">Северная Аравия</text>
+  <g stroke="var(--brown)" stroke-width="3" fill="none" marker-end="url(#ar)">
+    <path d="M96 52 L164 84"/><path d="M96 90 H164"/><path d="M96 128 L164 96"/>
+  </g>
+  <rect x="172" y="62" width="112" height="58" rx="10" fill="var(--ochre)"/>
+  <text x="228" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">ФИНИКИЙСКИЕ</text>
+  <text x="228" y="106" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">ГОРОДА</text>
+  <path d="M292 90 h42" stroke="var(--water)" stroke-width="4" fill="none" marker-end="url(#ar)"/>
+  <text x="344" y="80" font-size="11.5" font-weight="700" fill="var(--ice)">морем — дальше,</text>
+  <text x="344" y="96" font-size="11.5" font-weight="700" fill="var(--ice)">по всему Средиземному</text>
+  <text x="344" y="112" font-size="11.5" font-weight="700" fill="var(--ice)">морю</text>
+  <text x="8" y="166" font-size="12" font-weight="700" fill="var(--illink)">Что возили: серебро с запада · папирус из Египта · кедр из гор</text>
+  <text x="8" y="184" font-size="12" font-weight="700" fill="var(--illink)">Финикии · изделия местных ремесленников</text>
+  <text x="8" y="212" font-size="11.5" font-weight="700" fill="var(--moss)">Папирус приходил из города Библ — отсюда и слово «библиотека».</text>
+</symbol>
+
+<symbol id="f-koloniya" viewBox="0 0 500 212">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧТО ТАКОЕ КОЛОНИЯ</text>
+  <rect x="8" y="30" width="230" height="110" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="56" font-size="12" font-weight="700" fill="var(--illink)">Колония —</text>
+  <text x="22" y="80" font-size="11" fill="var(--illink)">поселение, которое основывали</text>
+  <text x="22" y="96" font-size="11" fill="var(--illink)">там, где бывали постоянно:</text>
+  <text x="22" y="120" font-size="11" fill="var(--illink)">свой дом на чужом берегу</text>
+  <rect x="258" y="30" width="234" height="110" rx="10" fill="var(--paper2)"/>
+  <text x="272" y="56" font-size="12" font-weight="700" fill="var(--illink)">Где они были</text>
+  <text x="272" y="80" font-size="11" fill="var(--illink)">запад Средиземного моря:</text>
+  <text x="272" y="96" font-size="11" fill="var(--illink)">Африка, Испания,</text>
+  <text x="272" y="112" font-size="11" fill="var(--illink)">Сардиния, Сицилия</text>
+  <rect x="8" y="152" width="484" height="44" rx="10" fill="var(--ochre)"/>
+  <text x="250" y="180" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">Самая знаменитая колония — крепость Карфаген в Северной Африке</text>
+</symbol>
+
+<symbol id="f-izobret" viewBox="0 0 500 246">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧЕТЫРЕ ИЗОБРЕТЕНИЯ ФИНИКИЙЦЕВ</text>
+  <rect x="8" y="30" width="238" height="90" rx="10" fill="var(--paper2)"/>
+  <path d="M24 74 h34 l14 10 l-14 10 H24 Z" fill="var(--brownD)"/>
+  <text x="86" y="62" font-size="12.5" font-weight="700" fill="var(--illink)">ТАРАН</text>
+  <text x="86" y="82" font-size="10.5" fill="var(--soft)">на боевых кораблях: при атаке</text>
+  <text x="86" y="98" font-size="10.5" fill="var(--soft)">пробивал борт вражеского судна</text>
+  <rect x="258" y="30" width="234" height="90" rx="10" fill="var(--paper2)"/>
+  <circle cx="284" cy="78" r="16" fill="#7A2E63"/>
+  <text x="314" y="62" font-size="12.5" font-weight="700" fill="var(--illink)">ПУРПУР</text>
+  <text x="314" y="82" font-size="10.5" fill="var(--soft)">краска из особых моллюсков;</text>
+  <text x="314" y="98" font-size="10.5" fill="var(--soft)">«Финикия» — «страна пурпура»</text>
+  <rect x="8" y="132" width="238" height="90" rx="10" fill="var(--paper2)"/>
+  <rect x="24" y="164" width="34" height="28" rx="4" fill="var(--sky)" stroke="var(--ice)" stroke-width="2"/>
+  <text x="74" y="164" font-size="12.5" font-weight="700" fill="var(--illink)">СТЕКЛО</text>
+  <text x="74" y="184" font-size="10.5" fill="var(--soft)">чистое и прозрачное — из песка</text>
+  <text x="74" y="200" font-size="10.5" fill="var(--soft)">со средиземноморского берега</text>
+  <rect x="258" y="132" width="234" height="90" rx="10" fill="var(--paper2)"/>
+  <text x="276" y="180" font-size="24" font-weight="700" fill="var(--ochre)">Aa</text>
+  <text x="318" y="164" font-size="12.5" font-weight="700" fill="var(--illink)">АЛФАВИТ</text>
+  <text x="318" y="184" font-size="10.5" fill="var(--soft)">22 буквы вместо сотен знаков —</text>
+  <text x="318" y="200" font-size="10.5" fill="var(--soft)">и от него происходит наш</text>
+  <text x="8" y="240" font-size="11.5" font-weight="700" fill="var(--moss)">Тремя из четырёх мы пользуемся до сих пор.</text>
+</symbol>
+
+<symbol id="f-alfavit" viewBox="0 0 545 258">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">600 ЗНАКОВ ПРОТИВ 22 БУКВ</text>
+  <text x="8" y="50" font-size="12" font-weight="700" fill="var(--illink)">КЛИНОПИСЬ</text>
+  <rect x="120" y="38" width="366" height="20" rx="4" fill="var(--stone)"/>
+  <text x="303" y="53" text-anchor="middle" font-size="12" font-weight="700" fill="#2B2620">почти 600 знаков</text>
+  <text x="120" y="76" font-size="10.5" fill="var(--soft)">знак = слово или слог, а некоторые имеют по нескольку значений</text>
+  <text x="8" y="112" font-size="12" font-weight="700" fill="var(--illink)">ФИНИКИЙСКОЕ</text>
+  <text x="8" y="126" font-size="12" font-weight="700" fill="var(--illink)">ПИСЬМО</text>
+  <rect x="120" y="106" width="28" height="20" rx="4" fill="var(--moss)"/>
+  <text x="160" y="121" font-size="12" font-weight="700" fill="var(--moss)">22 буквы</text>
+  <text x="120" y="146" font-size="10.5" fill="var(--soft)">знак = отдельный звук речи; записывали только согласные</text>
+  <rect x="8" y="166" width="150" height="54" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="188" font-size="11" font-weight="700" fill="var(--illink)">финикийцы</text>
+  <text x="22" y="206" font-size="10.5" fill="var(--soft)">алеф, бет, гимель…</text>
+  <path d="M166 192 h26" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="200" y="166" width="150" height="54" rx="10" fill="var(--paper2)"/>
+  <text x="214" y="188" font-size="11" font-weight="700" fill="var(--illink)">греки</text>
+  <text x="214" y="206" font-size="10.5" fill="var(--soft)">альфа, бета + гласные</text>
+  <path d="M358 192 h26" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="392" y="166" width="110" height="54" rx="10" fill="var(--ochre)"/>
+  <text x="447" y="188" text-anchor="middle" font-size="11" font-weight="700" fill="#22190A">наш алфавит</text>
+  <text x="447" y="206" text-anchor="middle" font-size="10.5" fill="#22190A">им ты пишешь сейчас</text>
+  <text x="8" y="250" font-size="11.5" font-weight="700" fill="var(--moss)">«Алеф» значило «бык», «бет» — «дом». Из этих двух слов и вышло слово «алфавит».</text>
+</symbol>
+
+<symbol id="f-steklo" viewBox="0 0 500 186">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЛЕГЕНДА О ТОМ, КАК ОТКРЫЛИ СТЕКЛО</text>
+  <rect x="16" y="46" width="94" height="44" rx="8" fill="var(--snow)" stroke="var(--line)" stroke-width="2"/>
+  <text x="63" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#2B2620">СОДА</text>
+  <text x="128" y="76" text-anchor="middle" font-size="18" font-weight="700" fill="var(--soft)">+</text>
+  <rect x="146" y="46" width="94" height="44" rx="8" fill="var(--ochre)"/>
+  <text x="193" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">ПЕСОК</text>
+  <text x="258" y="76" text-anchor="middle" font-size="18" font-weight="700" fill="var(--soft)">+</text>
+  <rect x="276" y="46" width="94" height="44" rx="8" fill="var(--flame)"/>
+  <text x="323" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">ОГОНЬ</text>
+  <text x="386" y="76" text-anchor="middle" font-size="18" font-weight="700" fill="var(--soft)">=</text>
+  <rect x="404" y="46" width="84" height="44" rx="8" fill="var(--sky)" stroke="var(--ice)" stroke-width="2"/>
+  <text x="446" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#2B2620">СТЕКЛО</text>
+  <text x="8" y="126" font-size="11.5" fill="var(--illink)">Купцы везли из Египта глыбы соды. Остановились на берегу, где не было</text>
+  <text x="8" y="142" font-size="11.5" fill="var(--illink)">камней, и сложили очаг прямо из соды. На их глазах сода сплавилась с песком.</text>
+  <text x="8" y="176" font-size="12" font-weight="700" fill="var(--moss)">Так, по легенде, открыли и само стекло, и способ его делать.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 13</span>
+    <h1>Финикия</h1>
+    <p class="lede">Страна пурпура, корабли до края света и 22 буквы, из которых вырос наш алфавит. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Чем славилась Финикия в древности?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p12.html">‹ §12 Вавилон</a>
+  <span class="pn cur">§13 Финикия</span>
+  <a class="pn" href="p14.html">§14 Палестина ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Земля между морем и горами">1</a><a href="#s2" data-j="s2" title="Великие мореплаватели">2</a><a href="#s3" data-j="s3" title="Изобретения финикийцев">3</a><a href="#s4" data-j="s4" title="Алфавит">4</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-biremy" src="img/82edf41d4bc9.jpg" alt="Древняя мозаика: два корабля с высокими бортами и парусами у каменной башни, вокруг вода и рыбы"><figcaption><span class="src">из учебника</span><b>Финикийские корабли — биремы. Древняя мозаика.</b> Финикийцы проложили торговые пути по всему Средиземному морю. Суда были вместительными: длина до 30 метров, экипаж 30 человек. Мачты несли прямой парус.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Земля между морем и горами</h2></div>
+<div class="easy">
+<p><button class="term" data-t="finikia">Финикия</button> располагалась на восточном берегу Средиземного моря — там, где сейчас Сирия, Ливан и Израиль.</p>
+<p>Побережье там скалистое, а полоса плодородной земли совсем узкая. Зато в удобных <button class="term" data-t="gavan">гаванях</button> возникали города, где развивалось ремесло: местные мастера делали сосуды, украшения, предметы одежды.</p>
+<p>Каждый город был самостоятельным государством. Его правитель командовал армией и флотом и собирал с населения налоги. Самыми сильными и богатыми городами были Библ, Тир и Сидон.</p>
+<p>Финикийцы занимались морской торговлей, и торговые города приносили в казну богатства. К ним выходили сухопутные торговые пути из юго-восточной Малой Азии, Месопотамии и Северной Аравии — прибывавшие оттуда товары финикийцы везли морем дальше.</p>
+</div>
+<div class="book" hidden>
+<p>Финикия располагалась на восточном берегу Средиземного моря (на территории современных Сирии, Ливана и Израиля). Побережье этой страны скалистое, а полоса плодородной земли совсем узкая. В удобных гаванях возникали города, где развивалось ремесло. Здесь местные ремесленники изготавливали сосуды, украшения, предметы одежды.</p>
+<p>Каждый город представлял самостоятельное государство. Его правитель командовал армией и флотом, собирал с населения налоги. Самыми сильными и богатыми городами были Библ, Тир и Сидон.</p>
+<p>Финикийцы занимались морской торговлей. Торговые города приносили в казну богатства. К ним выходили сухопутные торговые пути из юго-восточной Малой Азии, Месопотамии, Северной Аравии, и прибывавшие оттуда товары финикийцы везли морем дальше.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 220" role="img" aria-label="Разрез: слева серые горы, посередине узкая зелёная полоска земли, справа синее море. Подписи: побережье скалистое; полоса плодородной земли совсем узкая; зато в бухтах удобные гавани."><use href="#f-strana"/></svg><figcaption><b>Вся страна — тонкая ленточка.</b> Сравни с Египтом: там «чёрная земля» тоже была узкой, но её хватало на хлеб для всей страны. А здесь не хватало.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 510 226" role="img" aria-label="Схема: слева три стрелки — из Малой Азии, Месопотамии и Северной Аравии — сходятся к оранжевому прямоугольнику «финикийские города». От него стрелка вправо: морем дальше, по всему Средиземному морю."><use href="#f-torg"/></svg><figcaption><b>Ответ на вопрос учебника про торговлю.</b> Сухопутные пути с востока упирались в море — и дальше товар мог идти только на корабле. Финикийцы оказались ровно в этом месте.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему торговля стала основным занятием финикийцев?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Финикия — узкая полоска между скалистым берегом и горами. Как это определило, чем жили её люди?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Где искать: первые два абзаца раздела 1 и схема с разрезом.</div>
+<div class="rev ans" id="a1" hidden>Пахать было почти негде: полоска плодородной земли слишком узкая. Значит, прокормиться земледелием, как в Египте или Междуречье, не получалось. Зато были удобные гавани и море под боком — и финикийцы стали ремесленниками и мореходами. География не оставила им выбора.</div>
+</div>
+<div class="think">
+<p class="qt">2. Каждый финикийский город был отдельным государством. Вспомни §11: где ты уже встречала такое устройство?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Про города-государства — §11, раздел 2.</div>
+<div class="rev ans" id="a2" hidden>В Междуречье: Киш, Ур, Урук, Лагаш — каждый со своим правителем и войском. В Финикии то же самое: Библ, Тир, Сидон. Разница в том, что месопотамские города-государства воевали друг с другом за землю, а финикийские соперничали в торговле.</div>
+</div>
+<div class="think">
+<p class="qt">3. Почему сухопутные торговые пути из Малой Азии, Месопотамии и Аравии заканчивались именно в финикийских городах?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Где искать: последний абзац раздела 1 и схема «пересадочная станция».</div>
+<div class="rev ans" id="a3" hidden>Потому что за Финикией начиналось море. Караван дальше не пройдёт — товар надо перегружать на корабль. Финикийские города стояли ровно на границе суши и моря, и весь поток товаров с востока проходил через их руки.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-korabl" src="img/4a0e77a645c0.jpg" alt="Рисунок корабля в разрезе: гребцы по бортам, в трюме амфоры и тюки с товаром, на палубе мачта с парусом"><figcaption><span class="src">из учебника</span><b>Финикийский корабль.</b> На своих судах финикийцы добирались до Британских островов — в древности их называли Оловянными, потому что там добывали олово. В начале VI (6) века до н. э. по воле египетского фараона Нехо они вышли из Средиземного моря по прокопанному каналу в Красное и обогнули Африку. Плавание длилось три года. Прошло две тысячи лет, прежде чем другие мореплаватели отправились этим путём.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Великие мореплаватели</h2></div>
+<div class="easy">
+<p>В конце 2-го тысячелетия до н. э. финикийцы проложили пути для морской торговли по всему Средиземному морю.</p>
+<p>В западной его части они покупали серебро и выгодно продавали другим народам. Из Египта привозили папирус. А поскольку корабли приходили из города <button class="term" data-t="biblioteka">Библа</button>, то и сам материал для письма стали связывать с названием города — так родилось слово «библиотека».</p>
+<p>Ценными товарами были кедр, росший в горах около Финикии, и изделия местных ремесленников.</p>
+<p>Там, где финикийцы бывали постоянно, они основывали свои поселения — <button class="term" data-t="koloniya">колонии</button>. Бо́льшая их часть была в западной части Средиземного моря: в Африке, Испании, на островах Сардиния и Сицилия. Самой знаменитой колонией была мощная крепость <button class="term" data-t="karfagen">Карфаген</button> в Северной Африке.</p>
+<p>Но ходила о финикийцах и дурная слава — как о морских разбойниках, пиратах. Они нередко похищали людей и продавали их в рабство: заманивали на корабль, обещая показать диковинные товары, а как только человек оказывался на борту, судно снималось с якоря.</p>
+</div>
+<div class="book" hidden>
+<p>В конце 2-го тысячелетия до н. э. финикийцы проложили пути для морской торговли по всему Средиземному морю. В западной его части они покупали серебро и выгодно продавали его другим народам. Из Египта финикийцы привозили папирус. Поскольку корабли приходили из города Библа, то связывали материал, на котором можно писать, с названием города, так родилось слово «библиотека». Ценными товарами были кедр, который рос в горах около Финикии, а также изделия местных ремесленников.</p>
+<p>В местах, где финикийцы бывали постоянно, они основывали свои поселения — колонии. Бóльшая их часть находилась в западной части Средиземного моря — в Африке, Испании, на островах Сардиния, Сицилия. Самой знаменитой колонией была мощная крепость Карфаген в Северной Африке.</p>
+<p>О финикийцах ходила и дурная слава — как о морских разбойниках, пиратах. Они нередко похищали людей и продавали их в рабство. Своих жертв финикийцы заманивали на корабль, обещая показать диковинные товары. Как только люди оказывались на корабле, он тут же снимался с якоря.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-karta" src="img/01e4bc5bbd30.jpg" alt="Карта Средиземного моря: зелёным отмечена Финикия на востоке, жёлтым — колонии по берегам Испании, Африки, Сардинии и Сицилии, пунктиром — морские торговые пути"><figcaption><span class="src">из учебника</span><b>Карта финикийских колоний.</b> Зелёная полоска справа — сама Финикия с городами Арвад, Библ, Сидон, Тир. Жёлтым показаны земли, колонизированные финикийцами, пунктиром — их важнейшие морские пути.<br><span style="color:var(--soft)">▲ Найди на карте Карфаген. Посмотри, как далеко он от Финикии.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 500 212" role="img" aria-label="Две таблички: колония — поселение, которое основывали там, где бывали постоянно, свой дом на чужом берегу; где они были — запад Средиземного моря: Африка, Испания, Сардиния, Сицилия. Внизу оранжевая полоса: самая знаменитая колония — крепость Карфаген в Северной Африке."><use href="#f-koloniya"/></svg><figcaption><b>Колония — это не завоевание, а опорная точка.</b> Место, где свой корабль всегда встретят свои: можно починиться, переночевать, оставить товар.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-kupcy" src="img/5ce1a6a09b74.jpg" alt="Рисунок: на берегу у вытащенной лодки люди в ярких одеждах торгуют — сундуки, кувшины, ткани"><figcaption><span class="src">из учебника</span><b>Финикийские купцы.</b><br><span style="color:var(--soft)">▲ Какие товары продавали финикийские купцы?</span></figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какую роль играло мореходство в развитии финикийцев?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Почему колонии основывали в основном на западе Средиземного моря, а не рядом с домом?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Где искать: четвёртый абзац раздела 2 и карта колоний.</div>
+<div class="rev ans" id="a4" hidden>Рядом с домом колония не нужна: туда и так легко доплыть. А вот на западе — в Испании, Африке, на Сардинии и Сицилии — до Финикии месяцы пути. Там и нужна была опорная точка, где можно пополнить запасы и переждать непогоду. Колонии — это станции на длинной дороге.</div>
+</div>
+<div class="think">
+<p class="qt">5. Слово «библиотека» пришло от названия города. Как это получилось?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Где искать: второй абзац раздела 2.</div>
+<div class="rev ans" id="a5" hidden>Финикийцы возили папирус из Египта, а корабли с ним приходили из города Библа. Люди стали связывать сам материал для письма с названием города, откуда его привозили. Так «Библ» превратился в слово, которое теперь значит «собрание книг».</div>
+</div>
+<div class="think">
+<p class="qt">6. Финикийцы были и честными купцами, и пиратами, которые похищали людей. Как это уживалось в одном народе?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Где искать: последний абзац раздела 2.</div>
+<div class="rev ans" id="a6" hidden>Купец и пират в древности часто были одним человеком: на своём берегу торгуешь честно, потому что иначе с тобой не станут иметь дела, а на чужом — берёшь что плохо лежит, потому что искать тебя никто не будет. Финикийцы и славу имели двойную — их и ждали, и боялись.</div>
+</div>
+<div class="think">
+<p class="qt">7. Финикийцы обогнули Африку за три года, а повторили этот путь другие мореплаватели только через две тысячи лет. О чём это говорит?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Где искать: подпись к рисунку финикийского корабля.</div>
+<div class="rev ans" id="a7" hidden>О том, что их корабли и умение плавать были для своего времени невероятными. Они прошли путь, который оказался не по силам людям следующие двадцать веков — с картами, компасом и опытом. Это не просто торговля: это была настоящая экспедиция.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Изобретения финикийцев</h2></div>
+<div class="easy">
+<p>Финикийцы строили парусные суда большой грузоподъёмности, способные держаться на воде даже в сильный шторм. Гребцов на судах тоже держали — попутный ветер дует не всегда.</p>
+<p>На боевых кораблях финикийцы применяли <button class="term" data-t="taran">таран</button>: при атаке он пробивал борт вражеского судна.</p>
+<p>Жители Финикии первыми научились добывать <button class="term" data-t="purpur">пурпурную краску</button> для окрашивания ткани — её получали из особого вида моллюсков. Этот промысел так их прославил, что само название «Финикия» восходит к древнегреческому «страна пурпура».</p>
+<p>Ещё финикийцы открыли новый способ изготовления <button class="term" data-t="steklo">стекла</button> — оно получалось чистым и прозрачным. Помогал песок со средиземноморского побережья.</p>
+<p>Легенда рассказывает так. Однажды финикийские купцы везли из Египта глыбы соды. Они остановились на берегу, где не было камней, и сложили очаг прямо из соды. На их глазах от огня сода сплавилась с песком — так открыли и само стекло, и способ его изготовления.</p>
+</div>
+<div class="book" hidden>
+<p>Финикийцы строили парусные суда большой грузоподъёмности, способные держаться на воде в сильный шторм. На судах держали и гребцов, поскольку не всегда дул попутный ветер. Финикийцы применяли на боевых кораблях таран, который при атаке пробивал борт вражеского судна.</p>
+<p>Жители Финикии первыми научились добывать пурпурную краску для окрашивания ткани. Краску получали из особого вида моллюсков. Этот промысел так прославил финикийцев, что само название «Финикия» восходит к древнегреческому «страна пурпура».</p>
+<p>Финикийцы открыли новый способ изготовления стекла. Оно получалось чистым и прозрачным. Такой результат достигался за счёт использования песка с побережья Средиземного моря. Легенда гласит, что однажды финикийские купцы везли из Египта глыбы соды. Они остановились на берегу, где не было камней, и для очага использовали глыбы соды. На их глазах от воздействия огня сода и песок сплавились: так были открыты и само стекло, и способ его изготовления.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 500 246" role="img" aria-label="Четыре таблички: таран — на боевых кораблях, при атаке пробивал борт вражеского судна; пурпур — краска из особых моллюсков, «Финикия» значит «страна пурпура»; стекло — чистое и прозрачное, из песка со средиземноморского берега; алфавит — 22 буквы вместо сотен знаков, от него происходит наш."><use href="#f-izobret"/></svg><figcaption><b>Четыре вещи, которые придумали финикийцы.</b> Про алфавит — следующий раздел, он оказался самым важным из всех.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 500 186" role="img" aria-label="Схема: сода плюс песок плюс огонь равно стекло. Внизу рассказ о том, как купцы сложили очаг из глыб соды прямо на песчаном берегу."><use href="#f-steklo"/></svg><figcaption><b>Случайность, которую заметили.</b> Сода и песок лежали рядом и раньше — но кто-то впервые посмотрел на сплавившуюся массу и подумал: а ведь это можно повторить.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-maska" src="img/880b785ec54f.jpg" alt="Стеклянная маска с крупными глазами, завитками бороды и волос" style="max-width:200px"><figcaption><span class="src">из учебника</span><b>Финикийская стеклянная маска.</b> Такими масками накрывали лица умерших при погребении. Они могли быть страшными — чтобы отпугивать злых духов. А могли быть смеющимися: по одной из версий, их делали для безутешных родителей, потерявших детей.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие изобретения финикийцев используются до сих пор?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Зачем на корабле держали гребцов, если был парус?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Где искать: первый абзац раздела 3.</div>
+<div class="rev ans" id="a8" hidden>Потому что попутный ветер дует не всегда. Без ветра парусник стоит на месте, а купцу надо в срок. Гребцы — это способ двигаться тогда, когда ветер против или его нет совсем.</div>
+</div>
+<div class="think">
+<p class="qt">9. Название страны происходит от краски. Что это говорит о том, чем Финикия была знаменита?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Где искать: третий абзац раздела 3.</div>
+<div class="rev ans" id="a9" hidden>Что пурпур прославил финикийцев сильнее всего остального: греки назвали их страну прямо по этой краске — «страна пурпура». Значит, именно за пурпуром к ним и ехали, а ткань такого цвета была редкой и дорогой вещью.</div>
+</div>
+<div class="think">
+<p class="qt">10. По легенде стекло открыли случайно. Какие три вещи должны были совпасть?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Где искать: последний абзац раздела 3 и схема про стекло.</div>
+<div class="rev ans" id="a10" hidden>Сода — её везли из Египта; песок — на берегу, где остановились; и огонь — очаг сложили прямо из соды, потому что камней рядом не было. Убери любое из трёх — и открытия не случилось бы.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Алфавит</h2></div>
+<div class="easy">
+<p>Финикийцы много торговали и общались с другими народами. Сами они разговаривали на ханаанейском языке, а для письма использовали аккадскую клинопись.</p>
+<p>Это создавало много трудностей: в клинописи было почти 600 знаков, а некоторые имели по нескольку значений — на её изучение уходила уйма времени.</p>
+<p>И тогда, в конце 2-го тысячелетия до н. э., финикийцы создали новую простую систему письма. <b>Они стали обозначать знаками не слова и слоги, а отдельные звуки речи.</b> Записывали при этом только согласные звуки.</p>
+<p>Позже греки, хорошо знакомые с финикийским письмом, переделали звучание <button class="term" data-t="alef">первых букв</button> в «альфа» и «бета» — отсюда и название <button class="term" data-t="alfavit">алфавит</button>. Греки усовершенствовали его, добавив знаки для гласных звуков.</p>
+<p>Усовершенствованный греками финикийский алфавит стал основой и для нашего — того, которым мы пользуемся до сих пор.</p>
+</div>
+<div class="book" hidden>
+<p>Финикийцы много торговали и взаимодействовали с представителями других народов. Сами разговаривали на ханаанейском языке, а для письма использовали аккадскую клинопись. Это вызывало множество трудностей, так как для других народов изучение клинописи (в ней существовало почти 600 знаков, а некоторые имели по несколько значений) занимало большое количество времени. Тогда в конце 2-го тысячелетия до н. э. финикийцы создали новую простую систему письма.</p>
+<p>Они стали обозначать знаками не слова и слоги, а отдельные звуки речи. При этом записывались только согласные звуки.</p>
+<p>Позже у греков, которые были хорошо знакомы с финикийским письмом, звучание первых букв превратилось в «альфа» и «бета», отсюда и название — алфавит. Греки усовершенствовали алфавит, включив в него знаки для обозначения гласных звуков. Усовершенствованный греками финикийский алфавит станет основой уже для нашего алфавита, который используется до сих пор.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-alfavit" src="img/f2e0b945a9cd.jpg" alt="Таблица из 22 финикийских букв: простые угловатые значки, под каждым подпись — алеф, бет, гимель, далет и так далее" style="max-width:420px"><figcaption><span class="src">из учебника</span><b>Финикийский алфавит.</b> Система письма состояла из 22 букв. Первая называлась «алеф» — «бык», вторая «бет» — «дом», и так далее.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 545 258" role="img" aria-label="Сравнение: длинная серая полоса — клинопись, почти 600 знаков, знак равен слову или слогу. Короткая зелёная полоска — финикийское письмо, 22 буквы, знак равен отдельному звуку. Ниже цепочка: финикийцы (алеф, бет, гимель) — греки (альфа, бета плюс гласные) — наш алфавит, им ты пишешь сейчас."><use href="#f-alfavit"/></svg><figcaption><b>Вот почему это изобретение важнее тарана и пурпура.</b> Сравни полоски: выучить 600 знаков мог только тот, кто учился годами (вспомни писцов в §6—7). А 22 буквы осилит любой — и писать научилась не горстка людей, а все.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему финикийскую систему письма сделали основой некоторых современных алфавитов? Чем она отличалась от письменности Месопотамии и Египта?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">11. Почему клинопись была для других народов такой трудной, а финикийское письмо — лёгким?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Где искать: второй и третий абзацы раздела 4 и схема с полосками.</div>
+<div class="rev ans" id="a11" hidden>В клинописи почти 600 знаков, и каждый знак — целое слово или слог, а некоторые ещё и с несколькими значениями. Запомнить всё это можно только за годы учёбы. А финикийцы придумали обозначать отдельные звуки: звуков в речи немного, поэтому и знаков хватило 22.</div>
+</div>
+<div class="think">
+<p class="qt">12. Финикийцы записывали только согласные. Что добавили греки и зачем?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Где искать: четвёртый абзац раздела 4.</div>
+<div class="rev ans" id="a12" hidden>Греки добавили знаки для гласных звуков. Без гласных читающий должен угадывать слово по смыслу — «мст» это «мост», «мост» или «место»? С гласными такой путаницы нет, и прочитать текст может даже тот, кто не знает заранее, о чём он.</div>
+</div>
+<div class="think">
+<p class="qt">13. Откуда взялось само слово «алфавит»?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h13" hidden>Где искать: четвёртый абзац раздела 4 и подпись к таблице финикийских букв.</div>
+<div class="rev ans" id="a13" hidden>От названий первых двух финикийских букв: «алеф» («бык») и «бет» («дом»). У греков они стали «альфа» и «бета» — и вместе дали слово «алфавит». То есть в этом слове до сих пор живут бык и дом.</div>
+</div>
+<div class="think">
+<p class="qt">14. Почему простое письмо придумал именно торговый народ?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h14" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a14" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h14" hidden>Соедини первый абзац раздела 4 с тем, чем финикийцы занимались в разделах 1 и 2.</div>
+<div class="rev ans" id="a14" hidden>Купцу письмо нужно каждый день и с самыми разными людьми: записать сделку, послать весть в колонию, договориться с чужеземцем. Учиться годами, как писцы в Египте, купцу некогда — ему нужно письмо, которое быстро освоит и он, и его собеседник. Нужда и родила изобретение.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">Финикийцы были мореплавателями, создали свои колонии по побережью Средиземного моря. Известные изобретения финикийцев — таран, краска, стекло и алфавит.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Как природные условия Финикии отразились на занятиях её жителей?</li><li>Объясни, что из себя представляли колонии. Где и с какой целью они создавались?</li><li>Сравни состав общества Финикии и Месопотамии. В чём их различия? Объясни почему.</li><li>Как ты думаешь, почему Месопотамия и Египет были едиными государствами, а финикийские города-государства оставались самостоятельными?</li><li>Как финикийцы повлияли на развитие мореплавания?</li><li>Какое значение имел финикийский алфавит для развития письменности?</li><li>Представь себя финикийским мореплавателем. Опиши свой путь и впечатления от путешествия.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к четвёртому вопросу</button></div>
+<div class="rev hint" id="r1" hidden>Посмотри на карту. Египет и Месопотамия — это долины рек: чтобы прокормиться, там нужна общая оросительная система, а её может построить только одна власть на всю страну. Поэтому они и собрались в единые государства. А финикийские города жили не с земли, а с моря: каждому нужна была своя гавань и свой флот, и объединяться было не для чего. Общее хозяйство собирает страну — раздельное оставляет её раздробленной.</div></div>
+<div class="sublabel">Работаем с понятиями</div>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Прочитай список понятий: колония, алфавит, таран, стекло, Финикия. Какое понятие является общим для всех? Объясни свой ответ.</p>
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Показать ответ</button></div>
+<div class="rev ans" id="r2" hidden><b>Финикия.</b> Колония, алфавит, таран и стекло — это всё, что финикийцы придумали или создали. А Финикия — сама страна, которой они принадлежали: общее слово для всех остальных.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — чем славилась Финикия в древности? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Собери цепочку письма</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего письма к нашему.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Греки добавили гласные</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Клинопись: почти 600 знаков</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Наш алфавит</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Финикийцы: 22 буквы, только согласные</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Финикия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 220" aria-hidden="true"><use href="#f-strana"/></svg><span class="ftext">Узкая полоска между горами и морем. Пахать негде — кормились ремеслом и морем.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Колония</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 500 212" aria-hidden="true"><use href="#f-koloniya"/></svg><span class="ftext">Поселение на чужом берегу, где финикийцы бывали постоянно. Самая знаменитая — Карфаген.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Таран</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 500 246" aria-hidden="true"><use href="#f-izobret"/></svg><span class="ftext">Выступ на носу боевого корабля: при атаке пробивал борт вражеского судна.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пурпур</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 500 246" aria-hidden="true"><use href="#f-izobret"/></svg><span class="ftext">Краска из моллюсков. «Финикия» и значит «страна пурпура».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Алфавит</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 545 258" aria-hidden="true"><use href="#f-alfavit"/></svg><span class="ftext">22 буквы вместо 600 знаков: знак — отдельный звук, а не слово.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Стекло</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 500 186" aria-hidden="true"><use href="#f-steklo"/></svg><span class="ftext">Сода плюс песок плюс огонь. Открыли, по легенде, случайно на берегу.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Почему финикийцы стали мореходами и торговцами?</h3><div class="opts">
+<button class="opt">Им нравилось путешествовать</button>
+<button class="opt" data-ok="1">Полоса плодородной земли была совсем узкой</button>
+<button class="opt">Их выгнали соседи</button></div>
+<div class="fb">Побережье скалистое, пахать негде — зато удобные гавани и море под боком.</div></div>
+<div class="q"><h3>2. Что такое колония?</h3><div class="opts">
+<button class="opt" data-ok="1">Поселение, основанное там, где бывали постоянно</button>
+<button class="opt">Военный лагерь</button>
+<button class="opt">Название корабля</button></div>
+<div class="fb">Большинство колоний было на западе Средиземного моря. Самая знаменитая — Карфаген.</div></div>
+<div class="q"><h3>3. От чего произошло слово «библиотека»?</h3><div class="opts">
+<button class="opt">От имени царя</button>
+<button class="opt" data-ok="1">От названия города Библ</button>
+<button class="opt">От слова «книга» по-гречески</button></div>
+<div class="fb">Через Библ шёл папирус из Египта, и материал для письма стали связывать с названием города.</div></div>
+<div class="q"><h3>4. Что такое пурпур?</h3><div class="opts">
+<button class="opt">Драгоценный камень</button>
+<button class="opt">Сорт кедра</button>
+<button class="opt" data-ok="1">Краска для тканей из особых моллюсков</button></div>
+<div class="fb">«Финикия» и восходит к древнегреческому «страна пурпура».</div></div>
+<div class="q"><h3>5. Сколько букв было в финикийском алфавите?</h3><div class="opts">
+<button class="opt" data-ok="1">22</button>
+<button class="opt">60</button>
+<button class="opt">почти 600</button></div>
+<div class="fb">Почти 600 знаков было в клинописи. Финикийцы обошлись 22 буквами, потому что обозначали отдельные звуки.</div></div>
+<div class="q"><h3>6. Что добавили греки к финикийскому письму?</h3><div class="opts">
+<button class="opt">Знаки для чисел</button>
+<button class="opt" data-ok="1">Знаки для гласных звуков</button>
+<button class="opt">Знаки для имён богов</button></div>
+<div class="fb">Финикийцы записывали только согласные. Именно греческий вариант и стал основой нашего алфавита.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Природа и города Финикии</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl3" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl3" hidden><ol><li>Восточный берег Средиземного моря; побережье скалистое, полоса плодородной земли узкая, зато удобные гавани.</li><li>В гаванях — города-государства: Библ, Тир, Сидон; правитель командует армией и флотом, собирает налоги.</li><li>К городам выходили сухопутные пути из Малой Азии, Месопотамии, Северной Аравии — дальше товар шёл морем.</li></ol></div>
+</div>
+<div class="think">
+<h3>Мореплаватели и колонии</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Конец 2-го тысячелетия до н. э. — пути по всему Средиземному морю; серебро с запада, папирус из Египта, кедр, изделия ремесленников.</li><li>Колонии в Африке, Испании, на Сардинии и Сицилии; самая знаменитая — Карфаген.</li><li>Добирались до Британских (Оловянных) островов, обогнули Африку за три года; но имели и славу пиратов.</li></ol></div>
+</div>
+<div class="think">
+<h3>Изобретения</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Суда большой грузоподъёмности, держатся в шторм; гребцы на случай безветрия; таран на боевых кораблях.</li><li>Пурпурная краска из моллюсков — отсюда само название «страна пурпура».</li><li>Стекло чистое и прозрачное: по легенде сода из Египта сплавилась с песком в очаге на берегу.</li></ol></div>
+</div>
+<div class="think">
+<h3>Алфавит</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Сначала писали аккадской клинописью: почти 600 знаков, у некоторых по нескольку значений — трудно.</li><li>Конец 2-го тысячелетия до н. э.: 22 буквы, знак — отдельный звук речи, записывали только согласные.</li><li>Греки добавили гласные, «алеф» и «бет» стали «альфой» и «бетой» — отсюда слово «алфавит», и от него наш.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p12.html">‹ §12 Вавилон</a>
+  <span class="pn cur">§13 Финикия</span>
+  <a class="pn" href="p14.html">§14 Палестина ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 13 · История, 5 класс · страницы 76—80 · глава II «Древний Восток»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'f-strana':'0 0 540 220','f-torg':'0 0 510 226','f-koloniya':'0 0 500 212','f-izobret':'0 0 500 246','f-alfavit':'0 0 545 258','f-steklo':'0 0 500 186'};
+
+var T={
+finikia:{w:"Финикия",k:"страна",s:"f-strana",t:"Страна на восточном берегу Средиземного моря — там, где сейчас Сирия, Ливан и Израиль. Побережье скалистое, полоса плодородной земли совсем узкая, зато много удобных гаваней."},
+gavan:{w:"Гавань",k:"место",s:"f-strana",t:"Удобная бухта, где корабли могут стоять в безопасности. Именно в гаванях Финикии возникали города: Библ, Тир, Сидон."},
+koloniya:{w:"Колония",k:"поселение",s:"f-koloniya",t:"Поселение, которое финикийцы основывали там, где бывали постоянно. Большинство колоний было в западной части Средиземного моря: в Африке, Испании, на Сардинии и Сицилии."},
+karfagen:{w:"Карфаген",k:"город",p:"karta",t:"Самая знаменитая финикийская колония — мощная крепость в Северной Африке."},
+biblioteka:{w:"Библ",k:"город",p:"karta",t:"Финикийский город, через который шёл папирус из Египта. Материал для письма стали связывать с названием города — так родилось слово «библиотека»."},
+taran:{w:"Таран",k:"оружие",s:"f-izobret",t:"Выступ на носу боевого корабля. При атаке он пробивал борт вражеского судна."},
+purpur:{w:"Пурпур",k:"краска",s:"f-izobret",t:"Пурпурную краску для тканей получали из особого вида моллюсков. Финикийцы научились добывать её первыми, и промысел так их прославил, что само название «Финикия» восходит к древнегреческому «страна пурпура»."},
+steklo:{w:"Стекло",k:"изобретение",s:"f-steklo",t:"Финикийцы открыли новый способ его изготовления: стекло получалось чистым и прозрачным благодаря песку со средиземноморского побережья."},
+alfavit:{w:"Алфавит",k:"письмо",s:"f-alfavit",t:"Система письма из 22 букв, где знак обозначает не слово и не слог, а отдельный звук речи. Финикийцы записывали только согласные; греки добавили гласные."},
+alef:{w:"«Алеф» и «бет»",k:"буквы",p:"alfavit",t:"Названия первых двух финикийских букв: «алеф» значило «бык», «бет» — «дом». У греков они стали «альфа» и «бета» — отсюда и слово «алфавит»."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p13:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p13:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>4){fb.textContent="Верно! Клинопись → финикийские 22 буквы → греки добавили гласные → наш алфавит.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Посмотри схему «600 знаков против 22 букв» в разделе 4.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p13:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p13:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

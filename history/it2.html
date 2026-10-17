@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Итоги главы II «Древний Восток».">
+<title>Итоги главы II «Древний Восток»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="t-civ" viewBox="0 0 560 308">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЦИВИЛИЗАЦИЯ — ЭТО ОБЩЕСТВО, ДОСТИГШЕЕ ВЫСОКОГО УРОВНЯ РАЗВИТИЯ</text>
+  <text x="8" y="40" font-size="11.5" fill="var(--soft)">Узнать её можно по трём приметам:</text>
+  <rect x="8" y="52" width="176" height="106" rx="10" fill="var(--ochre)"/>
+  <text x="22" y="76" font-size="12" font-weight="700" fill="#22190A">ГОРОДА</text>
+  <text x="22" y="100" font-size="11" fill="#22190A">центры ремесла</text>
+  <text x="22" y="116" font-size="11" fill="#22190A">и торговли</text>
+  <rect x="196" y="52" width="176" height="106" rx="10" fill="var(--paper2)"/>
+  <text x="210" y="76" font-size="12" font-weight="700" fill="var(--illink)">БОЛЬШИЕ СТРОЙКИ</text>
+  <text x="210" y="100" font-size="11" fill="var(--illink)">храмы, городские стены,</text>
+  <text x="210" y="116" font-size="11" fill="var(--illink)">плотины и дамбы</text>
+  <rect x="384" y="52" width="168" height="106" rx="10" fill="var(--paper2)"/>
+  <text x="398" y="76" font-size="12" font-weight="700" fill="var(--flame)">ПИСЬМЕННОСТЬ</text>
+  <text x="398" y="100" font-size="11" fill="var(--illink)">люди научились</text>
+  <text x="398" y="116" font-size="11" fill="var(--illink)">записывать слова</text>
+  <rect x="8" y="176" width="544" height="72" rx="10" fill="var(--ice)"/>
+  <text x="24" y="200" font-size="11.5" fill="var(--illink)">Первые цивилизации появились примерно 5 тысяч лет назад на Древнем Востоке —</text>
+  <text x="24" y="218" font-size="11.5" fill="var(--illink)">от Северо-Восточной Африки до Южной и Восточной Азии, включая Индию и Китай.</text>
+  <text x="24" y="238" font-size="11.5" font-weight="700" fill="var(--illink)">Все они выросли в долинах великих рек: Нил, Тигр, Евфрат, Инд, Хуанхэ.</text>
+  <text x="8" y="276" font-size="12" font-weight="700" fill="var(--moss)">Река — вот общая причина. Там собирали обильные урожаи,</text>
+  <text x="8" y="296" font-size="12" font-weight="700" fill="var(--moss)">а где есть лишний хлеб, там появляются города, стройки и письмо.</text>
+</symbol>
+
+<symbol id="t-reki" viewBox="0 0 570 340">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ВСЯ ГЛАВА НА ОДНОЙ КАРТИНКЕ: РЕКА — СТРАНА — ПАРАГРАФ</text>
+  <rect x="8" y="28" width="554" height="42" rx="8" fill="var(--paper2)"/>
+  <rect x="22" y="40" width="10" height="18" rx="3" fill="var(--water)"/>
+  <text x="44" y="46" font-size="11.5" font-weight="700" fill="var(--illink)">НИЛ</text>
+  <text x="152" y="46" font-size="11.5" fill="var(--illink)">Древний Египет</text>
+  <text x="152" y="63" font-size="10.5" fill="var(--soft)">§ 5—10: разливы, фараоны, пирамиды, боги, письмо и наука</text>
+  <rect x="8" y="78" width="554" height="42" rx="8" fill="var(--paper2)"/>
+  <rect x="22" y="90" width="10" height="18" rx="3" fill="var(--water)"/>
+  <text x="44" y="96" font-size="11.5" font-weight="700" fill="var(--illink)">ТИГР И ЕВФРАТ</text>
+  <text x="152" y="96" font-size="11.5" fill="var(--illink)">Междуречье, Вавилон, Ассирия</text>
+  <text x="152" y="113" font-size="10.5" fill="var(--soft)">§ 11, 12, 15: клинопись, законы Хаммурапи, войско Ассирии</text>
+  <rect x="8" y="128" width="554" height="42" rx="8" fill="var(--paper2)"/>
+  <rect x="22" y="140" width="10" height="18" rx="3" fill="var(--sky)"/>
+  <text x="44" y="146" font-size="11.5" font-weight="700" fill="var(--illink)">СРЕДИЗЕМНОЕ МОРЕ</text>
+  <text x="222" y="146" font-size="11.5" fill="var(--illink)">Финикия и Палестина</text>
+  <text x="222" y="163" font-size="10.5" fill="var(--soft)">§ 13, 14: корабли, колонии, алфавит, иудаизм</text>
+  <rect x="8" y="178" width="554" height="42" rx="8" fill="var(--paper2)"/>
+  <rect x="22" y="190" width="10" height="18" rx="3" fill="var(--stone)"/>
+  <text x="44" y="196" font-size="11.5" font-weight="700" fill="var(--illink)">НАГОРЬЯ ИРАНА</text>
+  <text x="182" y="196" font-size="11.5" fill="var(--illink)">Персидская держава</text>
+  <text x="182" y="213" font-size="10.5" fill="var(--soft)">§ 16: Кир и Дарий, 20 сатрапий, Царская дорога, зороастризм</text>
+  <rect x="8" y="228" width="554" height="42" rx="8" fill="var(--paper2)"/>
+  <rect x="22" y="240" width="10" height="18" rx="3" fill="var(--water)"/>
+  <text x="44" y="246" font-size="11.5" font-weight="700" fill="var(--illink)">ИНД И ГАНГ</text>
+  <text x="152" y="246" font-size="11.5" fill="var(--illink)">Древняя Индия</text>
+  <text x="152" y="263" font-size="10.5" fill="var(--soft)">§ 17, 19: Мохенджо-Даро, арии, варны, Ашока, буддизм, ноль</text>
+  <rect x="8" y="278" width="554" height="42" rx="8" fill="var(--paper2)"/>
+  <rect x="22" y="290" width="10" height="18" rx="3" fill="var(--water)"/>
+  <text x="44" y="296" font-size="11.5" font-weight="700" fill="var(--illink)">ХУАНХЭ И ЯНЦЗЫ</text>
+  <text x="182" y="296" font-size="11.5" fill="var(--illink)">Древний Китай</text>
+  <text x="182" y="313" font-size="10.5" fill="var(--soft)">§ 18, 19: Цинь Шихуанди, Великая стена, Хань, Конфуций</text>
+  <text x="8" y="332" font-size="11.5" font-weight="700" fill="var(--moss)">Шесть стран главы — и все до одной стоят на большой воде.</text>
+</symbol>
+
+<symbol id="t-lenta" viewBox="0 0 588 300">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ГЛАВНЫЕ ДАТЫ ВСЕЙ ГЛАВЫ</text>
+  <path d="M138 34 V266" stroke="var(--stone)" stroke-width="4"/>
+  <circle cx="138" cy="48" r="7" fill="var(--ochre)"/>
+  <text x="122" y="52" text-anchor="end" font-size="11" font-weight="700" fill="var(--flame)">около 3000 до н. э.</text>
+  <text x="156" y="52" font-size="11" fill="var(--illink)">единое государство в Египте</text>
+  <circle cx="138" cy="82" r="7" fill="var(--ochre)"/>
+  <text x="122" y="86" text-anchor="end" font-size="11" font-weight="700" fill="var(--flame)">рубеж 4—3-го тыс.</text>
+  <text x="156" y="86" font-size="11" fill="var(--illink)">первые города Междуречья, шумеры</text>
+  <circle cx="138" cy="116" r="7" fill="var(--ochre)"/>
+  <text x="122" y="120" text-anchor="end" font-size="11" font-weight="700" fill="var(--flame)">XIII век до н. э.</text>
+  <text x="156" y="120" font-size="11" fill="var(--illink)">арии приходят в Индию</text>
+  <circle cx="138" cy="150" r="7" fill="var(--red)"/>
+  <text x="122" y="154" text-anchor="end" font-size="11" font-weight="700" fill="var(--flame)">VIII—VII века до н. э.</text>
+  <text x="156" y="154" font-size="11" fill="var(--illink)">в Иудее возникает иудаизм</text>
+  <circle cx="138" cy="184" r="7" fill="var(--red)"/>
+  <text x="122" y="188" text-anchor="end" font-size="11" font-weight="700" fill="var(--flame)">612 и 539 до н. э.</text>
+  <text x="156" y="188" font-size="11" fill="var(--illink)">падает Ниневия, затем персы берут Вавилон</text>
+  <circle cx="138" cy="218" r="7" fill="var(--moss)"/>
+  <text x="122" y="222" text-anchor="end" font-size="11" font-weight="700" fill="var(--flame)">VI век до н. э.</text>
+  <text x="156" y="222" font-size="11" fill="var(--illink)">в Индии возникает буддизм</text>
+  <circle cx="138" cy="252" r="7" fill="var(--moss)"/>
+  <text x="122" y="256" text-anchor="end" font-size="11" font-weight="700" fill="var(--flame)">221 и 202 до н. э.</text>
+  <text x="156" y="256" font-size="11" fill="var(--illink)">Цинь Шихуанди, затем династия Хань</text>
+  <text x="8" y="292" font-size="12" font-weight="700" fill="var(--moss)">Между первой и последней строчкой — почти три тысячи лет.</text>
+</symbol>
+
+<symbol id="t-vklad" viewBox="0 0 570 324">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧЕМ МЫ ДО СИХ ПОР ПОЛЬЗУЕМСЯ</text>
+  <rect x="8" y="28" width="270" height="124" rx="10" fill="var(--ochre)"/>
+  <text x="22" y="50" font-size="12" font-weight="700" fill="#22190A">ЧТОБЫ ПИСАТЬ И СЧИТАТЬ</text>
+  <text x="22" y="74" font-size="11" fill="#22190A">алфавит — от финикийцев</text>
+  <text x="22" y="94" font-size="11" fill="#22190A">цифры и ноль — из Индии</text>
+  <text x="22" y="114" font-size="11" fill="#22190A">бумага — из Китая</text>
+  <text x="22" y="134" font-size="11" fill="#22190A">час из 60 минут — из Междуречья</text>
+  <rect x="292" y="28" width="270" height="124" rx="10" fill="var(--paper2)"/>
+  <text x="306" y="50" font-size="12" font-weight="700" fill="var(--illink)">ЧТОБЫ ЖИТЬ ВМЕСТЕ</text>
+  <text x="306" y="74" font-size="11" fill="var(--illink)">писаные законы — Хаммурапи</text>
+  <text x="306" y="94" font-size="11" fill="var(--illink)">вера в единого бога — иудаизм</text>
+  <text x="306" y="114" font-size="11" fill="var(--illink)">буддизм — мировая религия</text>
+  <text x="306" y="134" font-size="11" fill="var(--illink)">правила поведения — Конфуций</text>
+  <rect x="8" y="168" width="554" height="92" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="190" font-size="12" font-weight="700" fill="var(--flame)">И ЕЩЁ КУЧА ВЕЩЕЙ</text>
+  <text x="22" y="214" font-size="11" fill="var(--illink)">календарь из 12 месяцев · компас · порох · шёлк · лак · стекло</text>
+  <text x="22" y="234" font-size="11" fill="var(--illink)">шахматы · лечение иголками · пурпурная краска · монета</text>
+  <text x="22" y="252" font-size="11" fill="var(--illink)">и семь дней в неделе</text>
+  <text x="8" y="292" font-size="12" font-weight="700" fill="var(--moss)">Всё это придумали люди, жившие три-пять тысяч лет назад.</text>
+  <text x="8" y="312" font-size="12" font-weight="700" fill="var(--moss)">Ты пользуешься их изобретениями каждый день, не замечая этого.</text>
+</symbol>
+
+<symbol id="t-vlast" viewBox="0 0 570 296">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ОДНА ЗАДАЧА — РАЗНЫЕ РЕШЕНИЯ: КАК УДЕРЖАТЬ БОЛЬШУЮ СТРАНУ</text>
+  <rect x="8" y="28" width="554" height="52" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="50" font-size="11.5" font-weight="700" fill="var(--red)">СТРАХ · Ассирия и империя Цинь</text>
+  <text x="22" y="70" font-size="11" fill="var(--illink)">жестокость к побеждённым, свирепые наказания, тяжёлые подати</text>
+  <rect x="8" y="90" width="554" height="52" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="112" font-size="11.5" font-weight="700" fill="var(--illink)">БОЖЕСТВЕННАЯ ВЛАСТЬ · Египет и Вавилон</text>
+  <text x="22" y="132" font-size="11" fill="var(--illink)">фараон — сам бог; царю законы вручает бог — спорить не с кем</text>
+  <rect x="8" y="152" width="554" height="52" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="174" font-size="11.5" font-weight="700" fill="var(--moss)">УСТРОЙСТВО · Персия и империя Хань</text>
+  <text x="22" y="194" font-size="11" fill="var(--illink)">сатрапии, дороги, единая монета; добродетели и долг вместо казней</text>
+  <rect x="8" y="214" width="554" height="52" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="236" font-size="11.5" font-weight="700" fill="var(--flame)">ПОРЯДОК ОТ РОЖДЕНИЯ · Индия</text>
+  <text x="22" y="256" font-size="11" fill="var(--illink)">жёсткой центральной власти нет: её заменяют варны и касты</text>
+  <text x="8" y="290" font-size="12" font-weight="700" fill="var(--moss)">Державы страха рушились первыми, державы устройства жили веками.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § II</span>
+    <h1>Итоги главы II «Древний Восток»</h1>
+    <p class="lede">Вся глава целиком: что такое цивилизация, семь стран на больших реках, главные даты и то, чем мы пользуемся до сих пор.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Что такое цивилизация и какой след Древний Восток оставил во всём мире?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p19.html">‹ §19 Религия и культура</a>
+  <span class="pn cur">Итоги главы II</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Что такое цивилизация">1</a><a href="#s2" data-j="s2" title="Итоги главы: семь цивилизаций">2</a><a href="#s3" data-j="s3" title="Что осталось нам">3</a><a href="#sit" data-j="sit" title="Темы проектов и что почитать">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-karta" src="img/4fff2afecbf0.jpg" alt="Карта Древнего Востока: зелёным показаны основные районы земледелия вдоль Нила, Тигра и Евфрата, подписаны Мемфис, Фивы, Иерусалим, Тир, Библ, Вавилон, Ур, Урук, Ниневия, Ашшур, Сузы, розовым пунктиром — важнейшие торговые пути"><figcaption><span class="src">из учебника</span><b>Древний Восток. Карта в начале главы.</b> Зелёным закрашены основные районы земледелия — и почти все они лежат узкими полосами вдоль рек. Розовый пунктир — важнейшие торговые пути.<br><span style="color:var(--soft)">▲ Назови древнейшие цивилизации Древнего Востока, которые видны на этой карте.</span></figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Что такое цивилизация</h2></div>
+<div class="easy">
+<p>На смену первобытности пришла эпоха <button class="term" data-t="civ">цивилизации</button>. Цивилизация — это общество, достигшее высокого уровня развития.</p>
+<p><b>Как её узнать?</b> По трём приметам: появляются города — центры ремесла и торговли; строятся величественные сооружения — храмы, городские стены, плотины и дамбы; возникает письменность.</p>
+<p>Первые цивилизации зародились примерно 5 тысяч лет назад на <button class="term" data-t="vostok">Древнем Востоке</button> — протяжённой территории от Северо-Восточной Африки до Южной и Восточной Азии, включая Индию и Китай.</p>
+<p>Почему именно там? Здесь, в долинах великих рек — Нила, Тигра, Евфрата, Инда, Хуанхэ и других, — можно было собирать обильные урожаи.</p>
+</div>
+<div class="book" hidden>
+<p>На смену первобытности пришла эпоха цивилизации. Цивилизация — это общество, достигшее высокого уровня развития. Для эпохи цивилизации характерно появление городов как центров ремесла и торговли; строительство величественных сооружений — храмов, городских стен, плотин и дамб; возникновение письменности.</p>
+<p>Первые цивилизации зародились примерно 5 тысяч лет назад на Древнем Востоке — протяжённой территории от Северо-Восточной Африки до Южной и Восточной Азии (включая Индию и Китай). Здесь, в долинах великих рек (Нил, Тигр, Евфрат, Инд, Хуанхэ и др.), можно было собирать обильные урожаи.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 560 308" role="img" aria-label="Три таблички примет цивилизации: города — центры ремесла и торговли; большие стройки — храмы, городские стены, плотины и дамбы; письменность — люди научились записывать слова. Ниже: первые цивилизации появились примерно 5 тысяч лет назад на Древнем Востоке, от Северо-Восточной Африки до Южной и Восточной Азии, включая Индию и Китай, и все они выросли в долинах великих рек — Нила, Тигра, Евфрата, Инда, Хуанхэ."><use href="#t-civ"/></svg><figcaption><b>Вот и ответ на главный вопрос главы.</b> Три приметы легко запомнить по одной цепочке: река даёт лишний хлеб → лишний хлеб освобождает людей от поля → появляются ремесленники и города → нужны стройки и записи.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Что такое цивилизация? Выдели признаки цивилизации.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Почему все первые цивилизации выросли именно в долинах больших рек?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Где искать: последний абзац раздела 1 и §5 про Нил.</div>
+<div class="rev ans" id="a1" hidden>Потому что там собирали обильные урожаи. Река давала воду и плодородный ил, и еды хватало не только тем, кто её вырастил. Часть людей смогла заняться ремеслом, торговлей и записями — так и появились города, стройки и письменность.</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему из трёх примет цивилизации письменность самая важная для нас с тобой?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Где искать: раздел 1 и вспомни §10 про Розеттский камень.</div>
+<div class="rev ans" id="a2" hidden>Потому что только записи говорят словами самих древних людей. Стены и черепки показывают, как люди жили, но не рассказывают, что они думали. Пока египетскую письменность не расшифровали, Египет был нем; Розеттский камень дал ему голос.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<figure><div class="fig"><svg viewBox="0 0 570 340" role="img" aria-label="Шесть строк: река — страна — параграфы. Нил — Древний Египет, § 5—10: разливы, фараоны, пирамиды, боги, письмо и наука. Тигр и Евфрат — Междуречье, Вавилон, Ассирия, § 11, 12, 15: клинопись, законы Хаммурапи, войско Ассирии. Средиземное море — Финикия и Палестина, § 13, 14: корабли, колонии, алфавит, иудаизм. Нагорья Ирана — Персидская держава, § 16: Кир и Дарий, 20 сатрапий, Царская дорога, зороастризм. Инд и Ганг — Древняя Индия, § 17, 19: Мохенджо-Даро, арии, варны, Ашока, буддизм, ноль. Хуанхэ и Янцзы — Древний Китай, § 18, 19: Цинь Шихуанди, Великая стена, Хань, Конфуций."><use href="#t-reki"/></svg><figcaption><b>Это вся глава на одной картинке.</b> Если забудешь, о чём был какой параграф, — начни с реки, и остальное вспомнится само.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Итоги главы: семь цивилизаций</h2></div>
+<div class="blocknote"><b>Египет.</b> Около 3 тысяч лет до н. э. возникло единое Древнеегипетское государство. Его правители, обладавшие неограниченной властью, назывались фараонами. Вся жизнь египтян зависела от Нила: ежегодные разливы этой реки приносили на поля земледельцев плодородный ил и орошали их.</div>
+<div class="blocknote"><b>Междуречье.</b> На рубеже 4—3-го тысячелетий до н. э. в Месопотамии, там, где близко сходятся реки Тигр и Евфрат, начала формироваться одна из древнейших цивилизаций. Основы культуры народов Месопотамии заложили шумеры. Сложилась своя система письменности — клинопись. Самым сильным городом был Вавилон: при царе Хаммурапи создали знаменитый свод законов, а расцвет город пережил при Навуходоносоре II (2).</div>
+<div class="blocknote"><b>Финикия.</b> Финикийцы — народ, живший на побережье Средиземного моря, — были прекрасными мореплавателями. Они основали большое количество колоний вдоль побережья Средиземного моря. Также они создали первый алфавит.</div>
+<div class="blocknote"><b>Иудея.</b> В VIII (8) — VII (7) веках до н. э. на основе древнееврейских верований возник иудаизм. Он был самой древней религией, которая признавала существование единого бога.</div>
+<div class="blocknote"><b>Ассирия.</b> С середины 2-го тысячелетия до н. э. на Ближнем Востоке формировались могущественные военные державы. Одной из них стала Ассирия. Её правители считали себя царями царей, властителями мира и постоянно воевали с соседями.</div>
+<div class="blocknote"><b>Персия.</b> Страна персов долгое время была отдалённой частью Ассирийской державы. В середине VI (6) века до н. э. начался подъём Персидского государства. Его первым царём был Кир II (2). Важные реформы были проведены в правление Дария I (1): они укрепили армию, флот, улучшили управление империей. Религиозные верования персов получили название «зороастризм» по имени пророка Заратуштры.</div>
+<div class="blocknote"><b>Индия.</b> Цивилизация в Индии зародилась в долинах рек Инд и Ганг. В XIII (13) веке до н. э. в Индию пришли племена ариев. В Индии существовало деление общества на варны. В VI (6) веке до н. э. появилась одна из мировых религий — буддизм. Её основателем был Сиддхартха Гаутама, которого прозвали Будда («просветлённый»).</div>
+<div class="blocknote"><b>Китай.</b> Китайская цивилизация возникла в долинах двух больших рек — Хуанхэ и Янцзы. Правила Древнекитайским государством династия Цинь. Царь из этой династии принял новый титул «хуанди» — «император».</div>
+<p style="color:var(--soft);font-size:16px;margin:10px 0 0">Здесь нарочно оставлены слова учебника: именно так итоги главы написаны в книге. Трудные из них можно нажать — <button class="term" data-t="faraon">фараон</button>, <button class="term" data-t="shumery">шумеры</button>, <button class="term" data-t="klinopis">клинопись</button>, <button class="term" data-t="hammurapi">законы Хаммурапи</button>, <button class="term" data-t="navuhodonosor">Навуходоносор II</button>, <button class="term" data-t="alfavit">первый алфавит</button>, <button class="term" data-t="iudaizm">иудаизм</button>, <button class="term" data-t="assiria">Ассирия</button>, <button class="term" data-t="kir">Кир II</button>, <button class="term" data-t="dariy">Дарий I</button>, <button class="term" data-t="zoroastr">зороастризм</button>, <button class="term" data-t="varny">варны</button>, <button class="term" data-t="budda">Будда</button>, <button class="term" data-t="huandi">хуанди</button>.</p>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 588 300" role="img" aria-label="Лента времени сверху вниз. Около 3000 до н. э. — единое государство в Египте. Рубеж 4—3-го тысячелетий — первые города Междуречья, шумеры. XIII век до н. э. — арии приходят в Индию. VIII—VII века до н. э. — в Иудее возникает иудаизм. 612 и 539 до н. э. — падает Ниневия, затем персы берут Вавилон. VI век до н. э. — в Индии возникает буддизм. 221 и 202 до н. э. — Цинь Шихуанди, затем династия Хань."><use href="#t-lenta"/></svg><figcaption><b>Обрати внимание на верх ленты.</b> Египет и Междуречье старше всего остального в главе на полторы-две тысячи лет. Когда в Индию только пришли арии, пирамиды уже стояли больше тысячи лет.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Египет и Междуречье начались примерно в одно время, а Индия и Китай — гораздо позже. Значит ли это, что индийцы и китайцы были «отсталыми»?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Где искать: лента времени и §17 про Мохенджо-Даро.</div>
+<div class="rev ans" id="a3" hidden>Нет. Хараппская цивилизация в долине Инда возникла в середине 3-го тысячелетия до н. э. — почти тогда же, что Египет, — и имела города с водопроводом и канализацией. Просто она исчезла, а новая Индия начала складываться позже, с прихода ариев. Дело не в отсталости, а в том, что цивилизации могут обрываться и начинаться заново.</div>
+</div>
+<div class="think">
+<p class="qt">4. В итогах сказано: ассирийские правители «считали себя царями царей и постоянно воевали с соседями». А персов тоже называли «царями царей». В чём разница?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Где искать: §15 и §16.</div>
+<div class="rev ans" id="a4" hidden>В том, что стояло за титулом. Ассирия держалась на страхе: покорённых разоряли и переселяли, и, как только враги объединились, держава рухнула. Персия покорённым возвращала дом и святыни, знатным поручала управлять своими же землями, делила страну на сатрапии и связала её дорогами. Титул один, устройство разное — и судьба разная.</div>
+</div>
+<div class="think">
+<p class="qt">5. Иудаизм назван самой древней религией единого бога. Чем он отличался от веры египтян, персов и индийцев?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Где искать: §9, §16, §19 и итоги главы.</div>
+<div class="rev ans" id="a5" hidden>Тем, что бог один. У египтян богов было множество, у персов добрый Ахурамазда боролся с равным ему злым Ариманом, у индийцев почитали Брахму, Вишну, Шиву и ещё многих. А иудаизм признавал существование единого бога — и это было совсем новой мыслью для Древнего Востока.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure><div class="fig"><svg viewBox="0 0 570 324" role="img" aria-label="Две таблички. Чтобы писать и считать: алфавит — от финикийцев, цифры и ноль — из Индии, бумага — из Китая, час из 60 минут — из Междуречья. Чтобы жить вместе: писаные законы — Хаммурапи, вера в единого бога — иудаизм, буддизм — мировая религия, правила поведения — Конфуций. И ещё куча вещей: календарь из 12 месяцев, компас, порох, шёлк, лак, стекло, шахматы, лечение иголками, пурпурная краска, монета и семь дней в неделе."><use href="#t-vklad"/></svg><figcaption><b>Это и есть ответ на главный вопрос главы.</b> Возьми любой пункт и проверь: буквами ты пишешь, цифрами считаешь, по календарю живёшь, неделя у тебя семидневная. Всё это придумали три-пять тысяч лет назад.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 570 296" role="img" aria-label="Четыре строки о том, как удерживали большую страну. Страх — Ассирия и империя Цинь: жестокость к побеждённым, свирепые наказания, тяжёлые подати. Божественная власть — Египет и Вавилон: фараон сам бог, а царю законы вручает бог, и спорить не с кем. Устройство — Персия и империя Хань: сатрапии, дороги, единая монета, добродетели и долг вместо казней. Порядок от рождения — Индия: жёсткой центральной власти нет, её заменяют варны и касты."><use href="#t-vlast"/></svg><figcaption><b>Это для третьего вопроса к главе — про сходство и различия.</b> Задача у всех была одна: удержать страну, которую не объехать за месяц. А решения оказались совсем разными, и от решения зависело, сколько держава проживёт.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Что осталось нам</h2></div>
+<div class="ask"><b>Вопросы и задания к главе</b>
+<ol><li>Как ты понимаешь термин «цивилизация»?</li><li>На карте в начале главы представлены древнейшие цивилизации Древнего Востока. Назови их.</li><li>Сравни первые цивилизации Древнего Востока. Выдели черты сходства и различия.</li><li>Какая цивилизация Древнего Востока для тебя наиболее интересна? Объясни почему.</li><li>Какие современные государства стали преемниками цивилизаций Древнего Востока?</li><li>Какие чудеса света связаны с Древним Востоком? Какие из них существуют в наше время?</li><li>Найди на карте Великий шёлковый путь. Подготовь о нём сообщение.</li><li>Какую роль сыграли племена семитов в истории Древнего Востока?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к пятому вопросу</button></div>
+<div class="rev hint" id="r1" hidden>Смотри по рекам и землям из схемы «река — страна — параграф». Египет — это нынешний <b>Египет</b>; Междуречье, Вавилон и Ассирия — <b>Ирак</b>; Финикия — <b>Ливан</b>; Палестина и Иудея — <b>Израиль</b> и палестинские земли; Персия — <b>Иран</b>; Индия — <b>Индия</b> и <b>Пакистан</b> (Мохенджо-Даро стоит на территории Пакистана); Китай — <b>Китай</b>. А ещё вспомни §16: город Дербент на северной границе персидских земель находится сегодня в <b>России</b>, в Дагестане.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка к шестому вопросу</button></div>
+<div class="rev hint" id="r2" hidden>Из семи чудес света с Древним Востоком связаны три: <b>пирамиды в Гизе</b> (§10), <b>висячие сады в Вавилоне</b> и <b>стены Вавилона</b> (§12). До наших дней дожили только пирамиды — их и сейчас можно увидеть в Египте. Великая Китайская стена (§18) в древний список не входила, но существует и сегодня.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к восьмому вопросу</button></div>
+<div class="rev hint" id="r3" hidden><button class="term" data-t="semity">Семиты</button> — это родственные племена, говорившие на близких языках. Из них вышли многие народы главы: вавилоняне в Междуречье, финикийцы на побережье Средиземного моря, древние евреи в Палестине, ассирийцы. То есть их рукой сделаны и законы Хаммурапи (§12), и первый алфавит (§13), и иудаизм (§14).</div></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Первый источник. Отрывок из надписи, высеченной на стене храма в Фивах, — о <button class="term" data-t="megiddo">битве при Мегиддо</button>.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">Перечень добычи, доставленной войском его величества из города Мегиддо:</p><p style="margin:0 0 10px">340 пленных, 83 руки, 2041 лошадь… и молодых коней, 1 колесница, отделанная золотом… 897 колесниц его жалкого войска… 200 броней его жалкого войска, 502 лука, 7 столбов шатра того врага из дерева… отделанных серебром. И вот захватило войско… 1929 быков, 2000 коз и 20 500 овец…</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq4" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq4" hidden>▲ 1. Вспомни, какие стороны столкнулись в битве при Мегиддо. 2. Назови имя правителя, возглавлявшего войско победителей.</div>
+<div class="rev ans" id="sa5" hidden><p style="margin:0 0 10px">1. При Мегиддо сошлись войско Древнего Египта и объединённые силы сирийско-палестинских правителей, восставших против власти фараона (§ 8).</p><p style="margin:0 0 10px">2. Победителей вёл фараон <b>Тутмос III (3)</b>.</p><p style="margin:0">А ещё вчитайся в сам список. Главная добыча здесь — не золото, а <b>скот и лошади</b>: 2041 конь, 1929 быков, 2000 коз, 20 500 овец. И страшная строчка «83 руки» — так считали убитых врагов. Отрубленные кисти складывали перед писцами, и по их числу назначали награду.</p></div></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Второй источник. Отрывок из древнего текста — обрати внимание на номера: § 53, § 55, § 59, § 237.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px"><b>§ 53.</b> Если человек не укрепил плотину на своей земле, а вода прорвала её и затопила поля соседей, виновный пусть возместит соседям убытки. Если ему нечем платить, следует продать его имущество и его самого, а полученное серебро соседи пусть поделят между собою.</p><p style="margin:0 0 10px"><b>§ 55.</b> Если человек открыл свой арык для орошения, но был небрежен и вода затопила поле его соседей, (то) он должен отмерить зерно в соответствии (с урожаем) его соседей.</p><p style="margin:0 0 10px"><b>§ 59.</b> Если человек срубит в саду человека дерево без (ведома) хозяина сада, то он должен отвесить 1/2 мины (мина — 0,5 кг) серебра.</p><p style="margin:0 0 10px"><b>§ 237.</b> Если человек нанял лодочника и судно и нагрузил его зерном, шерстью, маслом, финиками или же любым (другим) грузом, а этот лодочник был нерадив и потопил судно и погубил то, что в нём (было), (то) лодочник должен возместить судно, которое он потопил, и всё, что он погубил в нём.</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq6" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq6" hidden>▲ 1. Что это за текст? 2. Кто является его автором? 3. Какие слои населения защищали эти законы?</div>
+<div class="rev ans" id="sa7" hidden><p style="margin:0 0 10px">1. Это <b>свод законов</b> — законы Вавилона (§ 12). Видно по устройству: каждая статья начинается с «если» и заканчивается наказанием или возмещением.</p><p style="margin:0 0 10px">2. Автор — вавилонский царь <b>Хаммурапи</b>.</p><p style="margin:0 0 10px">3. Прежде всего <b>земледельцев, садовладельцев и купцов</b> — то есть хозяев: тех, у кого есть поле, сад, груз или судно. Закон защищает их имущество от чужой небрежности.</p><p style="margin:0">Заметь главную мысль: почти везде наказание — не казнь, а <b>возмещение</b>. Испортил чужое — верни равное. А § 53 показывает и обратную сторону: если платить нечем, человека продавали вместе с его имуществом.</p></div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос главы — что такое цивилизация и чем Древний Восток важен для всего мира? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Темы проектов и что почитать</h2></div>
+<div class="sublabel">Темы проектов</div>
+<ol style="font-size:18px;line-height:1.7;margin:0 0 6px;padding-left:22px"><li>Тайны египетских иероглифов.</li><li>«Эпос о Гильгамеше» — древнейшее литературное произведение.</li><li>Научные достижения Древнего Востока.</li></ol>
+<div class="sublabel">Научно-популярные книги</div>
+<ul style="font-size:18px;line-height:1.7;margin:0 0 6px;padding-left:22px"><li>Белов А., Петровский Н. «Страна Большого Хапи».</li><li>Матье М. «Один день египетского мальчика».</li><li>Керам К. «Боги, гробницы, учёные».</li><li>Немировский А. «Мифы и легенды Древнего Востока».</li></ul>
+<div class="sublabel">Художественные книги</div>
+<ul style="font-size:18px;line-height:1.7;margin:0 0 6px;padding-left:22px"><li>Воронкова Л. «След огненной жизни» — о Кире II (2).</li><li>Ефремов И. «На краю Ойкумены».</li><li>Ян В. «Финикийский корабль».</li></ul>
+<div class="sublabel">Куда сходить</div>
+<ul style="font-size:18px;line-height:1.7;margin:0 0 6px;padding-left:22px"><li>Государственный музей изобразительных искусств имени А. С. Пушкина, Москва — искусство Древнего мира.</li><li>Государственный музей Востока, Москва.</li><li>Государственный Эрмитаж, Санкт-Петербург.</li><li>Музей-заповедник «Царское Село», Санкт-Петербург, г. Пушкин.</li></ul>
+<div class="blocknote">Первые четыре музея из этого списка — в Москве и Петербурге. В Пушкинский музей можно съездить в выходные: зал Древнего Египта там настоящий, с саркофагами и статуями, и всё, о чём ты читала в § 5—10, стоит прямо за стеклом.</div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь всю главу по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Арии приходят в Индию</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Единое государство в Египте</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Персы берут Вавилон</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Первые города Междуречья</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Цинь Шихуанди объединяет Китай</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Цивилизация</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 560 308" aria-hidden="true"><use href="#t-civ"/></svg><span class="ftext">Общество высокого уровня развития: города, величественные постройки и письменность.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Древний Восток</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="karta" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">От Северо-Восточной Африки до Южной и Восточной Азии. Здесь 5 тысяч лет назад появились первые цивилизации.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Клинопись</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 570 324" aria-hidden="true"><use href="#t-vklad"/></svg><span class="ftext">Письменность Междуречья. Знаки выдавливали на глине, и следы выходили клинышками.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Первый алфавит</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 570 324" aria-hidden="true"><use href="#t-vklad"/></svg><span class="ftext">Его создали финикийцы — мореплаватели с побережья Средиземного моря.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Варны</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 570 296" aria-hidden="true"><use href="#t-vlast"/></svg><span class="ftext">Четыре группы индийского общества. В Индии они заменяли жёсткую центральную власть.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Хуанди</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 570 296" aria-hidden="true"><use href="#t-vlast"/></svg><span class="ftext">«Император» — титул, который принял объединитель Китая из династии Цинь.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. По каким трём приметам узнают цивилизацию?</h3><div class="opts">
+<button class="opt" data-ok="1">Города, большие постройки, письменность</button>
+<button class="opt">Огонь, копьё, пещера</button>
+<button class="opt">Армия, флот, монета</button></div>
+<div class="fb">Огонь и копьё — это первобытность, глава I.</div></div>
+<div class="q"><h3>2. Где зародились первые цивилизации?</h3><div class="opts">
+<button class="opt">В горах</button>
+<button class="opt" data-ok="1">В долинах великих рек</button>
+<button class="opt">На островах</button></div>
+<div class="fb">Нил, Тигр, Евфрат, Инд, Хуанхэ — там собирали обильные урожаи.</div></div>
+<div class="q"><h3>3. Кто создал первый алфавит?</h3><div class="opts">
+<button class="opt">Египтяне</button>
+<button class="opt">Шумеры</button>
+<button class="opt" data-ok="1">Финикийцы</button></div>
+<div class="fb">Шумеры создали клинопись, египтяне — иероглифы, а алфавит — финикийцы.</div></div>
+<div class="q"><h3>4. Какая религия первой признала существование единого бога?</h3><div class="opts">
+<button class="opt" data-ok="1">Иудаизм</button>
+<button class="opt">Буддизм</button>
+<button class="opt">Зороастризм</button></div>
+<div class="fb">Он возник в Иудее в VIII—VII веках до н. э.</div></div>
+<div class="q"><h3>5. Что в Древней Индии заменяло жёсткую центральную власть?</h3><div class="opts">
+<button class="opt">Армия</button>
+<button class="opt" data-ok="1">Деление на варны и касты</button>
+<button class="opt">Совет жрецов</button></div>
+<div class="fb">Каждый занимался тем, чем был должен, без особого внешнего принуждения.</div></div>
+<div class="q"><h3>6. Что значит титул «хуанди», который принял объединитель Китая?</h3><div class="opts">
+<button class="opt">«Жрец»</button>
+<button class="opt">«Царь царей»</button>
+<button class="opt" data-ok="1">«Император»</button></div>
+<div class="fb">«Царями царей» называли себя ассирийские и персидские правители.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Что такое цивилизация</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Общество, достигшее высокого уровня развития.</li><li>Три приметы: города как центры ремесла и торговли; величественные сооружения — храмы, стены, плотины и дамбы; письменность.</li><li>Первые цивилизации — примерно 5 тысяч лет назад на Древнем Востоке, в долинах великих рек, где собирали обильные урожаи.</li></ol></div>
+</div>
+<div class="think">
+<h3>Семь цивилизаций Древнего Востока</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Египет на Ниле и Междуречье на Тигре и Евфрате — самые древние; фараоны, клинопись, законы Хаммурапи, Вавилон.</li><li>Финикия и Палестина у Средиземного моря — колонии, первый алфавит, иудаизм; Ассирия и Персия на Ближнем Востоке.</li><li>Индия на Инде и Ганге — варны и буддизм; Китай на Хуанхэ и Янцзы — Цинь Шихуанди и Великая стена.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как удерживали большие страны</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Страхом — Ассирия и империя Цинь: жестокость к побеждённым, свирепые наказания, тяжёлые подати; обе рухнули быстро.</li><li>Божественной властью — Египет и Вавилон: фараон сам бог, царю законы вручает бог.</li><li>Устройством — Персия и империя Хань: сатрапии, дороги, единая монета, добродетели вместо казней; обе стояли веками. В Индии центральной власти не было вовсе — её заменяли варны.</li></ol></div>
+</div>
+<div class="think">
+<h3>Чем мы пользуемся до сих пор</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl11" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl11" hidden><ol><li>Алфавит финикийцев, цифры и ноль из Индии, бумага из Китая, час из 60 минут и семь дней в неделе из Междуречья.</li><li>Писаные законы Хаммурапи, вера в единого бога, буддизм, правила поведения Конфуция.</li><li>Календарь, компас, порох, шёлк, лак, стекло, шахматы, лечение иголками, монета.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p19.html">‹ §19 Религия и культура</a>
+  <span class="pn cur">Итоги главы II</span>
+ </div>
+</div>
+
+<footer><div class="wrap">Итоги главы II · История, 5 класс · страницы 37 и 116—118</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'t-civ':'0 0 560 308','t-reki':'0 0 570 340','t-lenta':'0 0 588 300','t-vklad':'0 0 570 324','t-vlast':'0 0 570 296'};
+
+var T={
+civ:{w:"Цивилизация",k:"понятие",s:"t-civ",t:"Общество, достигшее высокого уровня развития. Её приметы: города как центры ремесла и торговли; величественные постройки — храмы, городские стены, плотины и дамбы; и письменность."},
+vostok:{w:"Древний Восток",k:"край",p:"karta",t:"Протяжённая территория от Северо-Восточной Африки до Южной и Восточной Азии, включая Индию и Китай. Здесь примерно 5 тысяч лет назад зародились первые цивилизации."},
+faraon:{w:"Фараон",k:"правитель",s:"t-vlast",t:"Правитель Древнего Египта, обладавший неограниченной властью. Единое государство там возникло около 3 тысяч лет до н. э. (§ 6—7)."},
+shumery:{w:"Шумеры",k:"народ",s:"t-reki",t:"Народ, заложивший основы культуры Месопотамии на рубеже 4—3-го тысячелетий до н. э. — там, где близко сходятся Тигр и Евфрат (§ 11)."},
+klinopis:{w:"Клинопись",k:"письмо",s:"t-vklad",t:"Система письменности, сложившаяся в Месопотамии: знаки выдавливали на глине палочкой, и следы выходили клинышками (§ 11)."},
+hammurapi:{w:"Законы Хаммурапи",k:"свод законов",s:"t-vklad",t:"Знаменитый свод законов вавилонского царя Хаммурапи — одни из первых записанных законов в истории (§ 12)."},
+navuhodonosor:{w:"Навуходоносор II",k:"царь",s:"t-lenta",t:"Царь, при котором Вавилон пережил свой расцвет: висячие сады, стены, Вавилонская башня (§ 12)."},
+alfavit:{w:"Первый алфавит",k:"изобретение",s:"t-vklad",t:"Его создали финикийцы — народ, живший на побережье Средиземного моря и основавший множество колоний вдоль его берегов (§ 13)."},
+iudaizm:{w:"Иудаизм",k:"религия",s:"t-lenta",t:"Религия, возникшая в Иудее в VIII—VII (8—7) веках до н. э. на основе древнееврейских верований. Самая древняя религия, признававшая существование единого бога (§ 14)."},
+assiria:{w:"Ассирия",k:"держава",s:"t-vlast",t:"Одна из могущественных военных держав Ближнего Востока с середины 2-го тысячелетия до н. э. Её правители считали себя царями царей и властителями мира и постоянно воевали с соседями (§ 15)."},
+kir:{w:"Кир II",k:"царь",s:"t-lenta",t:"Первый царь Персидского государства. Подъём Персии начался в середине VI (6) века до н. э. (§ 16)."},
+dariy:{w:"Дарий I",k:"царь",s:"t-vlast",t:"Царь Персии, проведший важные реформы: они укрепили армию и флот и улучшили управление империей (§ 16)."},
+zoroastr:{w:"Зороастризм",k:"религия",s:"t-vklad",t:"Религиозные верования персов, названные по имени пророка Заратуштры (§ 16)."},
+varny:{w:"Варны",k:"группы людей",s:"t-vlast",t:"Четыре группы, на которые делилось всё население Индии: брахманы, кшатрии, вайшьи и шудры. Варну наследовали от отца, перейти в другую закон запрещал (§ 17)."},
+budda:{w:"Будда",k:"прозвище",s:"t-lenta",t:"«Просветлённый». Так прозвали Сиддхартху Гаутаму, основателя буддизма — одной из мировых религий, появившейся в Индии в VI (6) веке до н. э. (§ 19)."},
+huandi:{w:"Хуанди",k:"титул",s:"t-vlast",t:"«Император» — новый титул, который принял царь из династии Цинь, объединивший Китай в 221 году до н. э. (§ 18)."},
+megiddo:{w:"Битва при Мегиддо",k:"сражение",p:"karta",t:"Сражение египетского войска с войском сирийско-палестинских правителей. Победителей вёл фараон Тутмос III, а перечень добычи высекли на стене храма в Фивах (§ 8)."},
+semity:{w:"Семиты",k:"племена",p:"karta",t:"Племена, из которых вышли многие народы Древнего Востока: аккадцы и вавилоняне в Междуречье, финикийцы на побережье, древние евреи в Палестине, ассирийцы."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:it2:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:it2:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>5){fb.textContent="Верно! Междуречье и Египет — рубеж 4—3-го тысячелетий и около 3000 до н. э., арии — XIII век до н. э., Вавилон — 539 до н. э., Цинь Шихуанди — 221 до н. э.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Посмотри ленту времени в разделе 2.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:it2:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:it2:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

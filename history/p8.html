@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 8: бронза, регулярная армия, колесницы, Тутмос III и Рамсес II.">
+<title>Расцвет Древнеегипетского государства</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="r-bronza" viewBox="0 0 470 204">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПОЧЕМУ БРОНЗА ЛУЧШЕ МЕДИ</text>
+  <rect x="8" y="30" width="104" height="38" rx="8" fill="var(--ochre)"/>
+  <text x="60" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">МЕДЬ</text>
+  <text x="128" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="var(--soft)">+</text>
+  <rect x="144" y="30" width="104" height="38" rx="8" fill="var(--stone)"/>
+  <text x="196" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">ОЛОВО</text>
+  <text x="264" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="var(--soft)">=</text>
+  <rect x="280" y="30" width="118" height="38" rx="8" fill="var(--brown)"/>
+  <text x="339" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF3E2">БРОНЗА</text>
+  <path d="M28 108 q30 -18 52 0 q22 18 46 -2" stroke="var(--ochre)" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <text x="140" y="112" font-size="12" fill="var(--illink)">медный меч гнётся при ударе</text>
+  <path d="M28 146 H126" stroke="var(--brown)" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <text x="140" y="150" font-size="12" font-weight="700" fill="var(--illink)">бронзовый держит удар</text>
+  <text x="8" y="184" font-size="12" font-weight="700" fill="var(--moss)">Из бронзы делали не только оружие: плуг с бронзовым наконечником</text>
+  <text x="8" y="198" font-size="12" font-weight="700" fill="var(--moss)">брал землю легче деревянного.</text>
+</symbol>
+
+<symbol id="r-voysko" viewBox="0 0 490 200">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ИЗ ОПОЛЧЕНИЯ — В ПОСТОЯННУЮ АРМИЮ</text>
+  <rect x="8" y="30" width="200" height="110" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="54" font-size="12" font-weight="700" fill="var(--soft)">БЫЛО: ОПОЛЧЕНИЕ</text>
+  <text x="22" y="80" font-size="11" fill="var(--illink)">свободных людей собирали</text>
+  <text x="22" y="96" font-size="11" fill="var(--illink)">только на время войны</text>
+  <text x="22" y="120" font-size="11" fill="var(--illink)">воевать их никто не учил</text>
+  <path d="M222 84 h32" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="268" y="30" width="214" height="110" rx="10" fill="var(--paper2)"/>
+  <text x="282" y="54" font-size="12" font-weight="700" fill="var(--moss)">СТАЛО: РЕГУЛЯРНАЯ АРМИЯ</text>
+  <text x="282" y="80" font-size="11" fill="var(--illink)">постоянная, не расходится</text>
+  <text x="282" y="96" font-size="11" fill="var(--illink)">пехотинцев брали из крестьян</text>
+  <text x="282" y="120" font-size="11" fill="var(--illink)">и учили сражаться единым строем</text>
+  <text x="8" y="172" font-size="12" font-weight="700" fill="var(--moss)">Постоянное войско всегда наготове — его не надо собирать заново</text>
+  <text x="8" y="188" font-size="12" font-weight="700" fill="var(--moss)">перед каждой войной.</text>
+</symbol>
+
+<symbol id="r-otryady" viewBox="0 0 490 236">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ОТРЯДЫ ЕГИПЕТСКОГО ВОЙСКА</text>
+  <rect x="8" y="30" width="230" height="64" rx="10" fill="var(--paper2)"/>
+  <rect x="24" y="44" width="10" height="36" rx="3" fill="var(--ice)"/>
+  <path d="M44 44 h26 v24 q-13 14 -26 0 Z" fill="var(--brown)"/>
+  <text x="80" y="60" font-size="12" font-weight="700" fill="var(--illink)">Копья и щиты</text>
+  <text x="80" y="78" font-size="10.5" fill="var(--soft)">главный строй пехоты</text>
+  <rect x="252" y="30" width="230" height="64" rx="10" fill="var(--paper2)"/>
+  <path d="M268 46 h8 v36 h-8 Z" fill="var(--brown)"/>
+  <path d="M276 44 q18 8 0 18 Z" fill="var(--stone)"/>
+  <path d="M292 52 l16 26 h-6 l-16 -26 Z" fill="var(--stone)"/>
+  <text x="324" y="60" font-size="12" font-weight="700" fill="var(--illink)">Топоры и кинжалы</text>
+  <text x="324" y="78" font-size="10.5" fill="var(--soft)">бой вплотную</text>
+  <rect x="8" y="106" width="230" height="64" rx="10" fill="var(--paper2)"/>
+  <path d="M30 118 q22 18 0 36" stroke="var(--brown)" stroke-width="4" fill="none"/>
+  <path d="M30 118 L30 154" stroke="var(--soft)" stroke-width="1.5"/>
+  <path d="M44 136 h26 m-8 -5 l8 5 l-8 5" stroke="var(--ice)" stroke-width="2.5" fill="none"/>
+  <text x="86" y="136" font-size="12" font-weight="700" fill="var(--illink)">Лук и стрелы</text>
+  <text x="86" y="154" font-size="10.5" fill="var(--soft)">бьют издалека</text>
+  <rect x="252" y="106" width="230" height="64" rx="10" fill="var(--paper2)"/>
+  <path d="M270 118 q14 22 28 4" stroke="var(--soft)" stroke-width="2.5" fill="none"/>
+  <circle cx="284" cy="146" r="7" fill="var(--stone)"/>
+  <text x="316" y="136" font-size="12" font-weight="700" fill="var(--illink)">Пращи</text>
+  <text x="316" y="154" font-size="10.5" fill="var(--soft)">ремни для метания камней</text>
+  <rect x="8" y="182" width="474" height="42" rx="10" fill="var(--ochre)"/>
+  <text x="245" y="208" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">А главная ударная сила — отряды боевых колесниц</text>
+</symbol>
+
+<symbol id="r-kolesnica" viewBox="0 0 490 220">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КОЛЕСНИЦА: ДВОЕ НА ОДНОЙ</text>
+  <path d="M56 138 H216" stroke="var(--brownD)" stroke-width="5"/>
+  <rect x="96" y="104" width="86" height="34" rx="5" fill="var(--brown)"/>
+  <circle cx="112" cy="158" r="20" fill="none" stroke="var(--brownD)" stroke-width="5"/>
+  <circle cx="176" cy="158" r="20" fill="none" stroke="var(--brownD)" stroke-width="5"/>
+  <g stroke="var(--brownD)" stroke-width="2">
+    <path d="M112 138 V178 M92 158 H132 M98 144 L126 172 M126 144 L98 172"/>
+    <path d="M176 138 V178 M156 158 H196 M162 144 L190 172 M190 144 L162 172"/>
+  </g>
+  <path d="M216 138 L252 124" stroke="var(--brownD)" stroke-width="5"/>
+  <path d="M100 64 h32 v26 q-16 14 -32 0 Z" fill="var(--stone)"/>
+  <path d="M158 96 q20 -18 0 -36" stroke="var(--ice)" stroke-width="4" fill="none"/>
+  <text x="272" y="72" font-size="12" font-weight="700" fill="var(--illink)">ОДИН правит конями</text>
+  <text x="272" y="88" font-size="11" fill="var(--soft)">и прикрывает второго щитом</text>
+  <text x="272" y="124" font-size="12" font-weight="700" fill="var(--illink)">ДРУГОЙ стреляет из лука</text>
+  <text x="272" y="140" font-size="11" fill="var(--soft)">и метает дротики — короткие копья</text>
+  <text x="8" y="196" font-size="12" font-weight="700" fill="var(--moss)">Коневодство египтяне переняли у жителей Палестины и Сирии —</text>
+  <text x="8" y="210" font-size="12" font-weight="700" fill="var(--moss)">и получили совсем новый род войск.</text>
+</symbol>
+
+<symbol id="r-taktika" viewBox="0 0 500 212">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПОРЯДОК БОЯ</text>
+  <circle cx="26" cy="46" r="13" fill="var(--ice)"/>
+  <text x="26" y="51" text-anchor="middle" font-size="13" font-weight="700" fill="#F2FAFF">1</text>
+  <text x="50" y="43" font-size="12.5" font-weight="700" fill="var(--illink)">Лёгкие воины</text>
+  <text x="50" y="59" font-size="11" fill="var(--soft)">засыпают врага стрелами и камнями</text>
+  <path d="M26 66 V80" stroke="var(--line)" stroke-width="3"/>
+  <circle cx="26" cy="94" r="13" fill="var(--red)"/>
+  <text x="26" y="99" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF3E2">2</text>
+  <text x="50" y="91" font-size="12.5" font-weight="700" fill="var(--illink)">Колесницы</text>
+  <text x="50" y="107" font-size="11" fill="var(--soft)">прорывают ряды и сеют панику</text>
+  <path d="M26 114 V128" stroke="var(--line)" stroke-width="3"/>
+  <circle cx="26" cy="142" r="13" fill="var(--brown)"/>
+  <text x="26" y="147" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF3E2">3</text>
+  <text x="50" y="139" font-size="12.5" font-weight="700" fill="var(--illink)">Пехота стройными рядами</text>
+  <text x="50" y="155" font-size="11" fill="var(--soft)">копья и щиты, топоры и кинжалы</text>
+  <path d="M26 162 V176" stroke="var(--line)" stroke-width="3"/>
+  <circle cx="26" cy="190" r="13" fill="var(--moss)"/>
+  <text x="26" y="195" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF3E2">4</text>
+  <text x="50" y="187" font-size="12.5" font-weight="700" fill="var(--illink)">Погоня</text>
+  <text x="50" y="203" font-size="11" fill="var(--soft)">бежавшего врага догоняли на колесницах</text>
+</symbol>
+
+<symbol id="r-dan" viewBox="0 0 490 216">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧТО ТАКОЕ ДАНЬ</text>
+  <rect x="8" y="34" width="150" height="44" rx="8" fill="var(--flame)" opacity=".8"/>
+  <text x="83" y="61" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">СИРИЯ И ПАЛЕСТИНА</text>
+  <path d="M166 56 h28" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <text x="206" y="52" font-size="11.5" fill="var(--illink)">серебро, благовония, ткани,</text>
+  <text x="206" y="68" font-size="11.5" fill="var(--illink)">ковры, строевой лес</text>
+  <rect x="8" y="98" width="150" height="44" rx="8" fill="var(--ochre)"/>
+  <text x="83" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">НУБИЯ</text>
+  <path d="M166 120 h28" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <text x="206" y="116" font-size="11.5" fill="var(--illink)">золото, чёрное дерево,</text>
+  <text x="206" y="132" font-size="11.5" fill="var(--illink)">слоновая кость</text>
+  <text x="8" y="172" font-size="12" font-weight="700" fill="var(--illink)">Дань — это то, что побеждённые каждый год отдают победителю.</text>
+  <text x="8" y="198" font-size="12" font-weight="700" fill="var(--moss)">Отсюда и пошло: у фараонов золота, как песка в пустыне.</text>
+</symbol>
+
+<symbol id="r-lenta" viewBox="0 0 490 184">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЛЕНТА ВРЕМЕНИ</text>
+  <path d="M16 72 H474" stroke="var(--line)" stroke-width="4"/>
+  <path d="M30 42 H250" stroke="var(--ochre)" stroke-width="2.5" fill="none"/>
+  <path d="M30 42 v10 M250 42 v10" stroke="var(--ochre)" stroke-width="2.5"/>
+  <text x="140" y="36" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ochre)">около 1500 лет</text>
+  <path d="M290 54 H408" stroke="var(--ice)" stroke-width="2.5" fill="none"/>
+  <path d="M290 54 v8 M408 54 v8" stroke="var(--ice)" stroke-width="2.5"/>
+  <text x="349" y="48" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ice)">около 150 лет</text>
+  <g fill="var(--red)"><circle cx="24" cy="72" r="7"/><circle cx="270" cy="72" r="7"/><circle cx="424" cy="72" r="7"/></g>
+  <text x="8" y="100" font-size="12" font-weight="700" fill="var(--illink)">3000 до н. э.</text>
+  <text x="8" y="116" font-size="11" fill="var(--soft)">Мина объединил Египет</text>
+  <text x="270" y="144" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink)">1490—1436 до н. э.</text>
+  <text x="270" y="160" text-anchor="middle" font-size="11" fill="var(--soft)">Тутмос III, битва при Мегиддо</text>
+  <text x="482" y="100" text-anchor="end" font-size="12" font-weight="700" fill="var(--illink)">1290—1223 до н. э.</text>
+  <text x="482" y="116" text-anchor="end" font-size="11" fill="var(--soft)">Рамсес II, битва при Кадеше</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 8</span>
+    <h1>Расцвет Древнеегипетского государства</h1>
+    <p class="lede">Бронза, постоянное войско, колесницы и два великих фараона. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Что способствовало расцвету Древнеегипетского государства?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p67.html">‹ §6—7 Общество Египта</a>
+  <span class="pn cur">§8 Расцвет Египта</span>
+  <a class="pn" href="p9.html">§9 Религия Египта ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Хозяйство">1</a><a href="#s2" data-j="s2" title="Войско">2</a><a href="#s3" data-j="s3" title="Тутмос III">3</a><a href="#s4" data-j="s4" title="Рамсес II">4</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-karnak" src="img/13b3c8d82c78.jpg" alt="Фотография: ряды огромных каменных колонн храма в Карнаке, за ними синее небо и пальма"><figcaption><span class="src">из учебника</span><b>Храм Амона-Ра в Карнаке. Современный вид.</b> Храмовый комплекс в нынешнем Луксоре построен во второй половине 2-го тысячелетия до н. э. В начале XX (20) века в одном из дворов нашли огромный тайник — около 18 тысяч предметов: статуй богов и царей, изделий из драгоценных камней и металла.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Хозяйство</h2></div>
+<div class="easy">
+<p>Египтяне научились получать <button class="term" data-t="bronza">бронзу</button> — сплав меди с оловом. Бронзовыми орудиями обрабатывали почву, строили дамбы и каналы.</p>
+<p>Бронзу взяли и ремесленники: из неё делали изделия и оружие. Бронзовые мечи и топоры были крепче медных и не гнулись при ударе.</p>
+<p>В середине 2-го тысячелетия до н. э. Египет вступил в новую полосу расцвета. Столицей в это время стали <button class="term" data-t="fivy">Фивы</button> — там строили новые дворцы и храмы.</p>
+<p>Вокруг жили разные народы: ливийцы, нубийцы, сирийцы, финикийцы. Египтяне с ними часто имели дело — но отношения были далеко не мирными: войну и захват добычи египтяне предпочитали торговле.</p>
+<p>У жителей Палестины и Сирии египтяне переняли коневодство. Так у них появился новый тип войск — отряды <button class="term" data-t="kolesn">боевых колесниц</button>.</p>
+</div>
+<div class="book" hidden>
+<p>Древние египтяне научились получать бронзу из сплава меди с оловом. Орудия труда из бронзы (например, плуг с бронзовым наконечником) они применяли при обработке почвы, при строительстве дамб и каналов. Бронзовые орудия труда использовали и ремесленники, изготавливая разные изделия и оружие. Бронзовые мечи и топоры были крепче медных и не гнулись при ударе.</p>
+<p>В середине 2-го тысячелетия до н. э. Древний Египет вступил в очередную фазу расцвета. Столицей государства в это время стали Фивы. Здесь строились новые дворцы и храмы. Территорию Африки и берега Средиземного моря населяли разные народы — ливийцы, нубийцы, сирийцы, финикийцы и др. Со многими из них египтяне часто взаимодействовали. Обычно эти отношения были далеко не мирными — египтяне предпочитали торговле войну и захват добычи. Египтяне переняли у жителей Палестины и Сирии коневодство, что позволило им создать новый тип войск — отряды боевых колесниц.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 470 204" role="img" aria-label="Схема: медь плюс олово равно бронза. Ниже изогнутая оранжевая полоса — медный меч гнётся при ударе, и прямая коричневая полоса — бронзовый держит удар."><use href="#r-bronza"/></svg><figcaption><b>Вспомни §4.</b> Там был век металлов: камень → медь → бронза → железо. Вот зачем нужен был этот шаг: медь мягкая, а сплав с оловом держит удар.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему применение орудий труда из металлов и новых технологий привело к расцвету хозяйства в Древнем Египте?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Бронза — это медь с оловом. Почему бронзовый меч оказался лучше медного?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Где искать: второй абзац раздела 1 и схема про бронзу.</div>
+<div class="rev ans" id="a1" hidden>Медь мягкая: медный меч гнулся при ударе. Бронза крепче — она удар держит. Тем же бронзовым наконечником и плуг стал лучше брать землю.</div>
+</div>
+<div class="think">
+<p class="qt">2. Египтяне «предпочитали торговле войну и захват добычи». Как это связано с тем, что у них появились колесницы?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Где искать: последние два абзаца раздела 1.</div>
+<div class="rev ans" id="a2" hidden>Коневодство они переняли у соседей из Палестины и Сирии — и сразу пустили его в дело: сделали отряды боевых колесниц. Новое умение пошло не на хозяйство, а на войну, потому что войну они и предпочитали.</div>
+</div>
+<div class="think">
+<p class="qt">3. Почему расцвет хозяйства и расцвет государства в этом параграфе идут вместе?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Соедини первый абзац (бронза в хозяйстве) с третьим (новая столица, дворцы и храмы).</div>
+<div class="rev ans" id="a3" hidden>Бронзовые орудия дали больше урожая, дамб и каналов, больше изделий у ремесленников. Излишки позволили строить новые дворцы и храмы и содержать армию. Богатое хозяйство — сильное государство.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Войско</h2></div>
+<div class="easy">
+<p>До того как появилось государство, египетское войско было <button class="term" data-t="opolch">ополчением</button>: свободных людей собирали на время военных действий, а потом распускали.</p>
+<p>Фараоны создали сильную для своего времени армию, и в итоге она стала <button class="term" data-t="regul">регулярной</button>, то есть постоянной. Её основу составляли пехотинцы: их набирали из крестьян и учили владеть оружием, нападать, защищаться и сражаться единым строем.</p>
+<p>Армия делилась на отряды. У одних были копья и щиты, у других — топоры и кинжалы, у третьих — лук и стрелы. Были и отряды с <button class="term" data-t="prashcha">пращами</button> — ремнями для метания камней.</p>
+<p>Главную ударную силу составляли отряды колесниц. На каждой размещались два воина: один управлял и прикрывал щитом другого, а тот стрелял из лука и метал дротики — короткие копья.</p>
+<p>Сражение начинали легковооружённые воины: засыпали неприятеля стрелами и камнями. Затем в бой вступали колесницы — они должны были прорвать ряды врага и посеять панику. За ними стройными рядами шли воины с копьями и щитами, топорами и кинжалами. Бежавшего врага преследовали на колесницах.</p>
+</div>
+<div class="book" hidden>
+<p>До образования государства египетское войско состояло из ополчения — свободного населения, которое собирали на время военных действий. Фараоны создали сильную для своего времени армию, и в итоге она стала регулярной (постоянной). Основу регулярной армии составляли пехотинцы, их набирали из крестьян и обучали владеть оружием, нападать на врага, защищаться, сражаться единым строем.</p>
+<p>Армия делилась на отряды. Воины одних отрядов имели копья и щиты, вооружением других были топоры и кинжалы, третьих — лук и стрелы. В составе армии находились отряды, вооружённые пращами (ремнями для метания камней).</p>
+<p>Главную ударную силу в египетской армии составляли отряды колесниц. На каждой колеснице размещались два воина: один управлял и прикрывал щитом другого, стрелявшего из лука и метавшего дротики (короткие копья).</p>
+<p>Сражение начинали легковооружённые воины, засыпавшие неприятеля стрелами и камнями. Затем в бой вступали колесницы. Они должны были прорвать ряды неприятеля и посеять панику. За ними стройными рядами шли воины с копьями и щитами, топорами и кинжалами. Бежавшего врага преследовали на колесницах.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 490 200" role="img" aria-label="Две таблички. Слева «было: ополчение» — собирали на время войны, воевать не учили. Стрелка вправо. Справа «стало: регулярная армия» — постоянная, пехотинцев брали из крестьян и учили сражаться строем."><use href="#r-voysko"/></svg><figcaption><b>Главная перемена в войске.</b> Не новое оружие, а то, что войско перестало расходиться по домам.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-makevoysko" src="img/84e72b761a40.jpg" alt="Фотография: деревянные раскрашенные фигурки египетских воинов с копьями и щитами, стоящие рядами"><figcaption><span class="src">из учебника</span><b>Макет войска в Древнем Египте, найденный в одной из гробниц.</b> Он состоит из 40 деревянных фигурок воинов, марширующих 10 рядами.<br><span style="color:var(--soft)">▲ Почему египетское войско было разделено на различные отряды?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 490 236" role="img" aria-label="Четыре таблички с рисунками оружия: копья и щиты — главный строй пехоты; топоры и кинжалы — бой вплотную; лук и стрелы — бьют издалека; пращи — ремни для метания камней. Внизу оранжевая полоса: главная ударная сила — отряды боевых колесниц."><use href="#r-otryady"/></svg><figcaption><b>Ответ на задание учебника про макет войска.</b> Каждый отряд умеет что-то одно, зато хорошо: одни бьют издалека, другие держат строй, третьи дерутся вплотную. Вместе они закрывают весь бой.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 490 220" role="img" aria-label="Рисунок колесницы: два колеса со спицами, площадка, дышло вперёд. На площадке щит и лук. Справа подписи: один правит конями и прикрывает второго щитом, другой стреляет из лука и метает дротики."><use href="#r-kolesnica"/></svg><figcaption><b>Почему колесница была такой сильной.</b> Она быстрая, и на ней сразу двое: пока один правит и держит щит, второй стреляет — и не отвлекается ни на что другое.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 500 212" role="img" aria-label="Четыре пронумерованных шага сверху вниз: лёгкие воины засыпают врага стрелами и камнями; колесницы прорывают ряды и сеют панику; пехота стройными рядами с копьями и топорами; погоня на колесницах за бежавшим врагом."><use href="#r-taktika"/></svg><figcaption><b>Порядок боя.</b> Сначала расстроить, потом прорвать, потом додавить строем, и только в конце — погоня.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какую тактику использовали египтяне на поле боя?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Чем регулярная армия лучше ополчения?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Где искать: первые два абзаца раздела 2 и схема с двумя табличками.</div>
+<div class="rev ans" id="a4" hidden>Ополчение собирали только на время войны, и воевать людей никто не учил. Регулярная армия постоянная: пехотинцев обучают владеть оружием и держать строй, и войско всегда наготове — его не надо созывать заново.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему войско делили на разные отряды, а не вооружали всех одинаково?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Где искать: третий абзац раздела 2 и схема «Отряды египетского войска».</div>
+<div class="rev ans" id="a5" hidden>Потому что в бою нужно разное: одни должны бить издалека (лук, праща), другие — держать строй щитами и копьями, третьи — драться вплотную топорами и кинжалами. Одинаковое оружие закрыло бы только одну часть боя.</div>
+</div>
+<div class="think">
+<p class="qt">6. Почему в порядке боя колесницы шли вторыми, а не первыми?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Где искать: последний абзац раздела 2 и схема «Порядок боя».</div>
+<div class="rev ans" id="a6" hidden>Сначала лёгкие воины засыпали врага стрелами и камнями — ряды врага расстраивались. Только в такие уже нестройные ряды колесницы могли ворваться и прорвать их. Атаковать ровный, готовый строй было бы куда труднее.</div>
+</div>
+<div class="think">
+<p class="qt">7. Пехотинцев набирали из крестьян. Вспомни §6—7: что для крестьянина значило уйти в войско?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Про жизнь земледельцев — §6—7, раздел 4.</div>
+<div class="rev ans" id="a7" hidden>У земледельца был надел, с которого он кормился и платил налог. Уйдя в постоянную армию, он бросал поле — значит, его надо было кормить государству. Содержать такое войско могла только богатая страна: вот почему расцвет хозяйства и сильная армия связаны.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-tutmos" src="img/b01c1c0b3219.jpg" alt="Фотография каменной статуи фараона в головном уборе немес, руки сложены на груди" style="max-width:280px"><figcaption><span class="src">из учебника</span><b>Статуя Тутмоса III. Храм Амона, Карнак.</b> Некоторые историки называют его величайшим полководцем своего времени.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Тутмос III</h2></div>
+<div class="easy">
+<p>Наивысшего расцвета Древнеегипетское государство достигло при фараоне <button class="term" data-t="tutmos">Тутмосе III</button> (1490—1436 годы до н. э.). Он совершил 15 военных походов в Сирию и Палестину.</p>
+<p>Благодаря его полководческому таланту египтяне разбили объединённое войско этих земель в <button class="term" data-t="megiddo">битве при Мегиддо</button>. Владения Египта дошли на севере до реки Евфрат.</p>
+<p>Покорённые народы фараон обложил <button class="term" data-t="dan">данью</button>: в Египет отправляли серебро, благовония, ткани, ковры, строевой лес.</p>
+<p>На юге Тутмос расширил египетские владения в богатой золотом <button class="term" data-t="nubia">Нубии</button>. Он захватил тысячи пленных и угнал их в рабство, а остальное население тоже обложил данью. Из Нубии в Египет двинулись караваны с золотом, чёрным деревом и слоновой костью.</p>
+<p>Слава о богатстве Египта разошлась далеко за его пределы. О стране стали говорить, что у фараонов золота — как песка в пустыне.</p>
+</div>
+<div class="book" hidden>
+<p>Наивысшего своего расцвета Древнеегипетское государство достигло при фараоне Тутмосе III (3) (1490—1436 годы до н. э.). Он совершил 15 военных походов в Сирию и Палестину.</p>
+<p>Благодаря полководческому таланту Тутмоса III (3) египтяне разбили объединённое войско этих земель в битве при Меггидо. Его владения простирались на севере до реки Евфрат. Покорённые народы фараон обложил данью; в качестве дани в Египет отправляли серебро, благовония, ткани, ковры, строевой лес.</p>
+<p>На юге Тутмос расширил египетские владения в богатой золотом Нубии. Фараон захватил тысячи пленных, которых угнал в рабство, остальное население обложил данью. Из Нубии в Египет двигались караваны с золотом, чёрным деревом, слоновой костью. Слава о богатстве Египта распространилась далеко за его пределы. О Египте стали говорить, что у фараонов золота, как песка в пустыне.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-karta" src="img/3b37e63e526d.jpg" alt="Карта Древнего Востока: Египет вдоль Нила, Палестина и Финикия на берегу Средиземного моря, города Мегиддо и Кадеш, реки Тигр и Евфрат, Ассирия и Междуречье"><figcaption><span class="src">из учебника</span><b>Куда ходили фараоны.</b> Найди на карте Мегиддо и Кадеш — там прошли две главные битвы параграфа. А владения Тутмоса III дошли на севере до реки Евфрат, она тоже на карте.<br><span style="color:var(--soft)">▲ Назови государства, с которыми граничил Древний Египет. Назови страны, завоёванные Тутмосом III.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 490 216" role="img" aria-label="Схема: от таблички «Сирия и Палестина» стрелка вправо — серебро, благовония, ткани, ковры, строевой лес. От таблички «Нубия» стрелка вправо — золото, чёрное дерево, слоновая кость."><use href="#r-dan"/></svg><figcaption><b>Откуда бралось египетское богатство.</b> Не из торговли, а из дани: покорённые народы отдавали её каждый год.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопросы учебника</b>
+<ol><li>Назови государства, с которыми граничил Древний Египет.</li><li>Назови страны, завоёванные Тутмосом III.</li><li>Какие последствия для Египта имели завоевания Тутмоса III?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Что такое дань и чем она отличается от торговли?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Где искать: третий и четвёртый абзацы раздела 3 и схема «Что такое дань».</div>
+<div class="rev ans" id="a8" hidden>Дань — это то, что побеждённые отдают победителю просто так, каждый год, потому что проиграли войну. В торговле обе стороны что-то получают, а при дани получает только одна. Поэтому египтяне и предпочитали войну торговле — так выходило выгоднее.</div>
+</div>
+<div class="think">
+<p class="qt">9. Почему про Египет стали говорить, что у фараонов золота, как песка в пустыне?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Где искать: четвёртый и пятый абзацы раздела 3 — откуда шло золото.</div>
+<div class="rev ans" id="a9" hidden>Тутмос III расширил владения в Нубии, которая была богата золотом. Оттуда в Египет пошли караваны с золотом, чёрным деревом и слоновой костью — и слава о таком богатстве разошлась далеко за пределы страны.</div>
+</div>
+<div class="think">
+<p class="qt">10. Тутмос III совершил 15 походов. Что, кроме золота и товаров, он привозил из них — и как это меняло египетское общество?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Где искать: четвёртый абзац раздела 3. А про то, кто в Египте был внизу, — §6—7, раздел 5.</div>
+<div class="rev ans" id="a10" hidden>Он захватывал тысячи пленных и угонял их в рабство. Значит, нижняя ступень египетской пирамиды — рабы — пополнялась именно за счёт войн. Так завоевания меняли не только казну, но и само общество.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Рамсес II</h2></div>
+<div class="easy">
+<p>В годы правления <button class="term" data-t="ramses">Рамсеса II</button> (примерно 1290—1223 годы до н. э.) египтяне воевали с Хеттским царством — оно было на территории нынешней Турции. <button class="term" data-t="hetty">Хетты</button> захватили земли в Сирии и Палестине, которые фараон считал своими.</p>
+<p>Война шла с переменным успехом несколько лет. Одно из главных сражений произошло у города Кадеш. Колесницы хеттов ворвались в лагерь египтян и нанесли им большой урон. Положение спас сам Рамсес II: он вскочил на колесницу и двинулся на хеттов. Хетты окружили фараона — его спасли египетские воины.</p>
+<p>Позже Рамсес II и царь хеттов заключили <button class="term" data-t="kadesh">мирный договор</button>. Бо́льшая часть Сирии осталась за хеттами; Палестина, большинство финикийских городов и часть юга Сирии — за Египтом. Обе стороны обязались не воевать друг против друга.</p>
+<p>При Рамсесе II процветало строительство: создавались оросительные сооружения и новые города. Один из них — новая столица Пер-Рамсес, «Дом Рамсеса». Новые храмы возводили по всему Египту и даже в Нубии — например, храм в Абу-Симбеле.</p>
+</div>
+<div class="book" hidden>
+<p>В годы правления Рамсеса II (2) (ок. 1290—1223 годов до н. э.) египтяне воевали с Хеттским царством (царство на территории современной Турции). Хетты захватили земли в Сирии и Палестине, которые фараон считал своими. Война с переменным успехом продолжалась несколько лет. Одно из значительных сражений произошло у города Кадеш. Колесницы хеттов ворвались в лагерь египтян и нанесли им большой урон. Положение спас Рамсес II (2), он вскочил на колесницу и двинулся на хеттов. Хетты окружили фараона, его спасли египетские воины.</p>
+<p>Позднее Рамсес II (2) и царь хеттов заключили мирный договор: бóльшая часть Сирии осталась за хеттами, Палестина, большинство финикийских городов и часть юга Сирии — за Египтом. Обе стороны приняли обязательство не воевать друг против друга.</p>
+<p>При Рамсесе II (2) процветало строительство, создавались и оросительные сооружения, и новые города. Один из них — новая столица Пер-Рамсес («Дом Рамсеса»). Новые храмы возводили в разных городах Египта. Несколько египетских храмов построили в Нубии, например храм в Абу-Симбеле.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-kadesh" src="img/a12caac19295.jpg" alt="Древнеегипетская роспись: фараон на колеснице мчится на врагов, вокруг падающие воины и крепость"><figcaption><span class="src">из учебника</span><b>Рамсес II в битве при Кадеше. Роспись в храмовом комплексе в Абу-Симбеле.</b> Абу-Симбел — местность на юге Египта, на западном берегу Нила. Там два храма, высеченных прямо в скалах в XIII (13) веке до н. э.<br><span style="color:var(--soft)">▲ Рассмотри рисунок и расскажи, какие эпизоды битвы на нём изображены.</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-abusimbel" src="img/2d10f9897eb0.jpg" alt="Фотография: высеченный в скале храм, у входа четыре гигантские сидящие статуи"><figcaption><span class="src">из учебника</span><b>Храмовый комплекс в Абу-Симбеле. Современный вид.</b> Храм высечен в скале: высота 33 метра, ширина 38, глубина 65. На входе — 20-метровые статуи Рамсеса II. Его правление часто называют «золотым веком» Древнего Египта.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 490 184" role="img" aria-label="Лента времени с тремя точками: 3000 год до н. э. — Мина объединил Египет; 1490—1436 до н. э. — Тутмос III и битва при Мегиддо; 1290—1223 до н. э. — Рамсес II и битва при Кадеше. Над первым промежутком подписано «около 1500 лет», над вторым — «около 150 лет»."><use href="#r-lenta"/></svg><figcaption><b>Посмотри на два промежутка.</b> От объединения Египта до Тутмоса прошло около полутора тысяч лет — целая вечность. А между Тутмосом и Рамсесом всего полтораста: два великих фараона жили почти в одно время.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему правление Рамсеса II называют «золотым веком» Египта?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">11. Битва при Кадеше не принесла победы ни одной стороне. Почему тогда её считают важной?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Где искать: второй и третий абзацы раздела 4.</div>
+<div class="rev ans" id="a11" hidden>Потому что она закончилась тем, чем редко кончались войны: мирным договором. Стороны поделили спорные земли и обязались не воевать друг против друга. Войну удалось остановить не разгромом, а договором.</div>
+</div>
+<div class="think">
+<p class="qt">12. Тутмос III прославился походами, а Рамсеса II называют «золотым веком». В чём разница между тем, чем они запомнились?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Сравни раздел 3 и последний абзац раздела 4.</div>
+<div class="rev ans" id="a12" hidden>Тутмоса помнят прежде всего как полководца: 15 походов, Мегиддо, дань со всех сторон. Рамсеса — как строителя: при нём делали оросительные сооружения, новые города, новую столицу Пер-Рамсес и храмы по всему Египту и в Нубии. Один расширял страну, другой её обустраивал.</div>
+</div>
+<div class="think">
+<p class="qt">13. «Пер-Рамсес» значит «Дом Рамсеса». Вспомни §6—7: где ты уже встречала такое название?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h13" hidden>Про слово «фараон» — §6—7, раздел 1, врезка про дворец.</div>
+<div class="rev ans" id="a13" hidden>Слово «фараон» изначально тоже означало «великий дом», «царский дворец». Египтяне вообще любили называть дом именем хозяина — и столицу назвали домом того, кто её построил.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">В середине 2-го тысячелетия до нашей эры Древний Египет вступил в полосу своего расцвета. Интенсивно развивались земледелие и ремесло, была создана регулярная армия, строились новые города, оросительные и культовые сооружения.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Подумай, что позволило правителям Египта расширить его территорию.</li><li>Какие государства и территории были целью завоеваний фараонов? Объясни почему.</li><li>Объясни, как географическое положение Египта влияло на его защищённость.</li><li>Используя дополнительные источники, подготовь презентацию (не меньше 3 слайдов) об одном из египетских храмов.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к третьему вопросу</button></div>
+<div class="rev hint" id="r1" hidden>Посмотри на карту выше и вспомни §5. С запада и востока Египет закрыт пустыней, с севера — Средиземным морем, с юга — порогами на Ниле. Большому войску туда попросту не пройти. Поэтому воевать Египет ходил сам, а к нему прийти было трудно.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — что способствовало расцвету Древнеегипетского государства? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Работаем с хронологией</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего события к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Сражение около города Кадеш</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Битва при Мегиддо</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Объединение Верхнего и Нижнего Египта</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Бронза</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 470 204" aria-hidden="true"><use href="#r-bronza"/></svg><span class="ftext">Сплав меди с оловом: крепче меди и не гнётся при ударе.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Регулярная армия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 490 200" aria-hidden="true"><use href="#r-voysko"/></svg><span class="ftext">Постоянное войско, которое не расходится после войны. Пехотинцев учили держать строй.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Колесница</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 490 220" aria-hidden="true"><use href="#r-kolesnica"/></svg><span class="ftext">Повозка на двух колёсах: один правит и держит щит, другой стреляет из лука.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Дань</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 490 216" aria-hidden="true"><use href="#r-dan"/></svg><span class="ftext">То, что покорённые народы каждый год отдают победителю.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Тутмос III</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="tutmos" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">15 походов в Сирию и Палестину, победа при Мегиддо, владения до Евфрата.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Рамсес II</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="abusimbel" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Война с хеттами и мир после Кадеша; «золотой век» — города, храмы, Абу-Симбел.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Из чего делали бронзу?</h3><div class="opts">
+<button class="opt" data-ok="1">Из меди и олова</button>
+<button class="opt">Из железа и золота</button>
+<button class="opt">Из серебра и меди</button></div>
+<div class="fb">Бронзовые мечи и топоры были крепче медных и не гнулись при ударе.</div></div>
+<div class="q"><h3>2. Чем регулярная армия отличалась от ополчения?</h3><div class="opts">
+<button class="opt">Воевала только летом</button>
+<button class="opt" data-ok="1">Была постоянной, воинов обучали</button>
+<button class="opt">Состояла только из вельмож</button></div>
+<div class="fb">Ополчение собирали на время войны и распускали. Регулярную армию набирали из крестьян и учили сражаться строем.</div></div>
+<div class="q"><h3>3. Сколько воинов было на одной боевой колеснице?</h3><div class="opts">
+<button class="opt">Один</button>
+<button class="opt" data-ok="1">Двое: один правит, другой стреляет</button>
+<button class="opt">Четверо</button></div>
+<div class="fb">Один управлял конями и прикрывал щитом второго, а тот стрелял из лука и метал дротики.</div></div>
+<div class="q"><h3>4. При каком фараоне Египет достиг наивысшего расцвета?</h3><div class="opts">
+<button class="opt">При Мине</button>
+<button class="opt" data-ok="1">При Тутмосе III</button>
+<button class="opt">При Рамсесе II</button></div>
+<div class="fb">Он совершил 15 походов в Сирию и Палестину и довёл владения Египта до реки Евфрат.</div></div>
+<div class="q"><h3>5. Чем закончилась война Рамсеса II с хеттами?</h3><div class="opts">
+<button class="opt">Полной победой Египта</button>
+<button class="opt">Полным разгромом Египта</button>
+<button class="opt" data-ok="1">Мирным договором и разделом земель</button></div>
+<div class="fb">Бо́льшая часть Сирии осталась за хеттами, Палестина и финикийские города — за Египтом.</div></div>
+<div class="q"><h3>6. Что такое дань?</h3><div class="opts">
+<button class="opt">Налог, который платили сами египтяне</button>
+<button class="opt" data-ok="1">То, что покорённые народы отдают победителю</button>
+<button class="opt">Подарок фараона жрецам</button></div>
+<div class="fb">Из Сирии и Палестины шли серебро, ткани, ковры и лес, из Нубии — золото, чёрное дерево и слоновая кость.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Хозяйство на расцвете</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl2" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl2" hidden><ol><li>Бронза из меди с оловом: плуг с бронзовым наконечником, дамбы, каналы; мечи и топоры крепче медных.</li><li>Середина 2-го тысячелетия до н. э., столица — Фивы, новые дворцы и храмы.</li><li>Соседи: ливийцы, нубийцы, сирийцы, финикийцы; войну предпочитали торговле; коневодство переняли у Палестины и Сирии.</li></ol></div>
+</div>
+<div class="think">
+<h3>Египетское войско</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl3" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl3" hidden><ol><li>Было ополчение — стало регулярное войско; пехотинцев брали из крестьян и учили строю.</li><li>Отряды: копья и щиты, топоры и кинжалы, лук и стрелы, пращи; главная сила — колесницы, двое на каждой.</li><li>Порядок боя: стрелы и камни → колесницы прорывают → пехота строем → погоня на колесницах.</li></ol></div>
+</div>
+<div class="think">
+<h3>Тутмос III</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>1490—1436 годы до н. э., 15 походов в Сирию и Палестину.</li><li>Битва при Мегиддо, владения до Евфрата, покорённые обложены данью: серебро, благовония, ткани, ковры, лес.</li><li>Нубия: золото, чёрное дерево, слоновая кость, тысячи пленных в рабство. «Золота, как песка в пустыне».</li></ol></div>
+</div>
+<div class="think">
+<h3>Рамсес II и «золотой век»</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Война с хеттами за Сирию и Палестину, битва при Кадеше, фараон сам спас положение.</li><li>Мирный договор: Сирия хеттам, Палестина и финикийские города Египту, обязались не воевать.</li><li>Строительство: оросительные сооружения, новые города, столица Пер-Рамсес, храмы по Египту и в Нубии — Абу-Симбел.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p67.html">‹ §6—7 Общество Египта</a>
+  <span class="pn cur">§8 Расцвет Египта</span>
+  <a class="pn" href="p9.html">§9 Религия Египта ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 8 · История, 5 класс · страницы 49—53 · глава II «Древний Восток»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'r-bronza':'0 0 470 204','r-voysko':'0 0 490 200','r-otryady':'0 0 490 236','r-kolesnica':'0 0 490 220','r-taktika':'0 0 500 212','r-dan':'0 0 490 216','r-lenta':'0 0 490 184'};
+
+var T={
+bronza:{w:"Бронза",k:"металл",s:"r-bronza",t:"Сплав меди с оловом. Бронзовые мечи и топоры были крепче медных и не гнулись при ударе, а плуг с бронзовым наконечником легче брал землю."},
+opolch:{w:"Ополчение",k:"войско",s:"r-voysko",t:"Свободные люди, которых собирали на время военных действий, а потом распускали. Так было до появления постоянной армии."},
+regul:{w:"Регулярная армия",k:"войско",s:"r-voysko",t:"Постоянное войско, которое не расходится после войны. Основу составляли пехотинцы: их набирали из крестьян и учили владеть оружием и сражаться единым строем."},
+kolesn:{w:"Боевая колесница",k:"оружие",s:"r-kolesnica",t:"Повозка на двух колёсах, запряжённая конями. На каждой двое: один правит и прикрывает щитом, другой стреляет из лука и метает дротики. Главная ударная сила египтян."},
+prashcha:{w:"Праща",k:"оружие",s:"r-otryady",t:"Ремень для метания камней. Отряды с пращами вместе с лучниками начинали сражение."},
+fivy:{w:"Фивы",k:"город",p:"karnak",t:"Город, ставший столицей Египта в середине 2-го тысячелетия до н. э. Здесь строили новые дворцы и храмы — в том числе храм Амона-Ра в Карнаке."},
+tutmos:{w:"Тутмос III",k:"фараон",p:"tutmos",t:"Фараон 1490—1436 годов до н. э., при котором Египет достиг наивысшего расцвета. Совершил 15 военных походов в Сирию и Палестину."},
+megiddo:{w:"Битва при Мегиддо",k:"сражение",p:"karta",t:"Сражение, в котором египтяне под началом Тутмоса III разбили объединённое войско Сирии и Палестины. После него владения Египта дошли на севере до реки Евфрат."},
+dan:{w:"Дань",k:"что это",s:"r-dan",t:"То, что покорённые народы каждый год отдают победителю. В Египет отправляли серебро, благовония, ткани, ковры, строевой лес, а из Нубии — золото, чёрное дерево и слоновую кость."},
+nubia:{w:"Нубия",k:"страна",s:"r-dan",t:"Богатая золотом страна к югу от Египта. Тутмос III расширил там египетские владения, и оттуда пошли караваны с золотом, чёрным деревом и слоновой костью."},
+ramses:{w:"Рамсес II",k:"фараон",p:"abusimbel",t:"Фараон примерно 1290—1223 годов до н. э. Воевал с хеттами, потом заключил с ними мир. При нём процветало строительство — его правление называют «золотым веком» Египта."},
+hetty:{w:"Хетты",k:"народ",p:"kadesh",t:"Народ Хеттского царства — оно было на территории нынешней Турции. Хетты захватили земли в Сирии и Палестине, которые Рамсес II считал своими."},
+kadesh:{w:"Битва при Кадеше",k:"сражение",p:"kadesh",t:"Сражение Рамсеса II с хеттами. Колесницы хеттов ворвались в египетский лагерь, положение спас сам фараон. Позже стороны заключили мирный договор."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p8:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p8:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>3){fb.textContent="Верно! Объединение Египта (3000 до н. э.) → Мегиддо (Тутмос III) → Кадеш (Рамсес II).";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Посмотри ленту времени в разделе 4.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p8:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p8:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

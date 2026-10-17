@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 15: Ассирийская держава.">
+<title>Ассирийская держава</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="a-hozyaystvo" viewBox="0 0 540 216">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧЕМ АССИРИЯ ОТЛИЧАЛАСЬ ОТ ЕГИПТА</text>
+  <rect x="150" y="26" width="186" height="168" rx="10" fill="var(--ochre)" opacity=".28"/>
+  <rect x="344" y="26" width="186" height="168" rx="10" fill="var(--red)" opacity=".2"/>
+  <text x="243" y="46" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink)">ЕГИПЕТ</text>
+  <text x="437" y="46" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink)">АССИРИЯ</text>
+  <text x="10" y="80" font-size="11.5" font-weight="700" fill="var(--soft)">Вода</text>
+  <text x="243" y="72" text-anchor="middle" font-size="11" fill="var(--illink)">разлив Нила раз в год,</text>
+  <text x="243" y="88" text-anchor="middle" font-size="11" fill="var(--illink)">дамбы и каналы</text>
+  <text x="437" y="72" text-anchor="middle" font-size="11" fill="var(--illink)">дожди выпадают часто,</text>
+  <text x="437" y="88" text-anchor="middle" font-size="11" fill="var(--illink)">и холоднее, чем на юге</text>
+  <text x="10" y="124" font-size="11.5" font-weight="700" fill="var(--soft)">Металл</text>
+  <text x="243" y="124" text-anchor="middle" font-size="11" fill="var(--illink)">медь и бронза</text>
+  <text x="437" y="116" text-anchor="middle" font-size="11" fill="var(--illink)">освоили железо:</text>
+  <text x="437" y="132" text-anchor="middle" font-size="11" fill="var(--illink)">и орудия, и оружие</text>
+  <text x="10" y="168" font-size="11.5" font-weight="700" fill="var(--soft)">Торговля</text>
+  <text x="243" y="160" text-anchor="middle" font-size="11" fill="var(--illink)">свои богатства,</text>
+  <text x="243" y="176" text-anchor="middle" font-size="11" fill="var(--illink)">закрыт пустынями</text>
+  <text x="437" y="160" text-anchor="middle" font-size="11" fill="var(--illink)">через страну идут</text>
+  <text x="437" y="176" text-anchor="middle" font-size="11" fill="var(--illink)">торговые пути</text>
+  <text x="8" y="210" font-size="11.5" font-weight="700" fill="var(--moss)">Ассирия — не долина одной реки, а перекрёсток. И железо у неё появилось раньше.</text>
+</symbol>
+
+<symbol id="a-zhelezo" viewBox="0 0 520 196">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ОДИН МЕТАЛЛ — ДВА ПРИМЕНЕНИЯ</text>
+  <rect x="180" y="30" width="140" height="40" rx="8" fill="var(--soft)"/>
+  <text x="250" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="#F3EADB">ЖЕЛЕЗО</text>
+  <path d="M212 76 L150 106" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <path d="M288 76 L350 106" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="8" y="116" width="228" height="56" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="138" font-size="12" font-weight="700" fill="var(--moss)">ОРУДИЯ ТРУДА</text>
+  <text x="22" y="158" font-size="10.5" fill="var(--illink)">распахивать твёрдые почвы, рыть колодцы</text>
+  <rect x="264" y="116" width="228" height="56" rx="10" fill="var(--paper2)"/>
+  <text x="278" y="138" font-size="12" font-weight="700" fill="var(--red)">ОРУЖИЕ</text>
+  <text x="278" y="158" font-size="10.5" fill="var(--illink)">мечи и боевые топоры, щиты с бляхами</text>
+  <text x="8" y="190" font-size="11.5" font-weight="700" fill="var(--moss)">Тот, кто освоил железо первым, получил сразу и лучшие поля, и лучшую армию.</text>
+</symbol>
+
+<symbol id="a-armiya" viewBox="0 0 520 250">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">АРМИЯ АССИРИИ — ЛУЧШАЯ НА ВОСТОКЕ</text>
+  <rect x="8" y="30" width="164" height="64" rx="10" fill="var(--ochre)"/>
+  <text x="22" y="54" font-size="12" font-weight="700" fill="#22190A">КОННИЦА</text>
+  <text x="22" y="74" font-size="10.5" fill="#22190A">применили первыми на Востоке</text>
+  <rect x="182" y="30" width="164" height="64" rx="10" fill="var(--paper2)"/>
+  <text x="196" y="54" font-size="12" font-weight="700" fill="var(--illink)">ПЕХОТА</text>
+  <text x="196" y="74" font-size="10.5" fill="var(--soft)">основа войска</text>
+  <rect x="356" y="30" width="156" height="64" rx="10" fill="var(--paper2)"/>
+  <text x="370" y="54" font-size="12" font-weight="700" fill="var(--illink)">КОЛЕСНИЦЫ</text>
+  <text x="370" y="74" font-size="10.5" fill="var(--soft)">важная часть войска</text>
+  <rect x="8" y="106" width="164" height="64" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="130" font-size="12" font-weight="700" fill="var(--illink)">РАЗВЕДЧИКИ</text>
+  <text x="22" y="150" font-size="10.5" fill="var(--soft)">отдельные отряды</text>
+  <rect x="182" y="106" width="164" height="64" rx="10" fill="var(--paper2)"/>
+  <text x="196" y="130" font-size="12" font-weight="700" fill="var(--illink)">ДОРОГИ И МОСТЫ</text>
+  <text x="196" y="150" font-size="10.5" fill="var(--soft)">прокладывали путь войску</text>
+  <rect x="356" y="106" width="156" height="64" rx="10" fill="var(--paper2)"/>
+  <text x="370" y="130" font-size="12" font-weight="700" fill="var(--illink)">ОСАДА</text>
+  <text x="370" y="150" font-size="10.5" fill="var(--soft)">тараны и осадные башни</text>
+  <text x="8" y="200" font-size="12" font-weight="700" fill="var(--illink)">Оружие: железные мечи и боевые топоры. Защита: круглые щиты,</text>
+  <text x="8" y="218" font-size="12" font-weight="700" fill="var(--illink)">обитые железными бляхами; шлемы по-прежнему бронзовые.</text>
+  <text x="8" y="244" font-size="11.5" font-weight="700" fill="var(--moss)">Обрати внимание на разведчиков и дорожников: воюет не только тот, кто дерётся.</text>
+</symbol>
+
+<symbol id="a-lenta" viewBox="0 0 510 200">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЛЕНТА ВРЕМЕНИ</text>
+  <path d="M16 70 H494" stroke="var(--line)" stroke-width="4"/>
+  <g fill="var(--red)"><circle cx="26" cy="70" r="7"/><circle cx="180" cy="70" r="7"/><circle cx="330" cy="70" r="7"/><circle cx="476" cy="70" r="7"/></g>
+  <text x="8" y="98" font-size="11.5" font-weight="700" fill="var(--illink)">около 1350 до н. э.</text>
+  <text x="8" y="114" font-size="10.5" fill="var(--soft)">начались завоевательные походы</text>
+  <text x="330" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">668—627 до н. э.</text>
+  <text x="330" y="114" text-anchor="middle" font-size="10.5" fill="var(--soft)">Ашшурбанапал и его библиотека</text>
+  <text x="180" y="142" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">745—727 до н. э.</text>
+  <text x="180" y="158" text-anchor="middle" font-size="10.5" fill="var(--soft)">Тиглатпаласар III: огромная держава</text>
+  <text x="494" y="142" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--red)">612 до н. э.</text>
+  <text x="494" y="158" text-anchor="end" font-size="10.5" fill="var(--soft)">Ниневия пала, держава исчезла</text>
+  <text x="8" y="192" font-size="11.5" font-weight="700" fill="var(--moss)">Семьсот лет воевали — и всего за несколько лет всё рассыпалось.</text>
+</symbol>
+
+<symbol id="a-padenie" viewBox="0 0 530 262">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК ПАЛА НЕПРИСТУПНАЯ НИНЕВИЯ</text>
+  <circle cx="26" cy="46" r="13" fill="var(--ice)"/><text x="26" y="51" text-anchor="middle" font-size="13" font-weight="700" fill="#F2FAFF">1</text>
+  <text x="50" y="43" font-size="12.5" font-weight="700" fill="var(--illink)">Покорённые ждали момента</text>
+  <text x="50" y="59" font-size="10.5" fill="var(--soft)">народы, разорённые Ассирией, хотели отомстить</text>
+  <path d="M26 66 V80" stroke="var(--line)" stroke-width="3"/>
+  <circle cx="26" cy="94" r="13" fill="var(--ice)"/><text x="26" y="99" text-anchor="middle" font-size="13" font-weight="700" fill="#F2FAFF">2</text>
+  <text x="50" y="91" font-size="12.5" font-weight="700" fill="var(--illink)">Союз двух врагов</text>
+  <text x="50" y="107" font-size="10.5" fill="var(--soft)">с востока напали мидийцы, а Вавилон восстал и примкнул к ним</text>
+  <path d="M26 114 V128" stroke="var(--line)" stroke-width="3"/>
+  <circle cx="26" cy="142" r="13" fill="var(--red)"/><text x="26" y="147" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF3E2">3</text>
+  <text x="50" y="139" font-size="12.5" font-weight="700" fill="var(--illink)">Стена не поддалась</text>
+  <text x="50" y="155" font-size="10.5" fill="var(--soft)">армию царя разгромили, но с городской стеной не справились даже тараны</text>
+  <path d="M26 162 V176" stroke="var(--line)" stroke-width="3"/>
+  <circle cx="26" cy="190" r="13" fill="var(--red)"/><text x="26" y="195" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF3E2">4</text>
+  <text x="50" y="187" font-size="12.5" font-weight="700" fill="var(--illink)">Тогда запрудили Тигр</text>
+  <text x="50" y="203" font-size="10.5" fill="var(--soft)">воды реки обрушились на город — так рассказывают древние источники</text>
+  <text x="8" y="234" font-size="12" font-weight="700" fill="var(--moss)">612 год до н. э. Города Ассирии стёрли с лица земли, а население расселилось</text>
+  <text x="8" y="252" font-size="12" font-weight="700" fill="var(--moss)">и смешалось с другими народами.</text>
+</symbol>
+
+<symbol id="a-biblioteka" viewBox="0 0 520 250">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">БИБЛИОТЕКА АШШУРБАНАПАЛА В НИНЕВИИ</text>
+  <g fill="var(--brown)">
+    <rect x="16" y="46" width="128" height="8"/><rect x="16" y="82" width="128" height="8"/>
+    <rect x="16" y="118" width="128" height="8"/><rect x="16" y="154" width="128" height="8"/>
+  </g>
+  <g fill="var(--stone)">
+    <rect x="24" y="28" width="16" height="18"/><rect x="46" y="28" width="16" height="18"/><rect x="68" y="28" width="16" height="18"/><rect x="90" y="28" width="16" height="18"/><rect x="112" y="28" width="16" height="18"/>
+    <rect x="24" y="64" width="16" height="18"/><rect x="46" y="64" width="16" height="18"/><rect x="68" y="64" width="16" height="18"/><rect x="90" y="64" width="16" height="18"/><rect x="112" y="64" width="16" height="18"/>
+    <rect x="24" y="100" width="16" height="18"/><rect x="46" y="100" width="16" height="18"/><rect x="68" y="100" width="16" height="18"/><rect x="90" y="100" width="16" height="18"/><rect x="112" y="100" width="16" height="18"/>
+    <rect x="24" y="136" width="16" height="18"/><rect x="46" y="136" width="16" height="18"/><rect x="68" y="136" width="16" height="18"/><rect x="90" y="136" width="16" height="18"/><rect x="112" y="136" width="16" height="18"/>
+  </g>
+  <text x="80" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink)">30 000 табличек</text>
+  <text x="80" y="198" text-anchor="middle" font-size="10.5" fill="var(--soft)">на стеллажах, по темам</text>
+  <text x="176" y="46" font-size="11.5" font-weight="700" fill="var(--illink)">Что там хранилось:</text>
+  <text x="176" y="70" font-size="11" fill="var(--illink)">медицина, астрономия, математика</text>
+  <text x="176" y="92" font-size="11" fill="var(--illink)">царские указы и законы</text>
+  <text x="176" y="114" font-size="11" fill="var(--illink)">дворцовые записи</text>
+  <text x="176" y="136" font-size="11" fill="var(--illink)">лучшие литературные произведения</text>
+  <text x="176" y="158" font-size="11" fill="var(--illink)">словарь и поэма о Великом потопе</text>
+  <text x="176" y="184" font-size="10.5" fill="var(--soft)">Над каждым стеллажом висела табличка</text>
+  <text x="176" y="198" font-size="10.5" fill="var(--soft)">с названием темы — как в библиотеке.</text>
+  <text x="8" y="228" font-size="12" font-weight="700" fill="var(--moss)">Почему всё уцелело: завоеватели не увидели ценности в глиняных табличках</text>
+  <text x="8" y="244" font-size="12" font-weight="700" fill="var(--moss)">и не стали брать их как добычу. Их нашли археологи в XIX (19) веке.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 15</span>
+    <h1>Ассирийская держава</h1>
+    <p class="lede">Железо, лучшая армия Востока — и держава, которая исчезла целиком за несколько лет. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Почему Ассирийская держава оказалась непрочным государством?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p14.html">‹ §14 Палестина</a>
+  <span class="pn cur">§15 Ассирия</span>
+  <a class="pn" href="p16.html">§16 Персия ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Природа и хозяйство">1</a><a href="#s2" data-j="s2" title="Завоевательные походы">2</a><a href="#s3" data-j="s3" title="Падение державы">3</a><a href="#s4" data-j="s4" title="Сокровища библиотеки">4</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-raskopki" src="img/0e1e7554ae16.jpg" alt="Рисунок: рабочие верёвками поднимают из раскопа огромную каменную статую крылатого быка"><figcaption><span class="src">из учебника</span><b>Раскопки ассирийских статуй.</b> Величественные статуи нашёл английский археолог-любитель О. Лэйярд — они пролежали под землёй несколько тысячелетий. В юности, начитавшись «Тысячи и одной ночи», он бредил богатствами Востока, бросил работу в лондонской конторе и уехал. В 1845 году он начал раскопки на холме Нимруд, на месте древнего города, — и из-под земли показались удивительные крылатые животные. Местные жители и не подозревали, что у них под ногами лежат сокровища цивилизации, погибшей 25 веков назад.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Природа и хозяйство</h2></div>
+<div class="easy">
+<p>В 3-м тысячелетии до н. э. в среднем течении реки Тигр был основан город Ашшур. От него пошло название народа — ассирийцы, и страны — <button class="term" data-t="assiria">Ассирия</button> (это территория современного Ирака).</p>
+<p>Здесь было холоднее и дожди выпадали чаще, чем на юге Месопотамии. Говорили ассирийцы на диалекте аккадского языка: они происходили от части аккадцев, расселившихся не в Шумере, а на Тигре.</p>
+<p>Ассирийцы занимались земледелием и скотоводством. Со временем они освоили производство <button class="term" data-t="zhelezo">железа</button> и делали из него орудия труда и оружие. Железными орудиями распахивали твёрдые почвы, рыли колодцы.</p>
+<p>Через земли Ассирии проходили торговые пути: ассирийские купцы выгодно торговали с Сирией и странами Малой Азии.</p>
+<p>В VII (7) веке до н. э. столицей Ассирии была <button class="term" data-t="ninevia">Ниневия</button>. Как и все правители Древнего Востока, ассирийские цари строили великолепные дворцы и храмы. Стены дворцов складывали из кирпичей, покрытых цветной глазурью, и украшали статуями крылатых львов, сценами охоты и военных действий.</p>
+</div>
+<div class="book" hidden>
+<p>В 3-м тысячелетии до н. э. в среднем течении реки Тигр был основан город Ашшур, давший название народу — ассирийцы и стране — Ассирия (территория современного Ирака). Здесь было холоднее и дожди выпадали чаще, чем на юге Месопотамии. Языком населения был диалект аккадского языка — ассирийцы происходили от части племён аккадцев, расселившихся не в Шумере, а на Тигре.</p>
+<p>Ассирийцы занимались земледелием и скотоводством. Со временем они освоили производство железа и делали из него орудия труда и оружие. С помощью железных орудий труда распахивались твёрдые почвы, рылись колодцы и т. п.</p>
+<p>Через земли Ассирии проходили торговые пути. Ассирийские купцы вели выгодную торговлю с Сирией и странами Малой Азии.</p>
+<p>В VII (7) веке до н. э. столицей Ассирии была Ниневия. Как и все правители Древнего Востока, цари Ассирии строили великолепные дворцы и храмы в честь богов. Стены дворцов были сложены из кирпичей, покрытых цветной глазурью, и украшены статуями крылатых львов, сценами охоты и военных действий.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-karta" src="img/a57c6ace9077.jpg" alt="Карта: розовым закрашена территория Ассирийской державы от Средиземного моря до Персидского залива, отмечены Ниневия, Ашшур, Вавилон, Дамаск, Иерусалим, Египет, стрелками показаны направления походов"><figcaption><span class="src">из учебника</span><b>Ассирийская держава.</b> Розовым показана её территория в середине VII (7) века до н. э., стрелками — основные направления завоевательных походов ассирийских царей.<br><span style="color:var(--soft)">▲ Найди на карте Ниневию и Ашшур. Посмотри, как далеко от них уходили стрелки походов.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 216" role="img" aria-label="Таблица сравнения Египта и Ассирии. Вода: в Египте разлив Нила раз в год, дамбы и каналы; в Ассирии дожди выпадают часто и холоднее, чем на юге. Металл: в Египте медь и бронза; в Ассирии освоили железо — и орудия, и оружие. Торговля: Египет закрыт пустынями; через Ассирию идут торговые пути."><use href="#a-hozyaystvo"/></svg><figcaption><b>Ответ на вопрос учебника.</b> Главная разница — в воде и в металле: Египту нужен был разлив и огромная оросительная система, а тут хватало дождей. Зато Ассирия открыта со всех сторон — и для купцов, и для врагов.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 520 196" role="img" aria-label="Схема: от прямоугольника «железо» две стрелки вниз. Слева — орудия труда: распахивать твёрдые почвы, рыть колодцы. Справа — оружие: мечи и боевые топоры, щиты с бляхами."><use href="#a-zhelezo"/></svg><figcaption><b>Один металл сработал дважды.</b> Вспомни §14: филистимляне были опасны для евреев именно потому, что уже умели делать железо. Ассирийцы получили то же преимущество — только над всеми соседями сразу.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Чем отличалось хозяйство Ассирии от хозяйства Древнего Египта?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. В Ассирии дожди шли чаще, чем на юге Месопотамии. Почему это важно для земледельца?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Где искать: второй абзац раздела 1, и вспомни §11 — как поливали поля на юге.</div>
+<div class="rev ans" id="a1" hidden>На юге Месопотамии и в Египте вода приходила только с разливом, и её надо было разводить по полям дамбами и каналами — огромная общая работа. А там, где дожди идут сами, поле поливает небо. Значит, можно жить и хозяйствовать, не строя всей страной оросительную систему.</div>
+</div>
+<div class="think">
+<p class="qt">2. Через Ассирию проходили торговые пути. Это преимущество или опасность?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Соедини четвёртый абзац раздела 1 с тем, что ты увидишь в разделе 3.</div>
+<div class="rev ans" id="a2" hidden>И то и другое. Купцы приносили выгоду, и Ассирия богатела. Но открытая для торговли страна открыта и для войска: её не защищают ни пустыня, ни море, ни пороги — как защищали Египет. Именно поэтому в разделе 3 враги дойдут до самой столицы.</div>
+</div>
+<div class="think">
+<p class="qt">3. Стены дворцов украшали сценами охоты и военных действий. Что это говорит о том, чем гордились ассирийские цари?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Где искать: последний абзац раздела 1.</div>
+<div class="rev ans" id="a3" hidden>Что главным делом царя они считали войну и силу. В Египте на стенах гробниц рисовали жизнь богов и фараонов (§9), а здесь — как царь побеждает: на войне и на охоте. Стены рассказывали о том, чего от правителя ждали.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Завоевательные походы</h2></div>
+<div class="easy">
+<p>Ассирийцы были воинственным народом, и их цари постоянно воевали с соседями.</p>
+<p>Армия ассирийцев считалась лучшей на Востоке. Они первыми начали использовать <button class="term" data-t="konnica">конницу</button> наряду с пехотой, важной частью войска были колесницы. В состав армии входили отряды разведчиков и отряды для прокладки дорог и наведения мостов.</p>
+<p>Ассирийцы одними из первых стали применять железное оружие — мечи и боевые топоры. Защитой служили круглые щиты, обитые железными бляхами; шлемы продолжали делать из бронзы. Для штурма городов использовались <button class="term" data-t="taran">тараны и осадные башни</button>.</p>
+<p>Примерно с 1350 года до н. э. ассирийская армия начала завоевательные походы, и за несколько столетий были покорены многие соседние страны.</p>
+<p>При царе <button class="term" data-t="tiglat">Тиглатпаласаре III</button> (745—727 годы до н. э.) Ассирия превратилась в огромную военную державу из покорённых народов. Царь говорил, что правит во всех странах «от Верхнего моря (Средиземного), где садится солнце, до Нижнего моря (Персидского залива), где солнце поднимается».</p>
+<p>Население городов, которые сопротивлялись, ждала страшная расправа — поэтому многие города сдавались добровольно. Покорённые народы ассирийцы облагали огромной <button class="term" data-t="dan">данью</button>.</p>
+</div>
+<div class="book" hidden>
+<p>Ассирийцы были воинственным народом. Их цари постоянно воевали с соседями. Армия ассирийцев считалась лучшей на Востоке. Они первыми начали использовать конницу наряду с пехотой. Важной частью войска были колесницы. В его состав также входили отряды разведчиков, отряды для прокладки дорог, наведения мостов.</p>
+<p>Ассирийцы одними из первых стали применять железное оружие: мечи и боевые топоры. Защитными средствами служили круглые щиты, обитые железными бляхами. Шлемы продолжали делать из бронзы. Для штурма городов использовались тараны и осадные башни.</p>
+<p>Приблизительно с 1350 года до н. э. ассирийская армия начала завоевательные походы. За несколько столетий были покорены многие соседние страны. При царе Тиглатпаласаре III (3) (745—727 годы до н. э.) Ассирия превратилась в огромную военную державу, в состав которой входили покорённые народы. Царь говорил, что правит во всех странах «от Верхнего моря (Средиземного), где садится солнце, до Нижнего моря (Персидского залива), где солнце поднимается».</p>
+<p>Население городов, оказывавших сопротивление, ждала страшная расправа. Многие города сдавались добровольно. Покорённые народы ассирийцы облагали огромной данью.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 520 250" role="img" aria-label="Шесть табличек: конница — применили первыми на Востоке; пехота — основа войска; колесницы — важная часть войска; разведчики — отдельные отряды; дороги и мосты — прокладывали путь войску; осада — тараны и осадные башни. Внизу: оружие железные мечи и топоры, защита круглые щиты с железными бляхами, шлемы по-прежнему бронзовые."><use href="#a-armiya"/></svg><figcaption><b>Сравни с египетским войском из §8.</b> Там были пехота, колесницы и отряды с разным оружием. Здесь всё то же плюс конница, разведка, дорожники и осадная техника — армия научилась не только драться, но и доходить и брать города.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-ermitazh" src="img/9ba124230fab.jpg" alt="Фотография выставочного зала: человек сидит на скамье перед огромными изображениями ассирийских рельефов"><figcaption><span class="src">из учебника</span><b>На выставке ассирийского искусства «Я воздвиг там мой царский дворец».</b> Государственный Эрмитаж, Санкт-Петербург, 2020 год.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему ассирийцы жестоко расправлялись с жителями захваченных территорий?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Зачем армии отряды, которые прокладывают дороги и наводят мосты, — они же не воюют?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Где искать: второй абзац раздела 2 и схема армии.</div>
+<div class="rev ans" id="a4" hidden>Чтобы войско могло дойти. Огромная армия с колесницами и обозом не пройдёт по горной тропе и не переберётся через реку вброд. Дорожники и мостовики делают поход возможным — без них лучшие воины просто застрянут в пути.</div>
+</div>
+<div class="think">
+<p class="qt">5. Жестокая расправа над сопротивлявшимися городами — это жестокость ради жестокости или расчёт?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Где искать: последний абзац раздела 2 — обрати внимание на следующее предложение.</div>
+<div class="rev ans" id="a5" hidden>Расчёт. Сразу после этого в учебнике сказано: «Многие города сдавались добровольно». Слух о расправе шёл впереди войска и делал за него половину работы — город предпочитал сдаться. Страшная слава была оружием не хуже тарана.</div>
+</div>
+<div class="think">
+<p class="qt">6. Тиглатпаласар III говорил, что правит «от Верхнего моря до Нижнего». Посмотри на карту: о каких морях речь?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Учебник поясняет прямо в тексте, а на карте найди их края.</div>
+<div class="rev ans" id="a6" hidden>Верхнее море — Средиземное, там для ассирийцев садилось солнце, то есть запад. Нижнее — Персидский залив, там солнце поднималось, то есть восток. Царь говорил: моя держава — от края до края, от заката до восхода.</div>
+</div>
+<div class="think">
+<p class="qt">7. Ассирийцы первыми применили конницу. Чем всадник лучше колесницы?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Вспомни §8: что нужно колеснице, чтобы ехать.</div>
+<div class="rev ans" id="a7" hidden>Колеснице нужна ровная дорога: на камнях и в горах она бесполезна. А конь пройдёт везде. Значит, войско с конницей может воевать там, где колесницы бессильны, — и догонять быстрее. Это и позволило Ассирии дотянуться до очень далёких земель.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Падение державы</h2></div>
+<div class="easy">
+<p>Народы, покорённые Ассирией, ждали момента, чтобы отомстить завоевателям.</p>
+<p>В VII (7) веке до н. э. с востока на Ассирию напал иранский народ — <button class="term" data-t="midia">мидийцы</button>, сплотившийся в единое царство Мидию. Вавилон восстал против Ассирии и заключил с Мидией союз. Вместе они разгромили армию ассирийского царя и осадили столицу.</p>
+<p>Город окружала неприступная стена — с ней не справились даже мощные тараны. Тогда союзники запрудили реку Тигр, и её воды обрушились на город. Так повествуют древние источники.</p>
+<p><b>В 612 году до н. э. Ниневия пала.</b> Города Ассирии были стёрты с лица земли, а население расселилось и смешалось с другими народами. Ассирийская держава прекратила своё существование.</p>
+</div>
+<div class="book" hidden>
+<p>Народы, покорённые Ассирией, ждали момента, чтобы отомстить завоевателям. В VII (7) веке до н. э. с востока на Ассирию напал иранский народ — мидийцы, сплотившийся в единое царство, Мидию. Вавилон восстал против Ассирии и заключил союз с Мидией. Совместно они разгромили армию ассирийского царя и осадили его столицу.</p>
+<p>Город окружала неприступная стена, с которой не могли справиться даже мощные тараны. Тогда союзники запрудили реку Тигр, и её воды обрушились на город. Так повествуют древние источники.</p>
+<p>В 612 году до н. э. Ниневия пала. Города Ассирии были стёрты с лица земли, а население расселилось и смешалось с другими народами. Ассирийская держава прекратила своё существование.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 530 262" role="img" aria-label="Четыре пронумерованных шага: покорённые ждали момента отомстить; союз двух врагов — мидийцы напали с востока, Вавилон восстал и примкнул; стену города не взяли даже тараны; тогда запрудили Тигр, и воды обрушились на город. Внизу: 612 год до н. э., города Ассирии стёрли с лица земли."><use href="#a-padenie"/></svg><figcaption><b>Ответ на главный вопрос параграфа.</b> Держава держалась только на страхе и войске. Как только соседи объединились, оказалось, что защищать её некому: своих в ней не было, одни покорённые.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 510 200" role="img" aria-label="Лента времени: около 1350 до н. э. — начались завоевательные походы; 745—727 — Тиглатпаласар III создал огромную державу; 668—627 — Ашшурбанапал и его библиотека; 612 — Ниневия пала, держава исчезла."><use href="#a-lenta"/></svg><figcaption><b>Семьсот лет — и всё.</b> Ассирия воевала дольше, чем существовало большинство государств, а исчезла почти мгновенно и целиком: даже города стёрли.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Как ты думаешь, почему Ассирийская держава оказалась непрочной?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Почему против Ассирии объединились именно Мидия и Вавилон — два совсем разных противника?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Где искать: первый и второй абзацы раздела 3.</div>
+<div class="rev ans" id="a8" hidden>Потому что у них был общий враг. Вавилон Ассирия покорила, мидийцам угрожала — и обоим было что вспомнить. Держава, построенная на страхе, наживает себе слишком много желающих отомстить, и однажды они находят друг друга.</div>
+</div>
+<div class="think">
+<p class="qt">9. Города Ассирии не просто взяли, а стёрли с лица земли. Почему победители поступили так?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Соедини первый абзац раздела 3 с тем, как ассирийцы обходились с покорёнными (раздел 2).</div>
+<div class="rev ans" id="a9" hidden>Это была месть за годы расправ и огромной дани. Ассирийцы разоряли чужие города — с ними поступили так же. А ещё так разрушали не просто стены: уничтожали саму возможность державе возродиться.</div>
+</div>
+<div class="think">
+<p class="qt">10. Ассирия покоряла соседей семьсот лет, а рухнула почти сразу. Сравни её с Египтом (§5, §8): почему у них так по-разному?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Подумай, что скрепляло каждую страну: Египет — долина одной реки и один народ; Ассирия — покорённые народы, обложенные данью.</div>
+<div class="rev ans" id="a10" hidden>Египет был единой долиной с одним народом, одной верой и общим хозяйством вокруг Нила — такое держится само. Ассирийская держава была собрана из чужих народов, которые её ненавидели, и держалась только на войске. Пока войско побеждало, всё стояло; проиграло один раз — и рассыпалось целиком.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-ashshur" src="img/bde0aba52ca8.jpg" alt="Каменная статуя бородатого человека в длинном одеянии, руки сложены перед собой" style="max-width:220px"><figcaption><span class="src">из учебника</span><b>Статуя Ашшурбанапала.</b> Он был образованным человеком, удачливым политиком и успешным военачальником. При этом в античной традиции остался известен и как «изнеженный, развращённый и бездеятельный деспот Сарданапал».</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Сокровища библиотеки</h2></div>
+<div class="easy">
+<p>Царь Ассирии <button class="term" data-t="ashshurb">Ашшурбанапал</button> (668—627 годы до н. э.) не только воевал и покорял соседние народы, но и построил в Ниневии библиотеку. В ней было собрано больше 30 тысяч <button class="term" data-t="tablichki">глиняных табличек</button>.</p>
+<p>В них содержались сведения по медицине, астрономии и математике, царские указы, законы, дворцовые записи, лучшие литературные произведения, словарь и поэма о Великом потопе.</p>
+<p>Глиняные «книги» держали в строгом порядке на стеллажах, а над каждым прикрепляли табличку с названием темы.</p>
+<p>Как делали табличку? Сначала готовили глину: вымешивали, потом формовали брикеты. По готовой заготовке писец наносил знаки заострённой палочкой. Потом табличку обжигали — и она становилась долговечной.</p>
+<p><b>А сохранилось всё это по счастливой случайности.</b> Завоеватели не видели ценности в клинописных табличках и не стали забирать их как добычу. Множество табличек так и осталось лежать под землёй, затянувшей развалины Ниневии, — их обнаружили археологи лишь в XIX (19) веке.</p>
+</div>
+<div class="book" hidden>
+<p>Царь Ассирии Ашшурбанапал (668—627 годы до н. э.) не только воевал и покорял соседние народы, но и построил в Ниневии библиотеку, где было собрано более 30 тысяч глиняных табличек. В них содержались сведения по медицине, астрономии, математике, царские указы, законы, дворцовые записи, лучшие литературные произведения, словарь, поэма о Великом потопе. В библиотеке хранилось много бесценных текстов. Глиняные «книги» содержались в строгом порядке на стеллажах, над каждым из которых прикреплялась табличка с наименованием темы.</p>
+<p>Для изготовления табличек сначала готовили глину: её вымешивали, потом формовали брикеты. Когда заготовка была готова, писец при помощи заострённой палочки наносил знаки. Потом табличку обжигали, и она становилась долговечной.</p>
+<p>Завоеватели, к счастью для учёных, не видели ценности в клинописных табличках. Многие из них сохранились до наших дней. После падения Ниневии их не стали забирать в качестве добычи. Поэтому множество из них осталось лежать под затянувшей развалины Ниневии землёй, они были обнаружены археологами лишь в XIX (19) веке.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 520 250" role="img" aria-label="Слева стеллажи с рядами глиняных табличек и подпись «30 000 табличек на стеллажах, по темам». Справа список: медицина, астрономия, математика; царские указы и законы; дворцовые записи; лучшие литературные произведения; словарь и поэма о Великом потопе. Внизу: всё уцелело потому, что завоеватели не увидели ценности в глиняных табличках."><use href="#a-biblioteka"/></svg><figcaption><b>Самое неожиданное в этой истории.</b> Золото из Ниневии давно переплавили, а глина никому не понадобилась — и именно она донесла до нас знания целой цивилизации.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Отрывок из книги российского историка И. Дьяконова «Древний Восток».</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">Стены города необыкновенно крепки; к тому же они усилены рвами, башнями, дополнительными пристройками, всякого рода укреплениями…</p><p style="margin:0 0 10px">Дворец окружён широким пустым пространством. Он воздвигнут на высокой, облицованной кирпичом платформе и похож на крепость…</p><p style="margin:0 0 10px">На этих улицах нет прекрасных домов с великолепными фасадами, нет также стройных рядов деревьев; видны только глухие белёные стены, да кое-где из внутреннего двора перевесится крона дерева.</p><p style="margin:0 0 10px">Зато вдали, над сутолокой пёстрой толпы, над алтарями на перекрёстках, над плоскими крышами, где сушатся жёлтые тыквы, инжир и виноград, видны высокие, украшенные нишами и выступами белые стены храмов с многоярусными башнями и стены царского дворца.</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq1" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq1" hidden>О каком городе идёт речь и чем он отличался от других городов Древнего Востока?</div>
+<div class="rev ans" id="sa2" hidden>Речь о Ниневии, столице Ассирии. Отличие сразу бросается в глаза: это город-крепость. Крепкие стены, рвы, башни, дворец на платформе и «похож на крепость», улицы — глухие белёные стены без фасадов и деревьев. Сравни с Вавилоном из §12: там были ворота Иштар, главная улица с дворцами, многоэтажные дома в цветной плитке и висячие сады. Вавилон строили, чтобы им любовались, Ниневию — чтобы её не взяли.</div></div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие знания хранила библиотека Ашшурбанапала?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">11. Почему для учёных оказалось удачей, что завоеватели не тронули таблички?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Где искать: последний абзац раздела 4.</div>
+<div class="rev ans" id="a11" hidden>Потому что добычу увозят и переплавляют, а брошенное остаётся на месте. Золото и драгоценности из Ниневии исчезли навсегда, а «никому не нужные» глиняные книги пролежали под землёй две с половиной тысячи лет и дошли до нас целыми.</div>
+</div>
+<div class="think">
+<p class="qt">12. Над каждым стеллажом висела табличка с названием темы. Зачем, если книг всего 30 тысяч?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Подумай, как искать нужную табличку среди тридцати тысяч одинаковых глиняных брикетов.</div>
+<div class="rev ans" id="a12" hidden>Именно потому, что их тридцать тысяч. Глиняные таблички снаружи все похожи, и перебирать их по одной невозможно. Разложить по темам и подписать полки — это и есть изобретение библиотеки: не просто собрать книги, а сделать так, чтобы нужную можно было найти.</div>
+</div>
+<div class="think">
+<p class="qt">13. Ашшурбанапал воевал и одновременно собирал библиотеку. Как это уживалось в одном человеке?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h13" hidden>Где искать: подпись к статуе Ашшурбанапала.</div>
+<div class="rev ans" id="a13" hidden>Учебник прямо говорит: он был образованным человеком, удачливым политиком и успешным военачальником. А в античной традиции тот же царь остался «изнеженным и бездеятельным деспотом». Один человек — две совершенно разные памяти о нём: всё зависит от того, кто рассказывает.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">Ассирийцы освоили способ получения железа и делали из него орудия труда и оружие. У Ассирийского государства была сильнейшая армия, благодаря которой велись многочисленные успешные завоевательные походы. Царём Ашшурбанапалом была собрана уникальная библиотека, в которой на глиняных табличках хранились тексты по математике, астрономии, медицине.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Какие новые виды вооружения использовали в армии Ассирии?</li><li>Подумай, почему захватчики полностью уничтожили столицу Ассирии.</li><li>Как ты думаешь, в чём значение открытия библиотеки Ашшурбанапала для изучения истории Древнего мира?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к третьему вопросу</button></div>
+<div class="rev hint" id="r3" hidden>Посмотри, что было в табличках: медицина, астрономия, математика, законы, указы, дворцовые записи, литература, словарь, поэма о Великом потопе. Это не один памятник, а целая живая культура разом — и как лечили, и как считали, и какие сказки рассказывали, и по каким законам судили. Одна находка заменила сотни.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — почему Ассирийская держава оказалась непрочным государством? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Работаем с хронологией</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего события к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Правление Ашшурбанапала</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Начались завоевательные походы</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Падение Ниневии</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Тиглатпаласар III создал державу</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ассирия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="karta" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Страна в среднем течении Тигра. Название — от города Ашшур.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Железо</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 520 196" aria-hidden="true"><use href="#a-zhelezo"/></svg><span class="ftext">Освоили раньше соседей: и орудия труда, и оружие.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Конница</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 520 250" aria-hidden="true"><use href="#a-armiya"/></svg><span class="ftext">Ассирийцы первыми на Востоке стали использовать её наряду с пехотой.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ниневия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 530 262" aria-hidden="true"><use href="#a-padenie"/></svg><span class="ftext">Столица Ассирии. Пала в 612 году до н. э., когда союзники запрудили Тигр.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ашшурбанапал</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="ashshur" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Царь, собравший в Ниневии библиотеку из 30 тысяч глиняных табличек.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Глиняные таблички</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 520 250" aria-hidden="true"><use href="#a-biblioteka"/></svg><span class="ftext">«Книги» Междуречья. Уцелели потому, что завоеватели не сочли их ценными.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. От чего пошло название страны Ассирия?</h3><div class="opts">
+<button class="opt">От имени царя</button>
+<button class="opt" data-ok="1">От названия города Ашшур</button>
+<button class="opt">От реки Тигр</button></div>
+<div class="fb">Город основали в 3-м тысячелетии до н. э. в среднем течении Тигра.</div></div>
+<div class="q"><h3>2. Что ассирийцы применили первыми на Востоке?</h3><div class="opts">
+<button class="opt">Колесницы</button>
+<button class="opt" data-ok="1">Конницу наряду с пехотой</button>
+<button class="opt">Пращи</button></div>
+<div class="fb">А ещё у них были отряды разведчиков и отряды для прокладки дорог и мостов.</div></div>
+<div class="q"><h3>3. Из чего ассирийцы делали шлемы?</h3><div class="opts">
+<button class="opt">Из железа</button>
+<button class="opt" data-ok="1">Из бронзы</button>
+<button class="opt">Из кожи</button></div>
+<div class="fb">Железными были мечи и боевые топоры, а щиты обивали железными бляхами — но шлемы остались бронзовыми.</div></div>
+<div class="q"><h3>4. Как союзникам удалось взять Ниневию?</h3><div class="opts">
+<button class="opt">Разбили стену таранами</button>
+<button class="opt">Город сдался сам</button>
+<button class="opt" data-ok="1">Запрудили Тигр, и воды обрушились на город</button></div>
+<div class="fb">С неприступной стеной не справились даже мощные тараны. Так рассказывают древние источники.</div></div>
+<div class="q"><h3>5. В каком году пала Ниневия?</h3><div class="opts">
+<button class="opt" data-ok="1">612 год до н. э.</button>
+<button class="opt">539 год до н. э.</button>
+<button class="opt">1350 год до н. э.</button></div>
+<div class="fb">Города Ассирии стёрли с лица земли, а население смешалось с другими народами.</div></div>
+<div class="q"><h3>6. Почему таблички из библиотеки уцелели?</h3><div class="opts">
+<button class="opt">Их спрятали жрецы</button>
+<button class="opt" data-ok="1">Завоеватели не сочли глину ценной добычей</button>
+<button class="opt">Их увезли в Вавилон</button></div>
+<div class="fb">Они пролежали под развалинами Ниневии и были найдены археологами только в XIX (19) веке.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Природа и хозяйство Ассирии</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Город Ашшур в среднем течении Тигра дал имя народу и стране; холоднее и дожди чаще, чем на юге Месопотамии.</li><li>Земледелие и скотоводство; освоили железо — орудия труда и оружие; железом распахивали твёрдые почвы и рыли колодцы.</li><li>Через страну шли торговые пути; столица Ниневия, дворцы из глазурованного кирпича со статуями крылатых львов.</li></ol></div>
+</div>
+<div class="think">
+<h3>Армия и завоевания</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Лучшая армия Востока: первыми применили конницу, были колесницы, разведчики, отряды для дорог и мостов.</li><li>Железные мечи и топоры, круглые щиты с бляхами, бронзовые шлемы, тараны и осадные башни.</li><li>С 1350 года до н. э. походы; при Тиглатпаласаре III (745—727) — держава «от Верхнего моря до Нижнего»; расправы и огромная дань.</li></ol></div>
+</div>
+<div class="think">
+<h3>Падение державы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Покорённые ждали момента отомстить; мидийцы напали с востока, Вавилон восстал и заключил с ними союз.</li><li>Армию царя разгромили, столицу осадили; стену не взяли даже тараны — тогда запрудили Тигр.</li><li>612 год до н. э.: Ниневия пала, города стёрли с лица земли, население смешалось с другими народами.</li></ol></div>
+</div>
+<div class="think">
+<h3>Библиотека Ашшурбанапала</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Царь 668—627 годов до н. э. построил в Ниневии библиотеку: больше 30 тысяч глиняных табличек.</li><li>Медицина, астрономия, математика, указы, законы, дворцовые записи, литература, словарь, поэма о Великом потопе; порядок на стеллажах с подписями.</li><li>Таблички делали из вымешанной глины, писали палочкой, обжигали. Уцелели потому, что завоеватели не сочли их добычей; найдены в XIX веке.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p14.html">‹ §14 Палестина</a>
+  <span class="pn cur">§15 Ассирия</span>
+  <a class="pn" href="p16.html">§16 Персия ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 15 · История, 5 класс · страницы 86—90 · глава II «Древний Восток»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'a-hozyaystvo':'0 0 540 216','a-zhelezo':'0 0 520 196','a-armiya':'0 0 520 250','a-lenta':'0 0 510 200','a-padenie':'0 0 530 262','a-biblioteka':'0 0 520 250'};
+
+var T={
+assiria:{w:"Ассирия",k:"страна",p:"karta",t:"Страна в среднем течении Тигра — там, где сейчас Ирак. Название пошло от города Ашшур, основанного в 3-м тысячелетии до н. э. Ассирийцы происходили от части аккадцев, которые расселились не в Шумере, а на Тигре."},
+ninevia:{w:"Ниневия",k:"город",p:"karta",t:"Столица Ассирии в VII (7) веке до н. э. Стены дворцов были сложены из кирпичей, покрытых цветной глазурью, и украшены статуями крылатых львов, сценами охоты и военных действий."},
+zhelezo:{w:"Железо",k:"металл",s:"a-zhelezo",t:"Ассирийцы освоили его производство раньше соседей. Железными орудиями распахивали твёрдые почвы и рыли колодцы, а железным оружием — мечами и боевыми топорами — воевали."},
+konnica:{w:"Конница",k:"войско",s:"a-armiya",t:"Воины на конях. Ассирийцы первыми стали использовать конницу наряду с пехотой — их армия считалась лучшей на Востоке."},
+taran:{w:"Таран и осадная башня",k:"оружие",s:"a-armiya",t:"Приспособления для штурма городов: таран разбивал ворота и стены, а с осадной башни можно было перебраться на стену."},
+tiglat:{w:"Тиглатпаласар III",k:"царь",p:"karta",t:"Царь 745—727 годов до н. э., при котором Ассирия превратилась в огромную военную державу. Он говорил, что правит во всех странах «от Верхнего моря, где садится солнце, до Нижнего моря, где солнце поднимается»."},
+dan:{w:"Дань",k:"что это",s:"a-lenta",t:"Покорённые народы ассирийцы облагали огромной данью. Города, которые сопротивлялись, ждала страшная расправа, — поэтому многие сдавались добровольно."},
+midia:{w:"Мидийцы",k:"народ",s:"a-padenie",t:"Иранский народ, сплотившийся в единое царство Мидию. В VII (7) веке до н. э. они напали на Ассирию с востока и заключили союз с восставшим Вавилоном."},
+ashshurb:{w:"Ашшурбанапал",k:"царь",p:"ashshur",t:"Царь Ассирии 668—627 годов до н. э. Не только воевал и покорял соседей, но и построил в Ниневии библиотеку, где собрал больше 30 тысяч глиняных табличек."},
+tablichki:{w:"Глиняные таблички",k:"книги",s:"a-biblioteka",t:"«Книги» Междуречья. Глину вымешивали и формовали брикеты, писец наносил знаки заострённой палочкой, потом табличку обжигали — и она становилась долговечной."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p15:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p15:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>4){fb.textContent="Верно! Походы (около 1350) → Тиглатпаласар III (745—727) → Ашшурбанапал (668—627) → падение Ниневии (612).";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Посмотри ленту времени в разделе 3.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p15:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p15:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 3: верования, магия и первобытное искусство.">
+<title>Верования и искусство</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+</defs>
+
+<!-- что знал первобытный человек -->
+<symbol id="k-znaniya" viewBox="0 0 440 164">
+  <rect x="2" y="8" width="104" height="104" rx="14" fill="var(--paper2)"/>
+  <rect x="114" y="8" width="104" height="104" rx="14" fill="var(--paper2)"/>
+  <rect x="226" y="8" width="104" height="104" rx="14" fill="var(--paper2)"/>
+  <rect x="338" y="8" width="100" height="104" rx="14" fill="var(--paper2)"/>
+  <g fill="var(--brownD)">
+    <ellipse cx="36" cy="44" rx="9" ry="12"/><ellipse cx="68" cy="60" rx="9" ry="12"/><ellipse cx="44" cy="82" rx="9" ry="12"/>
+  </g>
+  <g fill="var(--brown)"><circle cx="26" cy="32" r="3.5"/><circle cx="46" cy="32" r="3.5"/><circle cx="58" cy="48" r="3.5"/><circle cx="78" cy="48" r="3.5"/></g>
+  <text x="54" y="134" text-anchor="middle" font-size="13" font-weight="600" fill="var(--illink)">следы зверя</text>
+  <text x="54" y="150" text-anchor="middle" font-size="11.5" fill="var(--soft)">кто прошёл и куда</text>
+  <path d="M166 96 V52" stroke="var(--moss)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M166 70 C152 58 140 62 140 62 C144 76 158 78 166 70Z" fill="var(--moss)"/>
+  <path d="M166 62 C180 48 194 52 194 52 C196 68 180 72 166 62Z" fill="var(--moss)"/>
+  <circle cx="186" cy="84" r="9" fill="var(--ochre)"/>
+  <text x="166" y="134" text-anchor="middle" font-size="13" font-weight="600" fill="var(--illink)">травы</text>
+  <text x="166" y="150" text-anchor="middle" font-size="11.5" fill="var(--soft)">какая лечит</text>
+  <circle cx="262" cy="42" r="14" fill="var(--ochre)"/>
+  <g fill="var(--ice)"><circle cx="300" cy="36" r="3"/><circle cx="312" cy="52" r="3"/><circle cx="292" cy="58" r="3"/><circle cx="306" cy="70" r="3"/></g>
+  <path d="M292 58 L300 36 L312 52 L306 70 Z" stroke="var(--ice)" stroke-width="1.6" fill="none"/>
+  <path d="M246 88 h68" stroke="var(--soft)" stroke-width="2.5" stroke-dasharray="5 5"/>
+  <text x="278" y="134" text-anchor="middle" font-size="13" font-weight="600" fill="var(--illink)">небо</text>
+  <text x="278" y="150" text-anchor="middle" font-size="11.5" fill="var(--soft)">времена года</text>
+  <g stroke="var(--illink)" stroke-width="5" stroke-linecap="round">
+    <path d="M360 40 v34"/><path d="M372 40 v34"/><path d="M384 40 v34"/><path d="M396 40 v34"/>
+    <path d="M354 76 L402 36"/>
+  </g>
+  <path d="M356 94 h64" stroke="var(--soft)" stroke-width="2.5"/>
+  <text x="388" y="134" text-anchor="middle" font-size="13" font-weight="600" fill="var(--illink)">счёт</text>
+  <text x="386" y="150" text-anchor="middle" font-size="11" fill="var(--soft)">зарубки, пальцы</text>
+</symbol>
+
+<!-- чем мерили расстояния -->
+<symbol id="k-mera" viewBox="0 0 330 196">
+  <text x="8" y="18" font-size="12.5" font-weight="700" fill="var(--illink)">Мерили тем, что всегда с собой</text>
+  <rect x="8" y="30" width="14" height="16" rx="4" fill="var(--ochre)"/>
+  <text x="30" y="43" font-size="12.5" fill="var(--illink)">ноготь</text>
+  <rect x="8" y="54" width="34" height="16" rx="4" fill="var(--ochre)"/>
+  <text x="50" y="67" font-size="12.5" fill="var(--illink)">палец</text>
+  <rect x="8" y="78" width="96" height="16" rx="4" fill="var(--ochre)"/>
+  <text x="112" y="91" font-size="12.5" fill="var(--illink)">ступня</text>
+  <rect x="8" y="102" width="150" height="16" rx="4" fill="var(--ochre)"/>
+  <text x="166" y="115" font-size="12.5" fill="var(--illink)">локоть</text>
+  <text x="8" y="146" font-size="12.5" font-weight="700" fill="var(--illink)">А большие расстояния —</text>
+  <path d="M8 160 H180" stroke="var(--red)" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+  <text x="190" y="164" font-size="12.5" fill="var(--illink)">полёт стрелы</text>
+  <path d="M8 182 H250" stroke="var(--red)" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+  <text x="260" y="186" font-size="12.5" fill="var(--illink)">дни пути</text>
+</symbol>
+
+<!-- у всего есть душа -->
+<symbol id="k-dusha" viewBox="0 0 400 164">
+  <text x="8" y="18" font-size="13" font-weight="700" fill="var(--illink)">Древние люди считали: душа есть у всего</text>
+  <path d="M14 116 L58 44 L102 116 Z" fill="var(--stone)"/>
+  <circle cx="58" cy="90" r="9" fill="var(--ochre)"/>
+  <text x="58" y="140" text-anchor="middle" font-size="12.5" fill="var(--illink)">гора</text>
+  <path d="M152 116 V76" stroke="var(--brownD)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="152" cy="58" r="26" fill="var(--moss)"/>
+  <circle cx="152" cy="58" r="9" fill="var(--ochre)"/>
+  <text x="152" y="140" text-anchor="middle" font-size="12.5" fill="var(--illink)">дерево</text>
+  <path d="M202 108 c16 -12 36 4 52 -6 c16 -10 30 2 42 -4" stroke="var(--water)" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <circle cx="248" cy="100" r="9" fill="var(--ochre)"/>
+  <text x="248" y="140" text-anchor="middle" font-size="12.5" fill="var(--illink)">река</text>
+  <ellipse cx="348" cy="98" rx="38" ry="24" fill="var(--stone)"/>
+  <circle cx="348" cy="94" r="9" fill="var(--ochre)"/>
+  <text x="348" y="140" text-anchor="middle" font-size="12.5" fill="var(--illink)">камень</text>
+  <text x="200" y="156" text-anchor="middle" font-size="11.5" fill="var(--soft)">жёлтая точка — душа</text>
+</symbol>
+
+<!-- как появились боги -->
+<symbol id="k-religiya" viewBox="0 0 450 156">
+  <rect x="4" y="34" width="96" height="60" rx="12" fill="var(--paper2)"/>
+  <g stroke="var(--ice)" stroke-width="3.5" stroke-linecap="round">
+    <path d="M28 58 v14"/><path d="M44 58 v20"/><path d="M60 58 v14"/></g>
+  <path d="M22 54 c0 -12 12 -18 22 -14 c6 -10 22 -8 24 4 c10 0 14 10 8 14Z" fill="var(--stone)"/>
+  <text x="52" y="112" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">дождь, гром,</text>
+  <text x="52" y="127" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">ветер, солнце</text>
+  <path d="M106 64 H136" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="146" y="34" width="96" height="60" rx="12" fill="var(--paper2)"/>
+  <circle cx="194" cy="64" r="20" fill="var(--ochre)" opacity=".85"/>
+  <circle cx="194" cy="64" r="9" fill="var(--ochre)"/>
+  <text x="194" y="112" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">у каждого —</text>
+  <text x="194" y="127" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">свой дух</text>
+  <path d="M248 64 H278" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="288" y="34" width="96" height="60" rx="12" fill="var(--paper2)"/>
+  <circle cx="336" cy="64" r="24" fill="var(--red)" opacity=".2"/>
+  <circle cx="336" cy="64" r="14" fill="var(--red)"/>
+  <path d="M322 40 l5 -12 l7 7 l7 -7 l5 12Z" fill="var(--ochre)"/>
+  <text x="336" y="112" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">самые сильные</text>
+  <text x="336" y="127" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">духи — боги</text>
+  <text x="8" y="20" font-size="12.5" fill="var(--soft)">Так родилась религия:</text>
+  <text x="392" y="70" font-size="12.5" font-weight="700" fill="var(--red)">→</text>
+</symbol>
+
+<!-- обряд перед охотой -->
+<symbol id="k-magiya" viewBox="0 0 330 216">
+  <text x="8" y="18" font-size="12.5" font-weight="700" fill="var(--illink)">Обряд перед охотой</text>
+  <rect x="112" y="72" width="106" height="66" rx="8" fill="var(--paper2)" stroke="var(--soft)" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <text x="165" y="100" text-anchor="middle" font-size="12" fill="var(--soft)">рисунок зверя</text>
+  <text x="165" y="116" text-anchor="middle" font-size="12" fill="var(--soft)">на земле</text>
+  <g fill="var(--illink)">
+    <circle cx="165" cy="40" r="8"/><circle cx="242" cy="62" r="8"/><circle cx="268" cy="105" r="8"/>
+    <circle cx="242" cy="148" r="8"/><circle cx="165" cy="170" r="8"/><circle cx="88" cy="148" r="8"/>
+    <circle cx="62" cy="105" r="8"/><circle cx="88" cy="62" r="8"/>
+  </g>
+  <circle cx="165" cy="40" r="13" fill="none" stroke="var(--red)" stroke-width="3"/>
+  <g stroke="var(--red)" stroke-width="2.5" fill="none">
+    <path d="M165 54 V66" marker-end="url(#arR)"/><path d="M232 72 L212 88" marker-end="url(#arR)"/>
+    <path d="M256 105 H226" marker-end="url(#arR)"/><path d="M232 138 L212 124" marker-end="url(#arR)"/>
+    <path d="M98 138 L118 124" marker-end="url(#arR)"/><path d="M74 105 H104" marker-end="url(#arR)"/>
+    <path d="M98 72 L118 88" marker-end="url(#arR)"/>
+  </g>
+  <text x="196" y="36" font-size="12" font-weight="700" fill="var(--red)">шаман</text>
+  <text x="8" y="192" font-size="11.5" fill="var(--soft)">кружились в танце, потом протыкали рисунок</text>
+  <text x="8" y="208" font-size="11.5" fill="var(--soft)">копьями — чтобы охота удалась</text>
+</symbol>
+
+<!-- святилища -->
+<symbol id="k-svyat" viewBox="0 0 330 176">
+  <rect x="2" y="2" width="156" height="126" rx="14" fill="var(--paper2)"/>
+  <rect x="172" y="2" width="156" height="126" rx="14" fill="var(--paper2)"/>
+  <path d="M14 112 H146" stroke="var(--moss)" stroke-width="6" stroke-linecap="round"/>
+  <g><path d="M44 112 V80" stroke="var(--brownD)" stroke-width="6"/><circle cx="44" cy="62" r="22" fill="var(--moss)"/></g>
+  <g><path d="M112 112 V86" stroke="var(--brownD)" stroke-width="6"/><circle cx="112" cy="70" r="18" fill="var(--moss)"/></g>
+  <ellipse cx="78" cy="108" rx="22" ry="7" fill="var(--green)" opacity=".7"/>
+  <text x="80" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="var(--moss)">природное</text>
+  <text x="80" y="168" text-anchor="middle" font-size="11.5" fill="var(--soft)">роща или поляна</text>
+  <path d="M184 112 H316" stroke="var(--brownD)" stroke-width="6" stroke-linecap="round"/>
+  <g fill="var(--stone)" stroke="var(--illink)" stroke-width="2">
+    <rect x="196" y="52" width="20" height="60" rx="4"/><rect x="226" y="44" width="20" height="68" rx="4"/>
+    <rect x="256" y="48" width="20" height="64" rx="4"/><rect x="286" y="56" width="20" height="56" rx="4"/>
+  </g>
+  <rect x="192" y="30" width="58" height="14" rx="4" fill="var(--stone)" stroke="var(--illink)" stroke-width="2"/>
+  <text x="250" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink)">рукотворное</text>
+  <text x="250" y="168" text-anchor="middle" font-size="11.5" fill="var(--soft)">из громадных камней</text>
+</symbol>
+
+<!-- из чего делали краски -->
+<symbol id="k-kraski" viewBox="0 0 440 172">
+  <text x="8" y="18" font-size="12.5" font-weight="700" fill="var(--illink)">Краску делали сами</text>
+  <g>
+    <circle cx="40" cy="60" r="16" fill="var(--illink)"/>
+    <text x="40" y="96" text-anchor="middle" font-size="12" fill="var(--illink)">уголь</text>
+    <circle cx="96" cy="60" r="16" fill="var(--snow)" stroke="var(--soft)" stroke-width="1.6"/>
+    <text x="96" y="96" text-anchor="middle" font-size="12" fill="var(--illink)">мел</text>
+    <ellipse cx="152" cy="60" rx="16" ry="12" fill="var(--ochre)"/>
+    <text x="152" y="96" text-anchor="middle" font-size="12" fill="var(--illink)">жир</text>
+    <ellipse cx="208" cy="60" rx="13" ry="16" fill="var(--paper2)" stroke="var(--soft)" stroke-width="1.6"/>
+    <text x="208" y="96" text-anchor="middle" font-size="12" fill="var(--illink)">яйца</text>
+    <circle cx="264" cy="60" r="15" fill="var(--red)"/>
+    <text x="264" y="96" text-anchor="middle" font-size="12" fill="var(--illink)">кровь</text>
+  </g>
+  <path d="M290 60 H322" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <ellipse cx="384" cy="74" rx="46" ry="16" fill="var(--stone)"/>
+  <ellipse cx="384" cy="56" rx="20" ry="12" fill="var(--brown)"/>
+  <text x="378" y="102" text-anchor="middle" font-size="11.5" fill="var(--illink)">растирали камнем</text>
+  <text x="8" y="134" font-size="12.5" font-weight="700" fill="var(--illink)">Рисовали:</text>
+  <g stroke="var(--moss)" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M96 128 v14"/><path d="M104 126 v16"/><path d="M112 128 v14"/></g>
+  <text x="104" y="162" text-anchor="middle" font-size="12" fill="var(--illink)">пучком травы</text>
+  <ellipse cx="216" cy="134" rx="18" ry="11" fill="var(--brown)"/>
+  <text x="216" y="162" text-anchor="middle" font-size="12" fill="var(--illink)">клочком шерсти</text>
+  <path d="M320 142 c0 -14 10 -20 18 -14" stroke="var(--brown)" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <text x="344" y="162" text-anchor="middle" font-size="12" fill="var(--illink)">и просто пальцем</text>
+</symbol>
+<symbol id="k-karta3" viewBox="0 0 450 292">
+  <text x="10" y="18" font-size="14" font-weight="700" fill="var(--illink)">Где в России нашли первобытное искусство</text>
+  <path d="M445 138.5 L442.5 137.9 L424.6 125.9 L417.1 117.4 L416.3 112.8 L414.1 110.8 L416 106.5 L411.6 87.9 L412.3 82.3 L406.3 76.2 L406 74.7 L407.4 72.9 L404.3 74.7 L403.7 77.5 L408 81.4 L406.4 82.7 L407.9 89.8 L407.3 91.6 L405.9 89.6 L405.1 91.2 L401.6 86.4 L401.1 88.8 L399.4 88.8 L396.7 94.3 L399.4 108 L400.5 109.6 L402.6 108.2 L404.1 108.8 L402.2 111.9 L400.2 112.7 L400.2 115.2 L398.7 115.8 L397.1 118.6 L395.8 118.1 L397.3 115 L393.8 115.8 L392.6 117.6 L389.6 118.1 L388.9 119.9 L389.8 120.2 L388.7 120.9 L389.7 121.3 L389.6 122.3 L387.9 122.5 L386.7 124.6 L383.7 125.7 L383.7 128 L381.5 127.8 L374.9 134.1 L373.7 142.1 L374.5 145.2 L372.6 152.7 L372.6 158.7 L369.2 169.3 L369.9 170.4 L372.1 170.1 L374.8 168.3 L377.2 172.7 L378.5 171.8 L377.3 169.9 L378.5 168.4 L378.1 170 L380.1 169.9 L379.6 173 L381.6 171.4 L382.1 168.5 L382.7 171.3 L383.3 170.8 L381.4 166.5 L384.6 164.6 L392.9 166.2 L393.3 168 L392 168.3 L394.1 168.7 L395.2 171 L397.1 171.5 L398.9 180.5 L401.7 183.9 L405.5 192.8 L405 203.7 L405.8 212.1 L403.2 229.6 L397.8 238.3 L393.8 239.1 L392.7 236.8 L391.5 238.9 L391.2 237.6 L389.8 242.8 L387.9 243.6 L388.8 245.5 L386.6 243.7 L388.7 241.5 L388.3 238.6 L383.3 231.3 L385.4 227 L390.4 226.4 L390.7 225.5 L390 223.4 L390.4 218.1 L388.4 211.9 L389.3 208.5 L387.4 205.9 L385.8 206 L382.4 209.6 L381.1 213 L375.6 215.8 L371 210.3 L369.6 210.7 L365.8 209.2 L364.3 210 L362.4 209.3 L360 210.6 L357.8 210.1 L357 207.7 L355.7 207.3 L347.5 197.5 L343.6 194.6 L341.9 194.4 L340.5 195.1 L334.6 194.6 L326.4 199.8 L325 203.2 L327.4 203.4 L328.6 206 L327 209.7 L325.8 217.7 L326.7 219.5 L322.4 224.3 L315.4 223 L312.5 224.3 L307.7 223.1 L302.9 228.7 L295.1 232.4 L286.3 232.4 L283.9 230.8 L283.5 229.1 L280.8 229.1 L278.6 227.4 L273.4 226.9 L268.5 229.2 L265.4 229 L261.4 226.9 L260.6 222.2 L252.3 219.9 L248.5 217.6 L244.3 224 L245.8 228.6 L242.2 231.9 L237.2 230.1 L231.6 229.6 L230.4 226.2 L226 225.5 L225.5 224.4 L224.3 224.8 L223.3 223.7 L213.9 227.2 L209.7 230.1 L206.1 229.8 L205 231.3 L202.6 231.5 L200.1 228 L200.6 226.8 L198.3 228.1 L194.8 226.6 L194.5 223.7 L192.2 222.1 L191.5 218.6 L189.6 216.7 L186 217.5 L182.3 216.4 L182.3 215 L181.2 214.6 L181.8 213.4 L180.5 212.4 L176.9 214.6 L174 197.6 L170.9 191.7 L172.9 189.7 L167.5 190 L162.6 192 L161.2 190.6 L159.3 191 L159.6 189.4 L161.6 187.8 L160 187.8 L158.4 186 L157.3 186.8 L157.4 184.3 L153.6 183.4 L154.9 181.4 L155.3 176.8 L153.2 176.8 L150.1 173.7 L147.1 173.8 L146.4 174.7 L137.2 172.2 L135.2 173.1 L133.4 171.8 L124.3 169.4 L122.5 167.7 L120.4 169.3 L121.8 170.9 L120 171.4 L121.7 174.6 L118.5 172.7 L116.6 173.7 L116.2 175.9 L111.8 176 L114.6 182.2 L112.5 184.3 L110.6 184.2 L108.8 183.2 L108.2 181.5 L105.3 182.2 L103.6 176.8 L102.1 175.5 L100.2 175.6 L99.5 173.8 L97.7 172.8 L93.6 173 L92.1 168.5 L90 170.6 L90.7 167.2 L90 163.2 L87.8 161.3 L87.7 159.4 L84.3 158.3 L83.7 155.8 L80.4 156.4 L73.1 155.2 L70.6 158.6 L69.1 157.8 L69.1 153.1 L63.3 155.2 L62.4 157.3 L58.2 159.4 L58.6 161.3 L57.1 164.1 L59.6 166.7 L58.1 173.1 L56.8 172 L56.1 172.6 L57 176 L54.4 175.3 L53.7 176.3 L49 174.4 L48.9 173.4 L44.1 176 L41.9 175.9 L41.8 179.7 L40 182.5 L42 181.7 L37.8 184.7 L36.6 193.4 L31.6 193.8 L30.5 192.6 L30.4 187.6 L28.4 182.3 L29.9 181.3 L28.9 178.8 L27.2 176.3 L24.3 174.7 L25 173.9 L23.7 168.8 L20.5 164.6 L19.2 160.1 L17.9 158.3 L16.8 158.2 L17.3 150.6 L15.9 140.2 L17.4 140.8 L17.2 139.7 L17.8 140 L18 141.8 L19.6 142.9 L23.4 141.6 L25.2 143.2 L26 138.7 L28 141.1 L28.5 140.3 L31.8 142.2 L32.7 141.1 L29.3 138.5 L30.4 137.7 L31.7 137.1 L34.4 137.8 L37.1 140.6 L39.3 139.7 L40.1 137.5 L42.1 137.8 L42.1 136.1 L44.3 136.5 L45.8 135.1 L43.6 127.7 L42.5 127.6 L43.4 123.8 L40.5 122 L40.3 119.7 L39 118.2 L41.7 115 L41.9 113.6 L40.4 110.8 L42.3 109.1 L43.4 109.6 L44.9 105.6 L42 101.7 L40.1 101.6 L39.6 100.3 L43.4 95.7 L44.6 95.7 L45.5 98.2 L48.4 98.7 L49.2 97.2 L48.5 94.7 L49.7 94.2 L51.8 88.7 L56.2 86.3 L56.3 83.7 L54.2 82 L55.3 80.5 L54.1 77.3 L57.6 73.8 L57.4 73.1 L60.1 72.3 L60.6 70.2 L63.1 70.4 L67.2 66.9 L71.7 67 L73.8 65.5 L73.7 66.5 L76.6 67.7 L77.9 70.5 L78.5 68.6 L77.5 66.9 L79.3 64 L77.5 62.6 L92.7 64.9 L95.3 64.4 L96 63.4 L97.6 58.1 L100.8 57.9 L103.6 53.4 L107.2 51.6 L108.6 51.9 L113.1 46.4 L118.3 45.8 L119.6 41.7 L120.9 40.4 L123 40 L123 39 L127.3 40.5 L128.8 40.1 L129 41.6 L130.3 40.9 L130.6 42.4 L132.4 42.3 L132.4 44.9 L131.7 45.1 L131.2 43.6 L130.5 44.6 L131.5 46.7 L129.3 47.3 L131.1 47.5 L133.2 51.8 L133.2 66.3 L129.4 70.2 L125.2 70.2 L121.9 68.3 L118.3 58.4 L118 54.8 L118.9 53.5 L118 51.2 L116.6 57.2 L115.7 56.9 L115.6 60.9 L112.4 62.3 L108.5 66.9 L109.1 74.3 L111.4 74.6 L112.4 73.5 L111.6 71.6 L112.4 69.2 L114.9 68.2 L116.5 76.2 L118.6 76.8 L121.5 72.4 L129.6 73.3 L130.7 75.5 L130.3 78.8 L135 75.5 L135.4 73.1 L140.5 69.7 L141.1 66.5 L144.1 71.5 L142.7 75.4 L140.4 73.9 L137.9 74.3 L137.2 78.2 L137.8 79.6 L140.5 80.8 L143.5 78.5 L145.5 79.6 L146.2 78.5 L154.3 80.5 L154.2 82 L155.3 81.8 L155.2 80.7 L159.1 81 L160.3 81.9 L158.8 81.4 L157.2 83.8 L155.4 83.6 L158 86.2 L160.3 85.2 L163.3 87.6 L168.4 87.8 L168 89.5 L166.5 90.7 L167.4 91.9 L168.9 90.4 L170 91 L171.7 90.2 L172.3 86.2 L174.7 85.9 L179.4 91.1 L179.9 93.3 L182.8 97.6 L184 102 L187.2 99.3 L186.1 98.6 L186 94.4 L185.3 93.2 L184.6 93.8 L188.6 87.9 L187.8 86.9 L188.4 85.5 L192.9 83.8 L198.6 78 L203.3 82 L198.7 88 L199.1 91.4 L194.1 102.3 L195 105.9 L192.3 109.5 L187.8 112.6 L186.7 112.4 L186.4 114.1 L184.2 114.2 L183.6 113.4 L184.7 112.9 L181.7 110.9 L181 112.3 L182.9 114.8 L187.2 116.8 L188 115.6 L192 114.5 L195.9 110.9 L197.7 105.2 L201.3 105.1 L202.6 108.9 L201.1 112.8 L202 114.4 L204.6 115.2 L202 113.3 L203.8 110.6 L204.4 106.7 L201.6 103.6 L198.9 103.5 L197.1 102 L198.1 98.5 L201.3 94.8 L200.9 89 L202.9 87.2 L205.9 86.5 L207 82.7 L207.9 83.2 L207.6 86.2 L204.8 91.2 L208.7 93.7 L209.6 95.6 L211.2 95.6 L207.3 90.8 L207.3 88.5 L209 88.4 L209.9 89.9 L211.2 89.9 L211.2 88.8 L210.2 88.3 L212.2 87.3 L214.3 88 L217.3 93 L220 93.7 L217.8 96 L216.5 99.7 L216.3 100.9 L217.8 98.2 L218.6 98.4 L217 102.2 L217.6 103.1 L219.5 100.8 L219.2 97.3 L220.8 94.1 L217 88.2 L218.4 81.9 L229.7 82.8 L227.2 84.9 L228.4 87.2 L227.5 84.9 L230.8 83.4 L228.7 80 L229.5 79.4 L230.8 80.2 L228.7 78.1 L229.6 77.2 L230.2 78.2 L230.9 77.7 L231.9 76.5 L231.3 75.5 L232.3 75.9 L236.8 74 L243.2 72.9 L241.3 72.7 L242 71.7 L246.2 72 L245.7 73.2 L247.1 72.6 L247 73.3 L250.5 71.4 L252.2 72.7 L251.8 74 L252.3 72 L250.7 70.1 L255 70.3 L254 69.7 L254.1 67.2 L258.3 63 L261.4 64.6 L258.8 66.4 L263.7 67 L262.4 69.5 L264.4 69.2 L265 67.9 L269.4 67.4 L270.9 69 L272 68.8 L272.4 70.7 L273.1 69.4 L274.5 71.4 L274.2 73.1 L272.3 72 L274.7 73.7 L273.9 76.4 L267.1 85.2 L263.7 87.9 L262.1 91.1 L264.4 88.8 L270.2 86.1 L271.7 84.4 L269.8 84.7 L270.4 82.9 L272.6 82.4 L272.6 83.6 L274 84.1 L275.3 82.6 L276.8 85.7 L276.8 89.2 L277.9 89.8 L276.9 89 L277.5 85.6 L276.6 84.8 L279.5 83 L285.9 82.4 L285.6 84.2 L288.3 85.1 L292.9 84.2 L293.7 83.8 L293.2 83.2 L294.3 83.2 L294.7 81.6 L293.5 79.1 L295.1 78 L297.5 79 L298.3 78 L299.3 78.9 L299.6 77.5 L300.9 77.3 L304.1 78.3 L303.7 79.8 L305.3 80.4 L304.3 81.9 L306.6 82.3 L306.3 84 L303.9 83.6 L307.1 85.8 L307.2 84.6 L308.1 85.4 L307.2 86.3 L310.2 88.5 L313.5 89.4 L313.9 85.8 L313.1 81.7 L316.3 83.3 L318.2 82.6 L319.9 80 L324.5 80.6 L323.5 77.9 L326.7 76.6 L324.2 75 L324.7 72.9 L323.2 74.1 L322.6 73.3 L324.8 70 L323.4 68.8 L333.1 64.9 L331.1 66.9 L331.1 68.3 L334.5 64.8 L334.7 67.3 L334.2 66.3 L333.1 66.4 L334.2 67.8 L333.2 68.7 L334.2 69.6 L335.2 68 L335 64.2 L338.8 62.1 L340.6 62.6 L339.9 64.9 L343 63.5 L343.4 65.5 L344.1 63.6 L345.3 63.2 L347.2 63.6 L346.9 64.3 L348.6 63.8 L353.3 56.7 L358.1 53.8 L361.2 54.6 L362.9 56.8 L365.7 55.8 L369.2 57.5 L370.7 59.9 L369.9 57.3 L367.6 55.6 L367.4 53.2 L369 50.2 L373.7 45.8 L373.7 43.3 L376.5 44 L378.7 42.8 L380.5 43.1 L381.4 41.2 L380.7 39.7 L377.5 38.9 L376.8 39.5 L374.6 37.4 L379 33.1 L378.5 32.5 L381.1 28 L391.9 20.4 L395.4 19.8 L395.1 19.1 L393.6 19.6 L400.8 15.1 L402.6 15.8 L403 14.7 L407.2 16.2 L409.2 15.5 L408.7 14.5 L410.1 14.9 L409.1 13.9 L404.8 14.5 L405.1 12.4 L405.8 11.4 L407.1 12 L406.3 11.6 L407 10.1 L406 11 L407.5 8.5 L412.3 6.8 L414 5 L414.3 6.8 L416 7.9 L414.4 9.4 L416.4 9.3 L414.2 12.9 L416 11.9 L416.9 13.3 L418.4 12.6 L419.1 15.1 L421.9 14 L421 15.2 L422.2 16.2 L420.6 16.2 L421.3 17.5 L418.6 18.9 L417.3 20.9 L413 21.2 L411.4 23.1 L410.9 26.6 L407.3 26.6 L405.6 24.8 L406.5 26.1 L405.2 26.3 L406.2 27.2 L405.8 27.9 L407.3 28.8 L409.6 28.6 L411.4 30.3 L413 35.4 L411.5 37.4 L408.6 38.5 L408.2 39.8 L409.2 38.3 L410.4 38.8 L408.4 40.7 L408.2 44.9 L408.7 40.8 L410.5 41.5 L410.9 38 L413.8 38.6 L414.7 37 L418.5 37.6 L418.5 38.5 L422.1 37.3 L424.9 37.9 L426.5 39.9 L422.9 43.9 L421.9 43.3 L421.6 44.1 L422.9 44.3 L423.8 53 L423.2 55.5 L424.2 57.6 L423.5 58.2 L425.1 60.5 L425.9 67 L428 69.1 L422.9 70 L420.8 75.6 L422 79.9 L418.9 77.5 L418.8 82 L419.8 83.2 L417.8 83.6 L418.1 85.1 L416.8 85.4 L417 86.6 L419.6 89.3 L423.1 97.1 L425.7 97.3 L425.1 95.8 L427 94.9 L428.2 97.7 L430.6 99.4 L432.5 98.9 L434.9 100.3 L435.1 102 L433.5 102.2 L432.8 100.1 L432.4 102 L435.2 107.4 L439.6 109.1 L439.7 111.3 L437.8 113.6 L437.9 116.9 L439.3 119.1 L442.8 121.1 L441.3 121.9 L440.9 125.5 L439.7 125.8 L442.7 128.3 L444.5 131.7 L445 138.5ZM425.3 197.2 L422.9 195 L420 196.1 L421 201.2 L418.3 199.1 L414 190.6 L410.4 187.7 L408.4 183 L402.7 174.7 L399.4 173.2 L397.3 170.7 L394 164.7 L395.5 163.4 L395.3 161.6 L392.2 159.3 L392.8 158.8 L392.7 157.9 L394.5 158.6 L399.8 163.7 L402.5 168.4 L411.1 175.7 L419.3 180.6 L420 181.4 L414.7 180.4 L412.9 183.3 L416.2 191.1 L421.8 194 L422.9 193.6 L425.3 197.2ZM207.1 57.7 L204.9 59.8 L192.7 59.2 L188.2 61 L187.8 60.2 L186.9 61 L186.2 60.4 L185.4 61.8 L183.5 62 L182.6 63.1 L182.3 62.3 L182 63.4 L180.1 64.2 L176.3 61.3 L177.5 58.8 L181.6 57.6 L182.9 58 L182.6 56.9 L185 56.3 L184.7 54.8 L185.6 55.7 L186.8 54.8 L187.8 55.6 L191.1 54.4 L194.5 55.2 L195.5 54.4 L200.1 56.6 L205.9 55.7 L207.1 57.7ZM178.8 64.4 L174.9 66.3 L172.5 69.1 L171.3 74.4 L171.9 77.6 L170.6 77.7 L169.9 76.1 L169.3 77 L166.8 74.1 L165.6 71.6 L167.1 71.3 L167.8 71.5 L168.1 68.5 L165.6 66.5 L167 64.2 L169.9 64.1 L171.7 62.8 L171.6 62 L173.3 62.2 L174.5 60.8 L177.1 61.7 L178.8 64.4ZM16.9 139.1 L14.9 139.7 L12.7 136.3 L10.3 136 L8.3 134 L5.3 133.1 L5 130.9 L8 129.4 L6.9 125.3 L7 124.6 L12.5 127 L13.8 126.1 L15.1 130.5 L13.7 135.5 L16.9 139.1Z" fill="var(--paper2)" stroke="var(--soft)" stroke-width="1.3" stroke-linejoin="round"/>
+  <path d="M108.5 66.1 L46 48" stroke="var(--red)" stroke-width="2" fill="none"/><path d="M96.2 79.1 L134 82" stroke="var(--red)" stroke-width="2" fill="none"/><path d="M106.8 164.2 L126 181" stroke="var(--red)" stroke-width="2" fill="none"/><path d="M265.5 212.9 L272 210" stroke="var(--red)" stroke-width="2" fill="none"/>
+  <circle cx="106.8" cy="164.2" r="6.5" fill="var(--red)"/><circle cx="96.2" cy="79.1" r="6.5" fill="var(--red)"/><circle cx="108.5" cy="66.1" r="6.5" fill="var(--red)"/><circle cx="265.5" cy="212.9" r="6.5" fill="var(--red)"/>
+  <text x="12" y="52" font-size="12" font-weight="700" fill="var(--illink)">Залавруга</text>
+  <text x="140" y="86" font-size="12" font-weight="700" fill="var(--illink)">Онежское озеро</text>
+  <text x="130" y="186" font-size="12" font-weight="700" fill="var(--illink)">Капова пещера</text>
+  <text x="276" y="206" font-size="12" font-weight="700" fill="var(--illink)">Мальта</text>
+  <text x="10" y="268" font-size="11.5" fill="var(--soft)">Карелия — петроглифы на камнях, Башкирия — рисунки в пещере,</text>
+  <text x="10" y="284" font-size="11.5" fill="var(--soft)">под Иркутском — древнейший календарь.</text>
+</symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 3</span>
+    <h1>Верования и искусство</h1>
+    <p class="lede">Во что верили древние люди и что они рисовали. Трудные слова можно нажимать.</p>
+    <div class="qbox">
+      <span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Какие сведения о жизни первобытных людей можно получить, изучая наскальные рисунки?</div>
+    </div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p2.html">‹ §2 Первобытные охотники</a>
+  <span class="pn cur">§3 Верования и искусство</span>
+  <a class="pn" href="p4.html">§4 Земледелие и скотоводство ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы">
+      <a href="#s1" data-j="s1">1</a><a href="#s2" data-j="s2">2</a><a href="#s3" data-j="s3">3</a>
+      <a href="#sit" data-j="sit" title="Подведём итоги">≡</a>
+      <a href="#s5" title="Проверь себя">✓</a><a href="#s6" title="Расскажи вслух">!</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-altamira" src="img/8df0325ea790.jpg" alt="Наскальная роспись: бизон на охристой стене пещеры">
+    <figcaption><span class="src">из учебника</span><b>Наскальные рисунки Альтамиры. Современное фото.</b> Альтамира — пещера на северном побережье Испании. Своды украшают цветные росписи, созданные первобытным человеком около 17 тысяч лет назад.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="shead"><span class="snum">1</span><h2>Знания</h2></div>
+   <div class="easy">
+    <p>Жизнь охотников и собирателей была намертво связана с природой. Люди учились различать следы зверей и птиц, подражать их голосам, знать их повадки и места, где они живут.</p>
+    <p>Постепенно узнавали и травы: какая лечит. Умели останавливать кровь, залечивать раны, вправлять вывихи и давать противоядие при укусе змеи.</p>
+    <p>Заметили: времена года меняются вместе с тем, где стоит солнце и какие созвездия на небе. Так появились первые <button class="term" data-t="kalendar">календари</button>.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Жизнь охотников и собирателей была неразрывно связана с природой. Первобытные люди учились различать следы животных и птиц, подражать их голосам, определять места их обитания, распознавать повадки. Постепенно приобретались знания о свойствах растений, выделении среди них лечебных, из которых изготавливали различные снадобья. Первобытные люди примитивными методами умели останавливать кровотечения, залечивать раны, вправлять вывихи, применять противоядия при укусах ядовитых змей.</p>
+    <p>Древние люди установили связь между сменой времён года и положением солнца и созвездий на небосклоне. Наблюдение за движением небесных тел позволило выделить определённые циклы времени, составить первые <button class="term" data-t="kalendar">календари</button>.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 440 164" role="img" aria-label="Четыре умения: читать следы зверя, различать травы, следить за небом, вести счёт зарубками."><use href="#k-znaniya"/></svg>
+    <figcaption><b>Четыре главных знания.</b> Всё это добывалось наблюдением: никто не учил, смотрели сами и передавали детям.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Древнейшие календари нашли на стоянке Мальта под Иркутском (24 тысячи лет назад), на стоянке Мезин под Черниговом (20 тысяч лет назад) и на стоянке Гонцы (15—10 тысяч лет назад).</p>
+    <p>Человек открыл <button class="term" data-t="schet">счёт</button>. До десяти считали, загибая пальцы рук, а если больше — шли в ход и пальцы ног. Расстояния мерили частями тела: ступнёй, локтем, пальцем, ногтем. А большие расстояния — полётом стрелы или копья и днями пути.</p>
+    <p>Письменности у людей каменного века не было. Она появится позже, вместе с обменом товарами, уже в бронзовом веке.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Древнейшие календари найдены на стоянке Мальта под Иркутском (24 тысячи лет назад), на стоянке Мезин близ Чернигова (20 тысяч лет назад), стоянке Гонцы (15—10 тысяч лет назад).</p>
+    <p>Человек, познавая мир, открыл <button class="term" data-t="schet">счёт</button>. До десяти считали, загибая пальцы рук, когда число было большим, использовали и пальцы ног. Расстояния определяли с помощью длины частей человеческого тела: ступни, локтя, пальца, ногтя. Большие расстояния измеряли полётом стрелы, копья или днями пути.</p>
+    <p>Люди каменного века не знали письменности. Её возникновение связано с хозяйственной деятельностью человека, обменом товарами и произошло позднее, при переходе к бронзовому веку.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 196" role="img" aria-label="Полоски разной длины: ноготь, палец, ступня, локоть; ниже длинные стрелки — полёт стрелы и дни пути."><use href="#k-mera"/></svg>
+    <figcaption><b>Линейки не было.</b> Мерили тем, что всегда при себе. Поэтому и мерки у всех получались чуть разные.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Вопрос учебника</b>
+    <ol><li>Какими знаниями владел первобытный человек?</li></ol>
+   </div>
+
+   <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">1. Почему первобытному человеку было важно уметь читать следы?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h1" hidden>Где искать: первый абзац раздела 1 и то, чем люди жили в §2.</div>
+    <div class="rev ans" id="a1" hidden>Люди жили охотой и собирательством. По следам можно понять, какой зверь прошёл, куда он идёт и где его искать. Без этого охота превращалась в случайность.</div>
+   </div>
+   <div class="think">
+    <p class="qt">2. Как люди научились считать время, если часов и календарей не было?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h2" hidden>Где искать: второй абзац раздела 1.</div>
+    <div class="rev ans" id="a2" hidden>Они заметили связь между сменой времён года и тем, где стоит солнце и какие созвездия видны на небе. Наблюдая за движением небесных тел, выделили повторяющиеся отрезки времени — так появились первые календари.</div>
+   </div>
+   <div class="think">
+    <p class="qt">3. Почему письменность появилась позже, чем счёт?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h3" hidden>Где искать: последний абзац раздела 1.</div>
+    <div class="rev ans" id="a3" hidden>Счёт был нужен сразу — посчитать добычу, людей, дни. А письменность понадобилась только тогда, когда появилось хозяйство и обмен товарами: надо было записывать, кто что отдал и кто что получил. Это случилось уже в бронзовом веке.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">2</span><h2>Верования</h2></div>
+   <div class="easy">
+    <p>Первобытные люди считали, что внутри каждого человека живёт <button class="term" data-t="dusha">душа</button>. После смерти душа уходит в загробный мир и живёт там почти так же: общинами, охотится, добывает еду.</p>
+    <p>Поэтому рядом с умершим клали его орудия труда, оружие и еду — пригодится там. А ещё фигурку богини Великой Матери: земле поклонялись как той, что даёт жизнь. Учёные выяснили, что хоронить с обрядом люди начали ещё с неандертальцев.</p>
+    <p>Люди верили, что душа есть у всего: у горы, у дерева, у медведя. С ними разговаривали и договаривались.</p>
+    <p>Многие считали, что их род произошёл от какого-то зверя, и звали его своим предком. Такое животное называли <button class="term" data-t="totem">тотемом</button>.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Первобытные люди считали, что в каждом человеке обитает сверхъестественная сущность — <button class="term" data-t="dusha">душа</button>. После смерти человека душа переселяется в загробный мир, где так же, как и на Земле, живут общинами, охотятся, добывают пищу. Рядом с умершим сородичи клали орудия труда и оружие, которыми он пользовался при жизни, продукты. Со времени поклонения земле — дарительнице жизни её изображения в виде фигурки богини Великой Матери также помещали в погребение. Учёные установили, что, начиная с неандертальцев, люди начали совершать погребальные обряды.</p>
+    <p>Первобытные люди считали, что в мире всё живое и всё имеет душу. С горами, деревьями, животными и птицами они разговаривали и договаривались с ними. Душа человека для них ничем не отличалась от души горы, медведя или дерева.</p>
+    <p>Многие народы верили, что происходят от какого-то вида животных, и считали их своими предками. Такое животное называлось <button class="term" data-t="totem">тотемом</button>.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 400 164" role="img" aria-label="Гора, дерево, река и камень, у каждого внутри жёлтая точка — душа."><use href="#k-dusha"/></svg>
+    <figcaption><b>Душа есть у всего.</b> Для первобытного человека душа горы ничем не отличалась от души человека — поэтому с горой можно было поговорить и о чём-то договориться.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Весь мир вокруг — землю, воду, небо — люди населили <button class="term" data-t="duh">духами</button>. Считали, что духи могущественные и управляют жизнью всего живого.</p>
+    <p>Дождь, гром, гроза, молния, ветер, ураган, солнце, луна, звёзды — всё это для древнего человека было делом духов. У каждого явления свой дух, как у человека своя душа. Так родилась <button class="term" data-t="religiya">религия</button>. Самых сильных духов со временем стали называть <button class="term" data-t="bog">богами</button>.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Окружающий мир — землю, воду, небо — древние люди населили <button class="term" data-t="duh">духами</button>, которых наделили могуществом и способностью управлять жизнью живых существ. Атмосферные явления (дождь, гром, гроза, молния, ветер, ураган), небесные светила (солнце, луна, звёзды) и их движение по небу древний человек воспринимал как деятельность духов. Считалось, что у каждого явления в природе есть дух, как в теле человека есть душа. Так зародилась <button class="term" data-t="religiya">религия</button>. Наиболее могущественных духов первобытные люди выделяли и со временем стали называть их <button class="term" data-t="bog">богами</button>.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 450 156" role="img" aria-label="Цепочка из трёх шагов: явления природы, у каждого свой дух, самые сильные духи становятся богами."><use href="#k-religiya"/></svg>
+    <figcaption><b>Как появились боги.</b> Три шага подряд: сначала непонятное явление, потом дух этого явления, потом самые сильные духи получают имя богов.</figcaption>
+   </div>
+  </figure>
+
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-ritual" src="img/bbeca72dcd5a.jpg" alt="Картина: люди у костра во время обряда">
+    <figcaption><span class="src">из учебника</span><b>Первобытный ритуал. Художник З. Буриан.</b><span class="task">▲ Составь рассказ по рисунку: кто здесь главный, что делают остальные, зачем они собрались.</span></figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>В первобытном обществе появилась <button class="term" data-t="magiya">магия</button> — колдовство. Верили, что есть особые люди — <button class="term" data-t="shaman">шаман</button>, колдун, — которые умеют говорить с духами. Для этого нужны особые приёмы: <button class="term" data-t="obryad">обряды</button>, жертвоприношения и заклинания.</p>
+    <p>Обрядами и жертвами духов пытались задобрить, чтобы те помогли. Шаман вёл обряд: люди танцевали и произносили заклинания — например, чтобы охота была удачной.</p>
+    <p>Охотники кружились в танце вокруг изображения зверя, начерченного на земле, а потом протыкали его копьями и стрелами. Вера в поддержку доброго духа придавала людям отваги. К добрым духам шли и когда не было урожая или кто-то заболел.</p>
+    <p>Обряды проводили в особых местах — <button class="term" data-t="svyat">святилищах</button>. Они бывали природными (роща, поляна) и рукотворными: люди ставили сооружения из громадных камней и каменных плит.</p>
+   </div>
+   <div class="book" hidden>
+    <p>В первобытном обществе возникла <button class="term" data-t="magiya">магия</button> (колдовство). Она основывалась на представлении об умении человека, наделённого особыми способностями (<button class="term" data-t="shaman">шаман</button>, колдун) и применявшего особые приёмы — <button class="term" data-t="obryad">обряды</button>, жертвоприношения и заклинания, общаться с духами. Магию связывали и с верой в человека, способного на расстоянии воздействовать на людей, животных, природные явления.</p>
+    <p>С помощью обрядов и жертвоприношений первобытные люди пытались задобрить духов окружающего мира, приобрести их расположение. Шаман организовывал и возглавлял специальные обряды, во время которых исполняли ритуальные танцы и произносили заклинания, например, чтобы обеспечить удачную охоту. Охотники вслед за шаманом кружились в танце вокруг изображения зверя, начертанного на земле, затем протыкали его копьями и стрелами. Уверенность в поддержке доброго духа придавала людям отвагу. За помощью к добрым духам обращались в случае неурожая, болезни сородича.</p>
+    <p>Религиозные обряды проводились в специальных местах — <button class="term" data-t="svyat">святилищах</button>. Святилища могли быть как природными (рощи, поляны), так и рукотворными. Древние люди возводили сооружения из громадных камней или каменных плит.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 216" role="img" aria-label="Восемь точек-охотников по кругу вокруг рисунка зверя на земле, шаман выделен, стрелки-копья направлены внутрь."><use href="#k-magiya"/></svg>
+    <figcaption><b>Обряд перед охотой.</b> Сначала кружились в танце, потом протыкали рисунок копьями. Считалось, что так добрый дух поможет и настоящая охота выйдет удачной.</figcaption>
+   </div>
+  </figure>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 176" role="img" aria-label="Слева роща с деревьями — природное святилище; справа круг из больших камней с плитой сверху — рукотворное."><use href="#k-svyat"/></svg>
+    <figcaption><b>Два вида святилищ.</b> Иногда святилищем становилось само место — роща или поляна. Иногда его строили: ставили громадные камни и клали сверху плиты.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Вопрос учебника</b>
+    <ol><li>Объясните, с чем было связано возникновение в первобытном обществе религиозных верований.</li></ol>
+   </div>
+
+   <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">4. Почему рядом с умершим клали орудия труда, оружие и еду?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h4" hidden>Где искать: первый абзац раздела 2, про загробный мир.</div>
+    <div class="rev ans" id="a4" hidden>Люди верили, что душа уходит в загробный мир и живёт там так же, как на Земле: общинами, охотится, добывает пищу. Значит, там ей понадобятся те же орудия, оружие и еда.</div>
+   </div>
+   <div class="think">
+    <p class="qt">5. Как из непонятного явления природы получался бог?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h5" hidden>Где искать: абзац про духов и схему из трёх шагов.</div>
+    <div class="rev ans" id="a5" hidden>Сначала человек считал, что у каждого явления природы — дождя, грома, ветра, солнца — есть свой дух, как у человека есть душа. Потом среди духов выделили самых могущественных и со временем стали называть их богами.</div>
+   </div>
+   <div class="think">
+    <p class="qt">6. Зачем охотники протыкали копьями рисунок зверя на земле?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h6" hidden>Где искать: абзац про обряды и заклинания.</div>
+    <div class="rev ans" id="a6" hidden>Это был обряд, чтобы обеспечить удачную охоту. Люди верили, что так задобрят духа и он поможет. А ещё уверенность в поддержке доброго духа придавала им отвагу перед опасной охотой.</div>
+   </div>
+   <div class="think">
+    <p class="qt">7. Чем тотем отличается от духа?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h7" hidden>Где искать: конец первой части раздела 2 и абзац про духов.</div>
+    <div class="rev ans" id="a7" hidden>Тотем — это животное, от которого род считал себя произошедшим, то есть предок. А дух — это невидимая сила, которая стоит за явлением природы: за дождём, громом, ветром.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">3</span><h2>Искусство</h2></div>
+   <div class="easy">
+    <p>Первобытного искусства нашли очень много: изображения зверей, нарисованные, вырезанные или процарапанные на камне и кости; маленькие скульптурки, в основном женские; узоры на орудиях труда и оружии.</p>
+    <p>Самое яркое — пещерная живопись: олени, быки, медведи и сцены охоты.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Оно представлено огромным количеством нарисованных, вырезанных или процарапанных на камне и кости изображений животных, небольшими скульптурными фигурками, в основном женскими, орнаментами на орудиях труда и оружии. Самое яркое явление первобытного искусства — пещерная живопись с изображениями оленей, быков, медведей и сцен охоты.</p>
+   </div>
+  </div>
+
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-hudozhnik" src="img/8d2078455e09.jpg" alt="Рисунок: первобытный человек расписывает стену пещеры">
+    <figcaption><span class="src">из учебника</span><b>Первобытный художник.</b><span class="task">▲ Почему на рисунках древнейших людей чаще всего встречаются животные?</span></figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Подробнее</b>
+    <p style="margin:0">Первые многоцветные рисунки на стенах пещер открыла девочка девяти лет Мария де Саутуола. Её отец Марселино в 1879 году нашёл орудия древнего человека у входа в пещеру Альтамира в Испании. Он был не только археолог-любитель, но и художник: Марселино рисовал, а Мария пошла вглубь пещеры. В свете лампы девочка увидела изображения бизонов и позвала отца. Марселино уже видел гравировки на костях и рогах животных — потому сразу поверил, что это рисунки древнего человека.</p>
+   </div>
+
+   <div class="easy">
+    <p>Бизоны, олени, лошади и кабаны были нарисованы так искусно, что учёные отказывались верить: не мог первобытный человек так рисовать. Саутуола умер, не дождавшись признания. И только много лет спустя такие же рисунки нашли в Испании, Италии и Франции — и его признали первооткрывателем «живописи каменного века».</p>
+    <p>Наскальные рисунки нашли и в России — в Башкирии, в <button class="term" data-t="kapova">Каповой пещере</button> (другое название — Шульган-Таш, 400 километров к юго-востоку от Уфы). Там больше 170 рисунков. Нашли и камни, на которых древние художники растирали уголь, мел, жир, яйца и кровь животных, чтобы получить <button class="term" data-t="kraska">краску</button>, и скребки из известняка.</p>
+    <p>Рисовали пучком травы, клочком шерсти или просто пальцем.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Бизоны, олени, лошади, кабаны, найденные Саутуолой, были изображены так искусно, что учёные отказывались признавать рисунки творением первобытного человека. Учёный умер, не получив заслуженного признания. Лишь много лет спустя подобные рисунки обнаружили в Испании, Италии, Франции, и Саутуолу признали первооткрывателем «живописи каменного века».</p>
+    <p>Вы уже знаете, что наскальные рисунки были обнаружены и на территории России, в Башкирии, в <button class="term" data-t="kapova">Каповой пещере</button> (другое название — Шульган-Таш, 400 километров к юго-востоку от Уфы). Здесь найдено более 170 рисунков, камни, на которых древние художники растирали уголь, мел, жир, яйца и кровь животных, получая <button class="term" data-t="kraska">краски</button>, а также скребки из известняка и другие предметы. Древние художники выполняли рисунок пучком травы, клочком шерсти или просто пальцем.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 440 172" role="img" aria-label="Уголь, мел, жир, яйца и кровь растирали камнем; рисовали пучком травы, клочком шерсти и пальцем."><use href="#k-kraski"/></svg>
+    <figcaption><b>Краска своими руками.</b> Ни магазина, ни кисточки. Всё, из чего делали краску, приносили с охоты и из-под ног.</figcaption>
+   </div>
+  </figure>
+
+  <div class="grid2">
+   <figure class="photo">
+    <div class="fig">
+     <img id="ph-lyzhnik" src="img/37d77133dc0d.jpg" alt="Петроглиф: фигуры людей на лыжах, выбитые на камне">
+     <figcaption><span class="src">из учебника</span><b>Человек на лыжах в Залавруге.</b> Самое древнее изображение лыжника в Европе.</figcaption>
+    </div>
+   </figure>
+   <figure class="photo">
+    <div class="fig">
+     <img id="ph-lebedi" src="img/ad949db06fb0.jpg" alt="Петроглиф: фигуры лебедей, выбитые на камне">
+     <figcaption><span class="src">из учебника</span><b>Лебеди Онежского озера.</b> Карелия, выбиты на прибрежных камнях.</figcaption>
+    </div>
+   </figure>
+  </div>
+
+  <div class="col">
+   <div class="ask"><b>Подробнее: петроглифы Карелии</b>
+    <p style="margin:0">Изобразительное искусство древних людей не ограничивалось рисунками на стенах пещер. Один из древнейших видов изображений — вырезанные на камнях <button class="term" data-t="petro">петроглифы</button>. На берегу Онежского озера и в Залавруге (рядом с городом Беломорском) нашли больше тысячи вырезанных изображений: животные, люди, лодки, сцены охоты и ритуалов. Учёные датируют их 4—3 тысячелетиями до нашей эры — это древнейшие изображения на территории Европы. Там же обнаружили более 30 стоянок и при раскопках нашли свыше 200 тысяч предметов быта.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 450 292" role="img" aria-label="Карта России с четырьмя точками: Залавруга и Онежское озеро в Карелии, Капова пещера в Башкирии, Мальта под Иркутском."><use href="#k-karta3"/></svg>
+    <figcaption><b>Не только Испания.</b> Первобытное искусство есть и у нас: петроглифы Карелии, рисунки Каповой пещеры, древнейший календарь со стоянки Мальта.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Вопрос учебника</b>
+    <ol><li>Назовите образцы искусства первобытного человека.</li></ol>
+   </div>
+
+   <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">8. Почему учёные сначала не поверили, что рисунки Альтамиры сделал первобытный человек?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h8" hidden>Где искать: абзац после рассказа про Марию де Саутуолу.</div>
+    <div class="rev ans" id="a8" hidden>Бизоны, олени, лошади и кабаны были изображены слишком искусно — учёные не верили, что так мог рисовать первобытный человек. Саутуола умер, не получив признания, и только когда похожие рисунки нашли в Испании, Италии и Франции, его признали первооткрывателем живописи каменного века.</div>
+   </div>
+   <div class="think">
+    <p class="qt">9. Чем петроглифы отличаются от пещерной живописи?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h9" hidden>Где искать: начало раздела 3 и врезка про Карелию.</div>
+    <div class="rev ans" id="a9" hidden>Пещерную живопись рисовали краской на стенах пещер. Петроглифы не рисовали, а вырезали и выбивали прямо на камнях под открытым небом — например, на берегу Онежского озера и в Залавруге.</div>
+   </div>
+   <div class="think">
+    <p class="qt">10. Что общего у обряда перед охотой и у рисунков зверей на стенах?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h10" hidden>Где искать: соедини раздел 2 (обряд вокруг изображения зверя) и раздел 3 (что рисовали чаще всего).</div>
+    <div class="rev ans" id="a10" hidden>И там, и там в центре — зверь, от которого зависела жизнь. В обряде охотники танцевали вокруг изображения зверя и протыкали его копьями, чтобы охота удалась. И на стенах пещер чаще всего рисовали именно животных и сцены охоты.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+   <div class="blocknote">У древних людей появляются первые знания, счёт, определение времён года. Зарождается религия. Появляются первые образцы первобытного искусства. С его уникальными образцами можно познакомиться на территории нашей страны, в российских археологических комплексах и музеях.</div>
+
+   <div class="ask"><b>Вопросы и задания учебника</b>
+    <ol>
+     <li>Какие верования зародились у древних людей? Какую роль они играли в жизни первобытного человека?</li>
+     <li>Рассмотрите иллюстрации, на которых изображены рисунки первобытных людей. О чём свидетельствуют сюжеты этих рисунков?</li>
+     <li>Подумайте, почему религиозные ритуалы первобытных людей носили коллективный характер.</li>
+     <li>Что, по вашему мнению, повлияло на появление первобытного искусства? Какую роль оно играло в жизни древнего человека?</li>
+     <li>С помощью дополнительных источников информации создайте электронную презентацию (не менее 3 слайдов) на тему «Памятники первобытного искусства на современной территории России». Представьте её перед одноклассниками.</li>
+    </ol>
+   </div>
+
+   <div class="sublabel">Работаем с источником</div>
+   <div class="think">
+    <p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Отрывок из книги «Золотая ветвь» английского путешественника XIX (19) века Дж. Фрэзера, который изучал историю религии.</p>
+    <div class="rev plan" style="margin-top:0">
+     <p style="margin:0">Жители Восточной Африки полагали, что, подобно песчаным столбам во время смерчей, радуга во время тропических дождей была зловредным демоном. В ней видели пасть грозы. Люди говорили: «Радуга пришла напиться воды. Смотрите, кто-нибудь непременно умрёт насильственной или жестокой смертью». Играющим детям говорили: «Радуга пришла пить. Не играйте более, чтобы с вами не случилось какого-нибудь несчастья».</p>
+    </div>
+    <div class="revbtns" style="margin-top:12px">
+      <button class="revbtn" data-rev="src1" aria-expanded="false">Вопрос к тексту</button>
+      <button class="revbtn" data-rev="src2" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="src1" hidden>О какой форме древних верований в нём идёт речь?</div>
+    <div class="rev ans" id="src2" hidden>О вере в духов: люди объясняли непонятное явление природы — радугу — тем, что за ним стоит живое существо со своей волей, злой демон. Это ровно то, о чём раздел 2: у каждого явления природы есть свой дух.</div>
+   </div>
+
+   <div class="qbox" style="margin-top:22px">
+     <span class="qm">?</span>
+     <div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — что можно узнать о жизни первобытных людей по наскальным рисункам? Приведи два-три довода.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+   <div class="sublabel" style="margin-top:6px">Вспомни слова</div>
+  </div>
+
+  <div class="cards">
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Душа</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 400 164" aria-hidden="true"><use href="#k-dusha"/></svg>
+     <span class="ftext">Для древних людей она была у всего: у человека, горы, дерева, реки.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Религия</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 450 156" aria-hidden="true"><use href="#k-religiya"/></svg>
+     <span class="ftext">Явление природы → его дух → самые сильные духи становятся богами.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Магия</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 330 216" aria-hidden="true"><use href="#k-magiya"/></svg>
+     <span class="ftext">Обряды, заклинания и жертвы, чтобы договориться с духами.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Святилище</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 330 176" aria-hidden="true"><use href="#k-svyat"/></svg>
+     <span class="ftext">Особое место для обрядов: роща и поляна или постройка из громадных камней.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Календарь</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 440 164" aria-hidden="true"><use href="#k-znaniya"/></svg>
+     <span class="ftext">Появился из наблюдения за солнцем и созвездиями. Древнейший — со стоянки Мальта.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Петроглифы</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 450 292" aria-hidden="true"><use href="#k-karta3"/></svg>
+     <span class="ftext">Изображения, вырезанные на камнях. В Карелии их больше тысячи.</span></span></button></div>
+  </div>
+
+  <div class="col" id="quiz">
+   <div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+
+   <div class="q"><h3>1. Чем первобытные люди мерили расстояния?</h3><div class="opts">
+     <button class="opt">Верёвкой с узелками</button>
+     <button class="opt" data-ok="1">Частями тела: ступнёй, локтем, пальцем</button>
+     <button class="opt">Специальными каменными линейками</button></div>
+     <div class="fb">А большие расстояния — полётом стрелы или копья и днями пути.</div></div>
+
+   <div class="q"><h3>2. Почему рядом с умершим клали орудия и еду?</h3><div class="opts">
+     <button class="opt">Чтобы вещи не достались чужим</button>
+     <button class="opt">Это была плата шаману</button>
+     <button class="opt" data-ok="1">Верили, что в загробном мире душа живёт так же, как здесь</button></div>
+     <div class="fb">Душа, по их вере, охотилась и добывала пищу и после смерти — значит, ей нужны те же вещи.</div></div>
+
+   <div class="q"><h3>3. Кто такой тотем?</h3><div class="opts">
+     <button class="opt" data-ok="1">Животное, от которого род считал себя произошедшим</button>
+     <button class="opt">Дух дождя и грозы</button>
+     <button class="opt">Человек, который говорит с духами</button></div>
+     <div class="fb">С духами говорит шаман. А тотем — это зверь-предок целого рода.</div></div>
+
+   <div class="q"><h3>4. Как появились боги?</h3><div class="opts">
+     <button class="opt">Их придумали шаманы для обрядов</button>
+     <button class="opt" data-ok="1">Так стали называть самых могущественных духов</button>
+     <button class="opt">Их привезли с собой первые земледельцы</button></div>
+     <div class="fb">Сначала у каждого явления природы был свой дух. Потом самых сильных выделили и назвали богами.</div></div>
+
+   <div class="q"><h3>5. Где в России нашли наскальные рисунки в пещере?</h3><div class="opts">
+     <button class="opt">На стоянке Мальта под Иркутском</button>
+     <button class="opt">На берегу Онежского озера</button>
+     <button class="opt" data-ok="1">В Каповой пещере в Башкирии</button></div>
+     <div class="fb">В Каповой пещере больше 170 рисунков. В Карелии тоже есть изображения, но не в пещере — их вырезали на камнях.</div></div>
+
+   <div class="q"><h3>6. Из чего первобытные художники делали краску?</h3><div class="opts">
+     <button class="opt">Из цветного песка и воды</button>
+     <button class="opt" data-ok="1">Из угля, мела, жира, яиц и крови животных</button>
+     <button class="opt">Из сока ягод и коры</button></div>
+     <div class="fb">Всё это растирали на камнях, а рисовали пучком травы, клочком шерсти или пальцем.</div></div>
+
+   <div class="score" id="score">Отвечено: 0 из 6</div>
+  </div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+   <div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+
+   <div class="think">
+    <h3>Что знал первобытный человек</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p1" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p1" hidden><ol>
+     <li>Природа: следы и голоса зверей, их повадки и места обитания.</li>
+     <li>Травы: какие лечат; умели остановить кровь, залечить рану, вправить вывих, дать противоядие.</li>
+     <li>Небо и счёт: календари по солнцу и созвездиям, счёт на пальцах, мерки по частям тела.</li></ol></div>
+   </div>
+
+   <div class="think">
+    <h3>Во что верили древние люди</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p2" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p2" hidden><ol>
+     <li>Душа есть у человека и у всего вокруг; после смерти она уходит в загробный мир — отсюда погребальные обряды с неандертальцев.</li>
+     <li>Тотем — зверь-предок рода.</li>
+     <li>Духи явлений природы, самые сильные — боги. Так зародилась религия.</li></ol></div>
+   </div>
+
+   <div class="think">
+    <h3>Магия и шаман</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p3" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p3" hidden><ol>
+     <li>Магия — вера в то, что особый человек умеет говорить с духами.</li>
+     <li>Приёмы: обряды, жертвоприношения, заклинания; танец вокруг изображения зверя перед охотой.</li>
+     <li>Святилища — природные (роща, поляна) и рукотворные, из громадных камней.</li></ol></div>
+   </div>
+
+   <div class="think">
+    <h3>Первобытное искусство</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p4" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p4" hidden><ol>
+     <li>Что это: рисунки на камне и кости, скульптурки, орнаменты на орудиях; самое яркое — пещерная живопись.</li>
+     <li>Альтамира: девятилетняя Мария де Саутуола, 1879 год, и долгое непризнание её отца.</li>
+     <li>В России: Капова пещера в Башкирии, петроглифы Карелии; краски из угля, мела, жира, яиц и крови.</li></ol></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p2.html">‹ §2 Первобытные охотники</a>
+  <span class="pn cur">§3 Верования и искусство</span>
+  <a class="pn" href="p4.html">§4 Земледелие и скотоводство ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 3 · История, 5 класс · страницы 24—28</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+var VB={'k-znaniya':'0 0 440 164','k-mera':'0 0 330 196','k-dusha':'0 0 400 164',
+'k-religiya':'0 0 450 156','k-magiya':'0 0 330 216','k-svyat':'0 0 330 176',
+'k-kraski':'0 0 440 172','k-karta3':'0 0 450 292'};
+
+var T={
+kalendar:{w:'Календарь',k:'счёт времени',s:'k-znaniya',t:'Способ считать дни и месяцы. Первые календари появились из наблюдения за солнцем и созвездиями. Древнейший нашли на стоянке Мальта под Иркутском — ему 24 тысячи лет.'},
+schet:{w:'Счёт',k:'умение',s:'k-mera',t:'До десяти считали, загибая пальцы рук, дальше шли пальцы ног. А расстояния мерили ногтем, пальцем, ступнёй и локтем — тем, что всегда с собой.'},
+dusha:{w:'Душа',k:'вера',s:'k-dusha',t:'Невидимая сущность внутри живого. Первобытные люди считали, что душа есть у человека, у горы, у дерева и у медведя — и что после смерти она уходит в загробный мир.'},
+totem:{w:'Тотем',k:'вера',s:null,t:'Животное, от которого род считал себя произошедшим, — зверь-предок. Многие народы верили, что происходят от какого-то вида животных.'},
+duh:{w:'Дух',k:'вера',s:'k-religiya',t:'Невидимая сила, которая стоит за явлением природы. Дождь, гром, ветер, солнце, луна — всё это для древнего человека было делом духов.'},
+religiya:{w:'Религия',k:'вера',s:'k-religiya',t:'Вера в то, что миром управляют невидимые силы. Родилась из представления, что у каждого явления природы есть свой дух, как у человека — душа.'},
+bog:{w:'Боги',k:'вера',s:'k-religiya',t:'Так со временем стали называть самых могущественных духов.'},
+magiya:{w:'Магия',k:'колдовство',s:'k-magiya',t:'Вера в то, что особый человек может общаться с духами и влиять на людей, животных и природу — с помощью обрядов, жертвоприношений и заклинаний.'},
+shaman:{w:'Шаман',k:'человек',s:'k-magiya',t:'Тот, кто, по вере первобытных людей, умеет говорить с духами. Он организовывал и вёл обряды: танцы, заклинания, жертвоприношения.'},
+obryad:{w:'Обряд',k:'действие',s:'k-magiya',t:'Особые действия по строгому порядку: танец, заклинание, жертва. Например, перед охотой кружились вокруг рисунка зверя и протыкали его копьями.'},
+svyat:{w:'Святилище',k:'место',s:'k-svyat',t:'Место для обрядов. Природное — роща или поляна. Рукотворное — сооружение из громадных камней и каменных плит.'},
+kapova:{w:'Капова пещера',k:'место в России',s:'k-karta3',t:'Другое название — Шульган-Таш, в Башкирии, 400 километров к юго-востоку от Уфы. Там больше 170 наскальных рисунков.'},
+kraska:{w:'Краски',k:'материал',s:'k-kraski',t:'Делали сами: растирали на камнях уголь, мел, жир, яйца и кровь животных. Рисовали пучком травы, клочком шерсти или просто пальцем.'},
+petro:{w:'Петроглифы',k:'искусство',s:'k-karta3',t:'Изображения, вырезанные и выбитые на камнях под открытым небом. На Онежском озере и в Залавруге их больше тысячи — древнейшие в Европе.'}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p3:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p3:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:220px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var answered=0,right=0,score=document.getElementById('score');
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<6?('Отвечено: '+answered+' из 6 · правильных '+right)
+        :(right===6?'Все шесть — верно! 🎉':'Правильных: '+right+' из 6');
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p3:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p3:read_'+id,on?'1':'0')});
+  });
+});
+</script>
+
+</body>
+</html>

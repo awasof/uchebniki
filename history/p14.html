@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 14: Древняя Палестина, древние евреи, иудаизм.">
+<title>Древняя Палестина</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="p-palestina" viewBox="0 0 560 216">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПАЛЕСТИНА — МЕЖДУ ЕГИПТОМ И СИРИЕЙ</text>
+  <rect x="12" y="34" width="86" height="120" rx="8" fill="var(--ochre)" opacity=".45"/>
+  <text x="55" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="var(--illink)">ЕГИПЕТ</text>
+  <rect x="106" y="34" width="66" height="120" rx="8" fill="var(--green)" opacity=".5"/>
+  <text x="139" y="94" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--illink)">ПАЛЕ-</text>
+  <text x="139" y="110" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--illink)">СТИНА</text>
+  <rect x="180" y="34" width="86" height="120" rx="8" fill="var(--ochre)" opacity=".45"/>
+  <text x="223" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="var(--illink)">СИРИЯ</text>
+  <text x="139" y="176" text-anchor="middle" font-size="11" fill="var(--soft)">горы и степи</text>
+  <circle cx="294" cy="52" r="7" fill="var(--red)"/>
+  <text x="312" y="48" font-size="11.5" fill="var(--illink)">условия для земледелия хуже,</text>
+  <text x="312" y="64" font-size="11.5" fill="var(--illink)">чем в Египте и Месопотамии</text>
+  <circle cx="294" cy="98" r="7" fill="var(--moss)"/>
+  <text x="312" y="94" font-size="11.5" fill="var(--illink)">зато занятий много сразу: земледелие,</text>
+  <text x="312" y="110" font-size="11.5" fill="var(--illink)">скотоводство, ремёсла и торговля</text>
+  <circle cx="294" cy="144" r="7" fill="var(--ice)"/>
+  <text x="312" y="148" font-size="11.5" fill="var(--illink)">перекрёсток религий и культур</text>
+  <text x="8" y="208" font-size="12" font-weight="700" fill="var(--moss)">Здесь возникали и рушились государства, а народы попадали под власть империй.</text>
+</symbol>
+
+<symbol id="p-odin" viewBox="0 0 510 224">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ОТ МНОГИХ БОГОВ — К ОДНОМУ</text>
+  <rect x="8" y="30" width="196" height="108" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="54" font-size="12" font-weight="700" fill="var(--soft)">МНОГОБОЖИЕ</text>
+  <g fill="var(--stone)">
+    <circle cx="44" cy="90" r="13"/><circle cx="80" cy="82" r="13"/><circle cx="116" cy="92" r="13"/>
+    <circle cx="62" cy="118" r="13"/><circle cx="100" cy="120" r="13"/><circle cx="150" cy="88" r="13"/>
+  </g>
+  <path d="M220 90 h30" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="266" y="30" width="228" height="108" rx="10" fill="var(--ochre)"/>
+  <text x="280" y="54" font-size="12" font-weight="700" fill="#22190A">МОНОТЕИЗМ — ЕДИНОБОЖИЕ</text>
+  <circle cx="310" cy="96" r="20" fill="#22190A"/>
+  <text x="344" y="92" font-size="11.5" fill="#22190A">один бог — Яхве,</text>
+  <text x="344" y="108" font-size="11.5" fill="#22190A">создатель мира</text>
+  <text x="8" y="176" font-size="12" font-weight="700" fill="var(--moss)">Такое уже пробовали: фараон Эхнатон отменил всех богов, кроме Атона (§9).</text>
+  <text x="8" y="194" font-size="11.5" fill="var(--illink)">Но в Египте единобожие не удержалось — его отменили сразу после смерти</text>
+  <text x="8" y="210" font-size="11.5" fill="var(--illink)">Эхнатона. А у древних евреев оно осталось навсегда.</text>
+</symbol>
+
+<symbol id="p-cari" viewBox="0 0 560 240">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ТРИ ЦАРЯ — И ЧТО БЫЛО ПОСЛЕ</text>
+  <rect x="8" y="28" width="166" height="116" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">САУЛ</text>
+  <text x="22" y="70" font-size="10.5" fill="var(--soft)">около 1020 до н. э.</text>
+  <text x="22" y="94" font-size="10.5" fill="var(--illink)">простой воин, избран царём</text>
+  <text x="22" y="112" font-size="10.5" fill="var(--illink)">воевал с филистимлянами</text>
+  <text x="22" y="130" font-size="10.5" fill="var(--illink)">но в итоге был побеждён</text>
+  <rect x="182" y="28" width="166" height="116" rx="10" fill="var(--paper2)"/>
+  <text x="196" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">ДАВИД</text>
+  <text x="196" y="70" font-size="10.5" fill="var(--soft)">1010—970 до н. э.</text>
+  <text x="196" y="94" font-size="10.5" fill="var(--illink)">создал постоянное войско</text>
+  <text x="196" y="112" font-size="10.5" fill="var(--illink)">разгромил филистимлян</text>
+  <text x="196" y="130" font-size="10.5" fill="var(--illink)">сделал Иерусалим столицей</text>
+  <rect x="356" y="28" width="196" height="116" rx="10" fill="var(--ochre)"/>
+  <text x="370" y="52" font-size="12.5" font-weight="700" fill="#22190A">СОЛОМОН</text>
+  <text x="370" y="70" font-size="10.5" fill="#22190A">сын Давида</text>
+  <text x="370" y="94" font-size="10.5" fill="#22190A">прославлен мудростью</text>
+  <text x="370" y="112" font-size="10.5" fill="#22190A">связи с Египтом и Финикией</text>
+  <text x="370" y="130" font-size="10.5" fill="#22190A">построил храм Яхве в Иерусалиме</text>
+  <path d="M265 152 V168" stroke="var(--red)" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+  <text x="265" y="190" text-anchor="middle" font-size="12" font-weight="700" fill="var(--red)">После Соломона, в 930—920-е годы до н. э., царство раскололось надвое</text>
+  <rect x="60" y="200" width="180" height="34" rx="8" fill="var(--paper2)"/>
+  <text x="150" y="222" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">ИЗРАИЛЬ — север, Самария</text>
+  <rect x="290" y="200" width="180" height="34" rx="8" fill="var(--paper2)"/>
+  <text x="380" y="222" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">ИУДЕЯ — юг, Иерусалим</text>
+</symbol>
+
+<symbol id="p-zhelezo" viewBox="0 0 540 196">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПОЧЕМУ ФИЛИСТИМЛЯНЕ БЫЛИ ТАК ОПАСНЫ</text>
+  <rect x="8" y="34" width="228" height="86" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="58" font-size="12.5" font-weight="700" fill="var(--red)">ФИЛИСТИМЛЯНЕ</text>
+  <rect x="22" y="72" width="120" height="16" rx="4" fill="var(--soft)"/>
+  <text x="152" y="85" font-size="11" font-weight="700" fill="var(--illink)">железо</text>
+  <text x="22" y="110" font-size="10.5" fill="var(--soft)">уже умели его изготавливать</text>
+  <rect x="256" y="34" width="236" height="86" rx="10" fill="var(--paper2)"/>
+  <text x="270" y="58" font-size="12.5" font-weight="700" fill="var(--illink)">ЕВРЕИ</text>
+  <rect x="270" y="72" width="120" height="16" rx="4" fill="var(--brown)"/>
+  <text x="400" y="85" font-size="11" font-weight="700" fill="var(--illink)">бронза</text>
+  <text x="270" y="110" font-size="10.5" fill="var(--soft)">железа ещё не знали</text>
+  <text x="8" y="152" font-size="12" font-weight="700" fill="var(--moss)">Вспомни §4: железо крепче бронзы. Оружие из железа не гнётся и не ломается —</text>
+  <text x="8" y="170" font-size="12" font-weight="700" fill="var(--moss)">значит, у кого оно есть, тот сильнее.</text>
+  <text x="8" y="188" font-size="11" fill="var(--illink)">От названия филистимлян и происходит само слово «Палестина».</text>
+</symbol>
+
+<symbol id="p-iudaizm" viewBox="0 0 520 222">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧЕМ ИУДАИЗМ ОТЛИЧАЛСЯ ОТ ДРУГИХ ВЕРОВАНИЙ</text>
+  <rect x="8" y="30" width="240" height="60" rx="10" fill="var(--ochre)"/>
+  <text x="22" y="54" font-size="12" font-weight="700" fill="#22190A">Единобожие</text>
+  <text x="22" y="74" font-size="10.5" fill="#22190A">бог один, а не многие</text>
+  <rect x="260" y="30" width="242" height="60" rx="10" fill="var(--paper2)"/>
+  <text x="274" y="54" font-size="12" font-weight="700" fill="var(--illink)">Бессмертие души</text>
+  <text x="274" y="74" font-size="10.5" fill="var(--soft)">душа не умирает вместе с телом</text>
+  <rect x="8" y="102" width="240" height="60" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="126" font-size="12" font-weight="700" fill="var(--illink)">Загробная жизнь</text>
+  <text x="22" y="146" font-size="10.5" fill="var(--soft)">жизнь продолжается после смерти</text>
+  <rect x="260" y="102" width="242" height="60" rx="10" fill="var(--paper2)"/>
+  <text x="274" y="126" font-size="12" font-weight="700" fill="var(--illink)">Союз с богом</text>
+  <text x="274" y="146" font-size="10.5" fill="var(--soft)">избранность народа, заключившего его</text>
+  <text x="8" y="196" font-size="12" font-weight="700" fill="var(--moss)">Иудаизм возник в Иудее в VIII—VII (8—7) веках до н. э.</text>
+  <text x="8" y="214" font-size="12" font-weight="700" fill="var(--moss)">Это самая древняя религия, которая признавала существование единого бога.</text>
+</symbol>
+
+<symbol id="p-lenta" viewBox="0 0 510 200">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЛЕНТА ВРЕМЕНИ</text>
+  <path d="M16 70 H494" stroke="var(--line)" stroke-width="4"/>
+  <g fill="var(--red)"><circle cx="26" cy="70" r="7"/><circle cx="150" cy="70" r="7"/><circle cx="270" cy="70" r="7"/><circle cx="376" cy="70" r="7"/><circle cx="476" cy="70" r="7"/></g>
+  <text x="8" y="98" font-size="11.5" font-weight="700" fill="var(--illink)">XII (12) век до н. э.</text>
+  <text x="8" y="114" font-size="10.5" fill="var(--soft)">евреи заняли Ханаан</text>
+  <text x="270" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">1010—970 до н. э.</text>
+  <text x="270" y="114" text-anchor="middle" font-size="10.5" fill="var(--soft)">царь Давид</text>
+  <text x="494" y="98" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--illink)">VIII—VII века до н. э.</text>
+  <text x="494" y="114" text-anchor="end" font-size="10.5" fill="var(--soft)">в Иудее возник иудаизм</text>
+  <text x="150" y="142" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">около 1020 до н. э.</text>
+  <text x="150" y="158" text-anchor="middle" font-size="10.5" fill="var(--soft)">первый царь Саул</text>
+  <text x="376" y="142" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">930—920-е до н. э.</text>
+  <text x="376" y="158" text-anchor="middle" font-size="10.5" fill="var(--soft)">раскол на Израиль и Иудею</text>
+  <text x="8" y="192" font-size="11.5" font-weight="700" fill="var(--moss)">Единое царство продержалось меньше ста лет: от Саула до раскола.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 14</span>
+    <h1>Древняя Палестина</h1>
+    <p class="lede">Как небольшой народ между двумя империями первым удержал веру в одного бога. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Чем отличалась религия, принятая древними евреями, от верований других народов древности?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p13.html">‹ §13 Финикия</a>
+  <span class="pn cur">§14 Палестина</span>
+  <a class="pn" href="p15.html">§15 Ассирия ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Природа и занятия населения">1</a><a href="#s2" data-j="s2" title="Израильское царство">2</a><a href="#s3" data-j="s3" title="Соломон и иудаизм">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-karta" src="img/a472580d188e.jpg" alt="Карта: восточный берег Средиземного моря, зелёной полосой Финикия и Палестина, города Иерусалим, Мегиддо, Тир, Сидон, Библ, рядом остров Кипр и Синайский полуостров" style="max-width:380px"><figcaption><span class="src">из учебника</span><b>Палестина на карте Древнего Востока.</b> Узкая полоса между морем и пустыней, к югу от Финикии. Прямо под ней — Египет, к северу и востоку — Сирия.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Природа и занятия населения</h2></div>
+<div class="easy">
+<p><button class="term" data-t="palestina">Палестина</button> — небольшая область между Египтом и Сирией; она существует и в наше время. Бо́льшую её часть занимают горы и степи.</p>
+<p>Условия для земледелия здесь были не такие хорошие, как в Египте и Месопотамии. Зато занятий было много сразу: земледелие, скотоводство, ремёсла и торговля.</p>
+<p>В плодородных долинах Иордана и на прибрежных равнинах выращивали пшеницу, ячмень, виноград, оливы и инжир. Скотоводство было не менее важным — особенно разведение овец и коз. Развивались рыболовство и охота. Гончарное дело, ткачество и металлообработка давали товары для торговли с соседями.</p>
+<p>Бо́льшая часть Палестины в древности называлась <button class="term" data-t="hanaan">Ханааном</button>, а основным населением был семитский народ ханаанеев — к ним относились и финикийцы (§13). У ханаанеев было много городов-государств.</p>
+<p>Палестина издревле была перекрёстком многих религий и культур: здесь возникали и рушились государства, а их народы попадали под власть разных империй.</p>
+<p>В XII (12) веке до н. э. значительную часть Ханаана занял другой семитский народ — еврейские племена, объединённые в племенной союз Израиль.</p>
+<p>С течением времени древние евреи перешли от многобожия к <button class="term" data-t="monoteizm">монотеизму</button>: стали поклоняться одному богу. Его называли <button class="term" data-t="yahve">Яхве</button> и почитали как создателя мира.</p>
+<p>Легенды и мифы о происхождении и родине евреев содержит <button class="term" data-t="vethiy">Ветхий Завет</button> — самая древняя часть Библии. Родоначальником евреев по этим преданиям был <button class="term" data-t="avraam">Авраам</button>. Его внук Иаков во время голода переселился из Ханаана в Египет, а сыновья Иакова считались основателями 12 племён Израильского союза — «12 колен израилевых».</p>
+<p>По преданию, долгое время израильтяне жили в Египте, где их угнетали. Пророк <button class="term" data-t="moisey">Моисей</button> вывел соплеменников из египетского плена и привёл на Синай, а оттуда — к границам Ханаана.</p>
+<p>После смерти Моисея израильтяне завоевали Ханаан и осели там. <b>Вот это расселение — уже исторический факт: оно случилось в XII (12) веке до н. э.</b> А что в преданиях о более ранних событиях восходит к настоящей истории и существовали ли в действительности Авраам, Иаков и Моисей — предмет множества споров.</p>
+</div>
+<div class="book" hidden>
+<p>Палестина — небольшая географическая область, существующая и в наше время (территория между Египтом и Сирией). Большую её часть занимали горы и степи. Несмотря на то что условия для земледелия здесь были не такие хорошие, как в Древнем Египте и Месопотамии, имелись разнообразные виды деятельности и хозяйства: земледелие, скотоводство, ремёсла и торговля.</p>
+<p>Большая часть Палестины в древности называлась Ханааном, а основной частью её населения был семитский народ ханаанеев (финикийцы тоже относились к ханаанеям). У ханаанеев было много городов-государств. Палестина издревле была перекрёстком многих религий и культур. Здесь возникали и рушились государства, народы которых попадали под власть различных империй.</p>
+<p>В плодородных долинах Иордана и прибрежных равнинах выращивали пшеницу, ячмень, виноград, оливы и инжир. Скотоводство играло не менее важную роль, особенно разведение овец и коз. Развивались также рыболовство и охота. Ремёсла, такие как гончарное дело, ткачество и металлообработка, были значимой частью торговли, которая велась жителями Древней Палестины с соседними регионами.</p>
+<p>В XII (12) веке до н. э. значительную часть Ханаана занял другой семитский народ — еврейские племена, объединённые в племенной союз Израиль. С течением времени древние евреи от многобожия перешли к монотеизму — поклонялись одному богу. Его называли Яхве и почитали как создателя мира.</p>
+<p>Легенды и мифы о происхождении и родине евреев содержит Ветхий Завет — самая древняя часть Библии. Родоначальником евреев, по этим преданиям, был Авраам. Его внук Иаков переселился во время голода из Ханаана в Египет, и считалось, что сыновья Иакова стали основателями 12 племён, составлявших Израильский союз, — «12 колен израилевых».</p>
+<p>После смерти Моисея израильтяне завоевали Ханаан и осели там. Это расселение израильтян в Ханаане — уже исторический факт (как говорилось выше, он имел место в XII (12) веке до н. э.). Что именно в библейских преданиях о предшествующих событиях восходит к реальной истории, а что является мифом, существовали ли в действительности Авраам, Иаков, Моисей или это легендарные герои — всё это — предмет множества споров.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 560 216" role="img" aria-label="Схема: три прямоугольника в ряд — Египет, узкая Палестина (горы и степи), Сирия. Справа три факта: условия для земледелия хуже, чем в Египте и Месопотамии; зато занятий много сразу — земледелие, скотоводство, ремёсла и торговля; перекрёсток религий и культур."><use href="#p-palestina"/></svg><figcaption><b>Место между двумя большими соседями.</b> Такое положение всегда означает две вещи: через тебя всё проходит — и на тебя все наступают.</figcaption></div></figure>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-pastuh" src="img/26d527e1b471.jpg" alt="Рисунок: пастух в плаще и тюрбане несёт на плечах овцу, рядом бежит собака"><figcaption><span class="src">пастух</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-zhenshchina" src="img/7bfbb49e715a.jpg" alt="Рисунок: женщина в длинном светлом одеянии с покрывалом на голове"><figcaption><span class="src">жительница</span></figcaption></div></figure>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-moisey" src="img/e8373dffb031.jpg" alt="Старинная гравюра: в египетском зале с расписными колоннами двое стоят перед сидящим на троне фараоном" style="max-width:320px"><figcaption><span class="src">из учебника</span><b>Моисей просит фараона освободить его народ.</b> По преданию, долгое время израильтяне жили в Египте, угнетаемые местным населением. Пророк Моисей вывел соплеменников из египетского плена и привёл на Синай, а оттуда — к границам Ханаана. По более поздним преданиям, именно Моисей познакомил евреев с верой в единого бога Яхве и передал им его заповеди.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 510 224" role="img" aria-label="Слева табличка «многобожие» с шестью серыми кружками. Стрелка вправо. Справа оранжевая табличка «монотеизм — единобожие» с одним большим кругом: один бог Яхве, создатель мира."><use href="#p-odin"/></svg><figcaption><b>Ответ на вопрос учебника про единобожие.</b> Такое уже пробовали в Египте: фараон Эхнатон отменил всех богов, кроме Атона (§9). Но там единобожие не пережило самого фараона, а здесь осталось навсегда.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Кто населял Палестину в древности?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Условия для земледелия в Палестине были хуже, чем в Египте и Месопотамии. Как жители с этим справились?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Где искать: второй и третий абзацы раздела 1.</div>
+<div class="rev ans" id="a1" hidden>Они не стали делать ставку на одно занятие. В Египте всё держалось на разливе Нила, а здесь разом были земледелие в долинах Иордана, скотоводство (особенно овцы и козы), рыболовство и охота, гончарное дело, ткачество, металлообработка и торговля. Когда подводит одно — выручает другое.</div>
+</div>
+<div class="think">
+<p class="qt">2. Учебник говорит, что расселение израильтян в Ханаане — исторический факт, а про Авраама и Моисея ведутся споры. В чём здесь разница?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Где искать: последний абзац раздела 1.</div>
+<div class="rev ans" id="a2" hidden>Расселение подтверждается находками и другими источниками — учёные знают, что оно было, и знают когда: XII век до н. э. А про более ранние события мы знаем только из преданий Ветхого Завета. Предание — не доказательство: оно может хранить память о настоящих людях, а может быть легендой. Историк обязан различать «известно» и «рассказывают».</div>
+</div>
+<div class="think">
+<p class="qt">3. Финикийцы тоже были ханаанеями, и у ханаанеев было много городов-государств. Вспомни §13: чем финикийцы отличались от остальных жителей Палестины?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Про Финикию — §13, раздел 1.</div>
+<div class="rev ans" id="a3" hidden>Один народ, а судьба разная — из-за географии. Финикийцы сидели на узкой полоске с удобными гаванями, и море стало их хозяйством. А в глубине Палестины были горы, степи и долины Иордана — и там жили земледелием и скотоводством.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Израильское царство</h2></div>
+<div class="easy">
+<p>Еврейские племена, переселившиеся в Палестину, долго боролись с соседями. Самыми опасными были западные соседи — <button class="term" data-t="filistim">филистимляне</button>, от названия которых и происходит слово «Палестина». <b>Они уже умели изготавливать железо, которого евреи ещё не знали.</b></p>
+<p>Около 1020 года до н. э. евреи избрали себе царя. Им стал простой воин <button class="term" data-t="saul">Саул</button>. Он долго и успешно воевал с филистимлянами, но в итоге был побеждён.</p>
+<p>Второй царь, <button class="term" data-t="david">Давид</button>, правил в 1010—970 годах до н. э. Он создал постоянное и сильное войско и разгромил филистимлян.</p>
+<p>Давид расширил границы государства, захватил город Иерусалим и сделал его столицей. При дворе он ввёл пышные ритуалы и церемонии.</p>
+</div>
+<div class="book" hidden>
+<p>Еврейские племена, переселившиеся в Палестину, долго боролись с соседями. Самыми опасными для них были западные соседи — филистимляне, от названия которых происходит само слово «Палестина». Они уже умели изготавливать железо, которого евреи ещё не знали. Около 1020 года до н. э. евреи избрали себе царя. Им стал простой воин Саул. Он долго и успешно воевал с филистимлянами, но в итоге был побеждён.</p>
+<p>Второй царь, Давид, правил в 1010—970 годах до н. э. Он создал постоянное и сильное войско и разгромил филистимлян.</p>
+<p>Давид расширил границы государства, захватил город Иерусалим и сделал его столицей. При дворе он ввёл пышные ритуалы и церемонии.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 196" role="img" aria-label="Две таблички. Филистимляне: серая полоса «железо», они уже умели его изготавливать. Евреи: коричневая полоса «бронза», железа ещё не знали. Внизу: железо крепче бронзы, оружие из железа не гнётся и не ломается."><use href="#p-zhelezo"/></svg><figcaption><b>Вот в чём была вся разница.</b> Вспомни §4: железо оказалось крепче бронзы, и способ его получать открыли не везде сразу. Кто успел первым — тот и сильнее.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-david" src="img/9391c5c65dd5.jpg" alt="Рисунок: юноша с пращой стоит спиной к зрителю, напротив него на песке — воин в шлеме с большим щитом и копьём" style="max-width:300px"><figcaption><span class="src">из учебника</span><b>Давид и Голиаф.</b></figcaption></div></figure>
+<div class="col">
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Учебник рассказывает эту историю в рубрике «Любопытные детали».</p>
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">История про Давида и Голиафа</button></div>
+<div class="rev plan" id="r1" hidden>Когда Давид был ещё молод, отец отправил его к братьям, которые были в войске. Филистимлянин по имени Голиаф издали кричал израильтянам: «Найдите между собой кого-нибудь, кто хотел бы со мной сразиться. Если он убьёт меня, мы будем служить вам; но если я его убью, то вы будете служить нам!» Голиаф был великаном, и на нём была тяжёлая железная броня.<br><br>Давид сказал: «Я сражусь с ним». Он вышел против Голиафа только с посохом и пращой в руке. Крикнув: «Выхожу на тебя во имя Господа!», взял камень и метнул из пращи. Камень попал великану в голову, и тот упал на землю. Давид подбежал, взял его большой меч и убил его. Когда филистимляне увидели, что их лучший богатырь повержен, они бежали.</div></div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>С какими опасностями сталкивались иудеи?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Почему для евреев было так важно, что филистимляне умели делать железо?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Где искать: первый абзац раздела 2, схема про железо и §4 про век металлов.</div>
+<div class="rev ans" id="a4" hidden>Потому что железо крепче бронзы: оно не гнётся при ударе и не ломается. Значит, у филистимлян мечи, наконечники и броня были лучше. В бою это решало всё — поэтому именно они и были самыми опасными соседями.</div>
+</div>
+<div class="think">
+<p class="qt">5. Саул воевал «долго и успешно», но в итоге был побеждён. А Давид филистимлян разгромил. Что он сделал иначе?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Сравни второй и третий абзацы раздела 2.</div>
+<div class="rev ans" id="a5" hidden>Давид создал постоянное и сильное войско. Саул воевал успешно, но, видимо, собирал ополчение — а против народа с железным оружием этого мало. Постоянная армия учится и не расходится по домам (вспомни §8, где то же самое сделали египетские фараоны).</div>
+</div>
+<div class="think">
+<p class="qt">6. Давид не просто захватил Иерусалим, а сделал его столицей. Вспомни §5: кто и зачем поступил так же?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Про Мемфис — §5, раздел 3.</div>
+<div class="rev ans" id="a6" hidden>Фараон Мина основал Мемфис на границе Верхнего и Нижнего Египта, чтобы удобно управлять обеими частями страны. Столица — это не просто большой город, а точка, из которой держат государство. Давид выбрал Иерусалим ровно с такой же задачей.</div>
+</div>
+<div class="think">
+<p class="qt">7. В истории про Давида и Голиафа один вышел в тяжёлой железной броне, другой — с пращой. Почему победил второй?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Праща уже встречалась в §8, в рассказе про египетское войско.</div>
+<div class="rev ans" id="a7" hidden>Праща бьёт издалека, а тяжёлая броня к дальнему бою не готовит: великану надо было подпустить противника вплотную. Давид не стал играть по чужим правилам — и выиграл раньше, чем дело дошло до мечей.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Соломон и иудаизм</h2></div>
+<div class="easy">
+<p>Сын царя Давида <button class="term" data-t="solomon">Соломон</button> был известен как правитель, мудрость которого прославила его на века.</p>
+<p>При нём укрепились связи с соседями — Египтом, Финикией и другими государствами. Соломон построил в Иерусалиме храм бога Яхве.</p>
+<p>После смерти Соломона, в 930—920-е годы до н. э., его царство разделилось на два: южное — Иудею и северное — Израиль. Столицей Израиля чуть позже стал город Самария, а столицей Иудеи остался Иерусалим.</p>
+<p>Позднее эти царства переживали тяжёлые времена. <button class="term" data-t="prorok">Пророки</button> бога Яхве объясняли жителям, что это наказание за злодеяния — прежде всего за отступление от единобожия и возврат к поклонению многим богам.</p>
+<p>Пророки призывали: «Возненавидьте зло. Научитесь делать добро, ищите правды, спасайте угнетённого…» Так они надеялись вернуть народу милость божью. Самыми известными пророками были Илия и Исайя.</p>
+<p>В Иудее в VIII—VII (8—7) веках до н. э. на основе древнееврейских верований возник <button class="term" data-t="iudaizm">иудаизм</button> — религия нового типа. Это была самая древняя религия, которая признавала существование единого бога.</p>
+<p>Отличительными особенностями иудаизма были единобожие, вера в бессмертие души, вера в загробную жизнь и избранность еврейского народа, заключившего союз с богом.</p>
+</div>
+<div class="book" hidden>
+<p>Сын царя Давида Соломон был известен как правитель, мудрость которого прославила его на века.</p>
+<p>При нём укрепились связи с соседями — Египтом, Финикией и другими государствами. Соломон построил в Иерусалиме храм бога Яхве. После смерти Соломона в 930—920-е годы до н. э. царство его разделилось на два: южное — Иудею и северное — Израиль. Столицей Израиля чуть позже стал город Самария, столицей Иудеи остался Иерусалим.</p>
+<p>Позднее эти царства переживали тяжёлые времена. Пророки бога Яхве объясняли жителям, что это наказание за злодеяния, в первую очередь за отступление от единобожия и возврат к поклонению многим богам. Пророки призывали: «Возненавидьте зло. Научитесь делать добро, ищите правды, спасайте угнетённого…» Таким способом они надеялись вернуть милость божью еврейскому народу. Наиболее известными среди пророков были Илия и Исайя.</p>
+<p>В Иудее в VIII—VII (8—7) веках до н. э. на основе древнееврейских верований возник иудаизм — религия нового типа. Иудаизм был самой древней религией, которая признавала существование единого бога. Отличительными особенностями иудаизма были единобожие, вера в бессмертие души, загробную жизнь, избранность еврейского народа, заключившего союз с богом.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-hram" src="img/98fa4f954bae.jpg" alt="Реконструкция: белое здание с колоннами и красными занавесями, перед ним большая бронзовая чаша на фигурах быков"><figcaption><span class="src">из учебника</span><b>Храм Соломона в Иерусалиме. Современная реконструкция.</b> Храм возвели в X (10) веке до н. э., ему отводилась центральная роль в ветхозаветном богослужении. До наших дней сохранились лишь платформа храма и часть внешней стены — Стена Плача.</figcaption></div></figure>
+<div class="col">
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Учебник приводит эту легенду в рубрике «Любопытные детали».</p>
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Легенда о суде Соломона</button></div>
+<div class="rev plan" id="r2" hidden>Однажды к Соломону привели двух женщин. Одна сказала: «О господин мой! Мы живём с этой женщиной в одном доме. У меня родился сын, а через три дня и у неё тоже, но её сын ночью умер, и она подменила детей: мёртвого положила ко мне, а себе взяла живого. Утром хотела я покормить ребёнка, а он мёртвый. И вижу я, что это не мой сын». Другая говорила: «Нет, мой сын живой, а твой мёртвый!»<br><br>И сказал царь Соломон: «Вот меч. Рассеките ребёнка и отдайте каждой из них половину». И одна из женщин ответила спокойно: «Пусть так и будет — ни мне, ни тебе». Другая же в ужасе закричала: «Нет! Лучше отдайте его другой, лишь бы он был жив».<br><br>Выслушав их, Соломон произнёс: «Отдайте ребёнка той, которая испугалась, что он умрёт. Она — его мать». И все поняли, что ничто не укроется от мудрости царя.</div></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 560 240" role="img" aria-label="Три таблички в ряд: Саул около 1020 года до н. э. — простой воин, избран царём, воевал с филистимлянами, но был побеждён; Давид 1010—970 — создал постоянное войско, разгромил филистимлян, сделал Иерусалим столицей; Соломон — сын Давида, прославлен мудростью, связи с Египтом и Финикией, построил храм Яхве. Ниже красная стрелка вниз и надпись: после Соломона в 930—920-е годы царство раскололось надвое — Израиль на севере со столицей Самария и Иудея на юге со столицей Иерусалим."><use href="#p-cari"/></svg><figcaption><b>Ответ на первый вопрос учебника.</b> Единое царство продержалось недолго: от избрания Саула до раскола — меньше ста лет.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 520 222" role="img" aria-label="Четыре таблички: единобожие — бог один, а не многие; бессмертие души — душа не умирает вместе с телом; загробная жизнь — жизнь продолжается после смерти; союз с богом — избранность народа, заключившего его."><use href="#p-iudaizm"/></svg><figcaption><b>Ответ на главный вопрос параграфа.</b> Главное отличие — в первой табличке: у всех соседей богов были десятки и тысячи, а здесь один.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 510 200" role="img" aria-label="Лента времени с пятью точками: XII век до н. э. — евреи заняли Ханаан; около 1020 — первый царь Саул; 1010—970 — царь Давид; 930—920-е — раскол на Израиль и Иудею; VIII—VII века — в Иудее возник иудаизм."><use href="#p-lenta"/></svg><figcaption><b>Весь параграф на одной ленте.</b> Обрати внимание: иудаизм как религия сложился уже после раскола царства — в трудные времена, а не в счастливые.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему с царём Соломоном связывают расцвет Израильского царства?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Соломон прославился мудростью, а не победами. Почему его правление всё равно считают расцветом?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Где искать: второй абзац раздела 3.</div>
+<div class="rev ans" id="a8" hidden>Потому что при нём страна не воевала, а строила и договаривалась: укрепились связи с Египтом, Финикией и другими государствами, в Иерусалиме построили храм Яхве. Давид добыл государство войной — Соломон сумел им распорядиться.</div>
+</div>
+<div class="think">
+<p class="qt">9. Пророки объясняли беды наказанием за возврат к многим богам. Что это говорит о том, насколько прочным было единобожие?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Где искать: четвёртый абзац раздела 3.</div>
+<div class="rev ans" id="a9" hidden>Что оно держалось не само собой. Раз пророкам приходилось снова и снова укорять народ за поклонение многим богам, значит люди к ним возвращались. Единобожие было не привычкой, а требованием, за которое всё время нужно было бороться.</div>
+</div>
+<div class="think">
+<p class="qt">10. Иудаизм возник в Иудее в VIII—VII веках до н. э. — то есть уже после того, как царство раскололось. Почему новая религия сложилась именно в трудные времена?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Соедини третий, четвёртый и шестой абзацы раздела 3.</div>
+<div class="rev ans" id="a10" hidden>Когда всё хорошо, объяснять ничего не нужно. А когда царство раскололось и настали тяжёлые времена, людям понадобился ответ на вопрос «почему так». Пророки дали его: это наказание за отступление от единого бога. Из этого ответа и выросла религия со своими правилами — единобожием, бессмертием души и союзом с богом.</div>
+</div>
+<div class="think">
+<p class="qt">11. В какой стране Древнего Востока уже пробовали перейти к единобожию и чем это кончилось?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Про Эхнатона — §9, раздел 1.</div>
+<div class="rev ans" id="a11" hidden>В Египте. Фараон Эхнатон в XIV веке до н. э. отменил почитание всех богов, кроме Атона. Но сразу после его смерти культ всех богов восстановили, а самого Эхнатона вычеркнули из списка царей. Там единобожие держалось на одном человеке — и ушло вместе с ним.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">В Древней Палестине было много государств. Одним из них являлось Израильское царство, образованное еврейскими племенами. Древние евреи перешли к монотеизму — поклонению единому Богу. Их религией стал иудаизм.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>На какие государства и почему разделилось Израильское царство? Найди и покажи на карте столицы этих государств.</li><li>Какую роль сыграл Авраам для иудеев?</li><li>Вспомни, в каком государстве Древнего Востока была предпринята попытка перехода к единобожию. Чем она закончилась?</li><li>Какое значение для иудеев имели реформы царя Соломона?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка ко второму вопросу</button></div>
+<div class="rev hint" id="r3" hidden>Посмотри абзац про Ветхий Завет. Авраам в преданиях — родоначальник всего народа: от него ведут свой род евреи, его внук Иаков ушёл в Египет, а сыновья Иакова считались основателями 12 колен израилевых. То есть Авраам — это начало общей истории, то, что связывает все двенадцать племён в один народ.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — чем отличалась религия, принятая древними евреями, от верований других народов древности? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Работаем с хронологией</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего события к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="2"><span class="ord"></span>Правление царя Соломона</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Правление царя Давида</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Разделение царства на Иудею и Израиль</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Палестина</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 560 216" aria-hidden="true"><use href="#p-palestina"/></svg><span class="ftext">Область между Египтом и Сирией: горы и степи, перекрёсток культур.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Монотеизм</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 510 224" aria-hidden="true"><use href="#p-odin"/></svg><span class="ftext">Единобожие: поклонение одному богу вместо многих.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Филистимляне</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 196" aria-hidden="true"><use href="#p-zhelezo"/></svg><span class="ftext">Соседи, умевшие делать железо. От их имени и пошло слово «Палестина».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Давид</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="david" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Создал постоянное войско, разгромил филистимлян, сделал Иерусалим столицей.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Соломон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="hram" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Сын Давида, прославлен мудростью. Построил в Иерусалиме храм Яхве.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Иудаизм</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 520 222" aria-hidden="true"><use href="#p-iudaizm"/></svg><span class="ftext">Самая древняя религия, признававшая единого бога. Возник в Иудее в VIII—VII веках до н. э.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Между какими странами лежала Палестина?</h3><div class="opts">
+<button class="opt" data-ok="1">Между Египтом и Сирией</button>
+<button class="opt">Между Индией и Китаем</button>
+<button class="opt">Между Грецией и Римом</button></div>
+<div class="fb">Большую её часть занимали горы и степи, а сама она была перекрёстком религий и культур.</div></div>
+<div class="q"><h3>2. Что такое монотеизм?</h3><div class="opts">
+<button class="opt">Поклонение природе</button>
+<button class="opt" data-ok="1">Поклонение одному богу</button>
+<button class="opt">Поклонение царю</button></div>
+<div class="fb">Древние евреи перешли к нему от многобожия и стали почитать единого бога Яхве.</div></div>
+<div class="q"><h3>3. Чем филистимляне были опасны для евреев?</h3><div class="opts">
+<button class="opt">У них было больше кораблей</button>
+<button class="opt" data-ok="1">Они умели делать железо</button>
+<button class="opt">У них были боевые слоны</button></div>
+<div class="fb">Железо крепче бронзы. От названия этого народа происходит и слово «Палестина».</div></div>
+<div class="q"><h3>4. Какой царь сделал Иерусалим столицей?</h3><div class="opts">
+<button class="opt">Саул</button>
+<button class="opt" data-ok="1">Давид</button>
+<button class="opt">Соломон</button></div>
+<div class="fb">Он же создал постоянное войско и разгромил филистимлян.</div></div>
+<div class="q"><h3>5. На какие два государства разделилось царство после Соломона?</h3><div class="opts">
+<button class="opt" data-ok="1">Иудею и Израиль</button>
+<button class="opt">Ханаан и Финикию</button>
+<button class="opt">Самарию и Синай</button></div>
+<div class="fb">Столицей Израиля стала Самария, столицей Иудеи остался Иерусалим.</div></div>
+<div class="q"><h3>6. Что было главной особенностью иудаизма?</h3><div class="opts">
+<button class="opt">Много богов и храмов</button>
+<button class="opt">Поклонение царю как богу</button>
+<button class="opt" data-ok="1">Вера в единого бога</button></div>
+<div class="fb">А ещё — вера в бессмертие души, в загробную жизнь и в союз народа с богом.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Палестина и её жители</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Область между Египтом и Сирией, горы и степи; земледелие хуже, чем в Египте, зато много занятий сразу.</li><li>Долины Иордана: пшеница, ячмень, виноград, оливы, инжир; овцы и козы; рыболовство, охота; гончарное дело, ткачество, металлообработка.</li><li>Ханаан и ханаанеи (к ним относились и финикийцы); в XII веке до н. э. часть Ханаана заняли еврейские племена — союз Израиль.</li></ol></div>
+</div>
+<div class="think">
+<h3>От многобожия к единобожию</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Древние евреи перешли к монотеизму: один бог Яхве, создатель мира.</li><li>Ветхий Завет — самая древняя часть Библии: Авраам, Иаков, 12 колен израилевых, Моисей и выход из Египта.</li><li>Расселение в Ханаане в XII веке — исторический факт; про более ранние события учёные спорят.</li></ol></div>
+</div>
+<div class="think">
+<h3>Три царя</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Около 1020 до н. э. — Саул, простой воин: воевал с филистимлянами, которые умели делать железо, но был побеждён.</li><li>1010—970 — Давид: постоянное войско, разгром филистимлян, Иерусалим стал столицей.</li><li>Соломон: мудрость, связи с Египтом и Финикией, храм Яхве. После него, в 930—920-е, раскол на Израиль (Самария) и Иудею (Иерусалим).</li></ol></div>
+</div>
+<div class="think">
+<h3>Иудаизм</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Тяжёлые времена, пророки Илия и Исайя объясняли беды отступлением от единобожия.</li><li>VIII—VII века до н. э., Иудея: на основе древнееврейских верований возник иудаизм.</li><li>Особенности: единобожие, бессмертие души, загробная жизнь, избранность народа, заключившего союз с богом.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p13.html">‹ §13 Финикия</a>
+  <span class="pn cur">§14 Палестина</span>
+  <a class="pn" href="p15.html">§15 Ассирия ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 14 · История, 5 класс · страницы 81—85 · глава II «Древний Восток»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'p-palestina':'0 0 560 216','p-odin':'0 0 510 224','p-cari':'0 0 560 240','p-zhelezo':'0 0 540 196','p-iudaizm':'0 0 520 222','p-lenta':'0 0 510 200'};
+
+var T={
+palestina:{w:"Палестина",k:"область",s:"p-palestina",t:"Небольшая географическая область между Египтом и Сирией — она существует и в наше время. Большую её часть занимают горы и степи. Название происходит от народа филистимлян."},
+hanaan:{w:"Ханаан",k:"название",p:"karta",t:"Так в древности называли бо́льшую часть Палестины. Основным населением был семитский народ ханаанеев — к ним относились и финикийцы. У ханаанеев было много городов-государств."},
+monoteizm:{w:"Монотеизм",k:"вера",s:"p-odin",t:"Единобожие — поклонение одному богу вместо многих. Древние евреи со временем перешли от многобожия к монотеизму: они поклонялись богу Яхве и почитали его как создателя мира."},
+yahve:{w:"Яхве",k:"бог",s:"p-odin",t:"Единый бог древних евреев, которого почитали как создателя мира."},
+vethiy:{w:"Ветхий Завет",k:"книга",p:"moisey",t:"Самая древняя часть Библии. В ней содержатся легенды и мифы о происхождении и родине евреев."},
+avraam:{w:"Авраам",k:"предание",p:"moisey",t:"По преданиям Ветхого Завета — родоначальник евреев. Его внук Иаков во время голода переселился из Ханаана в Египет, а сыновья Иакова считались основателями 12 племён Израильского союза — «12 колен израилевых»."},
+moisey:{w:"Моисей",k:"пророк",p:"moisey",t:"Пророк, который, по преданию, вывел соплеменников из египетского плена и привёл к границам Ханаана. По более поздним преданиям, именно он познакомил евреев с верой в единого бога Яхве и передал им его заповеди."},
+filistim:{w:"Филистимляне",k:"народ",s:"p-zhelezo",t:"Западные соседи евреев и самые опасные их противники: они уже умели изготавливать железо, которого евреи ещё не знали. От названия этого народа происходит само слово «Палестина»."},
+saul:{w:"Саул",k:"царь",s:"p-cari",t:"Первый царь евреев, избранный около 1020 года до н. э. Простой воин. Долго и успешно воевал с филистимлянами, но в итоге был побеждён."},
+david:{w:"Давид",k:"царь",p:"david",t:"Второй царь, правивший в 1010—970 годах до н. э. Создал постоянное и сильное войско, разгромил филистимлян, расширил границы государства и сделал столицей захваченный Иерусалим."},
+solomon:{w:"Соломон",k:"царь",p:"hram",t:"Сын Давида, прославленный мудростью на века. При нём укрепились связи с Египтом, Финикией и другими государствами, а в Иерусалиме был построен храм бога Яхве."},
+prorok:{w:"Пророк",k:"кто это",p:"moisey",t:"Человек, который, по верованиям, говорит от имени бога. Пророки Яхве объясняли жителям беды как наказание за отступление от единобожия и призывали: «Возненавидьте зло. Научитесь делать добро, ищите правды, спасайте угнетённого…». Самые известные — Илия и Исайя."},
+iudaizm:{w:"Иудаизм",k:"религия",s:"p-iudaizm",t:"Религия, возникшая в Иудее в VIII—VII (8—7) веках до н. э. на основе древнееврейских верований. Самая древняя религия, которая признавала существование единого бога."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p14:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p14:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>3){fb.textContent="Верно! Давид (1010—970) → Соломон → раскол на Иудею и Израиль (930—920-е).";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Посмотри ленту времени и схему «Три царя» в разделе 3.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p14:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p14:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

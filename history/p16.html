@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 16: Персидское царство.">
+<title>Персидское царство</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="d-persy" viewBox="0 0 560 246">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПЕРСЫ ГЛАЗАМИ ГЕРОДОТА</text>
+  <rect x="8" y="30" width="238" height="112" rx="10" fill="var(--ochre)"/>
+  <text x="22" y="54" font-size="12.5" font-weight="700" fill="#22190A">ДЕТЕЙ УЧИЛИ ТРЁМ ВЕЩАМ</text>
+  <text x="22" y="80" font-size="11.5" fill="#22190A">1 · верховой езде</text>
+  <text x="22" y="102" font-size="11.5" fill="#22190A">2 · стрельбе из лука</text>
+  <text x="22" y="124" font-size="11.5" fill="#22190A">3 · правдивости</text>
+  <rect x="266" y="30" width="246" height="112" rx="10" fill="var(--paper2)"/>
+  <text x="280" y="54" font-size="12.5" font-weight="700" fill="var(--illink)">ЧТО СЧИТАЛИ ПОЗОРОМ</text>
+  <text x="280" y="80" font-size="11.5" fill="var(--red)">ложь — самый постыдный порок</text>
+  <text x="280" y="104" font-size="11.5" fill="var(--illink)">долги — второй по счёту,</text>
+  <text x="280" y="122" font-size="11.5" fill="var(--illink)">потому что должнику приходится лгать</text>
+  <text x="8" y="172" font-size="11.5" fill="var(--illink)">Храмов и кумиров не ставили: жертвы приносили на высочайших горах.</text>
+  <text x="8" y="190" font-size="11.5" fill="var(--illink)">Боги — небо, солнце, луна, земля, огонь, вода и ветер.</text>
+  <text x="8" y="208" font-size="11.5" fill="var(--illink)">Рынков и базаров не было, поэтому города строили без площадей.</text>
+  <text x="8" y="238" font-size="12" font-weight="700" fill="var(--moss)">«Обычаи чужеземцев персы перенимают охотнее, чем какой-нибудь другой народ».</text>
+</symbol>
+
+<symbol id="d-vavilon" viewBox="0 0 530 232">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ДВА ГОРОДА, ДВЕ РЕКИ — И ДВЕ ПРОТИВОПОЛОЖНЫЕ ХИТРОСТИ</text>
+  <rect x="8" y="30" width="248" height="120" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="54" font-size="12" font-weight="700" fill="var(--illink)">НИНЕВИЯ, 612 до н. э. (§15)</text>
+  <rect x="22" y="70" width="210" height="14" rx="4" fill="var(--water)"/>
+  <path d="M60 96 V118 M120 96 V118 M180 96 V118" stroke="var(--water)" stroke-width="5" marker-end="url(#ar)"/>
+  <text x="22" y="140" font-size="11" fill="var(--illink)">Тигр запрудили — вода хлынула в город</text>
+  <rect x="274" y="30" width="248" height="120" rx="10" fill="var(--paper2)"/>
+  <text x="288" y="54" font-size="12" font-weight="700" fill="var(--illink)">ВАВИЛОН, 539 до н. э.</text>
+  <rect x="288" y="70" width="210" height="14" rx="4" fill="var(--stone)"/>
+  <path d="M326 84 V62 M386 84 V62 M446 84 V62" stroke="var(--water)" stroke-width="5" marker-end="url(#ar)"/>
+  <text x="288" y="112" font-size="11" fill="var(--illink)">Евфрат отвели в выкопанные каналы —</text>
+  <text x="288" y="130" font-size="11" fill="var(--illink)">русло обмелело, и персы вошли по нему</text>
+  <text x="8" y="186" font-size="12" font-weight="700" fill="var(--moss)">Одни впустили воду, другие её выпустили — а результат один:</text>
+  <text x="8" y="204" font-size="12" font-weight="700" fill="var(--moss)">неприступный город взяли, не ломая стен.</text>
+  <text x="8" y="226" font-size="11" fill="var(--soft)">Обе крепости стояли на реке — и обе из-за этой реки и пали.</text>
+</symbol>
+
+<symbol id="d-pochemu" viewBox="0 0 520 260">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПОЧЕМУ ДЕРЖАВА КИРА НЕ РАЗВАЛИЛАСЬ ПОСЛЕ ЕГО СМЕРТИ</text>
+  <circle cx="24" cy="46" r="9" fill="var(--moss)"/>
+  <text x="44" y="44" font-size="12" font-weight="700" fill="var(--illink)">Унаследовал мощь Мидии</text>
+  <text x="44" y="60" font-size="10.5" fill="var(--soft)">захватив её, он получил не только земли, но и всю её силу</text>
+  <circle cx="24" cy="88" r="9" fill="var(--moss)"/>
+  <text x="44" y="86" font-size="12" font-weight="700" fill="var(--illink)">Опирался на коневодческие племена</text>
+  <text x="44" y="102" font-size="10.5" fill="var(--soft)">персидские и мидийские — а значит, на конницу</text>
+  <circle cx="24" cy="130" r="9" fill="var(--moss)"/>
+  <text x="44" y="128" font-size="12" font-weight="700" fill="var(--illink)">Делил побеждённых на провинции</text>
+  <text x="44" y="144" font-size="10.5" fill="var(--soft)">без всякой автономии — вернуть независимость почти невозможно</text>
+  <circle cx="24" cy="172" r="9" fill="var(--ochre)"/>
+  <text x="44" y="170" font-size="12" font-weight="700" fill="var(--illink)">И — неожиданное: отпускал по домам</text>
+  <text x="44" y="186" font-size="10.5" fill="var(--soft)">разрешил покорённым вернуться на родину и вернул им статуи их богов</text>
+  <text x="44" y="202" font-size="10.5" fill="var(--soft)">знатным людям поручал собирать налоги и судить своих же</text>
+  <text x="8" y="234" font-size="12" font-weight="700" fill="var(--moss)">Ассирия держалась на страхе и рухнула. Персия давала покорённым</text>
+  <text x="8" y="250" font-size="12" font-weight="700" fill="var(--moss)">место в своей державе — и держалась.</text>
+</symbol>
+
+<symbol id="d-satrapii" viewBox="0 0 540 268">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК ДАРИЙ I УПРАВЛЯЛ ОГРОМНОЙ ИМПЕРИЕЙ</text>
+  <rect x="160" y="30" width="150" height="38" rx="10" fill="var(--ochre)"/>
+  <text x="235" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">ЦАРЬ</text>
+  <path d="M235 72 V92" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="100" y="98" width="270" height="34" rx="8" fill="var(--paper2)"/>
+  <text x="235" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink)">20 САТРАПИЙ — по сатрапу в каждой</text>
+  <text x="8" y="152" font-size="10.5" fill="var(--soft)">сатрап судит, собирает налоги, отвечает за хозяйство и за чиновников</text>
+  <path d="M378 115 H404" stroke="var(--red)" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+  <rect x="410" y="96" width="122" height="38" rx="8" fill="var(--red)"/>
+  <text x="471" y="120" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFF3E2">«уши царя»</text>
+  <text x="410" y="152" font-size="10" fill="var(--soft)">следили за сатрапами</text>
+  <text x="410" y="166" font-size="10" fill="var(--soft)">и доносили царю</text>
+  <rect x="8" y="180" width="164" height="54" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="202" font-size="11.5" font-weight="700" fill="var(--illink)">Царская дорога</text>
+  <text x="22" y="220" font-size="10" fill="var(--soft)">мощёная, с конными заставами</text>
+  <rect x="180" y="180" width="150" height="54" rx="10" fill="var(--paper2)"/>
+  <text x="194" y="202" font-size="11.5" font-weight="700" fill="var(--illink)">Золотой дарик</text>
+  <text x="194" y="220" font-size="10" fill="var(--soft)">единая монета на всю державу</text>
+  <rect x="338" y="180" width="194" height="54" rx="10" fill="var(--paper2)"/>
+  <text x="352" y="202" font-size="11.5" font-weight="700" fill="var(--illink)">Канал к Красному морю</text>
+  <text x="352" y="220" font-size="10" fill="var(--soft)">восстановили — путь стал короче</text>
+  <text x="8" y="260" font-size="12" font-weight="700" fill="var(--moss)">Столицей стал Персеполь: туда съезжались послы провинций с дарами.</text>
+</symbol>
+
+<symbol id="d-zoroastr" viewBox="0 0 520 254">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЗОРОАСТРИЗМ: ДОБРО ПРОТИВ ЗЛА</text>
+  <rect x="8" y="30" width="228" height="118" rx="10" fill="var(--ochre)"/>
+  <circle cx="44" cy="62" r="14" fill="#FFF3E2"/>
+  <text x="70" y="58" font-size="13" font-weight="700" fill="#22190A">АХУРАМАЗДА</text>
+  <text x="70" y="74" font-size="10.5" fill="#22190A">добрый бог, творец воды, земли,</text>
+  <text x="22" y="92" font-size="10.5" fill="#22190A">огня, света, тепла, растений, животных</text>
+  <text x="22" y="116" font-size="10.5" fill="#22190A">его свита — не явления природы, а понятия:</text>
+  <text x="22" y="134" font-size="10.5" fill="#22190A">правда, справедливость, здоровье, бессмертие</text>
+  <text x="260" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="var(--soft)">≠</text>
+  <rect x="284" y="30" width="228" height="118" rx="10" fill="var(--paper2)"/>
+  <circle cx="320" cy="62" r="14" fill="#2B2620"/>
+  <text x="346" y="58" font-size="13" font-weight="700" fill="var(--illink)">АРИМАН</text>
+  <text x="346" y="74" font-size="10.5" fill="var(--soft)">злой бог, равный по силе</text>
+  <text x="298" y="98" font-size="10.5" fill="var(--soft)">во главе злых божеств: болезни, смерть,</text>
+  <text x="298" y="116" font-size="10.5" fill="var(--soft)">холод, голод, хищные звери</text>
+  <text x="298" y="138" font-size="10.5" fill="var(--soft)">ни один не может одолеть другого</text>
+  <text x="8" y="182" font-size="12" font-weight="700" fill="var(--illink)">Проповедник Зороастр (Заратуштра) учил: почитать надо только добрых</text>
+  <text x="8" y="200" font-size="12" font-weight="700" fill="var(--illink)">богов и самому встать на их сторону в борьбе против зла.</text>
+  <text x="8" y="230" font-size="12" font-weight="700" fill="var(--moss)">И добро когда-нибудь победит в решающей битве.</text>
+  <text x="8" y="246" font-size="11" fill="var(--soft)">Учение назвали по его имени — зороастризм.</text>
+</symbol>
+
+<symbol id="d-lenta" viewBox="0 0 530 210">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЛЕНТА ВРЕМЕНИ</text>
+  <path d="M16 74 H514" stroke="var(--line)" stroke-width="4"/>
+  <g fill="var(--red)"><circle cx="26" cy="74" r="7"/><circle cx="140" cy="74" r="7"/><circle cx="250" cy="74" r="7"/><circle cx="356" cy="74" r="7"/><circle cx="500" cy="74" r="7"/></g>
+  <text x="8" y="102" font-size="11.5" font-weight="700" fill="var(--illink)">612 до н. э.</text>
+  <text x="8" y="118" font-size="10.5" fill="var(--soft)">пала Ассирия (§15)</text>
+  <text x="250" y="102" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">539 до н. э.</text>
+  <text x="250" y="118" text-anchor="middle" font-size="10.5" fill="var(--soft)">Кир взял Вавилон</text>
+  <text x="514" y="102" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--illink)">конец VI — начало V века</text>
+  <text x="514" y="118" text-anchor="end" font-size="10.5" fill="var(--soft)">Дарий I: расцвет державы</text>
+  <text x="140" y="146" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">553 и 547 до н. э.</text>
+  <text x="140" y="162" text-anchor="middle" font-size="10.5" fill="var(--soft)">восстание против Мидии, затем Лидия</text>
+  <text x="380" y="146" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">530 и 525 до н. э.</text>
+  <text x="380" y="162" text-anchor="middle" font-size="10.5" fill="var(--soft)">гибель Кира, затем захват Египта</text>
+  <text x="8" y="200" font-size="11.5" font-weight="700" fill="var(--moss)">От первого восстания до самой большой державы древности — меньше полувека.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 16</span>
+    <h1>Персидское царство</h1>
+    <p class="lede">Самая большая держава древности: как её собрали и почему она не рассыпалась. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Что позволило персам создать самую большую державу древности и долгое время удерживать её от распада?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p15.html">‹ §15 Ассирия</a>
+  <span class="pn cur">§16 Персия</span>
+  <a class="pn" href="p17.html">§17 Древняя Индия ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Как возникло Персидское государство">1</a><a href="#s2" data-j="s2" title="Дарий I">2</a><a href="#s3" data-j="s3" title="Религия персов">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-karta" src="img/79fd6f9c19fa.jpg" alt="Карта: зелёным закрашена огромная Персидская держава от Средиземного моря и Египта до Инда, жёлтой линией показана Царская дорога от Сард до Суз, отмечены Вавилон, Экбатаны, Персеполь, Бактры"><figcaption><span class="src">из учебника</span><b>Персидская держава в VI (6) веке до н. э.</b> Жёлтой линией показана Царская дорога — мощёный путь от западных провинций к столице Сузы.<br><span style="color:var(--soft)">▲ Найди на карте Царскую дорогу и посмотри, какие края державы она соединяла.</span></figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Как возникло Персидское государство</h2></div>
+<div class="easy">
+<p>К востоку от Месопотамии, на территории современного Ирана, обитали кочевые племена <button class="term" data-t="persy">персов</button>. Это были мужественные и воинственные люди, а главным их занятием было скотоводство.</p>
+<p>В VII (7) веке до н. э. персы, издавна платившие дань сильному соседу — Мидии, признали зависимость от Ассирии. А после её падения снова стали платить дань Мидии, победительнице ассирийцев.</p>
+<p>В середине VI (6) века до н. э. вождь одного из персидских племён, <button class="term" data-t="kir">Кир II Великий</button>, подчинил остальные племена и объявил себя царём. Он создал сильное войско — одно из лучших для своего времени.</p>
+<p>В 553 году до н. э. персы подняли восстание против Мидии. Кир разгромил войско мидийского царя и включил Мидию со всеми её владениями в состав новой Персидской державы — её называют ещё <button class="term" data-t="ahemenid">государством Ахеменидов</button>, по имени правящей династии.</p>
+<p>В 547 году до н. э. персы захватили процветающую <button class="term" data-t="lidia">Лидию</button>, где ещё в VII (7) веке до н. э. впервые начали чеканить монеты из сплава золота и серебра. Царь Лидии Крёз был известен своим богатством: его имя даже вошло в поговорку — «богат как Крёз».</p>
+<p>Весной 539 года до н. э. Кир выступил на Вавилон. Он приказал выкопать вокруг города каналы и отвести в них воды Евфрата. <b>По обмелевшему руслу реки персы ворвались в Вавилон и захватили город.</b></p>
+<p>Все покорённые народы получили от Кира разрешение вернуться на родину, а статуи их богов, хранившиеся в Вавилоне как военные трофеи, он вернул. Персы старались использовать покорённое население в своих интересах, особенно знатных людей: им поручали собирать налоги с местных жителей, судить их и наказывать непокорных.</p>
+<p>В 530 году до н. э. царь отправился в поход против кочевников-массагетов, живших к востоку от Каспийского моря, и погиб.</p>
+<p>Но держава, созданная его завоеваниями, с его смертью не распалась и не потеряла ни одной территории.</p>
+</div>
+<div class="book" hidden>
+<p>К востоку от Месопотамии, на территории современного Ирана, обитали кочевые племена персов. Это были мужественные и воинственные люди. Главным занятием персов было скотоводство.</p>
+<p>В VII (7) веке до н. э. персы, с давних пор платившие дань сильному соседнему государству Мидия, признали зависимость от Ассирии, а после её падения вновь стали платить дань победительнице ассирийцев Мидии. В середине VI (6) века до н. э. вождь одного из персидских племён, Кир II (2) Великий, подчинил остальные племена и объявил себя царём. Он создал сильное войско, одно из лучших для своего времени. В 553 году до н. э. персы подняли восстание против Мидии. Кир разгромил войско мидийского царя и включил Мидию и все её владения в состав новой Персидской державы (государства Ахеменидов — по названию правящей династии).</p>
+<p>В 547 году до н. э. персы захватили процветающую Лидию, в которой ещё в VII (7) веке до н. э. впервые начали чеканить монеты из сплава золота и серебра. Царь этой страны Крёз был известен своим богатством. Его имя даже вошло в поговорку — «богат как Крёз».</p>
+<p>Весной 539 года до н. э. Кир выступил в поход на Вавилон. Он приказал выкопать вокруг города каналы и отвести в них воды Евфрата. По обмелевшему руслу реки персы ворвались в Вавилон и захватили город.</p>
+<p>После завоевания Нововавилонского царства все покорённые им народы получили разрешение Кира II (2), удостоенного прозвища Великий, вернуться на родину. Персидский царь вернул им их статуи богов, хранившиеся в Вавилоне в качестве военных трофеев. Персы стремились использовать в своих интересах покорённое население, особенно знатных людей. Им поручали собирать налоги с местных жителей, судить их, наказывать непокорных.</p>
+<p>В 530 году до н. э. персидский царь предпринял поход против кочевников массагетов, обитавших к востоку от Каспийского моря, во время которого он погиб. Однако держава, созданная его завоеваниями, с его смертью не распалась и не утратила каких-либо территорий. Успех войн Кира и прочность созданной ими империи можно объяснить несколькими причинами. Кир, захватив Мидию, унаследовал всю её мощь. Он опирался на персидские и мидийские коневодческие племена. Побеждённые государства персы не обращали в зависимость, а делили на провинции, лишённые всякой автономии, — восстановить независимость в этих условиях им было почти невозможно.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-kir" src="img/1704b43ee581.jpg" alt="Гравюра: профиль бородатого человека в шлеме с гребнем" style="max-width:220px"><figcaption><span class="src">из учебника</span><b>Кир II Великий.</b></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 560 246" role="img" aria-label="Две таблички. Слева: детей учили трём вещам — верховой езде, стрельбе из лука и правдивости. Справа: что считали позором — ложь самый постыдный порок, долги второй, потому что должнику приходится лгать. Внизу: храмов и кумиров не ставили, жертвы приносили на горах, боги — небо, солнце, луна, земля, огонь, вода и ветер, рынков и площадей не было."><use href="#d-persy"/></svg><figcaption><b>Вот кем были персы до всех завоеваний.</b> Запомни левую табличку: верховая езда, стрельба из лука и правдивость. Первые две объясняют, как они победили полмира, а третья — почему их держава так долго стояла.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 530 232" role="img" aria-label="Две таблички. Слева Ниневия 612 года до н. э.: голубая полоса реки и стрелки вниз — Тигр запрудили, вода хлынула в город. Справа Вавилон 539 года: серая полоса обмелевшего русла и стрелки вверх — Евфрат отвели в каналы, и персы вошли по сухому руслу."><use href="#d-vavilon"/></svg><figcaption><b>Сравни с §15.</b> Ассирийскую столицу взяли, впустив в неё реку. Вавилон — наоборот, выпустив реку из русла. Обе крепости стояли на воде и обе из-за воды пали.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 520 260" role="img" aria-label="Четыре пункта: унаследовал мощь Мидии; опирался на коневодческие племена — то есть на конницу; делил побеждённых на провинции без всякой автономии; и неожиданное — разрешал покорённым вернуться домой, возвращал им статуи богов, а знатным поручал собирать налоги и судить своих."><use href="#d-pochemu"/></svg><figcaption><b>Ответ на главный вопрос параграфа.</b> Обрати внимание на последний пункт — именно он отличает Персию от Ассирии (§15). Ассирия держалась на страхе и рухнула от первого же союза врагов. Персия дала покорённым место в своей державе.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие государства и территории завоевал Кир II Великий? Подумай, почему ему это удалось.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Персы веками платили дань — сначала Мидии, потом Ассирии, потом снова Мидии. Как получилось, что именно они создали самую большую державу древности?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Где искать: второй и третий абзацы раздела 1.</div>
+<div class="rev ans" id="a1" hidden>Всё изменил один человек и одно решение. Кир сначала подчинил остальные персидские племена — то есть собрал разрозненных данников в один народ, — и создал сильное войско. Только после этого он поднял восстание. Пока персы были племенами поодиночке, они платили. Как только стали одним целым — начали побеждать.</div>
+</div>
+<div class="think">
+<p class="qt">2. Кир отпустил покорённые народы домой и вернул им статуи богов. Зачем победителю так поступать?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Где искать: седьмой абзац раздела 1, и сравни с §15 — как вели себя ассирийцы.</div>
+<div class="rev ans" id="a2" hidden>Потому что народ, которому вернули дом и святыни, не будет ждать случая отомстить. Ассирийцы разоряли покорённых — и те объединились и стёрли Ассирию с лица земли. Кир сделал наоборот и получил державу, которая не распалась даже после его гибели.</div>
+</div>
+<div class="think">
+<p class="qt">3. Вавилон взяли, отведя воду Евфрата. Вспомни §15: как взяли Ниневию — и что общего у этих двух историй?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Про Ниневию — §15, раздел 3.</div>
+<div class="rev ans" id="a3" hidden>Ниневию взяли, запрудив Тигр: вода обрушилась на город. Вавилон — наоборот, отведя Евфрат в каналы: по сухому руслу вошли внутрь. Способы противоположные, а мысль одна: если стену не пробить, воюй не со стеной, а с рекой, на которой стоит город.</div>
+</div>
+<div class="think">
+<p class="qt">4. Кир погиб в походе, но держава не потеряла ни одной территории. Почему так вышло?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Где искать: последний абзац раздела 1 в версии «как в учебнике» и схема «почему держава не развалилась».</div>
+<div class="rev ans" id="a4" hidden>Потому что она держалась не на самом Кире. Он унаследовал мощь Мидии, опирался на коневодческие племена и, главное, делил побеждённых не на зависимые царства со своими правителями, а на провинции без всякой автономии. Отделиться такой провинции было почти невозможно — даже когда царь погиб.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Дарий I</h2></div>
+<div class="easy">
+<p>Со смертью Кира завоевания не прекратились: в 525 году до н. э. персы захватили Египет.</p>
+<p>Наивысшего могущества держава достигла при <button class="term" data-t="dariy">Дарии I</button>, правившем в конце VI (6) — начале V (5) века до н. э. Он подчинил земли на севере Балканского полуострова, часть Индии и новые территории в Средней Азии. Границы державы объединяли десятки стран и народов с разной культурой, и единство государства Дарий поддерживал главным образом силой оружия.</p>
+<p>Он разделил империю на 20 провинций — <button class="term" data-t="satrapia">сатрапий</button>. Во главе каждой стоял наместник, сатрап: он судил, отвечал за сбор налогов, за состояние хозяйства и за работу местных чиновников.</p>
+<p>За самими сатрапами наблюдали царские слуги — их называли <button class="term" data-t="ushi">«уши царя»</button>. Они доносили обо всех злоупотреблениях.</p>
+<p>Западные провинции соединили с Сузами мощёной <button class="term" data-t="doroga">Царской дорогой</button>. По всей её длине стояли конные заставы с гонцами: сменяя друг друга, они доставляли царю сообщения о вторжениях и восстаниях и передавали войскам его приказы.</p>
+<p>Дарий ввёл единую монету — <button class="term" data-t="darik">золотой дарик</button>. По его распоряжению восстановили канал, соединявший Средиземное море с Красным (его построил около 600 года до н. э. фараон Нехо), — и торговые пути заметно сократились.</p>
+<p>Столицей персов при Дарии стал <button class="term" data-t="persepol">Персеполь</button>: сюда приезжали послы из провинций вручать царю богатые дары.</p>
+<p>А на самой северной границе, у «Каспийских врат», персы поставили укрепления против кочевников с Кавказа. Крупнейшее из них выросло в город, который мы знаем как <button class="term" data-t="derbent">Дербент</button> — он стоит в России, в Дагестане, и входит в число древнейших городов мира.</p>
+<p><b>Персы создали державу, которая стала самым могущественным государством Древнего Востока.</b></p>
+</div>
+<div class="book" hidden>
+<p>Со смертью Кира завоевания персов не прекратились. В 525 году до н. э. они захватили Египет. Наивысшего могущества Персидская держава достигла при Дарии I (1), правившем в конце VI (6) — начале V (5) века до н. э. Дарий подчинил земли на севере Балканского полуострова, часть Индии и новые территории в Средней Азии. Границы его державы объединяли десятки стран и народов с разной культурой. Единство государства Дарий I (1) поддерживал главным образом силой оружия.</p>
+<p>Он разделил свою огромную империю (не считая самой Персиды и некоторых окраинных зависимых владений) на 20 провинций — сатрапий. Во главе каждой стоял наместник — сатрап. Он осуществлял судебную власть, отвечал за сбор налогов, состояние хозяйства, контролировал работу местных чиновников. За деятельностью сатрапов наблюдали царские слуги, их называли «уши царя». Они доносили обо всех злоупотреблениях.</p>
+<p>Западные провинции империи соединили с Сузами мощёной дорогой. Её называли Царской. На всём протяжении дороги располагались конные заставы с гонцами. Сменяя друг друга, они доставляли царю сообщения о вторжениях и восстаниях, передавали войскам его приказы.</p>
+<p>Дарий I (1) ввёл единую монету — золотой дарик. По его распоряжению восстановили канал, соединявший Средиземное море с Красным (канал, построенный около 600 года до н. э. фараоном Нехо), который существенно сокращал торговые пути.</p>
+<p>Столицей персов при Дарии I (1) стал город Персеполь. Сюда приезжали послы из провинций для вручения царю богатых даров. Персы создали державу, которая стала самым могущественным государством Древнего Востока.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-bessmertnye" src="img/d111432d5251.jpg" alt="Мозаика из цветных изразцов: два воина в длинных узорчатых одеждах с копьями и луками за спиной"><figcaption><span class="src">из учебника</span><b>Персидские элитные воины «бессмертные». Фрагмент мозаики дворца Дария I в Сузах.</b> Сузы — один из древнейших городов мира, он появился ещё в 3-м тысячелетии до н. э. Для строительства и украшения дворца везли ливанский кедр, тиковое дерево, серебро, бронзу и слоновую кость из Египта и Эфиопии, лидийское золото, лазурит, сердолик и хорезмийскую бирюзу.<br><span style="color:var(--soft)">▲ Опиши вооружение персидского воина.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 268" role="img" aria-label="Схема управления: наверху царь, от него стрелка вниз к полосе «20 сатрапий — по сатрапу в каждой»; сатрап судит, собирает налоги, отвечает за хозяйство и чиновников. Справа красная табличка «уши царя»: царские слуги следили за сатрапами и доносили царю. Внизу три таблички: Царская дорога с конными заставами, золотой дарик — единая монета, восстановленный канал к Красному морю."><use href="#d-satrapii"/></svg><figcaption><b>Вот что держало державу вместе.</b> Не только войско: дорога, по которой быстро доходит весть, одна монета на всю страну и люди, которые следят за начальниками. Это и есть управление.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-persepol" src="img/5b560ec614d1.jpg" alt="Фотография: огромные каменные ворота с фигурами крылатых быков по сторонам прохода, вокруг руины колонн"><figcaption><span class="src">из учебника</span><b>Врата всех наций. Дворец в Персеполе. Современный вид.</b> Дворцовый комплекс стоял на высокой террасе, вырубленной в скале: с одной стороны его защищала скала, с других — крепостные стены.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-derbent" src="img/2c56a4237cb9.jpg" alt="Фотография: древняя крепостная стена из жёлтого камня спускается по склону к городу и морю"><figcaption><span class="src">из учебника</span><b>Современный вид на город Дербент.</b> На северной границе персидских земель, у «Каспийских врат», построили укрепления против кочевников с Кавказа. Крупнейшее из них упоминал ещё Гекатей Милетский в VI (6) веке до н. э. Древнейшее имя города не сохранилось; «Дербент» — уже средневековое название, с персидского оно переводится как «закрытые врата». Город стоит в России, в Дагестане, и входит в число древнейших городов мира.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему реформы Дария I способствовали расцвету Персии?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Зачем Дарию понадобились «уши царя», если сатрапов он назначал сам?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Где искать: четвёртый абзац раздела 2.</div>
+<div class="rev ans" id="a5" hidden>Потому что сатрап далеко, а власти у него много: суд, налоги, хозяйство, чиновники. Такой человек легко может начать править как свой собственный царь. «Уши царя» — способ узнавать о злоупотреблениях, не выезжая из столицы.</div>
+</div>
+<div class="think">
+<p class="qt">6. Царская дорога с конными заставами — зачем она нужна, если по ней не возят товары?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Где искать: пятый абзац раздела 2 и карта в начале параграфа.</div>
+<div class="rev ans" id="a6" hidden>По ней возили не товар, а известия. Держава растянулась от Средиземного моря до Индии, и весть о восстании на окраине шла бы месяцами. Гонцы, сменяя друг друга на заставах, доставляли её за считаные дни — и царь успевал ответить. Для огромной страны скорость новостей важнее скорости обозов.</div>
+</div>
+<div class="think">
+<p class="qt">7. Зачем вводить единую монету на всю державу?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Где искать: шестой абзац раздела 2. Вспомни §6—7: как обходились без денег в Египте.</div>
+<div class="rev ans" id="a7" hidden>Когда в каждой области свои деньги, торговать между ними трудно: надо всё время менять и пересчитывать. Одна монета на всю державу — и купец может ехать от Египта до Индии, не думая об обмене. Это связывает десятки разных народов в одно хозяйство крепче, чем войско.</div>
+</div>
+<div class="think">
+<p class="qt">8. Дербент стоит в России, в Дагестане. Как он попал в параграф про Персию?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Где искать: врезку про Дербент.</div>
+<div class="rev ans" id="a8" hidden>Персидская держава дотянулась до Кавказа: её северную границу у «Каспийских врат» пришлось укреплять от кочевников. Крупнейшая из тех крепостей и стала городом, который мы знаем как Дербент — «закрытые врата» по-персидски. Получается, один из древнейших городов России начинался как персидская застава.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-ahuramazda" src="img/e0778abb22c5.jpg" alt="Каменный рельеф: крылатый диск, из которого поднимается фигура человека"><figcaption><span class="src">из учебника</span><b>Изображение Ахурамазды на стене дворца в Персеполе.</b></figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Религия персов</h2></div>
+<div class="easy">
+<p>Главным и самым почитаемым из добрых богов у персов был <button class="term" data-t="ahuramazda">Ахурамазда</button> — его считали творцом воды, земли, огня, света, тепла, растений и животных.</p>
+<p>Он разделил свет и тьму — и поэтому в мире борются эти две силы, добро и зло. Поддерживать мировой порядок Ахурамазде помогают другие божества. <b>Но его свита олицетворяет не явления природы, как в других религиях Древнего Востока, а понятия:</b> добромыслие, правду, справедливость, волю, смирение, здоровье, совершенство, бессмертие.</p>
+<p>Персы верили и в злых божеств, которые насылают болезни, смерть, холод, голод, разных тварей и хищных зверей. Их возглавлял <button class="term" data-t="ariman">Ариман</button> — злой бог, равный по силе Ахурамазде. Оба вечно враждовали, и ни один не мог одолеть другого.</p>
+<p>Эти идеи развил проповедник Зороастр (Заратуштра, Заратустра). Он проповедовал среди персов и родственных им народов, и учение назвали по его имени — <button class="term" data-t="zoroastr">зороастризм</button>.</p>
+<p>Проповедник учил: почитать надо только добрых богов во главе с Ахурамаздой, встать на их сторону в борьбе против зла — и добро когда-нибудь победит в решающей битве.</p>
+</div>
+<div class="book" hidden>
+<p>Главным и наиболее почитаемым из добрых богов у персов был Ахурамазда, которого считали творцом воды, земли, огня, света, тепла, растений, животных. Он разделил свет и тьму, и поэтому в мире борются эти две силы, которые символизируют добро и зло. Поддерживать мировой порядок Ахурамазде помогают другие божества. Эта свита бога олицетворяет не явления природы, как в других религиях Древнего Востока, а такие понятия, как добромыслие, правда, справедливость, воля, смирение, здоровье, совершенство, бессмертие.</p>
+<p>Персы верили в существование злых божеств, которые насылают болезни, смерть, холод, голод, различных тварей, хищных зверей. Их возглавлял равный по силе доброму богу Ахурамазде злой бог Ариман. Оба вечно враждовали друг с другом, и ни один не мог одолеть другого.</p>
+<p>Эти идеи развил проповедник Зороастр (Заратуштра, Заратустра). Он проповедовал среди персов и родственных им народов. Учение назвали по его имени — зороастризм. Проповедник учил, что люди должны почитать только добрых богов во главе с Ахурамаздой, встать на их сторону в борьбе против зла, и добро когда-нибудь победит в решающей битве.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 520 254" role="img" aria-label="Две таблички. Слева жёлтая: Ахурамазда — добрый бог, творец воды, земли, огня, света, тепла, растений и животных; его свита — не явления природы, а понятия: правда, справедливость, здоровье, бессмертие. Справа серая: Ариман — злой бог, равный по силе, во главе злых божеств: болезни, смерть, холод, голод, хищные звери; ни один не может одолеть другого."><use href="#d-zoroastr"/></svg><figcaption><b>Самое необычное здесь — свита.</b> У египтян и шумеров боги отвечали за солнце, реку, ветер. А у персов помощники доброго бога — это правда, справедливость и здоровье. Богами стали не вещи, а качества человека.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 530 210" role="img" aria-label="Лента времени: 612 до н. э. — пала Ассирия; 553 и 547 — восстание против Мидии, затем Лидия; 539 — Кир взял Вавилон; 530 и 525 — гибель Кира, затем захват Египта; конец VI — начало V века — Дарий I и расцвет державы."><use href="#d-lenta"/></svg><figcaption><b>Обрати внимание, как быстро всё случилось.</b> От восстания против Мидии до самой большой державы древности — меньше полувека. Столько же, сколько от рождения твоего дедушки до сегодня.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Подумай, почему зороастризм получил широкое распространение на территории Персии.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">9. Свита Ахурамазды — это правда, справедливость, здоровье, бессмертие. Чем это отличается от богов Египта и Междуречья?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Вспомни §9 (боги Египта) и §11 (боги Междуречья) и сравни, за что те отвечали.</div>
+<div class="rev ans" id="a9" hidden>Там боги отвечали за вещи и явления: Ра — солнце, Хапи — Нил, Энлиль — ветер, Энки — пресная вода. Люди объясняли через богов природу. А у персов рядом с добрым богом стоят не солнце и река, а правда и справедливость. Значит, главным вопросом для них было не «почему идёт дождь», а «как правильно жить».</div>
+</div>
+<div class="think">
+<p class="qt">10. Геродот писал, что персы больше всего ненавидели ложь. Как это связано с их верой?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Соедини схему «Персы глазами Геродота» с тем, что сказано про свиту Ахурамазды.</div>
+<div class="rev ans" id="a10" hidden>Очень напрямую: правда у персов — не просто хорошая привычка, а одно из божеств из свиты доброго бога. Солгать значило встать на сторону Аримана. Поэтому и детей учили правдивости наравне с верховой ездой и стрельбой из лука — это была часть веры, а не воспитания.</div>
+</div>
+<div class="think">
+<p class="qt">11. Ахурамазда и Ариман равны по силе, и ни один не может одолеть другого. Но Зороастр учил, что добро когда-нибудь победит. Нет ли тут противоречия?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Где искать: третий и пятый абзацы раздела 3.</div>
+<div class="rev ans" id="a11" hidden>Противоречия нет, если заметить, кого ещё Зороастр зовёт в эту борьбу — людей. Сами по себе боги равны и будут враждовать вечно. Но человек может встать на сторону добра — и именно люди, по этому учению, и перевесят чашу. Поэтому вера требовала не только молиться, но и поступать правильно.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">Персидское царство было одним из самых могущественных государств Древнего Востока. Могущество державы основывалось на многочисленных завоеваниях, чётком административном делении и управлении, единой финансовой системе. Город Дербент (Дагестан) является одним из самых древнейших городов России и мира.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Какие достижения Кира II Великого способствовали созданию мощной Персидской державы?</li><li>Как ты думаешь, почему Персию стали называть «страна стран», а её правителя «царём царей»?</li><li>Сравни государственное устройство Персии с устройством соседних стран. Способствовало ли это укреплению государства?</li><li>Подумай, почему зороастризм получил широкое распространение на территории Персии.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка ко второму вопросу</button></div>
+<div class="rev hint" id="r1" hidden>Посмотри на карту: в державу вошли Мидия, Лидия, Вавилония, Египет, часть Индии, земли Средней Азии — десятки стран и народов с разной культурой. Каждая из них раньше была отдельным царством со своим царём. Теперь все эти цари подчинялись одному — вот он и «царь царей», а держава — «страна стран».</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — что позволило персам создать самую большую державу древности и долго удерживать её от распада? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Работаем с хронологией</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего события к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Победа персов над Египтом</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Гибель Ассирийской военной державы</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Правление царя Дария I</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Победа персов над Вавилоном</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Персы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 560 246" aria-hidden="true"><use href="#d-persy"/></svg><span class="ftext">Кочевники-скотоводы к востоку от Месопотамии. Учили детей езде, стрельбе и правдивости.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Кир II Великий</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="kir" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Собрал персидские племена, разбил Мидию, взял Лидию и Вавилон.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Сатрапия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 268" aria-hidden="true"><use href="#d-satrapii"/></svg><span class="ftext">Одна из 20 провинций Дария I. Во главе — наместник-сатрап.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">«Уши царя»</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 268" aria-hidden="true"><use href="#d-satrapii"/></svg><span class="ftext">Царские слуги, следившие за сатрапами и доносившие о злоупотреблениях.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Царская дорога</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="karta" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Мощёный путь к Сузам с конными заставами: вести доходили за дни.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Зороастризм</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 520 254" aria-hidden="true"><use href="#d-zoroastr"/></svg><span class="ftext">Учение Зороастра: почитать добрых богов и встать на их сторону против зла.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Чему персы, по Геродоту, учили своих детей?</h3><div class="opts">
+<button class="opt">Чтению, письму и счёту</button>
+<button class="opt" data-ok="1">Верховой езде, стрельбе из лука и правдивости</button>
+<button class="opt">Пахать, сеять и торговать</button></div>
+<div class="fb">Ложь они считали самым постыдным пороком, а долги — вторым, потому что должнику приходится лгать.</div></div>
+<div class="q"><h3>2. Как Кир взял Вавилон?</h3><div class="opts">
+<button class="opt">Разбил стены таранами</button>
+<button class="opt" data-ok="1">Отвёл Евфрат в каналы и вошёл по сухому руслу</button>
+<button class="opt">Город сдался без боя</button></div>
+<div class="fb">Сравни с Ниневией из §15: там реку, наоборот, запрудили и затопили город.</div></div>
+<div class="q"><h3>3. На что Дарий I разделил империю?</h3><div class="opts">
+<button class="opt" data-ok="1">На 20 сатрапий</button>
+<button class="opt">На 40 номов</button>
+<button class="opt">На города-государства</button></div>
+<div class="fb">Во главе каждой стоял наместник-сатрап: суд, налоги, хозяйство и чиновники.</div></div>
+<div class="q"><h3>4. Зачем нужна была Царская дорога?</h3><div class="opts">
+<button class="opt">Для торговых караванов</button>
+<button class="opt">Для парадов</button>
+<button class="opt" data-ok="1">Чтобы гонцы быстро доставляли вести и приказы</button></div>
+<div class="fb">По всей её длине стояли конные заставы: гонцы сменяли друг друга.</div></div>
+<div class="q"><h3>5. Что такое золотой дарик?</h3><div class="opts">
+<button class="opt" data-ok="1">Единая монета державы</button>
+<button class="opt">Титул царя</button>
+<button class="opt">Название дворца</button></div>
+<div class="fb">Дарий ввёл его на всю державу, чтобы торговать между провинциями было проще.</div></div>
+<div class="q"><h3>6. Кто в зороастризме противостоит доброму богу Ахурамазде?</h3><div class="opts">
+<button class="opt" data-ok="1">Ариман</button>
+<button class="opt">Заратуштра</button>
+<button class="opt">Ахеменид</button></div>
+<div class="fb">Они равны по силе и вечно враждуют — но Зороастр учил, что добро в конце концов победит.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Как персы стали державой</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl2" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl2" hidden><ol><li>Кочевники-скотоводы к востоку от Месопотамии; платили дань Мидии, потом Ассирии, потом снова Мидии.</li><li>Середина VI века до н. э.: Кир II Великий подчинил персидские племена, создал войско; 553 — восстание против Мидии; 547 — Лидия; 539 — Вавилон по обмелевшему руслу Евфрата.</li><li>Отпустил покорённых домой и вернул им статуи богов; знатным поручал налоги и суд; погиб в 530 году, но держава не распалась.</li></ol></div>
+</div>
+<div class="think">
+<h3>Дарий I и управление</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl3" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl3" hidden><ol><li>525 — захват Египта; при Дарии — север Балкан, часть Индии, Средняя Азия; десятки стран и народов.</li><li>20 сатрапий во главе с сатрапами; «уши царя» следят за ними; Царская дорога с конными заставами к Сузам.</li><li>Единый золотой дарик; восстановленный канал из Средиземного моря в Красное; столица Персеполь; на севере — крепость у «Каспийских врат», нынешний Дербент.</li></ol></div>
+</div>
+<div class="think">
+<h3>Вера персов</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Ахурамазда — добрый бог, творец воды, земли, огня, света, тепла, растений и животных; он разделил свет и тьму.</li><li>Его свита — не явления природы, а понятия: добромыслие, правда, справедливость, воля, смирение, здоровье, совершенство, бессмертие.</li><li>Ариман — равный по силе злой бог. Зороастр (Заратуштра) учил почитать добрых богов и встать на их сторону: добро когда-нибудь победит.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p15.html">‹ §15 Ассирия</a>
+  <span class="pn cur">§16 Персия</span>
+  <a class="pn" href="p17.html">§17 Древняя Индия ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 16 · История, 5 класс · страницы 91—96 · глава II «Древний Восток»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'d-persy':'0 0 560 246','d-vavilon':'0 0 530 232','d-pochemu':'0 0 520 260','d-satrapii':'0 0 540 268','d-zoroastr':'0 0 520 254','d-lenta':'0 0 530 210'};
+
+var T={
+persy:{w:"Персы",k:"народ",s:"d-persy",t:"Кочевые племена к востоку от Месопотамии, на территории современногоИрана. Главным занятием было скотоводство. Геродот писал, что детей у них учили трём вещам: верховой езде, стрельбе из лука и правдивости."},
+kir:{w:"Кир II Великий",k:"царь",p:"kir",t:"Вождь одного из персидских племён. В середине VI (6) века до н. э. подчинил остальные племена, объявил себя царём и создал одно из лучших войск своего времени. Завоевал Мидию, Лидию и Вавилон."},
+lidia:{w:"Лидия",k:"страна",p:"karta",t:"Процветающая страна, захваченная персами в 547 году до н. э. Именно там ещё в VII (7) веке до н. э. впервые начали чеканить монеты — из сплава золота и серебра. Её царь Крёз был так богат, что его имя вошло в поговорку: «богат как Крёз»."},
+ahemenid:{w:"Держава Ахеменидов",k:"государство",p:"karta",t:"Другое название Персидской державы — по имени правящей династии Ахеменидов."},
+dariy:{w:"Дарий I",k:"царь",s:"d-satrapii",t:"Царь конца VI (6) — начала V (5) века до н. э., при котором Персидская держава достигла наивысшего могущества. Подчинил земли на севере Балканского полуострова, часть Индии и новые территории в Средней Азии."},
+satrapia:{w:"Сатрапия",k:"область",s:"d-satrapii",t:"Провинция Персидской империи: Дарий разделил державу на 20 таких. Во главе каждой стоял наместник — сатрап. Он судил, отвечал за сбор налогов, за хозяйство и за работу местных чиновников."},
+ushi:{w:"«Уши царя»",k:"люди",s:"d-satrapii",t:"Царские слуги, которые наблюдали за сатрапами и доносили царю обо всех злоупотреблениях."},
+doroga:{w:"Царская дорога",k:"путь",p:"karta",t:"Мощёная дорога, соединившая западные провинции империи с Сузами. По всей длине стояли конные заставы с гонцами: сменяя друг друга, они доставляли царю сообщения о вторжениях и восстаниях и передавали войскам его приказы."},
+darik:{w:"Золотой дарик",k:"монета",s:"d-satrapii",t:"Единая монета, введённая Дарием I на всю державу."},
+persepol:{w:"Персеполь",k:"город",p:"persepol",t:"Столица персов при Дарии I. Сюда приезжали послы из провинций, чтобы вручить царю богатые дары."},
+derbent:{w:"Дербент",k:"город",p:"derbent",t:"Город на северной границе персидских земель, у «Каспийских врат». Название с персидского значит «закрытые врата». Стоит в России, в Дагестане, и входит в число древнейших городов мира."},
+ahuramazda:{w:"Ахурамазда",k:"бог",p:"ahuramazda",t:"Главный и самый почитаемый добрый бог персов: творец воды, земли, огня, света, тепла, растений и животных. Он разделил свет и тьму — поэтому в мире и борются две силы, добро и зло."},
+ariman:{w:"Ариман",k:"бог",s:"d-zoroastr",t:"Злой бог, равный по силе Ахурамазде. Возглавлял злых божеств, которые насылают болезни, смерть, холод, голод, хищных зверей. Оба вечно враждовали, и ни один не мог одолеть другого."},
+zoroastr:{w:"Зороастризм",k:"религия",s:"d-zoroastr",t:"Учение проповедника Зороастра (Заратуштры): почитать надо только добрых богов во главе с Ахурамаздой, встать на их сторону в борьбе против зла — и добро когда-нибудь победит в решающей битве."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p16:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p16:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>4){fb.textContent="Верно! Ассирия пала (612) → Вавилон взят (539) → Египет завоёван (525) → Дарий I.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Посмотри ленту времени в разделе 3.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p16:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p16:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 4: земледелие, скотоводство, ремесло и век металлов.">
+<title>Земледелие, скотоводство и ремесло</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+</defs>
+
+<!-- присваивающее → производящее -->
+<symbol id="m-perehod" viewBox="0 0 440 176">
+  <rect x="2" y="2" width="186" height="130" rx="14" fill="var(--paper2)"/>
+  <rect x="252" y="2" width="186" height="130" rx="14" fill="var(--paper2)"/>
+  <text x="14" y="26" font-size="12.5" font-weight="700" fill="var(--soft)">БЫЛО</text>
+  <text x="264" y="26" font-size="12.5" font-weight="700" fill="var(--moss)">СТАЛО</text>
+  <ellipse cx="96" cy="76" rx="44" ry="28" fill="var(--green)"/>
+  <circle cx="78" cy="68" r="6" fill="var(--red)"/><circle cx="104" cy="62" r="6" fill="var(--red)"/>
+  <circle cx="116" cy="84" r="6" fill="var(--red)"/><circle cx="86" cy="90" r="6" fill="var(--red)"/>
+  <path d="M20 112 L62 92" stroke="var(--brown)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="68" cy="88" r="9" fill="var(--brown)"/>
+  <text x="96" y="124" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">беру готовое</text>
+  <text x="96" y="154" text-anchor="middle" font-size="13" font-weight="700" fill="var(--soft)">присваивающее</text>
+  <text x="96" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="var(--soft)">хозяйство</text>
+  <path d="M200 66 H240" stroke="var(--red)" stroke-width="4" fill="none" marker-end="url(#arR)"/>
+  <path d="M264 108 h160" stroke="var(--brown)" stroke-width="8" stroke-linecap="round"/>
+  <g stroke="var(--green)" stroke-width="5" stroke-linecap="round">
+    <path d="M292 108 V76"/><path d="M324 108 V66"/><path d="M356 108 V72"/><path d="M388 108 V62"/></g>
+  <g fill="var(--ochre)">
+    <ellipse cx="292" cy="70" rx="8" ry="12"/><ellipse cx="324" cy="60" rx="8" ry="12"/>
+    <ellipse cx="356" cy="66" rx="8" ry="12"/><ellipse cx="388" cy="56" rx="8" ry="12"/></g>
+  <text x="352" y="126" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">выращиваю сам</text>
+  <text x="344" y="154" text-anchor="middle" font-size="13" font-weight="700" fill="var(--moss)">производящее</text>
+  <text x="344" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="var(--moss)">хозяйство</text>
+</symbol>
+
+<!-- орудия первых земледельцев -->
+<symbol id="m-orudiya" viewBox="0 0 330 168">
+  <rect x="2" y="2" width="156" height="118" rx="14" fill="var(--paper2)"/>
+  <rect x="172" y="2" width="156" height="118" rx="14" fill="var(--paper2)"/>
+  <path d="M52 22 L74 92" stroke="var(--brown)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M74 92 L104 78" stroke="var(--brown)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M40 104 h80" stroke="var(--brownD)" stroke-width="6" stroke-linecap="round"/>
+  <text x="80" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink)">мотыга</text>
+  <text x="80" y="158" text-anchor="middle" font-size="11.5" fill="var(--soft)">палка с сучком</text>
+  <path d="M206 88 C222 46 276 40 300 54" stroke="var(--brown)" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <g fill="var(--stone)" stroke="var(--illink)" stroke-width="1.6">
+    <rect x="224" y="52" width="16" height="12" rx="2" transform="rotate(-18 232 58)"/>
+    <rect x="246" y="44" width="16" height="12" rx="2" transform="rotate(-10 254 50)"/>
+    <rect x="268" y="42" width="16" height="12" rx="2" transform="rotate(-2 276 48)"/>
+  </g>
+  <text x="250" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink)">жатвенный нож</text>
+  <text x="250" y="158" text-anchor="middle" font-size="11.5" fill="var(--soft)">каменные пластинки</text>
+</symbol>
+
+<!-- обмен: земледелец и ремесленник -->
+<symbol id="m-remeslo" viewBox="0 0 440 156">
+  <rect x="4" y="16" width="150" height="88" rx="14" fill="var(--paper2)"/>
+  <rect x="286" y="16" width="150" height="88" rx="14" fill="var(--paper2)"/>
+  <g stroke="var(--green)" stroke-width="5" stroke-linecap="round">
+    <path d="M58 88 V54"/><path d="M80 88 V46"/><path d="M102 88 V56"/></g>
+  <g fill="var(--ochre)">
+    <ellipse cx="58" cy="48" rx="8" ry="12"/><ellipse cx="80" cy="40" rx="8" ry="12"/><ellipse cx="102" cy="50" rx="8" ry="12"/></g>
+  <text x="79" y="126" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink)">земледелец</text>
+  <text x="79" y="144" text-anchor="middle" font-size="11.5" fill="var(--soft)">растит еду</text>
+  <path d="M340 90 c-14 0 -18 -30 -6 -34 c-6 -12 32 -12 26 0 c12 4 8 34 -6 34Z" fill="var(--red)"/>
+  <path d="M334 56 h24" stroke="var(--brownD)" stroke-width="3"/>
+  <ellipse cx="392" cy="86" rx="22" ry="8" fill="var(--brown)"/>
+  <text x="361" y="126" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink)">ремесленник</text>
+  <text x="361" y="144" text-anchor="middle" font-size="11.5" fill="var(--soft)">делает вещи</text>
+  <path d="M166 48 H274" stroke="var(--red)" stroke-width="3.5" fill="none" marker-end="url(#arR)"/>
+  <path d="M274 76 H166" stroke="var(--red)" stroke-width="3.5" fill="none" marker-end="url(#arR)"/>
+  <text x="220" y="38" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--red)">обмен</text>
+  <text x="220" y="100" text-anchor="middle" font-size="11.5" fill="var(--soft)">так ремесло отделилось</text>
+</symbol>
+
+<!-- век металлов -->
+<symbol id="m-metall" viewBox="0 0 450 150">
+  <rect x="8" y="40" width="150" height="34" rx="8" fill="var(--stone)"/>
+  <rect x="161" y="40" width="80" height="34" rx="8" fill="var(--ochre)"/>
+  <rect x="244" y="40" width="96" height="34" rx="8" fill="var(--brown)"/>
+  <rect x="343" y="40" width="99" height="34" rx="8" fill="var(--soft)"/>
+  <text x="83" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">КАМЕНЬ</text>
+  <text x="201" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">МЕДЬ</text>
+  <text x="292" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF3E2">БРОНЗА</text>
+  <text x="392" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF3E2">ЖЕЛЕЗО</text>
+  <text x="201" y="92" text-anchor="middle" font-size="11.5" fill="var(--illink)">энеолит</text>
+  <text x="201" y="107" text-anchor="middle" font-size="10.5" fill="var(--soft)">4 тыс. до н.э.</text>
+  <text x="292" y="92" text-anchor="middle" font-size="11.5" fill="var(--illink)">бронзовый век</text>
+  <text x="292" y="107" text-anchor="middle" font-size="10.5" fill="var(--soft)">3—2 тыс. до н.э.</text>
+  <text x="392" y="92" text-anchor="middle" font-size="11.5" fill="var(--illink)">железный век</text>
+  <text x="392" y="107" text-anchor="middle" font-size="10.5" fill="var(--soft)">2 тыс. до н.э.</text>
+  <text x="8" y="30" font-size="11.5" fill="var(--soft)">раньше</text>
+  <text x="442" y="30" text-anchor="end" font-size="11.5" fill="var(--soft)">ближе к нам</text>
+  <text x="8" y="140" font-size="11.5" fill="var(--soft)">Медь не вытеснила камень сразу — сначала работали и тем, и другим.</text>
+</symbol>
+
+<!-- колесо -->
+<symbol id="m-koleso" viewBox="0 0 330 160">
+  <text x="8" y="20" font-size="12.5" font-weight="700" fill="var(--illink)">4-е тысячелетие до н. э. — изобрели колесо</text>
+  <circle cx="78" cy="86" r="38" fill="none" stroke="var(--brown)" stroke-width="10"/>
+  <circle cx="78" cy="86" r="8" fill="var(--brownD)"/>
+  <g stroke="var(--brown)" stroke-width="5">
+    <path d="M78 52 V120"/><path d="M44 86 H112"/><path d="M54 62 L102 110"/><path d="M102 62 L54 110"/></g>
+  <path d="M136 62 H172" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="186" y="58" width="120" height="20" rx="6" fill="var(--brown)"/>
+  <path d="M186 78 h120" stroke="var(--brownD)" stroke-width="4"/>
+  <circle cx="212" cy="102" r="20" fill="none" stroke="var(--brownD)" stroke-width="7"/>
+  <circle cx="282" cy="102" r="20" fill="none" stroke="var(--brownD)" stroke-width="7"/>
+  <path d="M186 68 L156 58" stroke="var(--brown)" stroke-width="6" stroke-linecap="round"/>
+  <text x="246" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink)">первые повозки</text>
+  <text x="78" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink)">колесо</text>
+</symbol>
+
+<!-- родовая община → соседская -->
+<symbol id="m-obshina" viewBox="0 0 440 186">
+  <rect x="2" y="2" width="186" height="136" rx="14" fill="var(--paper2)"/>
+  <rect x="252" y="2" width="186" height="136" rx="14" fill="var(--paper2)"/>
+  <circle cx="95" cy="70" r="52" fill="none" stroke="var(--red)" stroke-width="3.5"/>
+  <ellipse cx="95" cy="70" rx="34" ry="24" fill="var(--green)" opacity=".55"/>
+  <text x="95" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink)">общее поле</text>
+  <g fill="var(--illink)">
+    <circle cx="95" cy="28" r="6"/><circle cx="52" cy="58" r="6"/><circle cx="138" cy="58" r="6"/>
+    <circle cx="68" cy="108" r="6"/><circle cx="122" cy="108" r="6"/></g>
+  <text x="95" y="158" text-anchor="middle" font-size="13" font-weight="700" fill="var(--red)">родовая община</text>
+  <text x="95" y="176" text-anchor="middle" font-size="11.5" fill="var(--soft)">всё общее, добыча на всех</text>
+  <path d="M200 66 H240" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <g fill="var(--green)" opacity=".55">
+    <rect x="272" y="26" width="66" height="42" rx="6"/><rect x="348" y="26" width="66" height="42" rx="6"/>
+    <rect x="272" y="76" width="66" height="42" rx="6"/><rect x="348" y="76" width="66" height="42" rx="6"/></g>
+  <g fill="var(--illink)">
+    <circle cx="305" cy="47" r="6"/><circle cx="381" cy="47" r="6"/>
+    <circle cx="305" cy="97" r="6"/><circle cx="381" cy="97" r="6"/></g>
+  <text x="343" y="158" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ice)">соседская община</text>
+  <text x="343" y="176" text-anchor="middle" font-size="11.5" fill="var(--soft)">у каждой семьи свой участок</text>
+</symbol>
+
+<!-- откуда взялось неравенство -->
+<symbol id="m-neravno" viewBox="0 0 450 190">
+  <rect x="4" y="30" width="96" height="58" rx="12" fill="var(--paper2)"/>
+  <g fill="var(--ochre)"><ellipse cx="38" cy="58" rx="8" ry="12"/><ellipse cx="54" cy="52" rx="8" ry="12"/><ellipse cx="70" cy="58" rx="8" ry="12"/></g>
+  <text x="52" y="106" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">урожая стало</text>
+  <text x="58" y="121" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink)">больше, чем надо</text>
+  <path d="M106 58 H132" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="142" y="30" width="96" height="58" rx="12" fill="var(--paper2)"/>
+  <path d="M164 50 H216" stroke="var(--red)" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+  <path d="M216 70 H164" stroke="var(--red)" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+  <text x="190" y="106" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">излишки меняют</text>
+  <text x="190" y="121" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">на чужие вещи</text>
+  <path d="M244 58 H270" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <rect x="280" y="30" width="96" height="58" rx="12" fill="var(--paper2)"/>
+  <g fill="var(--illink)"><circle cx="300" cy="66" r="7"/><circle cx="322" cy="66" r="7"/></g>
+  <g fill="var(--ochre)"><circle cx="348" cy="60" r="11"/></g>
+  <text x="328" y="106" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">у кого-то вещей</text>
+  <text x="328" y="121" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--illink)">больше</text>
+  <path d="M382 58 H406" stroke="var(--illink)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <circle cx="428" cy="58" r="14" fill="var(--ochre)"/>
+  <path d="M414 36 l5 -12 l7 7 l7 -7 l5 12Z" fill="var(--ochre)"/>
+  <text x="424" y="106" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--red)">знать</text>
+  <text x="4" y="20" font-size="12.5" fill="var(--soft)">Откуда взялось неравенство:</text>
+  <text x="4" y="166" font-size="11.5" fill="var(--soft)">Старейшины, вожди и шаманы брали лучшие земли и стада</text>
+  <text x="4" y="182" font-size="11.5" fill="var(--soft)">— и стали передавать власть по наследству.</text>
+</symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 4</span>
+    <h1>Земледелие, скотоводство и ремесло</h1>
+    <p class="lede">Как человек перестал брать готовое и начал выращивать сам. Трудные слова можно нажимать.</p>
+    <div class="qbox">
+      <span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Какие изменения произошли в жизни древних людей в эпоху неолита?</div>
+    </div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p3.html">‹ §3 Верования и искусство</a>
+  <span class="pn cur">§4 Земледелие и скотоводство</span>
+  <a class="pn" href="p5.html">§5 Рождение Египта ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы">
+      <a href="#s1" data-j="s1">1</a><a href="#s2" data-j="s2">2</a><a href="#s3" data-j="s3">3</a><a href="#s4" data-j="s4">4</a>
+      <a href="#sit" data-j="sit" title="Подведём итоги">≡</a>
+      <a href="#s5" title="Проверь себя">✓</a><a href="#s6" title="Расскажи вслух">!</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-zemledeltsy" src="img/735db3ce2a3a.jpg" alt="Картина: люди обрабатывают поле мотыгами, рядом загон со скотом">
+    <figcaption><span class="src">из учебника</span><b>Первобытные земледельцы и скотоводы.</b> От собирательства и охоты первобытные люди постепенно начали переход к земледелию и скотоводству.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="shead"><span class="snum">1</span><h2>Переход к производящему хозяйству</h2></div>
+   <div class="easy">
+    <p>Ледник отступил, и климат стал почти таким же, как сейчас. Поменялись звери и растения: на месте болот и равнин выросли густые леса. Стада крупных животных ушли на север, мамонты вымерли.</p>
+    <p>Охотиться теперь приходилось на мелкого зверя — для этого придумали лук и стрелы, а для рыбы — сеть. Это случилось в мезолите. Тогда же помощником на охоте и верным другом человека стала собака.</p>
+    <p>Примерно 10 тысяч лет назад начался <button class="term" data-t="neolit">неолит</button> — новый каменный век. С него начинается <button class="term" data-t="proizv">производящее хозяйство</button>: человек перестал только брать готовое и начал сам производить то, что ему нужно.</p>
+   </div>
+   <div class="book" hidden>
+    <p>С отступлением ледника на Земле установился климат, близкий к современному. Изменился животный и растительный мир: на месте болот и равнин выросли густые леса. Стада крупных животных ушли на север, некоторые виды вымерли, например мамонты. Для охоты на мелких животных человек изобрёл лук и стрелы, для ловли рыбы — сеть. Это произошло в период мезолита. Тогда же помощником на охоте и верным другом человека стала собака.</p>
+    <p>Приблизительно 10 тысяч лет назад начался период, который учёные называют <button class="term" data-t="neolit">неолитом</button>, то есть «новым каменным веком». С этого времени начинается время <button class="term" data-t="proizv">производящего хозяйства</button>. Его главная особенность — переход от охоты и собирательства к производству жизненно необходимых продуктов.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 440 176" role="img" aria-label="Слева куст с ягодами и рука — присваивающее хозяйство. Справа грядка с колосьями — производящее."><use href="#m-perehod"/></svg>
+    <figcaption><b>Самая большая перемена за всю первобытность.</b> Помнишь, в §2 картинка «ращу сам» была перечёркнута? Теперь всё наоборот: именно это люди и научились делать.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Люди заметили: зёрна, упавшие в землю, прорастают и дают новые зёрна. Значит, можно закладывать их в почву самому и получать урожай. Так появилось <button class="term" data-t="zemled">земледелие</button>.</p>
+    <p>Почву рыхлили деревянными <button class="term" data-t="motyga">мотыгами</button> — это палка с сучком. Урожай срезали жатвенными ножами из каменных пластинок.</p>
+    <p>Из-за земледелия люди стали жить на одном месте — <button class="term" data-t="osedly">оседло</button>. Первые земледельцы жили в Передней Азии.</p>
+    <p>Охотники тоже перешли к новому: научились приручать диких животных. Появились козы, овцы, потом свиньи, коровы, ослы. Их разводили ради мяса, молока, кожи и шерсти. Так появилось <button class="term" data-t="skotov">скотоводство</button>.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Древние люди заметили, что зёрна, упавшие в землю, прорастают и дают новые зёрна. Закладывая их в почву, человек получал урожай. Так возникло <button class="term" data-t="zemled">земледелие</button>. Почву для посева семян обрабатывали деревянными <button class="term" data-t="motyga">мотыгами</button> в виде палки с сучком, при сборе урожая использовали жатвенные ножи, сделанные из каменных пластинок.</p>
+    <p>Занятие земледелием способствовало переходу древних людей к <button class="term" data-t="osedly">оседлому образу жизни</button>. Первые земледельцы обитали в Передней Азии.</p>
+    <p>Переход к новому виду хозяйствования произошёл и у охотников. Они научились приручать диких животных. В хозяйстве древних людей появились козы, овцы, позднее — свиньи, коровы, ослы. Их разводили для получения мяса, молока, кожи и шерсти. Так возникло <button class="term" data-t="skotov">скотоводство</button>.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 168" role="img" aria-label="Слева мотыга — палка с сучком. Справа жатвенный нож с каменными пластинками."><use href="#m-orudiya"/></svg>
+    <figcaption><b>Два первых орудия земледельца.</b> Мотыгой рыхлили землю, жатвенным ножом срезали колосья. Ни металла, ни плуга пока нет.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Задание учебника к рисункам ниже</b>
+    <p style="margin:0">▲ 1. Назови правильный порядок земледельческих работ. Объясни свой ответ. 2. Какие орудия использовали древние люди для занятия земледелием?</p>
+   </div>
+  </div>
+
+  <div class="strip4">
+   <figure class="photo"><div class="fig">
+    <img id="ph-shag1" src="img/72e0bac446a4.jpg" alt="Люди срезают колосья серпами">
+    <figcaption><span class="src">рисунок 1</span></figcaption></div></figure>
+   <figure class="photo"><div class="fig">
+    <img id="ph-shag2" src="img/9e3aa375d5b2.jpg" alt="Люди разбрасывают зёрна по вспаханному полю">
+    <figcaption><span class="src">рисунок 2</span></figcaption></div></figure>
+   <figure class="photo"><div class="fig">
+    <img id="ph-shag3" src="img/6c1aa2bdbd41.jpg" alt="Люди рыхлят землю мотыгами">
+    <figcaption><span class="src">рисунок 3</span></figcaption></div></figure>
+   <figure class="photo"><div class="fig">
+    <img id="ph-shag4" src="img/b92cd23b123b.jpg" alt="Человек расчищает участок от деревьев">
+    <figcaption><span class="src">рисунок 4</span></figcaption></div></figure>
+  </div>
+
+  <div class="col">
+   <div class="think">
+    <p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Рисунки в учебнике идут не по порядку — в этом и задание.</p>
+    <div class="revbtns"><button class="revbtn" data-rev="order" aria-expanded="false">Показать правильный порядок</button></div>
+    <div class="rev ans" id="order" hidden><b>4 → 3 → 2 → 1.</b> Сначала расчищают участок от деревьев, потом рыхлят землю мотыгами, потом сеют зёрна, и только в конце срезают урожай жатвенными ножами. Орудия: каменный топор, деревянная мотыга, жатвенный нож из каменных пластинок.</div>
+   </div>
+
+   <div class="ask"><b>Вопрос учебника</b>
+    <ol><li>Чем земледелие отличалось от собирательства?</li></ol>
+   </div>
+
+   <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">1. Почему лук и стрелы понадобились именно после отступления ледника?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h1" hidden>Где искать: первый абзац раздела 1.</div>
+    <div class="rev ans" id="a1" hidden>Климат изменился, стада крупных животных ушли на север, а мамонты вымерли. Охотиться стало не на кого, кроме мелкого зверя, — а его копьём в упор не возьмёшь. Понадобилось оружие, которым бьют издалека и точно.</div>
+   </div>
+   <div class="think">
+    <p class="qt">2. Почему земледелие заставило людей осесть на одном месте?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h2" hidden>Где искать: абзац про оседлый образ жизни, и вспомни §2 — почему собиратели уходили.</div>
+    <div class="rev ans" id="a2" hidden>Собиратели уходили туда, где еда ещё осталась. А земледельцу уходить нельзя: он посеял зерно и должен дождаться урожая на этом самом поле. Поле не унесёшь — приходится жить рядом с ним.</div>
+   </div>
+   <div class="think">
+    <p class="qt">3. Чем производящее хозяйство отличается от присваивающего?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h3" hidden>Где искать: конец первой части раздела 1 и §2, где объяснялось присваивающее.</div>
+    <div class="rev ans" id="a3" hidden>При присваивающем человек брал готовое: охотился, ловил рыбу, собирал. При производящем он сам производит то, что нужно: сеет зерно и получает урожай, разводит животных и получает мясо, молоко, кожу и шерсть.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">2</span><h2>Новые виды деятельности</h2></div>
+   <div class="easy">
+    <p>В первобытную эпоху всё менялось очень медленно. Проходили тысячи лет, прежде чем у человека появлялись новые умения и менялись занятия.</p>
+    <p>Придумали деревянный <button class="term" data-t="plug">плуг</button> — и земля стала обрабатываться лучше, даже твёрдая. Так началось плужное земледелие. Поля стали больше, урожай — больше, и часть людей освободилась от работы в поле для других дел.</p>
+    <p>Научились обрабатывать камень, дерево и кость по-новому: пилить, шлифовать, сверлить. На простом ткацком станке стали делать ткань и шить из неё одежду — постепенно она заменила шкуры.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Изменения в первобытную эпоху происходили очень медленно. Проходили тысячелетия, прежде чем у человека появлялись новые навыки и способности, менялись привычки и занятия.</p>
+    <p>С изобретением деревянного <button class="term" data-t="plug">плуга</button> улучшилась обработка земли. Его применение позволяло обрабатывать твёрдую почву. Так началось плужное земледелие. Расширение посевной площади увеличивало урожаи, часть людей освобождалась от земледельческих работ для других занятий.</p>
+    <p>Древние люди научились обрабатывать камень, дерево, кость такими способами, как пиление, шлифование, сверление и др. На примитивном ткацком станке люди вырабатывали ткань, из которой шили одежду. Постепенно она заменила шкуры животных.</p>
+   </div>
+  </div>
+
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-plug" src="img/630757dc81f2.jpg" alt="Деревянный плуг — изогнутое дерево с поперечной ручкой">
+    <figcaption><span class="src">из учебника</span><b>Деревянный плуг.</b> Им можно было поднять даже твёрдую почву — мотыга так не умела.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p><button class="term" data-t="remeslo">Ремесло</button> отделилось от земледелия и стало самостоятельным занятием. Ремесленник делал вещи и менял их на еду — и так кормил свою семью, не работая в поле.</p>
+    <p>Обмен разрастался, в него втягивались соседние общины — иногда за сотни километров друг от друга. Появились люди, которые занимались торговлей, и первые <button class="term" data-t="puti">торговые пути</button> — маршруты, по которым общины обменивались товарами. Так связывались далёкие посёлки с разной культурой.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Произошло отделение от земледелия <button class="term" data-t="remeslo">ремесла</button> как самостоятельной деятельности. Ремесленник, изготавливая изделия, смог обменивать их на продукты земледелия и скотоводства, оказался способным обеспечивать свою семью. Развивается обмен, в который постепенно втягиваются соседние общины, иногда разделённые сотнями километров. Появляются люди, занимающиеся торговлей, возникают первые <button class="term" data-t="puti">торговые пути</button> — определённые маршруты, по которым происходил товарообмен между разными общинами. Устанавливаются связи между отдалёнными поселениями, отличающимися своей культурой.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 440 156" role="img" aria-label="Слева колосья — земледелец, справа горшок — ремесленник, между ними две стрелки обмена."><use href="#m-remeslo"/></svg>
+    <figcaption><b>Как ремесло стало отдельным делом.</b> Пока урожая хватало только на себя, гончарить было некогда. Как только появились излишки, вещи стало на что менять.</figcaption>
+   </div>
+  </figure>
+
+  <div class="grid2">
+   <figure class="photo"><div class="fig">
+    <img id="ph-goncharny" src="img/2139a2cef373.jpg" alt="Гончар работает за кругом, рядом готовые сосуды">
+    <figcaption><span class="src">из учебника</span><b>Гончар и <button class="term" data-t="keramika">керамика</button>.</b> С гончарным кругом сосуды стали ровнее и разнообразнее.</figcaption>
+   </div></figure>
+   <figure class="photo"><div class="fig">
+    <img id="ph-tkacky" src="img/0e88c4baeadf.jpg" alt="Две фигуры у вертикального ткацкого станка">
+    <figcaption><span class="src">из учебника</span><b>Ткацкий станок.</b> Ткань постепенно заменила шкуры.</figcaption>
+   </div></figure>
+  </div>
+
+  <div class="col">
+   <div class="ask"><b>Подробнее: первые ремёсла</b>
+    <p style="margin:0">Первые ремёсла возникали постепенно. Глина, размоченная в воде, принимала в руках человека любую форму — и в неолите из неё стали делать сосуды для хранения продуктов. С изобретением гончарного круга изделия из глины — <button class="term" data-t="keramika">керамика</button> — стали получаться разнообразнее и совершеннее.</p>
+   </div>
+
+   <div class="easy">
+    <p>Важной дорогой была степная зона Евразии. Там жили разные народы и передавали друг другу способы делать орудия, посуду, транспорт. Кочевники соединяли разобщённые земли и связывали между собой разные культуры.</p>
+    <p>В 4-м тысячелетии до нашей эры на Востоке изобрели <button class="term" data-t="koleso">колесо</button>. С ним научились использовать силу животных — появились первые повозки.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Важной транзитной территорией была степная зона Евразии. Здесь обитали различные народы, передававшие друг другу способы производства орудий труда, посуды, транспорта. Кочевники соединяли разобщённые территории, способствовали установлению связей между различными культурами.</p>
+    <p>В 4-м тысячелетии до н. э. на Востоке люди изобрели <button class="term" data-t="koleso">колесо</button>. С его помощью они научились использовать тягловую силу животных, и появились первые повозки.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 330 160" role="img" aria-label="Колесо со спицами и рядом повозка на двух колёсах с дышлом."><use href="#m-koleso"/></svg>
+    <figcaption><b>Колесо.</b> Одно изобретение — и груз, который раньше несли на себе, теперь везут. Дальше, больше и быстрее.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Вопросы учебника</b>
+    <ol><li>Какие новые виды деятельности появились в период неолита?</li>
+        <li>К каким изменениям в быту людей привело появление керамики и ткачества?</li></ol>
+   </div>
+
+   <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">4. Как плуг привёл к появлению ремесленников?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h4" hidden>Где искать: абзац про плуг и абзац про отделение ремесла.</div>
+    <div class="rev ans" id="a4" hidden>Плуг позволил обрабатывать больше земли, посевы выросли, урожаи стали больше. Значит, кормить всех могло меньше людей — и часть освободилась от работы в поле. Они и занялись другими делами: гончарством, ткачеством, обработкой камня.</div>
+   </div>
+   <div class="think">
+    <p class="qt">5. Почему ремесленник мог прокормить семью, не выращивая еду?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h5" hidden>Где искать: абзац про отделение ремесла.</div>
+    <div class="rev ans" id="a5" hidden>Он делал изделия и обменивал их на продукты земледелия и скотоводства. То есть еду он не выращивал, а выменивал — на то, что умел делать лучше других.</div>
+   </div>
+   <div class="think">
+    <p class="qt">6. Зачем кочевникам степи была нужна вся Евразия?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h6" hidden>Где искать: абзац про степную зону.</div>
+    <div class="rev ans" id="a6" hidden>Степь была транзитной территорией — по ней шли дороги. Кочевники передавали от народа к народу способы делать орудия, посуду и транспорт, соединяли разобщённые земли и связывали между собой разные культуры.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">3</span><h2>Век металлов</h2></div>
+   <div class="easy">
+    <p>Примерно в 4-м тысячелетии до нашей эры люди научились получать <button class="term" data-t="med">медь</button> из руды, которую находили прямо на поверхности земли, и делать из неё вещи. Время, когда распространились медные орудия, называют энеолитом. Медными орудиями работали наравне с каменными.</p>
+    <p>3—2-е тысячелетия до нашей эры — начало <button class="term" data-t="bronza">бронзового века</button>. Бронзу получали, сплавляя медь с другими металлами: свинцом, оловом, мышьяком.</p>
+    <p>Как получать <button class="term" data-t="zhelezo">железо</button> из руды, открыли во 2-м тысячелетии до нашей эры. Железными орудиями стало проще обрабатывать дерево: строить жилища, делать суда и колесницы, посуду, мебель, игрушки. Появились новые ремёсла — кузнечное, оружейное. Земли стали обрабатывать больше, и работа шла быстрее.</p>
+    <p>Древнейшие центры металлургии — Малая Азия, Восточное Средиземноморье и Закавказье.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Приблизительно в 4-м тысячелетии до н. э. древние люди научились получать <button class="term" data-t="med">медь</button> из руды, которую находили на поверхности земли, и изготавливать из этого металла изделия. Период распространения медных орудий называют энеолитом. Медные орудия использовали наряду с каменными.</p>
+    <p>3—2-е тысячелетия до н. э. — начало <button class="term" data-t="bronza">бронзового века</button>. Бронзу получали из сплава меди с другими металлами, например свинцом, оловом, мышьяком.</p>
+    <p>Способ получения <button class="term" data-t="zhelezo">железа</button> из руды был открыт во 2-м тысячелетии до н. э. С помощью железных орудий совершенствовалась обработка дерева при строительстве жилищ, сооружении транспортных средств (судов, колесниц и др.), изготовлении разнообразных предметов быта (посуды, мебели, игрушек и др.). С получением древним человеком железа развиваются новые ремёсла: кузнечное, оружейное и др. Применение орудий труда из железа позволило увеличить площадь обрабатываемой земли и производительность труда общинников. Древнейшими центрами металлургии были регионы Малой Азии, Восточного Средиземноморья, Закавказья.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 450 150" role="img" aria-label="Лента из четырёх отрезков: камень, медь, бронза, железо, с датами под каждым."><use href="#m-metall"/></svg>
+    <figcaption><b>Четыре века подряд.</b> Камень не исчез сразу: медные орудия сначала работали вместе с каменными. Железо — самое позднее и самое крепкое.</figcaption>
+   </div>
+  </figure>
+
+  <figure class="photo">
+   <div class="fig">
+    <img id="ph-bronza" src="img/c2681c8b88e1.jpg" alt="Фотография бронзовых предметов: ножи, наконечники, топор, зеркало">
+    <figcaption><span class="src">из учебника</span><b>Предметы бронзового века, найденные в Южной Сибири. Современное фото.</b><span class="task">▲ Для чего могли использоваться эти предметы?</span></figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Вопрос учебника</b>
+    <ol><li>К каким изменениям в жизни людей привело появление металла?</li></ol>
+   </div>
+
+   <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">7. Почему медные орудия не вытеснили каменные сразу?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h7" hidden>Где искать: первый абзац раздела 3, последнее предложение.</div>
+    <div class="rev ans" id="a7" hidden>Медь брали из руды, которую находили только на поверхности земли, — её было мало. Поэтому медные орудия использовали наряду с каменными, а не вместо них. Даже название периода — энеолит — значит «медно-каменный».</div>
+   </div>
+   <div class="think">
+    <p class="qt">8. Какие новые ремёсла появились именно из-за железа?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h8" hidden>Где искать: абзац про железо.</div>
+    <div class="rev ans" id="a8" hidden>Кузнечное и оружейное. А ещё железными орудиями стало проще обрабатывать дерево — строить жилища, делать суда и колесницы, посуду, мебель и даже игрушки.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">4</span><h2>От родовой общины к соседской</h2></div>
+   <div class="easy">
+    <p>Успехи в хозяйстве изменили жизнь всего первобытного общества. Посёлки охотников и собирателей превратились в посёлки земледельцев.</p>
+    <p>Теперь у каждого члена общины был свой участок земли: он его обрабатывал и этим кормил свою семью. Родовая община, где всё было общее, осталась в прошлом. Её сменила <button class="term" data-t="sosed">соседская община</button> — это соседские семьи, и каждая ведёт своё хозяйство на своём участке.</p>
+    <p>Но если работа была большая — вырубить лес, выкопать водоём, — общинники объединялись, как раньше.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Успехи, достигнутые древними людьми в хозяйстве, изменили жизнь первобытного общества. Поселения охотников и собирателей превратились в посёлки земледельцев. Каждый член общины имел отдельный участок земли, обрабатывал его и полученными продуктами кормил свою семью. Родовая община с коллективным производством и хозяйствованием осталась в прошлом. Её сменила <button class="term" data-t="sosed">соседская община</button> — коллектив семей-соседей, которые вели отдельные хозяйства на своих участках.</p>
+    <p>Для работ, требующих усилий большого числа людей, например вырубки леса, создания водоёма, общинники объединялись.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 440 186" role="img" aria-label="Слева круг рода с общим полем внутри. Справа четыре отдельных участка, у каждого своя семья."><use href="#m-obshina"/></svg>
+    <figcaption><b>Главная перемена в устройстве жизни.</b> Раньше — один круг и одно общее поле. Теперь — соседи, и у каждого свой участок и свой урожай.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="easy">
+    <p>Урожая стало хватать не только на семью — появились излишки. И тут началось <button class="term" data-t="neravno">имущественное неравенство</button>: у одних семей вещей и запасов стало больше, чем у других.</p>
+    <p>Главный источник богатства — обмен: изделия своего племени можно выгодно обменять в чужом. А ещё богатство пытались взять силой — захватывали добычу на войне.</p>
+    <p>Старейшины, вожди, шаманы и колдуны постепенно забрали себе руководство общими работами, военное дело и обряды. Им доставались лучшие участки земли, большие стада, лучшая часть добычи. Так начала выделяться <button class="term" data-t="znat">знать</button>. Знатные люди закрепили власть за собой и стали передавать её по наследству — детям.</p>
+   </div>
+   <div class="book" hidden>
+    <p>Урожай отдельных общинников позволял не только прокормить свою семью, но и получить излишки продуктов. Это повлекло за собой <button class="term" data-t="neravno">имущественное неравенство</button> — появляются более состоятельные семьи. Основным источником накопления богатства был расширявшийся обмен. Изделия одного племени можно было выгодно обменять в другом племени. Присвоить богатство пытались и силой, в том числе захватом добычи на войне.</p>
+    <p>Старейшины, вожди, шаманы и колдуны постепенно сосредоточивали в своих руках руководство коллективными работами, организацию военного дела, проведение религиозных обрядов. Они владели лучшими наделами земли, большими стадами скота, получали лучшую часть добычи. В первобытном обществе началось выделение <button class="term" data-t="znat">знати</button>. Знатные люди закрепляли за собой власть и стали передавать её по наследству.</p>
+   </div>
+  </div>
+
+  <figure>
+   <div class="fig">
+    <svg viewBox="0 0 450 190" role="img" aria-label="Цепочка из четырёх шагов: излишки урожая, обмен, у кого-то вещей больше, появление знати."><use href="#m-neravno"/></svg>
+    <figcaption><b>Откуда взялись богатые и бедные.</b> Всё начинается с безобидного: урожая стало больше, чем нужно семье. Дальше — цепочка, которая доведёт до царей и государств.</figcaption>
+   </div>
+  </figure>
+
+  <div class="col">
+   <div class="ask"><b>Вопрос учебника</b>
+    <ol><li>Какие изменения произошли в жизни древних людей с переходом к соседской общине?</li></ol>
+   </div>
+
+   <div class="sublabel think-label">Подумай и ответь</div>
+   <div class="think">
+    <p class="qt">9. Почему родовая община больше не была нужна?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h9" hidden>Где искать: начало раздела 4, и вспомни §2 — зачем вообще держались вместе.</div>
+    <div class="rev ans" id="a9" hidden>В §2 держались вместе потому, что охота на крупного зверя в одиночку невозможна. А своё поле семья может обработать сама: у каждого свой участок, свой урожай, своя еда. Объединялись теперь только для больших работ — вырубить лес или выкопать водоём.</div>
+   </div>
+   <div class="think">
+    <p class="qt">10. Как излишки урожая привели к появлению знати?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h10" hidden>Где искать: два последних абзаца раздела 4 и схема-цепочка.</div>
+    <div class="rev ans" id="a10" hidden>Излишки можно было выгодно обменять — и у одних семей вещей становилось больше, чем у других. Так появилось имущественное неравенство. А старейшины, вожди и шаманы вдобавок забрали себе руководство работами, войной и обрядами, брали лучшие земли и стада — и стали передавать власть по наследству.</div>
+   </div>
+   <div class="think">
+    <p class="qt">11. Почему в §2 добыча делилась на всех, а теперь урожай — нет?</p>
+    <div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+    <div class="rev hint" id="h11" hidden>Где искать: раздел 4 про участки и §2 про родовую общину.</div>
+    <div class="rev ans" id="a11" hidden>В родовой общине охотились все вместе, и добыча одного была добычей всех — иначе никто бы не выжил. А поле каждая семья обрабатывает отдельно, на своём участке, и урожай на нём — результат труда именно этой семьи.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+   <div class="blocknote">С течением времени от охоты и собирательства люди стали переходить к производящему хозяйству — скотоводству и земледелию. Человек научился обрабатывать землю, приручил и стал разводить домашних животных. Переход к производящему хозяйству обусловил развитие орудий труда. На смену родовой общине пришла соседская.</div>
+
+   <div class="ask"><b>Вопросы и задания учебника</b>
+    <ol>
+     <li>Какое хозяйство называют производящим?</li>
+     <li>Объясните причины возникновения имущественного неравенства. По вашему мнению, появление неравенства имело больше положительных или отрицательных последствий для развития человеческого общества?</li>
+     <li>Подумайте, как земледелие и скотоводство повлияли на жизнь древних людей.</li>
+     <li>Как и почему появились первые ремёсла? Как их появление изменило жизнь древних людей?</li>
+     <li>Сравните жизнь людей до открытия металлов и после. Какие возможности появились у древних людей с началом обработки и использования металлов?</li>
+     <li>Объясните, почему стало возможно вести хозяйство более маленькими группами — семьями.</li>
+     <li>В дополнительных источниках информации выясните, как учёные назвали переход от присваивающего хозяйства к производящему. Как вы думаете, почему?</li>
+    </ol>
+   </div>
+
+   <div class="sublabel">Работаем с источником</div>
+   <div class="think">
+    <p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Отрывок из книги «Путешествия на Новую Гвинею» русского путешественника и учёного XIX (19) века Н. Миклухо-Маклая — о земледелии у папуасов.</p>
+    <div class="rev plan" style="margin-top:0">
+     <p style="margin:0 0 10px">Несколько перекрещивающихся дорожек разделяли большое огороженное пространство на участки, на которых возвышались очень аккуратно расположенные, довольно высокие полукруглые клумбы. Они имели около 75 см в диаметре… В каждой клумбе были посажены различные растения, как то: сладкий картофель, сахарный тростник и много другой зелени, мне неизвестной… Клумбы состоят из тщательно измельчённой земли.</p>
+     <p style="margin:0">Всё это достигается, как я увидел, весьма просто, но с большим трудом, с помощью самых примитивных орудий: простого заострённого кола более 2 м длины… и узкой лопаты в 1 м длины. Вот в чём заключается процесс обработки. Двое, трое или более мужчин становятся в ряд и вместе разом втыкают свои колья по возможности глубже в землю, потом тоже разом поднимают продолговатую глыбу земли, затем идут далее и выворачивают целые ряды таких глыб. Несколько человек также при помощи кольев разбивают эти глыбы на более мелкие; за ними следуют женщины, вооружённые… узкими лопатами, разбивают большие комья, делают клумбы и даже растирают землю руками.</p>
+    </div>
+    <div class="revbtns" style="margin-top:12px">
+      <button class="revbtn" data-rev="src1" aria-expanded="false">Вопрос к тексту</button>
+      <button class="revbtn" data-rev="src2" aria-expanded="false">Ответ</button>
+    </div>
+    <div class="rev hint" id="src1" hidden>Назови сельскохозяйственные культуры и орудия труда, упоминаемые в тексте.</div>
+    <div class="rev ans" id="src2" hidden>Культуры: сладкий картофель и сахарный тростник. Орудия: заострённый кол длиной больше 2 метров и узкая лопата длиной 1 метр. А ещё работали просто руками — растирали землю. Это ровно то мотыжное земледелие, о котором раздел 1: ни плуга, ни металла.</div>
+   </div>
+
+   <div class="qbox" style="margin-top:22px">
+     <span class="qm">?</span>
+     <div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — какие изменения произошли в жизни древних людей в эпоху неолита? Приведи два-три довода.</div>
+   </div>
+
+   <div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+   <div class="sublabel" style="margin-top:6px">Работаем с хронологией</div>
+   <p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам.</p>
+   <div class="chrono" id="chrono">
+    <button class="chip" data-ord="4"><span class="ord"></span>Изделия из меди</button>
+    <button class="chip" data-ord="1"><span class="ord"></span>Овладение огнём</button>
+    <button class="chip" data-ord="5"><span class="ord"></span>Обработка железа</button>
+    <button class="chip" data-ord="2"><span class="ord"></span>Изобретение лука</button>
+    <button class="chip" data-ord="3"><span class="ord"></span>Изобретение плуга</button>
+   </div>
+   <p class="chronofb" id="chronofb"></p>
+   <p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+
+   <div class="sublabel">Вспомни слова</div>
+  </div>
+
+  <div class="cards">
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Производящее хозяйство</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 440 176" aria-hidden="true"><use href="#m-perehod"/></svg>
+     <span class="ftext">Человек не берёт готовое, а сам производит: сеет зерно и разводит скот.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Мотыга</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 330 168" aria-hidden="true"><use href="#m-orudiya"/></svg>
+     <span class="ftext">Палка с сучком, которой рыхлили землю до появления плуга.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Ремесло</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 440 156" aria-hidden="true"><use href="#m-remeslo"/></svg>
+     <span class="ftext">Отдельное занятие: делать вещи и менять их на еду.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Век металлов</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 450 150" aria-hidden="true"><use href="#m-metall"/></svg>
+     <span class="ftext">Камень → медь → бронза → железо, каждый следующий крепче.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Соседская община</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 440 186" aria-hidden="true"><use href="#m-obshina"/></svg>
+     <span class="ftext">Семьи-соседи, у каждой свой участок и своё хозяйство.</span></span></button></div>
+   <div class="flip"><button class="flipbtn" aria-expanded="false">
+     <span class="fword">Знать</span><span class="fhint">нажми, чтобы проверить</span>
+     <span class="fans" hidden><svg viewBox="0 0 450 190" aria-hidden="true"><use href="#m-neravno"/></svg>
+     <span class="ftext">Старейшины, вожди и шаманы, забравшие власть и лучшие земли.</span></span></button></div>
+  </div>
+
+  <div class="col" id="quiz">
+   <div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+
+   <div class="q"><h3>1. Какое хозяйство называют производящим?</h3><div class="opts">
+     <button class="opt">Когда охотятся всей общиной</button>
+     <button class="opt" data-ok="1">Когда человек сам производит нужные продукты</button>
+     <button class="opt">Когда меняют вещи на еду</button></div>
+     <div class="fb">Сеет зерно и получает урожай, разводит скот и получает мясо, молоко, кожу и шерсть.</div></div>
+
+   <div class="q"><h3>2. Чем рыхлили землю первые земледельцы?</h3><div class="opts">
+     <button class="opt">Деревянным плугом</button>
+     <button class="opt">Железной лопатой</button>
+     <button class="opt" data-ok="1">Деревянной мотыгой — палкой с сучком</button></div>
+     <div class="fb">Плуг появится позже, а железо — намного позже. Урожай срезали жатвенными ножами из каменных пластинок.</div></div>
+
+   <div class="q"><h3>3. Почему земледельцы перестали кочевать?</h3><div class="opts">
+     <button class="opt" data-ok="1">Надо было дождаться урожая на своём поле</button>
+     <button class="opt">Стало опасно ходить далеко</button>
+     <button class="opt">Не осталось свободных земель</button></div>
+     <div class="fb">Поле не унесёшь с собой — так земледелие привело к оседлому образу жизни.</div></div>
+
+   <div class="q"><h3>4. Что идёт в правильном порядке?</h3><div class="opts">
+     <button class="opt">Железо → бронза → медь</button>
+     <button class="opt" data-ok="1">Медь → бронза → железо</button>
+     <button class="opt">Бронза → медь → железо</button></div>
+     <div class="fb">Медь — 4-е тысячелетие до н. э., бронза — 3—2-е, железо — 2-е тысячелетие до н. э.</div></div>
+
+   <div class="q"><h3>5. Чем соседская община отличается от родовой?</h3><div class="opts">
+     <button class="opt">В ней больше людей</button>
+     <button class="opt">В ней нет старейшины</button>
+     <button class="opt" data-ok="1">Это соседи, и у каждой семьи свой участок и своё хозяйство</button></div>
+     <div class="fb">В родовой общине были кровные родственники и общее хозяйство, добычу делили на всех.</div></div>
+
+   <div class="q"><h3>6. С чего началось имущественное неравенство?</h3><div class="opts">
+     <button class="opt">С войн между племенами</button>
+     <button class="opt" data-ok="1">С излишков урожая, которые можно было выгодно обменять</button>
+     <button class="opt">С изобретения колеса</button></div>
+     <div class="fb">Урожая стало больше, чем нужно семье. Излишки меняли — и у одних семей вещей становилось больше, чем у других.</div></div>
+
+   <div class="score" id="score">Отвечено: 0 из 6</div>
+  </div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+   <div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+
+   <div class="think">
+    <h3>Как появилось земледелие и скотоводство</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p1" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p1" hidden><ol>
+     <li>Ледник отступил: климат, звери и растения поменялись, мамонты вымерли, появились лук, стрелы и сеть.</li>
+     <li>10 тысяч лет назад начался неолит и производящее хозяйство: зерно в землю — урожай из земли.</li>
+     <li>Мотыга и жатвенный нож, оседлая жизнь, Передняя Азия; у охотников — приручение коз, овец, свиней, коров, ослов.</li></ol></div>
+   </div>
+
+   <div class="think">
+    <h3>Как появилось ремесло и торговля</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p2" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p2" hidden><ol>
+     <li>Плуг: больше земли, больше урожая, часть людей освободилась от поля.</li>
+     <li>Новые умения: пиление, шлифование, сверление, ткацкий станок, керамика и гончарный круг.</li>
+     <li>Обмен, торговые пути, степная зона Евразии, колесо и первые повозки в 4-м тысячелетии до н. э.</li></ol></div>
+   </div>
+
+   <div class="think">
+    <h3>Век металлов</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p3" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p3" hidden><ol>
+     <li>Медь из руды с поверхности, 4-е тысячелетие до н. э., энеолит — медь работала вместе с камнем.</li>
+     <li>Бронза — сплав меди со свинцом, оловом, мышьяком; 3—2-е тысячелетия до н. э.</li>
+     <li>Железо во 2-м тысячелетии до н. э.: кузнечное и оружейное ремёсла, больше пашни, центры металлургии — Малая Азия, Восточное Средиземноморье, Закавказье.</li></ol></div>
+   </div>
+
+   <div class="think">
+    <h3>От родовой общины к соседской</h3>
+    <div class="revbtns"><button class="revbtn" data-rev="p4" aria-expanded="false">План ответа</button></div>
+    <div class="rev plan" id="p4" hidden><ol>
+     <li>Посёлки охотников стали посёлками земледельцев, у каждого свой участок.</li>
+     <li>Соседская община: отдельные хозяйства, но вместе — на большие работы вроде вырубки леса.</li>
+     <li>Излишки → обмен → имущественное неравенство → выделение знати, власть по наследству.</li></ol></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p3.html">‹ §3 Верования и искусство</a>
+  <span class="pn cur">§4 Земледелие и скотоводство</span>
+  <a class="pn" href="p5.html">§5 Рождение Египта ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 4 · История, 5 класс · страницы 29—34 · конец главы I</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+var VB={'m-perehod':'0 0 440 176','m-orudiya':'0 0 330 168','m-remeslo':'0 0 440 156',
+'m-metall':'0 0 450 150','m-koleso':'0 0 330 160','m-obshina':'0 0 440 186','m-neravno':'0 0 450 190'};
+
+var T={
+neolit:{w:'Неолит',k:'время',s:'m-metall',t:'Новый каменный век. Начался примерно 10 тысяч лет назад. Именно с него человек перешёл к производящему хозяйству.'},
+proizv:{w:'Производящее хозяйство',k:'тип хозяйства',s:'m-perehod',t:'Человек сам производит то, что ему нужно: сеет зерно и получает урожай, разводит скот. Противоположность присваивающему, где брали только готовое.'},
+zemled:{w:'Земледелие',k:'занятие',s:'m-orudiya',t:'Выращивание растений. Началось с наблюдения: зёрна, упавшие в землю, прорастают и дают новые зёрна.'},
+skotov:{w:'Скотоводство',k:'занятие',p:'zemledeltsy',t:'Разведение прирученных животных. Сначала козы и овцы, позже свиньи, коровы, ослы — ради мяса, молока, кожи и шерсти.'},
+motyga:{w:'Мотыга',k:'орудие',s:'m-orudiya',t:'Палка с сучком, которой рыхлили почву перед посевом. Первое орудие земледельца — ещё без металла.'},
+osedly:{w:'Оседлый образ жизни',k:'как жили',s:null,t:'Жизнь на одном месте, а не кочевье. Земледельцу нужно дождаться урожая на своём поле — поэтому уходить нельзя.'},
+plug:{w:'Плуг',k:'орудие',p:'plug',t:'Деревянное орудие, которым можно поднять даже твёрдую почву. С ним началось плужное земледелие и поля стали больше.'},
+remeslo:{w:'Ремесло',k:'занятие',s:'m-remeslo',t:'Изготовление вещей как отдельное дело. Ремесленник менял свои изделия на продукты земледелия и скотоводства и тем кормил семью.'},
+keramika:{w:'Керамика',k:'ремесло',p:'goncharny',t:'Изделия из обожжённой глины. Сосуды для хранения продуктов стали делать в неолите, а с гончарным кругом они получались ровнее и разнообразнее.'},
+puti:{w:'Торговые пути',k:'дороги',s:'m-remeslo',t:'Маршруты, по которым общины обменивались товарами. Связывали посёлки, разделённые сотнями километров.'},
+koleso:{w:'Колесо',k:'изобретение',s:'m-koleso',t:'Изобретено на Востоке в 4-м тысячелетии до н. э. С ним стали использовать силу животных — появились первые повозки.'},
+med:{w:'Медь',k:'металл',s:'m-metall',t:'Первый металл человека. Его научились получать из руды, которую находили прямо на поверхности земли, в 4-м тысячелетии до н. э.'},
+bronza:{w:'Бронза',k:'металл',p:'bronza',t:'Сплав меди с другими металлами — свинцом, оловом, мышьяком. Бронзовый век — 3—2-е тысячелетия до н. э.'},
+zhelezo:{w:'Железо',k:'металл',s:'m-metall',t:'Самый крепкий из первых металлов. Способ получать его из руды открыли во 2-м тысячелетии до н. э. Появились кузнечное и оружейное ремёсла.'},
+sosed:{w:'Соседская община',k:'сообщество',s:'m-obshina',t:'Коллектив семей-соседей, каждая ведёт своё хозяйство на своём участке. Пришла на смену родовой общине, где всё было общее.'},
+neravno:{w:'Имущественное неравенство',k:'в обществе',s:'m-neravno',t:'Когда у одних семей вещей и запасов больше, чем у других. Началось с излишков урожая, которые можно было выгодно обменять.'},
+znat:{w:'Знать',k:'люди',s:'m-neravno',t:'Старейшины, вожди, шаманы и колдуны, которые забрали себе руководство работами, войной и обрядами, лучшие земли и стада — и стали передавать власть по наследству.'}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p4:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p4:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>5){fb.textContent='Верно! Огонь → лук → плуг → медь → железо.';fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent='Это было позже. Посмотри ленту металлов в разделе 3.';
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+var answered=0,right=0,score=document.getElementById('score');
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<6?('Отвечено: '+answered+' из 6 · правильных '+right)
+        :(right===6?'Все шесть — верно! 🎉':'Правильных: '+right+' из 6');
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p4:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p4:read_'+id,on?'1':'0')});
+  });
+});
+</script>
+
+</body>
+</html>

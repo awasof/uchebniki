@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Параграф 19: религия и культура Индии и Китая.">
+<title>Религия и культура Древней Индии и Древнего Китая</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="r-sansara" viewBox="0 0 550 292">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">САНСАРА — КРУГОВОРОТ ПЕРЕРОЖДЕНИЙ</text>
+  <rect x="8" y="28" width="534" height="46" rx="10" fill="var(--ice)"/>
+  <text x="24" y="50" font-size="11.5" fill="var(--illink)">Человек проживает на Земле много жизней: после смерти душа</text>
+  <text x="24" y="66" font-size="11.5" fill="var(--illink)">всякий раз переходит в новое тело.</text>
+  <rect x="8" y="90" width="234" height="96" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="112" font-size="11.5" font-weight="700" fill="var(--moss)">ЖИЛ ПО ДОБРОДЕТЕЛИ</text>
+  <text x="22" y="136" font-size="11" fill="var(--illink)">не лгал, не убивал,</text>
+  <text x="22" y="152" font-size="11" fill="var(--illink)">не ненавидел</text>
+  <text x="22" y="176" font-size="11" font-weight="700" fill="var(--moss)">родится в высшей варне</text>
+  <rect x="308" y="90" width="234" height="96" rx="10" fill="var(--paper2)"/>
+  <text x="322" y="112" font-size="11.5" font-weight="700" fill="var(--red)">СОВЕРШАЛ ПЛОХОЕ</text>
+  <text x="322" y="136" font-size="11" fill="var(--illink)">лгал, убивал, ненавидел</text>
+  <text x="322" y="160" font-size="11" font-weight="700" fill="var(--red)">родится в низшей варне</text>
+  <text x="322" y="176" font-size="11" font-weight="700" fill="var(--red)">или даже животным</text>
+  <path d="M252 138 H298" stroke="var(--soft)" stroke-width="3"/>
+  <text x="258" y="130" font-size="10.5" font-weight="700" fill="var(--soft)">или</text>
+  <text x="8" y="216" font-size="11.5" fill="var(--illink)">Здоровье, благополучие и судьба зависят от того, как прожита прошлая жизнь.</text>
+  <text x="8" y="236" font-size="11.5" fill="var(--illink)">Тот, кто родился низко, должен исправлять свои прежние ошибки.</text>
+  <text x="8" y="266" font-size="12" font-weight="700" fill="var(--moss)">Вот почему варну считали справедливой: по этому учению человек</text>
+  <text x="8" y="286" font-size="12" font-weight="700" fill="var(--moss)">сам заслужил её в прошлой жизни.</text>
+</symbol>
+
+<symbol id="r-bogi" viewBox="0 0 570 316">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">БОГИ ИНДИИ: ТРОЕ ГЛАВНЫХ И ОДИН ЛЮБИМЫЙ</text>
+  <rect x="8" y="28" width="176" height="122" rx="10" fill="var(--ochre)"/>
+  <text x="22" y="50" font-size="12.5" font-weight="700" fill="#22190A">БРАХМА</text>
+  <text x="22" y="72" font-size="11" fill="#22190A">бог-творец,</text>
+  <text x="22" y="88" font-size="11" fill="#22190A">создатель Вселенной</text>
+  <text x="22" y="112" font-size="10.5" fill="#22190A">рисовали с четырьмя</text>
+  <text x="22" y="127" font-size="10.5" fill="#22190A">руками и четырьмя лицами</text>
+  <text x="22" y="142" font-size="10.5" fill="#22190A">на четыре стороны света</text>
+  <rect x="196" y="28" width="176" height="122" rx="10" fill="var(--paper2)"/>
+  <text x="210" y="50" font-size="12.5" font-weight="700" fill="var(--moss)">ВИШНУ</text>
+  <text x="210" y="72" font-size="11" fill="var(--illink)">хранитель</text>
+  <text x="210" y="88" font-size="11" fill="var(--illink)">мирового порядка</text>
+  <rect x="384" y="28" width="176" height="122" rx="10" fill="var(--paper2)"/>
+  <text x="398" y="50" font-size="12.5" font-weight="700" fill="var(--red)">ШИВА</text>
+  <text x="398" y="72" font-size="11" fill="var(--illink)">бог-разрушитель</text>
+  <text x="398" y="96" font-size="10.5" fill="var(--illink)">изображали</text>
+  <text x="398" y="111" font-size="10.5" fill="var(--illink)">в виде танцора</text>
+  <rect x="8" y="164" width="552" height="70" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="186" font-size="12" font-weight="700" fill="var(--flame)">ГАНЕША — не главный, но любимый</text>
+  <text x="22" y="208" font-size="11" fill="var(--illink)">добродушный толстяк с головой слона: покровитель купцов, путешественников</text>
+  <text x="22" y="226" font-size="11" fill="var(--illink)">и учёных. Большой сладкоежка — ему несут плоды и сладкие лепёшки.</text>
+  <text x="8" y="262" font-size="11.5" fill="var(--illink)">Брахманизм не был единой религией: разные его толкования слились в индуизм.</text>
+  <text x="8" y="290" font-size="12" font-weight="700" fill="var(--moss)">Он подошёл всем: знати оправдывал её власть,</text>
+  <text x="8" y="310" font-size="12" font-weight="700" fill="var(--moss)">а беднякам давал надежду на будущее.</text>
+</symbol>
+
+<symbol id="r-budda" viewBox="0 0 570 372">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК ЦАРЕВИЧ СТАЛ БУДДОЙ</text>
+  <path d="M28 36 V346" stroke="var(--stone)" stroke-width="4"/>
+  <circle cx="28" cy="50" r="8" fill="var(--ochre)"/>
+  <text x="48" y="48" font-size="11.5" font-weight="700" fill="var(--illink)">Сиддхартха Гаутама, сын раджи</text>
+  <text x="48" y="66" font-size="11" fill="var(--soft)">жизнь за стенами дворца: удовольствия, никаких забот, вокруг только радостные лица</text>
+  <circle cx="28" cy="102" r="8" fill="var(--ochre)"/>
+  <text x="48" y="100" font-size="11.5" font-weight="700" fill="var(--illink)">Он вышел за стены — и увидел три вещи</text>
+  <text x="48" y="118" font-size="11" fill="var(--soft)">дряхлого старика, человека с неизлечимой болезнью, похоронную процессию</text>
+  <circle cx="28" cy="154" r="8" fill="var(--red)"/>
+  <text x="48" y="152" font-size="11.5" font-weight="700" fill="var(--illink)">Бежал из дворца и семь лет скитался</text>
+  <text x="48" y="170" font-size="11" fill="var(--soft)">увидел, как тяжело простому человеку; а кто избежал бедности — того ждут</text>
+  <text x="48" y="186" font-size="11" fill="var(--soft)">ревность, зависть, козни врагов и повороты судьбы. И всех держит в страхе смерть</text>
+  <circle cx="28" cy="222" r="8" fill="var(--red)"/>
+  <text x="48" y="220" font-size="11.5" font-weight="700" fill="var(--illink)">Искал ответ у других — и не нашёл</text>
+  <text x="48" y="238" font-size="11" fill="var(--soft)">беседовал с мудрецами, читал древние книги, жил с отшельниками:</text>
+  <text x="48" y="254" font-size="11" fill="var(--soft)">никто не мог сказать, как избежать страданий</text>
+  <circle cx="28" cy="290" r="8" fill="var(--moss)"/>
+  <text x="48" y="288" font-size="11.5" font-weight="700" fill="var(--moss)">Ответ нашёл сам</text>
+  <text x="48" y="306" font-size="11" fill="var(--soft)">отказаться от желаний, удалиться от мира, жить своими мыслями —</text>
+  <text x="48" y="322" font-size="11" fill="var(--soft)">и после смерти прийти к нирване: свободе от желаний, страданий и привязанностей</text>
+  <circle cx="28" cy="346" r="8" fill="var(--moss)"/>
+  <text x="48" y="344" font-size="11.5" font-weight="700" fill="var(--moss)">Сорок лет он проповедовал — и его прозвали Будда, «просветлённый»</text>
+  <text x="48" y="362" font-size="11" fill="var(--soft)">ученики продолжили дело: в горах и лесах, вдали от городов, строили монастыри</text>
+</symbol>
+
+<symbol id="r-indiya" viewBox="0 0 570 322">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧТО ДРЕВНЯЯ ИНДИЯ ДАЛА МИРУ</text>
+  <rect x="8" y="28" width="552" height="70" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="50" font-size="12" font-weight="700" fill="var(--illink)">КНИГИ</text>
+  <text x="22" y="72" font-size="11" fill="var(--illink)">Веды — на санскрите «знание». Четыре больших сборника: стихи, гимны, толкование</text>
+  <text x="22" y="90" font-size="11" fill="var(--illink)">обряда; в них верования ариев. «Махабхарату» иногда зовут пятой Ведой.</text>
+  <rect x="8" y="110" width="552" height="88" rx="10" fill="var(--ochre)"/>
+  <text x="22" y="132" font-size="12" font-weight="700" fill="#22190A">ЦИФРЫ И НОЛЬ</text>
+  <text x="22" y="154" font-size="11" fill="#22190A">Придумали ноль — знак пустоты. И главное: число зависит не только от значка,</text>
+  <text x="22" y="172" font-size="11" fill="#22190A">но и от места. Одними и теми же знаками можно писать десятки, сотни и тысячи.</text>
+  <text x="22" y="190" font-size="11" font-weight="700" fill="#22190A">Эти цифры взяли арабы, от них они попали в Европу — мы зовём их арабскими.</text>
+  <rect x="8" y="210" width="552" height="52" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="232" font-size="12" font-weight="700" fill="var(--illink)">ШАХМАТЫ</text>
+  <text x="22" y="252" font-size="11" fill="var(--illink)">«Чатуранга» — «войско из четырёх частей»: пехота, колесницы, конница и слоны.</text>
+  <text x="8" y="292" font-size="12" font-weight="700" fill="var(--moss)">Цифрами, которые ты пишешь в тетради, мир обязан Индии.</text>
+  <text x="8" y="312" font-size="12" font-weight="700" fill="var(--moss)">«Арабскими» их назвали по дороге — арабы были посредниками.</text>
+</symbol>
+
+<symbol id="r-inyan" viewBox="0 0 540 288">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ИНЬ И ЯН</text>
+  <rect x="8" y="28" width="180" height="46" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="56" font-size="11.5" fill="var(--illink)">Сначала мир был един</text>
+  <path d="M196 52 H236" stroke="var(--soft)" stroke-width="3" marker-end="url(#ar)"/>
+  <rect x="246" y="28" width="286" height="46" rx="10" fill="var(--paper2)"/>
+  <text x="260" y="48" font-size="11.5" fill="var(--illink)">потом отделились небо от земли,</text>
+  <text x="260" y="66" font-size="11.5" fill="var(--illink)">а день от ночи</text>
+  <rect x="8" y="90" width="260" height="60" rx="10" fill="var(--ochre)"/>
+  <text x="22" y="114" font-size="12.5" font-weight="700" fill="#22190A">ЯН — светлое начало</text>
+  <text x="22" y="136" font-size="11" fill="#22190A">его воплощение — небо</text>
+  <rect x="280" y="90" width="252" height="60" rx="10" fill="var(--stone)"/>
+  <text x="294" y="114" font-size="12.5" font-weight="700" fill="var(--illink)">ИНЬ — тёмное начало</text>
+  <text x="294" y="136" font-size="11" fill="var(--illink)">его воплощение — земля</text>
+  <text x="8" y="182" font-size="11.5" fill="var(--illink)">Так же устроены и другие пары:</text>
+  <text x="8" y="204" font-size="11.5" font-weight="700" fill="var(--illink)">мужское — женское · светлое — тёмное · старое — молодое</text>
+  <text x="8" y="234" font-size="11.5" fill="var(--illink)">Знак известен с III (3) века н. э.</text>
+  <text x="8" y="262" font-size="12" font-weight="700" fill="var(--moss)">Это не два врага, а две половины одного: они противоположны</text>
+  <text x="8" y="282" font-size="12" font-weight="700" fill="var(--moss)">и при этом неразделимы.</text>
+</symbol>
+
+<symbol id="r-uchenia" viewBox="0 0 570 340">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ДВА КИТАЙСКИХ ОТВЕТА НА ОДИН ВОПРОС</text>
+  <rect x="8" y="28" width="552" height="46" rx="10" fill="var(--ice)"/>
+  <text x="22" y="50" font-size="11.5" fill="var(--illink)">В 1-м тысячелетии до н. э. Китай был раздроблен, и учений появилось множество.</text>
+  <text x="22" y="68" font-size="11.5" fill="var(--illink)">Все спорили: как построить хорошее общество и как объединить страну?</text>
+  <rect x="8" y="90" width="270" height="146" rx="10" fill="var(--paper2)"/>
+  <text x="22" y="112" font-size="12.5" font-weight="700" fill="var(--red)">«ЗАКОННИКИ»</text>
+  <text x="22" y="136" font-size="11" fill="var(--illink)">самые свирепые наказания</text>
+  <text x="22" y="158" font-size="11" fill="var(--illink)">тяжёлые подати и повинности</text>
+  <text x="22" y="182" font-size="11" fill="var(--illink)">иначе народ избалуется</text>
+  <text x="22" y="198" font-size="11" fill="var(--illink)">и непременно затеет смуту</text>
+  <text x="22" y="226" font-size="11" font-weight="700" fill="var(--red)">этим и правил Цинь Шихуанди</text>
+  <rect x="290" y="90" width="270" height="146" rx="10" fill="var(--paper2)"/>
+  <text x="304" y="112" font-size="12.5" font-weight="700" fill="var(--moss)">КОНФУЦИАНСТВО</text>
+  <text x="304" y="136" font-size="11" fill="var(--illink)">пять добродетелей: мудрость,</text>
+  <text x="304" y="152" font-size="11" fill="var(--illink)">гуманность, верность государю,</text>
+  <text x="304" y="168" font-size="11" fill="var(--illink)">почитание старших, мужество</text>
+  <text x="304" y="192" font-size="11" fill="var(--illink)">культ предков</text>
+  <text x="304" y="208" font-size="11" fill="var(--illink)">государство — большая семья</text>
+  <text x="304" y="226" font-size="11" font-weight="700" fill="var(--moss)">его выбрала династия Хань</text>
+  <text x="8" y="268" font-size="12" font-weight="700" fill="var(--illink)">«Пусть отец будет отцом, сын — сыном, государь — государем,</text>
+  <text x="8" y="286" font-size="12" font-weight="700" fill="var(--illink)">чиновник — чиновником», — говорил Конфуций.</text>
+  <text x="8" y="312" font-size="12" font-weight="700" fill="var(--moss)">Одна страна, один вопрос — и два противоположных ответа:</text>
+  <text x="8" y="330" font-size="12" font-weight="700" fill="var(--moss)">держать людей страхом или воспитывать порядок в душе.</text>
+</symbol>
+
+<symbol id="r-otkrytiya" viewBox="0 0 580 360">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ВЕЛИКИЕ ОТКРЫТИЯ КИТАЙЦЕВ</text>
+  <rect x="8" y="28" width="564" height="288" rx="10" fill="var(--paper2)"/>
+  <circle cx="30" cy="54" r="6" fill="var(--moss)"/>
+  <text x="46" y="52" font-size="11.5" font-weight="700" fill="var(--illink)">МЕДИЦИНА</text>
+  <text x="46" y="70" font-size="11" fill="var(--soft)">инь и ян идут по телу сотнями дорожек: равновесие — здоровье, сбой — болезнь.</text>
+  <text x="46" y="86" font-size="11" fill="var(--soft)">Иголки в нужные точки возвращают равновесие. Это акупунктура, её применяют и сейчас</text>
+  <circle cx="30" cy="114" r="6" fill="var(--ochre)"/>
+  <text x="46" y="112" font-size="11.5" font-weight="700" fill="var(--illink)">ЛАК — уже в XIII (13) веке до н. э.</text>
+  <text x="46" y="130" font-size="11" fill="var(--soft)">это смола дерева: делали надрез, и смола стекала в сосуд. Вещи выходили красивые и прочные</text>
+  <circle cx="30" cy="158" r="6" fill="var(--red)"/>
+  <text x="46" y="156" font-size="11.5" font-weight="700" fill="var(--illink)">ПОРОХ — с VII (7) века до н. э.</text>
+  <text x="46" y="174" font-size="11" fill="var(--soft)">сначала только фейерверки на дворцовых праздниках. По легенде, у полководца Кун Мина</text>
+  <text x="46" y="190" font-size="11" fill="var(--soft)">солдаты не рассчитали порох, грянул взрыв — и вражеская конница отступила</text>
+  <circle cx="30" cy="218" r="6" fill="var(--moss)"/>
+  <text x="46" y="216" font-size="11.5" font-weight="700" fill="var(--illink)">БУМАГА — примерно с I (1) века до н. э.</text>
+  <text x="46" y="234" font-size="11" fill="var(--soft)">до неё писали на бамбуковых дощечках и на шёлке. Бумага дешевле — и разошлась по миру</text>
+  <circle cx="30" cy="262" r="6" fill="var(--ochre)"/>
+  <text x="46" y="260" font-size="11.5" font-weight="700" fill="var(--illink)">ШЁЛК</text>
+  <text x="46" y="278" font-size="11" fill="var(--soft)">нить даёт гусеница тутового шелкопряда: кокон разматывали, скручивали нити и ткали.</text>
+  <text x="46" y="294" font-size="11" fill="var(--soft)">Тайну хранили, ткань продавали. Шёлком платили налоги и подносили дары правителю</text>
+  <text x="8" y="336" font-size="11.5" fill="var(--illink)">Китайские астрономы предсказывали солнечные и лунные затмения,</text>
+  <text x="8" y="352" font-size="11.5" fill="var(--illink)">а математики открыли десятичные дроби и считали для строек храмов, дворцов и каналов.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 19</span>
+    <h1>Религия и культура Древней Индии и Древнего Китая</h1>
+    <p class="lede">Круговорот жизней, царевич, ставший Буддой, ноль, шахматы, инь и ян, порох и бумага. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Какой вклад внесли народы Древней Индии и Древнего Китая в мировую науку и культуру?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p18.html">‹ §18 Древний Китай</a>
+  <span class="pn cur">§19 Религия и культура</span>
+  <a class="pn" href="it2.html">Итоги главы II ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Религия Индии">1</a><a href="#s2" data-j="s2" title="Культура и наука Индии">2</a><a href="#s3" data-j="s3" title="Религиозные верования Древнего Китая">3</a><a href="#s4" data-j="s4" title="Великие открытия китайцев">4</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-ravana" src="img/4fa9f8c5f569.jpg" alt="Каменная резьба на стене храма: фигура со множеством рук и несколькими головами"><figcaption><span class="src">из учебника</span><b>Изображение демона Раваны. Резьба на стене храма.</b> Поэма «Махабхарата» повествует о борьбе двух ветвей одного царского рода — Пандавов и Кауравов. В жестокой братоубийственной войне приняли участие почти все цари Индии. Поэма заканчивается восхождением Пандавов на небо. В основе другой древнеиндийской поэмы — «Рамаяна» — история похищения жены Рамы, Ситы, царём демонов Раваной. Текст поэм включает в себя фрагменты мифов, сказаний, легенд, басен. Поэмы «Махабхарата» и «Рамаяна» содержат много интересных сведений о Древней Индии, её обычаях, государственном управлении.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Религия Индии</h2></div>
+<div class="easy">
+<p>Ранние религиозные верования жителей Древней Индии называются <button class="term" data-t="brahmanizm">брахманизмом</button>.</p>
+<p>В брахманизме разработали учение о круговороте перерождений — <button class="term" data-t="sansara">сансару</button>. По нему каждый человек проживает на Земле много жизней, и душа после смерти всякий раз переходит в новое тело.</p>
+<p><b>От чего зависит новая жизнь?</b> От прошлой. Если человек совершал плохие поступки, лгал, убивал, ненавидел — он рождался вновь в самой низшей варне или даже становился животным и должен был исправлять свои ошибки. И наоборот: добродетель открывала путь к рождению в высшей варне.</p>
+<p>Особо почитаемыми в Индии были боги <button class="term" data-t="brahmabog">Брахма</button>, <button class="term" data-t="vishnu">Вишну</button> и <button class="term" data-t="shiva">Шива</button>. Брахма — бог-творец, создатель Вселенной; его изображали человеком с четырьмя руками и четырьмя лицами, направленными в разные стороны света. Вишну — хранитель мирового порядка. Шива — бог-разрушитель, его изображали в виде танцора.</p>
+<p>Брахманизм не был единой религией. Но постепенно разные его толкования объединились в одно учение — <button class="term" data-t="induizm">индуизм</button>. Второстепенных, но почитаемых богов в нём много. Таков <button class="term" data-t="ganesha">Ганеша</button> — добродушный толстяк с головой слона, покровитель купцов, путешественников и учёных.</p>
+<p>Индуизм подходил всем слоям общества: он оправдывал господство знати, а беднякам давал надежду на будущее.</p>
+<p>А в VI (6) веке до н. э. в Индии возникла новая религия — <button class="term" data-t="buddizm">буддизм</button>. Ей суждено было стать одной из мировых религий.</p>
+</div>
+<div class="book" hidden>
+<p>Ранние религиозные верования жителей Древней Индии называются брахманизмом.</p>
+<p>В брахманизме было разработано учение о круговороте перерождений — сансара. Согласно ему, каждый человек проживает на Земле большое количество жизней и душа после смерти всякий раз переходит в новое тело. Здоровье, благополучие и судьба людей зависят от того, как они провели предыдущую жизнь. Если человек совершал плохие поступки, лгал, убивал, ненавидел, то он рождался вновь в самой низшей варне (или даже становился животным) и должен был исправлять свои предыдущие ошибки. И наоборот, добродетель открывала путь к рождению в высшей варне.</p>
+<p>Особо почитаемыми в Индии были боги Брахма, Вишну, Шива. Брахма — бог-творец, создатель Вселенной. Он изображался человеком с четырьмя руками и четырьмя лицами, направленными в разные стороны света. Вишну — хранитель мирового порядка. Шива — бог-разрушитель, он изображался в виде танцора.</p>
+<p>Брахманизм не был единой религией. Но постепенно разные его толкования объединились в единое учение — индуизм. В индуизме много второстепенных, но почитаемых богов. Таков Ганеша — добродушный толстяк с головой слона. Считается, что он покровительствует купцам, путешественникам, учёным. Индуизм подходил всем слоям общества, всем сословиям, земледельцам и горожанам. Он оправдывал господство знати, а беднякам давал надежду на будущее.</p>
+<p>В VI (6) веке до н. э. в Индии возникла новая религия — буддизм. Ей суждено было стать одной из мировых религий.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 550 292" role="img" aria-label="Схема сансары. Сверху: человек проживает на Земле много жизней, после смерти душа всякий раз переходит в новое тело. Слева табличка: жил по добродетели — не лгал, не убивал, не ненавидел — родится в высшей варне. Справа табличка: совершал плохое — лгал, убивал, ненавидел — родится в низшей варне или даже животным. Внизу: здоровье, благополучие и судьба зависят от того, как прожита прошлая жизнь; тот, кто родился низко, должен исправлять свои прежние ошибки."><use href="#r-sansara"/></svg><figcaption><b>Свяжи это с §17.</b> Там варна передавалась от отца к сыну, и перейти было нельзя. А здесь объясняется, почему это считали справедливым: по учению, человек сам заслужил свою варну прошлой жизнью.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-trimurti" src="img/e4620095e4a2.jpg" alt="Яркий рисунок: слева фигура возлежит на свернувшемся зелёном змее, в середине многорукая фигура в танце, справа фигура с несколькими лицами сидит на троне"><figcaption><span class="src">из учебника</span><b>Вишну, Шива и Брахма.</b></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 570 316" role="img" aria-label="Три таблички богов. Брахма — бог-творец, создатель Вселенной; рисовали с четырьмя руками и четырьмя лицами на четыре стороны света. Вишну — хранитель мирового порядка. Шива — бог-разрушитель, изображали в виде танцора. Ниже отдельная табличка: Ганеша — не главный, но любимый: добродушный толстяк с головой слона, покровитель купцов, путешественников и учёных, большой сладкоежка, ему несут плоды и сладкие лепёшки. Внизу: брахманизм не был единой религией, разные его толкования слились в индуизм."><use href="#r-bogi"/></svg><figcaption><b>Трое главных — это три дела сразу:</b> создать мир, хранить в нём порядок и разрушить. Индийцы считали, что всё это нужно, иначе мир бы не обновлялся.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-ganesha" src="img/3168dcccf378.jpg" alt="Каменная статуя: сидящая фигура с головой слона, с хоботом и несколькими руками"><figcaption><span class="src">из учебника</span><b>Бог Ганеша. Статуя VII (7) века.</b> По верованиям, Ганеша — большой сладкоежка, поэтому люди приносят ему в дар плоды или сладкие лепёшки.<br><span style="color:var(--soft)">▲ Опиши, как изображали Ганешу.</span></figcaption></div></figure>
+<div class="col">
+<div class="easy">
+<p>Новая религия началась с сына индийского раджи — <button class="term" data-t="gautama">Сиддхартхи Гаутамы</button>. Жизнь царевича проходила за стенами роскошного дворца, в удовольствиях и без забот. Он видел вокруг только радостные лица и думал, что все люди на свете так же счастливы, как и он.</p>
+<p><b>А потом он вышел за стены.</b> Однажды Гаутама встретил у дороги дряхлого старика. Потом увидел человека, страдающего от неизлечимой болезни. Затем наткнулся на похоронную процессию. Потрясение было так велико, что прежней счастливой жизни он продолжать не смог.</p>
+<p>Царевич бежал из дворца и семь лет провёл в скитаниях. За эти годы он увидел, как тяжело жить простому человеку, сколько горестей переносит он на своём пути. А если кому-то удаётся избежать бедности — его ждут другие опасности: терзания ревности и зависти, козни врагов и неожиданные повороты судьбы. И всех держит в страхе смерть.</p>
+<p>Гаутама беседовал с мудрецами, изучал древние книги, подолгу жил с отшельниками — но никто не смог ответить на мучивший его вопрос: как избежать страданий?</p>
+<p><b>Ответ он нашёл сам.</b> Избежать всего, что лишает человека покоя и счастья, решил он, можно, отказавшись от желаний, удалившись от мира и живя только своими мыслями. Это позволит после смерти достичь вечной <button class="term" data-t="nirvana">нирваны</button> — освобождения от желаний, страданий и привязанностей.</p>
+<p>Сорок лет проповедовал Гаутама своё учение. Его прозвали <button class="term" data-t="budda">Будда</button>, что значит «просветлённый». Ученики после смерти учителя продолжали его дело: вдали от городов, в горах и лесах, они строили <button class="term" data-t="monastyr">монастыри</button> и селились в них, уединяясь от земной суеты.</p>
+</div>
+<div class="book" hidden>
+<p>Рождение новой религии связано с сыном индийского раджи (царя) Сиддхартхой Гаутамой. Жизнь царевича проходила за стенами роскошного дворца, в удовольствиях и без забот. Он видел вокруг себя только радостные лица и думал, что все люди на свете так же счастливы, как и он. Оказавшись за пределами дворца, царевич понял, что жизнь полна страданий.</p>
+<p>Однажды Гаутама встретил у дороги дряхлого старика. Потом увидел человека, страдающего от неизлечимой болезни. Затем наткнулся на похоронную процессию. Потрясение было столь велико, что Гаутама не смог продолжать прежнюю счастливую жизнь. Царевич бежал из дворца и семь лет провёл в скитаниях. За эти годы он увидел, как тяжело жить простому человеку, сколько горестей переносит он на жизненном пути. А если кому-то удаётся избежать бедности, его ждут другие опасности — терзания ревности и зависти, козни врагов и неожиданные повороты судьбы. И всех держит в страхе смерть.</p>
+<p>Гаутама беседовал с мудрецами, изучал древние книги, подолгу жил с отшельниками, но никто не смог ответить на мучивший его вопрос: как избежать страданий? Гаутама ответ нашёл сам. Избежать всего, что лишает человека покоя и счастья, решил он, можно отказавшись от желаний, удалившись от мира и живя только своими мыслями. Это позволит после смерти достичь вечной нирваны — освобождения от желаний, страданий и привязанностей.</p>
+<p>Сорок лет проповедовал Гаутама своё учение. Его прозвали Будда, что значит «просветлённый». Ученики после смерти учителя продолжали его дело. Вдали от городов, в горах и лесах, они строили монастыри и поселялись в них, уединяясь от земной суеты, обретая в размышлениях и одиночестве освобождение от страданий.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-budda" src="img/f074552b3c8b.jpg" alt="Каменный барельеф: в середине сидящая фигура, вокруг множество людей и животных, внизу колесо"><figcaption><span class="src">из учебника</span><b>Сцены из жизни Будды. Барельеф.</b></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 570 372" role="img" aria-label="Шесть шагов сверху вниз. Сиддхартха Гаутама, сын раджи: жизнь за стенами дворца, удовольствия, никаких забот, вокруг только радостные лица. Он вышел за стены и увидел три вещи: дряхлого старика, человека с неизлечимой болезнью, похоронную процессию. Бежал из дворца и семь лет скитался: увидел, как тяжело простому человеку, а кто избежал бедности — того ждут ревность, зависть, козни врагов и повороты судьбы, и всех держит в страхе смерть. Искал ответ у других и не нашёл: беседовал с мудрецами, читал древние книги, жил с отшельниками. Ответ нашёл сам: отказаться от желаний, удалиться от мира, жить своими мыслями и после смерти прийти к нирване. Сорок лет проповедовал, его прозвали Будда — «просветлённый», а ученики строили монастыри в горах и лесах."><use href="#r-budda"/></svg><figcaption><b>Обрати внимание на второй шаг.</b> Всё учение началось не с книги и не с видения, а с трёх обычных встреч на дороге. Старость, болезнь и смерть есть у всех — просто царевич до того дня их не видел.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопросы учебника</b>
+<ol><li>Какая главная идея заключена в учении Будды?</li><li>Опиши, как изображали Ганешу.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. По сансаре человек рождается в высшей или низшей варне по делам прошлой жизни. Как это связано с порядком варн из §17?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Где искать: второй и третий абзацы раздела 1, и вспомни §17.</div>
+<div class="rev ans" id="a1" hidden>Это объяснение, почему варны справедливы. В §17 человек просто оставался в варне отца, и перейти было нельзя. А сансара говорит: ты родился здесь не случайно, ты сам это заслужил прошлой жизнью. Учение оправдывало порядок, который менять было запрещено.</div>
+</div>
+<div class="think">
+<p class="qt">2. Учебник говорит, что индуизм «подходил всем слоям общества». Как одна религия может устраивать и знать, и бедняков?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Где искать: пятый и шестой абзацы раздела 1.</div>
+<div class="rev ans" id="a2" hidden>Потому что каждому она давала своё. Знати индуизм оправдывал её господство — мол, высокое положение заслужено. А беднякам давал надежду на будущее: живи достойно, и следующее рождение будет лучше. Обе стороны получали ответ, который их устраивал.</div>
+</div>
+<div class="think">
+<p class="qt">3. Гаутама жил во дворце и не знал забот. Почему именно ему открылось, что «жизнь полна страданий», а не бедняку, который страдал всю жизнь?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Где искать: абзацы про дворец и три встречи.</div>
+<div class="rev ans" id="a3" hidden>Потому что для него это было потрясением. Он вырос среди одних радостных лиц и думал, что все люди счастливы. Старик, больной и похороны разрушили всю его картину мира сразу. Тот, кто видит горе каждый день, привыкает к нему; а Гаутама увидел его впервые — и не смог жить по-прежнему.</div>
+</div>
+<div class="think">
+<p class="qt">4. Будда искал ответ у мудрецов, в древних книгах, у отшельников — и не нашёл. Что это говорит о его учении?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Где искать: четвёртый и пятый абзацы про Гаутаму.</div>
+<div class="rev ans" id="a4" hidden>Что оно было новым: такого ответа до него просто не существовало. Он нашёл его сам — отказаться от желаний, удалиться от мира и жить своими мыслями. Потому буддизм и стал отдельной религией, а не ещё одним толкованием брахманизма.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Культура и наука Индии</h2></div>
+<div class="easy">
+<p>С конца IV (4) века до н. э. буддизм широко распространился по Индии. В стране возводили много храмов и мест поклонения Будде.</p>
+<p>Древнейшими литературными произведениями Индии были <button class="term" data-t="vedy">Веды</button> — на санскрите это слово значит «знание». Веды отражают религиозные представления ариев. Их четыре — четыре больших сборника текстов; в них и стихотворные части, и гимны, и толкование религиозного ритуала. А поэму <button class="term" data-t="mahabharata">«Махабхарата»</button> иногда называют пятой Ведой.</p>
+<p>Другая великая поэма Индии — <button class="term" data-t="ramayana">«Рамаяна»</button>.</p>
+<p><b>Научные знания древних индийцев разошлись по всему миру.</b> Они создали новую систему записи цифр. Их открытием был <button class="term" data-t="nol">ноль</button>, обозначавший пустоту. А число определялось не только начертанием, но и местом: для записи десятков, сотен и тысяч можно было пользоваться одними и теми же значками.</p>
+<p>Эти цифры заимствовали арабы, а от них они попали в Европу — мы называем их сейчас <button class="term" data-t="arabcifry">арабскими</button>.</p>
+<p>В Древней Индии появились и шахматы. Они назывались <button class="term" data-t="chaturanga">«чатуранга»</button>, что означает «войско, состоящее из четырёх частей», то есть из четырёх родов войск: пехоты, колесниц, кавалерии и слонов.</p>
+</div>
+<div class="book" hidden>
+<p>С конца IV (4) века до н. э. буддизм получил в Индии широкое распространение. В государстве возводили много храмов и мест поклонения Будде.</p>
+<p>Древнейшими литературными произведениями Индии были Веды (от санскр. «знание»). Веды отражают религиозные представления ариев. Традиция насчитывает четыре Веды — больших сборников текстов (поэму «Махабхарата» иногда называют пятой Ведой). Сборники содержат и стихотворные части, и гимны, и толкование религиозного ритуала.</p>
+<p>Широко распространились по миру научные знания древних индийцев. Они создали новую систему записи цифр. Открытием индийцев был ноль, обозначавший пустоту. А число определялось не только начертанием, но и местом: для записи десятков, сотен, тысяч можно было пользоваться одними и теми же значками. Эти цифры были заимствованы арабами и от них попали в Европу, мы называем их сейчас арабскими.</p>
+<p>В Древней Индии появились шахматы. Они назывались «чатуранга», что означает «войско, состоящее из четырёх частей», то есть четырёх родов войск: пехоты, колесниц, кавалерии и слонов.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-sanchi" src="img/6895dc03f082.jpg" alt="Фотография: огромный каменный купол на круглом основании, рядом резные ворота и лестница"><figcaption><span class="src">из учебника</span><b>Буддийский храм в Санчи. Современный вид.</b> Его строительство велось в III (3) веке н. э., в XII (12) веке он был заброшен. Заново открыт в начале XIX (19) века.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 570 322" role="img" aria-label="Три таблички. Книги: Веды — на санскрите «знание», четыре больших сборника со стихами, гимнами и толкованием обряда, в них верования ариев; «Махабхарату» иногда зовут пятой Ведой. Цифры и ноль: придумали ноль — знак пустоты, и главное — число зависит не только от значка, но и от места, одними и теми же знаками можно писать десятки, сотни и тысячи; эти цифры взяли арабы, от них они попали в Европу, и мы зовём их арабскими. Шахматы: «чатуранга» — «войско из четырёх частей»: пехота, колесницы, конница и слоны."><use href="#r-indiya"/></svg><figcaption><b>Проверь на себе.</b> Напиши 5, 50 и 500 — знак один и тот же, а число разное, потому что меняется место. Именно эту мысль и придумали в Древней Индии.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие открытия древних индийцев используются и в наши дни?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Почему ноль — это открытие, а не просто ещё один значок?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Где искать: абзац про систему записи цифр.</div>
+<div class="rev ans" id="a5" hidden>Потому что без ноля нельзя показать пустое место. А как только место стало значить, ноль понадобился, чтобы отличить 5 от 50 и от 500. Один значок для пустоты позволил записывать любые числа десятью знаками вместо особых обозначений для каждого разряда.</div>
+</div>
+<div class="think">
+<p class="qt">6. Цифры придумали в Индии, а называются они арабскими. Как так вышло?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Где искать: конец абзаца про цифры.</div>
+<div class="rev ans" id="a6" hidden>Потому что в Европу они пришли не напрямую. Сначала эту систему заимствовали арабы, и уже от арабов её узнали европейцы. Название дали по тем, от кого получили, а не по тем, кто придумал.</div>
+</div>
+<div class="think">
+<p class="qt">7. Шахматы назывались «войско из четырёх частей». Что это говорит о том, откуда взялась игра?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Где искать: последний абзац раздела 2 и §17 про войны индийских царств.</div>
+<div class="rev ans" id="a7" hidden>Что игра выросла из настоящей войны. Четыре её части — это четыре рода войск индийского царства: пехота, колесницы, кавалерия и слоны. В §17 говорилось, что царств в Индии было множество и они постоянно воевали, — вот эту войну и превратили в игру на доске.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Религиозные верования Древнего Китая</h2></div>
+<div class="easy">
+<p>Как и многие народы Древнего мира, китайцы обожествляли природу: землю, небо, воду.</p>
+<p>По их представлениям, мир сначала был един, а потом отделились небо от земли, а день от ночи. Всё в мире разделилось на тёмное начало — <button class="term" data-t="in">инь</button> — и противоположное ему светлое — <button class="term" data-t="yan">ян</button>. Небо китайцы стали считать воплощением ян, а землю — инь.</p>
+<p>Верховным божеством был <button class="term" data-t="vladykadi">Владыка Ди</button>. А ещё китайцы поклонялись <button class="term" data-t="duhi">духам</button>, считая их такими же законными жителями земли, как и человека. Абсолютно злых духов не было — как, впрочем, и абсолютно добрых, — но с ними надо было уметь общаться. Можно разозлить духа, и тогда жди беды; а можно умилостивить — тогда он поможет.</p>
+<p>В каждой семье был алтарь с куклами, изображавшими предков, или с табличками, на которых написаны их имена. О всяком важном шаге в жизни нужно было сообщать предкам и просить у них разрешения. Им приносили бескровные жертвы в виде пищи, а можно было и задобрить деньгами. Это и есть <button class="term" data-t="predki">культ предков</button>. Позднее, когда в Китай проник буддизм, начали строить <button class="term" data-t="pagoda">пагоды</button> — буддийские храмы.</p>
+<p><b>В 1-м тысячелетии до н. э., когда Китай был раздроблен, в нём возникло множество учений.</b> Они по-своему отвечали на вопросы: как построить совершенное общество? как добиться процветания своего царства? как объединить Китай?</p>
+<p>Одно из них — <button class="term" data-t="zakonniki">учение «законников»</button> — настаивало, что нужны самые свирепые наказания и тяжёлые подати с повинностями, иначе народ избалуется и непременно затеет смуту. Именно этим учением руководствовался объединитель Китая Цинь Шихуанди.</p>
+<p>А династия Хань сделала главным другое учение, созданное задолго до неё философом <button class="term" data-t="konfuciy">Конфуцием</button>.</p>
+<p>Великий мудрец жил около 500 года до н. э. В основе его учения — оценка поведения человека и отношение к поступкам людей. Вопросы о происхождении и устройстве мира или о богах Конфуция мало интересовали. Он проповедовал <button class="term" data-t="dobrodeteli">пять добродетелей</button>: мудрость, гуманность, верность (особенно своему государю), почитание старших, мужество. Одним из главных положений его учения был культ предков.</p>
+<p>Конфуций считал, что в основе жизни государства должен лежать строгий порядок. Государство он рассматривал как большую семью, в которой должны соблюдаться те же правила, что и в обычной семье. <b>«Пусть отец будет отцом, сын — сыном, государь — государем, чиновник — чиновником»</b>, — говорил он.</p>
+<p>В основу своего учения мудрец положил идею о <button class="term" data-t="sovershenniy">совершенном человеке</button>: скромность, справедливость и, главное, стремление исполнить свой долг перед обществом. Большое значение Конфуций придавал образованию. Он создал свою школу, много путешествовал с учениками, а те после смерти наставника составили книгу с его изречениями.</p>
+</div>
+<div class="book" hidden>
+<p>Как и многие народы Древнего мира, китайцы обожествляли природу: землю, небо, воду. По их представлениям, мир первоначально был един, а потом отделились небо от земли, а день от ночи. Всё в мире разделилось на тёмное начало (инь) и противоположное ему светлое (ян). Небо китайцы стали рассматривать как воплощение ян, а землю — инь.</p>
+<p>Верховным божеством, по представлениям древних китайцев, был Владыка Ди. Китайцы поклонялись различным духам, считая их такими же «законными» жителями земли, как и человек. Не было абсолютно злых духов, как, впрочем, и абсолютно добрых, но с ними надо было уметь общаться. Можно разозлить духа, и тогда жди от него беды, а можно умилостивить — тогда дух поможет.</p>
+<p>Каждая семья имела алтарь с куклами, изображавшими предков, или с табличками, на которых были написаны их имена. О всяком важном шаге в жизни нужно было сообщать предкам и просить у них разрешения. Приносились бескровные жертвы в виде пищи. Можно было также задобрить предков деньгами. Позднее, когда в Китай проник буддизм, начали строить пагоды — буддийские храмы.</p>
+<p>В 1-м тысячелетии до н. э., в эпоху раздробленности Древнего Китая, в нём возникло множество учений. Они по-своему отвечали на вопросы: как построить совершенное общество? Как достичь процветания своего царства? Как объединить Китай? Одно из них — так называемое учение «законников» — настаивало на том, что необходимо применять самые свирепые наказания и устанавливать тяжёлые подати и повинности, иначе народ избалуется и непременно затеет смуту. Именно этим учением руководствовался объединитель Китая Цинь Шихуанди.</p>
+<p>Династия Хань сделала господствующим другое учение, созданное задолго до неё философом Конфуцием. Великий мудрец Конфуций жил около 500 года до н. э. В основе его учения были оценка поведения человека и отношение к различным поступкам людей. Вопросы о происхождении и устройстве мира или богах Конфуция мало интересовали. Он проповедовал пять основных добродетелей: мудрость, гуманность, верность (особенно своему государю), почитание старших, мужество. Одним из главных положений конфуцианского учения был культ предков.</p>
+<p>Конфуций считал, что в основе жизни государства должен лежать строгий порядок. Государство он рассматривал как большую семью, в которой должны соблюдаться те же правила, что и в обычной семье. «Пусть отец будет отцом, сын — сыном, государь — государем, чиновник — чиновником», — говорил Конфуций.</p>
+<p>В основу своего учения великий мудрец положил идею о совершенном человеке. Этот человек должен обладать такими качествами, как скромность, справедливость, и, главное, стремиться к исполнению своего долга перед обществом. Большое значение Конфуций придавал образованию. Он создал свою школу, много путешествовал с учениками, которые после смерти наставника создали книгу с его изречениями.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-inyan" src="img/84d32699c5cd.jpg" alt="Круглый знак: светлая и тёмная капли обвивают друг друга, в каждой по точке другого цвета, вокруг узорчатая кайма" style="max-width:300px"><figcaption><span class="src">из учебника</span><b>«Инь-ян».</b> Данный символ известен с III (3) века н. э. Его принцип заключается в том, что все вещи существуют как неразделимые и противоречивые противоположности: «мужское—женское», «светлое—тёмное», «старое—молодое».<br><span style="color:var(--soft)">▲ Почему символы инь и ян образуют круг?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 288" role="img" aria-label="Схема. Сначала мир был един, потом стрелка: отделились небо от земли, а день от ночи. Две таблички: ян — светлое начало, его воплощение небо; инь — тёмное начало, его воплощение земля. Ниже: так же устроены и другие пары — мужское и женское, светлое и тёмное, старое и молодое. Знак известен с III века н. э."><use href="#r-inyan"/></svg><figcaption><b>Тут и ответ на вопрос учебника про круг.</b> Посмотри на знак: светлое переходит в тёмное, и в каждой половине есть точка другого цвета. Это одно целое, разделённое надвое, — потому его и рисуют кругом, у которого нет начала и конца.</figcaption></div></figure>
+<div class="col">
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Почему символы инь и ян образуют круг?</button></div>
+<div class="rev ans" id="r1" hidden>Потому что это не два разных предмета, а две половины одного целого. По китайским представлениям мир сначала был един и только потом разделился на небо и землю, день и ночь. Круг показывает, что разделение не окончательное: половины переходят одна в другую, и ни одна не существует без второй. А точка другого цвета внутри каждой половины напоминает, что в светлом всегда есть частица тёмного, и наоборот.</div></div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-konfuciy" src="img/7f846a9f38c2.jpg" alt="Старинный рисунок: пожилой человек в длинном халате и высоком уборе стоит, сложив руки" style="max-width:240px"><figcaption><span class="src">из учебника</span><b>Конфуций. Древний портрет.</b></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 570 340" role="img" aria-label="Вверху: в 1-м тысячелетии до н. э. Китай был раздроблен, и учений появилось множество; все спорили, как построить хорошее общество и как объединить страну. Слева «законники»: самые свирепые наказания, тяжёлые подати и повинности, иначе народ избалуется и затеет смуту; этим и правил Цинь Шихуанди. Справа конфуцианство: пять добродетелей — мудрость, гуманность, верность государю, почитание старших, мужество; культ предков; государство — большая семья; его выбрала династия Хань. Внизу слова Конфуция: пусть отец будет отцом, сын — сыном, государь — государем, чиновник — чиновником."><use href="#r-uchenia"/></svg><figcaption><b>Сравни с §18.</b> Империя Цинь жила по левой колонке и рухнула меньше чем за двадцать лет. Хань выбрала правую и простояла больше четырёх веков.</figcaption></div></figure>
+<div class="col">
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Любопытные детали: род Конфуция</button></div>
+<div class="rev ans" id="r2" hidden>Родовое древо Конфуция насчитывает приблизительно 2,5 тысячи лет и является самым масштабным в мире. На сегодняшний день оно охватывает 83 поколения его потомков. Согласно данным специально созданного в Китае Комитета по генеалогии семьи Конфуция, родословные книги с перечислением его потомков считаются самыми объёмными в мире и насчитывают 43 тысячи страниц с именами более 2 миллионов человек. В наше время несколько десятков тысяч потомков Конфуция живут не только в Китае, но и за его пределами.</div></div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>На чём основывалось учение Конфуция?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Китайцы считали, что нет ни абсолютно злых духов, ни абсолютно добрых. Как это связано с инь и ян?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Где искать: второй и третий абзацы раздела 3 и схема про инь и ян.</div>
+<div class="rev ans" id="a8" hidden>Это одна и та же мысль. Мир для китайцев состоял не из добра и зла, а из двух начал, которые не могут друг без друга. Поэтому и дух — не добрый и не злой: всё зависит от того, разозлишь ты его или умилостивишь. Не бывает чистого света без тьмы — и чистого зла тоже.</div>
+</div>
+<div class="think">
+<p class="qt">9. Конфуция «мало интересовали» боги и устройство мира. О чём же тогда было его учение?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Где искать: абзац про Конфуция и пять добродетелей.</div>
+<div class="rev ans" id="a9" hidden>О поведении человека и о том, как оценивать поступки людей. Он проповедовал мудрость, гуманность, верность государю, почитание старших и мужество, ставил в основу культ предков и идею совершенного человека — скромного, справедливого и исполняющего свой долг перед обществом. То есть учил не вере, а тому, как жить среди людей.</div>
+</div>
+<div class="think">
+<p class="qt">10. «Пусть отец будет отцом, сын — сыном, государь — государем, чиновник — чиновником». Что Конфуций имел в виду?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Где искать: абзац про государство как большую семью.</div>
+<div class="rev ans" id="a10" hidden>Что каждый должен делать своё дело и вести себя так, как положено на его месте. Государство он считал большой семьёй, где действуют те же правила, что и в обычной: порядок держится не на страхе, а на том, что все исполняют свою роль. Сравни с «законниками» — там порядок держался на свирепых наказаниях.</div>
+</div>
+<div class="think">
+<p class="qt">11. Почему династия Хань выбрала именно конфуцианство, а не учение «законников»?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Где искать: раздел 3, схема «два китайских ответа», и вспомни §18 про конец империи Цинь.</div>
+<div class="rev ans" id="a11" hidden>Потому что «законниками» правил Цинь Шихуанди — и его империя истощила страну и рухнула вскоре после его смерти. Хань пришла к власти на восстании против этих порядков и взяла учение, где порядок держится на добродетелях, почитании старших и долге, а не на свирепых наказаниях.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Великие открытия китайцев</h2></div>
+<div class="easy">
+<p>В глубокую древность уходит корнями китайская медицина. Китайцы прекрасно знали строение человеческого тела и умели избавлять от многих недугов.</p>
+<p>По их мнению, в человеке, как и в мире, есть две силы: инь и ян. Они двигаются по телу сотнями мельчайших дорожек. Когда они уравновешены — человек здоров. Стоит равновесию в каком-нибудь органе нарушиться — появляется болезнь. Тогда врач специальными иголочками, которые вводит в определённые точки тела, восстанавливает равновесие, и человек выздоравливает. Этот способ лечения называется <button class="term" data-t="akupunktura">акупунктурой</button> и используется в современной медицине.</p>
+<p>Учёные предполагают, что уже в XIII (13) веке до н. э. в Китае был известен <button class="term" data-t="lak">лак</button>. Лак — это смола дерева. Чтобы его собрать, на дереве делали надрез, и смола стекала в приготовленный сосуд. Изделия, покрытые лаком, были очень красивы и долговечны.</p>
+<p>С VII (7) века до н. э. в Китае был известен <button class="term" data-t="poroh">порох</button>. Сначала его использовали для фейерверков во время дворцовых церемоний. Легенда гласит, что однажды окружённый вражеской конницей полководец Кун Мин приказал зажечь факелы, но солдаты в панике не рассчитали количество пороха, и произошёл мощный взрыв. Вражеская конница отступила. С этого времени порох стали использовать в военных действиях.</p>
+<p>Примерно к I (1) веку до н. э. относится изобретение китайцами <button class="term" data-t="bumaga">бумаги</button>. До этого для письма использовали бамбуковые дощечки и шёлк. Бумага, как более дешёвый материал, их заменила, а позднее распространилась по всему миру.</p>
+<p>Одно из главных изобретений Древнего Китая — шёлк. Его получали из нитей, которые вырабатывают гусеницы <button class="term" data-t="shelkopryad">тутового шелкопряда</button>. Кокон разматывали на волокна, скручивали из них нити, а затем запускали в ткацкий станок. Технологию китайцы хранили в глубокой тайне, охотно продавая саму ткань в другие страны. Шёлком можно было заплатить налоги или принести его в дар правителю.</p>
+<p>Знаменитый торговый маршрут, проложенный ещё в I (1) веке до н. э., шёл из Китая через горы Памира до Междуречья — и получил название в честь этой ткани: Великий шёлковый путь.</p>
+<p>А ещё китайские астрономы могли предсказывать солнечные и лунные затмения, а математики открыли десятичные дроби и делали сложные вычисления, нужные при строительстве храмов, дворцов и каналов. Был у китайцев и <button class="term" data-t="kompas">компас</button>.</p>
+</div>
+<div class="book" hidden>
+<p>В глубокую древность уходит своими корнями китайская медицина. Китайцы прекрасно знали строение человеческого тела и умели избавлять от многих недугов. По их мнению, в человеке, как и в мире, существуют две силы: инь и ян. Они двигаются по организму сотнями мельчайших дорожек. И когда они уравновешены — человек здоров. Стоит равновесию в каком-нибудь органе нарушиться — появляется болезнь. Тогда врач при помощи специальных иголочек, которые он вводит в определённые точки тела, восстанавливает равновесие, и человек выздоравливает. Этот способ лечения называется «акупунктура» и используется в современной медицине.</p>
+<p>Учёные предполагают, что уже в XIII (13) веке до н. э. в Китае был известен лак. Лак — это смола дерева. Чтобы его собрать, на дереве делали надрез, и смола стекала в специально приготовленный сосуд. Изделия, покрытые лаком, были очень красивы и долговечны.</p>
+<p>С VII (7) века до н. э. в Китае был известен порох. Сначала он использовался для фейерверков во время дворцовых церемоний. Легенда гласит, что однажды окружённый вражеской конницей полководец Кун Мин приказал зажечь факелы, но солдаты в панике не рассчитали количество пороха, и произошёл мощный взрыв. Вражеская конница отступила. С этого времени порох стали использовать в военных действиях.</p>
+<p>Примерно к I (1) веку до н. э. относится изобретение китайцами бумаги. До этого в государстве для письма использовали бамбуковые дощечки и шёлк. Бумага, как более дешёвый материал, их заменила. Позднее она распространилась по всему миру.</p>
+<p>Одним из главных изобретений Древнего Китая является шёлк. Его получали из нитей, которые вырабатывали гусеницы тутового шелкопряда. Кокон разматывали на волокна, скручивали из них нити, а затем их можно было запускать в ткацкий станок. Китайцы хранили в глубокой тайне технологию изготовления материи, охотно продавая её в другие страны. Шёлком можно было заплатить налоги или принести его в дар правителю.</p>
+<p>Знаменитый древний торговый маршрут, проложенный ещё в I (1) веке до н. э., который шёл из Китая через горы Памира до Междуречья, получил своё название в честь этой уникальной ткани — Великий шёлковый путь.</p>
+<p>Китайские астрономы могли предсказывать солнечные и лунные затмения, а математики открыли десятичные дроби и делали сложные вычисления, необходимые при строительстве храмов, дворцов, каналов.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 580 360" role="img" aria-label="Список открытий. Медицина: инь и ян идут по телу сотнями дорожек, равновесие — здоровье, сбой — болезнь; иголки в нужные точки возвращают равновесие, это акупунктура, её применяют и сейчас. Лак — уже в XIII веке до н. э.: это смола дерева, делали надрез, и смола стекала в сосуд, вещи выходили красивые и прочные. Порох — с VII века до н. э.: сначала только фейерверки на дворцовых праздниках, а после случайного взрыва у полководца Кун Мина стали применять на войне. Бумага — примерно с I века до н. э.: до неё писали на бамбуковых дощечках и на шёлке, бумага дешевле и разошлась по миру. Шёлк: нить даёт гусеница тутового шелкопряда, кокон разматывали, скручивали нити и ткали, тайну хранили, ткань продавали, шёлком платили налоги. Внизу: астрономы предсказывали затмения, а математики открыли десятичные дроби."><use href="#r-otkrytiya"/></svg><figcaption><b>Посмотри на даты в заголовках.</b> Лак, порох и бумага появились в Китае за сотни и тысячи лет до того, как о них узнал остальной мир. Секрет шёлка держали ещё дольше.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-kompas" src="img/efc5ba96456c.jpg" alt="Фотография: квадратная бронзовая пластина с резными знаками, на ней лежит тёмная ложка с длинным черенком"><figcaption><span class="src">из учебника</span><b>Древний китайский компас.</b> Компас состоял из медной пластины и ложки из магнетита (железной руды, способной намагничиваться). На пластине были нанесены обозначения сторон света. Ложка своей отполированной выпуклой частью устанавливалась на столь же тщательно отполированный центр пластины. После этого ложку раскручивали, и, остановившись, она черенком всегда указывала точно на юг.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-lak" src="img/1765ca36116c.jpg" alt="Фотография: тёмно-красная лакированная шкатулка с перламутровым узором и металлической застёжкой"><figcaption><span class="src">из учебника</span><b>Древнекитайская лаковая шкатулка.</b> Лаком в Древнем Китае покрывали домашнюю утварь, посуду и церемониальные сосуды, конскую упряжь, луки и стрелы, украшали экипажи. Использование лака регламентировалось официальным уставом, его смешивали с золотом, создавали уникальные произведения искусства на утвари и шёлке. Секреты лакирования китайские мастера не раскрывали.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие открытия и достижения были сделаны в Древнем Китае?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">12. Китайская медицина лечит иголками, а объясняет это через инь и ян. Откуда в медицине взялись те же слова, что и в рассказе о сотворении мира?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Где искать: первые два абзаца раздела 4 и раздел 3 про инь и ян.</div>
+<div class="rev ans" id="a12" hidden>Потому что китайцы считали человека устроенным так же, как весь мир. Если в мире всё держится на равновесии двух начал, значит, и в теле тоже: инь и ян идут сотнями дорожек, и пока они уравновешены — человек здоров. Болезнь — это нарушенное равновесие, а иголки его возвращают.</div>
+</div>
+<div class="think">
+<p class="qt">13. Порох сначала жгли для праздников и только потом стали применять на войне. Что решило дело?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h13" hidden>Где искать: абзац про порох.</div>
+<div class="rev ans" id="a13" hidden>Случайность. По легенде, у окружённого полководца Кун Мина солдаты в панике не рассчитали количество пороха, грянул мощный взрыв — и вражеская конница отступила. Люди увидели, на что порох способен, и с этого времени стали использовать его в военных действиях.</div>
+</div>
+<div class="think">
+<p class="qt">14. Бумагу изобрели не потому, что не на чем было писать. Почему же тогда?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h14" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a14" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h14" hidden>Где искать: абзац про бумагу.</div>
+<div class="rev ans" id="a14" hidden>Писать было на чём: использовали бамбуковые дощечки и шёлк. Но бумага оказалась дешевле — и вытеснила их. Именно дешевизна сделала письмо доступным многим, поэтому бумага потом и разошлась по всему миру.</div>
+</div>
+<div class="think">
+<p class="qt">15. Шёлк продавали охотно, а способ его изготовления хранили в глубокой тайне. В чём тут расчёт?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h15" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a15" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h15" hidden>Где искать: абзац про шёлк, и вспомни §18.</div>
+<div class="rev ans" id="a15" hidden>Продавая ткань, китайцы получали доход; раскрыв секрет, они потеряли бы его навсегда — шёлк начали бы делать везде. Поэтому они торговали товаром, но не знанием. Пока тайна держалась, шёлк был только китайским — и за ним шли караванами через всю Азию по Великому шёлковому пути.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">В индуизме особо почитаемыми были боги Брахма, Вишну, Шива. В VI (6) веке до н. э. в Индии возникла новая религия — буддизм. Индийцы дали миру новую систему записи цифр, были изобретены шахматы. К изобретениям китайцев относятся лак, порох, бумага, компас. В Древнем Китае возникло множество религиозных учений, самым знаменитым мудрецом в истории Китая был Конфуций.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Сравни индуизм с верой египтян. Что у них было общего и чем они различались?</li><li>Почему китайские императоры поддерживали учение Конфуция?</li><li>Подумай, почему буддизм смог так широко распространиться в Индии.</li><li>Как ты думаешь, почему древние китайцы смогли создать столь сложные изобретения, как бумага и компас? Свой ответ объясни.</li><li>Используя дополнительные источники информации, выясни, как жили представители варны брахманов в Древней Индии. Представь свою работу перед классом.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к третьему вопросу</button></div>
+<div class="rev hint" id="r3" hidden>Вспомни §17 и раздел 1 этого параграфа. В Индии человек с рождения был заперт в своей варне: сын жреца — жрец, сын слуги — слуга, перейти закон не позволял. А Будда говорил не о варне, а о том, что доступно каждому: откажись от желаний — и придёшь к нирване. Впервые путь к освобождению от страданий не зависел от того, в какой семье ты родился.</div></div>
+<div class="sublabel">Работаем с понятиями</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Какое понятие общее для этих: буддизм, шёлк, порох, пагода?</button></div>
+<div class="rev ans" id="r4" hidden>Общее для них — <b>Древний Китай</b>. Шёлк и порох китайцы изобрели сами, пагоды — буддийские храмы — стали строить у себя, а буддизм пришёл в Китай из Индии и прижился там. То есть все четыре слова связаны с китайской культурой: два изобретения, одна постройка и одна религия, которую Китай принял со стороны.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — какой вклад внесли народы Древней Индии и Древнего Китая в мировую науку и культуру? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="2"><span class="ord"></span>В Китае узнали порох</button>
+<button class="chip" data-ord="1"><span class="ord"></span>В Китае узнали лак</button>
+<button class="chip" data-ord="3"><span class="ord"></span>В Индии возник буддизм</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Китайцы изобрели бумагу</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Сансара</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 550 292" aria-hidden="true"><use href="#r-sansara"/></svg><span class="ftext">Круговорот перерождений: душа переходит в новое тело, а каким будет рождение — решает прошлая жизнь.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Нирвана</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 570 372" aria-hidden="true"><use href="#r-budda"/></svg><span class="ftext">Освобождение от желаний, страданий и привязанностей — цель учения Будды.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Веды</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 570 322" aria-hidden="true"><use href="#r-indiya"/></svg><span class="ftext">Древнейшие книги Индии, на санскрите — «знание». Четыре сборника: стихи, гимны, толкование обряда.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Инь и ян</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="inyan" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Тёмное и светлое начала. Инь — земля, ян — небо; они противоположны и неразделимы.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Конфуций</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="konfuciy" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Мудрец около 500 года до н. э. Пять добродетелей, культ предков, государство как большая семья.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Акупунктура</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 580 360" aria-hidden="true"><use href="#r-otkrytiya"/></svg><span class="ftext">Лечение иголками: врач возвращает равновесие инь и ян. Применяется и сегодня.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что такое сансара?</h3><div class="opts">
+<button class="opt" data-ok="1">Круговорот перерождений</button>
+<button class="opt">Свод законов</button>
+<button class="opt">Название храма</button></div>
+<div class="fb">Каким будет новое рождение, зависит от того, как прожита прошлая жизнь.</div></div>
+<div class="q"><h3>2. Кто из индийских богов был творцом, создателем Вселенной?</h3><div class="opts">
+<button class="opt">Шива</button>
+<button class="opt" data-ok="1">Брахма</button>
+<button class="opt">Ганеша</button></div>
+<div class="fb">Шива — разрушитель, Ганеша — покровитель купцов, путешественников и учёных.</div></div>
+<div class="q"><h3>3. Что значит слово «Будда»?</h3><div class="opts">
+<button class="opt">«Царевич»</button>
+<button class="opt">«Учитель»</button>
+<button class="opt" data-ok="1">«Просветлённый»</button></div>
+<div class="fb">Так прозвали Сиддхартху Гаутаму, который сорок лет проповедовал своё учение.</div></div>
+<div class="q"><h3>4. Какое открытие индийцев мы используем каждый день?</h3><div class="opts">
+<button class="opt" data-ok="1">Ноль и запись числа по местам</button>
+<button class="opt">Клинопись</button>
+<button class="opt">Папирус</button></div>
+<div class="fb">Эти цифры взяли арабы, от них они попали в Европу — потому мы и зовём их арабскими.</div></div>
+<div class="q"><h3>5. Чьё учение сделала главным династия Хань?</h3><div class="opts">
+<button class="opt">«Законников»</button>
+<button class="opt" data-ok="1">Конфуция</button>
+<button class="opt">Будды</button></div>
+<div class="fb">«Законниками» руководствовался Цинь Шихуанди — и его империя рухнула.</div></div>
+<div class="q"><h3>6. Что в Древнем Китае сначала использовали только для фейерверков?</h3><div class="opts">
+<button class="opt">Лак</button>
+<button class="opt">Бумагу</button>
+<button class="opt" data-ok="1">Порох</button></div>
+<div class="fb">На войне его стали применять после случайного взрыва у полководца Кун Мина.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Религия Древней Индии</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Брахманизм и сансара: много жизней, душа переходит в новое тело, новое рождение — по делам прошлой жизни.</li><li>Три особо почитаемых бога: Брахма-творец с четырьмя лицами, Вишну — хранитель порядка, Шива-разрушитель в виде танцора; любимый Ганеша с головой слона.</li><li>Толкования брахманизма слились в индуизм: знати он оправдывал власть, беднякам давал надежду.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как царевич стал Буддой</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Сиддхартха Гаутама, сын раджи, вырос во дворце без забот; выйдя за стены, встретил старика, больного и похоронную процессию.</li><li>Бежал из дворца, семь лет скитался; мудрецы, книги и отшельники не дали ответа, как избежать страданий.</li><li>Нашёл его сам: отказаться от желаний, удалиться от мира — и после смерти достичь нирваны. Сорок лет проповеди, прозвище «просветлённый», ученики строили монастыри.</li></ol></div>
+</div>
+<div class="think">
+<h3>Что Индия дала миру</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Веды — четыре сборника, «знание» на санскрите; поэмы «Махабхарата» и «Рамаяна».</li><li>Новая запись цифр: ноль как знак пустоты и значение числа по месту; через арабов попала в Европу.</li><li>Шахматы «чатуранга» — «войско из четырёх частей»: пехота, колесницы, кавалерия, слоны.</li></ol></div>
+</div>
+<div class="think">
+<h3>Верования и учения Китая</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Обожествляли землю, небо и воду; мир был един, потом разделился на инь (земля) и ян (небо).</li><li>Верховный Владыка Ди, духи — не злые и не добрые, культ предков с алтарём и табличками; позже пагоды.</li><li>Множество учений: «законники» со свирепыми наказаниями (им следовал Цинь Шихуанди) и конфуцианство с пятью добродетелями, культом предков и государством-семьёй (его выбрала Хань).</li></ol></div>
+</div>
+<div class="think">
+<h3>Великие открытия китайцев</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Медицина: равновесие инь и ян в теле, лечение иголками — акупунктура, применяется и сейчас.</li><li>Лак с XIII века до н. э., порох с VII века до н. э., бумага около I века до н. э., шёлк из нити тутового шелкопряда.</li><li>Компас из медной пластины и ложки-магнетита; астрономы предсказывали затмения, математики открыли десятичные дроби.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p18.html">‹ §18 Древний Китай</a>
+  <span class="pn cur">§19 Религия и культура</span>
+  <a class="pn" href="it2.html">Итоги главы II ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 19 · История, 5 класс · страницы 108—115 · глава II «Древний Восток»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'r-sansara':'0 0 550 292','r-bogi':'0 0 570 316','r-budda':'0 0 570 372','r-indiya':'0 0 570 322','r-inyan':'0 0 540 288','r-uchenia':'0 0 570 340','r-otkrytiya':'0 0 580 360'};
+
+var T={
+brahmanizm:{w:"Брахманизм",k:"религия",s:"r-sansara",t:"Ранние религиозные верования жителей Древней Индии. Единой религией брахманизм не был: его по-разному толковали. Позже эти толкования соединились в индуизм."},
+sansara:{w:"Сансара",k:"учение",s:"r-sansara",t:"Учение о круговороте перерождений. Человек проживает много жизней, и душа после смерти всякий раз переходит в новое тело. Каким будет новое рождение, зависит от того, как прожита прошлая жизнь."},
+induizm:{w:"Индуизм",k:"религия",s:"r-bogi",t:"Единое учение, в которое объединились разные толкования брахманизма. В нём много второстепенных, но почитаемых богов. Индуизм подходил всем: знати он оправдывал господство, а беднякам давал надежду на будущее."},
+brahmabog:{w:"Брахма",k:"бог",p:"trimurti",t:"Бог-творец, создатель Вселенной. Его изображали человеком с четырьмя руками и четырьмя лицами, обращёнными в разные стороны света."},
+vishnu:{w:"Вишну",k:"бог",p:"trimurti",t:"Хранитель мирового порядка — один из трёх особо почитаемых богов Индии."},
+shiva:{w:"Шива",k:"бог",p:"trimurti",t:"Бог-разрушитель. Его изображали в виде танцора."},
+ganesha:{w:"Ганеша",k:"бог",p:"ganesha",t:"Добродушный толстяк с головой слона. Бог не главный, но очень любимый: считается, что он покровительствует купцам, путешественникам и учёным. Большой сладкоежка — ему приносят плоды и сладкие лепёшки."},
+buddizm:{w:"Буддизм",k:"религия",s:"r-budda",t:"Религия, возникшая в Индии в VI (6) веке до н. э. Ей суждено было стать одной из мировых религий. С конца IV (4) века до н. э. она широко распространилась по Индии."},
+gautama:{w:"Сиддхартха Гаутама",k:"царевич",s:"r-budda",t:"Сын индийского раджи, с которого началась новая религия. Он вырос во дворце без забот, а выйдя за его стены, понял, что жизнь полна страданий, — и ушёл искать ответ, как их избежать."},
+budda:{w:"Будда",k:"прозвище",p:"budda",t:"«Просветлённый» — так прозвали Гаутаму. Сорок лет он проповедовал своё учение, а после его смерти ученики продолжили дело."},
+nirvana:{w:"Нирвана",k:"состояние",s:"r-budda",t:"Освобождение от желаний, страданий и привязанностей. По учению Будды, к нему приходят после смерти те, кто отказался от желаний, удалился от мира и жил своими мыслями."},
+monastyr:{w:"Монастыри",k:"постройки",p:"sanchi",t:"Ученики Будды строили их вдали от городов, в горах и лесах, и поселялись там: уединившись от земной суеты, они искали освобождения от страданий в размышлениях."},
+vedy:{w:"Веды",k:"книги",s:"r-indiya",t:"Древнейшие литературные произведения Индии; на санскрите слово значит «знание». Четыре больших сборника со стихами, гимнами и толкованием обряда. В них отражены религиозные представления ариев."},
+mahabharata:{w:"«Махабхарата»",k:"поэма",p:"ravana",t:"Поэма о борьбе двух ветвей одного царского рода — Пандавов и Кауравов. В этой братоубийственной войне участвовали почти все цари Индии. Иногда «Махабхарату» называют пятой Ведой."},
+ramayana:{w:"«Рамаяна»",k:"поэма",p:"ravana",t:"Поэма о том, как царь демонов Равана похитил Ситу, жену Рамы. Как и «Махабхарата», она вобрала в себя мифы, сказания, легенды и басни и рассказывает много об обычаях Древней Индии."},
+nol:{w:"Ноль",k:"цифра",s:"r-indiya",t:"Открытие индийцев: знак, обозначавший пустоту. Благодаря ему число стало определяться не только начертанием, но и местом — и одними и теми же значками можно записывать десятки, сотни и тысячи."},
+arabcifry:{w:"Арабские цифры",k:"цифры",s:"r-indiya",t:"На самом деле индийские: эту систему записи придумали в Индии, у индийцев её заимствовали арабы, а от арабов она попала в Европу. Имя «арабские» цифры получили по дороге."},
+chaturanga:{w:"Чатуранга",k:"игра",s:"r-indiya",t:"Древнеиндийская игра, из которой вышли шахматы. Название значит «войско, состоящее из четырёх частей» — то есть из четырёх родов войск: пехоты, колесниц, кавалерии и слонов."},
+yan:{w:"Ян",k:"начало",p:"inyan",t:"Светлое начало в китайских верованиях. Его воплощением китайцы считали небо."},
+in:{w:"Инь",k:"начало",p:"inyan",t:"Тёмное начало в китайских верованиях. Его воплощением китайцы считали землю."},
+vladykadi:{w:"Владыка Ди",k:"божество",s:"r-uchenia",t:"Верховное божество по представлениям древних китайцев."},
+duhi:{w:"Духи",k:"существа",s:"r-uchenia",t:"Китайцы считали их такими же законными жителями земли, как и человека. Абсолютно злых духов не было, как и абсолютно добрых, — но с ними надо было уметь общаться: разозлишь, жди беды; умилостивишь, дух поможет."},
+predki:{w:"Культ предков",k:"обычай",p:"konfuciy",t:"В каждой семье был алтарь с куклами, изображавшими предков, или с табличками с их именами. О всяком важном шаге в жизни нужно было сообщать предкам и просить у них разрешения. Им приносили бескровные жертвы — пищу, а можно было и задобрить деньгами."},
+pagoda:{w:"Пагоды",k:"храмы",p:"sanchi",t:"Буддийские храмы. Их начали строить в Китае позднее, когда туда проник буддизм из Индии."},
+zakonniki:{w:"Учение «законников»",k:"учение",s:"r-uchenia",t:"Одно из китайских учений: нужны самые свирепые наказания и тяжёлые подати с повинностями, иначе народ избалуется и непременно затеет смуту. Именно им руководствовался объединитель Китая Цинь Шихуанди."},
+konfuciy:{w:"Конфуций",k:"мудрец",p:"konfuciy",t:"Величайший китайский мудрец, живший около 500 года до н. э. Его занимало не устройство мира и не боги, а поведение человека и его поступки. Династия Хань сделала его учение главным в стране."},
+dobrodeteli:{w:"Пять добродетелей",k:"правила",s:"r-uchenia",t:"Мудрость, гуманность, верность (особенно своему государю), почитание старших, мужество. Их проповедовал Конфуций."},
+sovershenniy:{w:"Совершенный человек",k:"образец",s:"r-uchenia",t:"Главная мысль Конфуция: человек должен быть скромным, справедливым и, самое важное, стремиться исполнить свой долг перед обществом. Большое значение мудрец придавал образованию — он создал свою школу."},
+akupunktura:{w:"Акупунктура",k:"лечение",s:"r-otkrytiya",t:"Китайский способ лечения иголками. Врач вводит их в определённые точки тела и восстанавливает равновесие инь и ян — и человек выздоравливает. Способ применяют и в современной медицине."},
+lak:{w:"Лак",k:"материал",p:"lak",t:"Смола дерева, известная в Китае уже в XIII (13) веке до н. э. На дереве делали надрез, и смола стекала в приготовленный сосуд. Покрытые лаком изделия были очень красивы и долговечны."},
+poroh:{w:"Порох",k:"вещество",s:"r-otkrytiya",t:"Известен в Китае с VII (7) века до н. э. Сначала его жгли для фейерверков на дворцовых церемониях. По легенде, у окружённого полководца Кун Мина солдаты не рассчитали количество пороха, произошёл взрыв — и вражеская конница отступила. С тех пор порох стали применять на войне."},
+bumaga:{w:"Бумага",k:"материал",s:"r-otkrytiya",t:"Изобретена в Китае примерно к I (1) веку до н. э. До этого писали на бамбуковых дощечках и на шёлке. Бумага была дешевле и заменила их, а позже разошлась по всему миру."},
+shelkopryad:{w:"Тутовый шелкопряд",k:"насекомое",s:"r-otkrytiya",t:"Его гусеницы вырабатывают нить, из которой делают шёлк. Кокон разматывали на волокна, скручивали из них нити и пускали в ткацкий станок. Как это делается, китайцы хранили в глубокой тайне."},
+kompas:{w:"Древний компас",k:"прибор",p:"kompas",t:"Медная пластина с обозначениями сторон света и ложка из магнетита — намагничивающейся железной руды. Ложку раскручивали на отполированном центре пластины, и, остановившись, она черенком всегда указывала точно на юг."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p19:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p19:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>4){fb.textContent="Верно! Лак — XIII век до н. э., порох — VII век до н. э., буддизм — VI век до н. э., бумага — около I века до н. э.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Чем больше число века «до нашей эры», тем он древнее.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p19:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p19:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
