@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Кочевники на конях, золото из курганов и греческое царство у Керченского пролива, простоявшее тысячу лет. Трудные слова можно нажимать.">
+<title>Северное Причерноморье</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="f-narody" viewBox="0 0 540 282">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КТО ЖИЛ В СЕВЕРНОМ ПРИЧЕРНОМОРЬЕ — И КОГДА</text>
+  <text x="30" y="42" font-size="11" font-weight="700" fill="var(--illink)">киммерийцы</text>
+  <rect x="30" y="48" width="90" height="14" rx="7" fill="var(--stone)"/>
+  <text x="120" y="76" font-size="11" font-weight="700" fill="var(--illink)">скифы: расцвет — IV в. до н. э.</text>
+  <rect x="120" y="82" width="150" height="14" rx="7" fill="var(--ochre)"/>
+  <rect x="270" y="82" width="135" height="14" rx="7" fill="var(--ochre)" opacity=".45"/>
+  <text x="412" y="94" font-size="10" fill="var(--soft)">поздние скифы</text>
+  <text x="270" y="110" font-size="11" font-weight="700" fill="var(--illink)">сарматы, среди них аланы →</text>
+  <rect x="270" y="116" width="240" height="14" rx="7" fill="var(--red)"/>
+  <text x="186" y="144" font-size="11" font-weight="700" fill="var(--illink)">Боспорское царство — около тысячи лет</text>
+  <rect x="186" y="150" width="305" height="14" rx="7" fill="var(--water)"/>
+  <line x1="30" y1="190" x2="510" y2="190" stroke="var(--illink)" stroke-width="2"/>
+  <g font-size="10.5" fill="var(--soft)" text-anchor="middle">
+  <line x1="30" y1="184" x2="30" y2="196" stroke="var(--illink)" stroke-width="2"/><text x="30" y="212">1000</text>
+  <line x1="180" y1="184" x2="180" y2="196" stroke="var(--illink)" stroke-width="2"/><text x="180" y="212">500</text>
+  <line x1="330" y1="184" x2="330" y2="196" stroke="var(--illink)" stroke-width="3"/><text x="330" y="212">рубеж эр</text>
+  <line x1="480" y1="184" x2="480" y2="196" stroke="var(--illink)" stroke-width="2"/><text x="480" y="212">500</text>
+  </g>
+  <text x="180" y="230" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--soft)">лет до н. э.</text>
+  <text x="480" y="230" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--soft)">лет н. э.</text>
+  <text x="8" y="266" font-size="12" font-weight="700" fill="var(--moss)">Кочевники сменяют друг друга, а греческий Боспор стоит тысячу лет.</text>
+</symbol>
+
+<symbol id="f-kurgan" viewBox="0 0 540 304">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЦАРСКИЙ КУРГАН СКИФОВ В РАЗРЕЗЕ</text>
+  <rect x="8" y="160" width="524" height="118" fill="var(--brown)" opacity=".35"/>
+  <path d="M60 160 Q200 22 340 160 Z" fill="var(--green)" stroke="var(--illink)" stroke-width="2"/>
+  <line x1="8" y1="160" x2="532" y2="160" stroke="var(--illink)" stroke-width="2"/>
+  <rect x="400" y="91" width="60" height="69" fill="var(--stone)" stroke="var(--illink)" stroke-width="1.5"/>
+  <g stroke="var(--illink)" stroke-width="1">
+  <line x1="400" y1="101" x2="460" y2="101"/><line x1="400" y1="111" x2="460" y2="111"/><line x1="400" y1="121" x2="460" y2="121"/>
+  <line x1="400" y1="130" x2="460" y2="130"/><line x1="400" y1="140" x2="460" y2="140"/><line x1="400" y1="150" x2="460" y2="150"/>
+  </g>
+  <line x1="372" y1="96" x2="372" y2="160" stroke="var(--red)" stroke-width="2"/>
+  <path d="M366 101 L372 91 L378 101 Z" fill="var(--red)"/>
+  <text x="200" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="#1C2410">курган</text>
+  <text x="200" y="145" text-anchor="middle" font-size="10.5" fill="#1C2410">насыпь из земли</text>
+  <text x="468" y="112" font-size="11" font-weight="700" fill="var(--red)">до 20 м —</text>
+  <text x="468" y="128" font-size="10.5" fill="var(--illink)">как дом</text>
+  <text x="468" y="143" font-size="10.5" fill="var(--illink)">в 7 этажей</text>
+  <rect x="140" y="196" width="120" height="70" rx="6" fill="var(--paper2)" stroke="var(--illink)" stroke-width="2"/>
+  <text x="200" y="226" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink)">могила царя</text>
+  <text x="200" y="244" text-anchor="middle" font-size="10" fill="var(--soft)">под землёй</text>
+  <text x="290" y="210" font-size="10.5" fill="var(--illink)">• золотые вещи, бронзовые котлы</text>
+  <text x="290" y="228" font-size="10.5" fill="var(--illink)">• оружие и доспехи</text>
+  <text x="290" y="246" font-size="10.5" fill="var(--illink)">• свита: слуги</text>
+  <text x="290" y="264" font-size="10.5" fill="var(--illink)">• царские лошади</text>
+  <text x="8" y="296" font-size="11" fill="var(--soft)">Самые известные: Куль-Оба (Крым), Солоха и Чертомлык (на Днепре).</text>
+</symbol>
+
+<symbol id="f-legenda" viewBox="0 0 540 292">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЛЕГЕНДА СКИФОВ, ЗАПИСАННАЯ ГЕРОДОТОМ</text>
+  <rect x="8" y="28" width="524" height="46" rx="10" fill="var(--ochre)"/>
+  <text x="270" y="48" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">С неба упали четыре золотые вещи:</text>
+  <text x="270" y="65" text-anchor="middle" font-size="11.5" fill="#22190A">плуг · ярмо · секира · чаша</text>
+  <g font-size="11" text-anchor="middle">
+  <rect x="8" y="88" width="168" height="98" rx="10" fill="var(--paper2)"/>
+  <text x="92" y="110" font-weight="700" fill="var(--illink)">Липоксаис</text>
+  <text x="92" y="126" font-size="10" fill="var(--soft)">старший брат</text>
+  <path d="M92 134 C81 146 85 158 92 160 C99 158 103 146 92 134 Z" fill="var(--flame)"/>
+  <text x="92" y="174" font-size="10" fill="var(--illink)">золото вспыхнуло</text>
+  <rect x="186" y="88" width="168" height="98" rx="10" fill="var(--paper2)"/>
+  <text x="270" y="110" font-weight="700" fill="var(--illink)">Арпоксаис</text>
+  <text x="270" y="126" font-size="10" fill="var(--soft)">средний брат</text>
+  <path d="M270 134 C259 146 263 158 270 160 C277 158 281 146 270 134 Z" fill="var(--flame)"/>
+  <text x="270" y="174" font-size="10" fill="var(--illink)">снова вспыхнуло</text>
+  <rect x="364" y="88" width="168" height="98" rx="10" fill="var(--paper2)" stroke="var(--moss)" stroke-width="2.5"/>
+  <text x="448" y="110" font-weight="700" fill="var(--illink)">Колаксаис</text>
+  <text x="448" y="126" font-size="10" fill="var(--soft)">младший брат</text>
+  <text x="448" y="152" font-size="13" font-weight="700" fill="var(--moss)">пламя погасло</text>
+  <text x="448" y="174" font-size="10" fill="var(--illink)">унёс золото домой</text>
+  </g>
+  <text x="270" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="var(--moss)">Царство отдали младшему.</text>
+  <text x="8" y="240" font-size="10.5" fill="var(--soft)">Их отец — Таргитай, первый житель страны. От братьев пошли племена:</text>
+  <text x="8" y="256" font-size="10.5" fill="var(--soft)">авхаты, катиары и траспии, паралаты. Все вместе — сколоты, «царские».</text>
+  <text x="8" y="280" font-size="12" font-weight="700" fill="var(--moss)">Сами себя они звали сколотами, а греки — скифами.</text>
+</symbol>
+
+<symbol id="f-bospor" viewBox="0 0 540 268">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">БОСПОРСКОЕ ЦАРСТВО (V в. до н. э. — 530-е годы н. э.)</text>
+  <rect x="8" y="28" width="250" height="186" rx="12" fill="var(--water)"/>
+  <text x="20" y="50" font-size="11" font-weight="700" fill="#14262F">СТОЛИЦА</text>
+  <text x="20" y="70" font-size="13" font-weight="700" fill="#14262F">Пантикапей (Керчь)</text>
+  <text x="20" y="96" font-size="11" font-weight="700" fill="#14262F">ГОРОДА</text>
+  <text x="20" y="114" font-size="10.5" fill="#14262F">Фанагория, Гермонасса,</text>
+  <text x="20" y="130" font-size="10.5" fill="#14262F">Горгиппия, Феодосия,</text>
+  <text x="20" y="146" font-size="10.5" fill="#14262F">Нимфей, Танаис</text>
+  <text x="20" y="172" font-size="11" font-weight="700" fill="#14262F">ЖИТЕЛИ</text>
+  <text x="20" y="190" font-size="10.5" fill="#14262F">греки и осевшие местные</text>
+  <text x="20" y="206" font-size="10.5" fill="#14262F">племена</text>
+  <rect x="270" y="28" width="262" height="88" rx="12" fill="var(--paper2)"/>
+  <text x="282" y="50" font-size="11" font-weight="700" fill="var(--illink)">ПРОДАВАЛИ</text>
+  <text x="282" y="70" font-size="10.5" fill="var(--illink)">хлеб — главное богатство;</text>
+  <text x="282" y="86" font-size="10.5" fill="var(--illink)">рабы, скот, кожа, рыба, меха</text>
+  <rect x="270" y="126" width="262" height="88" rx="12" fill="var(--paper2)"/>
+  <text x="282" y="148" font-size="11" font-weight="700" fill="var(--illink)">ПОКУПАЛИ В ГРЕЦИИ</text>
+  <text x="282" y="168" font-size="10.5" fill="var(--illink)">оливковое масло, вино, ткани,</text>
+  <text x="282" y="184" font-size="10.5" fill="var(--illink)">расписную посуду</text>
+  <text x="8" y="240" font-size="10.5" fill="var(--soft)">Имя — от Боспора Киммерийского: так в древности звали Керченский пролив.</text>
+  <text x="8" y="260" font-size="12" font-weight="700" fill="var(--moss)">Бывшие колонии и местные племена — в одном царстве.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 25</span>
+    <h1>Северное Причерноморье</h1>
+    <p class="lede">Кочевники на конях, золото из курганов и греческое царство у Керченского пролива, простоявшее тысячу лет. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Какие народы проживали в Северном Причерноморье? Какое влияние они оказали на развитие этой территории?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p24.html">‹ §24 Колонизация</a>
+  <span class="pn cur">§25 Причерноморье</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Киммерийцы">1</a><a href="#s2" data-j="s2" title="Скифы. Сарматы">2</a><a href="#s3" data-j="s3" title="Боспорское царство">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-pantikapey" src="img/e54444b165a2.jpg" alt="Фотография: на зелёном холме развалины — две каменные колонны с перекладиной и остатки стен"><figcaption><span class="src">из учебника</span><b>Пантикапей (ныне Керчь, Россия). Современный вид.</b> Пантикапей — древнегреческий город на полуострове Крым. Он первым встречает путешественников, прибывающих с материка через Крымский мост. Выходцы из древнегреческого города Милета основали его в конце VII (7) века до н. э. на горе Митридат. Город опоясывали каменные укрепления, превосходящие по своей мощи даже афинские.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Киммерийцы</h2></div>
+<div class="easy">
+<p>В начале 1-го тысячелетия до н. э. люди освоили железо. Это время называют <button class="term" data-t="zhelezo">железным веком</button>. Железо открыло людям дорогу к миру, каким мы его знаем.</p>
+<p>А в степях Евразии в это время климат стал суше и холоднее. От засухи пастбища пропадали, и племенам приходилось всё время перебираться на новые места со своими стадами. Так живут при <button class="term" data-t="kochevoe">кочевом хозяйстве</button>.</p>
+<p>Самый древний народ нашей страны, чьё имя мы знаем точно, — <button class="term" data-t="kimmeriytsy">киммерийцы</button>, кочевники Северного Причерноморья. Гомер упоминает их в «Одиссее» (§22) как далёкий сказочный народ у входа в царство мёртвых.</p>
+<p>К началу VII века до н. э. киммерийцев сменили новые кочевники — <button class="term" data-t="skify">скифы</button>. Они пришли с востока, из Средней Азии и Южной Сибири. По всей степи тогда жили родственные кочевые народы, похожие друг на друга. Учёные называют это «скифо-сибирским миром».</p>
+<p>Гомер в «Илиаде» называл таких кочевников «дивные доители кобылиц млекоеды»: они доили кобылиц и пили молоко. Одной фразой — вся их жизнь: верхом и с табунами.</p>
+<p>Скифы вытеснили киммерийцев в Малую Азию и пошли следом. Почти сто лет конные лучники грабили города Малой Азии и Ближнего Востока. А потом окончательно поселились в Северном Причерноморье.</p>
+<p><b>Ты уже каталась верхом и стреляла из лука.</b> А скифы делали это одновременно: стреляли прямо с коня. Поэтому их и называли конными лучниками.</p>
+</div>
+<div class="book" hidden>
+<p>В начале 1-го тысячелетия до н. э. произошёл новый скачок в технологическом развитии — освоение железа. Этот период в истории принято называть железным веком. Овладение новым металлом открыло человечеству путь к развитию мира в том виде, каким мы его знаем сейчас.</p>
+<p>Одновременно с освоением человеком железа в природной среде обширных степных и полупустынных пространств Евразии происходят значительные изменения — климат становится более сухим и холодным. Засуха заставила древние племена постоянно перемещаться в поисках новых пастбищ.</p>
+<p>Древнейшими обитателями территории нашей страны, название которых мы достоверно знаем, стали кочевники Северного Причерноморья — киммерийцы. О киммерийцах упоминает Гомер в «Одиссее» как о далёком мифическом народе, живущем у входа в подземное царство.</p>
+<p>По данным археологии, к началу VII (7) века до н. э. киммерийцев в Северном Причерноморье сменили новые кочевые племена — скифы, пришедшие с востока, из глубин Средней Азии и Южной Сибири. К этому времени на обширных пространствах степей Евразии сформировался целый «скифо-сибирский мир», населённый различными кочевыми и полукочевыми народами, родственными по происхождению и имевшими сходный облик культуры.</p>
+<p>Гомер в «Илиаде» называет кочевников-коневодов скифского облика «дивные доители кобылиц млекоеды», тем самым передавая характерные черты их образа жизни.</p>
+<p>Вытеснив киммерийцев в Малую Азию, скифы последовали за ними. Почти столетие конные лучники во время набегов разоряли города Малой Азии и Ближнего Востока, после чего окончательно обосновались в Северном Причерноморье.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-kimmeriytsy" src="img/694ea1ac6d4d.jpg" alt="Рисунок: три воина в красных куртках и штанах, с луком, копьём и мечом; у одного остроконечный колпак" style="max-width:449px"><figcaption><span class="src">из учебника</span><b>Киммерийские воины.</b> О реальных событиях из истории киммерийцев сообщают ассирийские клинописные тексты. Они описывают конфликты воинственных кочевников с Урарту, их разрушительные походы на государства Малой Азии и греческие города, а также о расселении части киммерийцев на северо-востоке Малой Азии.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 282" role="img" aria-label="Лента времени от 1000 года до н. э. до 500 года н. э. Киммерийцы — примерно до 700 года до н. э.; скифы — с 700 года до н. э., дальше поздние скифы до III века н. э.; сарматы и аланы — со II века до н. э. и дальше; Боспорское царство — с V века до н. э. до 530-х годов н. э., около тысячи лет."><use href="#f-narody"/></svg><figcaption><b>Кто за кем.</b> Полоски показывают, когда какой народ жил в Причерноморье. До н. э. время на ленте идёт к рубежу эр, а дальше годы нашей эры растут.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопросы учебника</b>
+<ol><li>Что такое кочевое хозяйство?</li><li>Какие кочевые народы появились на территории нашей страны?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Как засуха в степях связана с тем, что народы в Причерноморье сменяли друг друга?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Второй и четвёртый абзацы раздела.</div>
+<div class="rev ans" id="a1" hidden>Климат стал суше и холоднее, и засуха гнала племена искать новые пастбища. Кочевники всё время двигались, и одни приходили на место других: к началу VII века до н. э. скифы с востока сменили киммерийцев.</div>
+</div>
+<div class="think">
+<p class="qt">2. Про киммерийцев рассказывает и Гомер (§22), и ассирийские тексты. Чем эти рассказы различаются?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Третий абзац и подпись к рисунку «Киммерийские воины».</div>
+<div class="rev ans" id="a2" hidden>У Гомера киммерийцы — далёкий сказочный народ у входа в подземное царство. А ассирийские клинописные тексты рассказывают о настоящих воинственных кочевниках: они воевали с Урарту и ходили походами на Малую Азию.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Скифы. Сарматы</h2></div>
+<div class="easy">
+<p>К VI веку до н. э. скифы заняли степи к северу от Чёрного и Азовского морей — до самого Дуная. А на берегах уже жили греки-колонисты (§24).</p>
+<p>Скифы с ними иногда воевали, но чаще торговали. Скифы давали скот, зерно, шкуры и рабов. Греки платили вином, вещами из золота и серебра, красивой посудой.</p>
+<p>От этой торговли одни скифы богатели больше других. Так появилась знать, а потом и государство во главе с царём. Власть царя передавалась по наследству.</p>
+<p>Расцвет скифского царства — IV век до н. э. Тогда появились большие укреплённые поселения: Каменское городище на Днепре, Бельское на реке Ворскле.</p>
+<p><b>Как богаты были цари?</b> Это видно по их могилам. Над могилой насыпали <button class="term" data-t="kurgan">курган</button> высотой до 20 метров — с дом в семь этажей. Внутрь клали много золота, бронзовые котлы, оружие и доспехи. С царём хоронили его слуг и коней. Самые знаменитые курганы — Куль-Оба в Крыму, Солоха и Чертомлык на Днепре.</p>
+<p>Вещи скифы украшали зверями: хищными птицами, кошками, волками, оленями, конями, козами, кабанами, баранами и крылатыми львами-грифонами. Звери всегда в особых, строго определённых позах. Это называют <button class="term" data-t="zverinyi">звериным стилем</button>. Ты любишь рисовать животных — попробуй нарисовать зверя «по-скифски».</p>
+<p>Царь <button class="term" data-t="atey">Атей</button> объединил всю Скифию и пошёл войной на запад. Это привело к войне с Македонией. В 339 году до н. э. скифы проиграли битву македонскому царю Филиппу II, Атей погиб. А в III веке до н. э. скифское царство пало: с востока пришли новые кочевники — <button class="term" data-t="sarmaty">сарматы</button>.</p>
+<p>Скифы остались только в Приднестровье и Крыму. Царь <button class="term" data-t="skilur">Скилур</button> во II веке до н. э. построил там столицу — Неаполь Скифский, на месте нынешнего Симферополя. Во II веке н. э. поздних скифов победило Боспорское царство, а в середине III века н. э., после походов германских племён готов, они исчезли совсем.</p>
+<p>Со II века до н. э. в степях Причерноморья хозяйничали сарматы — до Дуная и на Северном Кавказе. Потом они то воевали, то дружили с Римом. Одно сарматское племя — <button class="term" data-t="alany">аланы</button> — осталось в истории надолго: на Руси их звали ясами, а от них произошли осетины. В осетинском языке до сих пор есть следы сарматских времён.</p>
+</div>
+<div class="book" hidden>
+<p>К VI (6) веку до н. э. скифы заняли пространства к северу от Чёрного и Азовского морей до Дуная на западе. В Северном Причерноморье к этому времени уже обосновались греческие колонисты. Воинственные кочевники с ними периодически воевали, но чаще торговали, поставляя скот, зерно, шкуры и рабов. Греки расплачивались вином, изделиями из золота и серебра и красивой утварью. Тесные отношения с рабовладельческими полисами греков способствовали расслоению скифского общества и ускорили процесс образования государства во главе с царём, власть которого была наследственной.</p>
+<p>Расцвет скифского царства приходится на IV (4) век до н. э. В это время появляются крупные укреплённые поселения, такие как Каменское городище на Днепре или Бельское на днепровском притоке Ворскле.</p>
+<p>О могуществе и богатстве скифских царей периода расцвета свидетельствуют царские захоронения. Над могилой царя насыпали курган высотой до 20 метров, а в могилу клали большое количество золотых предметов, бронзовые котлы, оружие, доспехи. В загробный мир правителя сопровождала свита — раб-конюх или слуга, наложница, а также царские лошади. Наиболее примечательны царские курганы Куль-Оба (в Крыму), Солоха и Чертомлык (на берегу Днепра).</p>
+<p>Общая характерная особенность искусства скифов получила наименование «звериный стиль» из-за того, что особым образом и в строго определённых позах изображались различные животные — хищные птицы, кошачьи хищники, волки, олени, кони, козы, кабаны, бараны, а также фантастические животные: крылатые львы — грифоны.</p>
+<p>Царь Атей объединил Скифию под своим началом и стал проводить активную завоевательную политику на западе, что привело к войне с Македонией. В 339 году до н. э. скифы потерпели поражение в битве с войсками македонского царя Филиппа II (2). В битве погиб и правитель скифов Атей. В III (3) веке до н. э. их государство пало под натиском новых кочевников с востока — сарматов.</p>
+<p>Небольшие группы скифов после разгрома сохраняются лишь в Приднестровье и в Крыму, где во II (2) веке до н. э. царь Скилур основывает на месте современного Симферополя город Неаполь Скифский, столицу позднескифского царства. Во II (2) веке н. э. поздние скифы были побеждены Боспорским государством и утратили самостоятельность, а окончательно исчезли в середине III (3) века н. э., после завоевательных походов германских племён готов.</p>
+<p>Со II (2) века до н. э. в степях Причерноморья господствовали сарматы, расселившиеся до Дуная на западе и захватившие господство на Северном Кавказе. В I (1) — II (2) веках н. э. сарматы столкнулись с новым противником — Римом, с которым то воевали, то заключали союзы. Одно из сарматских племён — аланы — надолго осталось в истории. В древнерусской «Повести временных лет» летописцы называли аланское население Северного Кавказа ясами. Аланы стали предками современных осетин, а осетинский язык до сих пор хранит некоторое наследие сарматских времён.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 304" role="img" aria-label="Курган в разрезе: над землёй зелёная насыпь, рядом для сравнения дом в семь этажей такой же высоты — до 20 метров; под землёй могила царя, а в ней золотые вещи и бронзовые котлы, оружие и доспехи, слуги и царские лошади."><use href="#f-kurgan"/></svg><figcaption><b>Холм над могилой.</b> Такую гору земли насыпали руками — представь, сколько людей подчинялось царю.</figcaption></div></figure>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-sokrovischa" src="img/5acac9a7704a.jpg" alt="Золотой сосуд с выпуклыми фигурками людей на боках" style="max-width:286px"><figcaption><span class="src">из учебника</span><b>Скифские сокровища.</b> Из царских скифских курганов до нас дошло много великолепных произведений искусства — вазы, оружие, ювелирные украшения. Часть из этого изготавливали сами скифы, но многое заказывалось у греческих или восточных ювелиров.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-upryazh" src="img/8d835f2c4f3b.jpg" alt="Круглые золотые бляхи с цветными вставками на красной ткани, в центре большая выпуклая бляха" style="max-width:472px"><figcaption><span class="src">из учебника</span><b>Украшения конской упряжи, найденные в сарматском захоронении археологами Ростовского государственного университета (ныне Южный федеральный университет). 1987 г.</b></figcaption></div></figure>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-nadgrobie" src="img/276313b3b3d0.jpg" alt="Каменная плита с выпуклым изображением всадника на коне под аркой" style="max-width:444px"><figcaption><span class="src">из учебника</span><b>Фрагмент надгробия сарматов.</b> Погребения сарматов археологи изучают в Оренбургской, Астраханской, Курганской областях и других регионах России. Нетронутые захоронения сарматской знати были недавно обнаружены в Волгоградской области.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Где расселялись племена скифов и сарматов?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Как торговля с греками помогла скифам создать государство?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Первый абзац раздела; вспомни §24 — кто жил на берегах Чёрного моря.</div>
+<div class="rev ans" id="a3" hidden>Скифы продавали греческим колонистам скот, зерно, шкуры и рабов и получали вино, золото, серебро, посуду. Одни скифы богатели больше других, общество расслоилось — и быстрее сложилось государство с наследственной властью царя.</div>
+</div>
+<div class="think">
+<p class="qt">4. Откуда мы знаем, что скифские цари были очень богаты? И кто сделал многие их сокровища?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Абзац о курганах и подпись к фотографии «Скифские сокровища».</div>
+<div class="rev ans" id="a4" hidden>Из царских курганов: в могилы клали много золота, бронзовые котлы, оружие и доспехи. Часть сокровищ сделали сами скифы, но многое заказывали у греческих и восточных ювелиров.</div>
+</div>
+<div class="think">
+<p class="qt">5. Скифов сменили сарматы. Найди в параграфе ещё два случая, когда одни народы приходили на смену другим.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Раздел 1 — киммерийцы; конец раздела 2 — поздние скифы.</div>
+<div class="rev ans" id="a5" hidden>Скифы с востока сменили киммерийцев и вытеснили их в Малую Азию. А поздних скифов в Крыму сначала победило Боспорское царство, а потом их окончательно смели походы германских племён готов.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Боспорское царство</h2></div>
+<div class="easy">
+<p>В V веке до н. э. на берегах Чёрного и Азовского морей возникло <button class="term" data-t="bospor">Боспорское царство</button>. В расцвете в него входили Восточный Крым, Таманский полуостров, низовья Кубани, восточный берег Азовского моря и устье Дона.</p>
+<p>Столица — Пантикапей (Керчь). Большие города — Фанагория, Гермонасса, Горгиппия, Феодосия, Нимфей, Танаис. Помнишь их по §24? Жили здесь не только греки, но и местные племена, которые рядом с греками перестали кочевать и осели на месте.</p>
+<p>Название — от <button class="term" data-t="bosporK">Боспора Киммерийского</button>: так в древности звали Керченский пролив.</p>
+<p>Боспор богател на хлебе: выращивал его и продавал. А ещё торговал рабами, скотом, кожей, рыбой и мехами — и с соседними племенами, и с Грецией. Оттуда везли оливковое масло, вино, ткани, расписную посуду.</p>
+<p>Со II—I веков до н. э. сюда пришло влияние Рима, а потом и сами римляне — до середины III века н. э. В IV веке н. э. царство ослабили набеги готов, а потом гуннов. А в 530-х годах его захватили восточно-римские войска, и Боспор вошёл в Византийскую империю.</p>
+<p><b>Посчитай:</b> с V века до н. э. до 530-х годов н. э. Боспорское царство прожило около тысячи лет.</p>
+</div>
+<div class="book" hidden>
+<p>В V (5) веке до н. э. в Северном Причерноморье возникло Боспорское царство, включавшее в период своего расцвета Восточный Крым, Таманский полуостров, Нижнее Прикубанье, Восточное Приазовье и устье Дона. Столицей Боспорского государства стал Пантикапей, а наиболее крупными центрами были Фанагория, Гермонасса (Таманский полуостров), Горгиппия, Феодосия, Нимфей (южные окраины современной Керчи), Танаис. В состав населения царства, кроме греков, входили ставшие оседлыми под их влиянием местные племена.</p>
+<p>Своё название это государство получило от античного наименования Керченского пролива — Боспора Киммерийского.</p>
+<p>В конце II (2) — первой трети I (1) века до н. э. в Северном Причерноморье наступила эпоха римского влияния, а затем и прямого римского присутствия с середины I (1) века до середины III (3) века н. э.</p>
+<p>Натиск готов, а впоследствии и гуннов в 70-е годы IV (4) века н. э. привёл к серьёзному ослаблению Боспорского государства. Полностью свою самостоятельность оно утратило в 530-х годах после захвата восточно-римскими войсками, войдя в состав Византийской империи.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-bospor" src="img/d615d8c4fbbf.jpg" alt="Рисунок: мужчина в широкополой шляпе с посохом и оранжевым плащом и женщина в длинном платье и покрывале" style="max-width:286px"><figcaption><span class="src">из учебника</span><b>Боспорские греки.</b> Основой благосостояния Боспорского царства являлись производство и продажа хлеба, а также торговля рабами, скотом, кожей, рыбой и мехами как с окружавшими их варварскими племенами, так и с Грецией, Малой Азией, откуда боспоряне получали оливковое масло, вино, ткани, расписную керамику, предметы искусства и др. Для внутренних нужд также развивалось виноградарство и виноделие, рыболовство, огородничество и садоводство.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 268" role="img" aria-label="Слева плашка: столица Пантикапей (Керчь), города Фанагория, Гермонасса, Горгиппия, Феодосия, Нимфей, Танаис, жители — греки и осевшие местные племена. Справа: продавали хлеб, рабов, скот, кожу, рыбу, меха; покупали в Греции оливковое масло, вино, ткани, расписную посуду."><use href="#f-bospor"/></svg><figcaption><b>Хлебное царство.</b> Вспомни §24: Греции всегда не хватало хлеба. Боспор его выращивал и продавал — на этом и стоял тысячу лет.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Подумай, почему разные полисы и народы были объединены в Боспорское царство.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Как связаны Боспорское царство и колонии из §24?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>§24 — какие колонии основали греки у Чёрного моря; здесь — первый абзац.</div>
+<div class="rev ans" id="a6" hidden>Столица и города Боспора — бывшие греческие колонии: Пантикапей, Фанагория, Гермонасса, Горгиппия, Феодосия, Танаис. Самостоятельные колонии объединились в одно царство, а к грекам присоединились осевшие местные племена.</div>
+</div>
+<div class="think">
+<p class="qt">7. Скифы и Боспор — друзья или враги? Найди ответ в разных разделах.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Раздел 2 — как скифы жили с греками и чем кончились поздние скифы.</div>
+<div class="rev ans" id="a7" hidden>И то и другое. Скифы с греками-колонистами воевали, но чаще торговали. А во II веке н. э. Боспорское царство победило поздних скифов, и они утратили самостоятельность.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">На современной территории России, в Северном Причерноморье обитали многие народы: киммерийцы, скифы, сарматы, гунны, у некоторых из которых сложились государства.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Какие изменения происходили в начале 1-го тысячелетия до н. э. в жизни племён, населявших Евразию? Как они повлияли на них?</li><li>Какие взаимоотношения были у греков-колонистов и местного населения?</li><li>Какие современные области России заселяли народы Северного Причерноморья? Используя дополнительные источники информации, найди их на современной карте России.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к третьему вопросу</button></div>
+<div class="rev hint" id="r1" hidden>Крым (Керчь, Феодосия, Симферополь), Краснодарский край (Тамань, Анапа), Ростовская область (устье Дона). Погребения сарматов находят ещё в Волгоградской, Астраханской, Оренбургской и Курганской областях — это из подписи к фотографии надгробия.</div></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 292" role="img" aria-label="Легенда: с неба упали золотые плуг, ярмо, секира и чаша; перед старшим братом Липоксаисом и средним Арпоксаисом золото вспыхивало, перед младшим Колаксаисом пламя погасло, и царство отдали ему. От братьев пошли племена, все вместе — сколоты, а греки звали их скифами."><use href="#f-legenda"/></svg><figcaption><b>Легенда в картинке</b> — к тексту Геродота ниже.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Древнегреческий историк Геродот во время своего десятилетнего путешествия по разным странам посетил и Ольвию — греческую колонию в Северном Причерноморье. Находясь в Ольвии, он много общался с местными жителями, как с греками, так и скифами, записывая их рассказы. Позднее эти рассказы и личные впечатления легли в основу 4-й книги «Истории», в которой речь идёт о Скифии. Геродот. «История». Книга 4 (отрывки).</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">…Скифы ведь не землепашцы, а кочевники… По рассказам скифов, народ их — моложе всех. А произошёл он таким образом. Первым жителем этой ещё необитаемой тогда страны был человек по имени Таргитай. Родителями этого Таргитая, как говорят скифы, были Зевс и дочь реки Борисфена (я этому, конечно, не верю, несмотря на их утверждения).</p><p style="margin:0 0 10px">У Таргитая было трое сыновей: Липоксаис, Арпоксаис и самый младший — Колаксаис. В их царствование на Скифскую землю с неба упали золотые предметы: плуг, ярмо, секира и чаша. Первым увидел эти вещи старший брат. Едва он подошёл, чтобы поднять их, как золото запылало. Тогда он отступил, и приблизился второй брат, и опять золото было объято пламенем. Так жар пылающего золота отогнал обоих братьев, но, когда подошёл третий, младший, брат, пламя погасло, и он отнёс золото к себе в дом. Поэтому старшие братья согласились отдать царство младшему.</p><p style="margin:0 0 10px">Так вот, от Липоксаиса, как говорят, произошло скифское племя, называемое авхатами, от среднего брата — племя катиаров и траспиев, а от младшего из братьев — царя — племя паралатов. Все племена вместе называются сколотами, т. е. царскими. Эллины же зовут их скифами. Так рассказывают скифы о происхождении своего народа…</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq2" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq2" hidden>1. Как, по легендам, возникли скифы? 2. Где и как Геродот познакомился со скифами? 3. Почему именно в этом городе?</div>
+<div class="rev ans" id="sa3" hidden>1. Первым жителем страны был Таргитай, сын Зевса и дочери реки Борисфена (так греки звали Днепр). С неба упали золотые плуг, ярмо, секира и чаша; золото далось в руки только младшему сыну — ему и отдали царство, а от трёх братьев пошли скифские племена. 2. В Ольвии: он беседовал с греками и скифами и записывал их рассказы. 3. Ольвия — греческая колония в Северном Причерноморье, а колонисты жили рядом со скифами и торговали с ними (§24).</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — какие народы проживали в Северном Причерноморье и какое влияние они оказали на развитие этой территории? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="4"><span class="ord"></span>Скифы проиграли Филиппу II · 339 год до н. э.</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Киммерийцы в Причерноморье · начало 1-го тыс. до н. э.</button>
+<button class="chip" data-ord="7"><span class="ord"></span>Боспор вошёл в Византию · 530-е годы</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Возникло Боспорское царство · V в. до н. э.</button>
+<button class="chip" data-ord="6"><span class="ord"></span>Скилур основал Неаполь Скифский · II в. до н. э.</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Скифы сменили киммерийцев · к началу VII в. до н. э.</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Сарматы сокрушили скифское царство · III в. до н. э.</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Киммерийцы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="kimmeriytsy" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Самый древний народ нашей страны, чьё имя мы знаем. Кочевники.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Скифы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="sokrovischa" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Конные лучники-кочевники; расцвет — IV век до н. э.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Курган</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 304" aria-hidden="true"><use href="#f-kurgan"/></svg><span class="ftext">Насыпь над могилой. У скифских царей — до 20 метров.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Звериный стиль</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="sokrovischa" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Звери в особых позах — главное украшение скифских вещей.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Сарматы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="nadgrobie" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Кочевники, сменившие скифов в III—II веках до н. э.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Аланы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="upryazh" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Сарматское племя, на Руси — ясы. Предки осетин.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Боспорское царство</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 268" aria-hidden="true"><use href="#f-bospor"/></svg><span class="ftext">Царство у Керченского пролива, столица — Пантикапей. Около тысячи лет.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Кочевое хозяйство</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="kimmeriytsy" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Жизнь в дороге: со стадами — от пастбища к пастбищу.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Какой самый древний народ нашей страны, чьё имя мы знаем точно?</h3><div class="opts">
+<button class="opt">скифы</button>
+<button class="opt" data-ok="1">киммерийцы</button>
+<button class="opt">аланы</button></div>
+<div class="fb">Кочевники Северного Причерноморья. Их упоминает Гомер в «Одиссее».</div></div>
+<div class="q"><h3>2. Откуда пришли скифы?</h3><div class="opts">
+<button class="opt" data-ok="1">с востока — из Средней Азии и Южной Сибири</button>
+<button class="opt">из Греции</button>
+<button class="opt">из Египта</button></div>
+<div class="fb">К началу VII века до н. э. они сменили киммерийцев.</div></div>
+<div class="q"><h3>3. Что насыпали над могилой скифского царя?</h3><div class="opts">
+<button class="opt">пирамиду</button>
+<button class="opt">зиккурат</button>
+<button class="opt" data-ok="1">курган до 20 метров</button></div>
+<div class="fb">Пирамиды — в Египте (§10), зиккураты — в Междуречье (§11).</div></div>
+<div class="q"><h3>4. Как называют стиль скифского искусства?</h3><div class="opts">
+<button class="opt" data-ok="1">звериный</button>
+<button class="opt">геометрический</button>
+<button class="opt">краснофигурный</button></div>
+<div class="fb">Геометрический узор был в «тёмные века» (§23), краснофигурные — греческие вазы (§22).</div></div>
+<div class="q"><h3>5. Предками какого народа стали аланы?</h3><div class="opts">
+<button class="opt">греков</button>
+<button class="opt">готов</button>
+<button class="opt" data-ok="1">осетин</button></div>
+<div class="fb">В осетинском языке до сих пор есть следы сарматских времён.</div></div>
+<div class="q"><h3>6. Какой город был столицей Боспорского царства?</h3><div class="opts">
+<button class="opt" data-ok="1">Пантикапей</button>
+<button class="opt">Херсонес</button>
+<button class="opt">Танаис</button></div>
+<div class="fb">Сейчас на его месте Керчь, рядом — Крымский мост.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Киммерийцы и скифы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Железный век; засуха гонит кочевников искать пастбища.</li><li>Киммерийцы — первый народ нашей страны, чьё имя известно; их упоминает Гомер.</li><li>К началу VII века до н. э. их сменили скифы с востока — конные лучники.</li></ol></div>
+</div>
+<div class="think">
+<h3>Скифские цари и их курганы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Торговля с греками: скот, зерно, шкуры, рабы — за вино, золото, серебро, посуду; появилось царство.</li><li>Курганы до 20 метров: золото, котлы, оружие, слуги и кони; Куль-Оба, Солоха, Чертомлык.</li><li>Звериный стиль: звери в особых позах.</li></ol></div>
+</div>
+<div class="think">
+<h3>Конец Скифии, сарматы и аланы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Атей погиб в 339 году до н. э. в битве с Филиппом II; в III веке до н. э. царство пало под натиском сарматов.</li><li>Поздние скифы: Скилур и Неаполь Скифский (Симферополь); исчезли в III веке н. э.</li><li>Сарматы господствуют со II века до н. э.; аланы — ясы на Руси, предки осетин.</li></ol></div>
+</div>
+<div class="think">
+<h3>Боспорское царство</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Возникло в V веке до н. э.; столица Пантикапей; Фанагория, Горгиппия, Феодосия, Танаис и др.</li><li>Греки и осевшие местные племена; богатство — хлеб и торговля.</li><li>Рим, готы и гунны; в 530-х годах — в составе Византии; около тысячи лет.</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: народы Причерноморья и их влияние</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Киммерийцы, скифы, сарматы и аланы, гунны — кочевники сменяли друг друга; у скифов сложилось царство.</li><li>Греки основали колонии, торговали с кочевниками; местные племена оседали рядом с ними.</li><li>Так появилось Боспорское царство и древнейшие города России; аланы стали предками осетин.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p24.html">‹ §24 Колонизация</a>
+  <span class="pn cur">§25 Причерноморье</span>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 25 · История, 5 класс · страницы 149—154 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'f-narody':'0 0 540 282','f-kurgan':'0 0 540 304','f-legenda':'0 0 540 292','f-bospor':'0 0 540 268'};
+
+var T={
+zhelezo:{w:"железный век",k:"время в истории",s:"f-narody",t:"Время, когда люди освоили железо, — с начала 1-го тысячелетия до н. э."},
+kochevoe:{w:"кочевое хозяйство",k:"образ жизни",p:"kimmeriytsy",t:"Жизнь без постоянного места: люди перекочёвывают со стадами в поисках новых пастбищ."},
+kimmeriytsy:{w:"киммерийцы",k:"кочевой народ",p:"kimmeriytsy",t:"Кочевники Северного Причерноморья — самый древний народ нашей страны, чьё имя мы знаем точно."},
+skify:{w:"скифы",k:"кочевой народ",p:"sokrovischa",t:"Конные лучники-кочевники, пришли с востока к началу VII века до н. э. Расцвет их царства — IV век до н. э."},
+kurgan:{w:"курган",k:"насыпь над могилой",s:"f-kurgan",t:"Холм из земли над могилой. Курганы скифских царей были высотой до 20 метров."},
+zverinyi:{w:"звериный стиль",k:"искусство скифов",p:"sokrovischa",t:"Изображения животных — птиц, хищников, оленей, коней, грифонов — в особых, строго определённых позах."},
+atey:{w:"Атей",k:"царь скифов",s:"f-narody",t:"Объединил Скифию и пошёл войной на запад. Погиб в 339 году до н. э. в битве с Филиппом II Македонским."},
+sarmaty:{w:"сарматы",k:"кочевой народ",p:"nadgrobie",t:"Кочевники с востока, сменившие скифов. Со II века до н. э. господствовали в степях Причерноморья."},
+skilur:{w:"Скилур",k:"царь поздних скифов",s:"f-narody",t:"Во II веке до н. э. основал Неаполь Скифский — на месте нынешнего Симферополя."},
+alany:{w:"аланы",k:"сарматское племя",p:"upryazh",t:"Одно из сарматских племён. На Руси их звали ясами. Аланы — предки осетин."},
+bospor:{w:"Боспорское царство",k:"государство",s:"f-bospor",t:"Царство греков и местных племён у Керченского пролива со столицей в Пантикапее. Существовало около тысячи лет."},
+bosporK:{w:"Боспор Киммерийский",k:"пролив",p:"pantikapey",t:"Так в древности называли Керченский пролив."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p25:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p25:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>7){fb.textContent="Верно! Киммерийцы → скифы → Боспор → Атей и Филипп → сарматы → Скилур → Византия.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. До н. э.: чем больше век, тем раньше.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p25:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p25:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

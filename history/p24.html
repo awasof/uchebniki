@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Земли мало, людей много — и греки уплывают за море со священным огнём. Так появились Керчь, Анапа и Севастополь. Трудные слова можно нажимать.">
+<title>Великая греческая колонизация</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="e-prichiny" viewBox="0 0 520 300">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПОЧЕМУ ГРЕКИ УПЛЫВАЛИ</text>
+  <rect x="8" y="28" width="300" height="34" rx="9" fill="var(--ochre)"/>
+  <text x="158" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="#22190A">ВНУТРЕННИЕ — дома, в Греции</text>
+  <rect x="320" y="28" width="192" height="34" rx="9" fill="var(--water)"/>
+  <text x="416" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14262F">ВНЕШНИЕ — снаружи</text>
+  <rect x="8" y="70" width="300" height="56" rx="9" fill="var(--paper2)" stroke="var(--red)" stroke-width="2"/>
+  <text x="20" y="92" font-size="12" font-weight="700" fill="var(--illink)">Главная: мало земли — много людей</text>
+  <text x="20" y="111" font-size="10.5" fill="var(--soft)">не хватает хлеба</text>
+  <rect x="8" y="132" width="300" height="34" rx="9" fill="var(--paper2)"/>
+  <text x="20" y="153" font-size="11" fill="var(--illink)">разорившийся земледелец — хочет свою землю</text>
+  <rect x="8" y="172" width="300" height="34" rx="9" fill="var(--paper2)"/>
+  <text x="20" y="193" font-size="11" fill="var(--illink)">бедняк — хочет работу</text>
+  <rect x="8" y="212" width="300" height="34" rx="9" fill="var(--paper2)"/>
+  <text x="20" y="233" font-size="11" fill="var(--illink)">ремесленник — хочет покупателей</text>
+  <rect x="8" y="252" width="300" height="34" rx="9" fill="var(--paper2)"/>
+  <text x="20" y="273" font-size="11" fill="var(--illink)">знатный, проигравший борьбу, — спасается</text>
+  <rect x="320" y="70" width="192" height="136" rx="9" fill="var(--paper2)"/>
+  <text x="332" y="92" font-size="12" font-weight="700" fill="var(--illink)">Конец VIII в. до н. э.:</text>
+  <text x="332" y="112" font-size="11" fill="var(--illink)">Ассирия (§15) подорвала</text>
+  <text x="332" y="129" font-size="11" fill="var(--illink)">торговлю финикийцев (§13)</text>
+  <text x="332" y="158" font-size="11" fill="var(--moss)" font-weight="700">→ греки захватили часть</text>
+  <text x="332" y="175" font-size="11" fill="var(--moss)" font-weight="700">морских торговых путей</text>
+</symbol>
+
+<symbol id="e-koloniya" viewBox="0 0 540 258">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК ОСНОВЫВАЛИ КОЛОНИЮ — ШЕСТЬ ШАГОВ</text>
+  <g font-size="11" fill="var(--illink)">
+  <rect x="8" y="28" width="168" height="88" rx="10" fill="var(--paper2)"/>
+  <circle cx="30" cy="50" r="13" fill="var(--ochre)"/><text x="30" y="55" text-anchor="middle" font-weight="700" fill="#22190A">1</text>
+  <text x="50" y="55" font-weight="700">Выбрать ойкиста</text>
+  <text x="18" y="80" fill="var(--soft)">главного в пути;</text>
+  <text x="18" y="96" fill="var(--soft)">потом — глава города</text>
+  <rect x="186" y="28" width="168" height="88" rx="10" fill="var(--paper2)"/>
+  <circle cx="208" cy="50" r="13" fill="var(--ochre)"/><text x="208" y="55" text-anchor="middle" font-weight="700" fill="#22190A">2</text>
+  <text x="228" y="55" font-weight="700">Жертвы богам</text>
+  <text x="196" y="80" fill="var(--soft)">и священный огонь</text>
+  <text x="196" y="96" fill="var(--soft)">с родного алтаря</text>
+  <rect x="364" y="28" width="168" height="88" rx="10" fill="var(--paper2)"/>
+  <circle cx="386" cy="50" r="13" fill="var(--ochre)"/><text x="386" y="55" text-anchor="middle" font-weight="700" fill="#22190A">3</text>
+  <text x="406" y="55" font-weight="700">Плыть за купцами</text>
+  <text x="374" y="80" fill="var(--soft)">по разведанным</text>
+  <text x="374" y="96" fill="var(--soft)">морским путям</text>
+  <rect x="8" y="126" width="168" height="88" rx="10" fill="var(--paper2)"/>
+  <circle cx="30" cy="148" r="13" fill="var(--ochre)"/><text x="30" y="153" text-anchor="middle" font-weight="700" fill="#22190A">4</text>
+  <text x="50" y="153" font-weight="700">Найти место</text>
+  <text x="18" y="178" fill="var(--soft)">защищённое,</text>
+  <text x="18" y="194" fill="var(--soft)">с удобной гаванью</text>
+  <rect x="186" y="126" width="168" height="88" rx="10" fill="var(--paper2)"/>
+  <circle cx="208" cy="148" r="13" fill="var(--ochre)"/><text x="208" y="153" text-anchor="middle" font-weight="700" fill="#22190A">5</text>
+  <text x="228" y="153" font-weight="700">Поделить землю</text>
+  <text x="196" y="178" fill="var(--soft)">город и поля —</text>
+  <text x="196" y="194" fill="var(--soft)">на равные участки</text>
+  <rect x="364" y="126" width="168" height="88" rx="10" fill="var(--ochre)"/>
+  <circle cx="386" cy="148" r="13" fill="#22190A"/><text x="386" y="153" text-anchor="middle" font-weight="700" fill="var(--ochre)">6</text>
+  <text x="406" y="153" font-weight="700" fill="#22190A">Строить</text>
+  <text x="374" y="178" fill="#22190A">сначала стены,</text>
+  <text x="374" y="194" fill="#22190A">потом храмы и дома</text>
+  </g>
+  <text x="8" y="244" font-size="12" font-weight="700" fill="var(--moss)">Плыли только мужчины. Колонию строили по образцу родного полиса.</text>
+</symbol>
+
+<symbol id="e-obmen" viewBox="0 0 540 262">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">МЕТРОПОЛИЯ, КОЛОНИЯ И ВАРВАРЫ</text>
+  <rect x="8" y="30" width="150" height="70" rx="12" fill="var(--ochre)"/>
+  <text x="83" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">МЕТРОПОЛИЯ</text>
+  <text x="83" y="78" text-anchor="middle" font-size="10.5" fill="#22190A">«полис-мать»</text>
+  <rect x="195" y="30" width="150" height="70" rx="12" fill="var(--water)"/>
+  <text x="270" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#14262F">КОЛОНИЯ</text>
+  <text x="270" y="78" text-anchor="middle" font-size="10.5" fill="#14262F">своё государство</text>
+  <rect x="382" y="30" width="150" height="70" rx="12" fill="var(--stone)"/>
+  <text x="457" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">ВАРВАРЫ</text>
+  <text x="457" y="78" text-anchor="middle" font-size="10.5" fill="#22190A">местные племена</text>
+  <text x="176" y="58" text-anchor="middle" font-size="16" font-weight="700" fill="var(--moss)">⇄</text>
+  <text x="364" y="58" text-anchor="middle" font-size="16" font-weight="700" fill="var(--moss)">⇄</text>
+  <text x="8" y="130" font-size="11.5" font-weight="700" fill="var(--illink)">Метрополия и колония</text>
+  <text x="8" y="148" font-size="10.5" fill="var(--soft)">дружат, одни обычаи —</text>
+  <text x="8" y="164" font-size="10.5" fill="var(--soft)">но колония не подчиняется</text>
+  <text x="290" y="130" font-size="11.5" font-weight="700" fill="var(--illink)">Варвары дают колонистам:</text>
+  <text x="290" y="148" font-size="10.5" fill="var(--soft)">зерно, мёд, воск, скот, металлы, рабов</text>
+  <text x="290" y="176" font-size="11.5" font-weight="700" fill="var(--illink)">Колонисты дают варварам:</text>
+  <text x="290" y="194" font-size="10.5" fill="var(--soft)">вино, масло, украшения, посуду</text>
+  <text x="8" y="226" font-size="11" fill="var(--soft)">Зерно и всё остальное колонисты выгодно перепродавали в метрополию.</text>
+  <text x="8" y="250" font-size="12" font-weight="700" fill="var(--moss)">«Варвар» — не «дикарь», а тот, кто не говорит по-гречески («бар-бар»).</text>
+</symbol>
+
+<symbol id="e-goroda" viewBox="0 0 540 306">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ГРЕЧЕСКИЕ ГОРОДА НА ТЕРРИТОРИИ РОССИИ</text>
+  <text x="16" y="42" font-size="10.5" font-weight="700" fill="var(--soft)">ТОГДА</text>
+  <text x="196" y="42" font-size="10.5" font-weight="700" fill="var(--soft)">СЕЙЧАС</text>
+  <text x="392" y="42" font-size="10.5" font-weight="700" fill="var(--soft)">ЧЕМ ОСОБЕННЫЙ</text>
+  <g font-size="11.5">
+  <rect x="8" y="50" width="524" height="30" rx="7" fill="var(--paper2)"/>
+  <text x="16" y="70" font-weight="700" fill="var(--illink)">Пантикапей</text><text x="196" y="70" fill="var(--illink)">Керчь, Крым</text><text x="392" y="70" fill="var(--soft)">столица Боспора</text>
+  <rect x="8" y="84" width="524" height="30" rx="7" fill="var(--paper2)"/>
+  <text x="16" y="104" font-weight="700" fill="var(--illink)">Феодосия</text><text x="196" y="104" fill="var(--illink)">Феодосия, Крым</text><text x="392" y="104" fill="var(--moss)">имя: «дар богов»</text>
+  <rect x="8" y="118" width="524" height="30" rx="7" fill="var(--paper2)"/>
+  <text x="16" y="138" font-weight="700" fill="var(--illink)">Херсонес</text><text x="196" y="138" fill="var(--illink)">Севастополь</text><text x="392" y="138" fill="var(--moss)">имя: «полуостров»</text>
+  <rect x="8" y="152" width="524" height="30" rx="7" fill="var(--paper2)"/>
+  <text x="16" y="172" font-weight="700" fill="var(--illink)">Горгиппия</text><text x="196" y="172" fill="var(--illink)">Анапа</text>
+  <rect x="8" y="186" width="524" height="30" rx="7" fill="var(--paper2)"/>
+  <text x="16" y="206" font-weight="700" fill="var(--illink)">Гермонасса</text><text x="196" y="206" fill="var(--illink)">станица Тамань</text>
+  <rect x="8" y="220" width="524" height="30" rx="7" fill="var(--ochre)"/>
+  <text x="16" y="240" font-weight="700" fill="#22190A">Фанагория</text><text x="196" y="240" fill="#22190A">у посёлка Сенной</text><text x="392" y="240" fill="#22190A">самый большой</text>
+  <rect x="8" y="254" width="524" height="30" rx="7" fill="var(--paper2)"/>
+  <text x="16" y="274" font-weight="700" fill="var(--illink)">Танаис</text><text x="196" y="274" fill="var(--illink)">устье Дона</text><text x="392" y="274" fill="var(--soft)">самый северный</text>
+  </g>
+  <text x="8" y="300" font-size="10.5" fill="var(--soft)">Ещё говорящие имена: Кепы — «сады», Ольвия — «счастливая, богатая».</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 24</span>
+    <h1>Великая греческая колонизация</h1>
+    <p class="lede">Земли мало, людей много — и греки уплывают за море со священным огнём. Так появились Керчь, Анапа и Севастополь. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Какими были результаты Великой греческой колонизации для Древней Греции и народов Средиземноморья?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p23.html">‹ §23 Полис</a>
+  <span class="pn cur">§24 Колонизация</span>
+  <a class="pn" href="p25.html">§25 Причерноморье ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Причины колонизации">1</a><a href="#s2" data-j="s2" title="Организация колоний">2</a><a href="#s3" data-j="s3" title="Направления колонизации и её значение">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-pribytie" src="img/1de01915d3b0.jpg" alt="Рисунок: у песчаного берега стоят два парусных корабля, люди сходят на берег и выгружают поклажу"><figcaption><span class="src">из учебника</span><b>Прибытие греков к новым берегам.</b> Из-за ограниченности собственных территорий античные государства прибегали к принудительной эмиграции. В Греции этот процесс получил название «Великая греческая колонизация».</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Причины колонизации</h2></div>
+<div class="easy">
+<p>Пахотной земли в Греции мало, а людей становилось всё больше. Всем нужна еда, прежде всего хлеб. Земли мало, людей слишком много — вот главные причины <button class="term" data-t="kolonizatsiya">колонизации</button>: греки стали переселяться в другие земли.</p>
+<p>У каждого была своя мечта. Разорившийся земледелец хотел свой участок земли. Бедняк — работу. Ремесленник — новых покупателей. Многие надеялись быстро разбогатеть. А некоторые знатные уезжали, потому что проиграли борьбу за власть и боялись за свою жизнь.</p>
+<p>Была и причина за пределами Греции. В конце VIII века до н. э. усилилась Ассирия (§15) и подорвала торговлю финикийцев (§13). Греки этим воспользовались и забрали себе часть морских торговых путей.</p>
+<p>Переселение шло с VIII по VI век до н. э. Его называют Великой греческой колонизацией.</p>
+</div>
+<div class="book" hidden>
+<p>Древняя Греция не имела большого количества пахотной земли. Быстро растущему населению страны требовались продукты питания, в частности главный — хлеб. Острая нехватка земли и перенаселение были главными причинами колонизации — переселения в другие земли. Благодаря колонизации из полиса уходило избыточное население.</p>
+<p>Разорившиеся земледельцы мечтали о приобретении собственного надела земли, бедняки — о работе, которая давала бы средства к существованию, ремесленники — о расширении спроса на свои товары. Греки переселялись в другие земли, рассчитывая быстро разбогатеть. Покидали родину и потерпевшие поражение в политической борьбе представители знати, боявшиеся преследования и опасавшиеся за свою жизнь.</p>
+<p>Были и другие причины греческой колонизации. Возвышение Ассирии в конце VIII (8) века до н. э. подорвало торговлю финикийцев. Греческие города получили возможность захватить часть морских торговых путей.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 520 300" role="img" aria-label="Два столбца. Внутренние причины: главная — мало земли и много людей, не хватает хлеба; разорившийся земледелец хочет землю, бедняк — работу, ремесленник — покупателей, знатный, проигравший борьбу, спасается. Внешние: в конце VIII века до н. э. Ассирия подорвала торговлю финикийцев, и греки захватили часть морских путей."><use href="#e-prichiny"/></svg><figcaption><b>Ответ на вопрос учебника о причинах.</b> Внутренние — всё, что гнало людей из дома. Внешняя — то, что открыло им дорогу по морю.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Выдели внутренние и внешние причины греческой колонизации.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Свяжи главную причину колонизации с природой Греции из §20.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>§20 — чего в Греции мало; здесь — первый абзац.</div>
+<div class="rev ans" id="a1" hidden>В Греции мало равнин и плодородной земли, почва каменистая и сухая — своего хлеба не хватает. А людей становилось всё больше. Вот греки и поплыли искать новые земли.</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему беда финикийцев оказалась на руку грекам?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Последний абзац раздела; вспомни §13 — кем были финикийцы.</div>
+<div class="rev ans" id="a2" hidden>Финикийцы были главными мореходами и торговцами. Когда Ассирия подорвала их торговлю, морские пути освободились — и греческие города смогли захватить их часть.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Организация колоний</h2></div>
+<div class="easy">
+<p>Переселенцы плыли за купцами — по морским путям, которые те уже разведали: по Средиземному морю и к Чёрному.</p>
+<p>Сначала выбирали главного — <button class="term" data-t="oykist">ойкиста</button>. В пути его слушались во всём, а на новом месте он становился главой поселения.</p>
+<p>Перед дальней и опасной дорогой приносили жертвы богам своего полиса. И брали с собой <button class="term" data-t="ogon">священный огонь</button> с родного алтаря — кусочек дома. Как ты берёшь в долгую поездку любимые камни и мягкие игрушки.</p>
+<p>Прибыв на место, переселенцы — а плыли только мужчины — основывали <button class="term" data-t="koloniya">колонию</button>. Выбирали защищённое место с удобной гаванью. Делили землю под город и поля на равные участки. Строили стены, потом храмы и дома.</p>
+<p>Колонию устраивали так же, как родной полис. А родной полис называли <button class="term" data-t="metropoliya">метрополией</button> — «полис-мать». С ней дружили, но колония была самостоятельной и метрополии не подчинялась. Жили колонисты по обычаям родной Эллады.</p>
+<p>Местных жителей, которые не говорили по-гречески, греки звали <button class="term" data-t="varvary">варварами</button>: их речь звучала для греков как «бар-бар». Но с варварами активно торговали.</p>
+</div>
+<div class="book" hidden>
+<p>Желавшие переселиться отправлялись вслед за купцами по уже освоенным морским путям на новые земли в Средиземноморье и Причерноморье. Сначала выбирали руководителя экспедиции. Его называли ойкист. Во время путешествия он пользовался неограниченной властью, а затем становился главой нового поселения. Перед далёким и опасным путешествием покидавшие родные места приносили жертвы богам — покровителям полиса, брали с собой священный огонь с родных алтарей и затем грузили на корабль свои пожитки и отплывали в поисках новой жизни.</p>
+<p>Прибыв на новое место, переселенцы, а это были только мужчины, основывали поселение, которое называлось «колония». Для её организации выбирали защищённое место с удобной гаванью. Затем колонисты определяли место строительства нового города. После этого делили на равные участки городскую землю и поля. Вокруг будущего города возводили прочные стены и начинали строить храмы и дома.</p>
+<p>Греки обустраивали колонии подобно тем полисам, которые они покидали. Полис, основавший колонию, назывался по отношению к ней метрополией (буквально «полис-мать»), с которой жители новых поселений поддерживали дружеские отношения. Но колонии были самостоятельными государствами и не зависели от метрополии. При этом уклад жизни греков вдали от родины не менялся. Они сохраняли традиции и обычаи родной Эллады.</p>
+<p>Греки, обосновываясь на новом месте, знакомились с местными племенами. Всех, кто не говорил по-гречески, называли варварами из-за непонятного бормотания, похожего на звуки «бар-бар». Эллины и варвары активно торговали друг с другом.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 258" role="img" aria-label="Шесть пронумерованных шагов: выбрать ойкиста; жертвы богам и священный огонь с родного алтаря; плыть за купцами по разведанным путям; найти защищённое место с удобной гаванью; поделить землю на равные участки; строить стены, потом храмы и дома."><use href="#e-koloniya"/></svg><figcaption><b>Колония по шагам.</b> Огонь с родного алтаря — чтобы на новом месте горел тот же огонь, что дома.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Ты гуляла по греческой колонии!</b> Фаселис в Турции основали греки с острова Родос (найди его на карте главы в §20) около 690 года до н. э. — как раз во время Великой колонизации. У города целых три гавани: колонисты и правда выбирали место, где удобно встать кораблям. А развалины, которые там видно сейчас, в основном более поздние — римские.</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-koloniya" src="img/094f3bc1e7fb.jpg" alt="Рисунок: на берегу у греческого храма местные жители в пёстрых одеждах ведут быка и козу, несут мешки, греки торгуют с ними" style="max-width:449px"><figcaption><span class="src">из учебника</span><b>Жизнь в греческой колонии.</b> Грекам предлагали зерно, мёд, воск, скот, металлы, рабов. Всё это затем выгодно перепродавалось в метрополии. Среди местного населения пользовались спросом вино, оливковое масло и изделия греческих ремесленников: ювелирные украшения, столовая посуда. Иногда дружеские отношения с варварами нарушались, и тогда вспыхивали войны.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 262" role="img" aria-label="Три плашки: метрополия — «полис-мать», колония — своё государство, варвары — местные племена; между ними двойные стрелки обмена. Метрополия и колония дружат, но колония не подчиняется. Варвары дают колонистам зерно, мёд, воск, скот, металлы, рабов; колонисты им — вино, масло, украшения, посуду."><use href="#e-obmen"/></svg><figcaption><b>Кто с кем меняется.</b> Колония стоит посередине: от варваров берёт зерно и скот, отдаёт вино и посуду, а всё полученное выгодно перепродаёт в метрополию.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Сравни жизнь греков в колонии и метрополии. В чём сходство? В чём различия?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Почему для колонии искали место именно с удобной гаванью? Свяжи с тем, чем колония потом жила.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Второй абзац и подпись к рисунку «Жизнь в греческой колонии».</div>
+<div class="rev ans" id="a3" hidden>Колонисты приплыли морем и жили торговлей: покупали у местных зерно, мёд, воск, скот, металлы и перепродавали в метрополию, а местным везли вино, масло, украшения и посуду. Без удобной гавани для кораблей так не поторгуешь.</div>
+</div>
+<div class="think">
+<p class="qt">4. Колония и метрополия — как мама и взрослая дочь. Почему такое сравнение подходит?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Третий абзац раздела.</div>
+<div class="rev ans" id="a4" hidden>Метрополия — «полис-мать»: она основала колонию, с ней дружат и живут по тем же обычаям. Но колония — самостоятельное государство и метрополии не подчиняется, как взрослая дочь живёт своим домом.</div>
+</div>
+<div class="think">
+<p class="qt">5. «Варвар» — это значит «дикарь»? Что на самом деле значило это слово у греков?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a5" hidden>Варварами греки звали всех, кто не говорил по-гречески: чужая речь звучала для них как «бар-бар». И с варварами греки активно торговали.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-karta" src="img/b830c4f7a2be.jpg" alt="Карта Средиземного и Чёрного морей: из Греции красные стрелки расходятся на запад к Италии, Сицилии и Массилии, на юг к Кирене и Навкратису и на северо-восток через проливы к берегам Чёрного моря — к Херсонесу, Пантикапею, Фанагории, Ольвии, Танаису"><figcaption><span class="src">из учебника</span><b>Великая греческая колонизация.</b> Зелёным закрашены земли, заселённые греками к VIII веку до н. э., оранжевым — земли, которые они колонизировали. Красные стрелки — направления колонизации. Зелёные точки — полисы, основавшие больше всего колоний (Милет, Коринф, Мегары, Фокея), красные точки — важнейшие колонии.<br><span style="color:var(--soft)">▲ Найди на карте и покажи основные направления греческой колонизации.</span></figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Направления колонизации и её значение</h2></div>
+<div class="easy">
+<p>Колонизация шла три века — с VIII по VI век до н. э. — в разные стороны. Смотри на карту: красные стрелки.</p>
+<p><b>На запад</b> — в Италию и на Сицилию. Колоний там стало так много, что весь этот край прозвали <button class="term" data-t="velikaya">Великой Грецией</button>.</p>
+<p><b>На юг и восток</b> почти не плыли: там только Кирена в Северной Африке и Навкратис в Египте.</p>
+<p><b>На северо-восток</b> — больше всего! Через проливы к Чёрному морю. Греки звали его <button class="term" data-t="pont">Понт Эвксинский</button> — «Гостеприимное море».</p>
+<p>Много колоний появилось на северном берегу Чёрного моря — там, где теперь Россия. Один только Милет основал 75 колоний! Самые ранние — Пантикапей (сейчас Керчь), Фанагория (у посёлка Сенной в Краснодарском крае), Феодосия (Крым), Горгиппия (сейчас Анапа), Гермонасса (станица Тамань). Это одни из самых древних городов России. Сначала там жили только греки, потом они смешались с местными.</p>
+<p>Самый большой греческий город в Крыму — Пантикапей. Позже он стал столицей Боспорского царства — о нём в §25.</p>
+<p><button class="term" data-t="hersones">Херсонес</button> стоял там, где сейчас Севастополь. Колонисты выращивали зерно, виноград и овощи, разводили овец и коз. Археологи нашли тут театр, монетный двор, храмы и дома. А самой северной колонией был Танаис — в устье Дона.</p>
+<p>Торговля стала международной. Изделия греков покупали и на западе, и на востоке. В Грецию везли хлеб и ценную рыбу. Торговали и рабами.</p>
+<p><button class="term" data-t="fanagoriya">Фанагория</button> — самый большой античный город в России. Её основали в середине VI века до н. э., и простояла она до начала X века н. э. — почти полторы тысячи лет! Город стоял на плодородных землях Таманского полуострова и возил хлеб в Грецию, особенно в Афины. От нападений варваров он защищал, а в мирное время был центром торговли.</p>
+<p>Потом веками местные жители брали руины Фанагории как каменоломню: таскали камень на стройки, а мрамор пережигали на известь. Ценить эти древности начали только в конце XVIII века, когда Тамань вошла в состав России. Настоящие раскопки начались в советское время, а в 2014 году здесь открыли музей-заповедник «Фанагория».</p>
+</div>
+<div class="book" hidden>
+<p>«Великая греческая колонизация» продолжалась с VIII (8) по VI (6) век до н. э. Колонизация развивалась по нескольким направлениям.</p>
+<p>На западе греческие колонии появились на побережье Италии и Сицилии, весь этот район стал называться Великой Грецией. На южном и восточном берегах Средиземного моря практически не было греческих колоний, исключение составляли Кирена в Северной Африке и Навкратис в Египте. Наиболее активно греки осваивали северо-восточное направление: северное побережье Средиземного моря, зону черноморских проливов и побережье Чёрного моря, которое они называли Понт Эвксинский (Гостеприимное море).</p>
+<p>Множество колоний эллины основали в Северном Причерноморье, на исторической территории России. Только Милету приписывалось основание 75 колоний на берегу Чёрного моря. Самыми ранними колониями в Северном Причерноморье стали Пантикапей (ныне — Керчь), Фанагория (близ п. Сенной Краснодарского края), Феодосия (Крым), Горгиппия (современная Анапа), Гермонасса (станица Тамань Краснодарского края) — одни из древнейших городов в России. Первоначально в колониях проживали только греки. Постепенно население практически во всех колониях стало смешанным с местными жителями.</p>
+<p>Самым крупным созданным в Крыму городом был Пантикапей. После расширения своих территорий по обе стороны пролива Боспор Киммерийский он стал столицей Боспорского царства.</p>
+<p><b>Любопытные детали.</b> У многих колоний, основанных греками, были говорящие названия, например: Феодосия — «дар богов», Кепы — «сады», Ольвия — дословно «счастливая, богатая», Херсонес — «полуостров».</p>
+<p>Город, основанный на полуострове Гераклея («земля Геракла»), колонисты назвали Херсонес. Они выращивали сельскохозяйственные культуры: злаковые, виноград, овощи и разводили мелкий скот. Херсонес находился на территории современного города русской славы Севастополя. Археологи обнаружили здесь остатки театра, монетного двора, храмов и жилищ. Самой северной колонией был Танаис, основанный в устье Дона.</p>
+<p>Греческая торговля приобрела международный характер. Ремесленные изделия эллинов пользовались спросом на западном и восточном рынках. В Грецию поступал привозной хлеб и другие продукты питания, в частности рыба ценных пород. Шла и работорговля.</p>
+<p>Фанагория — крупнейший античный город на территории России — была основана в середине VI (6) века до н. э. и просуществовала до начала X (10) века н. э. С момента своего основания она была независимым полисом, но позднее вошла в состав Боспорского царства.</p>
+<p>Фанагория находилась практически в центре Таманского полуострова среди плодородных земель и имела удобное сообщение как с местными племенами, так и с греческим миром по морю. Фанагория была одним из основных поставщиков хлеба в Грецию, в частности в Афины.</p>
+<p>На протяжении своей долгой истории город играл важную роль во взаимоотношениях греков-боспорян с племенным миром, служа им надёжной защитой в случае нападений варваров, а также центром торговли в мирное время.</p>
+<p>В течение многих веков фанагорийское поселение использовалось местными жителями в качестве каменоломни, откуда они добывали камень для строительства, а также мрамор для пережигания на известь. Лишь после вхождения Тамани в состав России в конце XVIII (18) века появилось осознание культурной ценности таманских древностей.</p>
+<p><b>Подробнее.</b> Подлинно научное археологическое исследование наземной и затопленной части Фанагории началось в советское время. В результате раскопок были обнаружены фундаменты общественных и жилых зданий, архитектурные детали, фрагменты античной скульптуры, монетные клады, керамика, произведения ювелирного искусства и надписи. Последние имеют исключительное значение для реконструкции истории Фанагории, так как они уточняют даты, проясняют детали многих событий и подтверждают сообщения источников. В 2014 г. здесь был создан государственный музей-заповедник «Фанагория».</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 306" role="img" aria-label="Таблица: Пантикапей — Керчь, столица Боспора; Феодосия — Феодосия, имя значит «дар богов»; Херсонес — Севастополь, имя значит «полуостров»; Горгиппия — Анапа; Гермонасса — станица Тамань; Фанагория — у посёлка Сенной, самый большой; Танаис — устье Дона, самый северный."><use href="#e-goroda"/></svg><figcaption><b>Древние греки — наши соседи.</b> Керчь, Феодосия, Анапа, Севастополь начинались как греческие колонии.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-hersones" src="img/ef33dbe19fcc.jpg" alt="Фотография сверху: светлые здания с колоннами и красными крышами, площадь с людьми, вдали море и город" style="max-width:448px"><figcaption><span class="src">из учебника</span><b>Музейно-храмовый комплекс Новый Херсонес. Севастополь, Россия.</b> Херсонес (ныне — территория Севастополя) был основан в V (5) веке до н. э. Со II (2) века н. э. — главный форпост Римской, а затем Византийской империи в Северном Причерноморье. В X (10) веке князь новгородский и киевский Владимир Святославич принял здесь крещение в православную веру, а затем крестил всю Русь (на Руси Херсонес называли Корсунь). С XIX (19) века на территории Херсонеса действует историко-археологический музей «Херсонес Таврический». В 2024 году здесь открыт новый археологический парк, включающий в себя три новых музея, посвящённых христианству, античности и Византии, а также Крыму и Новороссии.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-fanagoriya" src="img/b87ccfcb1eb8.jpg" alt="Фотография: раскопанные каменные фундаменты древних стен среди сухой травы, вдали холмы" style="max-width:471px"><figcaption><span class="src">из учебника</span><b>Раскоп «Верхний город» на территории музея-заповедника «Фанагория» в Краснодарском крае.</b> 2019 г.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Найди на карте и покажи основные направления греческой колонизации.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Почему греков так тянуло к Чёрному морю? Свяжи с причинами колонизации из раздела 1.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Раздел 1 — чего не хватало в Греции; раздел 3 — чем была важна Фанагория.</div>
+<div class="rev ans" id="a6" hidden>Грекам не хватало хлеба. А на берегах Чёрного моря были плодородные земли: Фанагория стала одним из главных поставщиков хлеба в Грецию, в Афины. Оттуда же везли ценную рыбу.</div>
+</div>
+<div class="think">
+<p class="qt">7. Сколько лет простояла Фанагория? Посчитай по датам.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Абзац о Фанагории: середина VI века до н. э. — начало X века н. э. До н. э. и н. э. складываются.</div>
+<div class="rev ans" id="a7" hidden>Примерно с 550 года до н. э. до 900 года н. э.: 550 + 900 = 1450. Почти полторы тысячи лет.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">В VIII (8) — VI (6) веках до н. э. происходит расселение греков по берегам Средиземного и Чёрного морей. Новое поселение называли «колония». На территории современной России существовало большое количество древнегреческих колоний, наиболее известные из которых Херсонес, Фанагория, Танаис, Пантикапей и др.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Какие цели преследовали будущие колонисты?</li><li>Как складывались отношения колонистов с метрополией?</li><li>Найди на карте, назови и покажи города, основанные древними греками на территории современной России.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к третьему вопросу</button></div>
+<div class="rev hint" id="r1" hidden>На карте колонизации смотри на северный берег Чёрного моря: Херсонес, Пантикапей, Фанагория, Танаис. Таблица «Греческие города на территории России» в разделе 3 подскажет, как они называются сейчас.</div></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Во время раскопок в греческой колонии Херсонес на берегу Чёрного моря археологи нашли мраморную плиту, на которой сохранился текст присяги жителей этого древнего города.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">«Клянусь Зевсом, Геей, Гелиосом, богами и богинями олимпийскими, героями, владеющими городом…</p><p style="margin:0 0 10px">Я буду думать только о спасении и свободе государства и граждан и не предам Херсонеса…</p><p style="margin:0 0 10px">Я не буду выступать против демократии…</p><p style="margin:0 0 10px">Я буду служить народу и советовать ему наилучшее и наиболее справедливое для государства и граждан…»</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq2" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq2" hidden>1. Какие выводы можно сделать о жизни древних греков на основании этого текста? 2. Различались ли устои в полисах Греции и полисах-колониях?</div>
+<div class="rev ans" id="sa3" hidden>1. Граждане Херсонеса клялись богами-олимпийцами (§21) защищать свободу города и граждан, не предавать, служить народу и советовать лучшее. Значит, город держался на самих гражданах, как полис из §23. 2. Почти не различались: колонию устраивали по образцу родного полиса, с теми же богами и обычаями.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — какими были результаты Великой греческой колонизации для Древней Греции и народов Средиземноморья? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам. Осторожно: тут и до нашей эры, и наша.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="5"><span class="ord"></span>Владимир крестится в Херсонесе · X в.</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Начало Великой колонизации · VIII в. до н. э.</button>
+<button class="chip" data-ord="7"><span class="ord"></span>Открыт музей-заповедник «Фанагория» · 2014 год</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Основана Фанагория · сер. VI в. до н. э.</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Ассирия подрывает торговлю финикийцев · конец VIII в. до н. э.</button>
+<button class="chip" data-ord="6"><span class="ord"></span>Тамань входит в состав России · конец XVIII в.</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Основан Херсонес · V в. до н. э.</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Колония</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="koloniya" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Новое поселение греков за морем, самостоятельное государство.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Метрополия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 262" aria-hidden="true"><use href="#e-obmen"/></svg><span class="ftext">«Полис-мать», основавший колонию.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ойкист</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 258" aria-hidden="true"><use href="#e-koloniya"/></svg><span class="ftext">Руководитель переселенцев, потом — глава колонии.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Варвары</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="koloniya" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Все, кто не говорил по-гречески («бар-бар»).</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Понт Эвксинский</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="karta" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Чёрное море, «Гостеприимное море».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Великая Греция</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="karta" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Побережье Италии и Сицилии, где было много греческих колоний.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Херсонес</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="hersones" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Колония на месте Севастополя. Имя значит «полуостров».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фанагория</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="fanagoriya" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Самый большой античный город в России, на Тамани.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что было главной причиной колонизации?</h3><div class="opts">
+<button class="opt" data-ok="1">нехватка земли и перенаселение</button>
+<button class="opt">война с Египтом</button>
+<button class="opt">желание увидеть мир</button></div>
+<div class="fb">Хлеба не хватало, а людей становилось всё больше.</div></div>
+<div class="q"><h3>2. Как называли руководителя переселенцев?</h3><div class="opts">
+<button class="opt">гоплит</button>
+<button class="opt" data-ok="1">ойкист</button>
+<button class="opt">фараон</button></div>
+<div class="fb">Гоплит — тяжеловооружённый воин (§23), фараон — правитель Египта.</div></div>
+<div class="q"><h3>3. Что такое метрополия?</h3><div class="opts">
+<button class="opt" data-ok="1">полис, основавший колонию</button>
+<button class="opt">столица Персии</button>
+<button class="opt">самая большая колония</button></div>
+<div class="fb">«Полис-мать». Колония с ней дружила, но не подчинялась.</div></div>
+<div class="q"><h3>4. Кого греки называли варварами?</h3><div class="opts">
+<button class="opt">рабов</button>
+<button class="opt">диких зверей</button>
+<button class="opt" data-ok="1">всех, кто не говорил по-гречески</button></div>
+<div class="fb">Чужая речь звучала для греков как «бар-бар».</div></div>
+<div class="q"><h3>5. Как греки называли Чёрное море?</h3><div class="opts">
+<button class="opt">Эгейское</button>
+<button class="opt" data-ok="1">Понт Эвксинский</button>
+<button class="opt">Великая Греция</button></div>
+<div class="fb">«Гостеприимное море». Великой Грецией звали побережье Италии и Сицилии.</div></div>
+<div class="q"><h3>6. Какая колония стояла на месте нынешнего Севастополя?</h3><div class="opts">
+<button class="opt" data-ok="1">Херсонес</button>
+<button class="opt">Пантикапей</button>
+<button class="opt">Горгиппия</button></div>
+<div class="fb">Пантикапей — это Керчь, Горгиппия — Анапа.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Почему греки уплывали из родных полисов</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Главное: мало пахотной земли, много людей, не хватает хлеба.</li><li>У каждого своя мечта: земля, работа, покупатели, богатство; проигравшие знатные спасались.</li><li>Снаружи: в конце VIII века до н. э. Ассирия подорвала торговлю финикийцев — греки заняли морские пути.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как основывали колонию</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Выбирали ойкиста, приносили жертвы богам, брали священный огонь с родного алтаря.</li><li>Искали защищённое место с удобной гаванью, делили землю на равные участки, строили стены, храмы, дома.</li><li>Колония — самостоятельна, но дружит с метрополией; с варварами торгуют.</li></ol></div>
+</div>
+<div class="think">
+<h3>Куда плыли греки</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>На запад — Италия и Сицилия, «Великая Греция».</li><li>На юг и восток — почти никуда: только Кирена и Навкратис.</li><li>Больше всего — на северо-восток, к Чёрному морю, Понту Эвксинскому.</li></ol></div>
+</div>
+<div class="think">
+<h3>Греческие города в России</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Пантикапей (Керчь), Феодосия, Херсонес (Севастополь), Горгиппия (Анапа), Гермонасса (Тамань), Танаис (устье Дона).</li><li>Фанагория — самая большая; почти полторы тысячи лет; хлеб в Афины.</li><li>Сейчас там музеи: «Херсонес Таврический», музей-заповедник «Фанагория».</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: результаты колонизации</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Для Греции: хлеб и ценная рыба из колоний, лишние люди нашли землю.</li><li>Торговля стала международной: изделия греков покупали и на западе, и на востоке.</li><li>Для других народов: торговля с греками, смешение с местными жителями, новые города — среди них древнейшие города России.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p23.html">‹ §23 Полис</a>
+  <span class="pn cur">§24 Колонизация</span>
+  <a class="pn" href="p25.html">§25 Причерноморье ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 24 · История, 5 класс · страницы 143—148 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'e-prichiny':'0 0 520 300','e-koloniya':'0 0 540 258','e-obmen':'0 0 540 262','e-goroda':'0 0 540 306'};
+
+var T={
+kolonizatsiya:{w:"колонизация",k:"переселение",p:"pribytie",t:"Переселение в другие земли и основание там новых городов. Великая греческая колонизация шла с VIII по VI век до н. э."},
+oykist:{w:"ойкист",k:"руководитель переселенцев",s:"e-koloniya",t:"Главный в экспедиции переселенцев. В пути его слушались во всём, а на новом месте он становился главой поселения."},
+ogon:{w:"священный огонь",k:"обычай",s:"e-koloniya",t:"Огонь с родного алтаря, который переселенцы везли с собой на новое место."},
+koloniya:{w:"колония",k:"новое поселение",p:"koloniya",t:"Поселение переселенцев на новом месте. Самостоятельное государство, устроенное как родной полис."},
+metropoliya:{w:"метрополия",k:"«полис-мать»",s:"e-obmen",t:"Полис, который основал колонию. С ним дружили, но колония ему не подчинялась."},
+varvary:{w:"варвары",k:"так греки звали чужих",p:"koloniya",t:"Все, кто не говорил по-гречески: их речь звучала для греков как «бар-бар». С варварами греки активно торговали."},
+velikaya:{w:"Великой Грецией",k:"край колоний",p:"karta",t:"Так стали называть побережье Италии и Сицилии, где появилось много греческих колоний."},
+pont:{w:"Понт Эвксинский",k:"Чёрное море",p:"karta",t:"Так греки называли Чёрное море. В переводе — «Гостеприимное море»."},
+hersones:{w:"Херсонес",k:"колония",p:"hersones",t:"Греческий город на месте нынешнего Севастополя. Имя значит «полуостров». Здесь нашли театр, монетный двор, храмы и дома."},
+fanagoriya:{w:"Фанагория",k:"колония",p:"fanagoriya",t:"Самый большой античный город на территории России, на Таманском полуострове. Возил хлеб в Грецию, в Афины."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p24:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p24:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>7){fb.textContent="Верно! Сначала все века до нашей эры (номер уменьшается), потом наша эра (номер растёт).";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Не то. До н. э. — чем больше век, тем раньше. Наша эра — наоборот.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p24:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p24:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
