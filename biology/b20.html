@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Почему осенью в школу собираешься в темноте, зачем деревья сбрасывают листья и куда улетают береговушки с волжских обрывов.">
+<title>Сезонные изменения</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="z-day" viewBox="0 0 330 230">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Длина дня в Москве</text>
+<g stroke="var(--soft,#5F5648)" stroke-width="1" stroke-dasharray="3 3" stroke-opacity=".6"><path d="M32 40 H324"/><path d="M32 90 H324"/><path d="M32 140 H324"/></g>
+<path d="M32 190 H324" stroke="var(--illink,#2B2620)" stroke-width="1.5"/>
+<g text-anchor="end" font-size="10" fill="var(--soft,#5F5648)"><text x="30" y="44">18 ч</text><text x="30" y="94">12 ч</text><text x="30" y="144">6 ч</text></g>
+<rect x="36" y="125" width="18" height="65" rx="3" fill="var(--pb,#3B6FA8)"/>
+<rect x="60" y="108" width="18" height="82" rx="3" fill="var(--pb,#3B6FA8)"/>
+<rect x="84" y="91" width="18" height="99" rx="3" fill="var(--pb,#3B6FA8)"/>
+<rect x="108" y="73" width="18" height="117" rx="3" fill="var(--ochre,#E2A31F)"/>
+<rect x="132" y="57" width="18" height="133" rx="3" fill="var(--ochre,#E2A31F)"/>
+<rect x="156" y="45" width="18" height="145" rx="3" fill="var(--ochre,#E2A31F)"/>
+<rect x="180" y="49" width="18" height="141" rx="3" fill="var(--ochre,#E2A31F)"/>
+<rect x="204" y="65" width="18" height="125" rx="3" fill="var(--ochre,#E2A31F)"/>
+<rect x="228" y="84" width="18" height="106" rx="3" fill="var(--ochre,#E2A31F)"/>
+<rect x="252" y="102" width="18" height="88" rx="3" fill="var(--pb,#3B6FA8)"/>
+<rect x="276" y="119" width="18" height="71" rx="3" fill="var(--pb,#3B6FA8)"/>
+<rect x="300" y="131" width="18" height="59" rx="3" fill="var(--pb,#3B6FA8)"/>
+<g text-anchor="middle" font-size="11" fill="var(--illink,#2B2620)">
+<text x="45" y="206">Я</text>
+<text x="69" y="206">Ф</text>
+<text x="93" y="206">М</text>
+<text x="117" y="206">А</text>
+<text x="141" y="206">М</text>
+<text x="165" y="206">И</text>
+<text x="189" y="206">И</text>
+<text x="213" y="206">А</text>
+<text x="237" y="206">С</text>
+<text x="261" y="206">О</text>
+<text x="285" y="206">Н</text>
+<text x="309" y="206">Д</text>
+</g>
+<text x="165" y="224" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">в июне — больше 17 ч, в декабре — около 7 ч</text>
+</g></symbol>
+
+<symbol id="z-year" viewBox="0 0 330 262">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Год в жизни растений</text>
+<rect x="6" y="30" width="156" height="110" rx="10" fill="var(--leaf,#2D7A55)" fill-opacity=".18"/>
+<rect x="168" y="30" width="156" height="110" rx="10" fill="var(--ochre,#E2A31F)" fill-opacity=".22"/>
+<rect x="6" y="146" width="156" height="110" rx="10" fill="var(--pa,#C9672C)" fill-opacity=".2"/>
+<rect x="168" y="146" width="156" height="110" rx="10" fill="var(--pb,#3B6FA8)" fill-opacity=".16"/>
+<g fill="var(--illink,#2B2620)">
+<g font-size="13" font-weight="700"><text x="16" y="50">Весна</text><text x="178" y="50">Лето</text><text x="16" y="166">Осень</text><text x="178" y="166">Зима</text></g>
+<g font-size="11">
+<text x="16" y="70">тает снег,</text><text x="16" y="86">сок у берёзы;</text><text x="16" y="102">при +5° цветёт берёза,</text><text x="16" y="118">распускаются почки,</text><text x="16" y="134">цветут сады</text>
+<text x="178" y="70">самые длинные дни;</text><text x="178" y="86">цветут малина, кипрей;</text><text x="178" y="102">зреют земляника,</text><text x="178" y="118">смородина, крыжовник;</text><text x="178" y="134">в конце — брусника</text>
+<text x="16" y="186">день короче, холоднее;</text><text x="16" y="202">вещества уходят</text><text x="16" y="218">из листьев в корни;</text><text x="16" y="234">листопад</text>
+<text x="178" y="186">зимний покой;</text><text x="178" y="202">ель и сосна зелёные:</text><text x="178" y="218">хвоинки испаряют</text><text x="178" y="234">мало воды</text>
+</g></g>
+</g></symbol>
+
+<symbol id="z-leaf" viewBox="0 0 330 248">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Зачем деревья сбрасывают листья</text>
+<rect x="30" y="30" width="270" height="32" rx="9" fill="var(--pb,#3B6FA8)" fill-opacity=".16"/>
+<rect x="30" y="74" width="270" height="32" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<rect x="30" y="118" width="270" height="32" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<rect x="30" y="162" width="270" height="32" rx="9" fill="var(--no,#B03A2E)" fill-opacity=".14"/>
+<rect x="30" y="206" width="270" height="32" rx="9" fill="var(--pa,#C9672C)" fill-opacity=".25"/>
+<g text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">
+<text x="165" y="51">похолодало: вода в почве замерзает</text>
+<text x="165" y="95">корни почти не получают воду</text>
+<text x="165" y="139">а листья испаряли бы воду дальше</text>
+<text x="165" y="183">растение засохло бы</text>
+<text x="165" y="227" font-weight="700">поэтому осенью — листопад</text>
+</g>
+<g stroke="var(--illink,#2B2620)" stroke-width="2"><path d="M165 63 V72" marker-end="url(#ar)"/><path d="M165 107 V116" marker-end="url(#ar)"/><path d="M165 151 V160" marker-end="url(#ar)"/><path d="M165 195 V204" marker-end="url(#ar)"/></g>
+</g></symbol>
+
+<symbol id="z-animals" viewBox="0 0 330 254">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Как животные переживают зиму</text>
+<rect x="6" y="30" width="156" height="106" rx="10" fill="var(--ochre,#E2A31F)" fill-opacity=".2"/>
+<rect x="168" y="30" width="156" height="106" rx="10" fill="var(--snow,#EDF5F9)" stroke="var(--pb,#3B6FA8)" stroke-width="1.5"/>
+<rect x="6" y="142" width="156" height="106" rx="10" fill="var(--brown,#8B5E3C)" fill-opacity=".2"/>
+<rect x="168" y="142" width="156" height="106" rx="10" fill="var(--pb,#3B6FA8)" fill-opacity=".18"/>
+<g fill="var(--illink,#2B2620)">
+<g font-size="13" font-weight="700"><text x="16" y="50">Запасы</text><text x="178" y="50">Линька</text><text x="16" y="162">Спячка</text><text x="178" y="162">Миграции</text></g>
+<g font-size="11">
+<text x="16" y="70">заранее копят</text><text x="16" y="86">жир и питательные</text><text x="16" y="102">вещества: зимой</text><text x="16" y="118">корма мало</text>
+<text x="178" y="70">смена шерсти и перьев;</text><text x="178" y="86">белая шуба у зайца-</text><text x="178" y="102">беляка, горностая,</text><text x="178" y="118">песца</text>
+<text x="16" y="182">обмен веществ</text><text x="16" y="198">сильно снижается;</text><text x="16" y="214">медведь в берлоге,</text><text x="16" y="230">ёж в гнезде из листьев</text>
+<text x="178" y="182">улетают зимовать:</text><text x="178" y="198">скворцы, ласточки,</text><text x="178" y="214">стрижи, аисты</text>
+</g></g>
+</g></symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 20</span>
+    <h1>Сезонные изменения в жизни организмов</h1>
+    <p class="lede">Почему осенью в школу собираешься в темноте, зачем деревья сбрасывают листья и куда улетают береговушки с волжских обрывов.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. Как организмы реагируют на изменения условий окружающей среды? 2. Какие сезонные изменения в жизни организмов вам известны?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b19.html">‹ §19 Организмы как среда</a>
+  <span class="pn cur">§20 Сезонные изменения</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Длина дня — сигнал">1</a><a href="#s2" data-j="s2" title="Годовые ритмы: весна и лето">2</a><a href="#s3" data-j="s3" title="Осень и зима у растений">3</a><a href="#s4" data-j="s4" title="Животные в трудное время года">4</a><a href="#s5" data-j="s5" title="Итоги главы 3">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Длина дня — сигнал</h2></div>
+<div class="easy">
+<p>Длина дня меняется в течение года <b>всегда одинаково</b>, без скачков. Погода может обмануть: бывает тёплый день в ноябре или снег в мае. А длина дня не обманывает — это <span class="big">точный сигнал</span>, что скоро весна, лето, осень или зима. Ответ организмов на изменение длины дня называют <span class="term" role="button" tabindex="0" data-t="foto">фотопериодизмом</span>.</p>
+<p>Если день становится длиннее, организмы готовятся расти и размножаться. Если короче — готовятся к зиме.</p>
+<p>Подготовка к зиме долгая: организм перестраивается и запасает питательные вещества. Поэтому она начинается задолго до холодов.</p>
+</div>
+<div class="book" hidden>
+<p><b>Фотопериодизм.</b> Длина светового дня в течение года изменяется закономерно и не подвержена колебаниям. Эти изменения служат точным сигналом приближения весны, лета, осени, зимы. Реакции организмов на изменение длины дня называется <b><span class="term" role="button" tabindex="0" data-t="foto">фотопериодизмом</span></b>.</p>
+<p>Длина светового дня для организмов имеет сигнальное значение, свидетельствующее о предстоящих изменениях в природе. Если день удлиняется, то организмы начинают готовиться к росту и размножению. Если день сокращается, организмы начинают готовиться к зиме.</p>
+<p>На подготовку к зимнему периоду требуется длительное время для физиологической перестройки организма и накопления необходимого запаса питательных веществ. Такая подготовка начинается задолго до наступления холодов.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 230" role="img" aria-label="Столбики — длина дня в Москве по месяцам: зимой короткие, к июню растут до семнадцати с лишним часов, потом снова уменьшаются; в декабре около семи часов"><use href="#z-day"/></svg><figcaption>День растёт до конца июня, а потом убывает до конца декабря.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">В школу — в темноте</span></div><div class="lifebody"><p>Ты замечала: сейчас, осенью, ты собираешься в школу, когда ещё темно, а летом в это время уже давно светло. Посмотри на схему: в Москве в июне день длится больше 17 часов, а в декабре — всего около 7.</p><p>Растения и животные «следят» за длиной дня. Темнеет всё раньше — значит, пора готовиться к зиме, даже если на улице ещё тепло.</p></div><p class="lifebook">В учебнике это называется: <b>фотопериодизм</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Почему длина дня — точный сигнал смены времён года?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a1" hidden>Длина светового дня в течение года изменяется закономерно и не подвержена колебаниям.</div>
+</div>
+<div class="think">
+<p class="qt">2. Как организмы отвечают на удлинение и сокращение дня?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a2" hidden>Когда день удлиняется, они готовятся к росту и размножению; когда сокращается — к зиме.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Годовые ритмы: весна и лето</h2></div>
+<div class="easy">
+<p>Смена времён года — одно из самых общих явлений в живой природе. Каждый год повторяются и трудные для жизни периоды, и благоприятные. Поэтому у организмов чередуются периоды роста, размножения и глубокого покоя — так, чтобы плохое время года встретить самыми устойчивыми. А размножаются они в самый благоприятный сезон. Это <span class="term" role="button" tabindex="0" data-t="godrit">годовые ритмы</span> (рис. 94): приспособление к тому, что природа меняется каждый год.</p>
+<p>Во многих районах нашей страны благоприятное время длится 6—7 месяцев. <b>Ранняя весна</b>: тает снег, у берёзы начинается сокодвижение. Когда теплеет до +5 °С, зацветает берёза, распускаются почки, прорастают семена, пролежавшие в почве всю зиму. В разгар весны цветут калина, фруктовые деревья и кустарники.</p>
+<p><b>Начало лета</b> — самые длинные дни. Цветут малина, шиповник, кипрей, начинается ягодный сезон. В середине лета созревают земляника, красная и чёрная смородина, крыжовник. К концу лета — брусника.</p>
+</div>
+<div class="book" hidden>
+<p><b>Годовые ритмы.</b> Сезонная периодичность относится к числу наиболее общих явлений в живой природе. <span class="term" role="button" tabindex="0" data-t="godrit">Годовые ритмы</span> позволяют организмам приспосабливаться к сезонной смене природных условий (рис. 94). Регулярно повторяются как трудные для выживания организмов периоды, так и благоприятные. Поэтому в жизни организмов периоды роста, размножения, глубокого покоя закономерно чередуются и повторяются так, что неблагоприятное время года они встречают в наиболее устойчивом состоянии. В наиболее благоприятный сезон организмы размножаются.</p>
+<p>Периодичность в жизни организмов является приспособлением к годичному изменению природных условий. Она проявляется в выработке ежегодного ритма в их жизнедеятельности, связанного с климатическими факторами.</p>
+<p>Во многих районах нашей страны благоприятный для развития организмов период обычно продолжается 6—7 месяцев. Признаком ранней весны служит таяние снега. В это время начинается сокодвижение у берёзы. При повышении температуры до +5 °С зацветает берёза, распускаются почки у большинства растений, прорастают семена, всю зиму пролежавшие в почве. В разгар весны цветут калина, фруктовые деревья и кустарники.</p>
+<p>Для начала лета характерны самые продолжительные дни. В это время цветут малина, шиповник, кипрей и начинается ягодный сезон. В середине лета созревают плоды земляники, красной и чёрной смороды, крыжовника. К концу лета созревают ягоды брусники.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s94" src="img/83e631953b85.jpg" alt="Одна и та же аллея с деревьями в четыре времени года: зимой в снегу, весной в розовых цветах, осенью в жёлто-оранжевых листьях, летом в зелени"><figcaption><span class="src">из учебника</span><b>Рис. 94.</b> Сезонные изменения растений<br><span style="color:var(--soft)">▲ Найди на фото зиму, весну, лето и осень.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 262" role="img" aria-label="Год в жизни растений. Весна: тает снег, сок у берёзы, при плюс пяти градусах цветёт берёза, распускаются почки, цветут сады. Лето: самые длинные дни, цветут малина и кипрей, зреют земляника, смородина, крыжовник, в конце лета брусника. Осень: день короче, холоднее, вещества уходят из листьев в корни, листопад. Зима: зимний покой, ель и сосна зелёные — хвоинки испаряют мало воды"><use href="#z-year"/></svg><figcaption>Четыре времени года — четыре разные жизни одного растения.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Ягодный сезон в Ягодном</span></div><div class="lifebody"><p>Ты бываешь в Ягодном летом — как раз в ягодный сезон. Малина цветёт в начале лета, а земляника и смородина созревают в середине. Поэтому, когда ты приезжаешь, ягоды уже можно собирать.</p><p>А яблони, вишня и абрикос у бабушки Гали и дедушки Анатолия цвели ещё весной, когда тебя там не было. Летом на них зреют плоды.</p></div><p class="lifebook">В учебнике это называется: <b>годовые ритмы</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Берёза «плачет»</span></div><div class="lifebody"><p>Ранней весной, когда тает снег, у берёзы начинается <b>сокодвижение</b>: от корней вверх по стволу идёт сок с растворёнными веществами. Если кору повредить, сок капает — говорят, что берёза «плачет». Он прозрачный и чуть сладковатый.</p><p>Весной попробуй берёзовый сок из магазина. А сами деревья ранить не надо — от этого они болеют.</p></div><p class="lifebook">В учебнике это называется: <b>признаки ранней весны</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Зачем организмам годовые ритмы?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a3" hidden>Они позволяют приспособиться к сезонной смене условий: периоды роста, размножения и покоя чередуются так, что неблагоприятное время года организмы встречают в самом устойчивом состоянии, а размножаются в благоприятный сезон.</div>
+</div>
+<div class="think">
+<p class="qt">4. Какие признаки ранней весны называет учебник?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Абзац про весну.</div>
+<div class="rev ans" id="a4" hidden>Таяние снега и начало сокодвижения у берёзы; при +5 °С зацветает берёза, распускаются почки, прорастают семена.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Осень и зима у растений</h2></div>
+<div class="easy">
+<p>С приходом <b>осени</b> питательные вещества уходят из листьев в стебли, корни и другие органы, которые зимуют. День становится намного короче, холодает. В клетках листьев замедляются и постепенно останавливаются все жизненные процессы, и в них накапливаются ненужные вещества.</p>
+<p>Когда холодает, вода в почве замерзает и почти не поступает в корни. Если бы листья остались на дереве и продолжали испарять воду, растение погибло бы от иссушения. Поэтому многие многолетние растения осенью сбрасывают листья. Это <span class="term" role="button" tabindex="0" data-t="listopad">листопад</span> (рис. 95). Растение, которое часть года стоит без листьев, называют <b>листопадным</b>. Осень заканчивается опаданием листьев, и наступает зимний покой.</p>
+<p>Зелёными зимой остаются ель и сосна. Их хвоинки маленькие и покрыты толстой кожицей — кутикулой, поэтому зимой они испаряют очень мало воды.</p>
+</div>
+<div class="book" hidden>
+<p>С наступлением осени у растений идёт усиленный отток питательных веществ из листьев в стебли, корни и другие зимующие органы. В это время значительно сокращается длина светового дня, снижается температура воздуха. К осени в клетках листьев замедляются и постепенно прекращаются все жизненные процессы, накапливаются ненужные вещества.</p>
+<p>С похолоданием вода в почве замерзает и её поступление в корни растения практически прекращается. Если бы листья остались на растении и испарение с их поверхности не прекращалось, то растение погибло бы от иссушения. Поэтому многие многолетние растения с наступлением осени сбрасывают листья. Этот естественный процесс называют <b><span class="term" role="button" tabindex="0" data-t="listopad">листопадом</span></b> (рис. 95). Если многолетнее растение в течение какого-то времени находится в безлистном состоянии, его называют листопадным. Заканчивается осень отмиранием и опаданием листьев. Наступает период зимнего покоя.</p>
+<p>Зелёными на зимний период остаются ель и сосна. У этих деревьев хвоинки имеют небольшую поверхность и покрыты толстой кутикулой. Поэтому зимой они испаряют очень мало воды.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s95" src="img/701434b39499.jpg" alt="Осенний лес: деревья с оранжевыми и красными листьями, листья падают на тропинку"><figcaption><span class="src">из учебника</span><b>Рис. 95.</b> Листопад<br><span style="color:var(--soft)">▲ Зачем дереву сбрасывать листья? Ответ — на схеме ниже.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 248" role="img" aria-label="Цепочка: похолодало, вода в почве замерзает; корни почти не получают воду; а листья испаряли бы воду дальше; растение засохло бы; поэтому осенью листопад"><use href="#z-leaf"/></svg><figcaption>Листопад спасает дерево от засыхания зимой.</figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Листопадные растения</b><p>часть года стоят без листьев: берёза, яблоня</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Ель и сосна</b><p>зелёные круглый год: хвоинки маленькие, с толстой кутикулой — испаряют мало воды</p></div></div></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твои три дерева</span></div><div class="lifebody"><p>Помнишь задание из §4: выбрать на прогулке три дерева и записывать цвет их листьев? Сейчас самое время его закончить. Посмотри, сколько листьев на твоих деревьях осталось, и запиши.</p><p>Если среди них есть ель или сосна — сравни: у неё хвоинки остаются зелёными, а лиственные деревья скоро будут стоять голыми.</p></div><p class="lifebook">В учебнике это называется: <b>листопад</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Зачем многим растениям осенью сбрасывать листья?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a5" hidden>С похолоданием вода в почве замерзает и почти не поступает в корни; если бы листья остались и испаряли воду, растение погибло бы от иссушения.</div>
+</div>
+<div class="think">
+<p class="qt">6. Почему ель и сосна остаются зелёными зимой?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a6" hidden>Хвоинки имеют небольшую поверхность и покрыты толстой кутикулой, поэтому зимой испаряют очень мало воды.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Животные в трудное время года</h2></div>
+<div class="easy">
+<p>У животных способов пережить трудное время <b>больше</b>, чем у растений. Многие заранее <b>запасают</b> в теле питательные вещества: зимой корма меньше и его труднее найти.</p>
+<p>У птиц и зверей бывает <span class="term" role="button" tabindex="0" data-t="linka">линька</span> — смена шерсти и перьев. К зиме у зайца-беляка, горностая, песца отрастает густая <b>белая</b> шерсть.</p>
+<p>Ещё один способ — <span class="term" role="button" tabindex="0" data-t="spyachka">спячка</span>. Зимняя спячка бывает от холода, летняя — от сильной жары и сухости. Во время спячки обмен веществ и потребление кислорода сильно снижаются, многие животные впадают в глубокое оцепенение. Бурые медведи спят зимой в берлогах, которые готовят заранее.</p>
+<p>А многие животные просто уходят туда, где лучше. Это <span class="term" role="button" tabindex="0" data-t="migr">миграции</span> — переселения на большие расстояния, когда меняются условия жизни. Осенью к местам зимовки улетают скворцы, ласточки, стрижи, аисты и многие другие птицы (рис. 96).</p>
+</div>
+<div class="book" hidden>
+<p><b>Перенесение неблагоприятных сезонных условий животными.</b> У животных приспособления к перенесению неблагоприятных условий более многообразны, чем у растений. Многие животные заранее накапливают в организме питательные вещества в связи с уменьшением количества и доступности корма в зимнее время. У птиц и зверей наблюдается <b><span class="term" role="button" tabindex="0" data-t="linka">линька</span></b> — смена шерстного и перьевого покрова. Густая белая шерсть отрастает к зиме у зайца-беляка, горностая, песца и других зверей.</p>
+<p>Своеобразным приспособлением к перенесению неблагоприятных сезонных явлений служит <b><span class="term" role="button" tabindex="0" data-t="spyachka">спячка</span></b> животных. Различают летнюю и зимнюю спячку. Летняя наблюдается при слишком высоких температурах и снижении влажности воздуха. Зимняя спячка происходит при понижении температуры. В период спячки у животных значительно снижается уровень обмена веществ и потребление кислорода. Во время спячки многие животные впадают в глубокое оцепенение. В специально подготовленных берлогах спят бурые медведи.</p>
+<p><b>Миграции животных.</b> Широко распространённым приспособлением к неблагоприятным условиям у многих животных являются <b><span class="term" role="button" tabindex="0" data-t="migr">миграции</span></b> — перемещения на значительные расстояния, вызываемые сменой условий существования. Осенью к местам зимовки улетают скворцы, ласточки, стрижи, аисты и многие другие птицы (рис. 96).</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 254" role="img" aria-label="Как животные переживают зиму. Запасы: заранее копят жир и питательные вещества, зимой корма мало. Линька: смена шерсти и перьев, белая шуба у зайца-беляка, горностая, песца. Спячка: обмен веществ сильно снижается, медведь в берлоге, ёж в гнезде из листьев. Миграции: улетают зимовать скворцы, ласточки, стрижи, аисты"><use href="#z-animals"/></svg><figcaption>Четыре способа пережить зиму — и у каждого свои мастера.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Линька: собаки, зайцы и змеи</span></div><div class="lifebody"><p>Линьку ты знаешь по собакам: у корги и самоеда весной и осенью шерсть лезет клочьями — старая шуба меняется на новую. А заяц-беляк к зиме меняет ещё и цвет: летом он бурый, как на рис. 76 в §15, а зимой белый — на снегу его не видно.</p><p>Змеи тоже линяют — сбрасывают старую кожу целиком, как чулок. Но это бывает не по временам года, а по мере того как змея растёт.</p></div><p class="lifebook">В учебнике это называется: <b>линька</b></p></aside>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s96" src="img/ff1ae82e6a0e.jpg" alt="Стая уток летит над водой и деревьями"><figcaption><span class="src">из учебника</span><b>Рис. 96.</b> Осенняя миграция птиц<br><span style="color:var(--soft)">▲ Куда и зачем летят птицы осенью?</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Норки в песчаном обрыве</span></div><div class="lifebody"><p>У Волги возле Ягодного есть отвесные песчаные стены, а в них — множество норок-гнёзд. Скорее всего, это <b>береговые ласточки</b> — береговушки. Они сами роют в песчаном обрыве длинные норки и выводят там птенцов.</p><p>Осенью береговушки, как и стрижи, улетают зимовать в Африку — это <b>миграция</b>. Весной они возвращаются к своим обрывам. Летом понаблюдай издалека, кто влетает в норки, — но к краю обрыва не подходи: песок может обвалиться.</p></div><p class="lifebook">В учебнике это называется: <b>миграции</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Голуби и синицы зимой</span></div><div class="lifebody"><p>Ты любишь кормить голубей. Голуби и синицы на зиму не улетают — они остаются в городе, а корма зимой мало. Поэтому подкормка им помогает.</p><p>Попробуйте с папой или мамой повесить кормушку у окна: синицам подходят несолёные семечки подсолнечника, голубям — зерно и крупа. А хлеба птицам лучше не давать: он им вреден.</p></div><p class="lifebook">В учебнике это называется: <b>неблагоприятное время года</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Какие приспособления помогают животным пережить неблагоприятное время года?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Весь раздел.</div>
+<div class="rev ans" id="a7" hidden>Запас питательных веществ, линька (густая белая шерсть к зиме), спячка, миграции.</div>
+</div>
+<div class="think">
+<p class="qt">8. Что происходит с животным во время спячки?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Абзац о спячке.</div>
+<div class="rev ans" id="a8" hidden>Значительно снижаются уровень обмена веществ и потребление кислорода; многие животные впадают в глубокое оцепенение.</div>
+</div>
+<div class="think">
+<p class="qt">9. Что такое миграции? Приведи примеры.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a9" hidden>Перемещения на значительные расстояния, вызванные сменой условий существования. Осенью улетают скворцы, ласточки, стрижи, аисты.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги главы 3</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Фотопериодизм · Листопад · Спячка · Линька · Миграции</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Какое значение для организмов имеет длина светового дня?</li><li>Какие сезонные изменения происходят в жизни растений?</li><li>Почему организмы размножаются в наиболее благоприятный сезон?</li><li>Какие приспособления к перенесению неблагоприятных условий существуют у животных?</li><li>Что такое миграции?</li><li>Приведите примеры животных, которые впадают в зимнюю спячку.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к вопросу 6</button></div>
+<div class="rev hint" id="r1" hidden>Учебник называет бурых медведей. Ещё зимой спят ежи, сурки, суслики, барсуки, летучие мыши.</div></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Почему длина светового дня является важнейшим фактором сезонных изменений в жизни организмов?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка</button></div>
+<div class="rev hint" id="r2" hidden>Вспомни раздел 1. Погода бывает обманчивой: оттепель зимой, заморозки в мае. А длина дня каждый год меняется одинаково, без колебаний. Поэтому это самый надёжный сигнал: по нему организмы заранее, задолго до холодов, начинают готовиться к зиме.</div></div>
+<div class="rubric">Краткое содержание главы 3</div>
+<div class="easy">
+<p>Жизнь человека, как и других организмов, зависит от условий среды: пищи, воздуха, воды. От условий зависят и природные зоны на Земле. Организмы приспосабливаются к своей среде — поэтому растения и животные разных природных зон такие разные. Об этом — следующая глава.</p>
+</div>
+<div class="book" hidden>
+<p>Жизнь человека, как и жизнь других организмов, зависит от условий окружающей среды — достаточного количества пищи, воздуха, воды и т. д. В зависимости от условий среды на нашей планете выделяют различные природные зоны. Живые организмы приспосабливаются к условиям среды, поэтому растительный и животный мир природных зон столь разнообразен.</p>
+</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Вся глава 3 коротко</button></div>
+<div class="rev plan" id="r3" hidden><b>§15</b> Среда обитания; условия и ресурсы; абиотические, биотические и антропогенные факторы.<br><b>§16</b> Водная среда: плотность, теплоёмкость, кислород, солёность, свет.<br><b>§17</b> Наземно-воздушная среда: воздух, опора тела, свет, тепло.<br><b>§18</b> Почвенная среда: состав, структура, гумус, обитатели почвы.<br><b>§19</b> Организмы как среда: взаимовыгодные отношения и паразиты.<br><b>§20</b> Сезонные изменения: фотопериодизм, листопад, линька, спячка, миграции.</div></div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt4" data-n="6">
+<div class="sortlab">Что это за приспособление?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Заяц-беляк к зиме становится белым</p><div class="sbtns"><button class="sbtn" data-b="0">линька</button><button class="sbtn" data-b="1">спячка</button><button class="sbtn" data-b="2">миграция</button></div><p class="swhy" hidden>Смена шерсти.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Бурый медведь зимой спит в берлоге</p><div class="sbtns"><button class="sbtn" data-b="0">линька</button><button class="sbtn" data-b="1">спячка</button><button class="sbtn" data-b="2">миграция</button></div><p class="swhy" hidden>Обмен веществ снижается.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Аисты осенью улетают на юг</p><div class="sbtns"><button class="sbtn" data-b="0">линька</button><button class="sbtn" data-b="1">спячка</button><button class="sbtn" data-b="2">миграция</button></div><p class="swhy" hidden>Перелёт к местам зимовки.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Ёж зимой спит в гнезде из листьев</p><div class="sbtns"><button class="sbtn" data-b="0">линька</button><button class="sbtn" data-b="1">спячка</button><button class="sbtn" data-b="2">миграция</button></div><p class="swhy" hidden>Зимняя спячка.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Песец отращивает густую белую шерсть</p><div class="sbtns"><button class="sbtn" data-b="0">линька</button><button class="sbtn" data-b="1">спячка</button><button class="sbtn" data-b="2">миграция</button></div><p class="swhy" hidden>Смена шерсти к зиме.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Береговушки покидают норки у Волги</p><div class="sbtns"><button class="sbtn" data-b="0">линька</button><button class="sbtn" data-b="1">спячка</button><button class="sbtn" data-b="2">миграция</button></div><p class="swhy" hidden>Улетают зимовать в Африку.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt5" data-n="6">
+<div class="sortlab">Какое время года?</div>
+<div class="sitem" data-r="0"><p class="stext">Начинается сокодвижение у берёзы</p><div class="sbtns"><button class="sbtn" data-b="0">весна</button><button class="sbtn" data-b="1">лето</button><button class="sbtn" data-b="2">осень</button></div><p class="swhy" hidden>Признак ранней весны.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Самые длинные дни</p><div class="sbtns"><button class="sbtn" data-b="0">весна</button><button class="sbtn" data-b="1">лето</button><button class="sbtn" data-b="2">осень</button></div><p class="swhy" hidden>Начало лета.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Листопад</p><div class="sbtns"><button class="sbtn" data-b="0">весна</button><button class="sbtn" data-b="1">лето</button><button class="sbtn" data-b="2">осень</button></div><p class="swhy" hidden>Вода в почве замерзает — листья сбрасывают.</p></div>
+<div class="sitem" data-r="0"><p class="stext">При +5 °С зацветает берёза</p><div class="sbtns"><button class="sbtn" data-b="0">весна</button><button class="sbtn" data-b="1">лето</button><button class="sbtn" data-b="2">осень</button></div><p class="swhy" hidden>И распускаются почки.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Созревает брусника</p><div class="sbtns"><button class="sbtn" data-b="0">весна</button><button class="sbtn" data-b="1">лето</button><button class="sbtn" data-b="2">осень</button></div><p class="swhy" hidden>К концу лета.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Вещества уходят из листьев в корни</p><div class="sbtns"><button class="sbtn" data-b="0">весна</button><button class="sbtn" data-b="1">лето</button><button class="sbtn" data-b="2">осень</button></div><p class="swhy" hidden>Подготовка к зиме.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фотопериодизм</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 230" aria-hidden="true"><use href="#z-day"/></svg><span class="ftext">Ответ организмов на длину дня. Фото — свет.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Годовые ритмы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 262" aria-hidden="true"><use href="#z-year"/></svg><span class="ftext">Рост, размножение и покой каждый год сменяют друг друга.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Листопад</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s95" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Осенью сбрасывают листья, чтобы не засохнуть зимой.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Линька</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 254" aria-hidden="true"><use href="#z-animals"/></svg><span class="ftext">Смена шерсти и перьев. Заяц-беляк зимой белый.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Спячка</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 254" aria-hidden="true"><use href="#z-animals"/></svg><span class="ftext">Обмен веществ замедляется. Медведь в берлоге.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Миграции</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s96" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Переселения: птицы улетают на зимовку.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что служит организмам самым точным сигналом смены времён года?</h3><div class="opts">
+<button class="opt" data-ok="1">Длина дня</button>
+<button class="opt">Температура</button>
+<button class="opt">Дождь</button>
+<button class="opt">Ветер</button></div>
+<div class="fb">Она меняется закономерно и без колебаний.</div></div>
+<div class="q"><h3>2. Сколько длится благоприятный период во многих районах нашей страны?</h3><div class="opts">
+<button class="opt" data-ok="1">6—7 месяцев</button>
+<button class="opt">Один месяц</button>
+<button class="opt">Круглый год</button>
+<button class="opt">Две недели</button></div>
+<div class="fb">Остальное время организмы переживают холод.</div></div>
+<div class="q"><h3>3. Почему деревья осенью сбрасывают листья?</h3><div class="opts">
+<button class="opt" data-ok="1">Чтобы не засохнуть зимой, когда вода в почве замерзает</button>
+<button class="opt">Листья им надоели</button>
+<button class="opt">Чтобы в лесу стало светлее</button>
+<button class="opt">Для красоты</button></div>
+<div class="fb">Листья продолжали бы испарять воду.</div></div>
+<div class="q"><h3>4. Почему ель и сосна зимой зелёные?</h3><div class="opts">
+<button class="opt" data-ok="1">Хвоинки испаряют очень мало воды</button>
+<button class="opt">Им не бывает холодно</button>
+<button class="opt">Они растут только на юге</button>
+<button class="opt">Их поливают</button></div>
+<div class="fb">Маленькая поверхность и толстая кутикула.</div></div>
+<div class="q"><h3>5. Что сильно снижается во время спячки?</h3><div class="opts">
+<button class="opt" data-ok="1">Обмен веществ и потребление кислорода</button>
+<button class="opt">Длина шерсти</button>
+<button class="opt">Количество лап</button>
+<button class="opt">Зрение</button></div>
+<div class="fb">Многие животные впадают в глубокое оцепенение.</div></div>
+<div class="q"><h3>6. Что такое линька?</h3><div class="opts">
+<button class="opt" data-ok="1">Смена шерсти и перьев</button>
+<button class="opt">Перелёт на юг</button>
+<button class="opt">Зимний сон</button>
+<button class="opt">Запас жира</button></div>
+<div class="fb">К зиме заяц-беляк становится белым.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Фотопериодизм и годовые ритмы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Длина дня меняется закономерно — это точный сигнал смены времён года.</li><li>День удлиняется — организмы готовятся к росту и размножению; сокращается — к зиме.</li><li>Годовые ритмы: рост, размножение и покой каждый год чередуются.</li></ol></div>
+</div>
+<div class="think">
+<h3>Растения в разные времена года</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Весна: тает снег, начинается сокодвижение, при +5 °С цветёт берёза.</li><li>Лето: самые длинные дни, ягодный сезон.</li><li>Осень: вещества уходят из листьев в корни, листопад; ель и сосна зелёные — испаряют мало воды.</li></ol></div>
+</div>
+<div class="think">
+<h3>Животные в трудное время года</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Запасают питательные вещества.</li><li>Линька: густая белая шерсть у зайца-беляка, горностая, песца.</li><li>Спячка (бурые медведи) и миграции (скворцы, ласточки, стрижи, аисты).</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b19.html">‹ §19 Организмы как среда</a>
+  <span class="pn cur">§20 Сезонные изменения</span>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 20, с. 122—124. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'z-day':'0 0 330 230','z-year':'0 0 330 262','z-leaf':'0 0 330 248','z-animals':'0 0 330 254'};
+
+var T={
+foto:{w:"Фотопериодизм",k:"ответ на длину дня",s:"z-day",t:"Реакция организмов на изменение длины дня. Длина дня каждый год меняется одинаково — это точный сигнал, что скоро весна, лето, осень или зима.",r:"<b>фото</b> — свет + <b>период</b> — повторяющийся отрезок времени",e:""},
+godrit:{w:"Годовые ритмы",k:"жизнь по временам года",s:"z-year",t:"Повторяющиеся каждый год изменения в жизни организмов: периоды роста, размножения и глубокого покоя чередуются.",r:"",e:""},
+listopad:{w:"Листопад",k:"осенью",p:"s95",t:"Естественный сброс листьев осенью. Так растение не засыхает зимой, когда вода в почве замерзает.",r:"",e:""},
+linka:{w:"Линька",k:"смена шубы",s:"z-animals",t:"Смена шерсти и перьев у зверей и птиц. К зиме у зайца-беляка, горностая, песца отрастает густая белая шерсть.",r:"",e:""},
+spyachka:{w:"Спячка",k:"сон в трудное время",s:"z-animals",t:"Состояние, при котором обмен веществ и потребление кислорода сильно снижаются. Бывает зимняя — от холода — и летняя — от жары и сухости.",r:"",e:""},
+migr:{w:"Миграции",k:"переселения",p:"s96",t:"Перемещения животных на большие расстояния из-за смены условий жизни. Осенью скворцы, ласточки, стрижи, аисты улетают к местам зимовки.",r:"<b>миграцио</b> (лат.) — переселение",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b20:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b20:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b20:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b20:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

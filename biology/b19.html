@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Кто помогает Люсе переваривать сено, кто живёт на берёзе за её счёт и почему про клеща сразу говорят взрослым.">
+<title>Организмы как среда обитания</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="h-rel" viewBox="0 0 330 240">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Жить вместе: кто выигрывает</text>
+<rect x="6" y="30" width="318" height="98" rx="10" fill="var(--leaf,#2D7A55)" fill-opacity=".18"/>
+<rect x="6" y="136" width="318" height="98" rx="10" fill="var(--no,#B03A2E)" fill-opacity=".14"/>
+<g fill="var(--illink,#2B2620)">
+<text x="18" y="50" font-size="13" font-weight="700">Взаимовыгодные отношения</text>
+<text x="18" y="66" font-size="11" fill="var(--soft,#5F5648)">польза обоим</text>
+<g font-size="11"><text x="18" y="86">• термиты и жгутиконосцы в их кишечнике</text>
+<text x="18" y="102">• коровы и бактерии в их желудке</text>
+<text x="18" y="118">• одноклеточное животное и водоросли в нём</text></g>
+<text x="18" y="156" font-size="13" font-weight="700">Паразитизм</text>
+<text x="18" y="172" font-size="11" fill="var(--soft,#5F5648)">один живёт за счёт другого</text>
+<g font-size="11"><text x="18" y="192">• клещ и человек</text>
+<text x="18" y="208">• гриб-трутовик и берёза</text>
+<text x="18" y="224">• бычий цепень и корова</text></g>
+</g>
+<g text-anchor="middle" font-size="18" font-weight="700">
+<text x="296" y="60" fill="var(--leaf,#2D7A55)">+ +</text>
+<text x="296" y="166" fill="var(--no,#B03A2E)">+ −</text></g>
+</g></symbol>
+
+<symbol id="h-out" viewBox="0 0 330 232">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Наружные и внутренние паразиты</text>
+<rect x="96" y="40" width="200" height="150" rx="40" fill="var(--paper2,#E8DFCC)" stroke="var(--illink,#2B2620)" stroke-width="2.5"/>
+<g fill="var(--no,#B03A2E)"><circle cx="96" cy="74" r="5"/><circle cx="96" cy="100" r="5"/><circle cx="96" cy="126" r="5"/><circle cx="96" cy="152" r="5"/></g>
+<g stroke="var(--no,#B03A2E)" stroke-width="1.2"><path d="M60 70 L90 74"/><path d="M60 96 L90 100"/><path d="M60 122 L90 126"/><path d="M60 148 L90 152"/></g>
+<g fill="var(--illink,#2B2620)">
+<text x="8" y="52" font-size="12" font-weight="700">снаружи:</text>
+<g font-size="11"><text x="8" y="74">клещи</text><text x="8" y="100">пиявки</text><text x="8" y="126">блохи</text><text x="8" y="152">вши</text></g>
+<g text-anchor="middle"><text x="196" y="72" font-size="13" font-weight="700">хозяин</text>
+<text x="196" y="104" font-size="12" font-weight="700">внутри:</text>
+<g font-size="11"><text x="196" y="122">паразитические черви,</text><text x="196" y="138">бактерии, вирусы,</text><text x="196" y="154">одноклеточные</text></g></g>
+</g>
+<text x="165" y="218" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">наружные — на теле хозяина, внутренние — внутри</text>
+</g></symbol>
+
+<symbol id="h-tick" viewBox="0 0 330 262">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Клещи — правила для тебя</text>
+<rect x="6" y="30" width="318" height="78" rx="10" fill="var(--ochre,#E2A31F)" fill-opacity=".2"/>
+<rect x="6" y="114" width="318" height="62" rx="10" fill="var(--leaf,#2D7A55)" fill-opacity=".18"/>
+<rect x="6" y="182" width="318" height="76" rx="10" fill="var(--no,#B03A2E)" fill-opacity=".14"/>
+<g fill="var(--illink,#2B2620)">
+<text x="18" y="50" font-size="13" font-weight="700">Перед лесом и парком</text>
+<g font-size="11"><text x="18" y="68">светлая одежда — на ней клеща сразу видно,</text>
+<text x="18" y="84">длинные рукава, брюки заправить в носки,</text>
+<text x="18" y="100">средство от клещей на одежду — наносят взрослые</text></g>
+<text x="18" y="134" font-size="13" font-weight="700">После прогулки</text>
+<g font-size="11"><text x="18" y="152">осмотри себя: шея, за ушами, подмышки,</text>
+<text x="18" y="168">под коленями — и одежду</text></g>
+<text x="18" y="202" font-size="13" font-weight="700">Если клещ прицепился</text>
+<g font-size="11"><text x="18" y="220">сразу скажи взрослым — сама не тяни,</text>
+<text x="18" y="236">клеща снимают целиком и сдают на анализ,</text>
+<text x="18" y="252">а врач скажет, что делать дальше</text></g>
+</g>
+</g></symbol>
+
+<symbol id="h-chain" viewBox="0 0 330 236">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Паразиты паразитов</text>
+<rect x="60" y="30" width="210" height="34" rx="9" fill="var(--leaf,#2D7A55)" fill-opacity=".2"/>
+<rect x="60" y="84" width="210" height="34" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<rect x="60" y="138" width="210" height="34" rx="9" fill="var(--ochre,#E2A31F)" fill-opacity=".22"/>
+<rect x="60" y="192" width="210" height="34" rx="9" fill="var(--no,#B03A2E)" fill-opacity=".14"/>
+<g text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">
+<text x="165" y="52" font-weight="700">лягушка</text>
+<text x="165" y="106">опалины — одноклеточные</text>
+<text x="165" y="160">амёбы — одноклеточные</text>
+<text x="165" y="214">микроскопические грибки</text>
+</g>
+<g stroke="var(--illink,#2B2620)" stroke-width="2"><path d="M110 65 V82" marker-end="url(#ar)"/><path d="M110 119 V136" marker-end="url(#ar)"/><path d="M110 173 V190" marker-end="url(#ar)"/></g>
+<g font-size="11" fill="var(--soft,#5F5648)"><text x="120" y="78">живут в её кишечнике</text><text x="120" y="132">поселяются на опалинах</text><text x="120" y="186">поражают амёб</text></g>
+</g></symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 19</span>
+    <h1>Организмы как среда обитания</h1>
+    <p class="lede">Кто помогает Люсе переваривать сено, кто живёт на берёзе за её счёт и почему про клеща сразу говорят взрослым.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. Что такое среда обитания? 2. Какие взаимоотношения между организмами вам известны?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b18.html">‹ §18 Почвенная среда</a>
+  <span class="pn cur">§19 Организмы как среда</span>
+  <a class="pn" href="b20.html">§20 Сезонные изменения ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Взаимовыгодные отношения">1</a><a href="#s2" data-j="s2" title="Паразиты и хозяева">2</a><a href="#s3" data-j="s3" title="Как живут паразиты">3</a><a href="#s4" data-j="s4" title="Наружные и внутренние паразиты">4</a><a href="#s5" data-j="s5" title="Паразиты паразитов">5</a><a href="#s6" data-j="s6" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Взаимовыгодные отношения</h2></div>
+<div class="easy">
+<p>Многие организмы всю жизнь или её часть живут <b>в других организмах</b>. Некоторые стали жизненно необходимы друг другу — между ними возникли <span class="term" role="button" tabindex="0" data-t="vzaim">взаимовыгодные отношения</span>: польза обоим. Например, в цитоплазме некоторых одноклеточных животных живут водоросли. Они снабжают клетку животного питательными веществами и кислородом.</p>
+<p>Термиты грызут и едят древесину, но сами переварить её не могут. В их кишечнике живут одноклеточные животные — <b>жгутиконосцы</b>: у них есть вещества, которые переваривают древесину. Поэтому термиты и жгутиконосцы <span class="big">не могут выжить друг без друга</span>.</p>
+<p>В желудках коров, оленей, антилоп живут миллионы бактерий и одноклеточных животных — <b>инфузорий</b>. Они помогают переваривать растительную пищу.</p>
+</div>
+<div class="book" hidden>
+<p><b>Взаимовыгодные отношения между организмами.</b> В природе широко распространено явление, при котором многие живые организмы всю свою жизнь или её часть обитают в других организмах. Некоторые организмы стали жизненно необходимы друг другу. Между ними возникли <b><span class="term" role="button" tabindex="0" data-t="vzaim">взаимовыгодные отношения</span></b>. Например, в цитоплазме некоторых одноклеточных животных обитают водоросли. Они снабжают клетку животного питательными веществами и кислородом.</p>
+<p>Термиты способны грызть и поедать древесину, но не могут самостоятельно усваивать её. В кишечнике термитов обитают одноклеточные животные — жгутиконосцы. Они обладают веществами, переваривающими древесину. Поэтому термиты и жгутиконосцы не могут выжить друг без друга.</p>
+<p>В желудках коров, оленей, антилоп обитают миллионы бактерий и одноклеточных животных — инфузорий, которые способствуют перевариванию растительной пищи.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 240" role="img" aria-label="Два вида совместной жизни. Взаимовыгодные отношения, польза обоим: термиты и жгутиконосцы в их кишечнике, коровы и бактерии в их желудке, одноклеточное животное и водоросли в нём. Паразитизм, один живёт за счёт другого: клещ и человек, гриб-трутовик и берёза, бычий цепень и корова"><use href="#h-rel"/></svg><figcaption>Плюс и плюс — польза обоим. Плюс и минус — паразитизм.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Кто помогает Люсе переваривать сено</span></div><div class="lifebody"><p>Сено — жёсткая трава, переварить её непросто. Люсе и Юкси, как и коровам из учебника, помогают бактерии: они живут у дегу в кишечнике и разлагают траву. Дегу дают бактериям дом и еду, а бактерии помогают дегу питаться. Это <b>взаимовыгодные отношения</b>.</p><p>Поэтому дегу так важно есть много сена: оно кормит и самих Люсю с Юкси, и их полезных бактерий.</p></div><p class="lifebook">В учебнике это называется: <b>взаимовыгодные отношения</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Что такое взаимовыгодные отношения? Приведи пример.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a1" hidden>Организмы стали жизненно необходимы друг другу. Например, водоросли в цитоплазме одноклеточных животных снабжают клетку питательными веществами и кислородом.</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему термиты и жгутиконосцы не могут выжить друг без друга?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a2" hidden>Термиты едят древесину, но не могут её усвоить, а жгутиконосцы в их кишечнике обладают веществами, переваривающими древесину.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Паразиты и хозяева</h2></div>
+<div class="easy">
+<p>Бывает и по-другому. Если один организм использует другого как <b>еду</b> и как <b>дом</b>, это <span class="term" role="button" tabindex="0" data-t="parazm">паразитизм</span> (от греч. <i>паразитос</i> — нахлебник).</p>
+<p><span class="term" role="button" tabindex="0" data-t="parazit">Паразит</span> питается за счёт другого организма и живёт на его теле или внутри — постоянно или время от времени. <span class="term" role="button" tabindex="0" data-t="hozyain">Хозяин</span> — организм, который даёт паразиту пищу и место для жизни. Чем сложнее устроен хозяин, тем больше разных паразитов может в нём жить.</p>
+<p>Наросты на стволе берёзы — знак, что в ней поселились паразитические грибы и разрушают дерево изнутри (рис. 91). В природе любой организм заражён какими-нибудь паразитами. Больше всего паразитов среди бактерий, одноклеточных животных, микроскопических грибов, червей и клещей. Многие совсем крошечные — 1—5 микрометров, это тысячные доли миллиметра. А есть огромные: бычий цепень, червь из кишечника коров, бывает длиной 10 метров!</p>
+</div>
+<div class="book" hidden>
+<p><b>Паразитизм.</b> Отношения между двумя организмами разных видов, при которых один организм использует другой в качестве источника пищи и среды обитания, называются <b><span class="term" role="button" tabindex="0" data-t="parazm">паразитизмом</span></b> (от греч. <i>паразитос</i> — нахлебник).</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="parazit">Паразитом</span></b> называют организм, который питается за счёт другого организма, временно или постоянно пребывает на поверхности тела или внутри организма. <b><span class="term" role="button" tabindex="0" data-t="hozyain">Хозяином</span></b> называют организм, обеспечивающий паразита питанием и постоянным или временным местом обитания. Чем сложнее устроен организм хозяина, тем более разнообразные условия для жизни других видов он может предоставить.</p>
+<p>Наросты на стволе берёзы — это признак того, что в её стволе поселились паразитические грибы, разрушающие организм изнутри (рис. 91). В естественных условиях любой организм заражён теми или иными паразитами. Наибольшее число паразитов встречается среди бактерий, одноклеточных животных, микроскопических грибов, червей и клещей. Размеры многих мелких внутриклеточных паразитов составляют 1—5 мкм. Среди паразитов есть такие, которые имеют огромные размеры. Например, тело бычьего цепня достигает длины 10 м. Этот паразитический червь обитает в кишечнике коров.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s91" src="img/7d4f349cb5d8.jpg" alt="Белый гриб-трутовик, похожий на копыто, растёт на стволе берёзы"><figcaption><span class="src">из учебника</span><b>Рис. 91.</b> Гриб-трутовик на стволе берёзы<br><span style="color:var(--soft)">▲ Такие «копыта» ты видела в лесу. Гриб живёт за счёт дерева и разрушает его изнутри.</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Грибы-копыта на берёзах</span></div><div class="lifebody"><p>В лесу ты видела на берёзах грибы, похожие на копыта, — это трутовики, как на рис. 91. Трутовик живёт за счёт дерева: его тонкие нити прорастают в древесину и разрушают её изнутри. Берёза для него — <b>хозяин</b>: и еда, и дом.</p><p>Такие деревья со временем становятся трухлявыми и могут сломаться. Поэтому в сильный ветер в лесу не стой под старыми берёзами с трутовиками.</p></div><p class="lifebook">В учебнике это называется: <b>паразит и хозяин</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Что такое паразитизм?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a3" hidden>Отношения организмов разных видов, при которых один использует другого как источник пищи и среду обитания.</div>
+</div>
+<div class="think">
+<p class="qt">4. Кого называют хозяином?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a4" hidden>Организм, который обеспечивает паразита питанием и постоянным или временным местом обитания.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Как живут паразиты</h2></div>
+<div class="easy">
+<p>Паразит зависит от хозяина и сам на него влияет. А хозяин <b>защищается</b>: например, растения сбрасывают листья, в которых поселились паразиты.</p>
+<p>Паразитам приходится эту защиту преодолевать. Жуки-короеды заселяют ствол хвойного дерева, только когда дерево уже не может защититься от них смолой.</p>
+<p>Самое трудное в жизни паразита — <b>перебраться к новому хозяину</b>. В это время большинство паразитов гибнет. Поэтому паразиты очень <b>плодовиты</b>. Бычий цепень (рис. 92, б) даёт около 600 миллионов яиц в год. Живёт он 18—20 лет и за жизнь может произвести около 11 миллиардов яиц.</p>
+</div>
+<div class="book" hidden>
+<p><b>Паразиты и среда обитания.</b> Каждый организм зависит от условий среды обитания и сам воздействует на неё. Поэтому паразит зависит от организма-хозяина и влияет на него. При этом у организма-хозяина вырабатываются различные защитные реакции. Например, растения-хозяева сбрасывают листья, заражённые паразитами.</p>
+<p>Паразиты должны преодолевать защитные реакции организма хозяина. Например, жуки-короеды заселяют ствол хвойного дерева лишь тогда, когда дерево не в состоянии защищаться от них выделением смолы.</p>
+<p>Основные трудности в жизни паразитов связаны с переносом от одного хозяина другому. В период смены хозяев основная масса паразитов погибает. Поэтому паразиты обладают огромной плодовитостью, которая компенсирует эту гибель. Например, бычий цепень (рис. 92, б) в год образует около 600 млн яиц. Он живёт 18—20 лет и за всю жизнь может произвести около 11 млрд яиц.</p>
+</div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Как хозяева защищаются от паразитов? Приведи пример.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Первые два абзаца раздела.</div>
+<div class="rev ans" id="a5" hidden>У хозяина вырабатываются защитные реакции: растения сбрасывают заражённые листья, хвойные деревья защищаются смолой от короедов.</div>
+</div>
+<div class="think">
+<p class="qt">6. Почему паразиты так плодовиты?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a6" hidden>При переходе от одного хозяина к другому большая часть паразитов погибает, и огромная плодовитость восполняет эту гибель.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Наружные и внутренние паразиты</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="naruzh">Наружные паразиты</span> живут на поверхности тела хозяина: клещи, пиявки, блохи (рис. 92). На коже многих зверей и человека живут мелкие бескрылые насекомые — <b>вши</b>. У них сильные цепкие ноги, а на концах ног — подвижные коготки, которые обхватывают волосок.</p>
+<p>Вши — паразиты-«специалисты»: каждый вид живёт на одном или нескольких похожих видах животных. На оленях — оленьи вши, на слонах — слоновая вошь, на зайцах — заячья.</p>
+<p>У человека бывают головная вошь (рис. 93) и платяная вошь. Головная вошь сосёт кровь и живёт в волосах на голове. Люди страдают от вшей очень давно: засохших вшей нашли даже у египетских мумий.</p>
+<p>Вши передаются <b>только от человека к человеку</b> — от кошек и собак ими не заразишься. Прыгать и летать вши не умеют, зато быстро бегают. Заражаются, когда близко общаются с человеком, у которого есть вши, или берут его вещи: шапку, подушку, расчёску, полотенце, игрушки. Поэтому важно соблюдать гигиену и пользоваться своей расчёской и своими вещами.</p>
+<p><span class="term" role="button" tabindex="0" data-t="vnutr">Внутренние паразиты</span> живут внутри тела хозяина. Это большинство паразитических червей, бактерий, вирусов и одноклеточных животных.</p>
+</div>
+<div class="book" hidden>
+<p><b>Наружные и внутренние паразиты.</b> На поверхности тела хозяина обитают <b><span class="term" role="button" tabindex="0" data-t="naruzh">наружные паразиты</span></b>. К этой группе относятся клещи, пиявки, блохи (рис. 92). Накожными паразитами многих зверей и человека являются мелкие бескрылые насекомые — вши. У них очень сильные и цепкие ноги, приспособленные к удерживанию на волосяном покрове животного-хозяина. На концах ног расположены подвижные коготки, которые загибаются к голени, охватывая волосы.</p>
+<p>Вши являются специализированными паразитами, приспособленными к обитанию на одном или нескольких близких видах животных. На оленях паразитируют оленьи вши, на слонах паразитирует крупная слоновая вошь, на зайцах паразитирует заячья вошь.</p>
+<p>К паразитам человека относятся головная вошь (рис. 93) и платяная вошь. Головная вошь — кровососущий паразит, который живёт на волосяной части головы. Люди с давних времён страдают от вшей, засохшие вши были обнаружены даже у египетских и индейских мумий.</p>
+<p>Обычно вши передаются только от человека к человеку, ими нельзя заразиться от домашних или бездомных животных. Эти насекомые не умеют прыгать с головы на голову и летать, но зато быстро передвигаются. Заражение, как правило, происходит при контакте с человеком, заражённым вшами, или его вещами (шапкой, подушкой, расчёской, полотенцем, игрушками и т. д.). Поэтому так важно соблюдать правила личной гигиены и пользоваться одноразовыми или личными предметами ухода.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="vnutr">Внутренние паразиты</span></b> живут внутри тела хозяина. К этой группе относится большинство паразитических червей, бактерий, вирусов, одноклеточных животных.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s92" src="img/de47d69c1798.jpg" alt="Четыре фото: блоха среди волосков, белые ленты бычьего цепня в чашке, клещ на травинке, пиявка на руке"><figcaption><span class="src">из учебника</span><b>Рис. 92.</b> Паразиты: блоха (а), бычий цепень (б), клещ (в), пиявка (г)<br><span style="color:var(--soft)">▲ Кто из них наружный паразит, а кто внутренний?</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s93" src="img/47b8ad124af9.jpg" alt="Головная вошь крупным планом: плоское полупрозрачное насекомое с цепкими лапками"><figcaption><span class="src">из учебника</span><b>Рис. 93.</b> Паразит человека — головная вошь<br><span style="color:var(--soft)">▲ Найди цепкие лапки — ими вошь держится за волосы.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 232" role="img" aria-label="Хозяин и его паразиты: снаружи, на теле, — клещи, пиявки, блохи, вши; внутри — паразитические черви, бактерии, вирусы, одноклеточные"><use href="#h-out"/></svg><figcaption>Наружные паразиты — на теле хозяина, внутренние — внутри.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Клещ, который прицепился к тебе</span></div><div class="lifebody"><p>Однажды к тебе прицепился клещ, и вы его долго и упорно вынимали. Клещ — <b>наружный паразит</b>, как на рис. 92, в: он прокалывает кожу и пьёт кровь. А <b>хозяином</b> в тот раз была ты.</p><p>Клещи опасны не столько укусом, сколько тем, что могут передать болезнь — например, вирус клещевого энцефалита. Поэтому папа и мама делали прививку от клещей (§14). Правила — на схеме ниже.</p></div><p class="lifebook">В учебнике это называется: <b>наружные паразиты, хозяин</b></p></aside>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 262" role="img" aria-label="Правила про клещей. Перед лесом и парком: светлая одежда, длинные рукава, брюки в носки, средство от клещей на одежду наносят взрослые. После прогулки: осмотри шею, за ушами, подмышки, под коленями и одежду. Если клещ прицепился: сразу скажи взрослым и не тяни сама; клеща снимают целиком и сдают на анализ, врач скажет, что делать"><use href="#h-tick"/></svg><figcaption>Три шага: одеться, осмотреться, сразу сказать взрослым.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Дворовые кошки и чистые руки</span></div><div class="lifebody"><p>У бездомных кошек часто бывают блохи и глисты — внутренние паразиты-черви. Ты кормишь дворовых кошек, и это доброе дело. Просто насыпай корм в миску (§14), а дома сразу мой руки с мылом.</p><p>А вот вшами от кошек заразиться нельзя — учебник говорит это прямо: вши передаются только от человека к человеку.</p></div><p class="lifebook">В учебнике это называется: <b>паразиты животных; личная гигиена</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Чем наружные паразиты отличаются от внутренних?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Первый и последний абзацы раздела.</div>
+<div class="rev ans" id="a7" hidden>Наружные живут на поверхности тела хозяина (клещи, пиявки, блохи, вши), внутренние — внутри тела (большинство паразитических червей, бактерии, вирусы, одноклеточные).</div>
+</div>
+<div class="think">
+<p class="qt">8. Как вши приспособлены удерживаться на хозяине?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Первый абзац раздела и рис. 93.</div>
+<div class="rev ans" id="a8" hidden>У них очень сильные и цепкие ноги с подвижными коготками, которые загибаются к голени и охватывают волосы.</div>
+</div>
+<div class="think">
+<p class="qt">9. Как можно заразиться вшами и как этого избежать?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Абзац о том, как передаются вши.</div>
+<div class="rev ans" id="a9" hidden>Только от человека — при близком контакте или через его вещи (шапку, подушку, расчёску, полотенце, игрушки). Нужно соблюдать правила личной гигиены и пользоваться своими вещами.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">5</span><h2>Паразиты паразитов</h2></div>
+<div class="easy">
+<p>Даже у паразитов бывают свои паразиты! Гусениц капустной белянки поражает наездник апантелес, а сам он — хозяин примерно для 20 видов паразитов.</p>
+<p>В кишечнике лягушек живут одноклеточные животные — <b>опалины</b>. На опалинах поселяются другие одноклеточные — <b>амёбы</b>, а амёб поражают микроскопические грибки.</p>
+</div>
+<div class="book" hidden>
+<p><b>Паразиты паразитов.</b> Паразиты, использующие хозяина в качестве местообитания и источника пищи, сами могут быть хозяевами для других паразитов. Например, гусениц капустной белянки поражает наездник апантелес. Он является хозяином примерно 20 видов паразитов.</p>
+<p>В кишечнике лягушек паразитируют одноклеточные животные — опалины. На них поселяются другие одноклеточные животные — амёбы, которые сами поражаются микроскопическими грибками.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 236" role="img" aria-label="Цепочка: в кишечнике лягушки живут опалины — одноклеточные; на опалинах поселяются амёбы; амёб поражают микроскопические грибки"><use href="#h-chain"/></svg><figcaption>Паразит сам может быть хозяином — и так несколько раз подряд.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">10. Приведи пример паразитов паразитов.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Оба абзаца раздела.</div>
+<div class="rev ans" id="a10" hidden>Наездник апантелес поражает гусениц капустной белянки и сам хозяин примерно 20 видов паразитов; в кишечнике лягушек живут опалины, на них — амёбы, а амёб поражают микроскопические грибки.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Взаимовыгодные отношения · Паразитизм · Паразит · Хозяин</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Что такое паразитизм?</li><li>Какие организмы называют хозяевами?</li><li>С чем связаны основные трудности в жизни паразитов?</li><li>Чем наружные паразиты отличаются от внутренних паразитов?</li><li>Какие организмы являются паразитами паразитов?</li><li>Приведите примеры взаимовыгодных отношений между организмами.</li></ol></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Почему подверженность заражению паразитами наиболее высока у позвоночных животных (рыб, земноводных, пресмыкающихся, птиц, млекопитающих) и цветковых растений?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка</button></div>
+<div class="rev hint" id="r1" hidden>Вспомни раздел 2: чем сложнее устроен организм хозяина, тем более разнообразные условия для жизни других видов он может предоставить. У позвоночных и цветковых растений много разных органов и тканей — для паразитов это много разных «мест обитания».</div></div>
+<div class="rubric">Моя лаборатория · Из истории науки</div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="gelm">Гельминтология</span> — наука о паразитических червях (гельминтах) и болезнях, которые они вызывают. Начал её немецкий учёный <b>Карл Асмунд Рудольфи</b>: в 1819 году он описал 981 вид известных тогда гельминтов.</p>
+<p>В нашей стране гельминтологию развил академик <b>Константин Иванович Скрябин</b>. Он описал больше 200 видов гельминтов и создал научную школу. В 1925 году Скрябин придумал <b>дегельминтизацию</b>: это не только лечение больного, но и уничтожение яиц и личинок паразитических червей вокруг — чтобы никто больше не заразился.</p>
+<p>Сейчас у гельминтологии несколько направлений. Медицинская изучает паразитических червей человека. <b>Ветеринарная</b> — паразитов домашних животных. Агрономическая — паразитических червей сельскохозяйственных растений. А ещё учёные изучают паразитов насекомых: с их помощью можно уменьшать число вредителей на полях.</p>
+</div>
+<div class="book" hidden>
+<p><b><span class="term" role="button" tabindex="0" data-t="gelm">Гельминтология</span></b> — наука, изучающая паразитических червей и вызываемые ими заболевания. Становление гельминтологии как научного направления связано с трудами немецкого учёного <b><i>Карла Асмунда Рудольфи</i></b>. В 1819 году он опубликовал сведения о 981 виде известных в то время гельминтах.</p>
+<p>Большая заслуга в развитии отечественной гельминтологии принадлежит академику <b><i>Константину Ивановичу Скрябину</i></b>. Он описал более 200 видов гельминтов. Под его руководством была создана научная школа гельминтологов, разработавшая новые методы гельминтологических исследований. В 1925 году Скрябин сформулировал понятие дегельминтизации. Оно включает не только лечение больного, но и систему профилактических мероприятий по уничтожению яиц и личинок гельминтов во внешней среде.</p>
+<p>В современной гельминтологии исследования ведутся по нескольким направлениям. Медицинская гельминтология изучает паразитических червей и вызываемые ими заболевания человека.</p>
+<p>Ветеринарная гельминтология исследует гельминтов и гельминтозы домашних животных. Специальный раздел агрономической гельминтологии изучает паразитических червей сельскохозяйственных растений. В последние годы развивается направление, связанное с изучением паразитов насекомых, с помощью которых возможно регулировать численность вредителей сельскохозяйственных растений.</p>
+</div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Это будет твоя работа</span></div><div class="lifebody"><p>Ты хочешь стать ветеринаром — и в учебнике есть наука прямо для тебя: <b>ветеринарная гельминтология</b>. Ветеринары лечат и предупреждают паразитов у домашних животных: дают таблетки от глистов, капают на холку капли от блох и клещей. Собакам, которые гуляют в парке и в лесу, это делают регулярно.</p><p>А мысль Скрябина пригодится тебе каждый день: лечить нужно не только одно больное животное, но и думать, как не заразились другие.</p></div><p class="lifebook">В учебнике это называется: <b>гельминтология</b></p></aside>
+<div class="rubric">Это важно знать</div>
+<div class="easy">
+<p>Около 10 000 видов одноклеточных животных — паразиты растений, животных и человека. Они поражают домашних птиц, коров, свиней, рыб, пчёл и вызывают болезни. Чтобы не заболеть:</p>
+<p>• тщательно мыть руки после прогулки и туалета и перед едой;<br>• каждый год проходить обследование у врача;<br>• хорошо мыть продукты;<br>• правильно готовить еду;<br>• избавляться от мух и тараканов в доме, защищаться от укусов комаров, клопов, мух;<br>• не купаться в грязных водоёмах.</p>
+</div>
+<div class="book" hidden>
+<p>Паразитами растений, различных животных и человека являются около 10 000 современных видов одноклеточных животных (простейших). Паразитические простейшие поражают домашних птиц, коров, свиней, рыб, медоносных пчёл и являются возбудителями протозойных болезней. Во многих странах, где паразитические простейшие вызывают повышенную заболеваемость людей и животных, созданы научные центры для разработки мер борьбы с протозойными болезнями. Основные мероприятия по профилактике протозойных болезней включают:</p>
+<p>• соблюдение правил личной гигиены: тщательно мыть руки после прогулки и туалета, перед едой;<br>• ежегодное прохождение обследований на протозойные заболевания;<br>• тщательное мытьё продуктов питания;<br>• соблюдение правил приготовления пищи;<br>• уничтожение комнатных мух и тараканов, защита от укусов комаров, москитов, клопов, мух;<br>• запрет купания в загрязнённых водоёмах.</p>
+</div>
+<div class="done"><button class="donebtn" data-s="s6" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt2" data-n="7">
+<div class="sortlab">Наружный или внутренний паразит?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Клещ</p><div class="sbtns"><button class="sbtn" data-b="0">наружный</button><button class="sbtn" data-b="1">внутренний</button></div><p class="swhy" hidden>Живёт на поверхности тела хозяина.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Бычий цепень</p><div class="sbtns"><button class="sbtn" data-b="0">наружный</button><button class="sbtn" data-b="1">внутренний</button></div><p class="swhy" hidden>Живёт в кишечнике коров.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Блоха</p><div class="sbtns"><button class="sbtn" data-b="0">наружный</button><button class="sbtn" data-b="1">внутренний</button></div><p class="swhy" hidden>Рис. 92, а.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Вирус гриппа</p><div class="sbtns"><button class="sbtn" data-b="0">наружный</button><button class="sbtn" data-b="1">внутренний</button></div><p class="swhy" hidden>Вирусы — внутриклеточные паразиты (§14).</p></div>
+<div class="sitem" data-r="0"><p class="stext">Пиявка</p><div class="sbtns"><button class="sbtn" data-b="0">наружный</button><button class="sbtn" data-b="1">внутренний</button></div><p class="swhy" hidden>Рис. 92, г.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Головная вошь</p><div class="sbtns"><button class="sbtn" data-b="0">наружный</button><button class="sbtn" data-b="1">внутренний</button></div><p class="swhy" hidden>Живёт в волосах на голове.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Опалины в кишечнике лягушки</p><div class="sbtns"><button class="sbtn" data-b="0">наружный</button><button class="sbtn" data-b="1">внутренний</button></div><p class="swhy" hidden>Живут внутри тела.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt3" data-n="6">
+<div class="sortlab">Польза обоим или паразитизм?</div>
+<div class="sitem" data-r="0"><p class="stext">Термиты и жгутиконосцы</p><div class="sbtns"><button class="sbtn" data-b="0">польза обоим</button><button class="sbtn" data-b="1">паразитизм</button></div><p class="swhy" hidden>Не могут выжить друг без друга.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Трутовик на берёзе</p><div class="sbtns"><button class="sbtn" data-b="0">польза обоим</button><button class="sbtn" data-b="1">паразитизм</button></div><p class="swhy" hidden>Разрушает дерево изнутри.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Корова и бактерии в её желудке</p><div class="sbtns"><button class="sbtn" data-b="0">польза обоим</button><button class="sbtn" data-b="1">паразитизм</button></div><p class="swhy" hidden>Бактерии помогают переваривать траву.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Клещ на собаке</p><div class="sbtns"><button class="sbtn" data-b="0">польза обоим</button><button class="sbtn" data-b="1">паразитизм</button></div><p class="swhy" hidden>Пьёт кровь хозяина.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Водоросли в одноклеточном животном</p><div class="sbtns"><button class="sbtn" data-b="0">польза обоим</button><button class="sbtn" data-b="1">паразитизм</button></div><p class="swhy" hidden>Дают клетке питательные вещества и кислород.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Короеды в ослабевшей ели</p><div class="sbtns"><button class="sbtn" data-b="0">польза обоим</button><button class="sbtn" data-b="1">паразитизм</button></div><p class="swhy" hidden>Живут за счёт дерева.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Взаимовыгодные отношения</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 240" aria-hidden="true"><use href="#h-rel"/></svg><span class="ftext">Польза обоим: термиты и жгутиконосцы.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Паразитизм</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 240" aria-hidden="true"><use href="#h-rel"/></svg><span class="ftext">Один живёт за счёт другого. Паразитос — нахлебник.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Паразит</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s92" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Питается за счёт хозяина, живёт на нём или внутри.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Хозяин</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 232" aria-hidden="true"><use href="#h-out"/></svg><span class="ftext">Даёт паразиту еду и дом.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Наружные паразиты</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s92" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">На теле: клещи, пиявки, блохи, вши.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Внутренние паразиты</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 232" aria-hidden="true"><use href="#h-out"/></svg><span class="ftext">Внутри: черви, бактерии, вирусы, одноклеточные.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Гельминтология</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s92" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Наука о паразитических червях. Есть ветеринарная!</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что значит греческое слово «паразитос»?</h3><div class="opts">
+<button class="opt" data-ok="1">Нахлебник</button>
+<button class="opt">Помощник</button>
+<button class="opt">Сосед</button>
+<button class="opt">Хищник</button></div>
+<div class="fb">Паразит живёт за чужой счёт.</div></div>
+<div class="q"><h3>2. Почему термиты не могут жить без жгутиконосцев?</h3><div class="opts">
+<button class="opt" data-ok="1">Жгутиконосцы переваривают древесину</button>
+<button class="opt">Жгутиконосцы охраняют термитник</button>
+<button class="opt">Жгутиконосцы приносят воду</button>
+<button class="opt">Жгутиконосцы согревают термитов</button></div>
+<div class="fb">Термиты едят древесину, но сами её не усваивают.</div></div>
+<div class="q"><h3>3. Какой длины бывает бычий цепень?</h3><div class="opts">
+<button class="opt" data-ok="1">До 10 м</button>
+<button class="opt">1 см</button>
+<button class="opt">10 см</button>
+<button class="opt">1 мм</button></div>
+<div class="fb">Он живёт в кишечнике коров.</div></div>
+<div class="q"><h3>4. Можно ли заразиться вшами от кошки?</h3><div class="opts">
+<button class="opt" data-ok="1">Нет, только от человека</button>
+<button class="opt">Да, от любой</button>
+<button class="opt">Только от бездомной</button>
+<button class="opt">Только летом</button></div>
+<div class="fb">Так написано в учебнике.</div></div>
+<div class="q"><h3>5. Когда погибает больше всего паразитов?</h3><div class="opts">
+<button class="opt" data-ok="1">При переходе к новому хозяину</button>
+<button class="opt">Зимой</button>
+<button class="opt">Ночью</button>
+<button class="opt">Когда хозяин спит</button></div>
+<div class="fb">Поэтому паразиты так плодовиты.</div></div>
+<div class="q"><h3>6. К тебе прицепился клещ. Что делать?</h3><div class="opts">
+<button class="opt" data-ok="1">Сразу сказать взрослым</button>
+<button class="opt">Вытащить самой пальцами</button>
+<button class="opt">Ничего не делать</button>
+<button class="opt">Подождать до вечера</button></div>
+<div class="fb">Взрослые снимут клеща целиком, а врач скажет, что делать дальше.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Взаимовыгодные отношения</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Многие организмы живут в других организмах; некоторые стали необходимы друг другу.</li><li>Водоросли в одноклеточных животных; термиты и жгутиконосцы.</li><li>Бактерии и инфузории в желудках коров, оленей, антилоп помогают переваривать растительную пищу.</li></ol></div>
+</div>
+<div class="think">
+<h3>Паразиты и хозяева</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Паразитизм — один организм использует другой как пищу и среду обитания; паразитос — нахлебник.</li><li>Хозяин защищается (сбрасывает листья, выделяет смолу), паразит преодолевает защиту.</li><li>Главная трудность — смена хозяина, поэтому паразиты очень плодовиты: бычий цепень.</li></ol></div>
+</div>
+<div class="think">
+<h3>Наружные и внутренние паразиты</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Наружные: клещи, пиявки, блохи, вши; вши передаются только от человека к человеку.</li><li>Внутренние: паразитические черви, бактерии, вирусы, одноклеточные.</li><li>Защита: личная гигиена, свои вещи, мыть руки; после леса осматриваться на клещей.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b18.html">‹ §18 Почвенная среда</a>
+  <span class="pn cur">§19 Организмы как среда</span>
+  <a class="pn" href="b20.html">§20 Сезонные изменения ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 19, с. 118—121. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'h-rel':'0 0 330 240','h-out':'0 0 330 232','h-tick':'0 0 330 262','h-chain':'0 0 330 236'};
+
+var T={
+vzaim:{w:"Взаимовыгодные отношения",k:"польза обоим",s:"h-rel",t:"Отношения организмов, которые стали жизненно необходимы друг другу и оба получают пользу.",r:"",e:"Термиты и жгутиконосцы в их кишечнике не могут жить друг без друга."},
+parazm:{w:"Паразитизм",k:"жизнь за чужой счёт",s:"h-rel",t:"Отношения организмов разных видов, при которых один использует другого как источник пищи и среду обитания.",r:"<b>паразитос</b> (греч.) — нахлебник",e:""},
+parazit:{w:"Паразит",k:"нахлебник",p:"s92",t:"Организм, который питается за счёт другого организма и временно или постоянно живёт на его теле или внутри него.",r:"",e:""},
+hozyain:{w:"Хозяин",k:"кормит паразита",s:"h-out",t:"Организм, который даёт паразиту питание и место обитания — постоянное или временное.",r:"",e:"Когда к тебе прицепился клещ, хозяином была ты."},
+naruzh:{w:"Наружные паразиты",k:"живут на теле",p:"s92",t:"Паразиты, которые живут на поверхности тела хозяина: клещи, пиявки, блохи, вши.",r:"",e:""},
+vnutr:{w:"Внутренние паразиты",k:"живут внутри тела",s:"h-out",t:"Паразиты, которые живут внутри тела хозяина: большинство паразитических червей, бактерии, вирусы, одноклеточные животные.",r:"",e:""},
+gelm:{w:"Гельминтология",k:"наука о паразитических червях",p:"s92",t:"Наука, которая изучает паразитических червей (гельминтов) и болезни, которые они вызывают. Ветеринарная гельминтология изучает гельминтов домашних животных.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b19:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b19:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b19:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b19:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
