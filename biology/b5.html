@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Как узнать точное число — и почему шажок шкалы важнее, чем кажется.">
+<title>Измерения в биологии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="i-scale" viewBox="0 0 320 296">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="40" y="12" width="110" height="266" rx="12" fill="var(--water,#6FA8C4)" opacity=".18" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<path d="M130 270 L150 270" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<path d="M141 260 L150 260" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 250 L150 250" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 240 L150 240" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 230 L150 230" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M130 220 L150 220" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<text x="124" y="225" text-anchor="end" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">50</text>
+<path d="M141 210 L150 210" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 200 L150 200" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 190 L150 190" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 180 L150 180" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M130 170 L150 170" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<text x="124" y="175" text-anchor="end" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">100</text>
+<path d="M141 160 L150 160" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 150 L150 150" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 140 L150 140" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 130 L150 130" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M130 120 L150 120" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<text x="124" y="125" text-anchor="end" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">150</text>
+<path d="M141 110 L150 110" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 100 L150 100" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 90 L150 90" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 80 L150 80" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M130 70 L150 70" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<text x="124" y="75" text-anchor="end" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">200</text>
+<path d="M141 60 L150 60" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 50 L150 50" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 40 L150 40" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M141 30 L150 30" stroke="var(--illink,#2B2620)" stroke-width="1.4"/>
+<path d="M130 20 L150 20" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<text x="124" y="25" text-anchor="end" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">250</text>
+<text x="56" y="268" font-size="13" fill="var(--soft,#5F5648)">мл</text>
+<text x="162" y="25" font-size="14" font-weight="700" fill="var(--pa,#C9672C)">предел — 250 мл</text>
+<path d="M158 32 Q166 32 166 40 L166 62 Q166 70 158 70" stroke="var(--leaf,#2D7A55)" stroke-width="2.5" fill="none"/>
+<text x="174" y="56" font-size="13" fill="var(--leaf,#2D7A55)">5 шажков</text>
+<text x="162" y="122" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">Цена деления:</text>
+<text x="162" y="146" font-size="14" fill="var(--illink,#2B2620)">(250 − 200) : 5</text>
+<text x="162" y="172" font-size="16" font-weight="700" fill="var(--leaf,#2D7A55)">= 10 мл</text>
+<text x="162" y="214" font-size="13" fill="var(--soft,#5F5648)">один шажок</text>
+<text x="162" y="232" font-size="13" fill="var(--soft,#5F5648)">между штрихами</text>
+</g></symbol>
+
+<symbol id="i-tape" viewBox="0 0 320 142">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="10" y="14" width="300" height="52" rx="4" fill="var(--ochre,#E2A31F)" opacity=".35" stroke="var(--illink,#2B2620)" stroke-width="1.5"/>
+<path d="M10 14 L10 40" stroke="var(--illink,#2B2620)" stroke-width="1.8"/>
+<text x="13" y="58" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">0</text>
+<path d="M16 14 L16 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M22 14 L22 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M28 14 L28 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M34 14 L34 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M40 14 L40 30" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M46 14 L46 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M52 14 L52 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M58 14 L58 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M64 14 L64 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M70 14 L70 40" stroke="var(--illink,#2B2620)" stroke-width="1.8"/>
+<text x="73" y="58" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">1</text>
+<path d="M76 14 L76 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M82 14 L82 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M88 14 L88 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M94 14 L94 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M100 14 L100 30" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M106 14 L106 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M112 14 L112 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M118 14 L118 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M124 14 L124 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M130 14 L130 40" stroke="var(--illink,#2B2620)" stroke-width="1.8"/>
+<text x="133" y="58" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">2</text>
+<path d="M136 14 L136 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M142 14 L142 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M148 14 L148 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M154 14 L154 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M160 14 L160 30" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M166 14 L166 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M172 14 L172 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M178 14 L178 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M184 14 L184 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M190 14 L190 40" stroke="var(--illink,#2B2620)" stroke-width="1.8"/>
+<text x="193" y="58" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">3</text>
+<path d="M196 14 L196 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M202 14 L202 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M208 14 L208 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M214 14 L214 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M220 14 L220 30" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M226 14 L226 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M232 14 L232 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M238 14 L238 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M244 14 L244 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M250 14 L250 40" stroke="var(--illink,#2B2620)" stroke-width="1.8"/>
+<text x="253" y="58" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">4</text>
+<path d="M256 14 L256 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M262 14 L262 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M268 14 L268 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M274 14 L274 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M280 14 L280 30" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M286 14 L286 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M292 14 L292 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M298 14 L298 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M304 14 L304 23" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M310 14 L310 40" stroke="var(--illink,#2B2620)" stroke-width="1.8"/>
+<path d="M70 70 L70 84 M76 70 L76 84" stroke="var(--pa,#C9672C)" stroke-width="2"/>
+<path d="M73 86 L73 96" stroke="var(--pa,#C9672C)" stroke-width="2"/>
+<text x="10" y="114" font-size="14" font-weight="700" fill="var(--pa,#C9672C)">цена деления — 1 мм</text>
+<text x="10" y="134" font-size="13" fill="var(--soft,#5F5648)">большие цифры — сантиметры</text>
+</g></symbol>
+
+<symbol id="i-avg" viewBox="0 0 320 226">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="160" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Взвесили 3 раза (пример)</text>
+<rect x="8" y="32" width="96" height="44" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="56" y="60" text-anchor="middle" font-size="16" font-weight="700" fill="var(--illink,#2B2620)">250 г</text>
+<rect x="112" y="32" width="96" height="44" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="160" y="60" text-anchor="middle" font-size="16" font-weight="700" fill="var(--illink,#2B2620)">254 г</text>
+<rect x="216" y="32" width="96" height="44" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="264" y="60" text-anchor="middle" font-size="16" font-weight="700" fill="var(--illink,#2B2620)">252 г</text>
+<text x="8" y="108" font-size="14" font-weight="700" fill="var(--pa,#C9672C)">1. Сложи:</text>
+<text x="8" y="130" font-size="15" fill="var(--illink,#2B2620)">250 + 254 + 252 = 756</text>
+<text x="8" y="160" font-size="14" font-weight="700" fill="var(--pa,#C9672C)">2. Подели на 3:</text>
+<text x="8" y="182" font-size="15" fill="var(--illink,#2B2620)">756 : 3 = 252</text>
+<rect x="190" y="150" width="122" height="44" rx="10" fill="var(--leaf,#2D7A55)"/>
+<text x="251" y="170" text-anchor="middle" font-size="13" fill="#F6FFF9">среднее</text>
+<text x="251" y="188" text-anchor="middle" font-size="16" font-weight="700" fill="#F6FFF9">252 г</text>
+<text x="8" y="216" font-size="13" fill="var(--soft,#5F5648)">делим на 3, потому что взвешивали 3 раза</text>
+</g></symbol>
+
+<symbol id="i-units" viewBox="0 0 320 190">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="10" y="20" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">Всё в сантиметрах — и в масштабе</text>
+<text x="10" y="48" font-size="14" fill="var(--illink,#2B2620)">сосна: 54 м = 5400 см</text>
+<rect x="10" y="56" width="290.0" height="18" rx="3" fill="var(--leaf,#2D7A55)"/>
+<text x="10" y="102" font-size="14" fill="var(--illink,#2B2620)">шиповник: 200 см</text>
+<rect x="10" y="110" width="10.7" height="18" rx="2" fill="var(--pa,#C9672C)"/>
+<text x="10" y="156" font-size="14" fill="var(--illink,#2B2620)">люпин: 1000 мм = 100 см</text>
+<rect x="10" y="164" width="5.4" height="18" rx="1" fill="var(--pb,#3B6FA8)"/>
+</g></symbol>
+
+<symbol id="i-cheat" viewBox="0 0 320 174">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="160" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Шпаргалка</text>
+<g font-size="16">
+<rect x="8" y="32" width="148" height="60" rx="10" fill="var(--paper2,#E8DFCC)"/>
+<text x="82" y="57" text-anchor="middle" font-weight="700" fill="var(--illink,#2B2620)">1 м = 100 см</text>
+<text x="82" y="80" text-anchor="middle" font-weight="700" fill="var(--illink,#2B2620)">1 см = 10 мм</text>
+<rect x="164" y="32" width="148" height="60" rx="10" fill="var(--paper2,#E8DFCC)"/>
+<text x="238" y="57" text-anchor="middle" font-weight="700" fill="var(--illink,#2B2620)">1 кг = 1000 г</text>
+<text x="238" y="80" text-anchor="middle" font-weight="700" fill="var(--illink,#2B2620)">1 т = 1000 кг</text>
+</g>
+<text x="8" y="122" font-size="14" fill="var(--illink,#2B2620)">из больших в маленькие — умножай,</text>
+<text x="8" y="144" font-size="14" fill="var(--illink,#2B2620)">из маленьких в большие — дели.</text>
+<text x="8" y="166" font-size="13" fill="var(--soft,#5F5648)">54 м = 54 × 100 = 5400 см</text>
+</g></symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 5</span>
+    <h1>Измерения в биологических исследованиях</h1>
+    <p class="lede">Как узнать точное число — и почему шажок шкалы важнее, чем кажется.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. Какие методы исследования, применяемые в биологии, вы знаете? 2. В чём заключается основной принцип научного метода?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b4.html">‹ §4 Методы исследования</a>
+  <span class="pn cur">§5 Измерения</span>
+  <a class="pn" href="b6.html">§6 Эксперимент ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Метод измерения">1</a><a href="#s2" data-j="s2" title="Предел измерения и цена деления">2</a><a href="#s3" data-j="s3" title="Выбор единиц измерения">3</a><a href="#s4" data-j="s4" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Метод измерения</h2></div>
+<div class="easy">
+<p>Учёные замечают не только качественные изменения — например, у семени появился корешок, росток, листья. Они ещё и <b>считают</b>: какой длины корешок, какой ширины листья. Это количественные изменения — для них нужно точное измерение.</p>
+<p><span class="term" role="button" tabindex="0" data-t="izm">Измерение</span> — это когда узнают число: какого размера, сколько весит, сколько времени прошло. Ты сама много раз измеряла длину, ширину, высоту, массу, объём, время, температуру, расстояние.</p>
+<p>Для этого есть <span class="term" role="button" tabindex="0" data-t="pribor">измерительные приборы</span> (рис. 21):<br>• время — часы или секундомер;<br>• длина, ширина, высота, расстояние — линейка или рулетка;<br>• температура — термометр;<br>• масса — весы (вспомни весы в магазине);<br>• объём жидкости — мензурка.</p>
+<p>Главное в измерении — <span class="term" role="button" tabindex="0" data-t="tochn">точность</span>. Учёные пользуются очень точными приборами. Но прежде чем мерить, проверяют у прибора две вещи: предел измерения и цену деления. И решают, подходит ли он.</p>
+</div>
+<div class="book" hidden>
+<p>При проведении научных исследований определяют не только качественные изменения (например, появление корешка, ростка, листьев при прорастании семени), но и количественные, основанные на точном измерении (длина корешков, ширина листьев и т. д.).</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="izm">Измерение</span></b> — определение числового значения определённой величины объекта или явления. Точные измерения необходимы как для проведения научных исследований, так и в повседневной жизни. Каждый из вас неоднократно измерял размеры тел (их длину, ширину, высоту), массу, объём, время, температуру, расстояние и т. д. Для проведения измерений вы использовали <b><span class="term" role="button" tabindex="0" data-t="pribor">измерительные приборы</span></b>: линейки, рулетки, часы, весы, термометры, мензурки и т. д. (рис. 21). Например, чтобы измерить время, используют часы или секундомер. Длину, высоту, ширину предметов, а также расстояния между ними измеряют при помощи линейки или рулетки. Термометр используют для измерения температуры. Весы служат для измерения массы — вспомните, как продавец, отпуская вам товар, кладёт его на весы. Объёмы жидкости отмеряют мензуркой.</p>
+<p>Важнейшим показателем качества измерения и его научной ценности является <span class="term" role="button" tabindex="0" data-t="tochn">точность</span>. В настоящее время при проведении биологических исследований учёные используют современные высокоточные приборы измерения. Прежде чем воспользоваться, тем или иным измерительным прибором, определяют его предел измерения и цену деления и решают, подходит ли он для поставленных целей.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-i21" src="img/c151304f64b4.jpg" alt="Гигрометр, мерный стакан, линейка, электронный градусник, песочные часы"><figcaption><span class="src">из учебника</span><b>Рис. 21.</b> Измерительные приборы</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Блины и наклейки на стене</span></div><div class="lifebody"><p>Когда вы вместе печёте блины, ты отмеряешь воду и кефир мерным стаканом, а муку — на кухонных весах. Мерный стакан — это та же мензурка: он измеряет <b>объём</b>. Весы измеряют <b>массу</b>.</p><p>А каждый год ты клеишь на стену новую наклейку со своим ростом. Это тоже измерение! Помнишь, в §1 рост — это количественные изменения? Их как раз и находят измерением.</p></div><p class="lifebook">В учебнике это называется: <b>измерение и измерительные приборы</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Чем качественные изменения отличаются от количественных? Приведи пример из учебника.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a1" hidden>Качественные — появилось что-то новое: корешок, росток, листья у семени. Количественные — их можно измерить числом: длина корешков, ширина листьев.</div>
+</div>
+<div class="think">
+<p class="qt">2. Что учёный проверяет у прибора перед измерением и зачем?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a2" hidden>Предел измерения и цену деления — чтобы решить, подходит ли прибор для его цели.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Предел измерения и цена деления</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="predel">Предел измерения</span> — самое большое число, которое можно измерить прибором. Его видно у последнего штриха шкалы.</p>
+<p><span class="term" role="button" tabindex="0" data-t="cena">Цена деления</span> — сколько «стоит» один шажок между двумя соседними штрихами.</p>
+<p><span class="big">Как найти цену деления:</span> возьми два соседних подписанных числа, вычти меньшее из большего и подели на количество шажков между ними. На мерном стакане (рис. 22): (250 − 200) : 5 = 10 мл.</p>
+<p>Чем меньше цена деления, тем точнее прибор. Если у рулетки цена деления 5 мм, то с точностью до 1 мм ею не измерить. У уличного термометра шажок — 1 градус, а у медицинского градусника — одна десятая градуса. Значит, медицинский градусник точнее в 10 раз (рис. 22).</p>
+<p>Когда сравнивают измерения, можно найти закономерности.</p>
+</div>
+<div class="book" hidden>
+<p><b><span class="term" role="button" tabindex="0" data-t="predel">Предел измерения</span></b> — это наибольшая величина, которая может быть измерена с помощью данного измерительного прибора. Предел измерения определяют по значению, равному последнему штриху на шкале прибора. <b><span class="term" role="button" tabindex="0" data-t="cena">Цена деления</span></b> — величина, соответствующая расстоянию между двумя соседними штрихами шкалы измерительного прибора. Чем меньше цена деления, тем выше точность измерительного прибора. Это значит, что если рулетка имеет цену деления 5 мм, то ею не удастся измерить длину с точностью до 1 мм. Цена деления уличного термометра равна одному градусу, а медицинского градусника — десятой доли градуса, т. е. его точность измерения выше в десять раз (рис. 22). Анализ и сравнение измерений, полученных при проведении научных исследований, позволяют выявить определённые закономерности.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-i22" src="img/c9493bca2cbd.jpg" alt="Уличный и медицинский термометры, мерный стакан со шкалой и увеличенная часть шкалы: 200, 250, цена деления 10 мл"><figcaption><span class="src">из учебника</span><b>Рис. 22.</b> Предел измерения и цена деления шкал измерительных приборов</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 320 296" role="img" aria-label="Шкала мерного стакана от 0 до 250 мл: предел 250 мл; между 200 и 250 пять шажков, цена деления (250 − 200) : 5 = 10 мл"><use href="#i-scale"/></svg><figcaption>Как на рис. 22: предел — 250 мл, а один шажок — 10 мл.</figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Предел измерения</b><p>самое большое число на шкале: у этого стакана — 250 мл</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Цена деления</b><p>один шажок между штрихами: у этого стакана — 10 мл</p></div></div><p class="pairkey">Предел — <b>сколько влезет</b>. Цена деления — <b>какой шажок</b>.</p></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 320 142" role="img" aria-label="Кусок рулетки от 0 до 5 сантиметров с миллиметровыми штрихами: цена деления 1 мм"><use href="#i-tape"/></svg><figcaption>У строительной рулетки шажок совсем маленький — 1 мм.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Рулетка, мерный стакан и градусник</span></div><div class="lifebody"><p>Возьми строительную рулетку. Цифры на ленте — сантиметры, а маленькие штрихи между ними — миллиметры. Цена деления — 1 мм. Предел — последнее число на ленте.</p><p>Найди цену деления на мерном стакане, которым отмеряешь кефир для блинов: два соседних числа, вычти, подели на число шажков.</p><p>А дома у вас электронный градусник. Шкалы у него нет — он сразу показывает число, например 36,6. Но цифра после запятой подсказывает его точность: десятые доли градуса, как у медицинского градусника в учебнике.</p></div><p class="lifebook">В учебнике это называется: <b>предел измерения и цена деления</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. У какого термометра точность выше — у уличного или у медицинского? Во сколько раз?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Ищи в разделе «десятой доли градуса».</div>
+<div class="rev ans" id="a3" hidden>У медицинского: его цена деления — десятая доля градуса, а у уличного — один градус. Точность выше в 10 раз.</div>
+</div>
+<div class="think">
+<p class="qt">4. Рулеткой с ценой деления 5 мм нужно измерить длину листа с точностью до 1 мм. Получится? Почему?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Пример с рулеткой в разделе.</div>
+<div class="rev ans" id="a4" hidden>Нет. Шажок у такой рулетки — 5 мм, мельче она не покажет. Чем меньше цена деления, тем выше точность.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Выбор единиц измерения</h2></div>
+<div class="easy">
+<p>Важно правильно выбрать <span class="term" role="button" tabindex="0" data-t="edin">единицы измерения</span>.</p>
+<p>Массу человека обычно пишут в килограммах, синего кита — в тоннах, а землеройки — в граммах (рис. 23).</p>
+<p><span class="big">Сравним по рис. 23:</span> кит весит 150 тонн — это 150 000 кг. А девочка — 36 кг. Получается, кит тяжелее примерно в 4 тысячи раз!</p>
+<p>Любую величину можно записать в разных единицах. Площадь Баргузинского заповедника — 2482 км², школьного кабинета — 60 м², листа пеларгонии — около 8 см². Понятно, что заповедник больше кабинета, а кабинет больше листа. Но насколько — сказать трудно.</p>
+<p>Если перевести всё в одни единицы, сравнивать легко (рис. 24): заповедник — 24 820 000 000 000 см², кабинет — 600 000 см², лист — 8 см².</p>
+</div>
+<div class="book" hidden>
+<p>Для измерения той или иной величины важно правильно выбрать <span class="term" role="button" tabindex="0" data-t="edin">единицы измерения</span>.</p>
+<p>Массу человека, как правило, указывают в килограммах, синего кита — в тоннах, а землеройки — в граммах (рис. 23).</p>
+<p>Любую величину можно выразить в разных единицах измерения. Так, площадь Баргузинского заповедника составляет 2482 км², площадь школьного кабинета — 60 м², а листа пеларгонии — около 8 см². При взгляде на эти величины сразу становится понятно, что заповедник по площади больше кабинета, а кабинет — больше листа пеларгонии, но величину этих различий указать сложно. Если же выразить все величины в одних и тех же единицах измерения, то будет легче их сравнить (рис. 24).</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-i23" src="img/bad622f19ca2.jpg" alt="Девочка ростом 120 см и массой 36 кг, синий кит длиной 33 м и массой 150 т, землеройка длиной 6—10 см и массой 10—12 г"><figcaption><span class="src">из учебника</span><b>Рис. 23.</b> Длина и масса тела различных организмов</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-i24" src="img/a2ebb601ad8c.jpg" alt="Площадь заповедника 2482 км² — это 24 820 000 000 000 см², класса 60 м² — 600 000 см², листа пеларгонии 8 см²"><figcaption><span class="src">из учебника</span><b>Рис. 24.</b> Сравнение различных единиц измерения</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 320 174" role="img" aria-label="Шпаргалка: 1 м = 100 см, 1 см = 10 мм, 1 кг = 1000 г, 1 т = 1000 кг; из больших единиц в маленькие умножай, из маленьких в большие дели; 54 м = 5400 см"><use href="#i-cheat"/></svg><figcaption>Держи шпаргалку под рукой — она нужна для задания 3 в «Лаборатории».</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Граммы, килограммы, тонны</span></div><div class="lifebody"><p>Люсю и Юкси взвешивают в <b>граммах</b> — как землеройку на рис. 23. Тебя, корги или самоеда — в <b>килограммах</b>. А синего кита — в <b>тоннах</b>.</p><p>Если записать вес Люси в тоннах, получится крошечное число с кучей нулей после запятой. Поэтому для каждого животного выбирают удобные единицы.</p></div><p class="lifebook">В учебнике это называется: <b>выбор единиц измерения</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Почему массу землеройки пишут в граммах, а кита — в тоннах?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Второй абзац раздела и рис. 23.</div>
+<div class="rev ans" id="a5" hidden>Так числа получаются удобными: землеройка весит 10—12 г, кит — 150 т. В одних единицах числа были бы очень маленькими или очень большими.</div>
+</div>
+<div class="think">
+<p class="qt">6. Зачем на рис. 24 все площади перевели в квадратные сантиметры?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Последнее предложение раздела.</div>
+<div class="rev ans" id="a6" hidden>Когда все величины в одних и тех же единицах, их легко сравнить: сразу видно, во сколько раз одно больше другого.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Измерения · Измерительные приборы · Предел измерения · Цена деления</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Какое значение имеют измерения в научных исследованиях?</li><li>Какие единицы измерения вы знаете?</li><li>От чего зависит выбор единиц измерения в исследованиях и повседневной жизни?</li><li>Как определить предел измерения и цену деления шкалы измерительного прибора?</li><li>Приведите примеры измерительных приборов для выполнения измерения различных параметров биологических объектов.</li></ol></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Раньше в разных странах использовались свои национальные единицы измерений. В настоящее время практически все страны перешли на единую международную систему измерений и широко используют её. Почему это произошло?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к «Подумайте!»</button></div>
+<div class="rev hint" id="r1" hidden>Прочитай «Задание для любознательных» ниже: что было, когда в каждой стране были свои аршины, футы и мили?</div></div>
+<div class="rubric">Моя лаборатория · Выполните задания</div>
+<div class="ask"><b>Порядок проведения измерений</b>
+<ol><li>Поставьте цель проведения измерения.</li><li>Определите количественные признаки (параметры) объекта для проведения измерения и инструменты, необходимые для этих целей.</li><li>Выберите единицы измерения.</li><li>Определите предел измерения и цену деления доступных измерительных приборов и выберите из них наиболее подходящие.</li><li>Проведите измерение с использованием соответствующих приборов. Для получения объективных результатов измерение каждого параметра следует провести три раза.</li><li>Вычислите среднее значение измеренных величин.</li></ol></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 320 226" role="img" aria-label="Пример: три взвешивания — 250, 254 и 252 грамма; сложить — 756, поделить на 3 — среднее 252 грамма"><use href="#i-avg"/></svg><figcaption>Как посчитать <span class="term" role="button" tabindex="0" data-t="sred">среднее значение</span>: сложить все результаты и поделить на число измерений.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Измерение объектов</b>
+<ol><li>Пользуясь вышеприведённой памяткой, измерьте ширину листьев нескольких растений в кабинете биологии. Зарисуйте их, указав размеры. Занесите данные в таблицу: вид растения — орган — параметр измерения — результаты измерений 1, 2, 3 — среднее значение. Рассчитайте среднее значение измеренных величин (задание повышенной трудности).</li><li>Измерьте длину и ширину учебника биологии. Вычислите его площадь.</li><li>Выразите в одних и тех же единицах измерения высоту куста шиповника (200 см), сосны (54 м) и люпина (1000 мм). Результаты занесите в таблицу.</li></ol></div>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Сначала попробуй сама со шпаргалкой из раздела 3.</p>
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Решение задания 3 по шагам</button></div>
+<div class="rev ans" id="r2" hidden><ol><li><b>Шиповник 200 см</b> → в метры: 200 : 100 = <b>2 м</b>; в миллиметры: 200 × 10 = <b>2000 мм</b>.</li><li><b>Сосна 54 м</b> → в сантиметры: 54 × 100 = <b>5400 см</b>; в миллиметры: 5400 × 10 = <b>54 000 мм</b>.</li><li><b>Люпин 1000 мм</b> → в сантиметры: 1000 : 10 = <b>100 см</b>; в метры: 100 : 100 = <b>1 м</b>.</li><li>Теперь сравнить легко: сосна выше шиповника в 27 раз (54 : 2), а люпина — в 54 раза.</li></ol></div></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 320 190" role="img" aria-label="Высота растений в сантиметрах в масштабе: сосна 5400 см — длинная полоса, шиповник 200 см и люпин 100 см — крошечные полоски"><use href="#i-units"/></svg><figcaption>Полоски в масштабе: рядом с сосной шиповник и люпин почти не видно.</figcaption></div></figure>
+<div class="col">
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к заданию 2: площадь учебника</button></div>
+<div class="rev hint" id="r3" hidden>Измерь длину и ширину учебника линейкой (в сантиметрах), три раза каждую. Посчитай средние. Площадь прямоугольника = длина × ширина, ответ в квадратных сантиметрах (см²).</div></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Взвешиваем Люсю и Юкси</span></div><div class="lifebody"><p>Устрой настоящее исследование по памятке учебника — как ветеринар на приёме:</p><p><b>1. Цель:</b> узнать, сколько весят Люся и Юкси.<br><b>2. Прибор:</b> кухонные весы. Посмотри их предел и цену деления.<br><b>3. Единицы:</b> граммы.<br><b>4. Как:</b> поставь на весы миску, нажми «0», чтобы весы не считали миску, и аккуратно посади дегу в миску. Попроси папу или маму помочь — дегу не любят, когда их берут в руки.<br><b>5. Три раза:</b> взвесь каждую три раза и запиши.<br><b>6. Среднее:</b> сложи три числа и подели на 3 — как на схеме выше.</p><p>Люся и Юкси — сёстры из одного помёта. Интересно, весят ли они одинаково?</p></div><p class="lifebook">В учебнике это называется: <b>порядок проведения измерений</b></p></aside>
+<div class="rubric">Задание для любознательных</div>
+<div class="easy">
+<p>Сейчас почти везде пользуются <b>Международной системой единиц (СИ)</b>. Но так было не всегда.</p>
+<p>Раньше в каждой стране были свои меры длины: аршин, сажень, фут, дюйм, ярд, миля и другие. Переводить одни в другие было трудно. А в разных местах одинаковые названия иногда значили разное.</p>
+<p>Поэтому ещё в конце XVIII века решили сделать одну удобную метрическую систему. В 1799 году во Франции изготовили два образца — метр и килограмм. В 1960 году приняли <span class="term" role="button" tabindex="0" data-t="si">Международную систему единиц</span>: её главные единицы — метр, килограмм, секунда и другие. В нашей стране её ввели с 1 января 1963 года.</p>
+<p>Но и сейчас учёные иногда берут другие единицы. Астрономы меряют расстояния не километрами, а световыми годами. А для очень маленьких объектов удобны микрон и нанометр.</p>
+</div>
+<div class="book" hidden>
+<p>Познакомившись с данным текстом, подумайте какой вывод можно сделать. Обоснуйте его. Обсудите этот вопрос с одноклассниками.</p>
+<p>В настоящее время повсеместно признанной является <b>Международная система единиц (СИ)</b>. Но так было не всегда. Ещё совсем недавно каждое государство использовало свою систему единиц измерения.</p>
+<p>Например, для измерения длины применялись такие единицы измерения, как аршин, сажень, фут, дюйм, ярд, миля и другие. Такое многообразие связано с национальными системами измерения различных государств, которые складывались столетиями.</p>
+<p>Так как единицы измерения выбирались независимо друг от друга, пересчёт из одной единицы в другую был сложным. К тому же в разных местах применялись разные единицы, иногда с одинаковыми названиями. Поэтому ещё в конце XVIII века стали понимать, что необходимо разработать метрическую систему, которая была бы удобной и единой системой мер и весов.</p>
+<p>В 1799 году во Франции были изготовлены два эталона — для единицы длины (метр) и для единицы массы (килограмм). Но процесс разработки единой метрической системы был длительным.</p>
+<p>Только в 1960 году XI Генеральная конференция по мерам и весам приняла стандарт, который впервые получил название «<span class="term" role="button" tabindex="0" data-t="si">Международная система единиц</span>», и установила международное сокращённое наименование этой системы «SI». Основными единицами в ней стали метр, килограмм, секунда, ампер, градус Кельвина и кандела.</p>
+<p>С 1 января 1963 года Международная система единиц (СИ) была введена в нашей стране в качестве предпочтительной во всех областях науки, техники и народного хозяйства, а также при преподавании.</p>
+<p>Но следует отметить, что и в настоящее время учёные при проведении некоторых исследований продолжают использовать единицы измерения, не входящие в систему СИ. Например, в астрономии для измерения расстояния между объектами природы используют не километр, а такие единицы, как световой год, парсек, астрономическая единица. А при изучении микромира наиболее удобно применять такие малые единицы измерения, как микрон, нанометр.</p>
+</div>
+<div class="rubric">Шаги к успеху</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Как искать в интернете: каталоги и поисковые системы</button></div>
+<div class="rev plan" id="r4" hidden><ol><li><b>Тематические каталоги</b> собирают вручную редакторы: информация разложена по разделам, как в библиотеке. Пример — Единая коллекция цифровых образовательных ресурсов.</li><li><b>Поисковые системы</b> сами находят ссылки на сайты по ключевым словам или фразам. Можно искать голосом и по картинке.</li><li>Подбирай ключевые слова от общего к частному. Упражнение: 10 ключевых слов для темы любого урока биологии.</li></ol></div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r5" aria-expanded="false">Как выступать с докладом</button></div>
+<div class="rev plan" id="r5" hidden><ol><li>У выступления три части: вступление (о чём и зачем), главная часть, заключение (выводы).</li><li>Не читай с листа — пересказывай.</li><li>Поздоровайся, назови тему и цель. Говори громко и чётко, без «ну», «типа», «как бы».</li><li>Не торопись: обычный темп — 120—150 слов в минуту, с паузами. Короткие предложения.</li><li>Начни с интересного вопроса, например: «А вы задумывались, как появилась жизнь на нашей планете?»</li><li>Узнай заранее у учителя, сколько времени на выступление, и уложись.</li></ol></div></div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt6" data-n="6">
+<div class="sortlab">Каким прибором измерить?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Ширину листа</p><div class="sbtns"><button class="sbtn" data-b="0">линейка или рулетка</button><button class="sbtn" data-b="1">весы</button><button class="sbtn" data-b="2">термометр</button><button class="sbtn" data-b="3">мензурка</button><button class="sbtn" data-b="4">часы</button></div><p class="swhy" hidden>Длину и ширину меряют линейкой или рулеткой.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Сколько весит Люся</p><div class="sbtns"><button class="sbtn" data-b="0">линейка или рулетка</button><button class="sbtn" data-b="1">весы</button><button class="sbtn" data-b="2">термометр</button><button class="sbtn" data-b="3">мензурка</button><button class="sbtn" data-b="4">часы</button></div><p class="swhy" hidden>Масса — весами.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Температуру тела</p><div class="sbtns"><button class="sbtn" data-b="0">линейка или рулетка</button><button class="sbtn" data-b="1">весы</button><button class="sbtn" data-b="2">термометр</button><button class="sbtn" data-b="3">мензурка</button><button class="sbtn" data-b="4">часы</button></div><p class="swhy" hidden>Температура — термометром.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Сколько кефира налить в тесто</p><div class="sbtns"><button class="sbtn" data-b="0">линейка или рулетка</button><button class="sbtn" data-b="1">весы</button><button class="sbtn" data-b="2">термометр</button><button class="sbtn" data-b="3">мензурка</button><button class="sbtn" data-b="4">часы</button></div><p class="swhy" hidden>Объём жидкости — мензуркой (мерным стаканом).</p></div>
+<div class="sitem" data-r="4"><p class="stext">Сколько секунд Юкси сидит в домике</p><div class="sbtns"><button class="sbtn" data-b="0">линейка или рулетка</button><button class="sbtn" data-b="1">весы</button><button class="sbtn" data-b="2">термометр</button><button class="sbtn" data-b="3">мензурка</button><button class="sbtn" data-b="4">часы</button></div><p class="swhy" hidden>Время — часами или секундомером.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Твой рост для новой наклейки на стене</p><div class="sbtns"><button class="sbtn" data-b="0">линейка или рулетка</button><button class="sbtn" data-b="1">весы</button><button class="sbtn" data-b="2">термометр</button><button class="sbtn" data-b="3">мензурка</button><button class="sbtn" data-b="4">часы</button></div><p class="swhy" hidden>Высоту меряют рулеткой.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt7" data-n="6">
+<div class="sortlab">В каких единицах удобнее?</div>
+<div class="sitem" data-r="0"><p class="stext">Масса землеройки</p><div class="sbtns"><button class="sbtn" data-b="0">граммы</button><button class="sbtn" data-b="1">килограммы</button><button class="sbtn" data-b="2">тонны</button></div><p class="swhy" hidden>Как в учебнике: 10—12 г.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Масса синего кита</p><div class="sbtns"><button class="sbtn" data-b="0">граммы</button><button class="sbtn" data-b="1">килограммы</button><button class="sbtn" data-b="2">тонны</button></div><p class="swhy" hidden>Как в учебнике: 150 т.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Масса девочки на рис. 23</p><div class="sbtns"><button class="sbtn" data-b="0">граммы</button><button class="sbtn" data-b="1">килограммы</button><button class="sbtn" data-b="2">тонны</button></div><p class="swhy" hidden>Как в учебнике: 36 кг.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Масса муки для блинов</p><div class="sbtns"><button class="sbtn" data-b="0">граммы</button><button class="sbtn" data-b="1">килограммы</button><button class="sbtn" data-b="2">тонны</button></div><p class="swhy" hidden>Муку отвешивают в граммах.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Масса Юкси</p><div class="sbtns"><button class="sbtn" data-b="0">граммы</button><button class="sbtn" data-b="1">килограммы</button><button class="sbtn" data-b="2">тонны</button></div><p class="swhy" hidden>Дегу маленькие — их удобно взвешивать в граммах.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Масса корги</p><div class="sbtns"><button class="sbtn" data-b="0">граммы</button><button class="sbtn" data-b="1">килограммы</button><button class="sbtn" data-b="2">тонны</button></div><p class="swhy" hidden>Собаку удобно взвешивать в килограммах.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Измерение</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="i21" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Определение числового значения величины: длины, массы, объёма, времени, температуры.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Предел измерения</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="i22" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Самая большая величина, которую измеряет прибор. Последний штрих шкалы.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Цена деления</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 320 296" aria-hidden="true"><use href="#i-scale"/></svg><span class="ftext">Величина одного шажка между соседними штрихами. Чем меньше — тем точнее.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Точность</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 320 142" aria-hidden="true"><use href="#i-tape"/></svg><span class="ftext">Главный показатель качества измерения.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Единицы измерения</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="i23" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Граммы, килограммы, тонны; миллиметры, сантиметры, метры.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Среднее значение</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 320 226" aria-hidden="true"><use href="#i-avg"/></svg><span class="ftext">Сложи результаты и подели на их количество.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что такое измерение?</h3><div class="opts">
+<button class="opt" data-ok="1">Определение числового значения величины</button>
+<button class="opt">Наблюдение без вмешательства</button>
+<button class="opt">Опыт с изменением условий</button>
+<button class="opt">Рисунок объекта</button></div>
+<div class="fb">Измерить — значит узнать число.</div></div>
+<div class="q"><h3>2. Что такое предел измерения?</h3><div class="opts">
+<button class="opt" data-ok="1">Самая большая величина, которую можно измерить прибором</button>
+<button class="opt">Расстояние между двумя соседними штрихами</button>
+<button class="opt">Самая маленькая цифра на шкале</button>
+<button class="opt">Ошибка прибора</button></div>
+<div class="fb">Предел — значение у последнего штриха шкалы.</div></div>
+<div class="q"><h3>3. Между 200 и 250 мл на мензурке 5 шажков. Какая цена деления?</h3><div class="opts">
+<button class="opt">5 мл</button>
+<button class="opt" data-ok="1">10 мл</button>
+<button class="opt">50 мл</button>
+<button class="opt">250 мл</button></div>
+<div class="fb">(250 − 200) : 5 = 10 мл.</div></div>
+<div class="q"><h3>4. Какой термометр точнее?</h3><div class="opts">
+<button class="opt">С ценой деления 1°</button>
+<button class="opt" data-ok="1">С ценой деления 0,1°</button>
+<button class="opt">Одинаково</button></div>
+<div class="fb">Чем меньше цена деления, тем выше точность — в 10 раз.</div></div>
+<div class="q"><h3>5. Зачем каждое измерение повторяют три раза?</h3><div class="opts">
+<button class="opt" data-ok="1">Чтобы получить объективный результат</button>
+<button class="opt">Чтобы было дольше</button>
+<button class="opt">Так красивее</button>
+<button class="opt">Потому что прибор сломан</button></div>
+<div class="fb">А потом считают среднее значение.</div></div>
+<div class="q"><h3>6. Сколько сантиметров в 54 метрах?</h3><div class="opts">
+<button class="opt">54</button>
+<button class="opt">540</button>
+<button class="opt" data-ok="1">5400</button>
+<button class="opt">54 000</button></div>
+<div class="fb">1 м = 100 см, значит 54 × 100 = 5400 см.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Что такое измерение и какие бывают приборы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Измерение — определение числового значения величины объекта или явления.</li><li>Приборы: линейка и рулетка — длина, весы — масса, термометр — температура, мензурка — объём, часы — время.</li><li>Главное — точность; перед измерением определяют предел и цену деления.</li></ol></div>
+</div>
+<div class="think">
+<h3>Предел измерения и цена деления</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Предел — наибольшая величина, которую можно измерить; последний штрих шкалы.</li><li>Цена деления — величина между соседними штрихами: (250 − 200) : 5 = 10 мл.</li><li>Чем меньше цена деления, тем точнее прибор: медицинский градусник в 10 раз точнее уличного.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как правильно провести измерение</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Поставить цель, выбрать параметры, прибор и единицы.</li><li>Проверить предел и цену деления.</li><li>Измерить три раза и посчитать среднее значение.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b4.html">‹ §4 Методы исследования</a>
+  <span class="pn cur">§5 Измерения</span>
+  <a class="pn" href="b6.html">§6 Эксперимент ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 5, с. 34—39. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'i-scale':'0 0 320 296','i-tape':'0 0 320 142','i-avg':'0 0 320 226','i-units':'0 0 320 190','i-cheat':'0 0 320 174'};
+
+var T={
+izm:{w:"Измерение",k:"практический метод",p:"i21",t:"Узнать число: длину, массу, объём, время, температуру.",r:"",e:"Когда вы печёте блины, ты отмеряешь кефир мерным стаканом и муку на весах — это измерения."},
+pribor:{w:"Измерительные приборы",k:"что это",p:"i21",t:"Линейка, рулетка, часы, секундомер, весы, термометр, мензурка — всё, чем измеряют.",r:"",e:""},
+tochn:{w:"Точность",k:"главное в измерении",s:"i-tape",t:"Насколько близко к правде измерил прибор. Чем меньше цена деления, тем точнее прибор.",r:"",e:""},
+predel:{w:"Предел измерения",k:"у каждого прибора",p:"i22",t:"Самая большая величина, которую можно измерить этим прибором. Это число у последнего штриха шкалы.",r:"",e:"У строительной рулетки предел — последнее число на ленте."},
+cena:{w:"Цена деления",k:"у каждого прибора",s:"i-scale",t:"Сколько «стоит» один шажок — расстояние между двумя соседними штрихами шкалы.",r:"",e:"На рулетке один шажок — 1 мм."},
+edin:{w:"Единицы измерения",k:"что это",p:"i23",t:"Мерки, в которых выражают величину: миллиметры, сантиметры, метры; граммы, килограммы, тонны.",r:"",e:"Люсю и Юкси взвешивают в граммах, тебя — в килограммах."},
+sred:{w:"Среднее значение",k:"как посчитать",s:"i-avg",t:"Сложи все результаты и подели на то, сколько раз измеряла. Три измерения — дели на 3.",r:"",e:""},
+si:{w:"Международная система единиц (СИ)",k:"что это",s:"i-cheat",t:"Единые для всех стран единицы: метр, килограмм, секунда и другие. Принята в 1960 году.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b5:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b5:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b5:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b5:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

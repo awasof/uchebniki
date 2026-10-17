@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Как узнают новое о живой природе — и чем учёный отличается от просто внимательного человека.">
+<title>Методы исследования в биологии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="m-methods" viewBox="0 0 340 242">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="90" y="6" width="160" height="36" rx="10" fill="var(--leaf,#2D7A55)"/>
+<text x="170" y="29" text-anchor="middle" font-size="17" font-weight="700" fill="#F6FFF9">Научные методы</text>
+<path d="M130 42 L92 68" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+<path d="M210 42 L248 68" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+<rect x="10" y="72" width="152" height="34" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="3"/>
+<text x="86" y="94" text-anchor="middle" font-size="16" font-weight="700" fill="var(--pa,#C9672C)">Практические</text>
+<rect x="178" y="72" width="152" height="34" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="3"/>
+<text x="254" y="94" text-anchor="middle" font-size="16" font-weight="700" fill="var(--pb,#3B6FA8)">Теоретические</text>
+<rect x="16" y="120" width="140" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/>
+<text x="86" y="140" text-anchor="middle" font-size="15" fill="var(--illink,#2B2620)">наблюдение</text>
+<rect x="16" y="162" width="140" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/>
+<text x="86" y="182" text-anchor="middle" font-size="15" fill="var(--illink,#2B2620)">измерение</text>
+<rect x="16" y="204" width="140" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/>
+<text x="86" y="224" text-anchor="middle" font-size="15" fill="var(--illink,#2B2620)">эксперимент (опыт)</text>
+<rect x="184" y="120" width="140" height="30" rx="8" fill="var(--paper2,#E8DFCC)"/>
+<text x="254" y="140" text-anchor="middle" font-size="15" fill="var(--illink,#2B2620)">объясняют</text>
+<path d="M254 150 L254 160" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="184" y="162" width="140" height="30" rx="8" fill="var(--paper2,#E8DFCC)"/>
+<text x="254" y="182" text-anchor="middle" font-size="15" fill="var(--illink,#2B2620)">закономерности</text>
+<path d="M254 192 L254 202" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="184" y="204" width="140" height="30" rx="8" fill="var(--pb,#3B6FA8)"/>
+<text x="254" y="224" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">законы природы</text>
+</g>
+</symbol>
+
+<symbol id="m-fact" viewBox="0 0 300 244">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="30" y="8" width="240" height="42" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="3"/>
+<text x="150" y="34" text-anchor="middle" font-size="16" fill="var(--illink,#2B2620)">1. Заметил — пока догадка</text>
+<path d="M150 50 L150 67" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="30" y="70" width="240" height="42" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="3"/>
+<text x="150" y="96" text-anchor="middle" font-size="16" fill="var(--illink,#2B2620)">2. Повторил и записал</text>
+<path d="M150 112 L150 129" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="30" y="132" width="240" height="42" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="3"/>
+<text x="150" y="158" text-anchor="middle" font-size="16" fill="var(--illink,#2B2620)">3. Другие проверили — так же</text>
+<path d="M150 174 L150 191" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="30" y="194" width="240" height="42" rx="10" fill="var(--leaf,#2D7A55)"/>
+<text x="150" y="220" text-anchor="middle" font-size="17" font-weight="700" fill="#F6FFF9">4. Научный факт ✓</text>
+</g>
+</symbol>
+
+<symbol id="m-rules" viewBox="0 0 300 238">
+<g font-family="Golos Text, Arial, sans-serif">
+<circle cx="28" cy="31" r="20" fill="var(--leaf,#2D7A55)"/>
+<text x="28" y="37" text-anchor="middle" font-size="19" font-weight="700" fill="#F6FFF9">1</text>
+<text x="60" y="26" font-size="17" font-weight="700" fill="var(--illink,#2B2620)">Цель</text>
+<text x="60" y="46" font-size="15" fill="var(--soft,#5F5648)">заранее решить, что узнать</text>
+<circle cx="28" cy="91" r="20" fill="var(--leaf,#2D7A55)"/>
+<text x="28" y="97" text-anchor="middle" font-size="19" font-weight="700" fill="#F6FFF9">2</text>
+<text x="60" y="86" font-size="17" font-weight="700" fill="var(--illink,#2B2620)">План</text>
+<text x="60" y="106" font-size="15" fill="var(--soft,#5F5648)">по плану, а не как попало</text>
+<circle cx="28" cy="151" r="20" fill="var(--leaf,#2D7A55)"/>
+<text x="28" y="157" text-anchor="middle" font-size="19" font-weight="700" fill="#F6FFF9">3</text>
+<text x="60" y="146" font-size="17" font-weight="700" fill="var(--illink,#2B2620)">Точность</text>
+<text x="60" y="166" font-size="15" fill="var(--soft,#5F5648)">записать точно, что увидел</text>
+<circle cx="28" cy="211" r="20" fill="var(--leaf,#2D7A55)"/>
+<text x="28" y="217" text-anchor="middle" font-size="19" font-weight="700" fill="#F6FFF9">4</text>
+<text x="60" y="206" font-size="17" font-weight="700" fill="var(--illink,#2B2620)">Повтор</text>
+<text x="60" y="226" font-size="15" fill="var(--soft,#5F5648)">в тех же условиях — так же</text>
+</g>
+</symbol>
+
+<symbol id="m-diary" viewBox="0 0 320 262">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="8" y="8" width="304" height="246" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="3"/>
+<path d="M40 8 L40 254" stroke="var(--pa,#C9672C)" stroke-width="2"/>
+<circle cx="24" cy="50" r="5" fill="var(--line,#D9CDB7)"/>
+<circle cx="24" cy="130" r="5" fill="var(--line,#D9CDB7)"/>
+<circle cx="24" cy="210" r="5" fill="var(--line,#D9CDB7)"/>
+<text x="52" y="38" font-size="17" font-weight="700" fill="var(--illink,#2B2620)">Дневник наблюдений</text>
+<path d="M52 82 L300 82 M52 112 L300 112 M52 142 L300 142 M52 172 L300 172" stroke="var(--line,#D9CDB7)" stroke-width="1.5"/>
+<text x="52" y="76" font-size="15" font-weight="700" fill="var(--soft,#5F5648)">Место:</text>
+<text x="138" y="76" font-size="15" fill="var(--illink,#2B2620)">дома, у клетки дегу</text>
+<text x="52" y="106" font-size="15" font-weight="700" fill="var(--soft,#5F5648)">Дата:</text>
+<text x="138" y="106" font-size="15" fill="var(--illink,#2B2620)">12 октября</text>
+<text x="52" y="136" font-size="15" font-weight="700" fill="var(--soft,#5F5648)">Время:</text>
+<text x="138" y="136" font-size="15" fill="var(--illink,#2B2620)">19:00 — 19:10</text>
+<text x="52" y="166" font-size="15" font-weight="700" fill="var(--soft,#5F5648)">Что видела:</text>
+<text x="52" y="196" font-size="15" fill="var(--illink,#2B2620)">Юкси 3 раза вышла из домика,</text>
+<text x="52" y="218" font-size="15" fill="var(--illink,#2B2620)">понюхала сено и вернулась.</text>
+<text x="52" y="240" font-size="15" fill="var(--illink,#2B2620)">Люся всё время спала.</text>
+</g>
+</symbol>
+
+<symbol id="m-ophp" viewBox="0 0 340 184">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="25" y="16" width="60" height="60" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="3"/>
+<circle cx="55" cy="46" r="15" fill="var(--pa,#C9672C)"/>
+<text x="55" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="var(--pa,#C9672C)">ОБЪЕКТ</text>
+<text x="55" y="124" text-anchor="middle" font-size="14" fill="var(--soft,#5F5648)">что изучаем</text>
+<rect x="140" y="16" width="60" height="60" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--leaf,#2D7A55)" stroke-width="3"/>
+<circle cx="170" cy="46" r="15" fill="var(--leaf,#2D7A55)"/>
+<path d="M192 14 L196 24 L206 22 L199 30 L206 38 L196 36 L192 46 L188 36 L178 38 L185 30 L178 22 L188 24 Z" fill="var(--ochre,#E2A31F)" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<text x="170" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="var(--leaf,#2D7A55)">ЯВЛЕНИЕ</text>
+<text x="170" y="124" text-anchor="middle" font-size="14" fill="var(--soft,#5F5648)">одно изменение</text>
+<rect x="236" y="35" width="22" height="22" rx="5" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="3"/>
+<path d="M259 46 L271 46" stroke="var(--pb,#3B6FA8)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="274" y="35" width="22" height="22" rx="5" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="3"/>
+<path d="M297 46 L309 46" stroke="var(--pb,#3B6FA8)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="312" y="35" width="22" height="22" rx="5" fill="var(--pb,#3B6FA8)"/>
+<text x="285" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="var(--pb,#3B6FA8)">ПРОЦЕСС</text>
+<text x="285" y="124" text-anchor="middle" font-size="14" fill="var(--soft,#5F5648)">явления</text>
+<text x="285" y="140" text-anchor="middle" font-size="14" fill="var(--soft,#5F5648)">одно за другим</text>
+<text x="55" y="172" text-anchor="middle" font-size="14" font-style="italic" fill="var(--illink,#2B2620)">птица</text>
+<text x="170" y="172" text-anchor="middle" font-size="14" font-style="italic" fill="var(--illink,#2B2620)">бутон раскрылся</text>
+<text x="285" y="172" text-anchor="middle" font-size="14" font-style="italic" fill="var(--illink,#2B2620)">пищеварение</text>
+</g>
+</symbol>
+
+<symbol id="m-digest" viewBox="0 0 300 352">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="150" y="20" text-anchor="middle" font-size="17" font-weight="700" fill="var(--pb,#3B6FA8)">Процесс пищеварения</text>
+<text x="150" y="40" text-anchor="middle" font-size="14" fill="var(--soft,#5F5648)">6 явлений — одно за другим</text>
+<rect x="8" y="54" width="284" height="38" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/>
+<circle cx="27" cy="73" r="12" fill="var(--pb,#3B6FA8)"/><text x="27" y="78" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">1</text>
+<text x="46" y="78" font-size="15" fill="var(--illink,#2B2620)">зубы и язык размельчают пищу</text>
+<path d="M150 92 L150 102" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="104" width="284" height="38" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/>
+<circle cx="27" cy="123" r="12" fill="var(--pb,#3B6FA8)"/><text x="27" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">2</text>
+<text x="46" y="128" font-size="15" fill="var(--illink,#2B2620)">слюна смачивает пищу</text>
+<path d="M150 142 L150 152" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="154" width="284" height="38" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/>
+<circle cx="27" cy="173" r="12" fill="var(--pb,#3B6FA8)"/><text x="27" y="178" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">3</text>
+<text x="46" y="178" font-size="15" fill="var(--illink,#2B2620)">по пищеводу — в желудок</text>
+<path d="M150 192 L150 202" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="204" width="284" height="38" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/>
+<circle cx="27" cy="223" r="12" fill="var(--pb,#3B6FA8)"/><text x="27" y="228" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">4</text>
+<text x="46" y="228" font-size="15" fill="var(--illink,#2B2620)">желудочный сок переваривает</text>
+<path d="M150 242 L150 252" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="254" width="284" height="38" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/>
+<circle cx="27" cy="273" r="12" fill="var(--pb,#3B6FA8)"/><text x="27" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">5</text>
+<text x="46" y="278" font-size="15" fill="var(--illink,#2B2620)">пища → питательные вещества</text>
+<path d="M150 292 L150 302" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="304" width="284" height="38" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/>
+<circle cx="27" cy="323" r="12" fill="var(--pb,#3B6FA8)"/><text x="27" y="328" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">6</text>
+<text x="46" y="328" font-size="15" fill="var(--illink,#2B2620)">остатки выводятся наружу</text>
+</g>
+</symbol>
+
+<symbol id="m-fix" viewBox="0 0 340 196">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="8" y="8" width="158" height="180" rx="14" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="3"/>
+<text x="87" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="var(--pa,#C9672C)">ЖИВЫЕ</text>
+<text x="22" y="66" font-size="15" fill="var(--soft,#5F5648)">изучаем:</text>
+<text x="22" y="90" font-size="15" fill="var(--illink,#2B2620)">• поведение</text>
+<text x="22" y="112" font-size="15" fill="var(--illink,#2B2620)">• как отвечают</text>
+<text x="34" y="132" font-size="15" fill="var(--illink,#2B2620)">на условия среды</text>
+<text x="87" y="172" text-anchor="middle" font-size="14" font-style="italic" fill="var(--soft,#5F5648)">живое животное</text>
+<rect x="174" y="8" width="158" height="180" rx="14" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="3"/>
+<text x="253" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="var(--pb,#3B6FA8)">ФИКСИРОВАННЫЕ</text>
+<text x="188" y="66" font-size="15" fill="var(--soft,#5F5648)">изучаем:</text>
+<text x="188" y="90" font-size="15" fill="var(--illink,#2B2620)">• внутреннее</text>
+<text x="200" y="110" font-size="15" fill="var(--illink,#2B2620)">строение —</text>
+<text x="200" y="130" font-size="15" fill="var(--illink,#2B2620)">тщательно</text>
+<text x="253" y="172" text-anchor="middle" font-size="14" font-style="italic" fill="var(--soft,#5F5648)">чучела, препараты</text>
+</g>
+</symbol>
+
+<symbol id="m-prep" viewBox="0 0 340 148">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="10" y="22" font-size="16" font-weight="700" fill="var(--pa,#C9672C)">Временный препарат</text>
+<rect x="10" y="34" width="92" height="32" rx="8" fill="var(--paper2,#E8DFCC)"/>
+<text x="56" y="55" text-anchor="middle" font-size="15" fill="var(--illink,#2B2620)">сделали</text>
+<path d="M103 50 L121 50" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="124" y="34" width="92" height="32" rx="8" fill="var(--paper2,#E8DFCC)"/>
+<text x="170" y="55" text-anchor="middle" font-size="15" fill="var(--illink,#2B2620)">изучили</text>
+<path d="M217 50 L235 50" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="238" y="34" width="92" height="32" rx="8" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="2.5"/>
+<text x="284" y="55" text-anchor="middle" font-size="15" fill="var(--pa,#C9672C)">уничтожили</text>
+<text x="10" y="98" font-size="16" font-weight="700" fill="var(--pb,#3B6FA8)">Постоянный препарат</text>
+<rect x="10" y="108" width="320" height="32" rx="8" fill="var(--pb,#3B6FA8)"/>
+<text x="170" y="129" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">↻ используют много раз, долго</text>
+</g>
+</symbol>
+
+<symbol id="m-know" viewBox="0 0 340 204">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="8" y="8" width="158" height="188" rx="14" fill="var(--card,#FFFBF2)" stroke="var(--leaf,#2D7A55)" stroke-width="3"/>
+<text x="87" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="var(--leaf,#2D7A55)">НАУЧНОЕ</text>
+<text x="20" y="68" font-size="15" fill="var(--illink,#2B2620)">✓ обосновано</text>
+<text x="20" y="94" font-size="15" fill="var(--illink,#2B2620)">✓ можно доказать</text>
+<text x="20" y="120" font-size="15" fill="var(--illink,#2B2620)">✓ ясно, как</text>
+<text x="34" y="138" font-size="15" fill="var(--illink,#2B2620)">его получили</text>
+<text x="20" y="164" font-size="15" fill="var(--illink,#2B2620)">✓ проверено</text>
+<text x="34" y="182" font-size="15" fill="var(--illink,#2B2620)">другими</text>
+<rect x="174" y="8" width="158" height="188" rx="14" fill="var(--card,#FFFBF2)" stroke="var(--life,#3B6FA8)" stroke-width="3"/>
+<text x="253" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="var(--life,#3B6FA8)">НЕНАУЧНОЕ</text>
+<text x="188" y="68" font-size="15" fill="var(--illink,#2B2620)">• литература</text>
+<text x="188" y="94" font-size="15" fill="var(--illink,#2B2620)">• искусство</text>
+<text x="188" y="120" font-size="15" fill="var(--illink,#2B2620)">• музыка</text>
+<text x="188" y="146" font-size="15" fill="var(--illink,#2B2620)">• мифы и сказки</text>
+<text x="188" y="172" font-size="15" fill="var(--illink,#2B2620)">• обычная жизнь</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 4</span>
+    <h1>Методы исследования в биологии</h1>
+    <p class="lede">Как узнают новое о живой природе — и чем учёный отличается от просто внимательного человека.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. Что такое исследование? 2. Какие методы исследования вы знаете? 3. Как человек получает знания о природе?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b3.html">‹ §3 Роль биологии</a>
+  <span class="pn cur">§4 Методы исследования</span>
+  <a class="pn" href="b5.html">§5 Измерения ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Научное познание">1</a><a href="#s2" data-j="s2" title="Научный метод изучения живой природы">2</a><a href="#s3" data-j="s3" title="Метод наблюдения в биологии">3</a><a href="#s4" data-j="s4" title="Объекты, процессы и явления живой природы">4</a><a href="#s5" data-j="s5" title="Ненаучное познание">5</a><a href="#s6" data-j="s6" title="Живые и фиксированные объекты">6</a><a href="#s7" data-j="s7" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Научное познание</h2></div>
+<div class="easy">
+<p>Люди изучают природу очень давно — с древних времён.</p>
+<p>Первобытные люди знали о природе мало. Но они замечали: растения бывают разные. Рыбы живут в воде и хорошо плавают. Птицы быстро летают.</p>
+<p>Зачем им это было нужно? Чтобы выжить. Надо было находить съедобные растения и знать, на каких зверей охотиться.</p>
+<p>Знания передавали детям, а те — своим детям. Так тысячи лет копились сведения о живом.</p>
+<p>Из этих житейских нужд постепенно выросла <span class="term" role="button" tabindex="0" data-t="nauka">наука</span> — особое занятие людей, чтобы узнавать новое о мире.</p>
+</div>
+<div class="book" hidden>
+<p>Человек стремился познать природу, которая его окружает, с глубокой древности. Первобытные люди очень мало знали о природе. Но они видели, что одни растения не похожи на другие. Знали, что рыбы обитают в воде и хорошо плавают, а птицы быстро летают в воздухе.</p>
+<p>Интерес первобытного человека к познанию живого был в первую очередь связан с практическими целями: надо было научиться находить съедобные растения, узнать, на каких зверей охотиться. Полученные знания передавались из поколения в поколение. Сведения о живых организмах накапливались тысячелетиями. Из потребностей практики постепенно возникла <span class="term" role="button" tabindex="0" data-t="nauka">наука</span> — особый вид человеческой деятельности, направленный на получение новых знаний об окружающем мире.</p>
+</div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Люся и Юкси</span></div><div class="lifebody"><p>Ты знаешь, что Люсю и Юкси можно выманить из домика семечками. Тебе никто этого не объяснял — ты заметила сама.</p><p>Так же первобытные люди замечали, какие растения можно есть. Это знание из жизни. Ты уже встречала этих людей в истории — в §2 «Первобытные охотники и собиратели».</p></div><p class="lifebook">В учебнике это называется: <b>знания из повседневных наблюдений</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Первобытные люди изучали природу не из любопытства. Зачем же? И что из этого со временем получилось?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Второй абзац раздела: «практические цели» и последнее предложение.</div>
+<div class="rev ans" id="a1" hidden>Им нужно было выжить: находить съедобные растения и знать, на каких зверей охотиться. Знания копились тысячи лет, и из этих практических нужд постепенно возникла наука.</div>
+</div>
+<div class="think">
+<p class="qt">2. Как знания первобытных людей дожили до следующих поколений?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Ищи слова «из поколения в поколение».</div>
+<div class="rev ans" id="a2" hidden>Их передавали из поколения в поколение — от родителей детям. Так сведения о живых организмах накапливались тысячелетиями.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Научный метод изучения живой природы</h2></div>
+<div class="easy">
+<p>Научное знание тоже начинается с наблюдений. Но житейское знание и научное — не одно и то же.</p>
+<p><span class="big">Научное знание должно быть:</span> обоснованным — есть причины так думать; доказуемым — это можно доказать; и в нём объяснено, как его получили.</p>
+<p>Чтобы получать такие знания, учёные пользуются <span class="term" role="button" tabindex="0" data-t="nmetod">научными методами</span>. Метод — это способ, путь к знанию.</p>
+<p>Главное требование к методу — <span class="term" role="button" tabindex="0" data-t="obekt">объективность</span>. Результат не должен зависеть от того, кому что хочется увидеть. Объяснять результаты как вздумается нельзя.</p>
+<p>Методы бывают двух видов. <span class="term" role="button" tabindex="0" data-t="prakt">Практические</span> — делаем и смотрим: наблюдение, измерение, эксперимент (опыт). <span class="term" role="button" tabindex="0" data-t="teor">Теоретические</span> — думаем и объясняем то, что получилось. Так находят закономерности, а в конце — <span class="term" role="button" tabindex="0" data-t="zakon">законы природы</span>. Зная законы, человек понимает, что происходит в природе, может это предвидеть и использовать.</p>
+<p>У каждого учёного есть правило: <b>«Ничего не принимай на веру»</b>. Поэтому результат становится <span class="term" role="button" tabindex="0" data-t="fakt">научным фактом</span>, только когда его проверили и подтвердили другие исследования.</p>
+<p>Главные методы — наблюдение, эксперимент и измерение. С их помощью учёные собрали огромный багаж знаний о живом. Потом эти знания обобщили в теории — на них стоит вся современная биология.</p>
+<p>На уроках ты тоже научишься этим методам: наблюдать, экспериментировать, объяснять, что получилось, и делать выводы.</p>
+</div>
+<div class="book" hidden>
+<p>Научное знание родилось из непосредственных повседневных наблюдений, на основе которых люди получили много достоверных знаний о живой природе. От житейских наблюдений научные знания отличаются тем, что они должны быть обоснованными и доказуемыми, содержать объяснение того, как получены. Для изучения живой природы в ходе биологических исследований применяются различные научные методы, которые следует рассматривать в качестве основных источников знаний. <span class="term" role="button" tabindex="0" data-t="nmetod">Научный метод</span> (от греч. <i>методос</i> — способ познания, путь) — это совокупность приёмов и операций, используемых при построении системы научных знаний. Важнейшим требованием к научному методу является его <span class="term" role="button" tabindex="0" data-t="obekt">объективность</span>, исключающая произвольное толкование результатов исследования.</p>
+<p>Различают <span class="term" role="button" tabindex="0" data-t="prakt">практические</span> и <span class="term" role="button" tabindex="0" data-t="teor">теоретические</span> методы. К практическим методам относят наблюдение, измерение и эксперимент (опыт). Теоретические методы связаны с объяснением результатов, полученных в ходе наблюдения или опытным путём. Они приводят к установлению различных закономерностей и взаимосвязей, а в конечном итоге — <span class="term" role="button" tabindex="0" data-t="zakon">законов природы</span>. Знание этих законов позволяет человеку понимать процессы, происходящие в живой природе, предвидеть их и использовать в практических целях.</p>
+<p>Независимо от того, какие методы используются в науке, для каждого учёного важнейшим должен оставаться принцип «ничего не принимай на веру». Поэтому результаты, полученные в ходе научного исследования, становятся <span class="term" role="button" tabindex="0" data-t="fakt">научными фактами</span> только после того, как проверены и подтверждены другими исследованиями.</p>
+<p>К основным научным методам относятся <b>наблюдение</b>, <b>эксперимент</b> (опыт) и <b>измерение</b>. Благодаря применению этих методов учёными был накоплен бесценный багаж знаний о различных биологических объектах, процессах и явлениях. В дальнейшем учёным удалось теоретически обобщить полученные данные и сформулировать теории в области биологии, которые составляют фундаментальные основы современной биологической науки.</p>
+<p>Изучая биологию, вы узнаете о научных методах и научитесь пользоваться ими при проведении биологических исследований. Это позволит вам развить наблюдательность, умение экспериментировать, логично объяснять полученные результаты, формулировать выводы.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 340 242" role="img" aria-label="Схема: научные методы делятся на практические — наблюдение, измерение, эксперимент — и теоретические: объясняют, находят закономерности и законы природы"><use href="#m-methods"/></svg><figcaption>Практические методы дают результаты, теоретические их объясняют. Вместе они ведут к законам природы.</figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Практические</b><p>делаем и смотрим: наблюдение, измерение, эксперимент (опыт)</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Теоретические</b><p>думаем и объясняем: закономерности, законы природы</p></div></div><p class="pairkey">Сначала работают руки и глаза, потом — голова.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Ветеринар</span></div><div class="lifebody"><p>Собака хромает. Хозяин говорит: «Наверное, ушибла лапу». Хороший ветеринар не принимает это на веру. Сначала он смотрит, как собака ходит, — это наблюдение. Потом меряет температуру — это измерение. И только потом объясняет, в чём дело.</p></div><p class="lifebook">В учебнике это называется: <b>принцип «ничего не принимай на веру»</b></p></aside>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 300 244" role="img" aria-label="Схема: заметил — пока догадка; повторил и записал; другие проверили — так же; научный факт"><use href="#m-fact"/></svg><figcaption>Один раз увидел — это ещё не факт. Факт — когда проверили и подтвердили другие.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Люся и Юкси</span></div><div class="lifebody"><p>Юкси один раз вышла из домика вечером — это просто случай. Ты смотрела неделю, и каждый вечер так. А потом папа посмотрел — и у него так же.</p><p>Вот теперь это похоже на научный факт: повторено, записано и подтверждено другими.</p></div><p class="lifebook">В учебнике это называется: <b>научный факт</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Чем научное знание отличается от того, что первобытные люди знали о рыбах и птицах? Назови три признака.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Первый абзац этого раздела: «От житейских наблюдений научные знания отличаются тем, что…»</div>
+<div class="rev ans" id="a3" hidden>Научное знание должно быть обоснованным, доказуемым и содержать объяснение того, как его получили. Знания первобытных людей шли из повседневных наблюдений и передавались из поколения в поколение — без доказательств.</div>
+</div>
+<div class="think">
+<p class="qt">4. Учёный один раз что-то увидел. Это уже научный факт? Какое правило учёных об этом говорит?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Третий абзац: правило в кавычках.</div>
+<div class="rev ans" id="a4" hidden>Нет. Правило — «ничего не принимай на веру». Результат становится научным фактом, только когда его проверили и подтвердили другие исследования.</div>
+</div>
+<div class="think">
+<p class="qt">5. Как практические и теоретические методы работают вместе? Что получается в самом конце?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Второй абзац и схема.</div>
+<div class="rev ans" id="a5" hidden>Практические методы — наблюдение, измерение, опыт — дают результаты. Теоретические объясняют их и находят закономерности, а в конечном итоге — законы природы.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Метод наблюдения в биологии</h2></div>
+<div class="easy">
+<p>Самый частый метод — <span class="term" role="button" tabindex="0" data-t="nabl">наблюдение</span>. Им пользовались ещё первобытные люди. И учёные пользуются им сегодня — отдельно или внутри других методов.</p>
+<p>Наблюдать — значит замечать объекты и явления природы органами чувств: глазами, ушами, носом, руками. <span class="big">Главное: наблюдатель ничего не меняет.</span> Он только смотрит и записывает (рис. 15).</p>
+<p>Например, можно наблюдать, как меняется жизнь растений и животных по временам года. Это изучает наука <span class="term" role="button" tabindex="0" data-t="fenol">фенология</span>.</p>
+<p>Чтобы наблюдение было научным, у него должны быть: цель, план, точные результаты — и при повторе в тех же условиях должно получаться то же самое.</p>
+<p>Всё, что увидел, подробно записывают в <span class="term" role="button" tabindex="0" data-t="dnevn">дневник наблюдений</span>: место, дату, время и что происходило. Потом пишут отчёт — с рисунками, фотографиями, коллекциями.</p>
+<p>Чтобы результатам можно было верить, наблюдение повторяют в тех же условиях.</p>
+</div>
+<div class="book" hidden>
+<p>Наиболее распространённым методом, с помощью которого человек изучает природу, является <span class="term" role="button" tabindex="0" data-t="nabl">наблюдение</span>. Оно давало ценные знания об окружающем мире ещё первобытному человеку и сегодня продолжает использоваться в науке как самостоятельно, так и в качестве элемента других научных методов. <b>Наблюдение</b> — это восприятие природных объектов или явлений с помощью органов чувств. В ходе наблюдения объекта или явления человек лишь фиксирует результаты, не вмешиваясь в сам процесс (рис. 15). Например, наблюдения за сезонными явлениями в жизни растений и животных, которые изучает <span class="term" role="button" tabindex="0" data-t="fenol">фенология</span> (от греч. <i>файно</i> — являю и <i>логос</i> — наука).</p>
+<p>Наблюдение как научный метод познания должно соответствовать следующим требованиям:<br>— быть целенаправленным, т. е. должны быть определены и сформулированы цель и задачи наблюдения;<br>— проводиться по определённому плану;<br>— давать точные результаты;<br>— совпадать с повторными наблюдениями в тех же условиях.</p>
+<p>Получаемые в ходе наблюдения ответы на поставленные вопросы необходимо как можно подробнее записывать в специальный <span class="term" role="button" tabindex="0" data-t="dnevn">дневник наблюдений</span>. Для получения достоверных результатов необходимо провести повторные наблюдения в тех же условиях.</p>
+<p>В дневнике наблюдений указывают место, дату и время наблюдения, а также содержание наблюдаемого явления. Результаты наблюдений оформляют в виде письменного отчёта с рисунками, фотографиями, коллекциями и т. п.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-r15" src="img/b04909700168.jpg" alt="Две девочки и взрослый у ручья рассматривают баночку с водой"><figcaption><span class="src">из учебника</span><b>Рис. 15.</b> Проведение наблюдений</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 300 238" role="img" aria-label="Четыре требования к научному наблюдению: цель, план, точность, повтор"><use href="#m-rules"/></svg><figcaption>Четыре требования к научному наблюдению. Без любого из них это просто «посмотрела».</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Люся и Юкси</span></div><div class="lifebody"><p>Ты каждый день смотришь на Люсю и Юкси. Это уже почти наблюдение! Чтобы оно стало научным, добавь:</p><p><b>цель</b> — например, «Когда они бодрее: утром или вечером?»;<br><b>план</b> — смотреть каждый день в 8 утра и в 8 вечера по 10 минут;<br><b>точность</b> — записывать, сколько раз вышли из домика;<br><b>повтор</b> — так неделю подряд.</p><p>Только не выманивай их семечками! Тогда ты вмешалась — и это уже не наблюдение.</p></div><p class="lifebook">В учебнике это называется: <b>требования к научному наблюдению</b></p></aside>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 320 262" role="img" aria-label="Пример страницы дневника наблюдений: место, дата, время и что видела"><use href="#m-diary"/></svg><figcaption>Так может выглядеть страница твоего дневника наблюдений. Место, дата, время — и что видела.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Почему наблюдение называют самым распространённым методом? Найди в тексте две причины.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Первые два предложения раздела.</div>
+<div class="rev ans" id="a6" hidden>Наблюдение давало знания ещё первобытному человеку и до сих пор используется в науке — и само по себе, и как часть других методов.</div>
+</div>
+<div class="think">
+<p class="qt">7. В этом разделе дважды сказано про повторные наблюдения в тех же условиях. Зачем их повторять? С каким правилом из раздела 2 это связано?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Ищи слова «достоверных результатов». Правило — «ничего не принимай…»</div>
+<div class="rev ans" id="a7" hidden>Чтобы результаты были достоверными: если в тех же условиях снова получается то же самое, результату можно верить. Это правило «ничего не принимай на веру».</div>
+</div>
+<div class="think">
+<p class="qt">8. Что значит «не вмешиваясь в сам процесс»? Почему для наблюдения это важно?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Определение наблюдения в первом абзаце.</div>
+<div class="rev ans" id="a8" hidden>Наблюдатель только фиксирует результаты и ничего не меняет. Если вмешаться, объект поведёт себя по-другому, и мы увидим уже не то, как всё происходит в природе.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Объекты, процессы и явления живой природы</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="objekt">Объект</span> — это то, что изучает человек. Например: птица, которая прыгает с ветки на ветку; летящая бабочка; растение, которое цветёт на лесной опушке (рис. 16).</p>
+<p>С объектами всё время что-то происходит. Птицы строят гнёзда. Из яиц появляются птенцы. Из бутона раскрывается цветок.</p>
+<p>Одно такое событие, одно изменение — это <span class="term" role="button" tabindex="0" data-t="yavl">явление</span>.</p>
+<p>А если явления идут одно за другим, по порядку, — это <span class="term" role="button" tabindex="0" data-t="proc">процесс</span>.</p>
+<p>Пример процесса — пищеварение. Ты жуёшь бутерброд: зубы и язык размельчают еду, слюна её смачивает, чтобы было легко проглотить. По пищеводу еда идёт в желудок — там её переваривает желудочный сок. Дальше пища движется по пищеварительному тракту и постепенно распадается на части. Организм получает питательные вещества. А то, что не переварилось, выводится наружу.</p>
+<p><span class="big">Каждый шаг — явление. Все шаги вместе — процесс.</span></p>
+</div>
+<div class="book" hidden>
+<p>То, на что направлена деятельность человека при изучении живой природы, называют <span class="term" role="button" tabindex="0" data-t="objekt">объектом</span> (от лат. <i>объектум</i> — предмет). Например, объектом изучения может быть птица, перепрыгивающая с ветки на ветку, летящая бабочка, цветущее на лесной опушке растение (рис. 16).</p>
+<p>С объектами живой природы всё время что-то происходит: птицы строят гнёзда, из яиц появляются птенцы, из бутона раскрывается прекрасный цветок. Событие, случай, проявление чего-либо в виде изменений называют <span class="term" role="button" tabindex="0" data-t="yavl">явлением</span>. Явления, последовательно сменяющие друг друга, образуют <span class="term" role="button" tabindex="0" data-t="proc">процесс</span>.</p>
+<p>Например, когда мы жуём бутерброд, сначала работают наши зубы и язык, механически размельчая пищу, а слюнные железы смачивают еду, чтобы её было легко проглотить. По пищеводу пища, перемешиваясь, передвигается в желудок, где соединяется с желудочным соком и происходит её дальнейшее переваривание. Так, постепенно расщепляясь на отдельные соединения, пища передвигается по пищеварительному тракту, насыщая организм питательными веществами. Непереваренные остатки выводятся из организма. Всё, что мы сейчас описали, представляет собой пищеварительный процесс, образованный сменяющими друг друга явлениями.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-r16" src="img/e4d0691dc128.jpg" alt="Жираф, кошка, собака, черепаха, орёл, кузнечик, дерево и куст"><figcaption><span class="src">из учебника</span><b>Рис. 16.</b> Объекты живой природы<br><span style="color:var(--soft)">▲ Выбери объект, за которым тебе интересно наблюдать, — это задание 2 из «Моей лаборатории» в конце параграфа.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 340 184" role="img" aria-label="Схема: объект — то, что изучаем, например птица; явление — одно изменение, например бутон раскрылся; процесс — явления одно за другим, например пищеварение"><use href="#m-ophp"/></svg><figcaption>Объект — что изучаем. Явление — одно изменение. Процесс — много явлений подряд.</figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Явление</b><p>одно изменение: из яйца появился птенец</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Процесс</b><p>явления одно за другим: пищеварение — от бутерброда до самого конца</p></div></div><p class="pairkey">Явление — <b>один кадр</b>. Процесс — <b>весь мультик</b>.</p></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 300 352" role="img" aria-label="Процесс пищеварения по шагам: зубы и язык размельчают пищу, слюна смачивает, по пищеводу в желудок, желудочный сок переваривает, пища превращается в питательные вещества, остатки выводятся"><use href="#m-digest"/></svg><figcaption>Пример из учебника: пищеварение — это шесть явлений подряд.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Муравьиная ферма</span></div><div class="lifebody"><p>Посмотри на свою муравьиную ферму. Муравей — это <b>объект</b>. Муравей вынес из хода кусочек земли — это <b>явление</b>. А день за днём ход становится всё длиннее — это <b>процесс</b>: много явлений подряд.</p></div><p class="lifebook">В учебнике это называется: <b>объект, явление, процесс</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">9. Птицы строят гнёзда, потом из яиц появляются птенцы. Каждое из этого — явление. А если взять их вместе, по порядку, — что получится?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Определение процесса во втором абзаце.</div>
+<div class="rev ans" id="a9" hidden>Процесс: явления, последовательно сменяющие друг друга.</div>
+</div>
+<div class="think">
+<p class="qt">10. Сколько явлений в процессе пищеварения? Назови первое и последнее.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Третий абзац и схема с шагами.</div>
+<div class="rev ans" id="a10" hidden>На схеме их шесть. Первое — зубы и язык размельчают пищу. Последнее — непереваренные остатки выводятся из организма.</div>
+</div>
+<div class="think">
+<p class="qt">11. Наблюдатель изучает «объекты или явления» (раздел 3). Что из примеров этого раздела можно было бы наблюдать на лесной опушке?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Первые два абзаца раздела.</div>
+<div class="rev ans" id="a11" hidden>Объект — цветущее растение или летящую бабочку. Явление — как из бутона раскрывается цветок.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">5</span><h2>Ненаучное познание</h2></div>
+<div class="easy">
+<p>Знания о мире дают не только учёные. Многое мы узнаём из книг, картин, музыки, из трудов философов и просто из жизни. Это <span class="term" role="button" tabindex="0" data-t="nenauch">ненаучное познание</span>.</p>
+<p>Поэты, писатели и художники находят в природе вдохновение — и создают произведения искусства. Так искусство тоже познаёт природу — художественно.</p>
+<p>А ещё человек умеет не только слышать звуки природы, но и чувствовать их красоту, ритм, мелодию. Музыка родилась из звуков природы: шелеста листвы, пения птиц, шума волн.</p>
+<p>Когда музыку соединяют с рисованием, движением или словами, мы ярче чувствуем цвет, звук, движение, настроение. От этого просыпается интерес к природе — хочется узнать её глубже.</p>
+</div>
+<div class="book" hidden>
+<p>Человек получает знания об окружающем мире не только в результате научных исследований. Многое мы узнаём из произведений литературы и искусства, работ философов, а также из обыденной жизни. Важной частью жизни людей является искусство, в котором отражается художественное познание природы. Поэты, писатели, художники создают произведения искусства, находя в природе вдохновение и озарение для творчества.</p>
+<p>Ещё один удивительный дар, которым природа наделила человека, — это возможность не просто слышать звуки окружающего его мира, но и чувствовать их красоту, улавливать ритм и мелодичность. Зарождение музыкального искусства связано с восприятием и отражением величественных звуков природы — шелеста листвы, пения птиц, шума волн. Музыка связана с другими видами искусства. Сочетание музыки и рисования, музыки и движения, музыки и речи направлено на обогащение чувственного опыта — целостного восприятия цвета, звука, пластики, настроения, эмоций. Такое восприятие способствует пробуждению интереса к природе, более глубокому её постижению и изучению.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 340 204" role="img" aria-label="Сравнение: научное знание обосновано, доказуемо, ясно, как получено, проверено другими; ненаучное — литература, искусство, музыка, мифы и сказки, обычная жизнь"><use href="#m-know"/></svg><figcaption>Ненаучное — не значит «плохое». Оно просто получено по-другому: не доказательством, а чувством и опытом.</figcaption></div></figure>
+<div class="col">
+<div class="rubric">Это интересно</div>
+<div class="easy">
+<p>Люди всегда хотели понять, откуда взялась жизнь. Но научных ответов у них ещё не было. Тогда они объясняли мир через чувства и воображение — это <span class="term" role="button" tabindex="0" data-t="emo">эмоционально-чувственное восприятие</span>. Так появились сказки и мифы: русалки, драконы, мифические животные (рис. 18).</p>
+<p><span class="big">Откуда взялись драконы?</span> Легенды о них появились в Монголии, а потом их подхватили в Китае. В пустыне Гоби и сейчас находят кости и целые скелеты динозавров. Древние люди были наблюдательными. Они заметили: эти скелеты похожи на скелеты ящериц и змей — только огромные! Так в воображении появился дракон — с чешуёй и когтями.</p>
+<p>А многоголовые драконы? Иногда у ящериц и змей рождается не одна голова, а две. Отсюда, наверное, и драконы с несколькими головами.</p>
+<p>Сегодня наука изучает природу совсем по-другому (рис. 19).</p>
+</div>
+<div class="book" hidden>
+<p>Люди с древнейших времён изучали живую природу. Если взглянуть на историю становления взглядов человека на окружающий мир, то во многих культурах и религиях мира мы увидим огромный интерес к познанию сущности жизни, её происхождению и развитию. Не имея возможности найти научные ответы на возникающие вопросы, люди пытались объяснить их на основе <span class="term" role="button" tabindex="0" data-t="emo">эмоционально-чувственного восприятия</span>, что нашло своё отражение в религиозных учениях и народном творчестве: в художественных образах сказок, мифов (русалки, драконы, мифические животные и т. п.) (рис. 18).</p>
+<p>Так, например, легенды о драконах появились в Монголии и получили широкое распространение в Китае. Это объясняется тем, что в некоторых районах пустыни Гоби и сейчас находят кости и даже хорошо сохранившиеся скелеты динозавров. В древности люди тоже были наблюдательными и подметили сходство в строении скелетов ящериц и змей с найденными скелетами. Они увеличили их в размерах и получили драконов в образе пресмыкающихся с чешуёй и когтями. А если учесть, что иногда у ящериц и змей формируется не одна, а две головы, то можно предположить, откуда появились сказочные драконы с несколькими головами.</p>
+<p>Разумеется, современный научный подход к изучению природы значительно отличается от имевшего место эмоционально-чувственного пути познания (рис. 19).</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-r18" src="img/ef56aa1aa57f.jpg" alt="Золотой грифон с крыльями — украшение"><figcaption><span class="src">из учебника</span><b>Рис. 18.</b> Мифический персонаж грифон</figcaption></div></figure>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-r19a" src="img/b1a408231cd5.jpg" alt="Плоская Земля на трёх слонах, которые стоят на черепахе"><figcaption><span class="src">из учебника</span><b>Рис. 19 а.</b> Представление о строении Земли: эмоционально-чувственное</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-r19b" src="img/ea6323c2e2d5.jpg" alt="Глобус"><figcaption><span class="src">из учебника</span><b>Рис. 19 б.</b> Представление о строении Земли: научное</figcaption></div></figure>
+</div>
+<div class="col">
+<div class="ask"><b>Обсудите с одноклассниками</b>
+<p style="margin:0">В чём принципиальное отличие научного познания от эмоционально-чувственного восприятия мира?</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Змеи</span></div><div class="lifebody"><p>Ты держала змей в руках и знаешь, какие они на самом деле: какая у них кожа, как они двигаются. Это знание из наблюдения.</p><p>А древние люди по костям динозавров придумали драконов. Наблюдение у них было верным — скелеты правда похожи на скелеты змей и ящериц. А дальше поработало воображение.</p></div><p class="lifebook">В учебнике это называется: <b>научное познание и эмоционально-чувственное восприятие</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">12. Как древние люди «получили» драконов? Что в этом было наблюдением, а что — воображением?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Второй абзац «Это интересно».</div>
+<div class="rev ans" id="a12" hidden>Наблюдение: в пустыне Гоби нашли скелеты динозавров и заметили, что они похожи на скелеты ящериц и змей. Воображение: зверя увеличили и дали ему чешую и когти — получился дракон.</div>
+</div>
+<div class="think">
+<p class="qt">13. Музыка — не наука. Но чем она, по учебнику, помогает изучать природу?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h13" hidden>Последнее предложение первой части раздела.</div>
+<div class="rev ans" id="a13" hidden>Сочетание музыки с рисованием, движением и речью обогащает чувства. Это пробуждает интерес к природе и помогает глубже её понять и изучать.</div>
+</div>
+<div class="think">
+<p class="qt">14. Почему дракон не может быть научным фактом? Вспомни правило учёных из раздела 2.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h14" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a14" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h14" hidden>Правило «ничего не принимай на веру» и определение научного факта.</div>
+<div class="rev ans" id="a14" hidden>Научный факт — это результат, проверенный и подтверждённый другими исследованиями. Дракона никто не наблюдал и не проверял — это образ из воображения, а учёный ничего не принимает на веру.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">6</span><h2>Живые и фиксированные объекты</h2></div>
+<div class="easy">
+<p>Объекты можно изучать живыми — или <span class="term" role="button" tabindex="0" data-t="fiksob">фиксированными</span> (рис. 17: чучела животных в музее).</p>
+<p><span class="term" role="button" tabindex="0" data-t="fiks">Фиксация</span> — это когда объект сохраняют почти таким, каким он был живым. Если сделать это быстро, всё внутри остаётся как было.</p>
+<p>Зачем два способа? За живыми смотрят, как они себя ведут и как отвечают на условия вокруг. А фиксированные помогают внимательно рассмотреть, как организм устроен внутри.</p>
+<p>Из объекта делают <span class="term" role="button" tabindex="0" data-t="prep">препараты</span>. Временный препарат после исследования уничтожают — он больше не нужен. Постоянный можно использовать много раз и долго.</p>
+<p>На уроках у вас чаще будут постоянные препараты — их сделали специалисты. А временные на лабораторных работах иногда будете делать сами.</p>
+</div>
+<div class="book" hidden>
+<p>Биологические объекты можно исследовать как живыми, так и <span class="term" role="button" tabindex="0" data-t="fiksob">фиксированными</span> (рис. 17). <b>Фиксация</b> — это сохранение материала в состоянии, близком к естественному. При быстрой <span class="term" role="button" tabindex="0" data-t="fiks">фиксации</span> изначальные структуры объекта сохраняются в неизменном виде. Если наблюдение за живыми объектами позволяет исследовать их поведение и реакцию на различные условия окружающей среды, то работа с фиксированными объектами помогает более тщательно изучить внутреннее строение живых организмов.</p>
+<p>Из исследуемого объекта можно приготовить временные или постоянные <span class="term" role="button" tabindex="0" data-t="prep">препараты</span>. И если первые обычно уничтожают после завершения исследования (так как они утрачивают свою ценность), то вторые можно использовать несколько раз в течение длительного времени. На уроках биологии вы чаще будете использовать именно постоянные препараты, которые были изготовлены специалистами. Однако во время выполнения лабораторных работ вам придётся иногда самим делать временные препараты.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-r17" src="img/8e6e65d399ad.jpg" alt="Музейный зал с чучелами тигра, ламы и птиц в витринах"><figcaption><span class="src">из учебника</span><b>Рис. 17.</b> Фиксированные объекты (чучела животных)</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 340 196" role="img" aria-label="Сравнение: у живых объектов изучают поведение и ответ на условия среды; у фиксированных — внутреннее строение"><use href="#m-fix"/></svg><figcaption>Живой объект показывает, как он себя ведёт. Фиксированный — как он устроен.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 340 148" role="img" aria-label="Временный препарат: сделали, изучили, уничтожили. Постоянный препарат используют много раз, долго"><use href="#m-prep"/></svg><figcaption>Временный — на один раз. Постоянный — надолго.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Зоопарк и ветеринар</span></div><div class="lifebody"><p>В зоопарке ты видела живых зверей: как они двигаются, едят, как реагируют на людей. Так изучают живые объекты.</p><p>А чтобы понять, как зверь устроен внутри, будущие ветеринары изучают и фиксированные объекты, и препараты.</p></div><p class="lifebook">В учебнике это называется: <b>живые и фиксированные объекты</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">15. Почему временный препарат после работы уничтожают, а постоянный хранят?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h15" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a15" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h15" hidden>Второй абзац раздела, слова в скобках.</div>
+<div class="rev ans" id="a15" hidden>Временный препарат после исследования теряет ценность. Постоянный можно использовать много раз в течение долгого времени.</div>
+</div>
+<div class="think">
+<p class="qt">16. Чучела на рис. 17 — живые или фиксированные объекты? Что по ним изучить нельзя?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h16" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a16" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h16" hidden>Первый абзац: что изучают у живых объектов.</div>
+<div class="rev ans" id="a16" hidden>Фиксированные. По ним нельзя изучить поведение и реакцию на условия окружающей среды — для этого нужны живые объекты.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s6" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s7">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Научный метод · Наблюдение · Объекты живые и фиксированные · Научное и ненаучное познание</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Какова основная цель науки?</li><li>Что такое научный метод? В чём его основной принцип?</li><li>Какие методы исследования в биологии вам известны?</li><li>Какой факт можно считать научным?</li><li>Что такое научное наблюдение?</li><li>В каких случаях биологу проще работать с живыми объектами, а в каких — с фиксированными?</li><li>Чем научное познание отличается от ненаучного познания?</li><li>Каково значение ненаучного познания для жизни человека? Влияет ли оно на развитие науки? Приведите примеры.</li></ol></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">В средствах массовой информации неоднократно сообщалось о так называемом снежном человеке, приводились рассказы очевидцев о встречах с ним, зарисовки и фотографии его следов и даже самого снежного человека. Было организовано несколько экспедиций для поиска снежного человека. Почему, несмотря на многочисленные свидетельства очевидцев, существование снежного человека не может быть признано научным фактом? Свой ответ аргументируйте.</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к «Подумайте!»</button></div>
+<div class="rev hint" id="r1" hidden>Вспомни правило «ничего не принимай на веру» из раздела 2 и что такое научный факт. Рассказы и фотографии — это ещё не проверка. Что должно было бы случиться, чтобы учёные признали снежного человека фактом?</div></div>
+<div class="rubric">Моя лаборатория · Выполните задания</div>
+<div class="ask"><b>Задания учебника</b>
+<ol><li>Используя текст параграфа, сформулируйте требования, предъявляемые к наблюдениям.</li><li>Используя рис. 16, выберите объект для наблюдений, который вам интересен. Составьте список вопросов, на которые вы могли бы получить ответы, проводя наблюдение за питанием, движением или раздражимостью выбранного объекта. Какие приборы, инструменты вы бы использовали для своих наблюдений?</li></ol></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Люся и Юкси — к заданию 2</span></div><div class="lifebody"><p>Задание 2 можно потренировать дома. Вопросы про Люсю и Юкси:</p><p><b>питание</b> — что они едят первым, когда ты кладёшь корм?<br><b>движение</b> — как двигаются: бегают, прыгают, лазают?<br><b>раздражимость</b> — как отвечают на шорох или на свет?</p><p>Приборы: часы — засекать время, тетрадь — дневник наблюдений, телефон — фото.</p></div><p class="lifebook">В учебнике это называется: <b>вопросы для наблюдения</b></p></aside>
+<div class="rubric">Задание для любознательных</div>
+<div class="easy">
+<p>Биологические знания пригодятся в жизни. Важно знать природу и растения места, где ты живёшь. Помогают в этом наблюдения за сезонными явлениями — их изучает фенология. Вести такие наблюдения нужно круглый год.</p>
+<p><b>Понаблюдай осенью за растениями:</b><br>1. У каких растений меняется цвет листьев и какой он у разных растений (рис. 20)?<br>2. У каких растений листья остаются зелёными до заморозков?<br>3. Сколько длится листопад у разных растений?<br>4. Регулярно записывай все изменения в тетрадь.<br>5. По результатам подготовь сообщение и выступи с ним.<br>6. Сравни свои результаты с результатами одноклассников, обсудите, сделайте выводы.</p>
+<p>Потом продолжи наблюдения зимой и весной.</p>
+</div>
+<div class="book" hidden>
+<p>Биологические знания и умения пригодятся вам в повседневной жизни. Они помогут умело использовать и приумножать богатства природы. Важно знать природные условия и растения местности, в которой вы живёте. Эти знания вы приобретёте на уроках и экскурсиях, при проведении опытов и наблюдений. В частности, вам помогут проведение наблюдений за сезонными явлениями в жизни растений и животных, которые изучает фенология. Фенологические наблюдения следует вести круглый год. С их помощью вы сможете лучше понять особенности развития природы и определить сроки проведения работ в саду, огороде, поле.</p>
+<p>Проведите фенологические наблюдения за изменениями, происходящими в жизни растений осенью.<br>1. Понаблюдайте, у каких растений происходит изменение окраски листьев, какова она у разных растений (рис. 20).<br>2. Выясните, у каких растений листья остаются зелёными до заморозков.<br>3. Определите, как долго длится листопад у разных растений.<br>4. Регулярно записывайте в тетрадь все изменения в жизни растений.<br>5. По результатам своих наблюдений подготовьте сообщение и выступите с ним.<br>6. Сравните результаты своих наблюдений с результатами наблюдений других учащихся класса. Обсудите их. Сделайте выводы.</p>
+<p>Продолжите фенологические наблюдения за изменениями, происходящими в жизни растений зимой и весной.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-r20" src="img/1990f7540064.jpg" alt="Осенние листья разных деревьев: жёлтые, красные, оранжевые"><figcaption><span class="src">из учебника</span><b>Рис. 20.</b> Осенняя окраска листьев</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Лес и прогулки</span></div><div class="lifebody"><p>Ты любишь гулять в лесу. Сейчас октябрь — самое время для этого задания. Выбери на прогулке три разных дерева и запиши, какого цвета у них листья сегодня. Через неделю посмотри снова на те же деревья.</p><p>Одно дерево пожелтело — это <b>явление</b>. А листопад, который идёт несколько недель, — это <b>процесс</b>.</p></div><p class="lifebook">В учебнике это называется: <b>фенологические наблюдения</b></p></aside>
+<div class="done"><button class="donebtn" data-s="s7" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt2" data-n="8">
+<div class="sortlab">Объект, явление или процесс?</div>
+<p class="sortnote">Нажми на правильный ответ. Ошиблась — ничего страшного, пробуй ещё.</p>
+<div class="sitem" data-r="0"><p class="stext">Летящая бабочка</p><div class="sbtns"><button class="sbtn" data-b="0">объект</button><button class="sbtn" data-b="1">явление</button><button class="sbtn" data-b="2">процесс</button></div><p class="swhy" hidden>Это то, что изучают. В учебнике летящая бабочка — пример объекта.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Из бутона раскрылся цветок</p><div class="sbtns"><button class="sbtn" data-b="0">объект</button><button class="sbtn" data-b="1">явление</button><button class="sbtn" data-b="2">процесс</button></div><p class="swhy" hidden>Одно изменение — явление.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Пищеварение: от бутерброда до самого конца</p><div class="sbtns"><button class="sbtn" data-b="0">объект</button><button class="sbtn" data-b="1">явление</button><button class="sbtn" data-b="2">процесс</button></div><p class="swhy" hidden>Много явлений подряд — процесс.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Люся, твоя дегу</p><div class="sbtns"><button class="sbtn" data-b="0">объект</button><button class="sbtn" data-b="1">явление</button><button class="sbtn" data-b="2">процесс</button></div><p class="swhy" hidden>Люся — то, за чем ты наблюдаешь. Объект.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Из яйца появился птенец</p><div class="sbtns"><button class="sbtn" data-b="0">объект</button><button class="sbtn" data-b="1">явление</button><button class="sbtn" data-b="2">процесс</button></div><p class="swhy" hidden>Одно событие — явление.</p></div>
+<div class="sitem" data-r="2"><p class="stext">День за днём муравьи прокладывают ход всё длиннее</p><div class="sbtns"><button class="sbtn" data-b="0">объект</button><button class="sbtn" data-b="1">явление</button><button class="sbtn" data-b="2">процесс</button></div><p class="swhy" hidden>Много маленьких явлений одно за другим — процесс.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Цветущее на лесной опушке растение</p><div class="sbtns"><button class="sbtn" data-b="0">объект</button><button class="sbtn" data-b="1">явление</button><button class="sbtn" data-b="2">процесс</button></div><p class="swhy" hidden>Пример объекта из учебника.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Листья желтеют, потом краснеют, потом опадают</p><div class="sbtns"><button class="sbtn" data-b="0">объект</button><button class="sbtn" data-b="1">явление</button><button class="sbtn" data-b="2">процесс</button></div><p class="swhy" hidden>Явления сменяют друг друга по порядку — процесс.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt3" data-n="6">
+<div class="sortlab">Научное или ненаучное познание?</div>
+<div class="sitem" data-r="1"><p class="stext">Сказка про трёхглавого дракона</p><div class="sbtns"><button class="sbtn" data-b="0">научное</button><button class="sbtn" data-b="1">ненаучное</button></div><p class="swhy" hidden>Это образ из воображения — эмоционально-чувственное восприятие.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Дневник наблюдений: место, дата, время, что видела</p><div class="sbtns"><button class="sbtn" data-b="0">научное</button><button class="sbtn" data-b="1">ненаучное</button></div><p class="swhy" hidden>Записи по плану — так работает научное наблюдение.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Музыка, в которой слышен шум волн</p><div class="sbtns"><button class="sbtn" data-b="0">научное</button><button class="sbtn" data-b="1">ненаучное</button></div><p class="swhy" hidden>Искусство — тоже познание природы, но не научное.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Результат, который проверили и подтвердили другие исследования</p><div class="sbtns"><button class="sbtn" data-b="0">научное</button><button class="sbtn" data-b="1">ненаучное</button></div><p class="swhy" hidden>Это и есть научный факт.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Картина художника с осенним лесом</p><div class="sbtns"><button class="sbtn" data-b="0">научное</button><button class="sbtn" data-b="1">ненаучное</button></div><p class="swhy" hidden>Художественное познание природы.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Рассказы очевидцев о снежном человеке</p><div class="sbtns"><button class="sbtn" data-b="0">научное</button><button class="sbtn" data-b="1">ненаучное</button></div><p class="swhy" hidden>Рассказов много, но их не проверили и не подтвердили исследованиями — научным фактом это не стало.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Научный метод</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 340 242" aria-hidden="true"><use href="#m-methods"/></svg><span class="ftext">Путь к научному знанию: практические методы (наблюдение, измерение, опыт) и теоретические.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Наблюдение</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="r15" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Изучаем органами чувств и ничего не меняем.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фенология</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="r20" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Наука о сезонных явлениях в жизни растений и животных. Файно — являю, логос — наука.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Объект</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="r16" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">То, что изучают: птица, бабочка, растение. Объектум — предмет.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Явление</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 340 184" aria-hidden="true"><use href="#m-ophp"/></svg><span class="ftext">Одно изменение: птенец появился из яйца, бутон раскрылся.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Процесс</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 300 352" aria-hidden="true"><use href="#m-digest"/></svg><span class="ftext">Явления одно за другим. Пищеварение — процесс.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фиксация</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="r17" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Сохранение объекта почти таким, каким он был живым.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Научный факт</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 300 244" aria-hidden="true"><use href="#m-fact"/></svg><span class="ftext">Результат, проверенный и подтверждённый другими исследованиями.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что такое наблюдение?</h3><div class="opts">
+<button class="opt" data-ok="1">Изучение объектов и явлений органами чувств — без вмешательства</button>
+<button class="opt">Опыт, в котором специально меняют условия</button>
+<button class="opt">Рассказ старших о природе</button>
+<button class="opt">Объяснение результатов и поиск законов</button></div>
+<div class="fb">Наблюдатель только смотрит и записывает, ничего не меняя.</div></div>
+<div class="q"><h3>2. Какой метод НЕ относится к практическим?</h3><div class="opts">
+<button class="opt">Наблюдение</button>
+<button class="opt">Измерение</button>
+<button class="opt" data-ok="1">Объяснение результатов</button>
+<button class="opt">Эксперимент (опыт)</button></div>
+<div class="fb">Объяснять результаты — это теоретические методы. Практические — наблюдение, измерение, эксперимент.</div></div>
+<div class="q"><h3>3. Когда результат становится научным фактом?</h3><div class="opts">
+<button class="opt">Сразу, как только учёный его увидел</button>
+<button class="opt" data-ok="1">Когда его проверили и подтвердили другие исследования</button>
+<button class="opt">Когда в него поверили многие люди</button>
+<button class="opt">Когда о нём рассказали очевидцы</button></div>
+<div class="fb">Правило учёных — «ничего не принимай на веру».</div></div>
+<div class="q"><h3>4. Что изучает фенология?</h3><div class="opts">
+<button class="opt">Скелеты динозавров</button>
+<button class="opt" data-ok="1">Сезонные явления в жизни растений и животных</button>
+<button class="opt">Звуки природы в музыке</button>
+<button class="opt">Внутреннее строение организмов</button></div>
+<div class="fb">Файно — являю, логос — наука. Как меняется природа по временам года.</div></div>
+<div class="q"><h3>5. Пищеварение — это…</h3><div class="opts">
+<button class="opt">объект</button>
+<button class="opt">явление</button>
+<button class="opt" data-ok="1">процесс</button>
+<button class="opt">препарат</button></div>
+<div class="fb">Явления сменяют друг друга по порядку — значит, процесс.</div></div>
+<div class="q"><h3>6. Какой препарат можно использовать много раз и долго?</h3><div class="opts">
+<button class="opt">Временный</button>
+<button class="opt" data-ok="1">Постоянный</button>
+<button class="opt">Любой</button>
+<button class="opt">Никакой</button></div>
+<div class="fb">Временный после работы уничтожают — он теряет ценность.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Чем научное знание отличается от житейского</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Житейские знания — из повседневных наблюдений, их передавали из поколения в поколение (первобытные люди).</li><li>Научное знание должно быть обоснованным, доказуемым и объяснять, как его получили.</li><li>Правило учёных — «ничего не принимай на веру»: научный факт проверен и подтверждён другими исследованиями.</li></ol></div>
+</div>
+<div class="think">
+<h3>Какие бывают научные методы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Научный метод — способ получения научных знаний; главное требование — объективность.</li><li>Практические методы: наблюдение, измерение, эксперимент (опыт).</li><li>Теоретические методы объясняют результаты и приводят к закономерностям и законам природы.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как провести научное наблюдение</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Наблюдение — восприятие объектов и явлений органами чувств, без вмешательства.</li><li>Четыре требования: цель, план, точные результаты, совпадение с повторными наблюдениями.</li><li>Дневник наблюдений: место, дата, время, что происходило; потом — отчёт с рисунками и фото.</li></ol></div>
+</div>
+<div class="think">
+<h3>Объект, явление и процесс</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Объект — то, что изучают (птица, бабочка, растение).</li><li>Явление — событие, изменение (из яйца появился птенец, раскрылся бутон).</li><li>Процесс — явления, сменяющие друг друга; пример — пищеварение.</li></ol></div>
+</div>
+<div class="think">
+<h3>Живые и фиксированные объекты</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>У живых объектов изучают поведение и реакцию на условия среды.</li><li>Фиксация — сохранение в состоянии, близком к естественному; так изучают внутреннее строение.</li><li>Препараты: временные уничтожают после работы, постоянные используют долго.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b3.html">‹ §3 Роль биологии</a>
+  <span class="pn cur">§4 Методы исследования</span>
+  <a class="pn" href="b5.html">§5 Измерения ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 4, с. 28—33. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'m-methods':'0 0 340 242','m-fact':'0 0 300 244','m-rules':'0 0 300 238','m-diary':'0 0 320 262','m-ophp':'0 0 340 184','m-digest':'0 0 300 352','m-fix':'0 0 340 196','m-prep':'0 0 340 148','m-know':'0 0 340 204'};
+
+var T={
+nauka:{w:"Наука",k:"что это",s:"m-know",t:"Особое занятие людей, чтобы получать новые знания об окружающем мире.",r:"",e:""},
+nmetod:{w:"Научный метод",k:"что это",s:"m-methods",t:"Набор приёмов, которыми учёные получают научные знания. Метод — это путь к знанию.",r:"<b>методос</b> (греч.) — способ познания, путь",e:""},
+obekt:{w:"Объективность",k:"главное требование к методу",s:"m-fact",t:"Результат не зависит от того, кто смотрит и что ему хочется увидеть. Объяснять результаты как вздумается нельзя.",r:"",e:""},
+prakt:{w:"Практические методы",k:"два вида методов",s:"m-methods",t:"Методы, где делают и смотрят: наблюдение, измерение, эксперимент (опыт).",r:"",e:""},
+teor:{w:"Теоретические методы",k:"два вида методов",s:"m-methods",t:"Методы, где думают: объясняют результаты, находят закономерности, а в конце — законы природы.",r:"",e:""},
+zakon:{w:"Закон природы",k:"что это",s:"m-methods",t:"Правило, по которому всё происходит в природе. Зная законы, человек понимает природу, может предвидеть, что будет, и использовать это.",r:"",e:""},
+fakt:{w:"Научный факт",k:"что это",s:"m-fact",t:"Результат исследования, который проверили и подтвердили другие исследования. Правило учёных — «ничего не принимай на веру».",r:"",e:""},
+nabl:{w:"Наблюдение",k:"практический метод",p:"r15",t:"Изучение природы органами чувств. Наблюдатель только смотрит и записывает — и ничего не меняет.",r:"",e:"Ты смотришь, что делают Люся и Юкси, и не мешаешь им."},
+fenol:{w:"Фенология",k:"наука",p:"r20",t:"Наука о сезонных явлениях в жизни растений и животных: что с ними происходит по временам года.",r:"<b>файно</b> — являю + <b>логос</b> — наука",e:"Осенью листья в лесу желтеют и опадают — это сезонное явление."},
+dnevn:{w:"Дневник наблюдений",k:"что это",s:"m-diary",t:"Тетрадь, куда подробно записывают: место, дату, время и что увидели.",r:"",e:""},
+objekt:{w:"Объект",k:"что это",p:"r16",t:"То, что изучает человек. Например, птица, бабочка, цветущее растение.",r:"<b>объектум</b> (лат.) — предмет",e:"Люся и Юкси — объекты, когда ты за ними наблюдаешь."},
+yavl:{w:"Явление",k:"что это",s:"m-ophp",t:"Одно событие, одно изменение. Из яйца появился птенец, из бутона раскрылся цветок.",r:"",e:""},
+proc:{w:"Процесс",k:"что это",s:"m-digest",t:"Явления, которые идут одно за другим, по порядку. Например, пищеварение.",r:"",e:""},
+nenauch:{w:"Ненаучное познание",k:"что это",p:"r18",t:"Знания о мире из книг, картин, музыки, трудов философов и обычной жизни.",r:"",e:""},
+emo:{w:"Эмоционально-чувственное восприятие",k:"как познавали мир раньше",p:"r19a",t:"Когда мир объясняют чувствами и воображением, а не доказательствами. Так появились мифы и сказки: Земля на черепахе, драконы.",r:"",e:""},
+fiksob:{w:"Фиксированные объекты",k:"что это",p:"r17",t:"Объекты, которые сохранили почти такими, какими они были живыми. Например, чучела животных.",r:"",e:""},
+fiks:{w:"Фиксация",k:"что это",p:"r17",t:"Сохранение объекта в состоянии, близком к естественному. При быстрой фиксации всё внутри остаётся как было.",r:"",e:""},
+prep:{w:"Препарат",k:"что это",s:"m-prep",t:"То, что приготовили из объекта, чтобы изучать. Временный после работы уничтожают, постоянный используют много раз.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b4:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b4:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b4:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b4:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

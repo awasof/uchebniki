@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Из чего складывается живое тело: от одной клетки до целого организма.">
+<title>Организм — единое целое</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="p-ladder" viewBox="0 0 320 300">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="85" y="8" width="150" height="46" rx="10" fill="var(--pa,#C9672C)"/>
+<text x="160" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">клетка</text>
+<text x="160" y="46" text-anchor="middle" font-size="14" fill="#FFFFFF">мышечная клетка</text>
+<rect x="68" y="66" width="184" height="46" rx="10" fill="var(--ochre,#E2A31F)"/>
+<text x="160" y="86" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">ткань</text>
+<text x="160" y="104" text-anchor="middle" font-size="14" fill="#FFFFFF">мышечная ткань</text>
+<rect x="51" y="124" width="218" height="46" rx="10" fill="var(--leaf,#2D7A55)"/>
+<text x="160" y="144" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">орган</text>
+<text x="160" y="162" text-anchor="middle" font-size="14" fill="#FFFFFF">мышца</text>
+<rect x="34" y="182" width="252" height="46" rx="10" fill="var(--pb,#3B6FA8)"/>
+<text x="160" y="202" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">система органов</text>
+<text x="160" y="220" text-anchor="middle" font-size="14" fill="#FFFFFF">опорно-двигательная</text>
+<rect x="17" y="240" width="286" height="46" rx="10" fill="var(--no,#B03A2E)"/>
+<text x="160" y="260" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">организм</text>
+<text x="160" y="278" text-anchor="middle" font-size="14" fill="#FFFFFF">Люся (или ты!)</text>
+</g></symbol>
+
+<symbol id="p-types" viewBox="0 0 330 196">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="6" y="8" width="102" height="180" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="2.5"/>
+<text x="57" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="var(--pa,#C9672C)">одно-</text>
+<text x="57" y="48" text-anchor="middle" font-size="13" font-weight="700" fill="var(--pa,#C9672C)">клеточные</text>
+<circle cx="57" cy="96" r="22" fill="var(--pa,#C9672C)" opacity=".25" stroke="var(--pa,#C9672C)" stroke-width="2"/>
+<circle cx="57" cy="96" r="7" fill="var(--pa,#C9672C)"/>
+<text x="57" y="144" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">одна клетка;</text>
+<text x="57" y="162" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">бактерии,</text>
+<text x="57" y="178" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">амёба</text>
+<rect x="114" y="8" width="102" height="180" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--leaf,#2D7A55)" stroke-width="2.5"/>
+<text x="165" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="var(--leaf,#2D7A55)">много-</text>
+<text x="165" y="48" text-anchor="middle" font-size="13" font-weight="700" fill="var(--leaf,#2D7A55)">клеточные</text>
+<g fill="var(--leaf,#2D7A55)" fill-opacity=".3" stroke="var(--leaf,#2D7A55)" stroke-width="2">
+<rect x="137" y="76" width="18" height="18"/><rect x="155" y="76" width="18" height="18"/><rect x="173" y="76" width="18" height="18"/>
+<rect x="137" y="94" width="18" height="18"/><rect x="155" y="94" width="18" height="18"/><rect x="173" y="94" width="18" height="18"/></g>
+<text x="165" y="144" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">много клеток;</text>
+<text x="165" y="162" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">гриб, дерево,</text>
+<text x="165" y="178" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">дегу, ты</text>
+<rect x="222" y="8" width="102" height="180" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="273" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="var(--pb,#3B6FA8)">неклеточные</text>
+<text x="273" y="48" text-anchor="middle" font-size="13" font-weight="700" fill="var(--pb,#3B6FA8)">(вирусы)</text>
+<circle cx="273" cy="96" r="14" fill="none" stroke="var(--pb,#3B6FA8)" stroke-width="2.5" stroke-dasharray="4 3"/>
+<text x="273" y="144" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">клеток нет;</text>
+<text x="273" y="162" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">оживают только</text>
+<text x="273" y="178" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">в чужой клетке</text>
+</g></symbol>
+
+<symbol id="p-root" viewBox="0 0 300 280">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="150" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Сломался один орган</text>
+<rect x="8" y="34" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--no,#B03A2E)" stroke-width="2.5"/>
+<text x="150" y="57" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">корень повреждён</text>
+<path d="M150 70 L150 80" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="82" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--no,#B03A2E)" stroke-width="2.5"/>
+<text x="150" y="105" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">вода не поступает</text>
+<path d="M150 118 L150 128" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="130" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--no,#B03A2E)" stroke-width="2.5"/>
+<text x="150" y="153" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">листьям не хватает воды</text>
+<path d="M150 166 L150 176" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="178" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--no,#B03A2E)" stroke-width="2.5"/>
+<text x="150" y="201" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">нет питательных веществ</text>
+<path d="M150 214 L150 224" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="226" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--no,#B03A2E)" stroke-width="2.5"/>
+<text x="150" y="249" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">не растут все органы</text>
+</g></symbol>
+
+<symbol id="p-snake" viewBox="0 0 300 280">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="150" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Змея в лесу: работают все системы</text>
+<rect x="8" y="34" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="150" y="57" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">глаза увидели змею</text>
+<path d="M150 70 L150 80" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="82" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="150" y="105" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">мозг: «опасность!»</text>
+<path d="M150 118 L150 128" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="130" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="150" y="153" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">в кровь — гормоны стресса</text>
+<path d="M150 166 L150 176" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="178" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="150" y="201" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">сердце бьётся чаще</text>
+<path d="M150 214 L150 224" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="226" width="284" height="36" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="150" y="249" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">кровь — к мышцам: готов бежать</text>
+</g></symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 8</span>
+    <h1>Организм — единое целое</h1>
+    <p class="lede">Из чего складывается живое тело: от одной клетки до целого организма.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. Каковы признаки живого? 2. Какие живые организмы вы знаете? 3. Что такое клетка?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b7.html">‹ §7 Описание результатов</a>
+  <span class="pn cur">§8 Организм — единое целое</span>
+  <a class="pn" href="b9.html">§9 Увеличительные приборы ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Понятие об организме">1</a><a href="#s2" data-j="s2" title="Основные структуры организма: клетки, ткани, органы, системы органов">2</a><a href="#s3" data-j="s3" title="Взаимосвязь структур организма">3</a><a href="#s4" data-j="s4" title="Уровни организации организма">4</a><a href="#s5" data-j="s5" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Понятие об организме</h2></div>
+<div class="easy">
+<p>Живые тела природы называют <span class="term" role="button" tabindex="0" data-t="org">организмами</span>. Они бывают самыми разными: по форме, окраске, размеру. А ещё они различаются тем, как устроены их клетки.</p>
+<p>Есть совсем крошечные организмы — из одной-единственной клетки. Это <span class="term" role="button" tabindex="0" data-t="odno">одноклеточные</span> (рис. 34). Глазом их почти не видно: нужна лупа, а лучше микроскоп. Одноклеточные есть среди растений, животных и грибов. И все бактерии — одноклеточные.</p>
+<p>А ещё есть <span class="term" role="button" tabindex="0" data-t="mnogo">многоклеточные</span> организмы — их тело состоит из огромного числа клеток (рис. 35).</p>
+<p>Клетка — главная единица строения и жизни всех организмов. Кроме <span class="term" role="button" tabindex="0" data-t="vir">вирусов</span>: у них клеток нет (рис. 36). Вне клетки вирус не проявляет никаких свойств живого. И только попав в клетку другого организма, начинает размножаться — с помощью частей этой клетки.</p>
+</div>
+<div class="book" hidden>
+<p>Тела живой природы называют <span class="term" role="button" tabindex="0" data-t="org">организмами</span>. Они разнообразны по форме, окраске, размерам и другим признакам. Различаются они по особенностям клеточного строения.</p>
+<p>Есть очень маленькие организмы, состоящие только из одной клетки. Их называют <b><span class="term" role="button" tabindex="0" data-t="odno">одноклеточными</span></b> (рис. 34). Практически все они невидимы для глаза человека, и, чтобы их рассмотреть, нужны оптические приборы — лупа, а лучше микроскоп. Одноклеточные организмы есть среди растений, животных и грибов. К ним также относятся все бактерии.</p>
+<p>Кроме одноклеточных в природе есть и <b><span class="term" role="button" tabindex="0" data-t="mnogo">многоклеточные</span></b> организмы (рис. 35). Так их назвали потому, что тела этих организмов состоят из большого количества клеток.</p>
+<p>Клетка является основной структурной и функциональной единицей всех живых организмов, за исключением <span class="term" role="button" tabindex="0" data-t="vir">вирусов</span>, которых относят к внеклеточным организмам (рис. 36). Но следует учитывать, что если вирус находится вне клетки, то он не проявляет никаких свойств живого. Только попав в клетку другого организма, вирус начинает проявлять признаки живого и в первую очередь размножаться, используя структуры клетки-хозяина.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-o34" src="img/0306974ef3e3.jpg" alt="Три одноклеточных: эвглена, амёба, инфузория"><figcaption><span class="src">из учебника</span><b>Рис. 34.</b> Одноклеточные организмы: а — эвглена; б — амёба; в — инфузория</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-o35" src="img/238a7cebee2d.jpg" alt="Гриб, фиалки, рыба-крылатка, жирафы с людьми"><figcaption><span class="src">из учебника</span><b>Рис. 35.</b> Многоклеточные организмы</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-o36" src="img/eb5ff4eec367.jpg" alt="Вирусы под микроскопом: шарики с шипами"><figcaption><span class="src">из учебника</span><b>Рис. 36.</b> Неклеточные организмы — вирусы</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 196" role="img" aria-label="Три вида организмов: одноклеточные — одна клетка, бактерии, амёба; многоклеточные — много клеток, гриб, дерево, дегу, человек; неклеточные — вирусы, клеток нет, оживают только в чужой клетке"><use href="#p-types"/></svg><figcaption>Одна клетка, много клеток или ни одной.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Зум на телефоне</span></div><div class="lifebody"><p>Попробуй приблизить камерой телефона лист денежного дерева или муравья на ферме. Видно много деталей! Но отдельные клетки и одноклеточных так не увидеть — они слишком маленькие. Для них нужен микроскоп: о нём следующий параграф.</p><p>Зато все, кого ты видишь, — Люся, Юкси, муравьи, полоз у соседей, денежное дерево — многоклеточные организмы.</p></div><p class="lifebook">В учебнике это называется: <b>одноклеточные и многоклеточные организмы</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Почему одноклеточных почти невозможно увидеть без приборов? Какие приборы нужны?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a1" hidden>Они состоят из одной клетки и очень маленькие. Нужна лупа, а лучше микроскоп.</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему вирусы — особые организмы?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a2" hidden>У них нет клеток. Вне клетки они не проявляют свойств живого, а размножаться начинают, только попав в клетку другого организма.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Основные структуры организма: клетки, ткани, органы, системы органов</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="klet">Клетка</span> — основа строения и жизни растений, животных, грибов и бактерий. У всех клеток общий план строения. Но в многоклеточном организме клетки бывают разными: каждая делает свою работу (рис. 37).</p>
+<p>Клетки, похожие по строению и делающие общую работу, вместе с веществом между ними образуют <span class="term" role="button" tabindex="0" data-t="tkan">ткань</span>.</p>
+<p>У человека и животных четыре вида тканей: эпителиальная (покровная), соединительная, мышечная и нервная (рис. 38). Каждая устроена по-своему и делает свою работу: защищает, служит опорой, питает, переносит вещества, сокращается.</p>
+<p>Ткани образуют <span class="term" role="button" tabindex="0" data-t="organ">органы</span> (от греч. <i>органон</i> — орудие, инструмент). Орган — часть многоклеточного организма с особым строением, которая делает определённую работу. Корень, лист, цветок — органы растений; сердце, печень, лёгкие — органы животных (рис. 39).</p>
+<p>У сложных организмов органы объединены в <span class="term" role="button" tabindex="0" data-t="sist">системы органов</span>. У человека те же системы, что у млекопитающих: покровная, опорно-двигательная, дыхательная, кровеносная, пищеварительная, выделительная и другие. Каждая система — группа органов с общей работой (рис. 40).</p>
+<p>Все системы органов вместе — это целый многоклеточный организм.</p>
+</div>
+<div class="book" hidden>
+<p><b><span class="term" role="button" tabindex="0" data-t="klet">Клетка</span></b> — основа строения и жизнедеятельности организмов: растений, животных, грибов и бактерий. Для всех клеток характерен общий план строения, но клетки многоклеточных организмов могут различаться как у разных организмов, так и в составе одного организма. Это связано с тем, что каждая клетка выполняет определённые функции (рис. 37).</p>
+<p>Клетки, сходные по строению, объединённые выполнением общей работы (функции), и межклеточное вещество, связывающее клетки, образуют <b><span class="term" role="button" tabindex="0" data-t="tkan">ткани</span></b>.</p>
+<p>В многоклеточных организмах много разных тканей. Например, у человека и животных выделяют четыре типа тканей: эпителиальная (покровная), соединительная, мышечная и нервная (рис. 38). Все эти ткани выполняют специфические функции, обусловленные особенностями их строения, — защитную, опорную, питательную, транспортную, сократительную и др.</p>
+<p>Ткани образуют <span class="term" role="button" tabindex="0" data-t="organ">органы</span> (от греч. <i>органон</i> — орудие, инструмент). <b>Орган</b> — это часть многоклеточного организма, имеющая особое строение и выполняющая в нём определённую функцию. Например, корень, лист, цветок — органы растений; сердце, печень, лёгкие — органы животных (рис. 39).</p>
+<p>Органы в сложно устроенных многоклеточных организмах объединены в особые комплексы — <b><span class="term" role="button" tabindex="0" data-t="sist">системы органов</span></b>, которые обеспечивают жизнедеятельность таких организмов. Например, в организме человека выделяют те же системы органов, что и у млекопитающих: покровную, опорно-двигательную, дыхательную, кровеносную, пищеварительную, выделительную и др. Каждая система представляет собой группу органов, которые выполняют в организме какую-то общую функцию (рис. 40).</p>
+<p>Совокупность всех систем органов образует целостный многоклеточный <b>организм</b>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-o37" src="img/d9cdd59b060c.jpg" alt="Нервная клетка с отростками, клетки крови, эпителиальная клетка, длинная мышечная клетка"><figcaption><span class="src">из учебника</span><b>Рис. 37.</b> Клетки многоклеточного организма</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-o38" src="img/cc52ccd5f27d.jpg" alt="Ткани животных — эпителиальная, мышечная, нервная, соединительная: схема и микрофотография"><figcaption><span class="src">из учебника</span><b>Рис. 38.</b> Многообразие тканей животных (схема и микрофотография)</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-o39" src="img/09fdaef7d7b6.jpg" alt="Органы человека — мозг, сердце, лёгкие, желудок, печень, почки, кишечник, селезёнка; органы растения — корень, стебель, лист, цветок, плод, семя"><figcaption><span class="src">из учебника</span><b>Рис. 39.</b> Многообразие органов у различных организмов<br><span style="color:var(--soft)">▲ Найди органы человека и органы растения.</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-o40" src="img/456be5206f5b.jpg" alt="Пять силуэтов человека: опорно-двигательная, пищеварительная, дыхательная, кровеносная и нервная системы"><figcaption><span class="src">из учебника</span><b>Рис. 40.</b> Системы органов человека</figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Ткань</b><p>много похожих клеток с одной работой: мышечная ткань</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Орган</b><p>часть тела из разных тканей с особой работой: сердце</p></div></div><p class="pairkey">Ткань — <b>материал</b>. Орган — <b>готовая деталь</b> из этого материала.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Найди органы на себе</span></div><div class="lifebody"><p>Положи ладонь на грудь чуть левее середины и посиди тихо — почувствуешь, как бьётся <b>сердце</b>. Глубоко вдохни — грудь поднялась: это работают <b>лёгкие</b>. Под рёбрами, выше пупка, — <b>желудок</b>. В голове — <b>мозг</b>. Найди их на рис. 39.</p><p>Ощупай руку: твёрдое внутри — <b>кости</b>, а то, что напрягается, когда сжимаешь кулак, — <b>мышцы</b>. Кости и мышцы вместе — опорно-двигательная система (рис. 40). А глаза, уши, нос, язык и кожа — органы чувств.</p></div><p class="lifebook">В учебнике это называется: <b>органы и системы органов</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">У тебя и у Люси</span></div><div class="lifebody"><p>Дегу — млекопитающее, как и человек. Учебник говорит: у человека те же системы органов, что и у млекопитающих. Значит, у Люси тоже есть сердце, лёгкие, желудок, мозг, кости и мышцы.</p><p>Попробуй осторожно взять Люсю или Юкси на руки и приложить ладонь к боку. Почувствуешь, как она дышит и как бьётся её маленькое сердце — гораздо чаще, чем твоё! Это работают её дыхательная и кровеносная системы. Только недолго: дегу пугливые.</p></div><p class="lifebook">В учебнике это называется: <b>системы органов млекопитающих</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Почему клетки в одном организме бывают разными?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a3" hidden>Каждая клетка выполняет определённую функцию — свою работу. Поэтому нервная клетка не похожа на клетку крови или мышечную.</div>
+</div>
+<div class="think">
+<p class="qt">4. Назови четыре вида тканей у человека и животных.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Третий абзац и рис. 38.</div>
+<div class="rev ans" id="a4" hidden>Эпителиальная (покровная), соединительная, мышечная и нервная.</div>
+</div>
+<div class="think">
+<p class="qt">5. Приведи по два примера органов растений и органов животных.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Абзац про органы и рис. 39.</div>
+<div class="rev ans" id="a5" hidden>Растений: корень, лист, цветок. Животных: сердце, печень, лёгкие.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Взаимосвязь структур организма</h2></div>
+<div class="easy">
+<p>Клетки, которые вместе делают одну работу (например, обеспечивают движение), образуют ткани. Ткани образуют органы, органы объединяются в системы органов.</p>
+<p>Пример. У человека мышечные клетки входят в мышечную ткань. Мышечная ткань образует мышцы. А мышцы входят в опорно-двигательную систему. Все системы органов вместе — целый организм. И все они работают на общий результат.</p>
+<p>Если сломается один орган, пострадают и другие, а в конце концов — весь организм. Повредили у растения корень — перестаёт поступать вода. Листьям не хватает воды — в них перестают образовываться питательные вещества. А без них не растут все органы растения.</p>
+<p>Значит, клетки, ткани, органы и системы органов связаны друг с другом. Они работают слаженно и составляют единое целое.</p>
+</div>
+<div class="book" hidden>
+<p>Клетки, которые вместе выполняют какие-либо функции, например обеспечивают движение, образуют <i>ткани</i>. Ткани образуют <i>органы</i>, которые объединяются в <i>системы органов</i>. Так, у человека мышечные клетки входят в состав мышечной ткани, мышечная ткань образует скелетные мышцы, которые входят в состав опорно-двигательной системы. Все системы органов составляют целый организм. Работа систем органов направлена на достижение результата, необходимого для всего организма.</p>
+<p>Нарушение работы любого из органов отражается на функционировании других органов и в конечном счёте на жизнедеятельности всего организма. Например, при повреждении корня у растения нарушается поступление воды. При недостатке воды в листьях прекращается образование питательных веществ, которые необходимы для роста всех органов растения.</p>
+<p>Таким образом, клетки, ткани, органы и системы органов в организме взаимосвязаны. Они функционируют согласованно и составляют единое целое.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 320 300" role="img" aria-label="Лестница: мышечная клетка — мышечная ткань — мышца — опорно-двигательная система — организм"><use href="#p-ladder"/></svg><figcaption>Из маленького складывается большое: клетка → ткань → орган → система → организм.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 300 280" role="img" aria-label="Цепочка: корень повреждён, вода не поступает, листьям не хватает воды, нет питательных веществ, не растут все органы"><use href="#p-root"/></svg><figcaption>Пример учебника: один сломанный орган тянет за собой весь организм.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Денежное дерево</span></div><div class="lifebody"><p>Если денежное дерево долго не поливать, первыми страдают корни — им нечего впитывать. Потом сморщиваются листья. И всё растение перестаёт расти. Вот она, взаимосвязь органов!</p></div><p class="lifebook">В учебнике это называется: <b>взаимосвязь структур организма</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Как связаны мышечная клетка и опорно-двигательная система?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Пример в первом абзаце.</div>
+<div class="rev ans" id="a6" hidden>Мышечные клетки входят в мышечную ткань, она образует скелетные мышцы, а мышцы входят в опорно-двигательную систему.</div>
+</div>
+<div class="think">
+<p class="qt">7. Что будет с растением, если повредить корень? Расскажи цепочкой.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Второй абзац раздела и схема.</div>
+<div class="rev ans" id="a7" hidden>Нарушится поступление воды; в листьях без воды прекратится образование питательных веществ; без них не смогут расти все органы растения.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Уровни организации организма</h2></div>
+<div class="easy">
+<p>В многоклеточном организме выделяют <span class="term" role="button" tabindex="0" data-t="urov">уровни организации</span>: клеточный, тканевый, органный, системный (уровень систем органов) и организменный (рис. 41).</p>
+<p>Все уровни работают слаженно — поэтому организм живёт и развивается как единое целое. И всегда отвечает на изменения внутри себя и вокруг.</p>
+<p>Пример. Ты собираешь в лесу грибы и вдруг видишь змею. Мозг мгновенно понимает: опасность! В кровь выделяются гормоны стресса, сердце бьётся чаще, кровь приливает к тем частям тела, которым сейчас придётся действовать. Все системы органов работают на один результат — полезный для всего организма.</p>
+</div>
+<div class="book" hidden>
+<p>В строении многоклеточного организма выделяют следующие <span class="term" role="button" tabindex="0" data-t="urov">уровни организации</span>: клеточный, тканевый, органный, системный (уровень систем органов), организменный (рис. 41). В результате слаженной работы структур всех уровней организации многоклеточный организм живёт и развивается как единое целое. Благодаря согласованной работе всех систем органов организм всегда отвечает на изменения, которые происходят в нём самом и окружающей его среде. Например, вы собирали в лесу грибы и увидели змею. Мозг мгновенно распознает опасность, в кровь выделятся гормоны стресса, сердце забьётся чаще, кровь от внутренних органов устремляется к тем частям тела, которым предстоит действовать. Вся работа систем органов постоянно направлена на достижение результата, полезного для всего организма.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-o41" src="img/b30226e39795.jpg" alt="Уровни: мышечная клетка, мышечная ткань, сердце, кровеносная система, человек"><figcaption><span class="src">из учебника</span><b>Рис. 41.</b> Уровни организации организма</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 300 280" role="img" aria-label="Змея в лесу: глаза увидели змею, мозг понял — опасность, в кровь гормоны стресса, сердце бьётся чаще, кровь к мышцам — готов бежать"><use href="#p-snake"/></svg><figcaption>Пример учебника по шагам: работают нервная, кровеносная и мышцы — все вместе.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Змеи: в лесу и у соседей</span></div><div class="lifebody"><p>Ты любишь трогать змей — в змеином кафе, в рептилиуме, а у соседей по этажу живёт полоз. Там ты знаешь, что змея безопасна, и не пугаешься.</p><p>А в лесу незнакомая змея — неожиданность. Мозг включает тревогу, и весь организм за секунду готовится действовать. Это и есть слаженная работа всех систем органов. Кстати, у змеи тоже есть системы органов — она тоже многоклеточный организм.</p></div><p class="lifebook">В учебнике это называется: <b>организм отвечает на изменения как единое целое</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Назови уровни организации многоклеточного организма по порядку.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Первый абзац и рис. 41.</div>
+<div class="rev ans" id="a8" hidden>Клеточный, тканевый, органный, системный, организменный.</div>
+</div>
+<div class="think">
+<p class="qt">9. Что происходит в организме, когда в лесу видишь змею? Какие органы работают?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Пример во втором абзаце.</div>
+<div class="rev ans" id="a9" hidden>Мозг распознаёт опасность, в кровь выделяются гормоны стресса, сердце бьётся чаще, кровь приливает к частям тела, которым предстоит действовать. Работают мозг, сердце, кровь, мышцы — все системы вместе.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Организмы: одноклеточные, многоклеточные, неклеточные · Уровни организации · Клетка · Ткань · Орган · Система органов · Организм</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Что представляют собой организмы? Какие они бывают по клеточному строению?</li><li>Какова роль клеток в жизни одноклеточных и многоклеточных организмов?</li><li>Что такое ткань?</li><li>Почему органы в многоклеточном организме работают согласованно?</li><li>От чего зависит наличие различных органов у растений и животных?</li><li>Назовите основные уровни организации многоклеточного организма.</li></ol></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Чем обусловлено разнообразие формы и размеров различных клеток, тканей, органов и систем органов в многоклеточном организме?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к «Подумайте!»</button></div>
+<div class="rev hint" id="r1" hidden>Вспомни, почему клетки в одном организме разные (раздел 2): каждая выполняет свою работу. Форма помогает делать работу — у нервной клетки длинные отростки, у мышечной — длинное тело.</div></div>
+<div class="rubric">Моя лаборатория · Выполните задание</div>
+<div class="ask"><b>Задание учебника</b>
+<p style="margin:0">Изучив текст параграфа и дополнительные источники информации, приведите примеры различных организмов и заполните таблицу: одноклеточные — многоклеточные — внеклеточные.</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка: примеры для таблицы</button></div>
+<div class="rev hint" id="r2" hidden><ol><li><b>Одноклеточные:</b> эвглена, амёба, инфузория (рис. 34), бактерии.</li><li><b>Многоклеточные:</b> гриб, фиалка, рыба, жираф (рис. 35) — и твои: Люся, Юкси, муравьи, полоз, денежное дерево.</li><li><b>Внеклеточные:</b> вирусы (рис. 36).</li></ol></div></div>
+<div class="rubric">Это интересно</div>
+<div class="easy">
+<p>Слово «организм» (от лат. <i>организо</i> — устраиваю, придаю стройный вид) ввёл Аристотель. Он заметил: всё живое устроено чётко и строго — в отличие от неживого.</p>
+<p>Есть одноклеточные, которые живут вместе — множеством клеток, похожим на многоклеточный организм. Например, вольвокс. Но их клетки живут независимо друг от друга, не образуют тканей и обычно могут размножаться сами. Поэтому это <b>одноклеточные колониальные</b> организмы (рис. 42, а).</p>
+<p>Многоклеточные тоже бывают колониальными: несколько особей тесно связаны, у них общий обмен веществ. Это многие коралловые полипы, губки и другие (рис. 42, б).</p>
+</div>
+<div class="book" hidden>
+<p>Термин организм (от лат. <i>организо</i> — устраиваю, придаю стройный вид) был введён древнегреческим учёным Аристотелем. Он указал, что любое живое существо характеризуется чёткой и строгой организацией, в отличие от неживого.</p>
+<p>Среди одноклеточных организмов особое место занимают организмы, состоящие из множества клеток, объединённые в некое подобие многоклеточного организма. К ним относятся, например, вольвокс, гониум, пандорина и др. В отличие от многоклеточных организмов, клетки в этих организмах обычно функционируют независимо друг от друга, не образуют тканей, сохраняют, как правило, способность к размножению. Так как они сохраняют клеточный уровень организации, их относят к одноклеточным колониальным организмам (рис. 42, а).</p>
+<p>Многоклеточные организмы тоже могут образовывать колонии из нескольких особей, более или менее тесно связанных между собой и имеющих обычно общий обмен веществ и системы регуляции. К многоклеточным колониальным организмам относятся многие виды коралловых полипов, губок и др. (рис. 42, б).</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-o42" src="img/7865b35f1387.jpg" alt="Вольвокс под микроскопом — шар из клеток; коралловые полипы в море"><figcaption><span class="src">из учебника</span><b>Рис. 42.</b> Одноклеточный колониальный организм: вольвокс (а), и многоклеточные колониальные организмы: коралловые полипы (б)</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Муравьиная ферма — не колония из учебника</span></div><div class="lifebody"><p>Муравьёв тоже называют колонией. Но каждый муравей — отдельный многоклеточный организм со своими органами. Это не то же самое, что вольвокс или коралловые полипы, где клетки или особи связаны в одно тело.</p></div><p class="lifebook">В учебнике это называется: <b>колониальные организмы</b></p></aside>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Собери лестницу</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по порядку — от самого маленького к целому организму.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="5"><span class="ord"></span>Организм</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Ткань</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Система органов</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Клетка</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Орган</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sortgame" id="srt3" data-n="6">
+<div class="sortlab">Одноклеточный, многоклеточный или неклеточный?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Амёба</p><div class="sbtns"><button class="sbtn" data-b="0">одноклеточный</button><button class="sbtn" data-b="1">многоклеточный</button><button class="sbtn" data-b="2">неклеточный</button></div><p class="swhy" hidden>Одна клетка (рис. 34).</p></div>
+<div class="sitem" data-r="1"><p class="stext">Юкси</p><div class="sbtns"><button class="sbtn" data-b="0">одноклеточный</button><button class="sbtn" data-b="1">многоклеточный</button><button class="sbtn" data-b="2">неклеточный</button></div><p class="swhy" hidden>Тело из огромного числа клеток.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Вирус</p><div class="sbtns"><button class="sbtn" data-b="0">одноклеточный</button><button class="sbtn" data-b="1">многоклеточный</button><button class="sbtn" data-b="2">неклеточный</button></div><p class="swhy" hidden>У вирусов клеток нет.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Бактерия</p><div class="sbtns"><button class="sbtn" data-b="0">одноклеточный</button><button class="sbtn" data-b="1">многоклеточный</button><button class="sbtn" data-b="2">неклеточный</button></div><p class="swhy" hidden>Все бактерии — одноклеточные.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Денежное дерево</p><div class="sbtns"><button class="sbtn" data-b="0">одноклеточный</button><button class="sbtn" data-b="1">многоклеточный</button><button class="sbtn" data-b="2">неклеточный</button></div><p class="swhy" hidden>Растение из множества клеток.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Полоз</p><div class="sbtns"><button class="sbtn" data-b="0">одноклеточный</button><button class="sbtn" data-b="1">многоклеточный</button><button class="sbtn" data-b="2">неклеточный</button></div><p class="swhy" hidden>У змеи есть ткани, органы и системы органов.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt4" data-n="6">
+<div class="sortlab">Клетка, ткань, орган или система органов?</div>
+<div class="sitem" data-r="2"><p class="stext">Сердце</p><div class="sbtns"><button class="sbtn" data-b="0">клетка</button><button class="sbtn" data-b="1">ткань</button><button class="sbtn" data-b="2">орган</button><button class="sbtn" data-b="3">система органов</button></div><p class="swhy" hidden>Часть тела со своей работой.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Мышечная ткань</p><div class="sbtns"><button class="sbtn" data-b="0">клетка</button><button class="sbtn" data-b="1">ткань</button><button class="sbtn" data-b="2">орган</button><button class="sbtn" data-b="3">система органов</button></div><p class="swhy" hidden>Похожие клетки с общей работой.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Нервная клетка</p><div class="sbtns"><button class="sbtn" data-b="0">клетка</button><button class="sbtn" data-b="1">ткань</button><button class="sbtn" data-b="2">орган</button><button class="sbtn" data-b="3">система органов</button></div><p class="swhy" hidden>Одна клетка с отростками (рис. 37).</p></div>
+<div class="sitem" data-r="3"><p class="stext">Дыхательная система</p><div class="sbtns"><button class="sbtn" data-b="0">клетка</button><button class="sbtn" data-b="1">ткань</button><button class="sbtn" data-b="2">орган</button><button class="sbtn" data-b="3">система органов</button></div><p class="swhy" hidden>Группа органов для дыхания.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Лист растения</p><div class="sbtns"><button class="sbtn" data-b="0">клетка</button><button class="sbtn" data-b="1">ткань</button><button class="sbtn" data-b="2">орган</button><button class="sbtn" data-b="3">система органов</button></div><p class="swhy" hidden>Орган растения.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Кровеносная система</p><div class="sbtns"><button class="sbtn" data-b="0">клетка</button><button class="sbtn" data-b="1">ткань</button><button class="sbtn" data-b="2">орган</button><button class="sbtn" data-b="3">система органов</button></div><p class="swhy" hidden>Сердце и сосуды вместе.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Одноклеточные</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="o34" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Организмы из одной клетки: амёба, эвглена, бактерии.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Многоклеточные</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="o35" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Тело из большого числа клеток.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Вирусы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="o36" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Неклеточные; оживают только в чужой клетке.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ткань</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="o38" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Похожие клетки с общей работой + межклеточное вещество.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Орган</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="o39" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Часть организма с особым строением и своей работой. Органон — инструмент.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Система органов</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="o40" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Органы с общей работой: дыхательная, кровеносная…</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Уровни организации</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="o41" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Клеточный → тканевый → органный → системный → организменный.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Как называют организмы из одной клетки?</h3><div class="opts">
+<button class="opt" data-ok="1">Одноклеточные</button>
+<button class="opt">Многоклеточные</button>
+<button class="opt">Неклеточные</button>
+<button class="opt">Колониальные</button></div>
+<div class="fb">Например, амёба и все бактерии.</div></div>
+<div class="q"><h3>2. У кого нет клеточного строения?</h3><div class="opts">
+<button class="opt" data-ok="1">У вирусов</button>
+<button class="opt">У бактерий</button>
+<button class="opt">У грибов</button>
+<button class="opt">У растений</button></div>
+<div class="fb">Вирусы — неклеточные организмы.</div></div>
+<div class="q"><h3>3. Что такое ткань?</h3><div class="opts">
+<button class="opt" data-ok="1">Похожие клетки с общей работой и вещество между ними</button>
+<button class="opt">Один орган</button>
+<button class="opt">Группа органов</button>
+<button class="opt">Целый организм</button></div>
+<div class="fb">Например, мышечная ткань.</div></div>
+<div class="q"><h3>4. Что из этого — орган растения?</h3><div class="opts">
+<button class="opt" data-ok="1">Корень</button>
+<button class="opt">Клетка</button>
+<button class="opt">Ткань</button>
+<button class="opt">Бактерия</button></div>
+<div class="fb">Корень, лист, цветок — органы растений.</div></div>
+<div class="q"><h3>5. Сколько типов тканей выделяют у человека и животных?</h3><div class="opts">
+<button class="opt">Два</button>
+<button class="opt">Три</button>
+<button class="opt" data-ok="1">Четыре</button>
+<button class="opt">Десять</button></div>
+<div class="fb">Эпителиальная, соединительная, мышечная, нервная.</div></div>
+<div class="q"><h3>6. Что будет, если повредить корень растения?</h3><div class="opts">
+<button class="opt" data-ok="1">Нарушится поступление воды, листья не будут образовывать питательные вещества</button>
+<button class="opt">Ничего</button>
+<button class="opt">Растение станет расти быстрее</button>
+<button class="opt">Пострадает только корень</button></div>
+<div class="fb">Органы связаны: сломался один — страдает весь организм.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Какие бывают организмы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Одноклеточные — из одной клетки, почти не видны глазом (амёба, бактерии).</li><li>Многоклеточные — из множества клеток (грибы, растения, животные).</li><li>Неклеточные — вирусы: проявляют свойства живого только в чужой клетке.</li></ol></div>
+</div>
+<div class="think">
+<h3>Клетки, ткани, органы, системы органов</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Клетка — основа строения; клетки разные, потому что выполняют разную работу.</li><li>Ткань — похожие клетки с общей функцией; у животных 4 типа тканей.</li><li>Орган — часть организма со своей работой; органы объединяются в системы.</li></ol></div>
+</div>
+<div class="think">
+<h3>Организм — единое целое</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Уровни: клеточный, тканевый, органный, системный, организменный.</li><li>Органы связаны: повреждён корень — нет воды — нет питательных веществ.</li><li>Пример со змеёй: мозг, гормоны, сердце, мышцы работают вместе.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b7.html">‹ §7 Описание результатов</a>
+  <span class="pn cur">§8 Организм — единое целое</span>
+  <a class="pn" href="b9.html">§9 Увеличительные приборы ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 8, с. 54—59. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'p-ladder':'0 0 320 300','p-types':'0 0 330 196','p-root':'0 0 300 280','p-snake':'0 0 300 280'};
+
+var T={
+org:{w:"Организм",k:"что это",p:"o35",t:"Любое живое тело: бактерия, гриб, дерево, муравей, дегу, человек.",r:"<b>организо</b> (лат.) — устраиваю, придаю стройный вид",e:""},
+odno:{w:"Одноклеточные",k:"организмы",p:"o34",t:"Организмы из одной клетки. Почти все не видны глазом — нужна лупа, а лучше микроскоп. Все бактерии — одноклеточные.",r:"",e:""},
+mnogo:{w:"Многоклеточные",k:"организмы",p:"o35",t:"Организмы, тело которых состоит из большого числа клеток.",r:"",e:"Люся, Юкси, муравьи, денежное дерево и ты."},
+vir:{w:"Вирусы",k:"неклеточные организмы",p:"o36",t:"Организмы без клеток. Вне клетки не проявляют свойств живого; попав в чужую клетку, начинают размножаться.",r:"",e:""},
+klet:{w:"Клетка",k:"основа строения",p:"o37",t:"Основная единица строения и жизни организма. Клетки бывают разные — каждая делает свою работу.",r:"",e:""},
+tkan:{w:"Ткань",k:"уровень организации",p:"o38",t:"Клетки, похожие по строению и делающие общую работу, вместе с межклеточным веществом.",r:"",e:""},
+organ:{w:"Орган",k:"уровень организации",p:"o39",t:"Часть многоклеточного организма с особым строением, которая делает определённую работу: сердце, лёгкие, корень, лист.",r:"<b>органон</b> (греч.) — орудие, инструмент",e:""},
+sist:{w:"Система органов",k:"уровень организации",p:"o40",t:"Группа органов, которые вместе делают общую работу: дыхательная, кровеносная, пищеварительная и другие.",r:"",e:""},
+urov:{w:"Уровни организации",k:"в многоклеточном организме",p:"o41",t:"Клеточный, тканевый, органный, системный, организменный — от самого маленького к целому.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b8:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b8:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>5){fb.textContent="Верно! Клетка → ткань → орган → система органов → организм.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Не то. Начни с самого маленького.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b8:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b8:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

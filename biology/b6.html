@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Как проверить догадку: две группы, одно отличие — и честный вывод.">
+<title>Эксперимент в биологии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="k-groups" viewBox="0 0 330 250">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Опыт с черенками</text>
+<rect x="8" y="34" width="150" height="150" rx="14" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="3"/>
+<text x="83" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="var(--pb,#3B6FA8)">КОНТРОЛЬНАЯ</text>
+<text x="83" y="76" text-anchor="middle" font-size="13" fill="var(--soft,#5F5648)">с чем сравнивают</text>
+<rect x="28" y="96" width="110" height="66" rx="6" fill="var(--water,#6FA8C4)" opacity=".35" stroke="var(--illink,#2B2620)" stroke-width="1.5"/>
+<text x="83" y="134" text-anchor="middle" font-size="13" fill="var(--illink,#2B2620)">вода</text>
+<rect x="172" y="34" width="150" height="150" rx="14" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="3"/>
+<text x="247" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="var(--pa,#C9672C)">ЭКСПЕРИМЕНТАЛЬНАЯ</text>
+<text x="247" y="76" text-anchor="middle" font-size="13" fill="var(--soft,#5F5648)">что проверяют</text>
+<rect x="192" y="96" width="110" height="66" rx="6" fill="var(--water,#6FA8C4)" opacity=".35" stroke="var(--illink,#2B2620)" stroke-width="1.5"/>
+<text x="247" y="126" text-anchor="middle" font-size="13" fill="var(--illink,#2B2620)">вода</text>
+<text x="247" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="var(--pa,#C9672C)">+ корневин</text>
+<text x="8" y="210" font-size="13" fill="var(--illink,#2B2620)">одинаково: черенки, свет, тепло, влажность</text>
+<text x="8" y="236" font-size="14" font-weight="700" fill="var(--pa,#C9672C)">разница — только одна: корневин</text>
+</g></symbol>
+
+<symbol id="k-steps" viewBox="0 0 320 270">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="160" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Гипотеза под проверкой</text>
+<rect x="60" y="34" width="200" height="38" rx="10" fill="var(--paper2,#E8DFCC)"/>
+<text x="160" y="58" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">наблюдение → вопрос</text>
+<path d="M160 72 L160 86" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="60" y="90" width="200" height="38" rx="10" fill="var(--ochre,#E2A31F)"/>
+<text x="160" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#22190A">гипотеза — догадка</text>
+<path d="M160 128 L160 142" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="60" y="146" width="200" height="38" rx="10" fill="var(--paper2,#E8DFCC)"/>
+<text x="160" y="170" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">эксперимент + контроль</text>
+<path d="M120 184 L70 210" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M200 184 L250 210" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="6" y="214" width="146" height="48" rx="10" fill="var(--leaf,#2D7A55)"/>
+<text x="79" y="234" text-anchor="middle" font-size="13" font-weight="700" fill="#F6FFF9">подтвердилась</text>
+<text x="79" y="252" text-anchor="middle" font-size="13" fill="#F6FFF9">→ теория, закон</text>
+<rect x="168" y="214" width="146" height="48" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--no,#B03A2E)" stroke-width="2.5"/>
+<text x="241" y="234" text-anchor="middle" font-size="13" font-weight="700" fill="var(--no,#B03A2E)">не подтвердилась</text>
+<text x="241" y="252" text-anchor="middle" font-size="13" fill="var(--illink,#2B2620)">→ новая гипотеза</text>
+</g></symbol>
+
+<symbol id="k-coleus" viewBox="0 0 330 176">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="6" y="20" width="16" height="110" fill="var(--sky,#C6E2EF)" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<text x="6" y="150" font-size="13" fill="var(--soft,#5F5648)">окно</text>
+<circle cx="50" cy="75" r="14" fill="var(--leaf,#2D7A55)"/>
+<text x="50" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#F6FFF9">а</text>
+<circle cx="180" cy="75" r="14" fill="var(--leaf,#2D7A55)" opacity=".7"/>
+<text x="180" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#F6FFF9">б</text>
+<circle cx="300" cy="75" r="14" fill="var(--leaf,#2D7A55)" opacity=".4"/>
+<text x="300" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">в</text>
+<path d="M50 104 L176 104" stroke="var(--soft,#5F5648)" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="113" y="122" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">3 метра</text>
+<text x="50" y="40" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">на окне</text>
+<text x="180" y="40" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">без прямых лучей</text>
+<text x="300" y="40" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">полутень</text>
+<text x="165" y="168" text-anchor="middle" font-size="13" font-weight="700" fill="var(--pa,#C9672C)">разница — только свет</text>
+</g></symbol>
+
+<symbol id="k-ants" viewBox="0 0 320 214">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="160" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Опыт на муравьиной ферме</text>
+<rect x="92" y="140" width="136" height="40" rx="10" fill="var(--brown,#8B5E3C)" opacity=".5"/>
+<text x="160" y="165" text-anchor="middle" font-size="13" fill="var(--illink,#2B2620)">выход из гнезда</text>
+<path d="M140 140 L72 92" stroke="var(--illink,#2B2620)" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M180 140 L248 92" stroke="var(--illink,#2B2620)" stroke-width="2" stroke-dasharray="5 4"/>
+<circle cx="60" cy="74" r="26" fill="var(--ochre,#E2A31F)"/>
+<text x="60" y="79" text-anchor="middle" font-size="14" font-weight="700" fill="#22190A">мёд</text>
+<circle cx="260" cy="74" r="26" fill="var(--ok,#3D7A38)"/>
+<text x="260" y="79" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">яблоко</text>
+<text x="160" y="104" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">одинаково далеко</text>
+<text x="160" y="204" text-anchor="middle" font-size="13" fill="var(--illink,#2B2620)">кусочки одного размера, одно время</text>
+</g></symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 6</span>
+    <h1>Эксперимент в биологических исследованиях</h1>
+    <p class="lede">Как проверить догадку: две группы, одно отличие — и честный вывод.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. С какой целью проводят научные эксперименты? 2. От чего зависит выбор методов в научном исследовании?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b5.html">‹ §5 Измерения</a>
+  <span class="pn cur">§6 Эксперимент</span>
+  <a class="pn" href="b7.html">§7 Описание результатов ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Эксперимент как научный метод">1</a><a href="#s2" data-j="s2" title="Этапы научного исследования">2</a><a href="#s3" data-j="s3" title="Особенности биологического эксперимента">3</a><a href="#s4" data-j="s4" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Эксперимент как научный метод</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="exp">Эксперимент</span> — это исследование в специально созданных и контролируемых условиях. Оно показывает, как эти условия влияют на объект или явление. Слово от латинского <i>экспериментум</i> — проба, опыт.</p>
+<p>Эксперимент сложнее наблюдения. С его помощью учёные подтверждают или опровергают свои научные предположения — <span class="term" role="button" tabindex="0" data-t="gip">гипотезы</span>.</p>
+<p><span class="big">Главное отличие от наблюдения:</span> в эксперименте учёный сам действует — меняет условия.</p>
+<p>Пример. Есть препараты, которые помогают черенкам растений пустить корни, например корневин. Как проверить, работает ли он? Берут две группы одинаковых черенков с одного растения. Ставят их в одинаковые условия: свет, температура, влажность.</p>
+<p>Одну группу обрабатывают корневином — это <span class="term" role="button" tabindex="0" data-t="egr">экспериментальная группа</span>. Другую ставят в обычную воду — это <span class="term" role="button" tabindex="0" data-t="kgr">контрольная группа</span>, для сравнения. Сосуды прозрачные, чтобы видеть корешки.</p>
+<p>Всё время следят за обеими группами: когда появились корешки, какой они длины, как растёт растение, появляются ли новые листья. Всё записывают. Потом сравнивают и делают вывод, помогает ли корневин.</p>
+<p>Чем больше растений в опыте, тем точнее вывод. Если в одинаковых условиях несколько опытов дали одно и то же — говорят о <span class="term" role="button" tabindex="0" data-t="dost">достоверности</span> результатов.</p>
+<p>Можно сравнить и несколько препаратов сразу — тогда экспериментальных групп будет несколько.</p>
+</div>
+<div class="book" hidden>
+<p>Исследование, проводимое в специально созданных и контролируемых условиях, которые позволяют установить, как эти условия влияют на объект или явление, называют <span class="term" role="button" tabindex="0" data-t="exp">экспериментом</span> (от лат. <i>экспериментум</i> — проба, опыт). Эксперимент — более сложный, практический метод, чем наблюдение. С его помощью учёные подтверждают или опровергают свои научные предположения — <b><span class="term" role="button" tabindex="0" data-t="gip">гипотезы</span></b>. От наблюдения эксперимент отличается активным воздействием на изучаемый объект.</p>
+<p>В настоящее время промышленность выпускает препараты для укоренения черенков растений (корневин, фитоклон, циркон и др.). Например, можно опытным путём проверить, как влияет применение корневина на образование корней у черенков комнатных растений. Для этого берут две группы одинаковых черенков с одного растения и помещают их в одинаковые условия (освещённость, температура, влажность воздуха и т. п.). Одну группу черенков используют для исследования (<span class="term" role="button" tabindex="0" data-t="egr">экспериментальная группа</span>), вторую — для сравнения (<span class="term" role="button" tabindex="0" data-t="kgr">контрольная группа</span>). Черенки экспериментальной группы обрабатывают корневином в соответствии с инструкцией, а черенки контрольной группы помещают в обычную воду без обработки в прозрачные сосуды. Через прозрачные стенки легко наблюдать за развитием корешков.</p>
+<p>В течение всего эксперимента наблюдают за ростом и развитием растений экспериментальной и контрольной групп. При этом отмечают появление корешков, измеряют их длину, а также развитие самого растения (его высоту, появление новых листьев, их площадь и т. п.). Все показатели подробно записывают. Сравнивая полученные данные, делают вывод об эффективности применения корневина. Чем больше растений в экспериментальной группе, тем точнее выводы. Если при соблюдении одних и тех же условий результаты нескольких опытов совпадают, то говорят о <span class="term" role="button" tabindex="0" data-t="dost">достоверности</span> полученных данных.</p>
+<p>Можно сравнить эффективность различных препаратов для укоренения черенков. В этом случае у вас будет несколько экспериментальных групп (по числу используемых препаратов).</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 250" role="img" aria-label="Опыт с черенками: контрольная группа — черенки в воде; экспериментальная — в воде с корневином; всё остальное одинаково, разница только одна — корневин"><use href="#k-groups"/></svg><figcaption>Две группы и одно-единственное отличие. Иначе непонятно, что именно подействовало.</figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Наблюдение</b><p>только смотрим и записываем, ничего не меняем (§4)</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Эксперимент</b><p>сами меняем условия и смотрим, что будет</p></div></div><p class="pairkey">Помнишь правило из §4? Если выманить Юкси семечками, это уже не наблюдение: ты вмешалась.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Денежное дерево</span></div><div class="lifebody"><p>У вас дома растёт денежное дерево. Его легко размножить: веточка или даже один листик, поставленный в воду или воткнутый в землю, пускает корни.</p><p>Вот готовый опыт как в учебнике: два одинаковых листика с одного денежного дерева. Один — в обычную воду (контрольная группа), другой — в воду с корневином (экспериментальная). Всё остальное одинаково: одно окно, одна вода, один день.</p></div><p class="lifebook">В учебнике это называется: <b>экспериментальная и контрольная группы</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Чем эксперимент отличается от наблюдения? Найди точные слова учебника.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Конец первого абзаца.</div>
+<div class="rev ans" id="a1" hidden>Эксперимент отличается от наблюдения активным воздействием на изучаемый объект: учёный сам создаёт и меняет условия.</div>
+</div>
+<div class="think">
+<p class="qt">2. Зачем в опыте с корневином нужна контрольная группа?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Ищи слова «для сравнения».</div>
+<div class="rev ans" id="a2" hidden>С ней сравнивают экспериментальную группу. Без неё нельзя понять, корни выросли из-за корневина или выросли бы и в обычной воде.</div>
+</div>
+<div class="think">
+<p class="qt">3. Почему черенки берут с одного растения и ставят в одинаковые условия?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a3" hidden>Чтобы группы отличались только одним — корневином. Тогда разницу в результате можно объяснить именно им.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Этапы научного исследования</h2></div>
+<div class="easy">
+<p>Обычно исследование начинается с наблюдения (рис. 25). Учёные разбирают и обобщают то, что увидели, и выдвигают гипотезы — предположения, которые могут это объяснить.</p>
+<p>Потом придумывают и проводят эксперименты, чтобы проверить гипотезы. В научном эксперименте обязательно есть <span class="term" role="button" tabindex="0" data-t="kop">контрольный опыт</span>. Его условия отличаются от эксперимента <b>одним и только одним</b> фактором.</p>
+<p>По результатам решают, какая гипотеза верна. Гипотеза, которую проверили и которая совпала с фактами, может стать <span class="term" role="button" tabindex="0" data-t="teor">теорией</span> или <span class="term" role="button" tabindex="0" data-t="zakon">законом</span>. Законом учёные называют что-то всеобщее, бесспорное и очень достоверное. Часто слова «закон» и «теория» используют как одинаковые.</p>
+<p>Для своих опытов пользуйся памяткой «Порядок проведения научного эксперимента» в конце страницы.</p>
+</div>
+<div class="book" hidden>
+<p>Обычно научное исследование начинается с наблюдения за объектом или явлением (рис. 25). После анализа и обобщения данных, полученных в результате наблюдений, выдвигаются гипотезы (предположения), которые могут их объяснить.</p>
+<p>На следующем этапе исследования разрабатывают и проводят эксперименты для проверки выдвинутых гипотез. Научный эксперимент должен непременно сопровождаться <b><span class="term" role="button" tabindex="0" data-t="kop">контрольным опытом</span></b>, условия которого отличаются от условий эксперимента одним (и только одним) фактором. Анализ результатов эксперимента позволяет решить, какая из гипотез верна. Гипотеза, которая была проверена и оказалась соответствующей фактам, может стать <b><span class="term" role="button" tabindex="0" data-t="teor">теорией</span></b> или <b><span class="term" role="button" tabindex="0" data-t="zakon">законом</span></b>. Называя какое-либо положение законом, учёные как бы подчёркивают его универсальность, неоспоримость, большую достоверность. Часто термины «закон» и «теория» употребляются как равнозначные.</p>
+<p>При организации собственных биологических экспериментов (опытов) используйте памятку (с. 45).</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-k25" src="img/10cc756e221d.jpg" alt="Этапы научного исследования сверху вниз: наблюдение, обобщение результатов, постановка проблемы, выдвижение гипотез, разработка и проведение эксперимента, анализ и сравнение результатов, выводы"><figcaption><span class="src">из учебника</span><b>Рис. 25.</b> Этапы научного исследования</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 320 270" role="img" aria-label="Наблюдение и вопрос, потом гипотеза-догадка, потом эксперимент с контролем; если гипотеза подтвердилась — теория или закон, если нет — новая гипотеза"><use href="#k-steps"/></svg><figcaption>Гипотеза — это ещё не знание. Знанием она становится, только когда её проверили.</figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Гипотеза</b><p>догадка, которую ещё надо проверить</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Теория, закон</b><p>проверенная гипотеза, совпавшая с фактами</p></div></div><p class="pairkey">Сначала <b>«наверное»</b>, потом <b>«точно»</b>.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Муравьиная ферма: мёд или яблоко?</span></div><div class="lifebody"><p>Настоящий эксперимент можно поставить на твоей муравьиной ферме — муравьям он не повредит.</p><p><b>Вопрос:</b> что муравьи любят больше — сладкое или фрукты?<br><b>Гипотеза:</b> запиши свою догадку <i>до</i> опыта. Например: «Муравьи пойдут к мёду».<br><b>Опыт:</b> положи на арену капельку мёда и кусочек яблока такого же размера, одинаково далеко от входа в гнездо.<br><b>Наблюдение:</b> через 10 минут и через час посчитай, сколько муравьёв у мёда и сколько у яблока. Запиши.<br><b>Повтори:</b> на следующий день ещё раз, но поменяй мёд и яблоко местами. Вдруг муравьи просто ходят туда, где ближе к выходу?<br><b>Вывод:</b> гипотеза подтвердилась или нет?</p><p>А с Люсей и Юкси правило прежнее: только наблюдаем и измеряем.</p></div><p class="lifebook">В учебнике это называется: <b>этапы научного исследования</b></p></aside>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 320 214" role="img" aria-label="Опыт на муравьиной ферме: мёд и яблоко одинаково далеко от выхода из гнезда, кусочки одного размера, одно время"><use href="#k-ants"/></svg><figcaption>Всё одинаково, кроме одного: что за еда.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. С чего обычно начинается научное исследование и чем оно заканчивается?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Рис. 25: первая и последняя ступенька.</div>
+<div class="rev ans" id="a4" hidden>Начинается с наблюдения за объектом или явлением, заканчивается выводами.</div>
+</div>
+<div class="think">
+<p class="qt">5. Чем условия контрольного опыта отличаются от условий эксперимента?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a5" hidden>Одним, и только одним, фактором.</div>
+</div>
+<div class="think">
+<p class="qt">6. Когда гипотеза может стать теорией или законом?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Второй абзац, середина.</div>
+<div class="rev ans" id="a6" hidden>Когда её проверили и она оказалась соответствующей фактам.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Особенности биологического эксперимента</h2></div>
+<div class="easy">
+<p>Разберём эксперимент по шагам — как свет влияет на рост и развитие растений. Наблюдения показывают: растениям для роста нужен свет.</p>
+<p><b>Проблема (вопрос):</b> как яркость освещения влияет на рост и развитие комнатного растения колеуса?</p>
+<p><b>Гипотеза:</b> колеус нормально растёт и развивается только при определённом освещении.</p>
+<p><b>План:</b> три укоренённых черенка колеуса с одного растения. Одинаковые горшки, одинаковая почва, одна комната, одна температура и влажность, поливают в одно время одинаковым количеством воды. Разное только освещение: первый — на солнечном окне, второй — в трёх метрах от окна, куда не попадают прямые лучи, третий — далеко от окна, в полутени.</p>
+<p><b>Наблюдение:</b> два месяца. В дневник записывают высоту растений, размер и окраску листьев.</p>
+<p><b>Результат (рис. 26):</b> первое растение росло хорошо, листья крупные, зелёные, красные, бордовые и жёлтые. У второго листья зеленее, красных и жёлтых оттенков меньше. У третьего побеги вытянуты, листья мельче и бледнее.</p>
+<p><b>Вывод:</b> колеус — светолюбивое растение, ему нужно яркое освещение. Гипотеза подтвердилась.</p>
+<p>Это учебный эксперимент, его результат заранее известен. В настоящем научном эксперименте берут как можно больше растений и обязательно повторяют опыт. Иногда контрольного варианта может и не быть.</p>
+<p>Разным растениям нужно разное освещение. Например, сенполии (узамбарской фиалке) нужен не яркий свет, а полутень. Даже простое исследование даёт научные выводы, если его хорошо продумать и провести по всем правилам.</p>
+</div>
+<div class="book" hidden>
+<p>Рассмотрим особенности биологического эксперимента, включая его конкретные этапы, на примере изучения влияния условий на рост и развитие растений. Наблюдения показывают, что для их роста и развития необходим свет. Итак, мы можем сформулировать проблему исследования в виде вопроса: «Какое влияние оказывает интенсивность освещения на рост и развитие растений колеуса?» Следующий этап — выдвижение гипотезы. Мы можем предположить, что нормальный рост и развитие комнатного растения колеуса происходит только при определённом освещении. Теперь, для того чтобы проверить нашу гипотезу, разработаем план эксперимента и проведём его. Возьмём три укоренённых черенка колеуса, полученные с одного растения. Поместим их в одинаковые условия: посадим в горшки одинакового размера, заполненные одинаковой почвой, и будем выращивать в одном помещении при одинаковой температуре и влажности воздуха, а полив всех трёх растений проводить в одно время одинаковым количеством воды. Различной будет только интенсивность освещения растений. Первое растение поместим на окно с ярким солнечным освещением, второе — в трёх метрах от окна так, чтобы на него не попадали прямые солнечные лучи, третье — вдали от окна, в полутени.</p>
+<p>Будем вести наблюдения за ростом и развитием растений в течение двух месяцев. Результаты записываем в дневник наблюдений. Отмечаем высоту растений, размер листьев, их окраску. Через два месяца, проанализировав результаты эксперимента, мы можем прийти к выводу, что интенсивность освещения действительно оказывает большое влияние на рост и развитие растений колеуса. Первое растение хорошо росло и развивалось. Его листья крупные с зелёными, красными, бордовыми, жёлтыми оттенками. У второго растения листья более зелёные. Красные, бордовые и жёлтые оттенки при этом менее выражены. У третьего растения побеги вытянуты, а листья более мелкие и бледные. Делаем вывод: колеус — светолюбивое растение, которому для нормального развития необходимо довольно яркое освещение. При менее ярком освещении развитие колеуса нарушается, что проявляется в величине и окраске его листьев (рис. 26). Таким образом, мы подтвердили гипотезу, выдвинутую в начале исследования.</p>
+<p>Следует отметить, что мы проводили учебный эксперимент, результаты которого хорошо известны. В научном эксперименте всегда берётся не одно, а как можно больше растений, обязательно достоверность результатов проверяется проведением повторных экспериментов. Иногда в эксперименте может и не быть контрольного варианта.</p>
+<p>Если вы будете оценивать влияние света на другие растения, то убедитесь, что требования растений к освещённости могут сильно отличаться. Например, сенполия (узамбарская фиалка) — одно из самых распространённых комнатных растений — нуждается не в ярком свете, а в полутени. Итак, даже на основе самого простого исследования можно сделать научно обоснованные выводы, если его тщательно продумать и провести, соблюдая все требования.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 176" role="img" aria-label="План опыта с колеусом: растение а на окне, растение б в трёх метрах от окна без прямых лучей, растение в в полутени; разница только в свете"><use href="#k-coleus"/></svg><figcaption>Три черенка, три места. Всё остальное одинаково.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-k26" src="img/c8d9d4346906.jpg" alt="Три растения колеуса: крупное тёмно-красное, поменьше зелёное, маленькое бледно-жёлтое"><figcaption><span class="src">из учебника</span><b>Рис. 26.</b> Влияние света на рост и развитие колеуса: а — прямые солнечные лучи; б — непрямые лучи; в — полутень<br><span style="color:var(--soft)">▲ Как изменились окраска и размер листьев у растения в полутени? Это задание 3 в «Моей лаборатории».</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Где стоит твоё денежное дерево?</span></div><div class="lifebody"><p>Посмотри, где у вас стоят денежное дерево и второй цветок: на окне или вдали от него? Какого цвета у них листья, крупные они или мелкие?</p><p>Это наблюдение может подсказать гипотезу: «Если переставить цветок ближе к окну, листья станут крупнее». А проверить её поможет эксперимент.</p></div><p class="lifebook">В учебнике это называется: <b>проблема, гипотеза, эксперимент</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Что в опыте с колеусом было одинаковым, а что — разным?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>План эксперимента в первом абзаце.</div>
+<div class="rev ans" id="a7" hidden>Одинаковые: черенки с одного растения, горшки, почва, комната, температура, влажность, полив. Разное — только освещение.</div>
+</div>
+<div class="think">
+<p class="qt">8. Как выглядел колеус в полутени по сравнению с растением на солнечном окне?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Результаты и рис. 26 (в).</div>
+<div class="rev ans" id="a8" hidden>Побеги вытянуты, листья мельче и бледнее. У растения на окне листья крупные и яркие: красные, бордовые, жёлтые.</div>
+</div>
+<div class="think">
+<p class="qt">9. Чем учебный эксперимент отличается от научного?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Предпоследний абзац раздела.</div>
+<div class="rev ans" id="a9" hidden>Результат учебного известен заранее. В научном берут как можно больше растений и обязательно повторяют эксперимент, чтобы проверить достоверность.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Эксперимент · Гипотеза · Контрольный опыт · Теория · Закон</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Какое значение имеют биологические исследования?</li><li>Какие этапы выделяют в научном исследовании?</li><li>Что такое научный эксперимент? С какой целью он проводится?</li><li>Почему в эксперименте проводят наблюдение как минимум за двумя группами объектов?</li><li>Чем гипотеза отличается от закона или теории?</li></ol></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Чем эксперимент отличается от наблюдений?</p></div>
+<div class="rubric">Моя лаборатория · Выполните задания</div>
+<div class="ask"><b>Задания учебника</b>
+<ol><li>Используя дополнительные источники информации (научно-популярную литературу, справочники, статьи, в том числе ресурсы Интернета), выясните, какие биологические эксперименты проводятся в настоящее время. Выберите из них наиболее понравившийся вам и подготовьте о нём краткое сообщение.</li><li>Самостоятельно поставьте биологический эксперимент. Возьмите две небольшие баночки. В каждую из них налейте воды. Поместите в них по луковице. Одну банку с луковицей поставьте на окно, которое хорошо освещается солнцем, а другую — там, где практически солнца не бывает. Температура в обоих случаях должна быть одинаковой. По мере необходимости доливайте в банки воду. Проведите наблюдение за происходящими изменениями в течение 10 дней. Результаты наблюдений записывайте в таблицу «Влияние света на развитие листьев лука». Сделайте выводы о влиянии уровня освещённости на развитие листьев лука.</li><li>В описанном в параграфе эксперименте (см. рис. 26) один из укоренённых черенков колеуса выращивался в полутени. Как изменились окраска и размер листьев колеуса по сравнению с контрольным растением? Для чего было необходимо задавать и соблюдать одинаковые условия выращивания для трёх растений, изменяя только интенсивность освещения?</li></ol></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Опыт с луком — по шагам</span></div><div class="lifebody"><p><b>1. Гипотеза.</b> Запиши догадку до начала: где листья вырастут длиннее и зеленее?<br><b>2. Две банки, две луковицы.</b> Луковицы похожие по размеру, воды одинаково — луковица должна только касаться воды донцем.<br><b>3. Банка № 1</b> — на солнечное окно. <b>Банка № 2</b> — в тёмное место в той же комнате, чтобы температура была одинаковой.<br><b>4. 10 дней.</b> Доливай воду в обе банки поровну. На 5-й, 8-й и 10-й день измерь самый длинный лист рулеткой — ты уже умеешь из §5.<br><b>5. Записывай</b> в дневник ниже. Можно ещё фотографировать каждый день.<br><b>6. Вывод.</b> Подтвердилась гипотеза?</p></div><p class="lifebook">В учебнике это называется: <b>постановка эксперимента</b></p></aside>
+<div class="diary"><h3>Дневник опыта: влияние света на листья лука</h3><p class="dnote">Банка № 1 — на солнечном окне, банка № 2 — там, где солнца почти нет. Записывай прямо сюда: всё сохранится в этом браузере.</p><div class="dwrap"><table><tr><th>Происходящие изменения</th><th>№ 1<br>свет</th><th>№ 2<br>темнота</th></tr><tr><td>Листья появились</td><td><input id="on0_1" aria-label="Листья появились, банка 1"></td><td><input id="on0_2" aria-label="Листья появились, банка 2"></td></tr><tr><td>Длина листьев на 5-й день</td><td><input id="on1_1" aria-label="Длина листьев на 5-й день, банка 1"></td><td><input id="on1_2" aria-label="Длина листьев на 5-й день, банка 2"></td></tr><tr><td>Длина листьев на 8-й день</td><td><input id="on2_1" aria-label="Длина листьев на 8-й день, банка 1"></td><td><input id="on2_2" aria-label="Длина листьев на 8-й день, банка 2"></td></tr><tr><td>Длина листьев на 10-й день</td><td><input id="on3_1" aria-label="Длина листьев на 10-й день, банка 1"></td><td><input id="on3_2" aria-label="Длина листьев на 10-й день, банка 2"></td></tr><tr><td>Окраска листьев</td><td><input id="on4_1" aria-label="Окраска листьев, банка 1"></td><td><input id="on4_2" aria-label="Окраска листьев, банка 2"></td></tr><tr><td>Внешний вид листьев</td><td><input id="on5_1" aria-label="Внешний вид листьев, банка 1"></td><td><input id="on5_2" aria-label="Внешний вид листьев, банка 2"></td></tr><tr><td>Вывод</td><td colspan="2"><input id="on_out" aria-label="Вывод"></td></tr></table></div><p class="dsaved" id="onSaved"></p></div><script>(function(){var ids=[].slice.call(document.querySelectorAll(".diary input")),s=document.getElementById("onSaved");ids.forEach(function(el){try{var v=localStorage.getItem("bio6_"+el.id);if(v)el.value=v}catch(e){}el.addEventListener("input",function(){try{localStorage.setItem("bio6_"+el.id,el.value);s.textContent="Сохранено"}catch(e){s.textContent=""}})});})();</script>
+<div class="rubric">Из истории науки</div>
+<div class="easy">
+<p>История науки — это история новых методов исследования. Эксперимент в биологии связывают с именем английского учёного <b>Уильяма Гарвея</b>. В 1628 году он впервые провёл эксперименты по изучению движения крови в теле овцы и доказал: кровь возвращается к сердцу по замкнутому кругу. Так появилась теория кровообращения.</p>
+<p>Но широко пользоваться экспериментом в биологии стали только в XIX веке, а в XX веке он стал главным методом. Помогли новые приборы: электронный микроскоп (1932 год), томограф (1969 год, рис. 27). Эксперимент сильно изменил биологию и открыл новые пути, чтобы пользоваться её знаниями.</p>
+<p>Кроме лабораторных опытов, бывают и природные эксперименты. В Центрально-Чернозёмном заповеднике много лет изучают, как степь зарастает деревьями. Оказалось: диких травоядных животных в степи стало мало, и если человек совсем не вмешивается, степные растения могут исчезнуть. По результатам учёные составили рекомендации, как сохранить заповедную степь.</p>
+</div>
+<div class="book" hidden>
+<p>История любой науки, и биологии в частности, — это история разработки и применения новых методов исследования. Так, в биологии применение экспериментального метода связывают с именем <b>Уильяма Гарвея</b>. В 1628 году этот английский учёный впервые провёл эксперименты по изучению движения крови в теле овцы и доказал, что кровь возвращается к сердцу по замкнутому циклу. На основании этих экспериментов была сформулирована теория кровообращения.</p>
+<p>Однако широко применяться в биологии эксперимент начал лишь в XIX веке, а в XX веке экспериментальный метод становится ведущим в биологической науке. Это было обусловлено появлением новых приборов для исследований. Например таких сложных, как электронный микроскоп, созданный в 1932 году, томограф (рис. 27), сконструированный в 1969-м. Во второй половине XX века в биологии развивается целое направление, которое предусматривает разработку новых экспериментальных методов исследования и создание новейших приборов.</p>
+<p>Экспериментальный метод коренным образом преобразил биологию. Он позволил многократно расширить её познавательные возможности и открыть новые пути для использования биологических знаний во всех сферах деятельности человека.</p>
+<p>Кроме лабораторных, в биологии часто проводятся природные эксперименты. Так, в одном из старейших в России Центрально-Чернозёмном государственном природном биосферном заповеднике в течение многих лет изучается процесс зарастания степных участков древесными породами. Оказалось, что в современных условиях на степных участках уже редко встречаются дикие травоядные животные, поэтому при полном невмешательстве человека велика опасность потерять те растительные сообщества, ради которых заповедник создавался. На основе результатов своих исследований учёные разработали рекомендации, выполнение которых позволяет сохранить растительность заповедной степи.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-k27" src="img/4acc837ef28e.jpg" alt="Большой белый прибор-томограф с кольцом и столом в больничном кабинете"><figcaption><span class="src">из учебника</span><b>Рис. 27.</b> Современный томограф</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Гарвей и ветеринария</span></div><div class="lifebody"><p>Опыты Гарвея проводились на живой овце — так в науке поступали четыреста лет назад. Зато благодаря им люди узнали, что сердце гоняет кровь по кругу.</p><p>Это знает каждый врач и каждый ветеринар: когда ветеринар слушает сердце собаки стетоскопом, он слушает тот самый насос, который открыл Гарвей.</p></div><p class="lifebook">В учебнике это называется: <b>эксперимент в истории биологии</b></p></aside>
+<div class="rubric">Шаги к успеху</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Порядок проведения научного эксперимента</button></div>
+<div class="rev plan" id="r1" hidden><ol><li>Поставь цель: уточни вопрос, на который ищешь ответ.</li><li>Выдвини гипотезу — предположение, которое может быть ответом.</li><li>Составь план: дата и время; материалы и оборудование; контрольный вариант (условия не меняются); экспериментальный вариант (условия изменены).</li><li>Наблюдай и записывай измерения в таблицу. Добавь описания, фото, видео, рисунки.</li><li>Сравни результаты с гипотезой. Если ответ неясен — нужны ещё опыты и данные.</li><li>Сформулируй вывод, который отвечает на цель.</li><li>Соблюдай технику безопасности: мой руки до и после, при необходимости надевай перчатки, береги глаза (попало — промывай водой не меньше 5 минут), не держи еду рядом с опытом.</li></ol></div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Как провести сравнение</button></div>
+<div class="rev plan" id="r2" hidden><ol><li>Выясни, что с чем сравниваешь.</li><li>Мысленно раздели объект на части.</li><li>Выдели главные признаки.</li><li>Сравни объекты по одним и тем же признакам: что общего, чем различаются.</li><li>Запиши результат и сделай вывод.</li></ol></div></div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt3" data-n="6">
+<div class="sortlab">Наблюдение или эксперимент?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Смотришь, сколько раз Юкси выходит из домика, и записываешь</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">эксперимент</button></div><p class="swhy" hidden>Ты ничего не меняешь — наблюдение.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Кладёшь муравьям мёд и яблоко и смотришь, к чему пойдут</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">эксперимент</button></div><p class="swhy" hidden>Ты сама создала условия — эксперимент.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Черенки в воде и в воде с корневином</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">эксперимент</button></div><p class="swhy" hidden>Есть контрольная и экспериментальная группа.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Записываешь, когда желтеют листья в лесу</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">эксперимент</button></div><p class="swhy" hidden>Фенологическое наблюдение из §4 — без вмешательства.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Ставишь одну луковицу на свет, другую — в темноту</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">эксперимент</button></div><p class="swhy" hidden>Ты меняешь одно условие — свет.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Выманиваешь Люсю семечками из домика</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">эксперимент</button></div><p class="swhy" hidden>Ты вмешалась — это уже не наблюдение.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt4" data-n="4">
+<div class="sortlab">Какая это группа?</div>
+<div class="sitem" data-r="0"><p class="stext">Черенки в обычной воде</p><div class="sbtns"><button class="sbtn" data-b="0">контрольная</button><button class="sbtn" data-b="1">экспериментальная</button></div><p class="swhy" hidden>Без обработки — для сравнения.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Черенки, обработанные корневином</p><div class="sbtns"><button class="sbtn" data-b="0">контрольная</button><button class="sbtn" data-b="1">экспериментальная</button></div><p class="swhy" hidden>На них проверяют корневин.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Листик денежного дерева в воде с корневином</p><div class="sbtns"><button class="sbtn" data-b="0">контрольная</button><button class="sbtn" data-b="1">экспериментальная</button></div><p class="swhy" hidden>Проверяем действие корневина.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Листик денежного дерева в обычной воде</p><div class="sbtns"><button class="sbtn" data-b="0">контрольная</button><button class="sbtn" data-b="1">экспериментальная</button></div><p class="swhy" hidden>Для сравнения.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Эксперимент</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 250" aria-hidden="true"><use href="#k-groups"/></svg><span class="ftext">Исследование в созданных условиях; учёный сам меняет условия. Экспериментум — проба, опыт.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Гипотеза</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 320 270" aria-hidden="true"><use href="#k-steps"/></svg><span class="ftext">Научное предположение, которое проверяют экспериментом.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Контрольный опыт</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 250" aria-hidden="true"><use href="#k-groups"/></svg><span class="ftext">Опыт для сравнения; отличается от эксперимента только одним фактором.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Теория</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 320 270" aria-hidden="true"><use href="#k-steps"/></svg><span class="ftext">Проверенная гипотеза, которая совпала с фактами.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Закон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 320 270" aria-hidden="true"><use href="#k-steps"/></svg><span class="ftext">Всеобщее, бесспорное и очень достоверное положение.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Этапы исследования</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="k25" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Наблюдение → обобщение → проблема → гипотеза → эксперимент → анализ → выводы.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Чем эксперимент отличается от наблюдения?</h3><div class="opts">
+<button class="opt" data-ok="1">Активным воздействием на объект</button>
+<button class="opt">Тем, что проводится на улице</button>
+<button class="opt">Тем, что ничего не записывают</button>
+<button class="opt">Ничем</button></div>
+<div class="fb">В эксперименте учёный сам меняет условия.</div></div>
+<div class="q"><h3>2. Что такое гипотеза?</h3><div class="opts">
+<button class="opt" data-ok="1">Научное предположение</button>
+<button class="opt">Проверенный закон</button>
+<button class="opt">Прибор для измерения</button>
+<button class="opt">Дневник наблюдений</button></div>
+<div class="fb">Гипотезу проверяют экспериментом.</div></div>
+<div class="q"><h3>3. Чем контрольный опыт отличается от эксперимента?</h3><div class="opts">
+<button class="opt" data-ok="1">Только одним фактором</button>
+<button class="opt">Всем</button>
+<button class="opt">Двумя-тремя факторами</button>
+<button class="opt">Ничем</button></div>
+<div class="fb">Одним, и только одним — иначе непонятно, что подействовало.</div></div>
+<div class="q"><h3>4. Что выяснили в опыте с колеусом?</h3><div class="opts">
+<button class="opt" data-ok="1">Колеус — светолюбивое растение</button>
+<button class="opt">Колеусу нужна полутень</button>
+<button class="opt">Свет на колеус не влияет</button>
+<button class="opt">Колеусу нужен корневин</button></div>
+<div class="fb">Полутень любит сенполия, а колеусу нужен яркий свет.</div></div>
+<div class="q"><h3>5. Когда гипотеза может стать теорией?</h3><div class="opts">
+<button class="opt" data-ok="1">Когда её проверили и она совпала с фактами</button>
+<button class="opt">Когда её придумал известный учёный</button>
+<button class="opt">Когда в неё многие поверили</button>
+<button class="opt">Сразу</button></div>
+<div class="fb">Проверка и совпадение с фактами.</div></div>
+<div class="q"><h3>6. Кто первым провёл эксперименты по изучению движения крови?</h3><div class="opts">
+<button class="opt" data-ok="1">Уильям Гарвей</button>
+<button class="opt">Аристотель</button>
+<button class="opt">Гиппократ</button>
+<button class="opt">Вернадский</button></div>
+<div class="fb">В 1628 году; так появилась теория кровообращения.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Что такое эксперимент</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Исследование в специально созданных и контролируемых условиях (экспериментум — проба, опыт).</li><li>Отличается от наблюдения активным воздействием на объект.</li><li>Подтверждает или опровергает гипотезы.</li></ol></div>
+</div>
+<div class="think">
+<h3>Опыт с черенками и корневином</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Две группы одинаковых черенков с одного растения, одинаковые условия.</li><li>Экспериментальная — с корневином, контрольная — в обычной воде.</li><li>Наблюдают, измеряют, сравнивают; чем больше растений, тем точнее вывод.</li></ol></div>
+</div>
+<div class="think">
+<h3>Этапы научного исследования</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Наблюдение, обобщение, постановка проблемы.</li><li>Гипотеза и эксперимент с контрольным опытом (отличие — один фактор).</li><li>Анализ, выводы; проверенная гипотеза становится теорией или законом.</li></ol></div>
+</div>
+<div class="think">
+<h3>Опыт с колеусом</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Вопрос: как освещение влияет на рост колеуса? Гипотеза: нужен определённый свет.</li><li>Три черенка: солнечное окно, 3 м от окна, полутень; остальное одинаково.</li><li>Вывод: колеус светолюбивый; в полутени листья мельче и бледнее (рис. 26).</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b5.html">‹ §5 Измерения</a>
+  <span class="pn cur">§6 Эксперимент</span>
+  <a class="pn" href="b7.html">§7 Описание результатов ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 6, с. 40—45. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'k-groups':'0 0 330 250','k-steps':'0 0 320 270','k-coleus':'0 0 330 176','k-ants':'0 0 320 214'};
+
+var T={
+exp:{w:"Эксперимент",k:"практический метод",s:"k-groups",t:"Исследование в специально созданных условиях. Учёный сам меняет условия и смотрит, как это влияет на объект.",r:"<b>экспериментум</b> (лат.) — проба, опыт",e:"Положить муравьям мёд и яблоко и посмотреть, к чему они пойдут, — это эксперимент."},
+gip:{w:"Гипотеза",k:"этап исследования",s:"k-steps",t:"Научное предположение, догадка. Её проверяют экспериментом.",r:"",e:""},
+kgr:{w:"Контрольная группа",k:"в эксперименте",s:"k-groups",t:"Группа, которую оставляют без изменений, чтобы было с чем сравнить.",r:"",e:""},
+egr:{w:"Экспериментальная группа",k:"в эксперименте",s:"k-groups",t:"Группа, на которой проверяют то, что изучают: например, черенки с корневином.",r:"",e:""},
+dost:{w:"Достоверность",k:"результатов",s:"k-steps",t:"Результатам можно верить, если в одинаковых условиях несколько опытов дали одно и то же.",r:"",e:""},
+kop:{w:"Контрольный опыт",k:"обязателен",s:"k-groups",t:"Опыт для сравнения. Его условия отличаются от эксперимента только одним фактором.",r:"",e:""},
+teor:{w:"Теория",k:"итог исследования",s:"k-steps",t:"Гипотеза, которую проверили, и она совпала с фактами.",r:"",e:""},
+zakon:{w:"Закон",k:"итог исследования",s:"k-steps",t:"Положение, которое учёные считают всеобщим, бесспорным и очень достоверным.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b6:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b6:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b6:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b6:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

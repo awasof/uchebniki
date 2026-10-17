@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Невидимые соседи: бактерии делают твой йогурт, а вирус — это просто чужие чертежи в обёртке.">
+<title>Бактерии и вирусы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="o-size" viewBox="0 0 330 214">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Кто меньше</text>
+<circle cx="70" cy="96" r="60" fill="var(--sky,#C6E2EF)" fill-opacity=".6" stroke="var(--pb,#3B6FA8)" stroke-width="3"/>
+<circle cx="80" cy="90" r="16" fill="var(--pb,#3B6FA8)" fill-opacity=".4"/>
+<rect x="196" y="86" width="26" height="12" rx="6" fill="var(--leaf,#2D7A55)"/>
+<circle cx="292" cy="92" r="3" fill="var(--no,#B03A2E)"/>
+<path d="M140 92 L182 92" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M236 92 L278 92" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<text x="161" y="82" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">в 50 раз</text>
+<text x="257" y="82" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">в 50 раз</text>
+<g font-size="12" text-anchor="middle" fill="var(--illink,#2B2620)">
+<text x="70" y="176" font-weight="700">клетка</text><text x="70" y="192">0,05 мм</text>
+<text x="209" y="176" font-weight="700">бактерия</text><text x="209" y="192">0,001 мм</text>
+<text x="292" y="176" font-weight="700">вирус</text><text x="292" y="192">не виден</text>
+</g>
+<text x="165" y="207" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">вирус не увидеть даже в световой микроскоп</text>
+</g></symbol>
+
+<symbol id="o-virus" viewBox="0 0 330 250">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Как вирус захватывает клетку</text>
+<rect x="6" y="30" width="318" height="54" rx="10" fill="var(--paper2,#E8DFCC)"/>
+<circle cx="34" cy="57" r="13" fill="var(--no,#B03A2E)" fill-opacity=".85"/>
+<text x="58" y="52" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">1. Вне клетки вирус «спит»</text>
+<text x="58" y="70" font-size="12" fill="var(--soft,#5F5648)">не питается, не дышит, не растёт</text>
+<path d="M165 86 L165 98" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="6" y="102" width="318" height="54" rx="10" fill="var(--paper2,#E8DFCC)"/>
+<rect x="22" y="114" width="28" height="30" rx="5" fill="var(--brown,#8B5E3C)"/>
+<text x="58" y="124" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">2. Проник в клетку</text>
+<text x="58" y="142" font-size="12" fill="var(--soft,#5F5648)">подложил свои «чертежи» в её сундук</text>
+<path d="M165 158 L165 170" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="6" y="174" width="318" height="70" rx="10" fill="var(--no,#B03A2E)" fill-opacity=".14"/>
+<g fill="var(--no,#B03A2E)"><circle cx="22" cy="198" r="6"/><circle cx="38" cy="198" r="6"/><circle cx="30" cy="212" r="6"/><circle cx="46" cy="212" r="6"/></g>
+<text x="58" y="196" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">3. Клетка строит копии вируса</text>
+<text x="58" y="214" font-size="12" fill="var(--soft,#5F5648)">из своих веществ и сил, а копии</text>
+<text x="58" y="230" font-size="12" fill="var(--soft,#5F5648)">заражают новые клетки</text>
+</g></symbol>
+
+<symbol id="o-protect" viewBox="0 0 330 250">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Как защититься от болезней</text>
+<g font-size="12" font-weight="700" text-anchor="middle" fill="var(--illink,#2B2620)">
+<rect x="6" y="30" width="154" height="34" rx="9" fill="var(--water,#6FA8C4)" fill-opacity=".35"/><text x="83" y="52">мыть руки</text>
+<rect x="170" y="30" width="154" height="34" rx="9" fill="var(--water,#6FA8C4)" fill-opacity=".35"/><text x="247" y="52">чистить зубы</text>
+<rect x="6" y="72" width="154" height="34" rx="9" fill="var(--water,#6FA8C4)" fill-opacity=".35"/><text x="83" y="94">кипятить воду</text>
+<rect x="170" y="72" width="154" height="34" rx="9" fill="var(--water,#6FA8C4)" fill-opacity=".35"/><text x="247" y="94">правильно готовить еду</text>
+<rect x="6" y="114" width="154" height="34" rx="9" fill="var(--leaf,#2D7A55)" fill-opacity=".25"/><text x="83" y="136">прививки</text>
+<rect x="170" y="114" width="154" height="34" rx="9" fill="var(--leaf,#2D7A55)" fill-opacity=".25"/><text x="247" y="136">витамины, закаливание</text>
+</g>
+<rect x="6" y="160" width="318" height="82" rx="10" fill="var(--paper2,#E8DFCC)"/>
+<text x="165" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">Если заболел</text>
+<text x="165" y="202" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">лечение — у врача, лекарства — по его совету;</text>
+<text x="165" y="220" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">больной сидит дома (карантин),</text>
+<text x="165" y="236" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">чтобы не заразить других</text>
+</g></symbol>
+
+<symbol id="o-rabies" viewBox="0 0 330 280">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Бешенство — правила для тебя</text>
+<rect x="6" y="30" width="318" height="56" rx="10" fill="var(--no,#B03A2E)" fill-opacity=".14"/>
+<text x="16" y="52" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">Это вирус. Передаётся через укус,</text>
+<text x="16" y="70" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">царапину или слюну больного зверя</text>
+<g font-size="12" fill="var(--illink,#2B2620)">
+<rect x="6" y="94" width="318" height="30" rx="8" fill="var(--paper2,#E8DFCC)"/><text x="16" y="114">✓ корм — в миску, а не с руки</text>
+<rect x="6" y="130" width="318" height="30" rx="8" fill="var(--paper2,#E8DFCC)"/><text x="16" y="150">✓ незнакомых кошек и собак не гладить</text>
+<rect x="6" y="166" width="318" height="30" rx="8" fill="var(--paper2,#E8DFCC)"/><text x="16" y="186">✓ к странному зверю не подходить</text>
+<rect x="6" y="202" width="318" height="30" rx="8" fill="var(--paper2,#E8DFCC)"/><text x="16" y="222">✓ домашних зверей прививают каждый год</text>
+</g>
+<rect x="6" y="240" width="318" height="36" rx="9" fill="var(--no,#B03A2E)"/>
+<text x="165" y="263" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Укусили или поцарапали — сразу к взрослым!</text>
+</g></symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 14</span>
+    <h1>Многообразие и значение бактерий и вирусов</h1>
+    <p class="lede">Невидимые соседи: бактерии делают твой йогурт, а вирус — это просто чужие чертежи в обёртке.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. На основании какого признака бактерии выделены в отдельное царство? 2. Какие болезни, вызываемые бактериями, вы знаете? 3. В чём принципиальное отличие вирусов от других организмов? 4. Какие болезни, вызываемые вирусами, вы знаете?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b13.html">‹ §13 Растения, животные, грибы</a>
+  <span class="pn cur">§14 Бактерии и вирусы</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Бактерии">1</a><a href="#s2" data-j="s2" title="Болезнетворные бактерии и защита от них">2</a><a href="#s3" data-j="s3" title="Роль бактерий в природе и жизни человека">3</a><a href="#s4" data-j="s4" title="Вирусы">4</a><a href="#s5" data-j="s5" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Бактерии</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="bakt">Бактерии</span> по строению и жизни сильно отличаются от других организмов. Большинство из них видно только при большом увеличении микроскопа. Длина обычной бактерии — примерно в тысячу раз меньше миллиметра, а самые мелкие шарики — всего 0,0001 мм. Бактерии бывают разной формы (рис. 73).</p>
+<p>Главная особенность бактерий: <span class="big">в их клетках нет ядра</span>, отделённого от цитоплазмы мембраной. Снаружи клетку обычно покрывает плотная оболочка (рис. 74). Поэтому бактерии — безъядерные организмы, или <span class="term" role="button" tabindex="0" data-t="prok">прокариоты</span> (§12).</p>
+<p><b>Где живут.</b> На Земле почти нет места без бактерий: они в почве, воздухе, воде, в растениях, животных и человеке.</p>
+<p><b>Как живут.</b> Одним бактериям нужен кислород, другие живут только там, где кислорода нет, а третьи могут и так, и так. Большинство бактерий питаются готовыми органическими веществами, но некоторые делают их сами — например, цианобактерии.</p>
+</div>
+<div class="book" hidden>
+<p><b>Характеристика бактерий.</b> По своему строению и жизнедеятельности <b><span class="term" role="button" tabindex="0" data-t="bakt">бактерии</span></b> в значительной степени отличаются от других живых организмов. Клетки большинства бактерий можно увидеть только при большом увеличении микроскопа. Длина большинства бактерий примерно в тысячу раз меньше миллиметра, а клетки наиболее мелких шаровидных бактерий имеют в диаметре всего одну десятитысячную долю миллиметра (0,0001 мм). Их клетки имеют различную форму (рис. 73).</p>
+<p>Отличительной особенностью бактерий является отсутствие в их клетках оформленного ядра, отделённого от цитоплазмы мембраной. Как правило, клетки большинства бактерий покрыты плотной оболочкой (рис. 74). Следовательно, бактерии относят к безъядерным организмам, или <b><span class="term" role="button" tabindex="0" data-t="prok">прокариотам</span></b>.</p>
+<p><b>Распространение бактерий.</b> На нашей планете практически нет места, где бы не встречались бактерии. Они обитают в почве, воздухе, воде, в организмах растений, животных и человека.</p>
+<p><b>Жизнедеятельность бактерий.</b> Одни бактерии нуждаются в кислороде, а другие, наоборот, живут только в бескислородной среде. Встречаются виды, которые способны жить как в кислородной, так и в бескислородной средах. Большинство бактерий питаются готовыми органическими веществами, но некоторые способны самостоятельно образовывать органические вещества из неорганических, например цианобактерии.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s73" src="img/955eaf69f40e.jpg" alt="Десять кружков с бактериями разной формы: шарики гроздью, палочки, изогнутые, спирали, цепочки шариков, бактерии со жгутиками"><figcaption><span class="src">из учебника</span><b>Рис. 73.</b> Разнообразие форм бактерий<br><span style="color:var(--soft)">▲ Найди шарики (кокки), палочки (бациллы) и спирали — вспомни §10.</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s74" src="img/99030781a55d.jpg" alt="Схема бактерии-палочки: снаружи оболочка с ворсинками и жгутиками, внутри цитоплазма и клубок генетического материала — кольцевая хромосома, ядра нет"><figcaption><span class="src">из учебника</span><b>Рис. 74.</b> Схема строения клетки бактерии<br><span style="color:var(--soft)">▲ Найди: где у бактерии ядро? Подсказка: его нет.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 214" role="img" aria-label="Сравнение размеров: клетка 0,05 мм, бактерия 0,001 мм — в 50 раз меньше, вирус ещё в 50 раз меньше и не виден даже в световой микроскоп"><use href="#o-size"/></svg><figcaption>Бактерия меньше клетки, вирус меньше бактерии.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Чем клетка бактерии отличается от клеток растений и животных?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a1" hidden>В ней нет оформленного ядра, отделённого от цитоплазмы мембраной.</div>
+</div>
+<div class="think">
+<p class="qt">2. Где живут бактерии?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Абзац «Распространение бактерий».</div>
+<div class="rev ans" id="a2" hidden>Практически везде: в почве, воздухе, воде, в организмах растений, животных и человека.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Болезнетворные бактерии и защита от них</h2></div>
+<div class="easy">
+<p>Некоторые бактерии, попав в организм человека, вызывают опасные болезни: чуму, туберкулёз, тиф, холеру, столбняк. Это <span class="term" role="button" tabindex="0" data-t="bolz">болезнетворные бактерии</span>.</p>
+<p>Чтобы не заразиться, есть меры <span class="term" role="button" tabindex="0" data-t="prof">профилактики</span>: кипятить питьевую воду, правильно готовить еду, соблюдать гигиену (мыть руки перед едой, чистить зубы), делать прививки — <span class="term" role="button" tabindex="0" data-t="vakc">вакцинацию</span>, принимать витамины, закаляться.</p>
+<p>Бактериальные болезни лечат лекарствами под наблюдением врача. Заболевшего изолируют, а иногда объявляют карантин, чтобы болезнь не распространилась.</p>
+</div>
+<div class="book" hidden>
+<p><b>Болезнетворные бактерии.</b> Попадая в организм человека, некоторые бактерии вызывают опасные болезни: чуму, туберкулёз, тиф, холеру, столбняк и мн. др.</p>
+<p>Для предотвращения заражения бактериальными заболеваниями разработаны меры их профилактики. К ним относятся кипячение питьевой воды, правильная обработка пищевых продуктов, соблюдение правил личной гигиены (мыть руки перед едой, чистить зубы и т. п.), профилактические прививки (вакцинирование), приём витаминов, закаливание организма. Бактериальные заболевания лечат с помощью медикаментов под наблюдением врача. При этом заболевшего человека изолируют и устанавливают карантин, чтобы предотвратить распространение болезни.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 250" role="img" aria-label="Как защититься от болезней: мыть руки, чистить зубы, кипятить воду, правильно готовить еду, прививки, витамины и закаливание. Если заболел — лечение у врача, больной сидит дома, чтобы не заразить других"><use href="#o-protect"/></svg><figcaption>Шесть способов не заболеть — и что делать, если заболел.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Вероника, проверь свои руки!</span></div><div class="lifebody"><p>Вероника, бактерий и спор плесени не видно глазом — но их можно «поймать». Попроси папу или маму сделать с тобой опыт:</p><p><b>1.</b> Возьмите три кусочка хлеба и три пакета с застёжкой.<br><b>2.</b> Кусочек № 1 потрогай <b>немытыми</b> руками (например, после улицы или телефона) и положи в пакет.<br><b>3.</b> Вымой руки с мылом, потрогай кусочек № 2 и положи во второй пакет.<br><b>4.</b> Кусочек № 3 положи в пакет чистой ложкой, не трогая руками, — это контроль, как в §6.<br><b>5.</b> Закройте пакеты, подпишите и оставьте в тёплом месте на неделю. <b>Не открывайте!</b> В конце выбросьте пакеты целиком.</p><p>На хлебе вырастет плесень (это гриб из §13), но где её будет больше — подскажет, сколько всего живёт на немытых руках.</p></div><p class="lifebook">В учебнике это называется: <b>профилактика: мыть руки</b></p></aside>
+<div class="diary"><h3>Дневник опыта: чистые и грязные руки</h3><p class="dnote">Пакет № 1 — хлеб трогали немытыми руками, № 2 — вымытыми, № 3 — не трогали совсем. Записывай, что видишь. Пакеты не открывай!</p><div class="dwrap"><table><tr><th></th><th>№ 1<br>немытые</th><th>№ 2<br>вымытые</th><th>№ 3<br>не трогали</th></tr><tr><td>День 1</td><td><input id="h0_0" aria-label="День 1, № 1<br>немытые"></td><td><input id="h0_1" aria-label="День 1, № 2<br>вымытые"></td><td><input id="h0_2" aria-label="День 1, № 3<br>не трогали"></td></tr><tr><td>День 3</td><td><input id="h1_0" aria-label="День 3, № 1<br>немытые"></td><td><input id="h1_1" aria-label="День 3, № 2<br>вымытые"></td><td><input id="h1_2" aria-label="День 3, № 3<br>не трогали"></td></tr><tr><td>День 5</td><td><input id="h2_0" aria-label="День 5, № 1<br>немытые"></td><td><input id="h2_1" aria-label="День 5, № 2<br>вымытые"></td><td><input id="h2_2" aria-label="День 5, № 3<br>не трогали"></td></tr><tr><td>День 7</td><td><input id="h3_0" aria-label="День 7, № 1<br>немытые"></td><td><input id="h3_1" aria-label="День 7, № 2<br>вымытые"></td><td><input id="h3_2" aria-label="День 7, № 3<br>не трогали"></td></tr><tr><td>Вывод</td><td colspan="3"><input id="h_out" aria-label="Вывод"></td></tr></table></div><p class="dsaved" id="hSaved"></p></div><script>(function(){var box=document.getElementById("hSaved").parentNode,s=document.getElementById("hSaved");[].slice.call(box.querySelectorAll("input")).forEach(function(el){try{var v=localStorage.getItem("bio14_"+el.id);if(v)el.value=v}catch(e){}el.addEventListener("input",function(){try{localStorage.setItem("bio14_"+el.id,el.value);s.textContent="Сохранено"}catch(e){s.textContent=""}})});})();</script>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Сначала сделай опыт и запиши, что увидела.</p>
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Что обычно получается</button></div>
+<div class="rev ans" id="r1" hidden>Больше всего плесени вырастает на хлебе, который трогали немытыми руками, меньше — после мытья, и меньше всего — на хлебе, который не трогали. На руках много невидимых бактерий и спор грибов — поэтому руки моют перед едой.</div></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Прививка от клещей</span></div><div class="lifebody"><p>Вероника, ты видела, как папа и мама делали прививку от клещей. Маленькая иголочка — и потом много лет защита. На самом деле прививку делают от <b>вируса клещевого энцефалита</b>: его переносят некоторые клещи. Прививка заранее учит организм бороться с этим вирусом.</p><p>Уколы неприятные — это правда. Но короткая боль от иголки намного меньше, чем болезнь, от которой она защищает.</p></div><p class="lifebook">В учебнике это называется: <b>вакцинация</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Какие меры помогают не заразиться бактериальными болезнями?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a3" hidden>Кипячение питьевой воды, правильная обработка продуктов, личная гигиена (мыть руки, чистить зубы), прививки, витамины, закаливание.</div>
+</div>
+<div class="think">
+<p class="qt">4. Зачем заболевшего человека изолируют?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a4" hidden>Чтобы предотвратить распространение болезни.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Роль бактерий в природе и жизни человека</h2></div>
+<div class="easy">
+<p>На Земле всё время идёт круговорот веществ, и бактерии — его важнейшее звено. Они разлагают остатки растений и животных до простых минеральных веществ, а растения снова их используют. Поэтому бактерии называют <b>«санитарами» планеты</b>.</p>
+<p>Человек давно пользуется тем, что некоторые бактерии вызывают <span class="term" role="button" tabindex="0" data-t="brozh">брожение</span>. Так делают простоквашу, творог, сыр, квашеную капусту и соленья, а ещё силос — корм для скота. На заводах бактерии выращивают, чтобы получать антибиотики, витамины и другие вещества. А на очистных сооружениях бактерии очищают сточные воды.</p>
+<p>Но бактерии и вредят: портят продукты и выделяют в них ядовитые вещества. Испорченной едой можно отравиться.</p>
+</div>
+<div class="book" hidden>
+<p><b>Роль бактерий в природе и жизни человека.</b> Деятельность бактерий очень разнообразна. На Земле постоянно происходит круговорот веществ. Бактерии являются важнейшим звеном в этих процессах. При участии бактерий в природе происходит разложение сложных органических веществ (растительных и животных остатков) до простых минеральных соединений, которые вновь могут быть использованы растениями. Поэтому бактерии часто называют «санитарами» нашей планеты.</p>
+<p>Человек издавна учитывает способность некоторых видов бактерий вызывать процессы <b><span class="term" role="button" tabindex="0" data-t="brozh">брожения</span></b> для приготовления простокваши, творога, сыра, квашеной капусты и солений, а также силоса на корм скоту. В микробиологической промышленности бактерии выращиваются для получения антибиотиков, витаминов и других веществ. Для очистки сточных вод в специальных очистных сооружениях культивируются бактерии, разлагающие органические остатки.</p>
+<p>Бактерии могут наносить и ощутимый вред, например портя продукты питания. При этом они вырабатывают ядовитые вещества, которыми человек может отравиться, употребляя испорченные продукты.</p>
+</div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Бактерии в твоём йогурте</span></div><div class="lifebody"><p>Вероника, твой любимый <b>йогурт</b> делают бактерии! Их добавляют в молоко, они «съедают» молочный сахар — и молоко становится густым и кисленьким. Сыр тоже получается с помощью бактерий. А малосольные огурцы и помидоры, которые солит бабушка Галя в Ягодном, и квашеная капуста — это тоже работа бактерий брожения.</p></div><p class="lifebook">В учебнике это называется: <b>брожение</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Вероника, сделай йогурт сама</span></div><div class="lifebody"><p>Попроси папу или маму помочь — нужно греть молоко.</p><p><b>1.</b> Взрослый нагревает пол-литра молока до кипения и остужает до тёплого — как вода для купания (около 40 °С).<br><b>2.</b> Добавь 2 ложки живого йогурта без добавок (на упаковке написано «живые бактерии») — это «закваска».<br><b>3.</b> Перемешай, перелей в чистую банку или термос, укутай полотенцем и оставь в тепле на 6–8 часов (можно на ночь).<br><b>4.</b> Утром посмотри: молоко загустело? Поставь в холодильник — и попробуй!</p><p>Сделай <b>контроль</b>: в другой баночке то же молоко, но без закваски. Загустеет ли оно?</p></div><p class="lifebook">В учебнике это называется: <b>роль бактерий в жизни человека</b></p></aside>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Сначала сделай опыт и запиши, что увидела.</p>
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Что получится и почему</button></div>
+<div class="rev ans" id="r2" hidden>В баночке с закваской молоко загустеет и станет кисловатым — это йогурт. Бактерии из закваски размножились в тёплом молоке и вызвали брожение. В контрольной баночке без бактерий молоко останется жидким. Вот почему йогурт — живой продукт!</div></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Почему бактерии называют «санитарами» планеты?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a5" hidden>Они разлагают остатки растений и животных до простых минеральных веществ, которые снова используют растения.</div>
+</div>
+<div class="think">
+<p class="qt">6. Какие продукты делают с помощью бактерий?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a6" hidden>Простоквашу, творог, сыр, квашеную капусту и соленья; ещё силос для скота.</div>
+</div>
+<div class="think">
+<p class="qt">7. Чем бактерии вредят человеку?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a7" hidden>Портят продукты и выделяют в них ядовитые вещества — испорченной едой можно отравиться.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Вирусы</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="virus">Вирус</span> (от лат. <i>вирус</i> — яд) — простейшая <b>неклеточная</b> форма жизни. Это микроскопическая частица: наследственная информация в белковой оболочке (рис. 75).</p>
+<p>Вирусы бывают разной формы. Они очень маленькие — в 50 раз меньше бактерий, их не видно даже в световой микроскоп.</p>
+<p><b>Как живут.</b> Вне клетки вирус не проявляет никаких признаков жизни: не питается, не дышит, не растёт. Но стоит ему попасть в клетку другого организма — он начинает быстро размножаться: клетка-хозяин из своих веществ и сил делает копии вируса. Поэтому вирусы — <span class="term" role="button" tabindex="0" data-t="paraz">внутриклеточные паразиты</span>.</p>
+<p><b>Вирусные болезни.</b> Вирусы поражают всех: бактерии, грибы, растения и животных. У человека они вызывают грипп, корь, полиомиелит, бешенство, краснуху, оспу, гепатит и многие другие болезни.</p>
+<p>В истории были эпидемии оспы и гриппа, уносившие миллионы жизней. <span class="term" role="button" tabindex="0" data-t="pand">Пандемия</span> «испанского гриппа» в 1918—1920 годах унесла больше 20 миллионов человек. В 2019 году новый коронавирус Covid-19 быстро распространился по всему миру — и началась новая пандемия.</p>
+<p>Чтобы побеждать пандемии и не допускать новых эпидемий, важны прививки и правила гигиены. <span class="big">Своевременная вакцинация — лучший способ не заболеть.</span></p>
+<p><b>Значение вирусов</b> огромно. Многие вызывают тяжёлые болезни (грипп, полиомиелит, ВИЧ, гепатит, бешенство), часто смертельные. Но вирусы бывают и полезными: они «тренируют» защитные силы организма. А вирусы, которые поражают бактерии, помогают медицине и ветеринарии побеждать бактериальные болезни без химических лекарств.</p>
+</div>
+<div class="book" hidden>
+<p><b>Характеристика вирусов.</b> <b><span class="term" role="button" tabindex="0" data-t="virus">Вирус</span></b> (от лат. <i>вирус</i> — яд) — простейшая неклеточная форма жизни. Вирус — микроскопическая частица, представляющая собой молекулы с наследственной информацией, заключённые в белковую оболочку (рис. 75). Вирусы могут иметь разнообразную форму, а их размеры настолько малы (варьируются от 20 до 300 нанометров, это в 50 раз меньше бактерий), что они даже не видны в световой микроскоп.</p>
+<p><b>Жизнедеятельность вирусов.</b> Вне клетки вирус не проявляет никаких признаков жизнедеятельности, т. е. не питается, не дышит, не развивается, не растёт. Только проникнув в клетку другого организма, он начинает быстро размножаться, создавая свои копии, используя для их создания ресурсы и питательные вещества клетки-хозяина. Таким образом, вирусы являются <b><span class="term" role="button" tabindex="0" data-t="paraz">внутриклеточными паразитами</span></b>.</p>
+<p><b>Вирусные болезни.</b> Вирусы поражают все живые организмы: бактерии, грибы, растения и животные. У человека вирусы вызывают такие опасные заболевания, как грипп, корь, полиомиелит, бешенство, краснуха, оспа, гепатит и мн. др.</p>
+<p>В истории известны эпидемии оспы, гриппа, уносившие сотни тысяч и даже миллионы жизней. Так, <b><span class="term" role="button" tabindex="0" data-t="pand">пандемия</span></b> (от греч. <i>пандемос</i> — принадлежащий всем людям) «испанского гриппа» в 1918—1920 годах унесла жизни более 20 млн человек. В 2019 году появление нового типа коронавируса Covid-19 и его быстрое распространение по всему миру привело к возникновению новой пандемии.</p>
+<p>Для победы над пандемией и предупреждения возникновения новых эпидемий кроме вакцинации, важно строго соблюдать правила личной и общественной гигиены. Профилактика вирусных инфекций, в том числе с помощью своевременной вакцинации — лучший способ избежать заболевания и важный элемент здорового образа жизни человека.</p>
+<p><b>Значение вирусов</b> огромно как в живой природе, так и в жизни человека. Вирусы являются паразитами и поражают все известные организмы. Многие из них вызывают у человека тяжёлые заболевания (грипп, полиомиелит, ВИЧ, гепатит, бешенство), часто с летальным исходом. Вирусы могут быть и полезными, они стимулируют деятельность защитных сил организмов. Многие вирусы, которые поражают бактерии, очень важны для медицины и ветеринарии, они позволяют естественным путём и без химических реагентов побеждать многие бактериальные инфекции.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s75" src="img/1203388eb276.jpg" alt="Вирусы разной формы: шарики с шипами, многогранники, нитевидный вирус, вирус-«ракета» на ножках"><figcaption><span class="src">из учебника</span><b>Рис. 75.</b> Разнообразие форм вирусов</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 250" role="img" aria-label="Как вирус захватывает клетку: 1 — вне клетки вирус спит: не питается, не дышит, не растёт; 2 — проник в клетку и подложил свои чертежи в её сундук; 3 — клетка из своих веществ строит копии вируса, а копии заражают новые клетки"><use href="#o-virus"/></svg><figcaption>Вирус — как чужие чертежи в сундуке твоего дома в Майнкрафте.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Чужие чертежи в сундуке</span></div><div class="lifebody"><p>Помнишь клетку-дом из §10? Ядро — сундук с чертежами, по которым клетка всё строит. Вирус — это <b>только чертежи в обёртке</b>, без дома. Сам по себе он ничего не может. Но если он попадёт в клетку и подложит свои чертежи в её сундук, клетка начнёт строить <b>вирусы вместо своих вещей</b> — сотни копий. Копии выходят и захватывают соседние дома.</p><p>Поэтому вирус и называют паразитом: он живёт только за счёт чужой клетки.</p></div><p class="lifebook">В учебнике это называется: <b>вирус — внутриклеточный паразит</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Когда все сидели дома</span></div><div class="lifebody"><p>Когда ты ходила в садик, был период, когда люди какое-то время сидели дома и почти никуда не выходили. Это была <b>пандемия коронавируса</b> из учебника: новый вирус быстро распространился по всему миру. Чтобы он передавался медленнее, люди меньше встречались — так болезнь не успевала заражать многих сразу. Спроси папу и маму, как это было, — они помнят больше.</p></div><p class="lifebook">В учебнике это называется: <b>пандемия</b></p></aside>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 280" role="img" aria-label="Бешенство — правила: это вирус, передаётся через укус, царапину или слюну больного зверя. Корм — в миску, а не с руки; незнакомых кошек и собак не гладить; к странному зверю не подходить; домашних зверей прививают каждый год. Укусили или поцарапали — сразу к взрослым"><use href="#o-rabies"/></svg><figcaption>Пять правил, которые надо знать тем, кто кормит дворовых кошек.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Вероника, это про твоих дворовых кошек</span></div><div class="lifebody"><p>Ты кормишь кошек во дворе — это доброе дело. Но важно знать про <b>бешенство</b>. Это вирусная болезнь из учебника. Ею болеют звери — кошки, собаки, лисы, — а человеку она передаётся через укус, царапину или слюну больного животного. Бешенство очень опасно: если не сделать уколы вовремя, оно смертельно.</p><p>Домашних кошек и собак <b>прививают от бешенства</b> — это делают ветеринары, и ты, может быть, будешь делать это сама. А дворовые кошки обычно не привиты, и мы не знаем, здоровы ли они. Поэтому:</p><p>• насыпай корм в миску, а не с руки;<br>• не гладь и не бери на руки незнакомых кошек и собак;<br>• не подходи к зверю, который ведёт себя странно: очень злой, шатается, течёт слюна — или дикий зверь, который сам идёт к людям;<br>• <b>если укусили или поцарапали</b> — сразу промой ранку водой с мылом и скажи папе или маме. Взрослые отведут к врачу: уколы после укуса защищают, если сделать их быстро.</p></div><p class="lifebook">В учебнике это называется: <b>вирусные болезни: бешенство</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Чем вирус отличается от всех остальных организмов?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a8" hidden>Это неклеточная форма жизни: наследственная информация в белковой оболочке.</div>
+</div>
+<div class="think">
+<p class="qt">9. Почему вирусы называют внутриклеточными паразитами?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Абзац «Жизнедеятельность вирусов».</div>
+<div class="rev ans" id="a9" hidden>Вне клетки они не проявляют признаков жизни, а размножаются только внутри клетки другого организма, используя её ресурсы и вещества.</div>
+</div>
+<div class="think">
+<p class="qt">10. Какой способ избежать вирусных болезней учебник называет лучшим?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Абзац про профилактику.</div>
+<div class="rev ans" id="a10" hidden>Профилактика, в том числе своевременная вакцинация.</div>
+</div>
+<div class="think">
+<p class="qt">11. Чем вирусы могут быть полезны?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a11" hidden>Стимулируют защитные силы организма; вирусы, поражающие бактерии, помогают медицине и ветеринарии бороться с бактериальными болезнями.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Бактерии · Болезнетворные бактерии · Пандемия</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Каковы особенности строения клеток бактерий?</li><li>Почему бактерий относят к прокариотам?</li><li>Какую роль играют бактерии в природе и жизни человека?</li><li>Какие меры профилактики следует соблюдать для предотвращения бактериальных заболеваний?</li><li>Каковы особенности строения и жизнедеятельности вирусов?</li><li>Какие вирусные заболевания вам известны?</li></ol></div>
+<div class="ask"><b>Подумайте!</b>
+<ol><li>Что произойдёт, если все бактерии на Земле будут уничтожены? Свой ответ обоснуйте.</li><li>Можно ли считать вирус организмом?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к первому вопросу</button></div>
+<div class="rev hint" id="r3" hidden>Вспомни раздел 3: бактерии — «санитары» планеты, они разлагают остатки растений и животных до минеральных веществ, которые снова нужны растениям. Если их не станет, остатки перестанут разлагаться, а растениям будет нечем питаться из почвы.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Подсказка ко второму вопросу</button></div>
+<div class="rev hint" id="r4" hidden>Вспомни признаки живого из §1 и §11. Вне клетки вирус не питается, не дышит, не растёт — это «против». Но у него есть наследственная информация, и в клетке он размножается — это «за». Учёные до сих пор спорят. А ты как думаешь? Обоснуй.</div></div>
+<div class="rubric">Моя лаборатория · Выполните задание</div>
+<div class="ask"><b>Подготовьте одно из сообщений (по согласованию с учителем)</b>
+<ol><li>Болезни, вызываемые бактериями у человека (растений, животных), и меры их профилактики.</li><li>Роль бактерий в природе.</li><li>Роль бактерий в жизни человека.</li><li>Болезни, вызываемые вирусами у человека, и меры их профилактики.</li></ol></div>
+<div class="rubric">Это интересно</div>
+<div class="easy">
+<p>Вирусные болезни известны с древности: эпидемии оспы в Китае и Индии описаны ещё в X веке до нашей эры. Первую прививку — от оспы — сделал английский врач Эдвард Дженнер в 1796 году. В XX веке прививку от оспы делали всем людям, и в 1977 году был последний случай заражения оспой. Прививки победили целую болезнь!</p>
+</div>
+<div class="book" hidden>
+<p>Заболевания, имеющие вирусную природу, известны с глубокой древности. Эпидемии оспы в Китае и Индии отмечены ещё в источниках X века до нашей эры. Первую вакцинацию в 1796 году провёл английский врач Эдвард Дженнер против оспы. В XX веке проводили всеобщую вакцинацию населения против оспы. Это привело к резкому сокращению заболеваемости, и в 1977 году был зарегистрирован последний случай заражения вирусом оспы.</p>
+</div>
+<div class="rubric">Для любознательных</div>
+<div class="easy">
+<p>С болезнетворными бактериями борются тремя способами. <b>Стерилизация</b> — уничтожение бактерий температурой выше 100 °С, ультрафиолетом, ультразвуком; так обеззараживают медицинские инструменты. <b>Пастеризация</b> — многократное нагревание продукта до 60—70 °С; посмотри в магазине — на пакетах молока пишут «пастеризованное». <b>Дезинфекция</b> — уничтожение бактерий химическими веществами, например хлором.</p>
+</div>
+<div class="book" hidden>
+<p>Для борьбы с болезнетворными бактериями применяют стерилизацию, пастеризацию и дезинфекцию. <b>Стерилизация</b> — процесс уничтожения бактерий с помощью температуры свыше 100 °С, ультрафиолетовых лучей, ультразвука и т. д. Стерилизация применяется для обеззараживания медицинских инструментов. <b>Пастеризация</b> — многократное нагревание продукта до температуры 60—70 °С. Пастеризованное молоко вы можете увидеть на прилавках продуктовых магазинов. <b>Дезинфекция</b> — уничтожение бактерий с помощью специальных химических веществ. Так, хлор добавляют во многие дезинфицирующие средства.</p>
+</div>
+<div class="rubric">Из истории науки</div>
+<div class="easy">
+<p>Вирусы открыл русский учёный <b>Дмитрий Иосифович Ивановский</b>. В 1892 году он изучал мозаичную болезнь табака и понял: её возбудитель очень маленький, не растёт на питательных средах и не виден в световой микроскоп. Его назвали вирусом. Ивановского считают основателем вирусологии — науки о вирусах. А увидеть вирусы смогли только в 1939 году, когда изобрели электронный микроскоп.</p>
+</div>
+<div class="book" hidden>
+<p>Открытие вирусов принадлежит русскому учёному Дмитрию Иосифовичу Ивановскому, который в 1892 году опубликовал работу по изучению мозаичной болезни табака. Ивановский установил, что возбудитель этой болезни имеет очень малые размеры, не растёт на питательных средах и не обнаруживается в световом микроскопе. Его назвали вирусом. После этого открытия началось активное изучение вирусов, а Ивановский считается основателем Вирусологии — науки о вирусах. Но увидеть вирусы учёным удалось только в 1939 году после изобретения электронного микроскопа.</p>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt5" data-n="6">
+<div class="sortlab">Кто вызывает болезнь?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="1"><p class="stext">Грипп</p><div class="sbtns"><button class="sbtn" data-b="0">бактерии</button><button class="sbtn" data-b="1">вирусы</button></div><p class="swhy" hidden>Вирусная болезнь.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Туберкулёз</p><div class="sbtns"><button class="sbtn" data-b="0">бактерии</button><button class="sbtn" data-b="1">вирусы</button></div><p class="swhy" hidden>Бактериальная болезнь.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Корь</p><div class="sbtns"><button class="sbtn" data-b="0">бактерии</button><button class="sbtn" data-b="1">вирусы</button></div><p class="swhy" hidden>Вирусная болезнь.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Холера</p><div class="sbtns"><button class="sbtn" data-b="0">бактерии</button><button class="sbtn" data-b="1">вирусы</button></div><p class="swhy" hidden>Бактериальная болезнь.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Бешенство</p><div class="sbtns"><button class="sbtn" data-b="0">бактерии</button><button class="sbtn" data-b="1">вирусы</button></div><p class="swhy" hidden>Вирус передаётся через укус больного зверя.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Столбняк</p><div class="sbtns"><button class="sbtn" data-b="0">бактерии</button><button class="sbtn" data-b="1">вирусы</button></div><p class="swhy" hidden>Бактериальная болезнь.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt6" data-n="4">
+<div class="sortlab">Польза или вред?</div>
+<div class="sitem" data-r="0"><p class="stext">Бактерии делают йогурт</p><div class="sbtns"><button class="sbtn" data-b="0">польза</button><button class="sbtn" data-b="1">вред</button></div><p class="swhy" hidden>Брожение.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Бактерии портят продукты</p><div class="sbtns"><button class="sbtn" data-b="0">польза</button><button class="sbtn" data-b="1">вред</button></div><p class="swhy" hidden>И выделяют яды.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Бактерии разлагают опавшие листья</p><div class="sbtns"><button class="sbtn" data-b="0">польза</button><button class="sbtn" data-b="1">вред</button></div><p class="swhy" hidden>«Санитары» планеты.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Бактерии очищают сточные воды</p><div class="sbtns"><button class="sbtn" data-b="0">польза</button><button class="sbtn" data-b="1">вред</button></div><p class="swhy" hidden>На очистных сооружениях.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Прокариоты</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s74" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Без ядра — это бактерии.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Брожение</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s73" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Бактерии превращают молоко в йогурт, капусту — в квашеную.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Профилактика</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 250" aria-hidden="true"><use href="#o-protect"/></svg><span class="ftext">Мыть руки, кипятить воду, прививки.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Вирус</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s75" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Не клетка: наследственная информация в белковой оболочке. Вирус — яд.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Внутриклеточный паразит</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 250" aria-hidden="true"><use href="#o-virus"/></svg><span class="ftext">Размножается только в чужой клетке.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пандемия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 250" aria-hidden="true"><use href="#o-protect"/></svg><span class="ftext">Болезнь по всему миру. Пандемос — принадлежащий всем.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Бешенство</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 280" aria-hidden="true"><use href="#o-rabies"/></svg><span class="ftext">Вирус; через укус зверя. Укусили — сразу к взрослым.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Чего нет в клетке бактерии?</h3><div class="opts">
+<button class="opt" data-ok="1">Оформленного ядра</button>
+<button class="opt">Цитоплазмы</button>
+<button class="opt">Оболочки</button>
+<button class="opt">Генетического материала</button></div>
+<div class="fb">Поэтому бактерии — прокариоты.</div></div>
+<div class="q"><h3>2. Почему бактерии называют «санитарами» планеты?</h3><div class="opts">
+<button class="opt" data-ok="1">Они разлагают остатки растений и животных</button>
+<button class="opt">Они лечат людей</button>
+<button class="opt">Они моют руки</button>
+<button class="opt">Они делают фотосинтез</button></div>
+<div class="fb">И возвращают минеральные вещества растениям.</div></div>
+<div class="q"><h3>3. Что делают с помощью бактерий брожения?</h3><div class="opts">
+<button class="opt" data-ok="1">Йогурт и сыр</button>
+<button class="opt">Хлеб на дрожжах</button>
+<button class="opt">Сахар</button>
+<button class="opt">Соль</button></div>
+<div class="fb">Дрожжи — это грибы (§13), а йогурт — бактерии.</div></div>
+<div class="q"><h3>4. Что умеет вирус вне клетки?</h3><div class="opts">
+<button class="opt" data-ok="1">Ничего: не питается, не дышит, не растёт</button>
+<button class="opt">Питаться</button>
+<button class="opt">Летать</button>
+<button class="opt">Делать фотосинтез</button></div>
+<div class="fb">Он «оживает» только внутри чужой клетки.</div></div>
+<div class="q"><h3>5. Кто сделал первую прививку?</h3><div class="opts">
+<button class="opt" data-ok="1">Эдвард Дженнер</button>
+<button class="opt">Карл Линней</button>
+<button class="opt">Роберт Гук</button>
+<button class="opt">Дмитрий Ивановский</button></div>
+<div class="fb">В 1796 году, от оспы. А Ивановский открыл вирусы.</div></div>
+<div class="q"><h3>6. Тебя поцарапала дворовая кошка. Что делать?</h3><div class="opts">
+<button class="opt" data-ok="1">Промыть водой с мылом и сразу сказать взрослым</button>
+<button class="opt">Ничего, само пройдёт</button>
+<button class="opt">Заклеить и никому не говорить</button>
+<button class="opt">Погладить кошку ещё раз</button></div>
+<div class="fb">Взрослые отведут к врачу — уколы защищают, если сделать их быстро.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Бактерии</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Очень маленькие, без ядра — прокариоты; живут везде.</li><li>Болезнетворные бактерии вызывают чуму, туберкулёз, холеру; защита — гигиена, кипячение воды, прививки.</li><li>«Санитары» планеты; с их помощью делают йогурт, сыр, квашеную капусту, антибиотики.</li></ol></div>
+</div>
+<div class="think">
+<h3>Вирусы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Неклеточная форма жизни: наследственная информация в белковой оболочке; в 50 раз меньше бактерий.</li><li>Вне клетки не живут; размножаются только в чужой клетке — внутриклеточные паразиты.</li><li>Вызывают грипп, корь, бешенство; пандемии; лучшая защита — вакцинация.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b13.html">‹ §13 Растения, животные, грибы</a>
+  <span class="pn cur">§14 Бактерии и вирусы</span>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 14, с. 92—96. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'o-size':'0 0 330 214','o-virus':'0 0 330 250','o-protect':'0 0 330 250','o-rabies':'0 0 330 280'};
+
+var T={
+bakt:{w:"Бактерии",k:"царство",p:"s73",t:"Крошечные одноклеточные организмы без ядра (прокариоты). Живут везде: в почве, воде, воздухе, в других организмах.",r:"",e:""},
+prok:{w:"Прокариоты",k:"безъядерные организмы",p:"s74",t:"Организмы, в клетках которых нет оформленного ядра. Это бактерии.",r:"<b>про</b> — перед + <b>карион</b> — ядро",e:""},
+bolz:{w:"Болезнетворные бактерии",k:"бактерии",s:"o-protect",t:"Бактерии, которые вызывают опасные болезни: чуму, туберкулёз, тиф, холеру, столбняк.",r:"",e:""},
+prof:{w:"Профилактика",k:"как не заболеть",s:"o-protect",t:"Меры, которые не дают заболеть: мыть руки, кипятить воду, правильно готовить еду, делать прививки.",r:"",e:""},
+vakc:{w:"Вакцинация",k:"прививка",s:"o-protect",t:"Прививка: организм заранее учится бороться с болезнью и потом не заболевает или болеет легко.",r:"",e:""},
+brozh:{w:"Брожение",k:"работа бактерий",p:"s73",t:"Процесс, который вызывают некоторые бактерии. Так из молока получаются простокваша, йогурт, творог, сыр, а из капусты — квашеная капуста.",r:"",e:"Твой любимый йогурт — работа бактерий брожения."},
+virus:{w:"Вирус",k:"неклеточная форма жизни",p:"s75",t:"Микроскопическая частица: наследственная информация в белковой оболочке. Это не клетка.",r:"<b>вирус</b> (лат.) — яд",e:""},
+paraz:{w:"Внутриклеточный паразит",k:"вирус",s:"o-virus",t:"Тот, кто живёт и размножается только внутри чужой клетки и за её счёт. Так живут вирусы.",r:"",e:""},
+pand:{w:"Пандемия",k:"эпидемия на весь мир",s:"o-protect",t:"Болезнь, которая быстро распространилась по всему миру.",r:"<b>пандемос</b> (греч.) — принадлежащий всем людям",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b14:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b14:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b14:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b14:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

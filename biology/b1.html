@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Чем живое отличается от неживого — и почему одного признака мало.">
+<title>Живая и неживая природа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="d-detector" viewBox="0 0 340 300">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="170" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="var(--pa,#C9672C)">дегу</text>
+<text x="235" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="var(--pb,#3B6FA8)">кристалл</text>
+<text x="302" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="var(--pb,#3B6FA8)">свеча</text>
+<path d="M8 40 L334 40" stroke="var(--line,#D9CDB7)" stroke-width="2"/>
+<text x="8" y="66" font-size="15" fill="var(--illink,#2B2620)">клетки</text>
+<text x="8" y="96" font-size="15" fill="var(--illink,#2B2620)">обмен веществ</text>
+<text x="8" y="126" font-size="15" fill="var(--illink,#2B2620)">рост</text>
+<text x="8" y="156" font-size="15" fill="var(--illink,#2B2620)">развитие</text>
+<text x="8" y="186" font-size="15" fill="var(--illink,#2B2620)">размножение</text>
+<text x="8" y="216" font-size="15" fill="var(--illink,#2B2620)">раздражимость</text>
+<path d="M8 230 L334 230" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<text x="8" y="256" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">всё вместе</text>
+<g font-size="17" font-weight="700" text-anchor="middle">
+<text x="170" y="67" fill="var(--ok,#3D7A38)">✓</text><text x="235" y="67" fill="var(--soft,#5F5648)">✗</text><text x="302" y="67" fill="var(--soft,#5F5648)">✗</text>
+<text x="170" y="97" fill="var(--ok,#3D7A38)">✓</text><text x="235" y="97" fill="var(--soft,#5F5648)">✗</text><text x="302" y="97" fill="var(--ochre,#E2A31F)">≈</text>
+<text x="170" y="127" fill="var(--ok,#3D7A38)">✓</text><text x="235" y="127" fill="var(--ochre,#E2A31F)">≈</text><text x="302" y="127" fill="var(--soft,#5F5648)">✗</text>
+<text x="170" y="157" fill="var(--ok,#3D7A38)">✓</text><text x="235" y="157" fill="var(--soft,#5F5648)">✗</text><text x="302" y="157" fill="var(--soft,#5F5648)">✗</text>
+<text x="170" y="187" fill="var(--ok,#3D7A38)">✓</text><text x="235" y="187" fill="var(--soft,#5F5648)">✗</text><text x="302" y="187" fill="var(--soft,#5F5648)">✗</text>
+<text x="170" y="217" fill="var(--ok,#3D7A38)">✓</text><text x="235" y="217" fill="var(--soft,#5F5648)">✗</text><text x="302" y="217" fill="var(--soft,#5F5648)">✗</text>
+</g>
+<rect x="150" y="238" width="40" height="28" rx="8" fill="var(--ok,#3D7A38)"/>
+<text x="170" y="258" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">ДА</text>
+<rect x="210" y="238" width="50" height="28" rx="8" fill="var(--paper2,#E8DFCC)"/>
+<text x="235" y="258" text-anchor="middle" font-size="16" font-weight="700" fill="var(--soft,#5F5648)">НЕТ</text>
+<rect x="277" y="238" width="50" height="28" rx="8" fill="var(--paper2,#E8DFCC)"/>
+<text x="302" y="258" text-anchor="middle" font-size="16" font-weight="700" fill="var(--soft,#5F5648)">НЕТ</text>
+<text x="8" y="290" font-size="13" fill="var(--soft,#5F5648)">≈ — похоже, но это не настоящий признак живого</text>
+</g>
+</symbol>
+
+<symbol id="d-metab" viewBox="0 0 340 196">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="8" y="40" font-size="15" font-weight="700" fill="var(--pa,#C9672C)">ПИТАНИЕ</text>
+<text x="8" y="60" font-size="14" fill="var(--illink,#2B2620)">пища, вода</text>
+<path d="M96 46 L114 68" stroke="var(--pa,#C9672C)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+<text x="8" y="118" font-size="15" font-weight="700" fill="var(--pa,#C9672C)">ДЫХАНИЕ</text>
+<text x="8" y="138" font-size="14" fill="var(--illink,#2B2620)">кислород</text>
+<path d="M98 128 L114 104" stroke="var(--pa,#C9672C)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+<rect x="118" y="56" width="84" height="64" rx="14" fill="var(--leaf,#2D7A55)"/>
+<text x="160" y="93" text-anchor="middle" font-size="15" font-weight="700" fill="#F6FFF9">организм</text>
+<path d="M204 88 L222 88" stroke="var(--pb,#3B6FA8)" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+<text x="226" y="70" font-size="15" font-weight="700" fill="var(--pb,#3B6FA8)">ВЫДЕЛЕНИЕ</text>
+<text x="226" y="90" font-size="14" fill="var(--illink,#2B2620)">ненужное</text>
+<text x="226" y="108" font-size="14" fill="var(--illink,#2B2620)">и вредное</text>
+<rect x="60" y="160" width="220" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/>
+<text x="170" y="181" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">всё вместе = обмен веществ</text>
+</g>
+</symbol>
+
+<symbol id="d-growdev" viewBox="0 0 340 206">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="8" y="22" font-size="15" font-weight="700" fill="var(--pa,#C9672C)">РОСТ — стало больше</text>
+<circle cx="40" cy="62" r="9" fill="var(--pa,#C9672C)"/>
+<path d="M56 62 L84 62" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="110" cy="62" r="15" fill="var(--pa,#C9672C)"/>
+<path d="M132 62 L160 62" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="190" cy="62" r="22" fill="var(--pa,#C9672C)"/>
+<text x="224" y="58" font-size="13" fill="var(--soft,#5F5648)">форма та же,</text>
+<text x="224" y="76" font-size="13" fill="var(--soft,#5F5648)">размер больше</text>
+<text x="8" y="122" font-size="15" font-weight="700" fill="var(--pb,#3B6FA8)">РАЗВИТИЕ — стало другим</text>
+<rect x="6" y="138" width="70" height="36" rx="8" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="41" y="161" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">яйцо</text>
+<path d="M77 156 L89 156" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="91" y="138" width="74" height="36" rx="8" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="128" y="161" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">личинка</text>
+<path d="M166 156 L178 156" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="180" y="138" width="74" height="36" rx="8" fill="var(--card,#FFFBF2)" stroke="var(--pb,#3B6FA8)" stroke-width="2.5"/>
+<text x="217" y="161" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">куколка</text>
+<path d="M255 156 L267 156" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="269" y="138" width="66" height="36" rx="8" fill="var(--pb,#3B6FA8)"/>
+<text x="302" y="161" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">муравей</text>
+<text x="170" y="198" text-anchor="middle" font-size="13" fill="var(--soft,#5F5648)">каждый шаг — новый облик</text>
+</g>
+</symbol>
+
+<symbol id="d-elem" viewBox="0 0 340 112">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="10" y="22" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">Из чего состоит тело живого</text>
+<rect x="10" y="34" width="313.6" height="40" fill="var(--leaf,#2D7A55)"/>
+<rect x="323.6" y="34" width="6.4" height="40" fill="var(--pa,#C9672C)"/>
+<text x="20" y="52" font-size="14" font-weight="700" fill="#F6FFF9">98% — четыре элемента:</text>
+<text x="20" y="68" font-size="12" fill="#F6FFF9">углерод, кислород, азот, водород</text>
+<path d="M326 76 L326 88" stroke="var(--pa,#C9672C)" stroke-width="2"/>
+<text x="330" y="104" text-anchor="end" font-size="13" fill="var(--pa,#C9672C)">2% — все остальные</text>
+</g>
+</symbol>
+
+<symbol id="d-bios" viewBox="0 0 330 346">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="52" y="30" width="270" height="45" fill="var(--ice,#2F6F8F)" opacity=".18"/>
+<text x="60" y="58" font-size="13" font-weight="700" fill="var(--ice,#2F6F8F)">озоновый экран: 15—20 км</text>
+<rect x="38" y="30" width="14" height="279" rx="4" fill="var(--leaf,#2D7A55)" opacity=".55"/>
+<text x="32" y="35" text-anchor="end" font-size="12" fill="var(--soft,#5F5648)">20</text>
+<text x="32" y="125" text-anchor="end" font-size="12" fill="var(--soft,#5F5648)">10</text>
+<text x="32" y="215" text-anchor="end" font-size="12" fill="var(--soft,#5F5648)">0</text>
+<text x="32" y="305" text-anchor="end" font-size="12" fill="var(--soft,#5F5648)">−10</text>
+<path d="M52 120 L240 120" stroke="var(--illink,#2B2620)" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="60" y="113" font-size="13" fill="var(--illink,#2B2620)">самолёт летит на ~10 км</text>
+<path d="M52 130.8 L240 130.8" stroke="var(--pa,#C9672C)" stroke-width="1.5" stroke-dasharray="2 3"/>
+<text x="60" y="148" font-size="13" fill="var(--pa,#C9672C)">Эверест — 8,8 км</text>
+<path d="M52 210 L322 210" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<text x="60" y="203" font-size="13" fill="var(--illink,#2B2620)">уровень моря</text>
+<rect x="52" y="211" width="130" height="27" fill="var(--brown,#8B5E3C)" opacity=".45"/>
+<text x="60" y="229" font-size="12" fill="var(--illink,#2B2620)">бактерии — до 3 км</text>
+<path d="M182 211 L322 211 L322 309 L182 309 Z" fill="var(--water,#6FA8C4)" opacity=".45"/>
+<text x="190" y="300" font-size="12" fill="var(--illink,#2B2620)">дно впадин — 11 км</text>
+<text x="165" y="334" text-anchor="middle" font-size="14" font-weight="700" fill="var(--leaf,#2D7A55)">жизнь — слой около 30 км</text>
+</g>
+</symbol>
+
+<symbol id="d-graphite" viewBox="0 0 300 352">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="8" y="8" width="284" height="38" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--moss,#5E7A3A)" stroke-width="2.5"/>
+<text x="150" y="32" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">деревья — сотни млн лет назад</text>
+<path d="M150 46 L150 56" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="58" width="284" height="38" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/>
+<text x="150" y="82" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">засыпало породами, без воздуха</text>
+<path d="M150 96 L150 106" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="108" width="284" height="38" rx="9" fill="var(--brown,#8B5E3C)" opacity=".35"/>
+<text x="150" y="132" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">бурый уголь</text>
+<path d="M150 146 L150 156" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="158" width="284" height="38" rx="9" fill="var(--brownD,#5E3D26)" opacity=".45"/>
+<text x="150" y="182" text-anchor="middle" font-size="14" fill="var(--illink,#2B2620)">каменный уголь</text>
+<path d="M150 196 L150 206" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="208" width="284" height="38" rx="9" fill="var(--stone,#BCB2A2)"/>
+<text x="150" y="232" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)">графит</text>
+<path d="M150 246 L150 256" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="258" width="284" height="38" rx="9" fill="var(--leaf,#2D7A55)"/>
+<text x="150" y="282" text-anchor="middle" font-size="14" font-weight="700" fill="#F6FFF9">стержень твоего карандаша</text>
+<text x="150" y="322" text-anchor="middle" font-size="13" fill="var(--soft,#5F5648)">давление и жар — миллионы лет</text>
+<text x="150" y="342" text-anchor="middle" font-size="13" fill="var(--soft,#5F5648)">а деревянная часть — из свежего дерева</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 1</span>
+    <h1>Живая и неживая природа — единое целое</h1>
+    <p class="lede">Чем живое отличается от неживого — и почему одного признака мало.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. Что такое природа? Что называют её объектами? 2. Что такое жизнедеятельность? 3. Чем живое отличается от неживого?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <span class="pn cur">§1 Живая и неживая природа</span>
+  <a class="pn" href="b2.html">§2 Биология — система наук ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Объекты живой и неживой природы">1</a><a href="#s2" data-j="s2" title="Понятие о жизни">2</a><a href="#s3" data-j="s3" title="Сходство и различия живого и неживого">3</a><a href="#s4" data-j="s4" title="Признаки живого">4</a><a href="#s5" data-j="s5" title="Живая и неживая природа — единое целое">5</a><a href="#s6" data-j="s6" title="Роль живого в природе">6</a><a href="#s7" data-j="s7" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Объекты живой и неживой природы</h2></div>
+<div class="easy">
+<p>Нас везде окружают разные предметы. Учёные называют их объектами. Вода, воздух, горы, растения, животные, машины, книги, дома…</p>
+<p>Одни объекты сделал человек: машины, книги, дома. Другие существуют сами, без человека. Вот они и называются <span class="term" role="button" tabindex="0" data-t="obpr">объектами природы</span>.</p>
+<p>Объекты природы бывают живые и неживые. Воздух, облака, горы и камни — неживая природа. Деревья, травы, грибы, насекомые, рыбы, птицы, звери и сам человек — живая (рис. 1).</p>
+<p>Кажется, всё просто. Но <span class="big">как именно мы отличаем живое от неживого?</span> Чтобы ответить, надо понять, что такое <span class="term" role="button" tabindex="0" data-t="zhizn">жизнь</span>.</p>
+</div>
+<div class="book" hidden>
+<p>На улице, дома, в школе — везде и всюду человека окружают различные предметы или, как говорят, объекты (от лат. <i>объектум</i> — предмет) окружающего мира. Среди них: вода, воздух, горные породы, растения, животные, автомобили, книги, различные постройки и многое другое. Одни из них изготовлены или построены человеком, а другие существовали и существуют в природе независимо от его хозяйственной деятельности. Именно их называют <span class="term" role="button" tabindex="0" data-t="obpr">объектами природы</span>.</p>
+<p>Сравним перечисленные выше объекты. Что общего между ними и чем они различаются? Почему одни из них мы называем живыми, а другие относим к объектам неживой природы.</p>
+<p>На первый взгляд кажется, что ответ очевиден. Так, воздух, облака, горы и камни вы отнесёте к объектам неживой природы, а деревья, кустарники, травы, грибы, насекомых, рыб, птиц, зверей и самого человека — к объектам живой природы (рис. 1).</p>
+<p>А на основании чего мы разделили эти объекты на две группы? Чтобы ответить на этот вопрос, необходимо определить, что такое <span class="term" role="button" tabindex="0" data-t="zhizn">жизнь</span>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-f1" src="img/62025a598ffc.jpg" alt="Шесть фото: облака, горы, луг у озера, пчёлы в сотах, фламинго, семья"><figcaption><span class="src">из учебника</span><b>Рис. 1.</b> Объекты неживой и живой природы<br><span style="color:var(--soft)">▲ Найди на фото объекты неживой природы и объекты живой природы.</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Дома у Вероники</span></div><div class="lifebody"><p>У вас дома есть и живая, и неживая природа. Мама занимается геологией, и у неё много минералов — например, прозрачные и белые кристаллы кварца. Это объекты <b>неживой</b> природы.</p><p>Люся и Юкси, муравьи на ферме — объекты <b>живой</b> природы. И кварц, и дегу — объекты природы: их не сделал человек.</p></div><p class="lifebook">В учебнике это называется: <b>объекты живой и неживой природы</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Чем объекты природы отличаются от машин и книг?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац: «Одни из них изготовлены…»</div>
+<div class="rev ans" id="a1" hidden>Машины и книги изготовил человек. Объекты природы существуют сами, независимо от его деятельности.</div>
+</div>
+<div class="think">
+<p class="qt">2. На какие две группы делят объекты природы? Куда попадут грибы, а куда — облака?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Третий абзац и рис. 1.</div>
+<div class="rev ans" id="a2" hidden>На объекты живой и неживой природы. Грибы — живая природа, облака — неживая.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Понятие о жизни</h2></div>
+<div class="easy">
+<p>Даже малыш скажет: камень неживой — он не двигается. А собака и кошка живые — они бегают.</p>
+<p>Но дерево тоже не бегает — а оно живое. Оно растёт!</p>
+<p>А теперь хитрость. Кристаллы соли в растворе тоже «растут». И сосулька зимой становится больше. Значит, рост бывает и у неживого.</p>
+<p>Ещё хитрость. Живое дышит: берёт кислород и выделяет углекислый газ. Но и горящая свеча берёт кислород, а выделяет углекислый газ и тепло.</p>
+<p><span class="big">Вывод: по одному признаку живое от неживого не отличить.</span> Граница между ними условна, если смотреть на свойства по отдельности. Поэтому дальше сравним живое и неживое внимательно.</p>
+</div>
+<div class="book" hidden>
+<p>Даже маленький ребёнок скажет, что камень неживой, так как он не может двигаться, а собака или кошка живые, они бегают. Деревья тоже живые, они не могут передвигаться, но они растут. Кристаллы в насыщенном растворе соли тоже могут «расти» и сосулька зимой увеличивается в размерах. Есть и другие примеры «роста» объектов неживой природы.</p>
+<p>Можно сказать, что для живых организмов характерно дыхание, при котором происходят процессы обмена веществ и превращения энергии, но и при горении свечи кислород поглощается, а выделяются углекислый газ (происходит обмен веществ) и энергия в виде тепла. Таким образом, если учитывать отдельные свойства объектов живой и неживой природы, то грань между ними условна. Рассмотрим её, установив основные черты сходства и различий между объектами живой и неживой природы.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 340 300" role="img" aria-label="Детектор жизни: у дегу есть все шесть признаков живого; у кристалла похож только рост, у свечи похож только обмен веществ; всё вместе есть только у дегу"><use href="#d-detector"/></svg><figcaption>Детектор жизни. Кристалл немного похож на живое ростом, свеча — «дыханием». Но всё вместе есть только у живого.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твой синий кристалл</span></div><div class="lifebody"><p>Помнишь синий кристалл, который ты выращивала? Он рос сам, пока стоял в шкафу. Но живым от этого не стал: у него нет клеток, он не ест, не размножается и ни на что не отвечает.</p><p>Рост — только один признак. Чтобы быть живым, нужны все сразу.</p></div><p class="lifebook">В учебнике это называется: <b>грань между живым и неживым условна</b></p></aside>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Один признак</b><p>кристалл растёт, свеча «дышит» — но они не живые</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Все признаки вместе</b><p>клетки, обмен веществ, рост, развитие, размножение, раздражимость</p></div></div><p class="pairkey">Живое узнают только по <b>набору</b> признаков.</p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Какие примеры «роста» и «дыхания» у неживого приводит учебник?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Оба абзаца раздела.</div>
+<div class="rev ans" id="a3" hidden>«Растут» кристаллы в растворе соли и сосулька зимой. «Дышит» горящая свеча: поглощает кислород и выделяет углекислый газ и тепло.</div>
+</div>
+<div class="think">
+<p class="qt">4. Почему учебник пишет «расти» про кристалл в кавычках?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Подумай над словами «если учитывать отдельные свойства».</div>
+<div class="rev ans" id="a4" hidden>Кристалл увеличивается, но это не рост живого: остальных свойств жизни у него нет. Один похожий признак ещё не делает объект живым.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Сходство и различия живого и неживого</h2></div>
+<div class="easy">
+<p>Что общего у камня и у птицы? И то, и другое построено из одних и тех же «кирпичиков» — <span class="term" role="button" tabindex="0" data-t="elem">химических элементов</span>.</p>
+<p>А разница — в том, сколько каких элементов. Тела живой природы на 98% состоят всего из четырёх элементов: углерода, кислорода, азота и водорода.</p>
+<p>У неживого этих элементов может не быть совсем. Оно может состоять из других элементов — и даже из одного.</p>
+</div>
+<div class="book" hidden>
+<p>Основные черты сходства объектов живой и неживой природы заключаются в том, что все они построены из одних и тех же структурных компонентов — <span class="term" role="button" tabindex="0" data-t="elem">химических элементов</span>. Но в объектах живой и неживой природы различно их соотношение. Тела живой природы на 98% состоят из четырёх элементов — углерода, кислорода, азота и водорода. Тела неживой природы могут не иметь в своём составе этих элементов, а состоять из других элементов и даже из одного.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 340 112" role="img" aria-label="Полоса в масштабе: 98 процентов тела живого — углерод, кислород, азот и водород, 2 процента — все остальные элементы"><use href="#d-elem"/></svg><figcaption>Полоса нарисована в масштабе: оранжевый кусочек справа — это и есть 2%.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Что общего у камня и у птицы, если смотреть на химические элементы? А в чём разница?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Это один абзац — ищи «сходство» и «соотношение».</div>
+<div class="rev ans" id="a5" hidden>Оба построены из химических элементов. Но у птицы, как у всего живого, 98% — четыре элемента: углерод, кислород, азот и водород. Камень может состоять из других элементов или даже из одного.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Признаки живого</h2></div>
+<div class="easy">
+<p>У всего живого есть общие признаки.</p>
+<p><span class="big">Клетки.</span> Тело живого состоит из <span class="term" role="button" tabindex="0" data-t="klet">клеток</span> — крошечных частичек. У клетки есть все признаки живого. Исключение — <span class="term" role="button" tabindex="0" data-t="virus">вирусы</span>: у них клеток нет. Это возбудители болезней растений, животных и человека. Проявляют себя вирусы, только когда попадают в клетки живого организма.</p>
+<p>Кроме клеток, у живого есть набор свойств, которого нет у неживого: движение, обмен веществ, рост, развитие, размножение, <span class="term" role="button" tabindex="0" data-t="razdr">раздражимость</span> и другие.</p>
+<p><span class="big">Обмен веществ</span> — самое важное. Это сразу три процесса: питание, дыхание и <span class="term" role="button" tabindex="0" data-t="vydel">выделение</span>. В организм поступают вещества, в нём вырабатывается энергия, а ненужное и вредное удаляется. Пока идёт <span class="term" role="button" tabindex="0" data-t="obmen">обмен веществ</span>, организм живёт и может всё остальное (рис. 2).</p>
+<p><span class="big">Рост и развитие.</span> <span class="term" role="button" tabindex="0" data-t="rost">Рост</span> — когда становится больше (количественные изменения). <span class="term" role="button" tabindex="0" data-t="razv">Развитие</span> — когда становится другим (качественные изменения) (рис. 3). Немного похожее бывает и у неживого. Но только у живого развитие идёт по порядку, шаг за шагом — по <span class="term" role="button" tabindex="0" data-t="nasl">наследственной информации</span>, которая записана в клетках.</p>
+<p><span class="big">Размножение.</span> При <span class="term" role="button" tabindex="0" data-t="razm">размножении</span> организмы передают детям свои признаки и свойства — из поколения в поколение (рис. 4, 5). Как это устроено, вы узнаете в старших классах.</p>
+<p>Все эти свойства <b>вместе</b> есть только у живого. А жизнь — это, пожалуй, самое сложное явление в мире.</p>
+</div>
+<div class="book" hidden>
+<p>Все объекты живой природы имеют ряд общих свойств и признаков.</p>
+<p>Они имеют клеточное строение, то есть их тела состоят из особых структур — <span class="term" role="button" tabindex="0" data-t="klet">клеток</span>. Клетка представляет собой основную структурную единицу живого организма, которой присущи все признаки живого. Исключение составляют <span class="term" role="button" tabindex="0" data-t="virus">вирусы</span> — опасные возбудители многих заболеваний растений, животных и человека. Они не имеют клеточного строения, и их жизнедеятельность проявляется только тогда, когда они проникают в клетки живого организма.</p>
+<p>Для всех объектов живой природы характерна совокупность так называемых <b>жизненных свойств</b>, отсутствующая у объектов неживой природы. К ним, кроме клеточного строения, относятся движение, обмен веществ, рост, развитие, размножение, <span class="term" role="button" tabindex="0" data-t="razdr">раздражение</span> и др.</p>
+<p>Самым важным проявлением <span class="term" role="button" tabindex="0" data-t="zhd">жизнедеятельности</span> является <b>обмен веществ</b>, присущий всем объектам живой природы (рис. 2). Именно это свойство обеспечивает им возможность осуществлять остальные процессы жизнедеятельности. Объекты живой природы осуществляют жизнедеятельность до тех пор, пока в них извне поступают питательные вещества, вырабатывается энергия и из них удаляются ненужные и вредные продукты жизнедеятельности.</p>
+<p><span class="term" role="button" tabindex="0" data-t="obmen">Обмен веществ</span> у разных объектов живой природы включает в себя несколько взаимосвязанных процессов, обеспечивающих в них непрерывный поток вещества и энергии, необходимой для осуществления жизнедеятельности. Среди них: <b>питание</b>, <b>дыхание</b> и <span class="term" role="button" tabindex="0" data-t="vydel">выделение</span>.</p>
+<p>Объекты живой природы способны расти и развиваться. Количественные изменения в структуре любого природного тела называют <span class="term" role="button" tabindex="0" data-t="rost">ростом</span>, а качественные — <span class="term" role="button" tabindex="0" data-t="razv">развитием</span> (рис. 3). Оба этих свойства могут встречаться и у объектов неживой природы. Но только объектам живой природы свойственно упорядоченное, постепенное и последовательное развитие, связанное с реализацией <span class="term" role="button" tabindex="0" data-t="nasl">наследственной информации</span>, заложенной в их клетках.</p>
+<p>В процессе <span class="term" role="button" tabindex="0" data-t="razm">размножения</span> организмы передают свои признаки, свойства и особенности развития из поколения в поколение (рис. 4, 5). Механизм передачи наследственных признаков един для всех живых организмов, но с ним вы познакомитесь в более старших классах.</p>
+<p>Таким образом, все перечисленные выше свойства и ряд других свойств в своей совокупности характерны только для живых организмов, а <b>жизнь</b> — это, пожалуй, самое сложное явление в окружающем нас мире.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-f2" src="img/4ac63a38477f.jpg" alt="Ель и филин: стрелками показано, что они получают и что выделяют"><figcaption><span class="src">из учебника</span><b>Рис. 2.</b> Проявление обмена веществ у животных и растений</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 340 196" role="img" aria-label="Схема обмена веществ: питание — пища и вода, дыхание — кислород поступают в организм, выделение — ненужное и вредное выходит наружу"><use href="#d-metab"/></svg><figcaption>Обмен веществ = питание + дыхание + выделение.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-f3" src="img/c1712a1f51a7.jpg" alt="Прорастание фасоли и превращение гусеницы в бабочку"><figcaption><span class="src">из учебника</span><b>Рис. 3.</b> Проявление роста и развития у животных и растений</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 340 206" role="img" aria-label="Рост: кружок становится больше, форма та же. Развитие: яйцо, личинка, куколка, муравей — каждый шаг новый облик"><use href="#d-growdev"/></svg><figcaption>Рост — та же форма, только больше. Развитие — новый облик на каждом шаге.</figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Рост</b><p>количественные изменения: становится больше</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Развитие</b><p>качественные изменения: становится другим</p></div></div><p class="pairkey">Палочник после линьки — тот же палочник, только больше: это <b>рост</b>. Гусеница стала бабочкой: это <b>развитие</b>.</p></div>
+</div>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-f4" src="img/63f94ab9f5ee.jpg" alt="Кустик земляники с усом, на котором вырос новый кустик"><figcaption><span class="src">из учебника</span><b>Рис. 4.</b> Размножение у растений</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-f5" src="img/ee363697d441.jpg" alt="Петух, курица, яйцо и цыплёнок"><figcaption><span class="src">из учебника</span><b>Рис. 5.</b> Размножение животных</figcaption></div></figure>
+</div>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твой домашний зоопарк</span></div><div class="lifebody"><p>Все признаки живого ты уже видела своими глазами:</p><p><b>обмен веществ</b> — Люся и Юкси едят корм, пьют, дышат и оставляют помёт;<br><b>рост</b> — палочники были крошечными, а потом стали большими. Чтобы вырасти, они сбрасывали старую шкурку — после линьки она оставалась пустой;<br><b>развитие</b> — на муравьиной ферме из яиц получались новые муравьи. Сначала из яйца выходит личинка, потом она становится куколкой и только потом — муравьём;<br><b>размножение</b> — у мадагаскарских тараканов появилось много-много маленьких;<br><b>раздражимость</b> — если рядом что-то движется, Люся и Юкси мигом убегают в свой уголок. Совсем как мышь из учебника, которая заметила кошку.</p></div><p class="lifebook">В учебнике это называется: <b>признаки живого</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Почему вирусы — исключение среди живого?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a6" hidden>У вирусов нет клеточного строения, а их жизнедеятельность проявляется, только когда они проникают в клетки живого организма.</div>
+</div>
+<div class="think">
+<p class="qt">7. Учебник называет обмен веществ самым важным проявлением жизнедеятельности. Почему?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Четвёртый абзац: «Именно это свойство обеспечивает…»</div>
+<div class="rev ans" id="a7" hidden>Обмен веществ даёт организму возможность осуществлять все остальные процессы жизнедеятельности. Организм живёт, пока в него поступают вещества, вырабатывается энергия и удаляется ненужное.</div>
+</div>
+<div class="think">
+<p class="qt">8. Кристалл тоже растёт. Какое развитие бывает только у живого?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Абзац про рост и развитие, последнее предложение.</div>
+<div class="rev ans" id="a8" hidden>Упорядоченное, постепенное и последовательное развитие, связанное с наследственной информацией, которая заложена в клетках.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">5</span><h2>Живая и неживая природа — единое целое</h2></div>
+<div class="easy">
+<p>Живое и неживое сильно отличаются. Живое устроено гораздо сложнее, и всё в нём работает слаженно.</p>
+<p>Но живое и неживое тесно связаны. Во-первых, они построены из одних и тех же химических элементов.</p>
+<p>Во-вторых, если разрушить неживую природу, погибнет и всё живое. Когда человек действует в природе неразумно и не думает о том, как всё связано, это может закончиться очень плохо — и прежде всего для самого человека.</p>
+</div>
+<div class="book" hidden>
+<p>Как мы видим, объекты живой и неживой природы значительно отличаются друг от друга. Прежде всего, живые организмы различаются сложностью строения и высокой организованностью протекающих в них процессов жизнедеятельности. Однако все они тесно связаны между собой. На это указывает, прежде всего, единство их химического состава.</p>
+<p>Кроме того, уничтожение неживой природы неизбежно влечёт за собой гибель всего живого. Неразумная деятельность человека в природе, часто осуществляемая без учёта взаимозависимости её компонентов, может привести к очень серьёзным последствиям, опасным, прежде всего, для самого человека.</p>
+</div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Люся и Юкси</span></div><div class="lifebody"><p>Люсе и Юкси нужны воздух и вода — это неживая природа. А сено, которое они едят, выросло из земли под солнцем. Без неживого живое не обходится.</p></div><p class="lifebook">В учебнике это называется: <b>живая и неживая природа — единое целое</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">9. Что будет с живым, если разрушить неживую природу? Кому это опаснее всего?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a9" hidden>Уничтожение неживой природы неизбежно приведёт к гибели всего живого. Это опасно прежде всего для самого человека.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">6</span><h2>Роль живого в природе</h2></div>
+<div class="easy">
+<p>Первые живые организмы появились на Земле около 4 миллиардов лет назад.</p>
+<p>Живое расселилось по планете — и у Земли появилась особая оболочка, <span class="term" role="button" tabindex="0" data-t="biosf">биосфера</span> (рис. 6). В неё входят нижний слой воздуха (атмосфера), вода (гидросфера), почва и верхний слой твёрдой земли (литосфера).</p>
+<p>Сверху жизнь ограничивает <span class="term" role="button" tabindex="0" data-t="ozon">озоновый экран</span> — слой газа озона на высоте 15—20 км. Он задерживает опасные для живого ультрафиолетовые лучи солнца. В океане живые организмы есть даже на дне впадин — на глубине 10—11 км. А под землёй бактерии местами живут на глубине трёх километров и больше.</p>
+<p><span class="big">Сложим: 15—20 км вверх и 10—11 км вниз — получается, что жизнь занимает слой толщиной около 30 километров.</span></p>
+<p>Учёный Владимир Иванович Вернадский первым сказал: живые организмы — главная сила, которая меняет Землю. Биосфера — это не просто место, где есть жизнь. Это результат работы живых организмов.</p>
+</div>
+<div class="book" hidden>
+<p>По мнению учёных, первые живые организмы появились на нашей планете около 4 млрд лет назад.</p>
+<p>С появлением живых организмов и их распространением появилась особая оболочка Земли — <span class="term" role="button" tabindex="0" data-t="biosf">биосфера</span> (от греч. <i>биос</i> — жизнь и <i>сфера</i> — шар) (рис. 6). Биосфера включает нижние слои атмосферы, гидросферу, почву, верхний слой литосферы. Верхняя граница распространения жизни определяется <span class="term" role="button" tabindex="0" data-t="ozon">озоновым экраном</span> — слоем газа озона на высоте 15—20 км. Он задерживает губительные для живых организмов ультрафиолетовые лучи солнца. В океанах живые организмы встречаются на дне впадин даже на глубине 10—11 км. В литосфере жизнь (бактерии) местами проникает на глубину до трёх и более километров.</p>
+<p>Первым, кто указал на роль живых организмов как главнейшей преобразующей силы планеты Земля, был выдающийся отечественный учёный <b>Владимир Иванович Вернадский</b>. Именно он впервые отметил, что биосфера — это не только область распространения жизни, но и результат деятельности живых организмов на нашей планете.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-f6" src="img/71d0b36b7a9b.jpg" alt="Схема высоты и глубины: озоновый экран, Эверест, уровень моря, Марианский жёлоб"><figcaption><span class="src">из учебника</span><b>Рис. 6.</b> Границы биосферы</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 346" role="img" aria-label="Биосфера в масштабе: озоновый экран на высоте 15—20 км, самолёт около 10 км, Эверест 8,8 км, уровень моря, бактерии до 3 км под землёй, дно впадин 11 км; слой жизни около 30 км"><use href="#d-bios"/></svg><figcaption>Та же биосфера, но в настоящем масштабе: каждый километр — одинаковой высоты.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Самолёт и бассейн</span></div><div class="lifebody"><p>Ты летала на самолёте — он летит примерно на высоте 10 км. А озоновый экран ещё выше: 15—20 км.</p><p>А когда ты ныряла в бассейне в очках, ты опускалась метра на два. На схеме это даже не разглядеть: весь слой жизни — около 30 километров!</p></div><p class="lifebook">В учебнике это называется: <b>границы биосферы</b></p></aside>
+<div class="rubric">Из истории науки</div>
+<div class="easy">
+<p><b>Владимир Иванович Вернадский</b> (1863—1945) — великий русский учёный, академик. Он создал учение о биосфере.</p>
+<p>Вернадский показал: биосфера никогда не возвращается в прежнее состояние, она всё время меняется. Потому что живые организмы постоянно влияют на всё вокруг.</p>
+<p>Он придумал слово «ноосфера» (от греч. <i>ноос</i> — разум) — так он назвал биосферу, которую изменил человек. Вернадский верил, что люди будут действовать разумно и сохранят равновесие и гармонию в природе.</p>
+<p>На жизнь на Земле влияет и космос. Учёный <b>Александр Леонидович Чижевский</b> (1897—1964) выяснил, что активность Солнца связана с тем, что происходит в биосфере. Его считают одним из создателей гелиобиологии — науки о том, как Солнце влияет на живые организмы, в том числе на здоровье человека.</p>
+</div>
+<div class="book" hidden>
+<p><b>Владимир Иванович Вернадский</b> (1863—1945) — выдающийся отечественный учёный, академик, основоположник биогеохимии, разработал учение о биосфере.</p>
+<p>В своих научных работах он показал, что биосфера — живая оболочка Земли — никогда не возвращается в своё прежнее состояние, поэтому всё время изменяется. Это объясняется тем, что живые организмы оказывают постоянное геохимическое влияние на окружающий мир.</p>
+<p>Вернадский ввёл в своё учение о биосфере также понятие «ноосфера» (от греч. <i>ноос</i> — разум), как видоизменённая в результате человеческого воздействия биосфера. Вернадский верил, что совместные разумные действия всего человечества будут направлены не только на удовлетворение своих потребностей, но и на создание равновесия и гармонии в природе.</p>
+<p>Когда мы говорим о единстве живой и неживой природы, надо учитывать, что на процессы, происходящие в биосфере нашей планеты, оказывают влияние и космические физические факторы. В начале XX века российский учёный <b>Александр Леонидович Чижевский</b> (1897—1964), изучая влияние физических космических факторов на процессы в живой природе, установил взаимосвязь циклов активности Солнца с явлениями, происходящими в биосфере.</p>
+<p>Чижевского считают одним из основоположников космической, или гелиобиологии — науки, изучающей влияние факторов активности Солнца на живые организмы, в том числе и на здоровье человека.</p>
+</div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">10. Где проходит верхняя граница биосферы и почему именно там?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Второй абзац раздела: «Верхняя граница…»</div>
+<div class="rev ans" id="a10" hidden>На озоновом экране — слое газа озона на высоте 15—20 км. Он задерживает губительные для живого ультрафиолетовые лучи солнца, а выше жизни нет.</div>
+</div>
+<div class="think">
+<p class="qt">11. Что Вернадский впервые заметил про биосферу?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a11" hidden>Что биосфера — это не только область, где есть жизнь, но и результат деятельности живых организмов.</div>
+</div>
+<div class="think">
+<p class="qt">12. Почему, по Вернадскому, биосфера никогда не возвращается в прежнее состояние?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>«Из истории науки», второй абзац.</div>
+<div class="rev ans" id="a12" hidden>Живые организмы постоянно влияют на окружающий мир, поэтому биосфера всё время изменяется.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s6" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s7">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Объекты природы: живые и неживые · Жизнь · Свойства жизни · Биосфера · Озоновый экран</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Почему сложно дать определение понятия «жизнь»?</li><li>В чём заключается различие химической организации тел живой и неживой природы?</li><li>Каковы основные свойства живых тел природы (признаки живого)?</li><li>Какие примеры внешне схожих проявлений отдельных черт, свойственных живому, вы можете привести и в неживой природе?</li><li>Какова роль живого в природе?</li></ol></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Почему мы можем утверждать, что живая и неживая природа представляют собой единое целое?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к «Подумайте!»</button></div>
+<div class="rev hint" id="r1" hidden>Загляни в раздел 5: там два доказательства — одно про химические элементы, другое про то, что будет с живым без неживого.</div></div>
+<div class="rubric">Моя лаборатория · Выполните задание</div>
+<div class="ask"><b>Задание учебника</b>
+<p style="margin:0">Прочитайте дополнительный текст. Что такое графит? Из чего он образуется? Можно ли сказать, что графит — это объект живой природы? Обоснуйте свой ответ. Составьте план (не менее трёх пунктов) рассказа о том, как образуется графит.</p></div>
+<div class="easy">
+<p>Посмотри на простой карандаш. Серый стержень внутри — это <b>графит</b>, природный материал. Он получился из остатков деревьев, которые росли на Земле сотни миллионов лет назад (рис. 7).</p>
+<p>Как это было? Погибшие растения засыпало слоями горных пород. Под тяжестью пород они сжимались, а без воздуха за тысячи лет превращались в бурый уголь.</p>
+<p>Прошли ещё миллионы лет. Глубоко под землёй, под большим давлением и при высокой температуре, бурый уголь стал каменным углём. А под ещё большим давлением и жаром каменный уголь превратился в <span class="term" role="button" tabindex="0" data-t="graf">графит</span>.</p>
+</div>
+<div class="book" hidden>
+<p>Посмотрите на простой карандаш с графитовым стержнем внутри. Графит — это природный материал. В его основе — остатки деревьев, росших на Земле сотни миллионов лет назад (рис. 7).</p>
+<p>Случалось так, что погибшие растения оказывались погребёнными под пластами осадочных пород. Под давлением осадочных пород они спрессовывались и за тысячелетия без доступа кислорода превращались в бурый уголь. Проходили ещё миллионы лет. Свойства бурого угля, оказавшегося на большой глубине, под действием высокого давления и высоких температур, менялись. Бурый уголь становился каменным углём. Постепенно под действием ещё более высокого давления и ещё более высоких температур образовывались новые породы. Каменный уголь превращался в <span class="term" role="button" tabindex="0" data-t="graf">графит</span>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-f7" src="img/aaaa7b1755aa.jpg" alt="Древний лес из высоких растений и большая стрекоза"><figcaption><span class="src">из учебника</span><b>Рис. 7.</b> Растения каменноугольного периода</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 300 352" role="img" aria-label="Путь графита: деревья сотни миллионов лет назад, их засыпало породами, бурый уголь, каменный уголь, графит, стержень карандаша"><use href="#d-graphite"/></svg><figcaption>Из древних деревьев — стержень карандаша. Готовый план рассказа из учебного задания.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твой карандаш</span></div><div class="lifebody"><p>Деревянная часть карандаша сделана из обычного дерева, которое срубили недавно. А вот серый стержень внутри — графит. Он и получился из деревьев, которые росли сотни миллионов лет назад.</p><p>Графит когда-то был деревом — но сейчас он объект <b>неживой</b> природы: у него нет ни клеток, ни обмена веществ.</p></div><p class="lifebook">В учебнике это называется: <b>графит — природный материал</b></p></aside>
+<div class="rubric">Для любознательных</div>
+<div class="easy">
+<p>Шесть главных свойств живого — коротко:</p>
+<p>1. Тела живой природы состоят из клеток.<br>2. Каждый организм — <b>биологическая система</b> (от греч. <i>система</i> — целое из связанных частей): все части работают вместе. Такая система открытая — ей нужны энергия и питательные вещества извне.<br>3. Всё живое способно к обмену веществ: дыхание, питание, выделение.<br>4. Живое растёт и развивается — по порядку, по наследственной информации.<br>5. Живое размножается и передаёт свои признаки потомству.<br>6. Живое реагирует на изменения вокруг — это <b>раздражимость</b>. Мышка, заметив кошку, убегает. Растения поворачивают листья и цветки к свету.</p>
+</div>
+<div class="book" hidden>
+<p>Характеризовать тела живой природы можно, раскрыв основные свойства живого.</p>
+<p>1. Тела живой природы имеют клеточное строение.<br>2. Тела живой природы представляют собой биологические системы (от греч. <i>система</i> — целое, состоящее из взаимосвязанных частей). Совместная согласованная работа отдельных частей любой системы является важнейшим условием её существования как единого целого. Стоит обратить внимание, что все биологические системы являются открытыми. Для существования живых организмов необходимо поступление энергии (солнечной или химической) и питательных веществ из окружающей среды.<br>3. Всё живое способно к обмену веществ. Тела живой природы осуществляют свою жизнедеятельность до тех пор, пока в них извне не только поступают энергия и питательные вещества, но и удаляются ненужные, а иногда и вредные продукты жизнедеятельности. Обмен веществ обеспечивается такими процессами, как дыхание, питание и выделение.<br>4. Тела живой природы растут и развиваются. Количественные изменения в структуре любого природного тела называют ростом, а качественные — развитием. Оба этих свойства могут встречаться у объектов как живой, так и неживой природы. Но только телам живой природы свойственно упорядоченное, постепенное и последовательное развитие, связанное с реализацией заложенной в них наследственной информации.<br>5. Всё живое способно к самовоспроизведению. Тела живой природы способны появляться только в результате процесса размножения. При этом все организмы способны передавать свои признаки, свойства и особенности развития из поколения в поколение.<br>6. Тела живой природы реагируют на изменение окружающей их среды. Это свойство называют <b>раздражимостью</b>. Разумеется, скорость ответной реакции и собственно её проявление у разных объектов живой природы значительно различаются. Например, мышка, заметившая охотящуюся на неё кошку, стремится быстро убежать от грозящей ей опасности. Растения же изменяют направление роста и поворачивают листья и соцветия по направлению к свету.</p>
+</div>
+<div class="rubric">Задание для любознательных · Выращивание кристаллов</div>
+<div class="easy">
+<p>Кристаллы соли в насыщенном растворе растут. Проверь сама!</p>
+<p><b>Цель:</b> увидеть, как растут кристаллы поваренной соли.<br><b>Понадобится:</b> соль (лучше морская без добавок), кипячёная отстоявшаяся вода, чистый стакан или банка, деревянная палочка, салфетки, марля, рыболовная леска, карандаш, бесцветный лак.</p>
+<p><b>Ход работы:</b><br>1. Раствори 40 г соли в 100 мл горячей воды. Дай остыть и процеди через марлю.<br>2. Привяжи к леске маленький кристаллик соли. Другой конец лески привяжи к карандашу и положи его на стакан, чтобы кристаллик висел в растворе (рис. 8).<br>3. Накрой салфеткой и поставь в тёмное место, где не бывает перепадов температуры. Не тряси и не переставляй.<br>4. Раз в неделю доливай свежий насыщенный раствор — так кристалл вырастет крупнее. Готовый кристалл промокни и покрой лаком.<br>5. Регулярно записывай и фотографируй наблюдения. Потом покажи в классе и обсудите: можно ли считать кристаллы телами живой природы?</p>
+</div>
+<div class="book" hidden>
+<p>В насыщенном растворе поваренной соли образуются кристаллы, которые увеличиваются в размерах, то есть растут. Чтобы убедиться в этом, проведите опыт по выращиванию соляных кристаллов.</p>
+<p><b>Цель работы:</b> увидеть рост кристаллов поваренной соли.<br><b>Материалы и оборудование:</b> поваренная соль (лучше морская без добавок); вода (дистиллированная или прокипячённая, отстоявшаяся и отфильтрованная обычная вода); чистая стеклянная ёмкость (стакан, банка); деревянная палочка для помешивания раствора, бумажные салфетки, фильтровальная бумага или марля, лак для покрытия готового соляного кристалла.</p>
+<p><b>Ход работы</b><br>1. В стеклянной ёмкости приготовьте насыщенный солевой раствор из 100 мл горячей воды и 40 г соли, дайте жидкости остыть и отфильтруйте её через фильтровальную бумагу или свёрнутую в несколько слоёв марлю.<br>2. К рыболовной леске привяжите небольшой кристаллик соли и опустите в приготовленный соляной раствор. Если кристаллика соли нет, используйте любой пластмассовый твёрдый предмет, предварительно замоченный в приготовленном растворе и высушенный. Другой конец лески привяжите к перекладине (например, к карандашу, ручке или деревянной палочке), которая будет шире горлышка выбранной посуды. Этот предмет будет фиксироваться на ёмкости с раствором, чтобы маленький кристаллик на леске был в подвешенном состоянии (рис. 8).<br>3. Накройте полученную конструкцию салфеткой или тканью и поставьте при комнатной температуре в тёмное место, где в вашем помещении наименее заметны перепады температуры. Исключите встряхивание и передвижения ёмкости.<br>4. По мере роста кристалла содержание соли в окружающей его жидкости будет уменьшаться. Если вы хотите вырастить кристалл достаточно крупных размеров, то раз в неделю добавляйте в ёмкость насыщенный соляной раствор. Когда кристалл вырастет до необходимых размеров, аккуратно выньте его из жидкости, выложите на чистую бумажную салфетку и осторожно промокните мягкой тканью. Если хотите сохранить хрупкий кристалл, то для придания ему определённой прочности, покройте его бесцветным лаком для ногтей.<br>5. Регулярно записывайте и фотографируйте свои наблюдения. После окончания наблюдений, оформите и представьте их в классе. Обсудите, можно ли считать кристаллы телами живой природы?</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-f8" src="img/215e371e1e0b.jpg" alt="Стакан с раствором и ложкой, стакан с ниткой и выросший кристалл"><figcaption><span class="src">из учебника</span><b>Рис. 8.</b> Выращивание кристалла</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Синий кристалл и мамины кварцы</span></div><div class="lifebody"><p>В прошлый раз синий кристалл забылся в шкафу и вырос некрасивым. Учебник советует: раз в неделю доливать свежий раствор и записывать, что изменилось. Это и есть дневник наблюдений из §4 — с датой, временем и фото.</p><p>А ещё спроси маму про её кристаллы кварца. Они тоже выросли сами — в природе. И тоже не стали живыми.</p></div><p class="lifebook">В учебнике это называется: <b>выращивание кристаллов</b></p></aside>
+<div class="rubric">Шаги к успеху</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Как работать с текстом учебника</button></div>
+<div class="rev plan" id="r2" hidden><ol><li>Прочитай название параграфа — в нём главное.</li><li>Прочитай вопросы перед параграфом и попробуй на них ответить.</li><li>Прочитай вопросы в конце параграфа — они покажут, что самое важное.</li><li>Прочитай текст и составь план. Для каждой части спрашивай себя: «О чём здесь говорится?» и «Что об этом говорится?». Пункты плана — короткие, главные и связанные по смыслу.</li><li>Новые термины выучи, главное запомни и умей подтвердить примерами.</li><li>Ответь на вопросы в конце параграфа и выполни задания.</li><li>Кратко перескажи параграф.</li></ol></div></div>
+<div class="done"><button class="donebtn" data-s="s7" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt3" data-n="8">
+<div class="sortlab">Живое или неживое?</div>
+<p class="sortnote">Ошиблась — ничего страшного, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Юкси</p><div class="sbtns"><button class="sbtn" data-b="0">живое</button><button class="sbtn" data-b="1">неживое</button></div><p class="swhy" hidden>У Юкси есть все признаки живого.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Кристалл кварца из маминой коллекции</p><div class="sbtns"><button class="sbtn" data-b="0">живое</button><button class="sbtn" data-b="1">неживое</button></div><p class="swhy" hidden>Кристалл может расти, но других признаков живого у него нет.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Гриб в лесу</p><div class="sbtns"><button class="sbtn" data-b="0">живое</button><button class="sbtn" data-b="1">неживое</button></div><p class="swhy" hidden>Грибы — живая природа.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Облако</p><div class="sbtns"><button class="sbtn" data-b="0">живое</button><button class="sbtn" data-b="1">неживое</button></div><p class="swhy" hidden>Облака — неживая природа.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Сосулька, которая растёт зимой</p><div class="sbtns"><button class="sbtn" data-b="0">живое</button><button class="sbtn" data-b="1">неживое</button></div><p class="swhy" hidden>Рост бывает и у неживого. Один признак — ещё не жизнь.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Палочник</p><div class="sbtns"><button class="sbtn" data-b="0">живое</button><button class="sbtn" data-b="1">неживое</button></div><p class="swhy" hidden>Палочник ест, растёт, линяет, размножается.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Горящая свеча</p><div class="sbtns"><button class="sbtn" data-b="0">живое</button><button class="sbtn" data-b="1">неживое</button></div><p class="swhy" hidden>Свеча «дышит» кислородом, но живой от этого не становится.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Графитовый стержень карандаша</p><div class="sbtns"><button class="sbtn" data-b="0">живое</button><button class="sbtn" data-b="1">неживое</button></div><p class="swhy" hidden>Графит получился из древних деревьев, но сейчас это неживая природа.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt4" data-n="5">
+<div class="sortlab">Рост или развитие?</div>
+<div class="sitem" data-r="0"><p class="stext">Люся стала больше, чем была малышкой</p><div class="sbtns"><button class="sbtn" data-b="0">рост</button><button class="sbtn" data-b="1">развитие</button></div><p class="swhy" hidden>Та же Люся, только больше — количественные изменения.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Из куколки вышла бабочка</p><div class="sbtns"><button class="sbtn" data-b="0">рост</button><button class="sbtn" data-b="1">развитие</button></div><p class="swhy" hidden>Совсем новый облик — качественные изменения.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Палочник после линьки стал длиннее</p><div class="sbtns"><button class="sbtn" data-b="0">рост</button><button class="sbtn" data-b="1">развитие</button></div><p class="swhy" hidden>Форма та же, размер больше.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Из яйца муравья вышла личинка</p><div class="sbtns"><button class="sbtn" data-b="0">рост</button><button class="sbtn" data-b="1">развитие</button></div><p class="swhy" hidden>Яйцо стало чем-то другим — развитие.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Из семени появился росток с листьями</p><div class="sbtns"><button class="sbtn" data-b="0">рост</button><button class="sbtn" data-b="1">развитие</button></div><p class="swhy" hidden>Как на рис. 3: семя превратилось в растение.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt5" data-n="5">
+<div class="sortlab">Какой это признак живого?</div>
+<div class="sitem" data-r="3"><p class="stext">Юкси убегает в свой уголок, когда рядом что-то движется</p><div class="sbtns"><button class="sbtn" data-b="0">обмен веществ</button><button class="sbtn" data-b="1">рост</button><button class="sbtn" data-b="2">размножение</button><button class="sbtn" data-b="3">раздражимость</button></div><p class="swhy" hidden>Ответ на изменение вокруг — раздражимость.</p></div>
+<div class="sitem" data-r="2"><p class="stext">У мадагаскарских тараканов появилось много маленьких</p><div class="sbtns"><button class="sbtn" data-b="0">обмен веществ</button><button class="sbtn" data-b="1">рост</button><button class="sbtn" data-b="2">размножение</button><button class="sbtn" data-b="3">раздражимость</button></div><p class="swhy" hidden>Появилось потомство — размножение.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Люся съела корм, попила воды и оставила помёт</p><div class="sbtns"><button class="sbtn" data-b="0">обмен веществ</button><button class="sbtn" data-b="1">рост</button><button class="sbtn" data-b="2">размножение</button><button class="sbtn" data-b="3">раздражимость</button></div><p class="swhy" hidden>Питание и выделение — части обмена веществ.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Палочник стал больше, чем был</p><div class="sbtns"><button class="sbtn" data-b="0">обмен веществ</button><button class="sbtn" data-b="1">рост</button><button class="sbtn" data-b="2">размножение</button><button class="sbtn" data-b="3">раздражимость</button></div><p class="swhy" hidden>Количественные изменения — рост.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Растение поворачивает листья к свету</p><div class="sbtns"><button class="sbtn" data-b="0">обмен веществ</button><button class="sbtn" data-b="1">рост</button><button class="sbtn" data-b="2">размножение</button><button class="sbtn" data-b="3">раздражимость</button></div><p class="swhy" hidden>Пример из учебника: растение отвечает на свет.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Объекты природы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="f1" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Всё, что существует в природе само, без человека. Объектум — предмет.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Обмен веществ</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="f2" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Питание + дыхание + выделение. Самое важное проявление жизнедеятельности.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Рост</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 340 206" aria-hidden="true"><use href="#d-growdev"/></svg><span class="ftext">Количественные изменения: становится больше.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Развитие</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="f3" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Качественные изменения: становится другим.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Размножение</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="f5" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Организмы передают свои признаки потомству.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Раздражимость</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 340 300" aria-hidden="true"><use href="#d-detector"/></svg><span class="ftext">Живое отвечает на изменения вокруг: мышь убегает от кошки.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Биосфера</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 346" aria-hidden="true"><use href="#d-bios"/></svg><span class="ftext">Оболочка Земли, где есть жизнь. Биос — жизнь, сфера — шар.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Озоновый экран</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="f6" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Слой озона на высоте 15—20 км, верхняя граница жизни.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что из этого — объект живой природы?</h3><div class="opts">
+<button class="opt">Облако</button>
+<button class="opt">Гора</button>
+<button class="opt" data-ok="1">Гриб</button>
+<button class="opt">Камень</button></div>
+<div class="fb">Грибы — живая природа, остальное — неживая.</div></div>
+<div class="q"><h3>2. Из каких элементов на 98% состоят тела живой природы?</h3><div class="opts">
+<button class="opt" data-ok="1">Углерод, кислород, азот, водород</button>
+<button class="opt">Железо, кислород, медь, водород</button>
+<button class="opt">Только из кислорода</button>
+<button class="opt">Из соли и воды</button></div>
+<div class="fb">Четыре элемента: углерод, кислород, азот и водород.</div></div>
+<div class="q"><h3>3. У кого нет клеточного строения?</h3><div class="opts">
+<button class="opt">У грибов</button>
+<button class="opt" data-ok="1">У вирусов</button>
+<button class="opt">У растений</button>
+<button class="opt">У животных</button></div>
+<div class="fb">Вирусы — исключение: клеток у них нет.</div></div>
+<div class="q"><h3>4. Рост — это…</h3><div class="opts">
+<button class="opt" data-ok="1">количественные изменения</button>
+<button class="opt">качественные изменения</button>
+<button class="opt">передача признаков потомству</button>
+<button class="opt">ответ на изменения вокруг</button></div>
+<div class="fb">Рост — стало больше. Развитие — стало другим.</div></div>
+<div class="q"><h3>5. Что ограничивает биосферу сверху?</h3><div class="opts">
+<button class="opt">Вершина Эвереста</button>
+<button class="opt">Облака</button>
+<button class="opt" data-ok="1">Озоновый экран на высоте 15—20 км</button>
+<button class="opt">Высота полёта самолёта</button></div>
+<div class="fb">Озоновый экран задерживает губительные ультрафиолетовые лучи.</div></div>
+<div class="q"><h3>6. Кто первым сказал, что биосфера — результат деятельности живых организмов?</h3><div class="opts">
+<button class="opt" data-ok="1">В. И. Вернадский</button>
+<button class="opt">А. Л. Чижевский</button>
+<button class="opt">Никто из учёных</button></div>
+<div class="fb">Владимир Иванович Вернадский, создатель учения о биосфере.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Признаки живого</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Клеточное строение (исключение — вирусы).</li><li>Обмен веществ — самое важное: питание, дыхание, выделение.</li><li>Рост и развитие, размножение, раздражимость; все вместе — только у живого.</li></ol></div>
+</div>
+<div class="think">
+<h3>Почему по одному признаку живое не отличить</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Кристаллы соли и сосулька «растут».</li><li>Свеча при горении поглощает кислород и выделяет углекислый газ и тепло.</li><li>Поэтому живое определяют по совокупности всех свойств.</li></ol></div>
+</div>
+<div class="think">
+<h3>Рост и развитие</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Рост — количественные изменения, развитие — качественные (рис. 3).</li><li>Похожее бывает и у неживого.</li><li>Только у живого развитие упорядоченное и связано с наследственной информацией в клетках.</li></ol></div>
+</div>
+<div class="think">
+<h3>Живая и неживая природа — единое целое</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Живое и неживое построено из одних химических элементов.</li><li>Уничтожение неживой природы приведёт к гибели живого.</li><li>Неразумная деятельность человека опасна прежде всего для самого человека.</li></ol></div>
+</div>
+<div class="think">
+<h3>Что такое биосфера</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Оболочка Земли, где есть жизнь; появилась вместе с живыми организмами (около 4 млрд лет назад).</li><li>Границы: озоновый экран 15—20 км вверху, дно впадин 10—11 км, бактерии до 3 км под землёй.</li><li>Вернадский: биосфера — результат деятельности живых организмов.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <span class="pn cur">§1 Живая и неживая природа</span>
+  <a class="pn" href="b2.html">§2 Биология — система наук ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 1, с. 6—13. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'d-detector':'0 0 340 300','d-metab':'0 0 340 196','d-growdev':'0 0 340 206','d-elem':'0 0 340 112','d-bios':'0 0 330 346','d-graphite':'0 0 300 352'};
+
+var T={
+obpr:{w:"Объекты природы",k:"что это",p:"f1",t:"Всё, что существует в природе само, без человека: вода, воздух, горы, растения, животные.",r:"<b>объектум</b> (лат.) — предмет",e:"Мамины кристаллы кварца — объекты неживой природы, Люся и Юкси — живой."},
+zhizn:{w:"Жизнь",k:"что это",s:"d-detector",t:"Самое сложное явление в мире. Живое узнают не по одному признаку, а по всем свойствам жизни сразу.",r:"",e:""},
+zhd:{w:"Жизнедеятельность",k:"что это",s:"d-metab",t:"Всё, что живой организм делает, чтобы жить: питается, дышит, выделяет ненужное, растёт, размножается.",r:"",e:""},
+elem:{w:"Химические элементы",k:"что это",s:"d-elem",t:"Самые маленькие «кирпичики», из которых построено всё на свете — и живое, и неживое.",r:"",e:""},
+klet:{w:"Клетка",k:"что это",s:"d-detector",t:"Крошечная частичка, из которой построено тело живого организма. У клетки есть все признаки живого.",r:"",e:""},
+virus:{w:"Вирусы",k:"исключение",s:"d-detector",t:"Возбудители болезней растений, животных и человека. Клеток у них нет. Они проявляют себя, только когда попадают в клетки живого организма.",r:"",e:""},
+obmen:{w:"Обмен веществ",k:"главный признак живого",p:"f2",t:"Питание, дыхание и выделение вместе. В организм поступают вещества, вырабатывается энергия, а ненужное удаляется.",r:"",e:"Люся и Юкси едят, пьют, дышат — и оставляют помёт."},
+vydel:{w:"Выделение",k:"часть обмена веществ",s:"d-metab",t:"Организм избавляется от ненужных и вредных веществ.",r:"",e:""},
+rost:{w:"Рост",k:"признак живого",s:"d-growdev",t:"Количественные изменения: организм становится больше.",r:"",e:"Палочники были маленькими, а потом стали большими."},
+razv:{w:"Развитие",k:"признак живого",p:"f3",t:"Качественные изменения: организм меняется и становится другим. Гусеница превращается в бабочку.",r:"",e:"Из яиц на муравьиной ферме получаются новые муравьи."},
+razm:{w:"Размножение",k:"признак живого",p:"f5",t:"Организмы дают потомство и передают ему свои признаки и свойства.",r:"",e:"У мадагаскарских тараканов появилось много маленьких тараканчиков."},
+razdr:{w:"Раздражимость",k:"признак живого",s:"d-detector",t:"Живое отвечает на то, что меняется вокруг. Мышь убегает от кошки, растение поворачивает листья к свету.",r:"",e:"Люся и Юкси убегают в свой уголок, если рядом что-то движется."},
+nasl:{w:"Наследственная информация",k:"что это",p:"f5",t:"«Запись» в клетках о том, каким будет организм и как он будет развиваться. Её получают от родителей.",r:"",e:""},
+biosf:{w:"Биосфера",k:"оболочка Земли",s:"d-bios",t:"Оболочка Земли, где есть жизнь: нижний слой воздуха, вода, почва и верх твёрдой земли.",r:"<b>биос</b> — жизнь + <b>сфера</b> — шар",e:""},
+ozon:{w:"Озоновый экран",k:"граница биосферы",s:"d-bios",t:"Слой газа озона на высоте 15—20 км. Он задерживает опасные для живого ультрафиолетовые лучи солнца.",r:"",e:""},
+graf:{w:"Графит",k:"природный материал",p:"f7",t:"Серое вещество, из которого сделан стержень карандаша. Получился из остатков деревьев, которые росли сотни миллионов лет назад.",r:"",e:"Деревянная часть карандаша — из обычного дерева, а графитовый стержень — из древних."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b1:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b1:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b1:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b1:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

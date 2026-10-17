@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Три царства с ядром: кто делает пищу сам, кто бегает и ест готовое, а кто всасывает его из земли.">
+<title>Растения, животные и грибы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="n-three" viewBox="0 0 330 250">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Три царства с ядром</text>
+<rect x="98" y="28" width="74" height="30" rx="8" fill="var(--leaf,#2D7A55)"/>
+<text x="135" y="48" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Растения</text>
+<rect x="176" y="28" width="74" height="30" rx="8" fill="var(--pa,#C9672C)"/>
+<text x="213" y="48" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Животные</text>
+<rect x="254" y="28" width="70" height="30" rx="8" fill="var(--brown,#8B5E3C)"/>
+<text x="289" y="48" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">Грибы</text>
+<g fill="var(--paper2,#E8DFCC)">
+<rect x="6" y="64" width="318" height="40" rx="7"/><rect x="6" y="110" width="318" height="40" rx="7"/>
+<rect x="6" y="156" width="318" height="40" rx="7"/><rect x="6" y="202" width="318" height="40" rx="7"/>
+</g>
+<g font-size="12" font-weight="700" fill="var(--illink,#2B2620)">
+<text x="12" y="88">питание</text><text x="12" y="134">движение</text><text x="12" y="172">оболочка</text><text x="12" y="187">клетки</text><text x="12" y="226">пластиды</text>
+</g>
+<g font-size="12" text-anchor="middle" fill="var(--illink,#2B2620)">
+<text x="135" y="82">сами делают</text><text x="135" y="97">пищу на свету</text>
+<text x="213" y="82">едят</text><text x="213" y="97">готовое</text>
+<text x="289" y="82">всасывают</text><text x="289" y="97">готовое</text>
+<text x="135" y="135">нет</text><text x="213" y="135" font-weight="700">да</text><text x="289" y="135">нет</text>
+<text x="135" y="181" font-weight="700">есть</text><text x="213" y="181">нет</text><text x="289" y="181" font-weight="700">есть</text>
+<text x="135" y="227" font-weight="700">есть</text><text x="213" y="227">нет</text><text x="289" y="227">нет</text>
+</g>
+</g></symbol>
+
+<symbol id="n-count" viewBox="0 0 330 170">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Сколько видов</text>
+<text x="8" y="50" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">животные</text>
+<rect x="80" y="36" width="240" height="22" rx="6" fill="var(--pa,#C9672C)"/>
+<text x="312" y="52" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">около 2 000 000</text>
+<text x="8" y="90" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">растения</text>
+<rect x="80" y="76" width="36" height="22" rx="6" fill="var(--leaf,#2D7A55)"/>
+<text x="124" y="92" font-size="12" fill="var(--illink,#2B2620)">больше 300 000</text>
+<text x="8" y="130" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">грибы</text>
+<rect x="80" y="116" width="12" height="22" rx="4" fill="var(--brown,#8B5E3C)"/>
+<text x="100" y="132" font-size="12" fill="var(--illink,#2B2620)">около 100 000</text>
+<text x="165" y="162" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">длина полоски — сколько видов</text>
+</g></symbol>
+
+<symbol id="n-vert" viewBox="0 0 330 330">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Многоклеточные животные</text>
+<rect x="6" y="30" width="302" height="26" rx="7" fill="var(--ochre,#E2A31F)"/>
+<rect x="308" y="30" width="16" height="26" rx="4" fill="var(--pb,#3B6FA8)"/>
+<text x="14" y="48" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">беспозвоночные — около 95% видов</text>
+<text x="324" y="72" text-anchor="end" font-size="11" fill="var(--soft,#5F5648)">позвоночные — остальные</text>
+<rect x="6" y="80" width="318" height="62" rx="9" fill="var(--ochre,#E2A31F)" fill-opacity=".18"/>
+<text x="14" y="99" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">Беспозвоночные: нет внутреннего скелета</text>
+<text x="14" y="117" font-size="12" fill="var(--illink,#2B2620)">твои: муравьи, тараканы, палочники,</text>
+<text x="14" y="133" font-size="12" fill="var(--illink,#2B2620)">червяки после дождя, бабочки</text>
+<rect x="6" y="150" width="318" height="174" rx="9" fill="var(--pb,#3B6FA8)" fill-opacity=".14"/>
+<text x="14" y="169" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">Позвоночные: есть позвоночник</text>
+<g font-size="12" fill="var(--illink,#2B2620)">
+<rect x="14" y="178" width="126" height="24" rx="6" fill="var(--water,#6FA8C4)"/><text x="22" y="195" font-weight="700" fill="#FFFFFF">рыбы</text>
+<text x="148" y="195">рыбы в аквариуме</text>
+<rect x="14" y="206" width="126" height="24" rx="6" fill="var(--moss,#5E7A3A)"/><text x="22" y="223" font-weight="700" fill="#FFFFFF">земноводные</text>
+<text x="148" y="223">лягушка</text>
+<rect x="14" y="234" width="126" height="24" rx="6" fill="var(--brown,#8B5E3C)"/><text x="22" y="251" font-weight="700" fill="#FFFFFF">пресмыкающиеся</text>
+<text x="148" y="251">змея, ящерица</text>
+<rect x="14" y="262" width="126" height="24" rx="6" fill="var(--ochre,#E2A31F)"/><text x="22" y="279" font-weight="700" fill="#FFFFFF">птицы</text>
+<text x="148" y="279">голуби, куры</text>
+<rect x="14" y="290" width="126" height="24" rx="6" fill="var(--pa,#C9672C)"/><text x="22" y="307" font-weight="700" fill="#FFFFFF">млекопитающие</text>
+<text x="148" y="307">Люся, Юкси, самоед, ты</text>
+</g>
+</g></symbol>
+
+<symbol id="n-mush" viewBox="0 0 330 240">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Шляпочный гриб</text>
+<path d="M40 150 L290 150" stroke="var(--brown,#8B5E3C)" stroke-width="3"/>
+<rect x="6" y="150" width="318" height="62" fill="var(--brown,#8B5E3C)" fill-opacity=".18"/>
+<path d="M60 76 Q100 30 140 76 Z" fill="var(--pa,#C9672C)"/>
+<path d="M62 76 L138 76" stroke="var(--illpaper,#FFFBF2)" stroke-width="2"/>
+<path d="M68 80 L74 76 M80 80 L86 76 M92 80 L98 76 M104 80 L110 76 M116 80 L122 76 M128 80 L134 76" stroke="var(--soft,#5F5648)" stroke-width="1.5"/>
+<rect x="92" y="78" width="16" height="72" rx="5" fill="var(--snow,#EDF5F9)" stroke="var(--soft,#5F5648)" stroke-width="1.5"/>
+<g stroke="var(--illpaper,#FFFBF2)" stroke-width="1.5" fill="none" opacity=".9">
+<path d="M100 152 Q80 170 60 166 Q44 164 34 180"/><path d="M100 152 Q110 176 96 196"/><path d="M100 152 Q126 166 150 162 Q168 160 178 178"/>
+<path d="M100 152 Q66 186 74 206"/><path d="M100 152 Q138 190 132 208"/>
+</g>
+<g stroke="var(--soft,#5F5648)" stroke-width="1.3" fill="none">
+<path d="M136 56 L176 44"/><path d="M134 80 L176 74"/><path d="M108 114 L176 108"/><path d="M160 176 L196 176"/>
+</g>
+<text x="180" y="48" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">шляпка</text>
+<text x="180" y="78" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">пластинки</text>
+<text x="180" y="94" font-size="11" fill="var(--soft,#5F5648)">или трубочки снизу</text>
+<text x="180" y="112" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">ножка</text>
+<text x="200" y="174" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">грибница</text>
+<text x="200" y="190" font-size="11" fill="var(--soft,#5F5648)">тонкие нити в земле —</text>
+<text x="200" y="204" font-size="11" fill="var(--soft,#5F5648)">главная часть гриба</text>
+<text x="165" y="232" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">гриб не выдёргивают, чтобы не порвать грибницу</text>
+</g></symbol>
+
+<symbol id="n-yeast" viewBox="0 0 330 262">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Опыт: дрожжи надувают шарик</text>
+<g transform="translate(0,26)">
+<g fill="none" stroke="var(--soft,#5F5648)" stroke-width="2">
+<path d="M38 80 L38 70 L50 70 L50 80 Q62 86 62 100 L62 170 Q62 176 56 176 L32 176 Q26 176 26 170 L26 100 Q26 86 38 80 Z"/>
+<path d="M148 80 L148 70 L160 70 L160 80 Q172 86 172 100 L172 170 Q172 176 166 176 L142 176 Q136 176 136 170 L136 100 Q136 86 148 80 Z"/>
+<path d="M258 80 L258 70 L270 70 L270 80 Q282 86 282 100 L282 170 Q282 176 276 176 L252 176 Q246 176 246 170 L246 100 Q246 86 258 80 Z"/>
+</g>
+<rect x="28" y="136" width="32" height="38" rx="3" fill="var(--water,#6FA8C4)" opacity=".6"/>
+<rect x="138" y="136" width="32" height="38" rx="3" fill="var(--water,#6FA8C4)" opacity=".6"/>
+<rect x="138" y="128" width="32" height="10" fill="var(--snow,#EDF5F9)" stroke="var(--soft,#5F5648)" stroke-width="1"/>
+<rect x="248" y="136" width="32" height="38" rx="3" fill="var(--water,#6FA8C4)" opacity=".6"/>
+<rect x="248" y="118" width="32" height="20" fill="var(--snow,#EDF5F9)" stroke="var(--soft,#5F5648)" stroke-width="1"/>
+<ellipse cx="154" cy="58" rx="9" ry="12" fill="var(--no,#B03A2E)"/>
+<ellipse cx="264" cy="44" rx="26" ry="28" fill="var(--no,#B03A2E)"/>
+</g>
+<g font-size="12" text-anchor="middle" fill="var(--illink,#2B2620)">
+<text x="50" y="222" font-weight="700">1. смешай</text>
+<text x="50" y="238">дрожжи, сахар,</text>
+<text x="50" y="252">тёплую воду</text>
+<text x="154" y="222" font-weight="700">2. надень</text>
+<text x="154" y="238">шарик</text>
+<text x="154" y="252">на горлышко</text>
+<text x="264" y="222" font-weight="700">3. через 30 минут</text>
+<text x="264" y="238">пена и шарик</text>
+<text x="264" y="252">надулся</text>
+</g>
+</g></symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 13</span>
+    <h1>Многообразие и значение растений, животных и грибов</h1>
+    <p class="lede">Три царства с ядром: кто делает пищу сам, кто бегает и ест готовое, а кто всасывает его из земли.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. Какие организмы относят к ядерным, или эукариотам? 2. На какие группы организмы делят по типу питания?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b12.html">‹ §12 Классификация</a>
+  <span class="pn cur">§13 Растения, животные, грибы</span>
+  <a class="pn" href="b14.html">§14 Бактерии и вирусы ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Ядерные организмы. Растения">1</a><a href="#s2" data-j="s2" title="Роль растений в природе и жизни человека">2</a><a href="#s3" data-j="s3" title="Животные">3</a><a href="#s4" data-j="s4" title="Роль животных в природе и жизни человека">4</a><a href="#s5" data-j="s5" title="Грибы">5</a><a href="#s6" data-j="s6" title="Роль грибов в природе и жизни человека">6</a><a href="#s7" data-j="s7" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Ядерные организмы. Растения</h2></div>
+<div class="easy">
+<p>Растения, животные и грибы устроены по-разному. Среди них есть одноклеточные и многоклеточные, автотрофы и гетеротрофы. Но у всех есть общий признак — <b>ядро в клетках</b>. Поэтому их относят к надцарству Ядерные, или эукариоты (§12).</p>
+<p>На Земле больше 300 тысяч видов <span class="term" role="button" tabindex="0" data-t="rast">растений</span> (рис. 60). Они растут везде: в пустынях и на болотах, высоко в горах и в глубоких ущельях, летом — даже в ледяных пустынях Арктики и Антарктики. Растения бывают одноклеточными, колониальными (из одинаковых соединённых клеток) и многоклеточными.</p>
+<p>У клеток растений есть оболочка (клеточная стенка), в которой есть целлюлоза, и пластиды в цитоплазме. Пластиды бывают бесцветные, зелёные, жёлтые, оранжевые. Зелёные — это <span class="term" role="button" tabindex="0" data-t="hlpl">хлоропласты</span> (от греч. <i>хлорос</i> — зеленоватый и <i>пластос</i> — вылепленный). В них есть зелёный пигмент <span class="term" role="button" tabindex="0" data-t="hlf">хлорофилл</span> (<i>хлорос</i> и <i>филлон</i> — лист). Он ловит солнечные лучи, и их энергия идёт на <span class="term" role="button" tabindex="0" data-t="fts">фотосинтез</span> — создание органических веществ из воды и углекислого газа.</p>
+<p>При фотосинтезе растения поглощают углекислый газ и выделяют кислород. Они живут за счёт веществ, которые делают сами, — это автотрофы. <span class="big">Главный признак царства Растения — способность к фотосинтезу.</span></p>
+</div>
+<div class="book" hidden>
+<p><b>Общая характеристика ядерных организмов, или эукариот.</b> Растения, животные и грибы имеют разное строение. Среди них есть одноклеточные и многоклеточные организмы. По типу питания они могут быть автотрофами или гетеротрофами. Они относятся к разным царствам организмов, но у них есть общий признак — наличие ядра в клетках. Поэтому их относят к Надцарству Ядерные, или эукариоты.</p>
+<p><b>Характеристика растений.</b> На нашей планете насчитывается более 300 тыс. видов <b><span class="term" role="button" tabindex="0" data-t="rast">растений</span></b> (рис. 60). Они населяют поверхность суши и водные пространства. Растут они в безводных пустынях и на топких болотах, высоко в горах и в глубоких ущельях. Их можно найти в тёплое время года даже в ледяных пустынях Арктики и Антарктики. Растения бывают одноклеточными, состоящими только из одной клетки, колониальными, образованными одинаковыми, соединёнными между собой клетками, и многоклеточными.</p>
+<p>Для клеток растений характерно наличие оболочки (клеточной стенки), в состав которой входит целлюлоза, и присутствие в цитоплазме пластид. Пластиды могут быть разного цвета: бесцветные, зелёные, жёлтые или оранжевые. Зелёные пластиды — <b><span class="term" role="button" tabindex="0" data-t="hlpl">хлоропласты</span></b> (от греч. <i>хлорос</i> — зеленоватый и <i>пластос</i> — вылепленный, созданный). В них содержится зелёный пигмент <b><span class="term" role="button" tabindex="0" data-t="hlf">хлорофилл</span></b> (от греч. <i>хлорос</i> и <i>филлон</i> — лист). Он улавливает солнечные лучи и обеспечивает использование их энергии на осуществление <b><span class="term" role="button" tabindex="0" data-t="fts">фотосинтеза</span></b> — процесса образования сложных органических соединений из неорганических (воды и углекислого газа) за счёт энергии света.</p>
+<p>В ходе фотосинтеза растения выделяют кислород и поглощают углекислый газ. Растения поддерживают свою жизнедеятельность за счёт органических веществ, которые образуют сами, т. е. являются автотрофами. Таким образом, важнейшим характерным признаком представителей царства Растения является их способность к фотосинтезу.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s60" src="img/3749ff6f3bd8.jpg" alt="Шесть фотографий растений: водоросли под водой, мох на камнях, папоротники в лесу, плауны, ветка кедра с шишками, рябина с ягодами"><figcaption><span class="src">из учебника</span><b>Рис. 60.</b> Многообразие растений: водоросли (а), мхи (б), папоротники (в), плауны (г), голосеменные (д), покрытосеменные (е)</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 250" role="img" aria-label="Таблица: растения сами делают пищу на свету, не двигаются, у клеток есть оболочка и пластиды; животные едят готовое, двигаются, оболочки и пластид нет; грибы всасывают готовое, не двигаются, оболочка есть, пластид нет"><use href="#n-three"/></svg><figcaption>Растения, животные и грибы: все с ядром, но живут по-разному.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 170" role="img" aria-label="Полоски: животных около 2 миллионов видов, растений больше 300 тысяч, грибов около 100 тысяч"><use href="#n-count"/></svg><figcaption>Животных видов больше всего.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Что общего у растений, животных и грибов?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a1" hidden>В их клетках есть ядро, поэтому их относят к надцарству Ядерные, или эукариоты.</div>
+</div>
+<div class="think">
+<p class="qt">2. Что делает хлорофилл?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Абзац про пластиды.</div>
+<div class="rev ans" id="a2" hidden>Улавливает солнечные лучи и обеспечивает использование их энергии на фотосинтез.</div>
+</div>
+<div class="think">
+<p class="qt">3. Какой признак — самый главный для царства Растения?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Последнее предложение раздела.</div>
+<div class="rev ans" id="a3" hidden>Способность к фотосинтезу.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Роль растений в природе и жизни человека</h2></div>
+<div class="easy">
+<p>Растения используют энергию Солнца и делают органические вещества из воды и углекислого газа. При этом они наполняют воздух кислородом, которым дышит большинство живых организмов, и забирают из воздуха углекислый газ. Растения едят растительноядные животные, а ими питаются хищники.</p>
+<p>Без растений невозможно представить нашу жизнь. Они дают нам еду, сырьё для промышленности (пищевой, текстильной, бумажной, химической), лекарства, строительный материал и топливо. Человек выращивает <span class="term" role="button" tabindex="0" data-t="kult">культурные растения</span>: злаковые, плодово-ягодные, лекарственные, кормовые и технические (рис. 61).</p>
+<p>Чтобы получать хорошие урожаи, нужно знать, как живут растения, какие бывают сорта, как ухаживать за почвой. Учёные выводят новые сорта — урожайные и устойчивые к болезням.</p>
+<p>Человек использует и дикие растения — лесные, луговые, болотные. Особенно важны <b>лекарственные</b> (рис. 62): примерно половина лекарств — растительного происхождения. Но есть растения <b>ядовитые</b> или вызывающие аллергию (рис. 63).</p>
+<p>Многие виды уже исчезли, другим грозит вымирание. Больше 500 видов растений занесены в Красную книгу России (рис. 64). Сохранить условия для жизни растений — одна из главных задач человечества.</p>
+</div>
+<div class="book" hidden>
+<p><b>Роль растений в природе и жизни человека.</b> Роль растений в природе связана с их способностью использовать солнечную энергию и создавать органические вещества из неорганических (воды и углекислого газа). При этом они обогащают воздух кислородом, необходимым для дыхания большинства живых организмов, и поглощают из воздуха углекислый газ. Растения служат пищей растительноядным животным, которыми, в свою очередь, питаются хищники.</p>
+<p>Невозможно представить себе нашу жизнь без растений. Человек использует растения и как источник питания, и как сырьё для разных отраслей промышленности (пищевой, текстильной, бумажной, химической), и для приготовления лекарств, и как строительный материал и топливо. Человек выращивает злаковые, плодово-ягодные, лекарственные, кормовые и технические культуры (рис. 61).</p>
+<p>Развитие земледелия потребовало новых знаний о жизнедеятельности растений, о свойствах различных культур и их сортов, о том, как следует обрабатывать почву и ухаживать за ней, чтобы получить хорошие урожаи, и т. п. Чтобы обеспечить население достаточным количеством разнообразных пищевых продуктов, учёные выводят новые высокоурожайные и устойчивые к болезням сорта культурных растений. Человек для своих нужд использует и многие дикорастущие растения — лесные, луговые, болотные и др. Среди дикорастущих растений особое место занимают лекарственные (рис. 62).</p>
+<p>Примерно половина из используемых человеком лекарств имеет растительное происхождение. Однако среди растений есть и опасные для здоровья человека ядовитые растения или вызывающие у него аллергические реакции (рис. 63).</p>
+<p>Вы знаете, что без растений жизнь на нашей планете невозможна. Многие виды живых организмов уже исчезли с лица земли, другим угрожает вымирание. Более 500 видов растений, нуждающихся в охране, занесены в Красную книгу Российской Федерации (рис. 64). Сохранить, а во многих регионах Земли воссоздать благоприятные для жизни растений природные условия — одна из главных задач человечества, а для рациональной хозяйственной деятельности необходимы биологические знания.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s61" src="img/0b7a9f8bf1a6.jpg" alt="Поле голубого льна, мандариновое дерево с плодами, поле пшеницы, подсолнухи"><figcaption><span class="src">из учебника</span><b>Рис. 61.</b> Культурные растения: лён (а), мандарин (б), пшеница (в), подсолнечник (г)</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Огород в Ягодном</span></div><div class="lifebody"><p>У бабушки Гали и дедушки Анатолия в Ягодном растут помидоры, огурцы, кабачки, редиска, морковка и петрушка — это <b>культурные растения</b>, овощные. Яблони, вишня и абрикос — <b>плодово-ягодные</b>. А пчёлы, которых держит дедушка, опыляют их цветы — и без них плодов было бы меньше.</p><p>Помидоры для огорода выбирают по <b>сортам</b> — как породы у собак (§3). Одни сорта крупные, другие сладкие, третьи не болеют. Их и выводят учёные.</p></div><p class="lifebook">В учебнике это называется: <b>культурные растения</b></p></aside>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s62" src="img/e63928ad0000.jpg" alt="Розовые цветы эхинацеи, фиолетовый шалфей, жёлтые цветки чистотела, чёрные ягоды элеутерококка"><figcaption><span class="src">из учебника</span><b>Рис. 62.</b> Лекарственные растения: эхинацея (а), шалфей (б), чистотел (в), элеутерокок (г)</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s63" src="img/471c6b45dfc6.jpg" alt="Высокий борщевик с белыми зонтиками, крушина с чёрными ягодами, вороний глаз с одной синей ягодой в центре четырёх листьев, белладонна"><figcaption><span class="src">из учебника</span><b>Рис. 63.</b> Растения, опасные для человека: борщевик (а), крушина (б), вороний глаз (в), белладонна (г)<br><span style="color:var(--soft)">▲ Запомни, как выглядит вороний глаз: одна тёмная ягода посреди четырёх листьев.</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Борщевик из похода</span></div><div class="lifebody"><p>Борщевик ты видела в походе — и вам рассказывали, почему он опасен. Он похож на огромный укроп с белыми зонтиками выше человека. Его сок на солнце сильно обжигает кожу, и ожог долго не проходит. Поэтому борщевик не трогают голыми руками — даже если очень хочется его сбить.</p><p>А ромашку ты знаешь — это <b>лекарственное</b> растение: из её цветков заваривают ромашковый чай.</p></div><p class="lifebook">В учебнике это называется: <b>растения, опасные для человека; лекарственные растения</b></p></aside>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s64" src="img/768aa1bffa03.jpg" alt="Подснежники в снегу, тис ягодный с красными ягодами, розовый лотос, жёлтый цветок венерин башмачок"><figcaption><span class="src">из учебника</span><b>Рис. 64.</b> Растения, занесённые в Красную книгу: подснежник (а), тис ягодный (б), лотос (в), венерин башмачок (г)</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Почему без растений не могут жить животные?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a4" hidden>Растения обогащают воздух кислородом, нужным для дыхания, и служат пищей растительноядным животным, которыми питаются хищники.</div>
+</div>
+<div class="think">
+<p class="qt">5. Для чего человек использует растения? Назови не меньше трёх примеров.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a5" hidden>Как источник питания, сырьё для промышленности (пищевой, текстильной, бумажной, химической), для приготовления лекарств, как строительный материал и топливо.</div>
+</div>
+<div class="think">
+<p class="qt">6. Какая доля лекарств сделана из растений?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Абзац про лекарственные растения.</div>
+<div class="rev ans" id="a6" hidden>Примерно половина.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Животные</h2></div>
+<div class="easy">
+<p>В царстве <span class="term" role="button" tabindex="0" data-t="jivt">Животные</span> около 2 миллионов видов. Они живут на суше, в воде и в почве.</p>
+<p>Животные очень разные, но у всех есть общие признаки. В их клетках есть ядро (это эукариоты), но <b>нет оболочки</b> — клеточной стенки, как у бактерий, растений и грибов (§10). Животные питаются готовыми органическими веществами — это гетеротрофы.</p>
+<p>Животных отличает от других организмов <b>способность передвигаться</b>: они ползают, прыгают, бегают, летают и плавают. Хотя есть и малоподвижные — например, коралловые полипы всю жизнь сидят на месте.</p>
+<p>Животных делят на <span class="term" role="button" tabindex="0" data-t="prost">простейших</span> (одноклеточных) и <span class="term" role="button" tabindex="0" data-t="mnog">многоклеточных</span>. Простейшее состоит из одной клетки (или нескольких одинаковых), и эта клетка — самостоятельный организм. Простейшие живут в морской и пресной воде, во влажной почве и в других организмах (рис. 65).</p>
+<p>Тело многоклеточных состоит из множества клеток, разных по строению и работе. Многоклеточных делят на две группы:</p>
+<p><span class="term" role="button" tabindex="0" data-t="besp">беспозвоночные</span> — без внутреннего скелета: кишечнополостные, черви, моллюски, ракообразные, насекомые (рис. 66). Это примерно 95% всех видов животных!</p>
+<p><span class="term" role="button" tabindex="0" data-t="pozv">позвоночные</span> — с внутренним осевым скелетом, позвоночником (отсюда название): рыбы, земноводные, пресмыкающиеся, птицы, млекопитающие (рис. 67).</p>
+<p>Только у многоклеточных животных есть сложные системы органов: опорно-двигательная, выделительная, кровеносная, дыхательная, нервная и другие. Форма тела животного подходит к его образу жизни и среде (рис. 68). И на изменения вокруг животные реагируют активнее всех.</p>
+</div>
+<div class="book" hidden>
+<p><b>Характеристика животных.</b> Царство <b><span class="term" role="button" tabindex="0" data-t="jivt">Животные</span></b> насчитывает около 2 млн видов. Они живут на суше, в воде и почве.</p>
+<p>Несмотря на различия во внешнем и внутреннем строении, размерах и образе жизни, все животные имеют общие признаки. В клетках животных есть ядро, т. е. они относятся к эукариотам, но отсутствует оболочка (клеточная стенка), которая характерна для клеток бактерий, растений и грибов.</p>
+<p>Животные, в отличие от растений, питаются готовыми органическими веществами, т. е. являются гетеротрофами. Способность животных к передвижению в пространстве отличает их от других организмов. Большинство животных активно передвигается: ползает, прыгает, бегает, летает и плавает. В то же время среди них есть и малоподвижные виды, ведущие прикреплённый образ жизни, например коралловые полипы.</p>
+<p>Животных принято делить на простейших, или одноклеточных, и многоклеточных. К группе <b><span class="term" role="button" tabindex="0" data-t="prost">Простейшие</span></b> относят животных, состоящих из одной или нескольких клеток. Такая клетка — самостоятельный организм, даже если клетки объединены в группу или колонию. Обитают одноклеточные животные в морской и пресной воде, влажной почве, а также в других организмах. Внешне они очень разнообразны (рис. 65).</p>
+<p>В группу <b><span class="term" role="button" tabindex="0" data-t="mnog">Многоклеточные</span></b> объединяют животных, тело которых состоит из множества клеток, различных как по строению, так и по выполняемым функциям. Многоклеточных животных обычно делят на две группы — беспозвоночные и позвоночные животные.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="besp">Беспозвоночные</span></b> — многочисленная группа животных, не имеющих внутреннего скелета. Беспозвоночные составляют примерно 95% всех видов современных животных. К ним относят кишечнополостных, червей, моллюсков, ракообразных, насекомых и некоторые другие группы животных (рис. 66).</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="pozv">Позвоночные</span></b> — это группа животных, имеющих внутренний осевой скелет — позвоночник, чем и объясняется их название. К позвоночным животным относят рыб, земноводных, пресмыкающихся, птиц, млекопитающих (рис. 67).</p>
+<p>У многоклеточных животных есть сложные системы органов, которых нет у других живых организмов. Это опорно-двигательная, выделительная, кровеносная, дыхательная, половая, нервная системы и др. Форма и строение тела животных соответствуют их образу жизни и среде обитания (рис. 68). Животные активнее других организмов реагируют на изменяющиеся условия окружающей среды.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s65" src="img/17ba71cf02a5.jpg" alt="Инфузория туфелька под микроскопом — похожа на подошву туфли; зелёная эвглена со жгутиком"><figcaption><span class="src">из учебника</span><b>Рис. 65.</b> Многообразие одноклеточных животных: инфузория туфелька (а), эвглена зелёная (б)</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s66" src="img/e5e182a03bfd.jpg" alt="Осьминог, морской ёж, планария — плоский червь, паук-крестовик в паутине"><figcaption><span class="src">из учебника</span><b>Рис. 66.</b> Многообразие беспозвоночных животных: осьминог (а), морской ёж (б), планария (в), паук (г)</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s67" src="img/1a733cf31cd1.jpg" alt="Жаба, рыба-клоун, глухарь, хамелеон, кит, енот в дупле"><figcaption><span class="src">из учебника</span><b>Рис. 67.</b> Многообразие позвоночных животных: жаба (а), рыба (б), глухарь (в), хамелеон (г), кит (д), енот (е)<br><span style="color:var(--soft)">▲ Распредели их по пяти группам позвоночных.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 330" role="img" aria-label="Беспозвоночные — около 95 процентов видов: муравьи, тараканы, палочники, червяки, бабочки. Позвоночные — пять групп: рыбы (в аквариуме), земноводные (лягушка), пресмыкающиеся (змея, ящерица), птицы (голуби, куры), млекопитающие (Люся, Юкси, самоед и ты)"><use href="#n-vert"/></svg><figcaption>Животные из твоей жизни по группам.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Змея и лягушка — из разных групп</span></div><div class="lifebody"><p>Ты держала в руках и змею, и лягушку. Обе холодные на ощупь, но они из разных групп позвоночных! <b>Змея — пресмыкающееся</b>: сухая чешуйчатая кожа, она «пресмыкается» — ползает по земле. <b>Лягушка — земноводное</b>: влажная кожа, живёт и на земле, и в воде — «земно-водное». Ящерицы из рептилиума — тоже пресмыкающиеся.</p><p>А все твои шестиногие — муравьи, мадагаскарские тараканы, палочники — <b>беспозвоночные</b>. Внутри у них нет ни одной косточки: их тело держит твёрдый наружный покров.</p></div><p class="lifebook">В учебнике это называется: <b>беспозвоночные и позвоночные</b></p></aside>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s68" src="img/6fcacb469f0d.jpg" alt="Клёст на ветке, крот вылезает из земли, дельфин и черепаха в море, морской анемон"><figcaption><span class="src">из учебника</span><b>Рис. 68.</b> Животные разных сред обитания: клёст (а), крот (б), дельфин и черепаха (в), морской анемон (г)</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Чем клетки животных отличаются от клеток растений?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Второй абзац раздела и §10.</div>
+<div class="rev ans" id="a7" hidden>В клетках животных нет оболочки (клеточной стенки). А ещё у них нет пластид.</div>
+</div>
+<div class="think">
+<p class="qt">8. Какая способность отличает животных от других организмов?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Третий абзац раздела.</div>
+<div class="rev ans" id="a8" hidden>Способность к передвижению в пространстве.</div>
+</div>
+<div class="think">
+<p class="qt">9. Каких животных называют позвоночными? Назови пять групп.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Абзац про позвоночных.</div>
+<div class="rev ans" id="a9" hidden>Животных с внутренним осевым скелетом — позвоночником: рыбы, земноводные, пресмыкающиеся, птицы, млекопитающие.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Роль животных в природе и жизни человека</h2></div>
+<div class="easy">
+<p>Животные — важная часть природы. Они поедают отмершие остатки растений и других организмов и так участвуют в круговороте веществ, помогают образовываться почве и делают её плодороднее. Животные опыляют растения и разносят их семена. Многие водные животные очищают воду, поедая разлагающиеся остатки.</p>
+<p>Человек разводит сельскохозяйственных животных и добывает диких — особенно морских: моллюсков, креветок, рыб.</p>
+<p>Но есть и вредители: они уничтожают урожай, продукты, изделия из кожи, шерсти, дерева. Паразиты-простейшие вредят пчеловодству, рыбоводству, животноводству. Многие болезни человека вызывают животные (например, малярию, чесотку), а некоторые переносят заразные болезни (чуму, тиф). Опасны и ядовитые животные — змеи, скорпионы, пауки (рис. 69).</p>
+<p>Разнообразие животных всё время уменьшается. Главная причина — деятельность человека: вырубая леса, распахивая степи, осушая болота, человек разрушает их дом. Только когда многие виды исчезли совсем, люди поняли, что животных надо защищать. Многие из них занесены в Красную книгу России (рис. 70).</p>
+</div>
+<div class="book" hidden>
+<p><b>Роль животных в природе и жизни человека.</b> Животные являются важной частью природных сообществ. Они участвуют в круговороте веществ, поедая отмершие остатки растений и других организмов, способствуют образованию почвы и повышению её плодородия. Животные являются опылителями многих растений и участвуют в распространении их семян. Многие водные животные способствуют очищению воды, улавливая и поедая разлагающиеся остатки организмов. Человек получает продукты питания, выращивая сельскохозяйственных животных, а также ведя промысел животных в дикой природе. Особенно большое значение имеет промысел морских животных (моллюсков, креветок, рыб).</p>
+<p>В то же время некоторые животные вредят человеку, уничтожая культурные растения, продукты, изделия из кожи, шерсти, дерева. Паразитические простейшие наносят большой вред пчеловодству, рыбоводству, животноводству и звероводству. Многие болезни человека также вызываются животными, например амёбная дизентерия, сонная болезнь, малярия, гельминтозы, чесотка и др. Животные являются переносчиками возбудителей ряда инфекционных заболеваний (чума, тиф и др.). Представляют опасность для человека и ядовитые животные (змеи, скорпионы, пауки и некоторые другие) (рис. 69).</p>
+<p>Разнообразие животного мира в последнее время неуклонно снижается. Основной причиной исчезновения многих видов животных является деятельность человека. Вырубая леса, распахивая степи, осушая болота, человек разрушает места обитания животных, и в результате их численность уменьшается. Только после того как многие виды животных исчезли полностью, люди стали понимать, что животные, как и другие организмы, нуждаются в защите. Многие животные занесены в Красную книгу Российской Федерации (рис. 70).</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s69" src="img/9ad6e6568b15.jpg" alt="Тарантул, скорпион, гадюка с зигзагом на спине, полосатая рыба крылатка"><figcaption><span class="src">из учебника</span><b>Рис. 69.</b> Животные, опасные для человека: тарантул (а), скорпион (б), гадюка (в), крылатка (г)</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Полоз и гадюка</span></div><div class="lifebody"><p>Полоз у соседей — <b>неядовитая</b> змея: он душит мышей, а не кусает ядом. А вот <b>гадюка</b> на рис. 69 — ядовитая. Её узнают по тёмному зигзагу вдоль спины. В лесу змей руками не трогают: на выставке ты брала тех, кого разрешали специалисты, а в природе не угадаешь.</p><p>Пчёлы дедушки в Ягодном — пример полезных животных сразу дважды: опыляют яблони и вишню и дают мёд. А мадагаскарские тараканы — дома питомцы, в природе они поедают опавшие листья и остатки и помогают круговороту веществ.</p></div><p class="lifebook">В учебнике это называется: <b>роль животных; ядовитые животные</b></p></aside>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s70" src="img/02f2d2778b2e.jpg" alt="Белый медведь, два стерха — белые журавли, бобр, два зубра"><figcaption><span class="src">из учебника</span><b>Рис. 70.</b> Животные, занесённые в Красную книгу: белый медведь (а), стерх (б), бобр (в), зубр (г)</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">10. Как животные помогают растениям?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a10" hidden>Опыляют многие растения и участвуют в распространении их семян.</div>
+</div>
+<div class="think">
+<p class="qt">11. Какая главная причина исчезновения многих видов животных?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a11" hidden>Деятельность человека: вырубка лесов, распашка степей, осушение болот разрушают места обитания животных.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">5</span><h2>Грибы</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="grib">Грибы</span> — большая группа: около 100 тысяч видов. Они бывают разной формы и размера, одноклеточные и многоклеточные.</p>
+<p>У грибов есть признаки и растений, и животных. Как растения, они <b>всасывают</b> вещества из окружающей среды. Но, как животные, они <b>гетеротрофы</b> — питаются готовым. Поэтому грибы выделили в отдельное царство.</p>
+<p>Ты знаешь <span class="term" role="button" tabindex="0" data-t="shlp">шляпочные грибы</span> — белый, подберёзовик, подосиновик, мухомор. Но и <b>плесень</b> на продуктах — тоже гриб! А <span class="term" role="button" tabindex="0" data-t="drj">дрожжи</span> — одноклеточные грибы: с ними пекут хлеб и делают напитки, например кефир. Вредители посевов головня и спорынья — тоже грибы.</p>
+<p>Большинство грибов питаются продуктами жизнедеятельности организмов и их мёртвыми остатками. Но есть и такие, что живут на живых растениях, животных и человеке и вызывают болезни — например, грибковые болезни кожи и ногтей. Их лечат долго.</p>
+<p>Самые ценные съедобные грибы — белые и рыжики. Ещё часто собирают подберёзовики, подосиновики, маслята, лисички, моховики, сыроежки, опята (рис. 71). Есть <span class="term" role="button" tabindex="0" data-t="usl">условно-съедобные</span> — их можно есть только после особой обработки: сморчки, строчки, волнушки, грузди, рядовки.</p>
+<p>Есть только свежие молодые грибы. В старых и начавших портиться грибах появляются ядовитые вещества. Нельзя собирать грибы у дорог, железных дорог и заводов: грибы впитывают вредные вещества, и даже съедобные становятся опасными.</p>
+<p>Есть грибы несъедобные и ядовитые (рис. 72). <span class="big">Самый опасный — бледная поганка: человек, который ею отравился, как правило, умирает.</span> Красный мухомор менее ядовит, но тоже вызывает сильные отравления. Ядовиты и другие мухоморы — вонючий и пантерный.</p>
+<p>Некоторые ядовитые грибы похожи на съедобные: сатанинский гриб — на белый, бледная поганка — на шампиньон, ложные опята — на опята, ложные лисички — на лисички. Поэтому твёрдое правило: <b>не уверен, что гриб съедобный, — не бери</b>. Если после грибов стало плохо — тошнота, рвота, боль в животе, — сразу вызывают скорую помощь.</p>
+</div>
+<div class="book" hidden>
+<p><b>Характеристика грибов.</b> <b><span class="term" role="button" tabindex="0" data-t="grib">Грибы</span></b> — обширная группа организмов, включающая около 100 тыс. видов. Они различаются по форме и размерам, строению и образу жизни, могут состоять из одной клетки и быть многоклеточными.</p>
+<p>Грибы совмещают в себе некоторые признаки растений и животных. Они, как и растения, всасывают вещества из окружающей среды, но при этом являются гетеротрофами, как животные, поэтому их выделили в самостоятельное царство Грибы.</p>
+<p>Вам хорошо известны шляпочные грибы (белый, подберёзовик, подосиновик, мухомор и др.), плесень, появляющаяся на продуктах, — тоже грибы. К одноклеточным грибам относятся <b><span class="term" role="button" tabindex="0" data-t="drj">дрожжи</span></b>, используемые при выпечке хлебобулочных изделий и приготовлении различных напитков, например кефира. Вредители сельскохозяйственных посевов головня и спорынья — тоже грибы.</p>
+<p>Мы обычно сталкиваемся с грибами, живущими на суше, но есть грибы, обитающие в воде. Большинство грибов питаются продуктами жизнедеятельности организмов и их мёртвыми остатками. Среди грибов есть и такие, которые питаются органическими веществами живых организмов. Поселяясь на телах растений, животных и человека, они вызывают различные заболевания. Примером могут служить грибковые поражения кожи и ногтей человека, требующие специального, иногда очень длительного лечения.</p>
+<p>В повседневной жизни грибами мы называем <b><span class="term" role="button" tabindex="0" data-t="shlp">шляпочные грибы</span></b>, которые собираем для употребления в пищу. Наиболее ценными в пищевом отношении являются белые грибы и рыжики. Среди прочих съедобных грибов наиболее распространены подберёзовики, подосиновики, маслята, лисички, моховики, сыроежки, опята (рис. 71).</p>
+<p>Выделяют также <b><span class="term" role="button" tabindex="0" data-t="usl">условно-съедобные</span></b> грибы, которые можно употреблять в пищу только после специальной обработки. К ним относят сморчки, строчки, волнушки, грузди, рядовки и др. В пищу следует употреблять только свежие молодые грибы. Их можно жарить, варить, солить, мариновать. Грибы могут долго храниться в сушёном виде. Вы должны всегда помнить, что в старых и начавших разлагаться грибах образуются ядовитые вещества, которые могут стать причиной серьёзного отравления, вызвать расстройство органов пищеварения, нервной системы и нарушение кровообращения.</p>
+<p>Нельзя собирать грибы вдоль автомагистралей, железных дорог, вблизи промышленных предприятий. Как правило, эти районы загрязнены вредными для человека веществами. Грибы активно всасывают и накапливают их, поэтому даже съедобные грибы становятся опасными.</p>
+<p>Не все грибы можно употреблять в пищу. Есть грибы несъедобные и даже ядовитые (рис. 72). Наиболее опасной является бледная поганка. Человек, отравившийся бледной поганкой, как правило, умирает. Мухомор красный, широко распространённый в наших лесах, менее ядовит, чем бледная поганка. Хотя случаи смерти от употребления в пищу этого гриба редки, красный мухомор тоже вызывает сильные отравления. Ядовитыми считаются и другие виды мухоморов, например вонючий и пантерный.</p>
+<p>Некоторые несъедобные и даже ядовитые грибы похожи на съедобные. Так, сатанинский гриб похож на белый, бледная поганка — на шампиньон, ложные опята — на опята, ложные лисички — на лисички съедобные. При сборе грибов необходимо соблюдать твёрдое правило: если не уверен в том, что этот гриб съедобен, брать его нельзя. При первых симптомах отравления грибами — недомогании, тошноте, приступах рвоты, боли в животе — необходимо немедленно вызвать бригаду скорой помощи или отвезти пострадавшего к врачу.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 240" role="img" aria-label="Схема шляпочного гриба: шляпка, снизу пластинки или трубочки, ножка, а в земле тонкие нити — грибница, главная часть гриба. Гриб не выдёргивают, чтобы не порвать грибницу"><use href="#n-mush"/></svg><figcaption>То, что мы собираем, — только верхушка гриба.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s71" src="img/d2f7fe30635a.jpg" alt="Белые грибы, подосиновик с оранжевой шляпкой, рыжик, лисички, подберёзовик, опята на пне"><figcaption><span class="src">из учебника</span><b>Рис. 71.</b> Съедобные грибы: белый (а), подосиновик (б), рыжик (в), лисичка (г), подберёзовик (д), опёнок осенний (е)</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s72" src="img/9778c577583d.jpg" alt="Красный мухомор с белыми точками, бледная поганка — бледная шляпка и утолщение внизу ножки, галерина на мху, красная сыроежка Мэйра"><figcaption><span class="src">из учебника</span><b>Рис. 72.</b> Ядовитые грибы: мухомор (а), бледная поганка (б), галерина окаймлённая (в), сыроежка Мэйра (г)<br><span style="color:var(--soft)">▲ Бледная поганка — самый опасный гриб. Посмотри на неё внимательно.</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Грибной поход с папой и мамой</span></div><div class="lifebody"><p>Помнишь, как вы с папой и мамой ходили за грибами? Вы находили <b>лисички</b> и <b>белые</b> — съедобные (рис. 71). И видели <b>мухоморы</b> — их не брали, потому что они ядовитые (рис. 72).</p><p>Главное правило грибника ты уже соблюдала: собирать только то, что точно знаешь, а всё остальное показывать взрослым. И никогда не пробовать гриб на вкус в лесу — даже чуть-чуть.</p></div><p class="lifebook">В учебнике это называется: <b>съедобные и ядовитые грибы</b></p></aside>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Шампиньон</b><p>пластинки снизу быстро темнеют: розовые, потом коричневые</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Бледная поганка</b><p>пластинки всегда белые, внизу ножки утолщение в «мешочке»</p></div></div><p class="pairkey">Белые пластинки у «шампиньона» — не бери! Это правило из учебника.</p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">12. Почему грибы выделили в отдельное царство?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a12" hidden>Они, как растения, всасывают вещества из окружающей среды, но при этом являются гетеротрофами, как животные.</div>
+</div>
+<div class="think">
+<p class="qt">13. Почему нельзя собирать грибы вдоль дорог и у заводов?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h13" hidden>Абзац про места сбора.</div>
+<div class="rev ans" id="a13" hidden>Эти районы загрязнены вредными веществами; грибы активно всасывают и накапливают их, поэтому даже съедобные становятся опасными.</div>
+</div>
+<div class="think">
+<p class="qt">14. Какой гриб самый опасный?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h14" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a14" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h14" hidden>Абзац про ядовитые грибы.</div>
+<div class="rev ans" id="a14" hidden>Бледная поганка: человек, отравившийся ею, как правило, умирает.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">6</span><h2>Роль грибов в природе и жизни человека</h2></div>
+<div class="easy">
+<p>Грибы разрушают остатки растений и животных — и так участвуют в круговороте веществ в природе.</p>
+<p>Съедобные грибы полезны, их едят многие животные и человек. Без грибов не испечь хлеб, не сделать кефир, кумыс, сыр. Из некоторых грибов получают ценные лекарства.</p>
+<p>Но грибы и вредят. Одни вызывают болезни у растений, животных и человека — грибковые болезни кожи, ногтей, волос. Ими заражаются от больных людей или через вещи, на которых остались чешуйки кожи со спорами гриба. Другие грибы портят продукты, разрушают древесину и постройки.</p>
+</div>
+<div class="book" hidden>
+<p><b>Роль грибов в природе и жизни человека.</b> Грибы, разрушая остатки растений и животных, участвуют в круговороте веществ в природе.</p>
+<p>Съедобные грибы содержат полезные вещества, поэтому их употребляют в пищу многие животные и человек. Грибы необходимы при изготовлении хлеба, кефира, кумыса, сыров, вина, пива и т. д. Из некоторых грибов получают ценные лекарства.</p>
+<p>Грибы могут наносить и большой вред. Некоторые из них вызывают болезни у растений, животных и человека. Грибы-паразиты вызывают различные заболевания кожи, ногтей, волос. Заражение грибковыми болезнями происходит при контакте больных людей со здоровыми или через предметы, загрязнённые чешуйками кожи, ногтей, волос, содержащими споры грибка. Грибы, поселяясь на продуктах, делают их непригодными для питания, разрушают древесину и постройки.</p>
+</div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Грибы у вас на кухне</span></div><div class="lifebody"><p><b>Плесень</b> на хлебе, который у вас иногда плесневеет, — это гриб. Он поселился на хлебе и «ест» его — поэтому такой хлеб выбрасывают целиком: нити плесени проросли глубже, чем видно.</p><p><b>Дрожжи</b>, с которыми мама Аня печёт пиццу и выпечку, — тоже грибы, только одноклеточные. Они «дышат» и выделяют газ — от этого тесто поднимается и становится пышным. А <b>кефир</b>, на котором ты делала блины в §5, тоже получается с помощью грибов.</p></div><p class="lifebook">В учебнике это называется: <b>роль грибов в жизни человека</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">15. Какую роль грибы играют в природе?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h15" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a15" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h15" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a15" hidden>Разрушая остатки растений и животных, они участвуют в круговороте веществ.</div>
+</div>
+<div class="think">
+<p class="qt">16. Для приготовления каких продуктов нужны грибы?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h16" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a16" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h16" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a16" hidden>Хлеба, кефира, кумыса, сыров и др.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s6" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s7">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Растения · Хлоропласты · Хлорофилл · Фотосинтез · Животные · Простейшие, или одноклеточные · Многоклеточные · Беспозвоночные животные · Позвоночные животные · Грибы · Шляпочные грибы · Грибы съедобные и ядовитые</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Какое значение имеют растения в природе и жизни человека?</li><li>Почему каждому человеку необходимы знания о жизни растений?</li><li>Каких животных относят к простейшим, или одноклеточным?</li><li>Какие функции выполняет клетка одноклеточного животного?</li><li>Каких животных называют беспозвоночными?</li><li>Каких животных называют позвоночными?</li><li>Каковы общие признаки грибов?</li><li>Как питаются грибы?</li><li>Какие съедобные и ядовитые грибы вы знаете?</li><li>Какую роль играют грибы в природе и жизни человека?</li></ol></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Возможна ли жизнь на нашей планете без растений?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к «Подумайте!»</button></div>
+<div class="rev hint" id="r1" hidden>Вспомни раздел 2 и §11: растения выделяют кислород, которым дышит большинство организмов, и делают органические вещества. Ими питаются растительноядные животные, а теми — хищники. Убери растения — и не станет ни кислорода, ни пищи.</div></div>
+<div class="rubric">Моя лаборатория · Выполните задания</div>
+<div class="ask"><b>Задания учебника</b>
+<ol><li>По материалу параграфа и дополнительным источникам подготовьте (по согласованию с учителем) сообщение и презентацию «Многообразие растений (животных, грибов) и их значение в природе и жизни человека». Выступите с сообщением в классе и обсудите его.</li><li>Познакомьтесь с основными правилами сбора грибов и строго их соблюдайте.</li></ol></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твоя презентация</span></div><div class="lifebody"><p>Выбери одно царство — растения, животные или грибы — и сделай презентацию сама: ты это умеешь и любишь. Схемы и фотографии с этой страницы можно брать как подсказки, что рассказать.</p></div><p class="lifebook">В учебнике это называется: <b>сообщение и презентация</b></p></aside>
+<div class="rubric">Это важно знать</div>
+<div class="ask"><b>Основные правила сбора грибов</b>
+<ol><li>Собирайте только те грибы, о которых точно знаете, что они съедобны.</li><li>Никогда не ешьте и не пробуйте грибы, в съедобности которых не уверены.</li><li>Никогда не собирайте, не ешьте и не пробуйте на вкус грибы с клубневидным утолщением у основания ножки, окружённым оболочкой (как у красного мухомора), — это признак ядовитых грибов.</li><li>Не собирайте и не ешьте перезревшие, червивые и испорченные грибы.</li><li>У шампиньонов смотрите на цвет пластинок. Никогда не ешьте «шампиньоны» с белыми пластинками: у настоящих пластинки быстро темнеют, а у смертельно ядовитой бледной поганки, похожей на шампиньон, они всегда белые.</li><li>Собирайте грибы в плетёные корзины или вёдра, но не в полиэтиленовые пакеты — в них грибы быстро портятся.</li><li>Дома переберите грибы, ещё раз внимательно осмотрите каждый, почистите и отварите.</li><li>Используйте грибы сразу после сбора: сырыми их нельзя долго хранить.</li><li>Не выдёргивайте гриб, а срежьте ножом или аккуратно выкрутите, чтобы не повредить грибницу. Ямку присыпьте мхом или подстилкой — иначе на этом месте грибы могут больше не вырасти.</li></ol></div>
+<div class="rubric">Опыт дома</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 262" role="img" aria-label="Опыт с дрожжами: 1 — смешай в бутылке дрожжи, сахар и тёплую воду; 2 — надень на горлышко воздушный шарик; 3 — через 30 минут появится пена, а шарик надуется"><use href="#n-yeast"/></svg><figcaption>Дрожжи — живые грибы. Докажи это сама.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Дрожжи надувают шарик</span></div><div class="lifebody"><p>Вероника, позови папу или маму — сделайте этот опыт вместе.</p><p><b>Понадобится:</b> пустая пластиковая бутылка (0,5 л), пакетик сухих дрожжей, 2 ложки сахара, полстакана тёплой (не горячей!) воды, воздушный шарик.</p><p><b>1.</b> Насыпь в бутылку дрожжи и сахар, налей тёплую воду, закрой и встряхни.<br><b>2.</b> Открой и сразу натяни на горлышко шарик.<br><b>3.</b> Поставь в тёплое место и смотри каждые 10 минут. Что происходит с жидкостью? А с шариком?</p><p>Сделай <b>контрольную</b> бутылку, как в §6: то же самое, но без дрожжей. Надуется ли второй шарик?</p></div><p class="lifebook">В учебнике это называется: <b>грибы — живые организмы</b></p></aside>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Сначала сделай опыт и запиши, что увидела.</p>
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Что получится и почему</button></div>
+<div class="rev ans" id="r2" hidden>В бутылке с дрожжами появится пена, а шарик понемногу надуется. Дрожжи — живые одноклеточные грибы. Они питаются сахаром и выделяют углекислый газ — он и надувает шарик. В контрольной бутылке без дрожжей шарик не надуется. Так же дрожжи поднимают тесто для пиццы: пузырьки газа делают его пышным.</div></div>
+<div class="rubric">Задание для любознательных</div>
+<div class="ask"><b>Задача учебника</b>
+<p style="margin:0">Учёные выяснили, что грибница некоторых грибов может расти со скоростью 5 мм в минуту. Считается, что это самый быстрый рост среди живых организмов. Подсчитайте, насколько может вырасти грибница за сутки.</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка</button></div>
+<div class="rev hint" id="r3" hidden>Сначала узнай, сколько минут в сутках: в часе 60 минут, в сутках 24 часа. Потом умножь на 5 мм.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Ответ</button></div>
+<div class="rev ans" id="r4" hidden>60 × 24 = 1440 минут в сутках. 1440 × 5 = 7200 мм = <b>7 м 20 см</b> за сутки. Это длиннее, чем ваша строительная рулетка, — почти как трёхэтажный дом!</div></div>
+<div class="done"><button class="donebtn" data-s="s7" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt5" data-n="6">
+<div class="sortlab">Какое это царство?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Кабачок из Ягодного</p><div class="sbtns"><button class="sbtn" data-b="0">растения</button><button class="sbtn" data-b="1">животные</button><button class="sbtn" data-b="2">грибы</button></div><p class="swhy" hidden>Делает пищу на свету.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Плесень на хлебе</p><div class="sbtns"><button class="sbtn" data-b="0">растения</button><button class="sbtn" data-b="1">животные</button><button class="sbtn" data-b="2">грибы</button></div><p class="swhy" hidden>Плесень — это гриб.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Лягушка</p><div class="sbtns"><button class="sbtn" data-b="0">растения</button><button class="sbtn" data-b="1">животные</button><button class="sbtn" data-b="2">грибы</button></div><p class="swhy" hidden>Земноводное.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Дрожжи для пиццы</p><div class="sbtns"><button class="sbtn" data-b="0">растения</button><button class="sbtn" data-b="1">животные</button><button class="sbtn" data-b="2">грибы</button></div><p class="swhy" hidden>Одноклеточные грибы.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Инфузория туфелька</p><div class="sbtns"><button class="sbtn" data-b="0">растения</button><button class="sbtn" data-b="1">животные</button><button class="sbtn" data-b="2">грибы</button></div><p class="swhy" hidden>Простейшее животное.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Лисичка</p><div class="sbtns"><button class="sbtn" data-b="0">растения</button><button class="sbtn" data-b="1">животные</button><button class="sbtn" data-b="2">грибы</button></div><p class="swhy" hidden>Шляпочный гриб.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt6" data-n="6">
+<div class="sortlab">Беспозвоночное или позвоночное?</div>
+<div class="sitem" data-r="0"><p class="stext">Муравей</p><div class="sbtns"><button class="sbtn" data-b="0">беспозвоночное</button><button class="sbtn" data-b="1">позвоночное</button></div><p class="swhy" hidden>Насекомое — нет позвоночника.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Змея</p><div class="sbtns"><button class="sbtn" data-b="0">беспозвоночное</button><button class="sbtn" data-b="1">позвоночное</button></div><p class="swhy" hidden>Пресмыкающееся с позвоночником.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Дождевой червь</p><div class="sbtns"><button class="sbtn" data-b="0">беспозвоночное</button><button class="sbtn" data-b="1">позвоночное</button></div><p class="swhy" hidden>Червь.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Голубь</p><div class="sbtns"><button class="sbtn" data-b="0">беспозвоночное</button><button class="sbtn" data-b="1">позвоночное</button></div><p class="swhy" hidden>Птица.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Осьминог</p><div class="sbtns"><button class="sbtn" data-b="0">беспозвоночное</button><button class="sbtn" data-b="1">позвоночное</button></div><p class="swhy" hidden>Моллюск.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Люся</p><div class="sbtns"><button class="sbtn" data-b="0">беспозвоночное</button><button class="sbtn" data-b="1">позвоночное</button></div><p class="swhy" hidden>Млекопитающее.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt7" data-n="4">
+<div class="sortlab">Съедобный или ядовитый?</div>
+<div class="sitem" data-r="0"><p class="stext">Белый гриб</p><div class="sbtns"><button class="sbtn" data-b="0">съедобный</button><button class="sbtn" data-b="1">ядовитый</button></div><p class="swhy" hidden>Один из самых ценных.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Мухомор</p><div class="sbtns"><button class="sbtn" data-b="0">съедобный</button><button class="sbtn" data-b="1">ядовитый</button></div><p class="swhy" hidden>Сильные отравления.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Лисичка</p><div class="sbtns"><button class="sbtn" data-b="0">съедобный</button><button class="sbtn" data-b="1">ядовитый</button></div><p class="swhy" hidden>Но есть ложные лисички!</p></div>
+<div class="sitem" data-r="1"><p class="stext">Бледная поганка</p><div class="sbtns"><button class="sbtn" data-b="0">съедобный</button><button class="sbtn" data-b="1">ядовитый</button></div><p class="swhy" hidden>Самый опасный гриб.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Хлорофилл</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s60" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Зелёный пигмент, ловит солнечный свет. Хлорос — зелёный, филлон — лист.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Простейшие</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s65" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Одноклеточные животные: инфузория туфелька.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Беспозвоночные</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 330" aria-hidden="true"><use href="#n-vert"/></svg><span class="ftext">Без внутреннего скелета: насекомые, черви. 95% видов.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Позвоночные</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 330" aria-hidden="true"><use href="#n-vert"/></svg><span class="ftext">С позвоночником: рыбы, земноводные, пресмыкающиеся, птицы, млекопитающие.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Шляпочные грибы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 240" aria-hidden="true"><use href="#n-mush"/></svg><span class="ftext">Шляпка + ножка; главная часть — грибница в земле.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Дрожжи</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 262" aria-hidden="true"><use href="#n-yeast"/></svg><span class="ftext">Одноклеточные грибы для хлеба и кефира.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Бледная поганка</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s72" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Самый ядовитый гриб; пластинки всегда белые.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Какой главный признак царства Растения?</h3><div class="opts">
+<button class="opt" data-ok="1">Фотосинтез</button>
+<button class="opt">Движение</button>
+<button class="opt">Наличие ядра</button>
+<button class="opt">Питание готовым</button></div>
+<div class="fb">Растения сами делают пищу на свету.</div></div>
+<div class="q"><h3>2. Чего нет в клетках животных?</h3><div class="opts">
+<button class="opt" data-ok="1">Оболочки (клеточной стенки)</button>
+<button class="opt">Ядра</button>
+<button class="opt">Цитоплазмы</button>
+<button class="opt">Мембраны</button></div>
+<div class="fb">Оболочка есть у бактерий, растений и грибов.</div></div>
+<div class="q"><h3>3. Лягушка — это…</h3><div class="opts">
+<button class="opt" data-ok="1">Земноводное</button>
+<button class="opt">Пресмыкающееся</button>
+<button class="opt">Рыба</button>
+<button class="opt">Беспозвоночное</button></div>
+<div class="fb">Живёт и на земле, и в воде. Змея — пресмыкающееся.</div></div>
+<div class="q"><h3>4. Какая доля видов животных — беспозвоночные?</h3><div class="opts">
+<button class="opt" data-ok="1">Около 95%</button>
+<button class="opt">Около половины</button>
+<button class="opt">Около 5%</button>
+<button class="opt">Все</button></div>
+<div class="fb">Насекомых, червей и моллюсков очень много.</div></div>
+<div class="q"><h3>5. Почему грибы — отдельное царство?</h3><div class="opts">
+<button class="opt" data-ok="1">Всасывают пищу, как растения, но гетеротрофы, как животные</button>
+<button class="opt">Они умеют летать</button>
+<button class="opt">У них нет клеток</button>
+<button class="opt">Они делают фотосинтез</button></div>
+<div class="fb">У них признаки и растений, и животных.</div></div>
+<div class="q"><h3>6. Что делать, если не уверена, съедобный ли гриб?</h3><div class="opts">
+<button class="opt" data-ok="1">Не брать его</button>
+<button class="opt">Попробовать кусочек</button>
+<button class="opt">Взять и сварить подольше</button>
+<button class="opt">Понюхать</button></div>
+<div class="fb">Твёрдое правило грибника.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Растения и их значение</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Больше 300 тысяч видов; в клетках оболочка и пластиды, хлоропласты с хлорофиллом.</li><li>Главный признак — фотосинтез: дают кислород и органические вещества.</li><li>Человек выращивает культурные растения, использует лекарственные; есть ядовитые; редкие — в Красной книге.</li></ol></div>
+</div>
+<div class="think">
+<h3>Животные</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Около 2 миллионов видов; гетеротрофы, в клетках нет оболочки, умеют передвигаться.</li><li>Простейшие (одноклеточные) и многоклеточные; беспозвоночные (95%) и позвоночные (5 групп).</li><li>Опыляют растения, очищают воду, дают пищу; есть вредители и ядовитые; многие под охраной.</li></ol></div>
+</div>
+<div class="think">
+<h3>Грибы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Около 100 тысяч видов; всасывают пищу, но гетеротрофы — отдельное царство.</li><li>Шляпочные грибы, плесень, дрожжи; съедобные, условно-съедобные и ядовитые (бледная поганка).</li><li>Участвуют в круговороте веществ, нужны для хлеба и кефира; вызывают болезни и портят продукты.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b12.html">‹ §12 Классификация</a>
+  <span class="pn cur">§13 Растения, животные, грибы</span>
+  <a class="pn" href="b14.html">§14 Бактерии и вирусы ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 13, с. 80—91. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'n-three':'0 0 330 250','n-count':'0 0 330 170','n-vert':'0 0 330 330','n-mush':'0 0 330 240','n-yeast':'0 0 330 262'};
+
+var T={
+rast:{w:"Растения",k:"царство",s:"n-three",t:"Царство организмов, которые сами делают органические вещества на свету (фотосинтез). Больше 300 тысяч видов.",r:"",e:""},
+hlpl:{w:"Хлоропласты",k:"в клетках растений",p:"s60",t:"Зелёные пластиды. В них есть хлорофилл и идёт фотосинтез.",r:"<b>хлорос</b> — зеленоватый + <b>пластос</b> — вылепленный",e:""},
+hlf:{w:"Хлорофилл",k:"зелёный пигмент",p:"s60",t:"Зелёное вещество в хлоропластах. Ловит солнечные лучи — их энергия идёт на фотосинтез.",r:"<b>хлорос</b> — зелёный + <b>филлон</b> — лист",e:""},
+fts:{w:"Фотосинтез",k:"главный признак растений",p:"s61",t:"Растение делает органические вещества из воды и углекислого газа за счёт энергии света и выделяет кислород.",r:"",e:""},
+kult:{w:"Культурные растения",k:"выращивает человек",p:"s61",t:"Растения, которые человек выращивает: злаки, овощи, плодово-ягодные, лекарственные, кормовые, технические.",r:"",e:"Помидоры, огурцы и кабачки в Ягодном."},
+jivt:{w:"Животные",k:"царство",s:"n-three",t:"Царство гетеротрофов, которые обычно активно двигаются. Около 2 миллионов видов. В клетках нет оболочки.",r:"",e:""},
+prost:{w:"Простейшие",k:"одноклеточные животные",p:"s65",t:"Животные из одной клетки (или нескольких одинаковых). Одна клетка — целый организм.",r:"",e:""},
+mnog:{w:"Многоклеточные",k:"животные",p:"s66",t:"Животные, тело которых состоит из множества разных клеток с разной работой.",r:"",e:""},
+besp:{w:"Беспозвоночные",k:"животные",s:"n-vert",t:"Животные без внутреннего скелета: черви, моллюски, раки, насекомые. Около 95% всех видов животных.",r:"",e:"Муравьи, тараканы и палочники."},
+pozv:{w:"Позвоночные",k:"животные",s:"n-vert",t:"Животные с внутренним осевым скелетом — позвоночником: рыбы, земноводные, пресмыкающиеся, птицы, млекопитающие.",r:"",e:"Люся, Юкси и ты."},
+grib:{w:"Грибы",k:"царство",s:"n-three",t:"Царство гетеротрофов, которые всасывают пищу из среды. Около 100 тысяч видов: шляпочные, плесень, дрожжи.",r:"",e:""},
+shlp:{w:"Шляпочные грибы",k:"грибы",s:"n-mush",t:"Грибы со шляпкой и ножкой, которые собирают в лесу: белый, подберёзовик, лисичка, мухомор.",r:"",e:""},
+drj:{w:"Дрожжи",k:"одноклеточные грибы",s:"n-yeast",t:"Одноклеточные грибы. Нужны для выпечки хлеба и приготовления напитков, например кефира.",r:"",e:""},
+usl:{w:"Условно-съедобные грибы",k:"грибы",p:"s71",t:"Грибы, которые можно есть только после специальной обработки: сморчки, строчки, волнушки, грузди.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b13:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b13:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b13:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b13:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

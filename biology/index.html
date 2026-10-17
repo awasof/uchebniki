@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Оглавление учебника биологии для 5 класса: разобранные параграфы с интерактивными страницами.">
+<title>Биология, 5 класс — оглавление</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- оглавление ---------- */
+.plist{display:grid;gap:12px;margin:18px 0 0}
+.pcard{display:flex;gap:14px;align-items:center;background:var(--card);border:3px solid var(--line);
+  border-radius:18px;padding:14px 16px;box-shadow:var(--sh);text-decoration:none;color:var(--ink)}
+a.pcard:hover{border-color:var(--ochre)}
+.pcard .pnum{flex:0 0 auto;width:46px;height:46px;border-radius:14px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded",sans-serif;font-weight:800;font-size:17px}
+.pcard .pbody{flex:1 1 auto;min-width:0}
+.pcard .pt{display:block;font-weight:600;font-size:18px;line-height:1.3}
+.pcard .ps{display:block;font-size:14px;color:var(--soft);margin-top:2px}
+.pcard .pgo{flex:0 0 auto;white-space:nowrap;font-size:14px;font-weight:600;color:var(--red)}
+.pcard.soon{opacity:.62;box-shadow:none}
+.pcard.soon .pnum{background:var(--line);color:var(--soft)}
+.pcard.soon .pgo{color:var(--soft)}
+.chap{margin:34px 0 0}
+.chaph{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.chaph .rn{font-family:"Unbounded",sans-serif;font-weight:800;font-size:22px;color:var(--red)}
+.chaph h2{font-size:22px}
+.chaph .pp{font-size:14px;color:var(--soft)}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin:18px 0 0}
+.howto div{background:var(--paper2);border-radius:14px;padding:13px 15px;font-size:16px;line-height:1.5}
+.howto b{display:block;font-weight:600;margin-bottom:3px}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+.plist{grid-template-columns:minmax(0,1fr)}.pcard .pt,.pcard .ps{overflow-wrap:anywhere}@media (max-width:420px){.pcard .pgo{font-size:0}.pcard .pgo::after{content:"→";font-size:18px}}
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span></nav>
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Учебник · 5 класс</span>
+    <h1>Биология</h1>
+    <p class="lede">«Линия жизни». В. В. Пасечник и др., 2024. Разобрано параграфов: 14 из 27 — открывай любой.</p>
+  </div>
+</header>
+<main>
+<section>
+ <div class="wrap">
+  <div class="col">
+   <div class="chap" style="margin-top:0">
+    <div class="chaph"><h2>Введение в биологию</h2><span class="pp">страницы 5—26</span></div>
+   </div>
+  </div>
+  <div class="plist">
+   <a class="pcard" href="b1.html">
+     <span class="pnum">§1</span>
+     <span class="pbody"><span class="pt">Живая и неживая природа — единое целое</span><span class="ps">страницы 6—13 · признаки живого, кристалл и палочник, роль живого в природе</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b2.html">
+     <span class="pnum">§2</span>
+     <span class="pbody"><span class="pt">Биология — система наук о живой природе</span><span class="ps">страницы 14—21 · ботаника, зоология, анатомия, профессии, кабинет биологии</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b3.html">
+     <span class="pnum">§3</span>
+     <span class="pbody"><span class="pt">Роль биологии в жизни современного человека</span><span class="ps">страницы 22—26 · породы и сорта, язык биологии, где искать знания</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+  </div>
+  <div class="col">
+   <div class="chap">
+    <div class="chaph"><span class="rn">1</span><h2>Методы изучения живой природы</h2><span class="pp">§ 4—7 · страницы 27—52</span></div>
+   </div>
+  </div>
+  <div class="plist">
+   <a class="pcard" href="b4.html">
+     <span class="pnum">§4</span>
+     <span class="pbody"><span class="pt">Методы исследования в биологии</span><span class="ps">страницы 28—33 · научный метод, наблюдение, живые и фиксированные объекты</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b5.html">
+     <span class="pnum">§5</span>
+     <span class="pbody"><span class="pt">Измерения в биологических исследованиях</span><span class="ps">страницы 34—39 · приборы, предел измерения, цена деления, единицы</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b6.html">
+     <span class="pnum">§6</span>
+     <span class="pbody"><span class="pt">Эксперимент в биологических исследованиях</span><span class="ps">страницы 40—45 · гипотеза, опыт и контроль, этапы исследования</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b7.html">
+     <span class="pnum">§7</span>
+     <span class="pbody"><span class="pt">Описание результатов исследований</span><span class="ps">страницы 46—52 · таблицы, диаграммы, графики, биологический рисунок</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+  </div>
+  <div class="col">
+   <div class="chap">
+    <div class="chaph"><span class="rn">2</span><h2>Организмы — тела живой природы</h2><span class="pp">§ 8—14 · страницы 53—96</span></div>
+   </div>
+  </div>
+  <div class="plist">
+   <a class="pcard" href="b8.html">
+     <span class="pnum">§8</span>
+     <span class="pbody"><span class="pt">Организм — единое целое</span><span class="ps">страницы 54—59 · клетки, ткани, органы, системы органов</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b9.html">
+     <span class="pnum">§9</span>
+     <span class="pbody"><span class="pt">Увеличительные приборы для исследований</span><span class="ps">страницы 60—63 · лупа, световой и цифровой микроскоп</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b10.html">
+     <span class="pnum">§10</span>
+     <span class="pbody"><span class="pt">Клетка — основная единица живого организма</span><span class="ps">страницы 64—69 · строение клетки, ядро и хромосомы, деление клетки</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b11.html">
+     <span class="pnum">§11</span>
+     <span class="pbody"><span class="pt">Жизнедеятельность организмов</span><span class="ps">страницы 70—75 · автотрофы и гетеротрофы, дыхание, рост и развитие, раздражимость</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b12.html">
+     <span class="pnum">§12</span>
+     <span class="pbody"><span class="pt">Разнообразие организмов и их классификация</span><span class="ps">страницы 76—79 · систематика, вид и род, лестница от царства до вида, пять царств</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b13.html">
+     <span class="pnum">§13</span>
+     <span class="pbody"><span class="pt">Многообразие и значение растений, животных и грибов</span><span class="ps">страницы 80—91 · фотосинтез, беспозвоночные и позвоночные, съедобные и ядовитые грибы</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+   <a class="pcard" href="b14.html">
+     <span class="pnum">§14</span>
+     <span class="pbody"><span class="pt">Многообразие и значение бактерий и вирусов</span><span class="ps">страницы 92—96 · бактерии и брожение, вирусы, прививки, бешенство</span></span>
+     <span class="pgo">Открыть →</span>
+   </a>
+  </div>
+  <div class="col">
+   <div class="chap">
+    <div class="chaph"><span class="rn">3</span><h2>Организмы и среда обитания</h2><span class="pp">§ 15—20 · страницы 97—124</span></div>
+    <p style="color:var(--soft);font-size:16px;margin:8px 0 0">Водная, наземно-воздушная и почвенная среда, организмы как среда обитания, сезонные изменения.</p>
+   </div>
+  </div>
+  <div class="col">
+   <div class="chap">
+    <div class="chaph"><span class="rn">4</span><h2>Природные сообщества</h2><span class="pp">§ 21—25 · страницы 125—148</span></div>
+    <p style="color:var(--soft);font-size:16px;margin:8px 0 0">Взаимосвязи и пищевые цепи, разнообразие сообществ, искусственные сообщества, природные зоны.</p>
+   </div>
+  </div>
+  <div class="col">
+   <div class="chap">
+    <div class="chaph"><span class="rn">5</span><h2>Живая природа и человек</h2><span class="pp">§ 26—27 · страницы 149—158</span></div>
+    <p style="color:var(--soft);font-size:16px;margin:8px 0 0">Изменения в природе из-за человека, охрана природы, Красная книга.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="col">
+   <div class="shead"><span class="snum">?</span><h2>Как пользоваться страницей параграфа</h2></div>
+   <div class="howto">
+    <div><b>Две версии текста</b>Вверху переключатель: «по-простому» для чтения и «как в учебнике» — точные формулировки перед уроком.</div>
+    <div><b>Трудные слова нажимаются</b>Подчёркнутое зелёным слово открывает карточку с картинкой, объяснением и разбором слова.</div>
+    <div><b>Из жизни Вероники</b>Синие блоки — то же самое на примерах из твоей жизни: Люся и Юкси, муравьиная ферма, лес, Ягодное.</div>
+    <div><b>Подумай и ответь</b>В каждом разделе вопросы посложнее: сначала подсказка, где искать, потом образец ответа.</div>
+    <div><b>Моя лаборатория</b>Опыты и задания учебника, а рядом — что можно сделать дома своими руками.</div>
+    <div><b>Проверь себя</b>Сортировки, карточки со словами и тест с разбором ошибок. Внизу — темы для устного ответа с планом.</div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">Страницы сделаны для Вероники по учебнику биологии для 5 класса · обновляется по мере разбора параграфов</div></footer>
+
+</body>
+</html>

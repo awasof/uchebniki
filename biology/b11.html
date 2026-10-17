@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Что делает каждый живой организм: питается, дышит, растёт, развивается, размножается и отвечает на то, что вокруг.">
+<title>Жизнедеятельность организмов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="l-life" viewBox="0 0 330 250">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Что делает каждый живой организм</text>
+<g stroke="var(--line,#D9CDB7)" stroke-width="2.5">
+<path d="M112 59 L135 112"/><path d="M112 107 L124 124"/><path d="M112 155 L124 146"/><path d="M112 203 L135 168"/>
+<path d="M218 59 L195 112"/><path d="M218 107 L206 124"/><path d="M218 155 L206 146"/><path d="M218 203 L195 168"/>
+</g>
+<circle cx="165" cy="140" r="44" fill="var(--leaf,#2D7A55)"/>
+<text x="165" y="136" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">живой</text>
+<text x="165" y="153" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">организм</text>
+<g font-size="13" font-weight="600" text-anchor="middle" fill="var(--illink,#2B2620)">
+<rect x="8" y="44" width="104" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/><text x="60" y="64">питание</text>
+<rect x="8" y="92" width="104" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/><text x="60" y="112">дыхание</text>
+<rect x="8" y="140" width="104" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/><text x="60" y="160">выделение</text>
+<rect x="8" y="188" width="104" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/><text x="60" y="208">обмен веществ</text>
+<rect x="218" y="44" width="104" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/><text x="270" y="64">рост</text>
+<rect x="218" y="92" width="104" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/><text x="270" y="112">развитие</text>
+<rect x="218" y="140" width="104" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/><text x="270" y="160">размножение</text>
+<rect x="218" y="188" width="104" height="30" rx="15" fill="var(--paper2,#E8DFCC)"/><text x="270" y="208">раздражимость</text>
+</g>
+<text x="165" y="242" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">остановился обмен веществ — остановилась жизнь</text>
+</g></symbol>
+
+<symbol id="l-troph" viewBox="0 0 330 300">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="8" y="10" width="150" height="34" rx="9" fill="var(--leaf,#2D7A55)"/>
+<text x="83" y="33" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">Автотрофы</text>
+<rect x="172" y="10" width="150" height="34" rx="9" fill="var(--pa,#C9672C)"/>
+<text x="247" y="33" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">Гетеротрофы</text>
+<text x="83" y="64" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">авто — сам, троф — пища</text>
+<text x="247" y="64" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">гетеро — другой</text>
+<circle cx="26" cy="96" r="9" fill="var(--ochre,#E2A31F)"/>
+<text x="42" y="101" font-size="13" fill="var(--illink,#2B2620)">свет</text>
+<circle cx="26" cy="122" r="7" fill="var(--water,#6FA8C4)"/>
+<text x="42" y="127" font-size="13" fill="var(--illink,#2B2620)">вода и соли</text>
+<circle cx="26" cy="148" r="7" fill="var(--stone,#BCB2A2)"/>
+<text x="42" y="153" font-size="13" fill="var(--illink,#2B2620)">углекислый газ</text>
+<path d="M83 164 L83 184" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="8" y="190" width="150" height="50" rx="10" fill="var(--leaf,#2D7A55)" fill-opacity=".16" stroke="var(--leaf,#2D7A55)" stroke-width="2"/>
+<text x="83" y="211" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">сами делают пищу</text>
+<text x="83" y="229" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">фотосинтез</text>
+<text x="83" y="262" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">растения,</text>
+<text x="83" y="278" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">некоторые бактерии</text>
+<rect x="172" y="84" width="150" height="74" rx="10" fill="var(--paper2,#E8DFCC)"/>
+<text x="247" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">готовая пища</text>
+<text x="247" y="126" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">растения, животные,</text>
+<text x="247" y="143" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">корм, сено</text>
+<path d="M247 164 L247 184" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="172" y="190" width="150" height="50" rx="10" fill="var(--pa,#C9672C)" fill-opacity=".16" stroke="var(--pa,#C9672C)" stroke-width="2"/>
+<text x="247" y="211" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">едят готовое</text>
+<text x="247" y="229" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">и переваривают</text>
+<text x="247" y="262" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">животные, человек,</text>
+<text x="247" y="278" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">грибы, большинство</text>
+<text x="247" y="294" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">бактерий</text>
+</g></symbol>
+
+<symbol id="l-food" viewBox="0 0 330 250">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Кто что ест</text>
+<rect x="6" y="32" width="102" height="48" rx="9" fill="var(--leaf,#2D7A55)"/>
+<text x="57" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">растительно-</text>
+<text x="57" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">ядные</text>
+<rect x="114" y="32" width="102" height="48" rx="9" fill="var(--no,#B03A2E)"/>
+<text x="165" y="61" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">хищные</text>
+<rect x="222" y="32" width="102" height="48" rx="9" fill="var(--pb,#3B6FA8)"/>
+<text x="273" y="61" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">всеядные</text>
+<rect x="6" y="88" width="102" height="154" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<rect x="114" y="88" width="102" height="154" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<rect x="222" y="88" width="102" height="154" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<g font-size="12" text-anchor="middle" fill="var(--illink,#2B2620)">
+<text x="57" y="110" font-weight="700">Люся и Юкси:</text>
+<text x="57" y="130">сено,</text>
+<text x="57" y="148">сушёные</text>
+<text x="57" y="166">яблоки,</text>
+<text x="57" y="184">морковка,</text>
+<text x="57" y="202">тыквенные</text>
+<text x="57" y="220">семечки</text>
+<text x="165" y="110" font-weight="700">полоз:</text>
+<text x="165" y="130">мыши</text>
+<text x="165" y="162" font-weight="700">кошки</text>
+<text x="165" y="180">во дворе:</text>
+<text x="165" y="198">корм</text>
+<text x="165" y="216">с мясом</text>
+<text x="273" y="110" font-weight="700">человек:</text>
+<text x="273" y="130">и растения,</text>
+<text x="273" y="148">и мясо,</text>
+<text x="273" y="166">и молоко,</text>
+<text x="273" y="184">и рыбу</text>
+</g>
+</g></symbol>
+
+<symbol id="l-dev" viewBox="0 0 330 215">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Развитие с превращением</text>
+<ellipse cx="45" cy="58" rx="9" ry="12" fill="var(--snow,#EDF5F9)" stroke="var(--soft,#5F5648)" stroke-width="2"/>
+<path d="M62 58 L88 58" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="100" y="50" width="50" height="16" rx="8" fill="var(--ochre,#E2A31F)" fill-opacity=".55" stroke="var(--brown,#8B5E3C)" stroke-width="2"/>
+<path d="M112 50 L112 66 M124 50 L124 66 M136 50 L136 66" stroke="var(--brown,#8B5E3C)" stroke-width="1.5"/>
+<path d="M156 58 L176 58" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<ellipse cx="205" cy="58" rx="14" ry="20" fill="var(--stone,#BCB2A2)" stroke="var(--soft,#5F5648)" stroke-width="2"/>
+<path d="M195 50 Q205 54 215 50 M193 60 Q205 64 217 60 M195 70 Q205 74 215 70" stroke="var(--soft,#5F5648)" stroke-width="1.5" fill="none"/>
+<path d="M226 58 L252 58" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="285" cy="58" r="18" fill="var(--leaf,#2D7A55)"/>
+<path d="M277 58 l6 6 l10 -12" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g font-size="12" font-weight="700" text-anchor="middle" fill="var(--illink,#2B2620)">
+<text x="45" y="100">яйцо</text><text x="125" y="100">личинка</text><text x="205" y="100">куколка</text><text x="285" y="100">взрослое</text>
+</g>
+<rect x="6" y="112" width="318" height="44" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<text x="14" y="128" font-size="11" fill="var(--soft,#5F5648)">муравьи на ферме</text>
+<g font-size="12" text-anchor="middle" fill="var(--illink,#2B2620)">
+<text x="45" y="147">яйцо</text><text x="125" y="147">личинка</text><text x="205" y="147">куколка</text><text x="285" y="147">муравей</text>
+</g>
+<rect x="6" y="164" width="318" height="44" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<text x="14" y="180" font-size="11" fill="var(--soft,#5F5648)">бабочка</text>
+<g font-size="12" text-anchor="middle" fill="var(--illink,#2B2620)">
+<text x="45" y="199">яйцо</text><text x="125" y="199">гусеница</text><text x="205" y="199">куколка</text><text x="285" y="199">бабочка</text>
+</g>
+</g></symbol>
+
+<symbol id="l-react" viewBox="0 0 330 258">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="20" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Раздражимость у Люси и Юкси</text>
+<rect x="40" y="34" width="250" height="34" rx="9" fill="var(--no,#B03A2E)"/>
+<text x="165" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">резкий звук или движение</text>
+<path d="M165 72 L165 86" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="40" y="90" width="250" height="32" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<text x="165" y="111" text-anchor="middle" font-size="13" fill="var(--illink,#2B2620)">1. убегают в свой уголок</text>
+<path d="M165 126 L165 140" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="40" y="144" width="250" height="32" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<text x="165" y="165" text-anchor="middle" font-size="13" fill="var(--illink,#2B2620)">2. замирают и прячутся</text>
+<path d="M165 180 L165 194" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="40" y="198" width="250" height="32" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<text x="165" y="219" text-anchor="middle" font-size="13" fill="var(--illink,#2B2620)">3. если совсем страшно — пищат</text>
+<text x="165" y="246" text-anchor="middle" font-size="12" fill="var(--soft,#5F5648)">в природе так дегу прячутся от хищника</text>
+</g></symbol>
+
+<symbol id="l-rings" viewBox="0 0 330 215">
+<g font-family="Golos Text, Arial, sans-serif">
+<circle cx="106" cy="108" r="98" fill="var(--brown,#8B5E3C)"/>
+<circle cx="106" cy="108" r="86" fill="var(--ochre,#E2A31F)" fill-opacity=".5" stroke="var(--brownD,#5E3D26)" stroke-width="2"/>
+<circle cx="106" cy="108" r="70" fill="none" stroke="var(--brownD,#5E3D26)" stroke-width="2"/>
+<circle cx="106" cy="108" r="54" fill="none" stroke="var(--brownD,#5E3D26)" stroke-width="2"/>
+<circle cx="106" cy="108" r="38" fill="none" stroke="var(--brownD,#5E3D26)" stroke-width="2"/>
+<circle cx="106" cy="108" r="22" fill="none" stroke="var(--brownD,#5E3D26)" stroke-width="2"/>
+<circle cx="106" cy="108" r="4" fill="var(--brownD,#5E3D26)"/>
+<g font-size="12" font-weight="700" text-anchor="middle" fill="var(--illink,#2B2620)">
+<text x="93" y="112">1</text><text x="76" y="112">2</text><text x="60" y="112">3</text><text x="44" y="112">4</text><text x="28" y="112">5</text>
+</g>
+<g stroke="var(--soft,#5F5648)" stroke-width="1.3" fill="none">
+<path d="M200 80 L218 62"/><path d="M188 120 L218 120"/>
+</g>
+<text x="222" y="60" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">кора</text>
+<text x="222" y="112" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">годичное</text>
+<text x="222" y="128" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">кольцо</text>
+<text x="222" y="146" font-size="12" fill="var(--soft,#5F5648)">1 кольцо — 1 год</text>
+<rect x="216" y="160" width="108" height="44" rx="9" fill="var(--paper2,#E8DFCC)"/>
+<text x="270" y="178" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">5 колец —</text>
+<text x="270" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">дереву 5 лет</text>
+</g></symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 11</span>
+    <h1>Жизнедеятельность организмов</h1>
+    <p class="lede">Что делает каждый живой организм: питается, дышит, растёт, развивается, размножается и отвечает на то, что вокруг.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. Что собой представляет клетка? 2. От чего зависит многообразие живых клеток? 3. Какие свойства жизни характерны для клеток?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b10.html">‹ §10 Клетка</a>
+  <span class="pn cur">§11 Жизнедеятельность</span>
+  <a class="pn" href="b12.html">§12 Классификация ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Процессы жизнедеятельности. Питание">1</a><a href="#s2" data-j="s2" title="Пищеварение, выделение, дыхание, обмен веществ">2</a><a href="#s3" data-j="s3" title="Рост и развитие">3</a><a href="#s4" data-j="s4" title="Размножение">4</a><a href="#s5" data-j="s5" title="Раздражимость и связь со средой">5</a><a href="#s6" data-j="s6" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Процессы жизнедеятельности. Питание</h2></div>
+<div class="easy">
+<p>Каждый живой организм делает одни и те же главные дела: питается, дышит, выделяет ненужное, растёт, развивается, размножается и отвечает на то, что происходит вокруг. Это <b>процессы жизнедеятельности</b>. У всех организмов они похожи, но есть и различия — из-за строения и образа жизни.</p>
+<p><span class="term" role="button" tabindex="0" data-t="pit">Питание</span> нужно всем: с пищей в организм попадают вещества для роста, развития, движения и размножения. Но питаются организмы по-разному.</p>
+<p>Одни животные едят только растения, другие — только животных, третьи всеядны: едят и то, и другое. Человек всеяден. В нашей пище есть органические вещества (белки, жиры, углеводы) и неорганические (вода и минеральные соли). Животные всегда едят <b>готовые</b> органические вещества — и получают из них энергию.</p>
+<p>Растения питаются иначе. Снаружи они берут только углекислый газ, воду и растворённые в ней соли, а органические вещества делают сами, используя энергию света. Это <span class="term" role="button" tabindex="0" data-t="foto">фотосинтез</span> (рис. 53). Он идёт в хлоропластах — помнишь их по §10? Без света растение погибает: ему не из чего сделать белки, жиры и углеводы.</p>
+<p>Поэтому по способу питания организмы делятся на две группы. <span class="term" role="button" tabindex="0" data-t="auto">Автотрофы</span> сами делают органические вещества из неорганических — это растения и некоторые бактерии. <span class="term" role="button" tabindex="0" data-t="get">Гетеротрофы</span> питаются готовыми органическими веществами — это все животные и человек, грибы, большинство бактерий и некоторые растения-паразиты (заразиха, петров крест).</p>
+</div>
+<div class="book" hidden>
+<p><b>Процессы жизнедеятельности организмов.</b> Среди основных процессов жизнедеятельности, протекающих в организме, выделяют питание, дыхание, выделение, раздражимость, размножение, рост, развитие и др. Общие принципы протекания этих процессов едины для всех организмов, но есть и различия, связанные с особенностями строения и образа жизни.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="pit">Питание</span>.</b> Все живые организмы питаются. В процессе питания в организм поступают вещества, необходимые для роста, развития, движения, размножения и других процессов. Однако способы питания различных организмов могут различаться.</p>
+<p>Одни животные используют в пищу только растения, другие — питаются только животными, а третьи — всеядны, т. е. могут питаться как растительной, так и животной пищей. Человек, например, всеяден, он питается разнообразной пищей. В состав этой пищи входят органические (белки, жиры, углеводы) и неорганические (вода и минеральные соли) вещества. Одним из характерных признаков животных является потребление готовых органических веществ и заключённой в них энергии.</p>
+<p>Иначе питаются растения. Они получают извне лишь углекислый газ, воду и растворённые в ней минеральные соли, а органические вещества образуют сами, используя для этого энергию света. Этот процесс, происходящий в хлоропластах растительных клеток, называют <b><span class="term" role="button" tabindex="0" data-t="foto">фотосинтезом</span></b> (от греч. <i>фотос</i> — свет и <i>синтезис</i> — соединение) (рис. 53). Из клеток, содержащих хлоропласты, образовавшиеся органические вещества поступают во все другие клетки растения. Без света растение погибает, потому что не может образовывать белки, жиры, углеводы, необходимые ему для жизни, как и всем живым организмам.</p>
+<p>Таким образом, по способу получения органических веществ для питания организмы можно разделить на две группы — <b><span class="term" role="button" tabindex="0" data-t="auto">автотрофы</span></b> (от греч. <i>автос</i> — сам и <i>троф</i> — пища) и <b><span class="term" role="button" tabindex="0" data-t="get">гетеротрофы</span></b> (от греч. <i>гетерос</i> — другой и <i>троф</i> — пища). К автотрофам относят растения и некоторые бактерии, способные самостоятельно образовывать органические вещества из неорганических. Все живые организмы, питающиеся готовыми органическими веществами, являются гетеротрофами. К этой группе относятся все животные и человек, грибы, большинство бактерий и некоторые растения-паразиты (заразиха, Петров крест).</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 250" role="img" aria-label="Схема: в центре живой организм, вокруг восемь процессов — питание, дыхание, выделение, обмен веществ, рост, развитие, размножение, раздражимость"><use href="#l-life"/></svg><figcaption>Восемь главных дел любого живого организма.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s53" src="img/093deb028db7.jpg" alt="Два листа. Фотосинтез: на лист падает свет, лист поглощает углекислый газ и выделяет кислород. Дыхание: лист поглощает кислород и выделяет углекислый газ"><figcaption><span class="src">из учебника</span><b>Рис. 53.</b> Фотосинтез и дыхание<br><span style="color:var(--soft)">▲ Сравни стрелки: что лист берёт и что отдаёт при фотосинтезе и при дыхании?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 300" role="img" aria-label="Сравнение: автотрофы из света, воды с солями и углекислого газа сами делают пищу — это растения и некоторые бактерии; гетеротрофы едят готовую пищу — животные, человек, грибы, большинство бактерий"><use href="#l-troph"/></svg><figcaption>Автотрофы делают пищу сами, гетеротрофы едят готовую.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 250" role="img" aria-label="Кто что ест. Растительноядные: Люся и Юкси едят сено, сушёные яблоки, морковку, тыквенные семечки. Хищные: полоз ест мышей, кошки во дворе — корм с мясом. Всеядные: человек ест и растения, и мясо, и молоко, и рыбу"><use href="#l-food"/></svg><figcaption>Все они гетеротрофы — но едят разное.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Кто чем питается у нас</span></div><div class="lifebody"><p><b>Люся и Юкси</b> едят сено, сушёные яблочки и морковку, тыквенные семечки и специальный корм — это растительноядные животные. <b>Полоз</b> у соседей ел мышей — хищник. <b>Кошки</b> во дворе, которых ты кормишь, тоже хищники: поэтому в кошачьем корме мясо. А ты — <b>всеядная</b>, как все люди.</p><p>И все они — <b>гетеротрофы</b>: едят готовое. А вот <b>денежное дерево</b> корма не просит: дай ему свет и воду — и оно само сделает себе еду. Это <b>автотроф</b>. Поэтому его ставят у окна, а не в тёмный коридор.</p></div><p class="lifebook">В учебнике это называется: <b>растительноядные, хищные, всеядные; автотрофы и гетеротрофы</b></p></aside>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Автотрофы</b><p>сами делают пищу из света, воды и углекислого газа: растения</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Гетеротрофы</b><p>едят готовую пищу: животные, человек, грибы</p></div></div><p class="pairkey"><b>Авто</b>-мобиль едет <b>сам</b> — и автотроф кормит себя <b>сам</b>.</p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Почему растение без света погибает?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Абзац про фотосинтез.</div>
+<div class="rev ans" id="a1" hidden>Без света не идёт фотосинтез, и растение не может образовывать белки, жиры и углеводы, нужные ему для жизни.</div>
+</div>
+<div class="think">
+<p class="qt">2. Чем отличается питание животных от питания растений?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Сравни абзацы про животных и про растения.</div>
+<div class="rev ans" id="a2" hidden>Животные потребляют готовые органические вещества. Растения получают извне только углекислый газ, воду и минеральные соли, а органические вещества образуют сами, используя энергию света.</div>
+</div>
+<div class="think">
+<p class="qt">3. К какой группе относятся грибы — к автотрофам или гетеротрофам?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a3" hidden>К гетеротрофам: они питаются готовыми органическими веществами.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Пищеварение, выделение, дыхание, обмен веществ</h2></div>
+<div class="easy">
+<p>Еда, попавшая в организм, перерабатывается — это <b>пищеварение</b>. Из пищи получаются новые вещества, и организм тратит их на рост и развитие. Ненужное удаляется наружу через органы выделения — это <span class="term" role="button" tabindex="0" data-t="vyd">выделение</span>.</p>
+<p>Всем живым организмам нужна энергия. Они всё время поглощают из среды кислород, а выделяют углекислый газ. Такой постоянный обмен газами называют <span class="term" role="button" tabindex="0" data-t="dyh">дыханием</span>. Почти все организмы (кроме некоторых бактерий) получают энергию именно так.</p>
+<p>Кислород есть в воздухе (около 20%), растворён в воде, проникает в почву. Поэтому дышать могут жители любой среды — и рыбы, и кроты.</p>
+<p>Внутри организма кислород расщепляет сложные органические вещества — и выделяется энергия. А то, что осталось — углекислый газ и вода, — удаляется наружу.</p>
+<p>Питание, дыхание и выделение вместе — это части <span class="term" role="button" tabindex="0" data-t="obmen">обмена веществ</span>. Обмен веществ — все связанные между собой процессы, в которых вещества в организме образуются и разрушаются. Он связывает организм с окружающей средой. У одноклеточных он идёт в одной клетке, а у многоклеточных в нём работают почти все части тела.</p>
+</div>
+<div class="book" hidden>
+<p><b>Пищеварение и выделение.</b> Продукты питания, поступившие в организм, в процессе пищеварения перерабатываются. Из них возникают новые вещества, которые организм использует для роста и развития. Ненужные организму вещества удаляются наружу через специальные органы <span class="term" role="button" tabindex="0" data-t="vyd">выделения</span>.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="dyh">Дыхание</span>.</b> Все живые организмы нуждаются в энергии. Из окружающей среды организмы беспрерывно поглощают кислород, а выделяют углекислый газ. Этот процесс постоянного обмена газами (газообмен) между организмом и окружающей средой получил название дыхание.</p>
+<p>Практически все живые организмы (за исключением некоторых видов бактерий) получают энергию за счёт дыхания. Постоянное поступление кислорода в организм является жизненно необходимым. Кислород входит в состав воздуха (около 20%), растворяется в воде, проникает в почву. Благодаря этому организмы, обитающие в разных средах, могут использовать его для дыхания.</p>
+<p>Кислород, поглощаемый организмом из окружающей среды, взаимодействует со сложными органическими веществами, расщепляя их. В результате выделяется энергия. А образовавшиеся более простые вещества, в том числе углекислый газ и вода, удаляются из организма.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="obmen">Обмен веществ</span>.</b> Питание, дыхание и выделение являются составляющими обмена веществ. Обмен веществ — взаимосвязанные процессы образования и разрушения веществ, протекающие в организме и обеспечивающие его связь с окружающей средой. У одноклеточных организмов обмен веществ протекает в одной клетке, а у многоклеточных — задействуются структуры практически всех уровней организации организма.</p>
+</div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Путь сена у Люси</span></div><div class="lifebody"><p>Люся съела травинку сена — это <b>питание</b>. В животе сено <b>переварилось</b>: из него получились вещества, на которые Люся растёт и бегает. То, что не пригодилось, выходит наружу маленькими «горошинками» в клетке — это <b>выделение</b>.</p><p>А помнишь из §8, как быстро-быстро поднимаются бока у Люси? Это <b>дыхание</b>: она вдыхает кислород, он «сжигает» съеденное — и получается энергия на беготню. Всё вместе — <b>обмен веществ</b>.</p></div><p class="lifebook">В учебнике это называется: <b>питание, пищеварение, выделение, дыхание — обмен веществ</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Что организм поглощает и что выделяет при дыхании?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a4" hidden>Поглощает кислород, выделяет углекислый газ.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему организмы могут дышать в воде и в почве, а не только в воздухе?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Абзац про кислород.</div>
+<div class="rev ans" id="a5" hidden>Кислород не только входит в состав воздуха, но и растворяется в воде и проникает в почву.</div>
+</div>
+<div class="think">
+<p class="qt">6. Из каких процессов складывается обмен веществ?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a6" hidden>Из питания, дыхания и выделения.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Рост и развитие</h2></div>
+<div class="easy">
+<p>Все организмы растут и развиваются. <span class="term" role="button" tabindex="0" data-t="rost">Рост</span> — это увеличение размеров тела. Растения и грибы растут всю жизнь, а животные — только до определённого возраста.</p>
+<p><span class="term" role="button" tabindex="0" data-t="razv">Развитие</span> — это когда организм меняется: меняется его строение и то, как он живёт (рис. 54). Лучше всего это видно у многоклеточных: из одной-единственной клетки постепенно получается целый организм.</p>
+<p><span class="big">Рост — стал больше. Развитие — стал другим.</span> Гусеница растёт, а потом превращается в бабочку — это развитие.</p>
+</div>
+<div class="book" hidden>
+<p><b>Рост и развитие.</b> Все организмы растут и развиваются. <b><span class="term" role="button" tabindex="0" data-t="rost">Рост</span></b> — это увеличение размеров тела. Одни организмы, такие как растения и грибы, растут всю жизнь, а другие, например животные, — только до определённого возраста.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="razv">Развитие</span></b> организма проявляется в последовательном изменении его строения и процессов жизнедеятельности (рис. 54). Особенно это хорошо заметно на примере многоклеточных организмов: из одной-единственной клетки в процессе развития формируется целостный многоклеточный организм.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s54" src="img/3509febca69f.jpg" alt="а — яйцо, гусеница, куколка и бабочка махаон; б — фасоль: семя прорастает, появляется корень, потом стебелёк с листьями"><figcaption><span class="src">из учебника</span><b>Рис. 54.</b> Рост и развитие у многоклеточных животных (а) и растений (б)</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 215" role="img" aria-label="Развитие с превращением: яйцо, личинка, куколка, взрослое. У муравьёв на ферме: яйцо, личинка, куколка, муравей. У бабочки: яйцо, гусеница, куколка, бабочка"><use href="#l-dev"/></svg><figcaption>Муравьи и бабочки проходят одни и те же четыре стадии.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Наклейки на стене и муравьиная ферма</span></div><div class="lifebody"><p>Каждый год вы отмечаете твой рост наклейкой на стене — наклейки поднимаются всё выше. Это <b>рост</b>: ты становишься больше.</p><p>На муравьиной ферме ты видела <b>личинок</b> и <b>куколок</b>. Личинка совсем не похожа на муравья — это белый червячок. Потом она становится куколкой, и только из куколки выходит муравей. Это <b>развитие</b>: муравей не просто вырос, он <b>изменился</b>. Так же гусеница из видео сначала окуклилась, а потом стала бабочкой — как на рис. 54.</p><p>А палочники росли рывками: сбрасывали старую шкурку — линяли — и становились больше.</p></div><p class="lifebook">В учебнике это называется: <b>рост и развитие</b></p></aside>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Рост</b><p>стал больше: наклейка на стене выше, чем в прошлом году</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Развитие</b><p>стал другим: личинка → куколка → муравей</p></div></div><p class="pairkey">Рост — <b>размер</b>, развитие — <b>изменения</b>.</p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Какие организмы растут всю жизнь, а какие — только до определённого возраста?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a7" hidden>Растения и грибы растут всю жизнь, а животные — только до определённого возраста.</div>
+</div>
+<div class="think">
+<p class="qt">8. Чем рост отличается от развития?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Сравни определения в разделе.</div>
+<div class="rev ans" id="a8" hidden>Рост — увеличение размеров тела. Развитие — последовательное изменение строения организма и процессов его жизнедеятельности.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Размножение</h2></div>
+<div class="easy">
+<p>Ещё одно удивительное свойство живого — давать потомство, похожее на себя. У волков рождаются волчата, у кошки — котята, из икринок рыб выводятся мальки и вырастают во взрослых рыб, из семян пшеницы вырастает пшеница (рис. 55). Это <span class="term" role="button" tabindex="0" data-t="razm">размножение</span>.</p>
+</div>
+<div class="book" hidden>
+<p><b><span class="term" role="button" tabindex="0" data-t="razm">Размножение</span>.</b> Ещё одно удивительное свойство живых организмов — способность давать подобное себе потомство. У волков рождаются волчата, у кошки — котята, из икринок рыб выводятся мальки, которые растут и превращаются во взрослых рыб, из семян пшеницы вырастает взрослое растение пшеницы (рис. 55). Этот процесс называется <b>размножением</b>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s55" src="img/6491e96bf775.jpg" alt="Четыре фотографии: кит с китёнком, муравьи несут куколок, опоссум с детёнышами на спине, чайка на гнезде с птенцами"><figcaption><span class="src">из учебника</span><b>Рис. 55.</b> Размножение живых организмов</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Сёстры из одного помёта</span></div><div class="lifebody"><p>Люся и Юкси — сёстры: они родились у одной мамы-дегу в одном помёте. У дегу рождаются дегу — не кролики и не хомяки. Это и есть <b>размножение</b>: потомство похоже на родителей.</p><p>Мадагаскарские тараканы у вас тоже размножались — и из маленьких тараканчиков вырастали такие же большие тараканы. А на рис. 55 муравьи несут куколок — будущих муравьёв, как на твоей ферме.</p></div><p class="lifebook">В учебнике это называется: <b>размножение</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">9. Что такое размножение? Приведи пример из параграфа.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Единственный абзац раздела.</div>
+<div class="rev ans" id="a9" hidden>Способность давать подобное себе потомство. Например, у кошки рождаются котята, из семян пшеницы вырастает пшеница.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">5</span><h2>Раздражимость и связь со средой</h2></div>
+<div class="easy">
+<p>Условия вокруг всё время меняются, и любой живой организм на это реагирует. Ответ организма на раздражители — свет, звук, холод, прикосновение — называют <span class="term" role="button" tabindex="0" data-t="razd">раздражимостью</span>. Она помогает приспосабливаться к меняющимся условиям жизни.</p>
+<p>Любой организм всё время связан с окружающей средой: берёт из неё воду, кислород, пищу и отдаёт ненужное. Благодаря обмену веществ организм — единое целое и постоянно связан со средой. <span class="big">Если обмен веществ прекращается, прекращается и жизнь.</span></p>
+</div>
+<div class="book" hidden>
+<p><b><span class="term" role="button" tabindex="0" data-t="razd">Раздражимость</span>.</b> Так как условия в окружающей среде постоянно меняются, любой живой организм реагирует на эти изменения. Ответная реакция живых организмов на воздействие различных раздражителей и реагирование на них соответствующими изменениями на уровне клетки, ткани или всего организма называется <b>раздражимостью</b>. Раздражимость позволяет организму приспосабливаться к изменяющимся условиям жизни.</p>
+<p><b>Взаимосвязь организмов с окружающей средой.</b> Любой живой организм постоянно взаимодействует с окружающей средой, получая из неё необходимые вещества — воду, кислород, пищу, — и выделяя ненужные продукты жизнедеятельности. Благодаря обмену веществ организм представляет собой единое целое и осуществляет постоянную связь с окружающей средой. Если прекращается обмен веществ, прекращается и жизнь организма.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 258" role="img" aria-label="Раздражимость у Люси и Юкси: резкий звук или движение — убегают в свой уголок — замирают и прячутся — если совсем страшно, пищат. В природе так дегу прячутся от хищника"><use href="#l-react"/></svg><figcaption>Раздражитель — и ответ в три шага.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Люся, Юкси и самоед</span></div><div class="lifebody"><p>Хлопнула дверь или кто-то резко махнул рукой — Люся и Юкси сразу убегают в свой уголок, замирают, а если совсем страшно — пищат. Это <b>раздражимость</b>. В дикой природе так дегу спасаются от лисы или хищной птицы: убежать, спрятаться, предупредить своих писком.</p><p>А самоед больше всего реагировал на <b>запахи</b>: когда он приехал из-за города, в Москве оказалось столько новых запахов, что он прямо с ума сходил. Запах для собаки — тоже раздражитель.</p><p>Даже растения отвечают на раздражители: помнишь опыт с луком из §6? На свету листья зелёные, а в темноте — бледные. А мухоловка на рис. 57 захлопывает ловушку от прикосновения мухи.</p></div><p class="lifebook">В учебнике это называется: <b>раздражимость</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">10. Зачем организму раздражимость?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a10" hidden>Она позволяет организму приспосабливаться к изменяющимся условиям жизни.</div>
+</div>
+<div class="think">
+<p class="qt">11. Что организм получает из окружающей среды и что ей отдаёт?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a11" hidden>Получает воду, кислород, пищу; выделяет ненужные продукты жизнедеятельности.</div>
+</div>
+<div class="think">
+<p class="qt">12. Что будет, если прекратится обмен веществ?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Последнее предложение раздела.</div>
+<div class="rev ans" id="a12" hidden>Прекратится и жизнь организма.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Процессы жизнедеятельности организмов: питание, дыхание, выделение, обмен веществ, рост, развитие, размножение, раздражимость · Автотрофы · Гетеротрофы</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Какие процессы жизнедеятельности организмов вам известны?</li><li>В чём заключается значение питания для жизнедеятельности организмов?</li><li>Какую роль играет дыхание в жизни организмов?</li><li>Что такое обмен веществ?</li><li>Какое значение имеет размножение?</li><li>Что такое раздражимость?</li></ol></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Почему нарушение работы какой-либо системы органов может привести к нарушению жизнедеятельности или даже гибели всего организма? Подтвердите примером ваш ответ.</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к «Подумайте!»</button></div>
+<div class="rev hint" id="r1" hidden>Вспомни §8: все системы органов работают вместе, организм — единое целое. Например, если перестанет работать дыхательная система, кислород не попадёт в организм — не будет энергии, остановится обмен веществ, а без обмена веществ прекращается жизнь.</div></div>
+<div class="rubric">Моя лаборатория · Исследуйте</div>
+<div class="ask"><b>Наблюдение за потреблением воды растением</b>
+<ol><li>Цель: выяснить, как внешние условия влияют на то, сколько воды потребляет растение. Нужны: комнатное растение традесканция (можно другое), стеклянные сосуды (пробирки), вода.</li><li>Возьмите традесканцию, аккуратно вытащите с комом почвы из горшка и отмойте корни от земли.</li><li>Разделите побеги на две равные части и поставьте их в сосуды с водой. Корни должны быть полностью в воде.</li><li>Одну часть поставьте в тёплое (23—25 °С) и светлое место, другую — туда, где слабое освещение и около 15 °С.</li><li>Неделю наблюдайте за уровнем воды. Доливайте воду до прежнего уровня и записывайте, сколько долили в первую и во вторую группу.</li><li>Через 7 дней сравните результаты. Есть ли разница между группами?</li><li>Сделайте вывод.</li></ol></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Как сделать опыт дома</span></div><div class="lifebody"><p>Вероника, попроси папу или маму сделать этот опыт вместе с тобой. Традесканции дома нет — не страшно, учебник разрешает другие растения. Подойдут <b>черенки</b> (веточки) любого растения, которые пускают корни в воде, или <b>ростки из твоих семечек</b>.</p><p><b>1.</b> Возьми два одинаковых стакана и налей в них воду до одной отметки (наклей полоску скотча).<br><b>2.</b> В каждый поставь одинаковые черенки или ростки.<br><b>3.</b> Стакан № 1 — в комнату у окна (тепло и светло). Стакан № 2 — в коридор (прохладнее и темно).<br><b>4.</b> Каждый день доливай воду до полоски мерным стаканчиком и записывай, сколько долила, — в таблицу ниже.</p><p>Угадай заранее: из какого стакана растение выпьет больше? Это твоя <b>гипотеза</b> — как в §6.</p></div><p class="lifebook">В учебнике это называется: <b>наблюдение за потреблением воды растением</b></p></aside>
+<div class="diary"><h3>Дневник опыта: сколько воды пьёт растение</h3><p class="dnote">Стакан № 1 — в тёплой светлой комнате, стакан № 2 — в прохладном тёмном коридоре. Каждый день пиши, сколько воды долила. Всё сохранится в этом браузере.</p><div class="dwrap"><table><tr><th></th><th>№ 1<br>тепло, свет</th><th>№ 2<br>прохладно, темно</th></tr><tr><td>День 1</td><td><input id="w0_0" aria-label="День 1, № 1<br>тепло, свет"></td><td><input id="w0_1" aria-label="День 1, № 2<br>прохладно, темно"></td></tr><tr><td>День 2</td><td><input id="w1_0" aria-label="День 2, № 1<br>тепло, свет"></td><td><input id="w1_1" aria-label="День 2, № 2<br>прохладно, темно"></td></tr><tr><td>День 3</td><td><input id="w2_0" aria-label="День 3, № 1<br>тепло, свет"></td><td><input id="w2_1" aria-label="День 3, № 2<br>прохладно, темно"></td></tr><tr><td>День 4</td><td><input id="w3_0" aria-label="День 4, № 1<br>тепло, свет"></td><td><input id="w3_1" aria-label="День 4, № 2<br>прохладно, темно"></td></tr><tr><td>День 5</td><td><input id="w4_0" aria-label="День 5, № 1<br>тепло, свет"></td><td><input id="w4_1" aria-label="День 5, № 2<br>прохладно, темно"></td></tr><tr><td>День 6</td><td><input id="w5_0" aria-label="День 6, № 1<br>тепло, свет"></td><td><input id="w5_1" aria-label="День 6, № 2<br>прохладно, темно"></td></tr><tr><td>День 7</td><td><input id="w6_0" aria-label="День 7, № 1<br>тепло, свет"></td><td><input id="w6_1" aria-label="День 7, № 2<br>прохладно, темно"></td></tr><tr><td>Вывод</td><td colspan="2"><input id="w_out" aria-label="Вывод"></td></tr></table></div><p class="dsaved" id="wSaved"></p></div><script>(function(){var box=document.getElementById("wSaved").parentNode,s=document.getElementById("wSaved");[].slice.call(box.querySelectorAll("input")).forEach(function(el){try{var v=localStorage.getItem("bio11_"+el.id);if(v)el.value=v}catch(e){}el.addEventListener("input",function(){try{localStorage.setItem("bio11_"+el.id,el.value);s.textContent="Сохранено"}catch(e){s.textContent=""}})});})();</script>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Сначала сделай опыт и запиши свой вывод.</p>
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Что обычно получается</button></div>
+<div class="rev ans" id="r2" hidden>В тепле и на свету растение потребляет больше воды: там активнее идут фотосинтез и испарение воды листьями. В прохладе и полутьме все процессы жизнедеятельности замедляются — воды уходит меньше. Вывод: внешние условия влияют на жизнедеятельность растения.</div></div>
+<div class="rubric">Выполните задания</div>
+<div class="ask"><b>Задания учебника</b>
+<ol><li>Приведите примеры раздражимости у растений, животных и человека.</li><li>Прочитайте статью «Особенности биологического эксперимента» на с. 41—42 учебника. Представьте, что экспериментатор перенёс колеус из тени на хорошо освещённое место. Какие процессы жизнедеятельности изменятся у этого растения? Как оно станет развиваться, расти в новых условиях? Сделайте прогноз результатов этого мысленного эксперимента.</li><li>Понаблюдайте за своим домашним животным. Обратите внимание, как реагирует ваш питомец на холод, повышение температуры в доме, резкий незнакомый звук. Опишите, что вы наблюдаете. Какое значение имеет подобная реакция в жизни животного?</li><li>Подумайте, как можно подтвердить или опровергнуть утверждения: растение не способно двигаться; растение поглощает воду, но не испаряет её. Представьте ответ в письменном виде в рабочей тетради, изложив свои действия и рассуждения по пунктам.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказки к заданиям</button></div>
+<div class="rev hint" id="r3" hidden><ol><li>Растение поворачивает листья к свету; мухоловка захлопывает ловушку. Люся и Юкси убегают от резкого звука. Человек отдёргивает руку от горячего, жмурится от яркого света.</li><li>Вспомни §6: колеус — светолюбивое растение. На свету у него усилится фотосинтез, листья станут ярче, он будет лучше расти и развиваться.</li><li>Наблюдай за Люсей и Юкси: резкий звук — убегают, прячутся, пищат. Это помогает им спастись от хищника.</li><li>Двигаться: поставь растение листьями от окна и через несколько дней посмотри — листья повернутся к свету. Испаряет воду: надень на ветку прозрачный пакет — на нём появятся капли.</li></ol></div></div>
+<div class="rubric">Это интересно</div>
+<div class="easy">
+<p>Из семени эвкалипта всего за семь лет может вырасти дерево высотой 19 м и толщиной 1,5 м в обхвате, а некоторые виды бамбука за сутки вырастают больше чем на 1 метр!</p>
+<p>Возраст дерева можно узнать, если посчитать годичные кольца (рис. 56). А возраст рыбы — по чешуе: в ней каждый год появляется новый слой.</p>
+</div>
+<div class="book" hidden>
+<p>Из семени эвкалипта всего за семь лет при благоприятных условиях может развиться дерево 19 м высотой и 1,5 м в обхвате, а некоторые виды бамбука за сутки могут вырасти более чем на 1 м.</p>
+<p>О возрасте дерева мы можем узнать, подсчитав число годичных колец (рис. 56). Определить возраст рыбы можно по чешуе, в которой каждый год образуется новый слой.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s56" src="img/344038681013.jpg" alt="Спил ствола дерева с хорошо видными годичными кольцами"><figcaption><span class="src">из учебника</span><b>Рис. 56.</b> Годичные кольца на спиле дерева</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 215" role="img" aria-label="Схема спила дерева: в центре сердцевина, вокруг пять годичных колец, снаружи кора. Одно кольцо — один год, пять колец — дереву пять лет"><use href="#l-rings"/></svg><figcaption>Считай кольца от центра к коре.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Найди пень и посчитай</span></div><div class="lifebody"><p>Каждое лето дерево нарастает новым слоем древесины — так получается одно кольцо. Сколько колец — столько дереву лет.</p><p>В следующий раз в лесу или в Ягодном у поленницы найди пень или спил и посчитай кольца от центра к коре. Сфотографируй — и сравни: какое дерево самое старое? А если одни кольца широкие, а другие узкие — значит, были года потеплее и с дождями, и года посуше.</p></div><p class="lifebook">В учебнике это называется: <b>годичные кольца</b></p></aside>
+<div class="rubric">Для любознательных</div>
+<div class="easy">
+<p>Есть организмы, которые питаются то как автотрофы, то как гетеротрофы — смотря по условиям. Это <span class="term" role="button" tabindex="0" data-t="mix">миксотрофы</span> (от греч. <i>миксис</i> — смешение). Например, одноклеточная эвглена зелёная на свету сама делает органические вещества, а в темноте питается готовыми.</p>
+<p>Насекомоядные растения — росянка и мухоловка (рис. 57) — питаются как обычные растения, но ещё и охотятся на насекомых. У росянки листья с липкими волосками: насекомое прилипает, и лист медленно смыкается. Ловушка мухоловки — две створки с зубчиками по краям: стоит насекомому задеть волоски внутри — ловушка мгновенно захлопывается. Миксотрофами бывают и некоторые бактерии.</p>
+</div>
+<div class="book" hidden>
+<p>Есть организмы, способные в зависимости от условий питаться и как автотрофы, и как гетеротрофы. Такой тип питания называют миксотрофным (от греч. <i>миксис</i> — смешение), а организмы — <b><span class="term" role="button" tabindex="0" data-t="mix">миксотрофными</span></b>. Например, эвглена зелёная, относящаяся к жгутиковым одноклеточным организмам, на свету ведёт себя как автотроф, самостоятельно синтезируя органические вещества, а в темноте — как гетеротроф (питается готовыми органическими соединениями).</p>
+<p>Насекомоядные растения (росянка, мухоловка) — питаются как обычные растения (всасывая воду и растворённые в ней вещества из почвы), но также охотятся на насекомых и других мелких животных. Для охоты на насекомых у таких растений имеются свои хитрости. Например, росянка имеет специальные «ловчие» листья с многочисленными волосками. Когда насекомое садится на лист росянки, то оказывается в липкой слизи, и лист постепенно смыкается. Ловушка мухоловки состоит из двух створок, по краям которых расположены зубчики. Как только насекомое коснётся специальных волосков этих створок, то ловушка мгновенно закроется. К миксотрофным организмам относятся и некоторые группы бактерий.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s57" src="img/5f66dba6e09f.jpg" alt="а — росянка: на её листе с липкими волосками сидит муха; б — венерина мухоловка с ловушками из двух створок с зубчиками"><figcaption><span class="src">из учебника</span><b>Рис. 57.</b> Насекомоядные растения: росянка (а), мухоловка (б)</figcaption></div></figure>
+<div class="col">
+<div class="rubric">Задание для любознательных</div>
+<div class="ask"><b>Зависимость частоты сердцебиения от физических нагрузок</b>
+<ol><li>Попросите учителя объяснить, как измерять пульс. Потренируйтесь мерить свой пульс и пульс товарищей.</li><li>Измерьте свой пульс в покое. Запишите результат.</li><li>Сделайте десять интенсивных и глубоких приседаний. Снова измерьте пульс и запишите.</li><li>Сравните результаты. Изменилась ли частота сердцебиения после нагрузки? В какую сторону?</li><li>Сделайте вывод, учитывая, что приседания связаны с сокращением мышц, а частота пульса — с работой сердца.</li><li>Отметьте, какие ещё изменения вы заметили в своём организме во время эксперимента.</li><li>Обсудите результаты с товарищами.</li></ol></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Найди свой пульс</span></div><div class="lifebody"><p>Вероника, позови папу или маму — этот опыт веселее делать вдвоём. Положи два пальца (указательный и средний) на запястье со стороны большого пальца или на шею сбоку под челюстью. Почувствовала толчки? Это сердце гонит кровь.</p><p>Попроси папу засечь 15 секунд на телефоне, посчитай толчки и умножь на 4 — получится пульс за минуту. Можно ещё измерить пульс через 3 минуты отдыха и посмотреть, как он возвращается. А ещё заметь: после приседаний ты дышишь чаще — мышцам нужно больше кислорода.</p></div><p class="lifebook">В учебнике это называется: <b>частота сердцебиения</b></p></aside>
+<div class="diary"><h3>Дневник опыта: пульс до и после приседаний</h3><p class="dnote">Считай удары сердца за 1 минуту (или за 15 секунд и умножь на 4).</p><div class="dwrap"><table><tr><th></th><th>ударов в минуту</th></tr><tr><td>В покое</td><td><input id="p0_0" aria-label="В покое, ударов в минуту"></td></tr><tr><td>После 10 приседаний</td><td><input id="p1_0" aria-label="После 10 приседаний, ударов в минуту"></td></tr><tr><td>Через 3 минуты отдыха</td><td><input id="p2_0" aria-label="Через 3 минуты отдыха, ударов в минуту"></td></tr><tr><td>Вывод</td><td colspan="1"><input id="p_out" aria-label="Вывод"></td></tr></table></div><p class="dsaved" id="pSaved"></p></div><script>(function(){var box=document.getElementById("pSaved").parentNode,s=document.getElementById("pSaved");[].slice.call(box.querySelectorAll("input")).forEach(function(el){try{var v=localStorage.getItem("bio11_"+el.id);if(v)el.value=v}catch(e){}el.addEventListener("input",function(){try{localStorage.setItem("bio11_"+el.id,el.value);s.textContent="Сохранено"}catch(e){s.textContent=""}})});})();</script>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Сначала сделай опыт и запиши свой вывод.</p>
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Что обычно получается</button></div>
+<div class="rev ans" id="r4" hidden>После приседаний пульс становится чаще. Мышцы работают — им нужно больше кислорода и питательных веществ, и сердце быстрее гонит к ним кровь. Ещё учащается дыхание, становится жарко. После отдыха пульс постепенно возвращается к прежнему.</div></div>
+<div class="done"><button class="donebtn" data-s="s6" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Собери превращение бабочки</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по порядку — с самого начала.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="4"><span class="ord"></span>Бабочка</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Гусеница</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Яйцо</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Куколка</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sortgame" id="srt5" data-n="5">
+<div class="sortlab">Какой это процесс жизнедеятельности?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Люся грызёт сено</p><div class="sbtns"><button class="sbtn" data-b="0">питание</button><button class="sbtn" data-b="1">дыхание</button><button class="sbtn" data-b="2">рост</button><button class="sbtn" data-b="3">развитие</button><button class="sbtn" data-b="4">раздражимость</button></div><p class="swhy" hidden>Получает вещества с пищей.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Вдох кислорода, выдох углекислого газа</p><div class="sbtns"><button class="sbtn" data-b="0">питание</button><button class="sbtn" data-b="1">дыхание</button><button class="sbtn" data-b="2">рост</button><button class="sbtn" data-b="3">развитие</button><button class="sbtn" data-b="4">раздражимость</button></div><p class="swhy" hidden>Газообмен со средой.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Наклейка на стене каждый год выше</p><div class="sbtns"><button class="sbtn" data-b="0">питание</button><button class="sbtn" data-b="1">дыхание</button><button class="sbtn" data-b="2">рост</button><button class="sbtn" data-b="3">развитие</button><button class="sbtn" data-b="4">раздражимость</button></div><p class="swhy" hidden>Тело стало больше.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Личинка муравья стала куколкой</p><div class="sbtns"><button class="sbtn" data-b="0">питание</button><button class="sbtn" data-b="1">дыхание</button><button class="sbtn" data-b="2">рост</button><button class="sbtn" data-b="3">развитие</button><button class="sbtn" data-b="4">раздражимость</button></div><p class="swhy" hidden>Изменилось строение.</p></div>
+<div class="sitem" data-r="4"><p class="stext">Дегу убегают от резкого звука</p><div class="sbtns"><button class="sbtn" data-b="0">питание</button><button class="sbtn" data-b="1">дыхание</button><button class="sbtn" data-b="2">рост</button><button class="sbtn" data-b="3">развитие</button><button class="sbtn" data-b="4">раздражимость</button></div><p class="swhy" hidden>Ответ на раздражитель.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt6" data-n="5">
+<div class="sortlab">Автотроф или гетеротроф?</div>
+<div class="sitem" data-r="0"><p class="stext">Денежное дерево</p><div class="sbtns"><button class="sbtn" data-b="0">автотроф</button><button class="sbtn" data-b="1">гетеротроф</button></div><p class="swhy" hidden>Растение — само делает пищу на свету.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Люся</p><div class="sbtns"><button class="sbtn" data-b="0">автотроф</button><button class="sbtn" data-b="1">гетеротроф</button></div><p class="swhy" hidden>Животное — ест готовое.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Гриб</p><div class="sbtns"><button class="sbtn" data-b="0">автотроф</button><button class="sbtn" data-b="1">гетеротроф</button></div><p class="swhy" hidden>Грибы питаются готовыми веществами.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Полоз</p><div class="sbtns"><button class="sbtn" data-b="0">автотроф</button><button class="sbtn" data-b="1">гетеротроф</button></div><p class="swhy" hidden>Хищник — ест мышей.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Пшеница</p><div class="sbtns"><button class="sbtn" data-b="0">автотроф</button><button class="sbtn" data-b="1">гетеротроф</button></div><p class="swhy" hidden>Растение — фотосинтез.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Автотрофы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 300" aria-hidden="true"><use href="#l-troph"/></svg><span class="ftext">Сами делают пищу на свету: растения. Авто — сам, троф — пища.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Гетеротрофы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 300" aria-hidden="true"><use href="#l-troph"/></svg><span class="ftext">Едят готовое: животные, человек, грибы. Гетерос — другой.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фотосинтез</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s53" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Растение на свету делает пищу из воды и углекислого газа. Фотос — свет.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Дыхание</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s53" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Поглощаем кислород, выделяем углекислый газ — получаем энергию.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Обмен веществ</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 250" aria-hidden="true"><use href="#l-life"/></svg><span class="ftext">Питание + дыхание + выделение. Остановился — остановилась жизнь.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Развитие</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 215" aria-hidden="true"><use href="#l-dev"/></svg><span class="ftext">Организм меняется: личинка → куколка → муравей.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Раздражимость</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 258" aria-hidden="true"><use href="#l-react"/></svg><span class="ftext">Ответ на изменения вокруг: дегу убегают от резкого звука.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Кто такие автотрофы?</h3><div class="opts">
+<button class="opt" data-ok="1">Организмы, которые сами делают органические вещества</button>
+<button class="opt">Организмы, которые едят только мясо</button>
+<button class="opt">Все животные</button>
+<button class="opt">Организмы без клеток</button></div>
+<div class="fb">Автос — сам: растения и некоторые бактерии.</div></div>
+<div class="q"><h3>2. К какой группе относятся Люся и Юкси?</h3><div class="opts">
+<button class="opt" data-ok="1">Гетеротрофы</button>
+<button class="opt">Автотрофы</button>
+<button class="opt">Миксотрофы</button>
+<button class="opt">Хищники</button></div>
+<div class="fb">Они едят готовую пищу — сено и корм. И при этом растительноядные.</div></div>
+<div class="q"><h3>3. Что поглощает организм при дыхании?</h3><div class="opts">
+<button class="opt" data-ok="1">Кислород</button>
+<button class="opt">Углекислый газ</button>
+<button class="opt">Свет</button>
+<button class="opt">Соль</button></div>
+<div class="fb">Поглощает кислород, выделяет углекислый газ.</div></div>
+<div class="q"><h3>4. Что из этого — развитие, а не рост?</h3><div class="opts">
+<button class="opt" data-ok="1">Гусеница превратилась в бабочку</button>
+<button class="opt">Котёнок стал тяжелее</button>
+<button class="opt">Дерево стало выше</button>
+<button class="opt">Наклейка роста на стене выше прошлогодней</button></div>
+<div class="fb">Развитие — когда организм меняется, становится другим.</div></div>
+<div class="q"><h3>5. Как узнать возраст дерева?</h3><div class="opts">
+<button class="opt" data-ok="1">Посчитать годичные кольца</button>
+<button class="opt">Измерить высоту</button>
+<button class="opt">Посчитать листья</button>
+<button class="opt">Посмотреть на кору</button></div>
+<div class="fb">Одно кольцо — один год.</div></div>
+<div class="q"><h3>6. Что будет с организмом, если прекратится обмен веществ?</h3><div class="opts">
+<button class="opt" data-ok="1">Прекратится жизнь</button>
+<button class="opt">Он вырастет</button>
+<button class="opt">Он начнёт фотосинтез</button>
+<button class="opt">Ничего</button></div>
+<div class="fb">Обмен веществ — главное свойство живого.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Питание: автотрофы и гетеротрофы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Все организмы питаются: получают вещества для роста, развития, движения, размножения.</li><li>Автотрофы (растения) сами делают органические вещества на свету — фотосинтез.</li><li>Гетеротрофы (животные, человек, грибы) едят готовое; животные бывают растительноядные, хищные, всеядные.</li></ol></div>
+</div>
+<div class="think">
+<h3>Дыхание и обмен веществ</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Дыхание — поглощаем кислород, выделяем углекислый газ.</li><li>Кислород расщепляет органические вещества — выделяется энергия.</li><li>Питание, дыхание и выделение — части обмена веществ; без обмена веществ нет жизни.</li></ol></div>
+</div>
+<div class="think">
+<h3>Рост, развитие, размножение, раздражимость</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Рост — тело становится больше; развитие — организм меняется (яйцо → гусеница → куколка → бабочка).</li><li>Размножение — потомство, похожее на родителей.</li><li>Раздражимость — ответ на изменения вокруг: дегу убегают от резкого звука.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b10.html">‹ §10 Клетка</a>
+  <span class="pn cur">§11 Жизнедеятельность</span>
+  <a class="pn" href="b12.html">§12 Классификация ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 11, с. 70—75. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'l-life':'0 0 330 250','l-troph':'0 0 330 300','l-food':'0 0 330 250','l-dev':'0 0 330 215','l-react':'0 0 330 258','l-rings':'0 0 330 215'};
+
+var T={
+pit:{w:"Питание",k:"процесс жизнедеятельности",s:"l-food",t:"Организм получает вещества, нужные для роста, развития, движения и размножения.",r:"",e:""},
+auto:{w:"Автотрофы",k:"способ питания",s:"l-troph",t:"Организмы, которые сами делают органические вещества из неорганических. Растения и некоторые бактерии.",r:"<b>автос</b> — сам + <b>троф</b> — пища",e:"Денежное дерево не просит корма — ему нужны свет и вода."},
+get:{w:"Гетеротрофы",k:"способ питания",s:"l-troph",t:"Организмы, которые питаются готовыми органическими веществами: животные, человек, грибы, большинство бактерий.",r:"<b>гетерос</b> — другой + <b>троф</b> — пища",e:"Люся и Юкси едят сено — готовую пищу."},
+foto:{w:"Фотосинтез",k:"питание растений",p:"s53",t:"Растение на свету делает органические вещества из углекислого газа и воды. Идёт в хлоропластах.",r:"<b>фотос</b> — свет + <b>синтезис</b> — соединение",e:""},
+vyd:{w:"Выделение",k:"процесс жизнедеятельности",s:"l-life",t:"Удаление из организма ненужных веществ через специальные органы выделения.",r:"",e:""},
+dyh:{w:"Дыхание",k:"процесс жизнедеятельности",p:"s53",t:"Постоянный обмен газами со средой: организм поглощает кислород, а выделяет углекислый газ. Так он получает энергию.",r:"",e:""},
+obmen:{w:"Обмен веществ",k:"главное свойство живого",s:"l-life",t:"Все процессы образования и разрушения веществ в организме вместе: питание, дыхание, выделение.",r:"",e:""},
+rost:{w:"Рост",k:"процесс жизнедеятельности",p:"s54",t:"Увеличение размеров тела. Растения и грибы растут всю жизнь, животные — до определённого возраста.",r:"",e:""},
+razv:{w:"Развитие",k:"процесс жизнедеятельности",s:"l-dev",t:"Последовательное изменение строения организма и его жизни: из семени — растение, из гусеницы — бабочка.",r:"",e:""},
+razm:{w:"Размножение",k:"процесс жизнедеятельности",p:"s55",t:"Способность давать подобное себе потомство: у кошки — котята, из семян пшеницы — пшеница.",r:"",e:""},
+razd:{w:"Раздражимость",k:"процесс жизнедеятельности",s:"l-react",t:"Ответ организма на изменения вокруг. Помогает приспосабливаться к условиям жизни.",r:"",e:""},
+mix:{w:"Миксотрофы",k:"смешанное питание",p:"s57",t:"Организмы, которые питаются и как автотрофы, и как гетеротрофы — смотря по условиям.",r:"<b>миксис</b> (греч.) — смешение",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b11:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b11:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>4){fb.textContent="Верно! Яйцо → гусеница → куколка → бабочка.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Не то. С чего всё начинается?";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b11:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b11:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
