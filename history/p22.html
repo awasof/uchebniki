@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Золотое яблоко, десять лет войны за Трою, деревянный конь и десять лет пути домой. Трудные слова можно нажимать.">
+<title>Поэмы Гомера</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="v-20let" viewBox="0 0 540 212">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ДВАДЦАТЬ ЛЕТ ВДАЛИ ОТ ДОМА</text>
+  <text x="270" y="42" text-anchor="end" font-size="11" font-weight="700" fill="var(--red)">«Илиада» — только 10-й год ↓</text>
+  <rect x="30" y="52" width="240" height="30" rx="6" fill="var(--ochre)"/>
+  <text x="42" y="72" font-size="12" font-weight="700" fill="#22190A">Троянская война — 10 лет</text>
+  <rect x="246" y="48" width="24" height="38" rx="4" fill="none" stroke="var(--red)" stroke-width="3"/>
+  <rect x="270" y="52" width="240" height="30" rx="6" fill="var(--water)"/>
+  <text x="282" y="72" font-size="12" font-weight="700" fill="#14262F">скитания — 10 лет</text>
+  <path d="M272 94 V100 H508 V94" fill="none" stroke="var(--illink)" stroke-width="2"/>
+  <text x="390" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink)">«Одиссея»</text>
+  <text x="390" y="136" text-anchor="middle" font-size="10.5" fill="var(--soft)">из них 7 лет — у нимфы Калипсо</text>
+  <line x1="30" y1="156" x2="510" y2="156" stroke="var(--illink)" stroke-width="2"/>
+  <line x1="30" y1="150" x2="30" y2="162" stroke="var(--illink)" stroke-width="2"/>
+  <line x1="270" y1="150" x2="270" y2="162" stroke="var(--illink)" stroke-width="2"/>
+  <line x1="510" y1="150" x2="510" y2="162" stroke="var(--illink)" stroke-width="2"/>
+  <text x="30" y="178" font-size="10.5" fill="var(--illink)">уплыл с Итаки</text>
+  <text x="270" y="178" text-anchor="middle" font-size="10.5" fill="var(--illink)">Троя взята</text>
+  <text x="510" y="178" text-anchor="end" font-size="10.5" fill="var(--illink)">дома, на Итаке</text>
+  <text x="8" y="204" font-size="12" font-weight="700" fill="var(--moss)">Уплыл, когда сын был младенцем, — вернулся, когда сын вырос.</text>
+</symbol>
+
+<symbol id="v-storony" viewBox="0 0 520 330">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КТО С КЕМ ВОЕВАЛ</text>
+  <rect x="8" y="28" width="246" height="34" rx="9" fill="var(--ochre)"/>
+  <text x="131" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">АХЕЙЦЫ (ГРЕКИ)</text>
+  <rect x="266" y="28" width="246" height="34" rx="9" fill="var(--water)"/>
+  <text x="389" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#14262F">ТРОЯНЦЫ</text>
+  <text x="16" y="88" font-size="12.5" font-weight="700" fill="var(--illink)">Агамемнон</text>
+  <text x="16" y="103" font-size="10.5" fill="var(--soft)">царь Микен, глава похода</text>
+  <text x="16" y="128" font-size="12.5" font-weight="700" fill="var(--illink)">Менелай</text>
+  <text x="16" y="143" font-size="10.5" fill="var(--soft)">царь Спарты, муж Елены, брат Агамемнона</text>
+  <text x="16" y="168" font-size="12.5" font-weight="700" fill="var(--illink)">Ахилл</text>
+  <text x="16" y="183" font-size="10.5" fill="var(--soft)">самый могучий герой</text>
+  <text x="16" y="208" font-size="12.5" font-weight="700" fill="var(--illink)">Патрокл</text>
+  <text x="16" y="223" font-size="10.5" fill="var(--soft)">друг Ахилла</text>
+  <text x="16" y="248" font-size="12.5" font-weight="700" fill="var(--illink)">Одиссей</text>
+  <text x="16" y="263" font-size="10.5" fill="var(--soft)">хитроумный царь острова Итака</text>
+  <text x="274" y="88" font-size="12.5" font-weight="700" fill="var(--illink)">Приам</text>
+  <text x="274" y="103" font-size="10.5" fill="var(--soft)">царь Трои</text>
+  <text x="274" y="128" font-size="12.5" font-weight="700" fill="var(--illink)">Гектор</text>
+  <text x="274" y="143" font-size="10.5" fill="var(--soft)">сын Приама, предводитель троянцев</text>
+  <text x="274" y="168" font-size="12.5" font-weight="700" fill="var(--illink)">Парис</text>
+  <text x="274" y="183" font-size="10.5" fill="var(--soft)">царевич, увёз Елену</text>
+  <text x="274" y="208" font-size="12.5" font-weight="700" fill="var(--illink)">Елена</text>
+  <text x="274" y="223" font-size="10.5" fill="var(--soft)">спартанская царица, увезена в Трою</text>
+  <line x1="260" y1="72" x2="260" y2="268" stroke="var(--line)" stroke-width="2"/>
+  <rect x="8" y="282" width="504" height="40" rx="9" fill="var(--paper2)"/>
+  <text x="260" y="307" text-anchor="middle" font-size="11.5" fill="var(--illink)">Боги — одни за троянцев, другие за ахейцев. Аполлон помог Гектору.</text>
+</symbol>
+
+<symbol id="v-yabloko" viewBox="0 0 520 300">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК ОДНО ЯБЛОКО ПРИВЕЛО К ВОЙНЕ</text>
+  <rect x="8" y="28" width="504" height="36" rx="9" fill="var(--ochre)"/>
+  <circle cx="30" cy="46" r="11" fill="#22190A"/><text x="30" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ochre)">1</text>
+  <text x="50" y="50" font-size="11.5" fill="#22190A">Эрида, богиня раздора, подкинула золотое яблоко «прекраснейшей»</text>
+  <line x1="260" y1="64" x2="260" y2="74" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="8" y="78" width="504" height="36" rx="9" fill="var(--paper2)"/>
+  <circle cx="30" cy="96" r="11" fill="var(--illink)"/><text x="30" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="var(--paper2)">2</text>
+  <text x="50" y="100" font-size="11.5" fill="var(--illink)">Гера, Афина и Афродита спорят — выбрать должен царевич Парис</text>
+  <line x1="260" y1="114" x2="260" y2="124" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="8" y="128" width="504" height="36" rx="9" fill="var(--paper2)"/>
+  <circle cx="30" cy="146" r="11" fill="var(--illink)"/><text x="30" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="var(--paper2)">3</text>
+  <text x="50" y="150" font-size="11.5" fill="var(--illink)">Афродита обещает Парису любовь Елены — и побеждает</text>
+  <line x1="260" y1="164" x2="260" y2="174" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="8" y="178" width="504" height="36" rx="9" fill="var(--paper2)"/>
+  <circle cx="30" cy="196" r="11" fill="var(--illink)"/><text x="30" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="var(--paper2)">4</text>
+  <text x="50" y="200" font-size="11.5" fill="var(--illink)">Парис похищает Елену у спартанского царя Менелая</text>
+  <line x1="260" y1="214" x2="260" y2="224" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="8" y="228" width="504" height="36" rx="9" fill="var(--red)"/>
+  <circle cx="30" cy="246" r="11" fill="#FFF6E9"/><text x="30" y="250" text-anchor="middle" font-size="11" font-weight="700" fill="var(--red)">5</text>
+  <text x="50" y="250" font-size="11.5" font-weight="700" fill="#FFF6E9">Сотни кораблей ахейцев плывут к Трое. Война — 10 лет</text>
+  <text x="8" y="290" font-size="12" font-weight="700" fill="var(--moss)">«Яблоко раздора» — так и сейчас говорят о том, из-за чего вспыхнула ссора.</text>
+</symbol>
+
+<symbol id="v-put" viewBox="0 0 540 284">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ПУТЬ ОДИССЕЯ ДОМОЙ — ПО ПОРЯДКУ (ЭТО НЕ КАРТА)</text>
+  <path d="M56 64 H398 C498 64 498 184 398 184 H56" fill="none" stroke="var(--water)" stroke-width="5" stroke-dasharray="10 7"/>
+  <g font-weight="700" font-size="13" text-anchor="middle">
+  <circle cx="56" cy="64" r="16" fill="var(--ochre)"/><text x="56" y="69" fill="#22190A">1</text>
+  <circle cx="170" cy="64" r="16" fill="var(--illink)"/><text x="170" y="69" fill="var(--illpaper)">2</text>
+  <circle cx="284" cy="64" r="16" fill="var(--illink)"/><text x="284" y="69" fill="var(--illpaper)">3</text>
+  <circle cx="398" cy="64" r="16" fill="var(--illink)"/><text x="398" y="69" fill="var(--illpaper)">4</text>
+  <circle cx="398" cy="184" r="16" fill="var(--illink)"/><text x="398" y="189" fill="var(--illpaper)">5</text>
+  <circle cx="284" cy="184" r="16" fill="var(--red)"/><text x="284" y="189" fill="#FFF6E9">6</text>
+  <circle cx="170" cy="184" r="16" fill="var(--illink)"/><text x="170" y="189" fill="var(--illpaper)">7</text>
+  <circle cx="56" cy="184" r="16" fill="var(--moss)"/><text x="56" y="189" fill="#FFF6E9">8</text>
+  </g>
+  <g text-anchor="middle">
+  <text x="56" y="100" font-size="11.5" font-weight="700" fill="var(--illink)">Троя</text>
+  <text x="56" y="115" font-size="10" fill="var(--soft)">отплыли домой</text>
+  <text x="170" y="100" font-size="11.5" font-weight="700" fill="var(--illink)">Циклопы</text>
+  <text x="170" y="115" font-size="10" fill="var(--soft)">Полифем ослеплён</text>
+  <text x="284" y="100" font-size="11.5" font-weight="700" fill="var(--illink)">Сирены</text>
+  <text x="284" y="115" font-size="10" fill="var(--soft)">привязан к мачте</text>
+  <text x="398" y="100" font-size="11.5" font-weight="700" fill="var(--illink)">Сцилла и Харибда</text>
+  <text x="398" y="115" font-size="10" fill="var(--soft)">скалы сдвигаются</text>
+  <text x="398" y="220" font-size="11.5" font-weight="700" fill="var(--illink)">Остров Калипсо</text>
+  <text x="398" y="235" font-size="10" fill="var(--soft)">семь лет</text>
+  <text x="284" y="220" font-size="11.5" font-weight="700" fill="var(--illink)">Плот и буря</text>
+  <text x="284" y="235" font-size="10" fill="var(--soft)">гнев Посейдона</text>
+  <text x="170" y="220" font-size="11.5" font-weight="700" fill="var(--illink)">Феаки</text>
+  <text x="170" y="235" font-size="10" fill="var(--soft)">дали корабль</text>
+  <text x="56" y="220" font-size="11.5" font-weight="700" fill="var(--illink)">Итака</text>
+  <text x="56" y="235" font-size="10" fill="var(--soft)">лук и женихи</text>
+  </g>
+  <text x="8" y="272" font-size="12" font-weight="700" fill="var(--moss)">Посейдон мстил за сына-циклопа — и дорога растянулась на десять лет.</text>
+</symbol>
+
+<symbol id="v-sloi" viewBox="0 0 500 282">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ХОЛМ ГИССАРЛЫК В РАЗРЕЗЕ: ДЕВЯТЬ ГОРОДОВ</text>
+  <text x="150" y="40" text-anchor="middle" font-size="10.5" fill="var(--soft)">сверху — самый новый город</text>
+  <g font-size="11" font-weight="700" text-anchor="middle">
+  <rect x="40" y="48" width="220" height="20" fill="var(--stone)"/><text x="150" y="62" fill="#22190A">9</text>
+  <rect x="40" y="68" width="220" height="20" fill="var(--paper2)"/><text x="150" y="82" fill="var(--illink)">8</text>
+  <rect x="40" y="88" width="220" height="20" fill="var(--stone)"/><text x="150" y="102" fill="#22190A">7</text>
+  <rect x="40" y="108" width="220" height="20" fill="var(--paper2)"/><text x="150" y="122" fill="var(--illink)">6</text>
+  <rect x="40" y="128" width="220" height="20" fill="var(--stone)"/><text x="150" y="142" fill="#22190A">5</text>
+  <rect x="40" y="148" width="220" height="20" fill="var(--paper2)"/><text x="150" y="162" fill="var(--illink)">4</text>
+  <rect x="40" y="168" width="220" height="20" fill="var(--stone)"/><text x="150" y="182" fill="#22190A">3</text>
+  <rect x="40" y="188" width="220" height="20" fill="var(--ochre)"/><text x="150" y="202" fill="#22190A">2</text>
+  <rect x="40" y="208" width="220" height="20" fill="var(--paper2)"/><text x="150" y="222" fill="var(--illink)">1</text>
+  </g>
+  <rect x="40" y="48" width="220" height="180" fill="none" stroke="var(--illink)" stroke-width="2"/>
+  <text x="150" y="246" text-anchor="middle" font-size="10.5" fill="var(--soft)">внизу — самый древний</text>
+  <path d="M266 90 H274 V126 H266" fill="none" stroke="var(--moss)" stroke-width="2.5"/>
+  <line x1="274" y1="108" x2="288" y2="108" stroke="var(--moss)" stroke-width="2.5"/>
+  <text x="294" y="104" font-size="11" font-weight="700" fill="var(--moss)">Троя Гомера — в другом слое,</text>
+  <text x="294" y="119" font-size="11" fill="var(--moss)">выше (это доказали позже)</text>
+  <line x1="262" y1="198" x2="288" y2="198" stroke="var(--red)" stroke-width="2.5"/>
+  <text x="294" y="194" font-size="11" font-weight="700" fill="var(--red)">«Клад Приама»: Шлиман</text>
+  <text x="294" y="209" font-size="11" fill="var(--red)">решил, что это и есть Троя</text>
+  <text x="8" y="272" font-size="12" font-weight="700" fill="var(--moss)">Шлиман ошибся слоем — но доказал, что Троя была на самом деле.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 22</span>
+    <h1>Поэмы Гомера</h1>
+    <p class="lede">Золотое яблоко, десять лет войны за Трою, деревянный конь и десять лет пути домой. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Почему поэмы Гомера, созданные в Древней Греции, популярны до сих пор?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p21.html">‹ §21 Боги греков</a>
+  <span class="pn cur">§22 Поэмы Гомера</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Великий поэт Древней Греции">1</a><a href="#s2" data-j="s2" title="Поэма «Илиада»">2</a><a href="#s3" data-j="s3" title="Поэма «Одиссея»">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-otplytie" src="img/9bee879cb027.jpg" alt="Рисунок: у берега стоят и отплывают корабли с полосатыми парусами, на борту воины со щитами"><figcaption><span class="src">из учебника</span><b>Отплытие ахейцев на войну.</b> Изложение событий легендарной Троянской войны содержится в двух поэмах Гомера — «Илиаде» и «Одиссее».</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Великий поэт Древней Греции</h2></div>
+<div class="easy">
+<p>После гибели Микен (§20) Греция надолго остановилась в развитии. Но греки помнили своё славное прошлое и складывали о нём предания. Их пересказывали от дедов к внукам.</p>
+<p>Больше всего любили рассказы о Троянской войне. Великий поэт <button class="term" data-t="gomer">Гомер</button> сложил о ней поэму <button class="term" data-t="iliada">«Илиада»</button>. Название — от Илиона, второго имени Трои. Гомер жил в VIII веке до н. э. По преданию, он был слепым. А семь городов Греции спорили: каждый хотел считаться его родиной.</p>
+<p>Вторая поэма Гомера — <button class="term" data-t="odisseya">«Одиссея»</button>. Она о том, как царь Одиссей долго плыл из-под Трои домой, на свой остров Итаку. Теперь «одиссеей» называют любое долгое путешествие.</p>
+<p><b>С чего началась война?</b> С яблока. Богиня раздора Эрида тайком подкинула богиням Гере, Афине и Афродите золотое яблоко с надписью «прекраснейшей». Кому оно? Выбирать должен был троянский царевич <button class="term" data-t="paris">Парис</button>. Отсюда выражение «<button class="term" data-t="yabloko">яблоко раздора</button>».</p>
+<p>Победила Афродита. Она пообещала Парису любовь самой прекрасной женщины на земле — спартанской царицы <button class="term" data-t="elena">Елены</button>. Парис похитил Елену. Это и стало поводом к войне.</p>
+<p>Муж Елены, спартанский царь Менелай, собрал поход ахейцев. С ним пошли все цари, которые когда-то сватались к Елене. Во главе встал брат Менелая — царь Микен <button class="term" data-t="agamemnon">Агамемнон</button>. Сотни кораблей поплыли к Трое, в Малую Азию. Война длилась десять лет.</p>
+<p>Воевали даже боги: одни помогали троянцам, другие — ахейцам.</p>
+</div>
+<div class="book" hidden>
+<p>После падения микенских царств Греция остановилась в своём развитии. Но греки помнили о своём славном прошлом и слагали о нём предания, которые передавали из поколения в поколение.</p>
+<p>Любимыми сюжетами греков были Троянская война и её герои. Великий греческий поэт Гомер воспел эту войну в поэме «Илиада» (слово образовано от другого названия Трои — Илион). Создатель поэмы, живший в VIII (8) веке до н. э., по преданию, был слепым. Семь городов Греции спорили между собой за право называться родиной Гомера.</p>
+<p>Гомера считают и автором поэмы «Одиссея», название которой стало нарицательным для дальнего путешествия. В ней рассказывается о странствиях царя Одиссея на пути от Трои до родного острова Итака.</p>
+<p>По легенде, богиня раздора Эрида тайком подкинула другим богиням — Гере, Афине и Афродите — золотое яблоко с надписью «прекраснейшей». Выбрать, кому оно предназначалось, должен был троянский царевич Парис. Богини шли на всевозможные ухищрения, пытаясь заполучить яблоко и титул «прекраснейшая». С этой легендой связано выражение «яблоко раздора».</p>
+<p>Победила Афродита, которая пообещала Парису помочь обрести любовь прекраснейшей земной женщины — спартанской царицы Елены. Похищение Елены и послужило поводом к началу Троянской войны.</p>
+<p>В ответ на похищение муж Елены, спартанский царь Менелай, организовал поход ахейцев на Трою. Все греческие цари, бывшие когда-то женихами Елены, отправились вместе с Менелаем. Возглавил поход брат Менелая — царь Микен Агамемнон. Сотни кораблей направились в Малую Азию к берегам Трои. Война продолжалась десять лет.</p>
+<p>В Троянской войне участвовали даже боги. Одни из них поддерживали троянцев, другие — ахейцев.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-gomer" src="img/70e2e182813f.jpg" alt="Мраморный бюст старика с густой бородой и повязкой в волосах" style="max-width:255px"><figcaption><span class="src">из учебника</span><b>Гомер.</b> Древнегреческий бюст. Помимо «Илиады» и «Одиссеи», ему приписывалось авторство «гомеровских гимнов» и других произведений, в том числе комической поэмы «Война мышей и лягушек».</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 520 300" role="img" aria-label="Цепочка из пяти шагов сверху вниз: Эрида подкинула яблоко «прекраснейшей»; три богини спорят, выбирает Парис; Афродита обещает ему любовь Елены и побеждает; Парис похищает Елену у Менелая; сотни кораблей ахейцев плывут к Трое, война длится 10 лет."><use href="#v-yabloko"/></svg><figcaption><b>Ответ на вопрос учебника о поводе к войне</b> — шаг 4: похищение Елены. А началось всё с яблока.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 520 330" role="img" aria-label="Два столбца. Ахейцы: Агамемнон, Менелай, Ахилл, Патрокл, Одиссей. Троянцы: Приам, Гектор, Парис, Елена. Внизу: боги — одни за троянцев, другие за ахейцев, Аполлон помог Гектору."><use href="#v-storony"/></svg><figcaption><b>Кто есть кто.</b> Имён много — возвращайся к этой схеме, когда читаешь разделы 2 и 3.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel">Генрих Шлиман и раскопки Трои</div>
+<div class="easy">
+<p>Много веков люди читали «Илиаду» и думали: это сказка, никакой Трои не было. Но немецкий предприниматель Генрих <button class="term" data-t="shliman">Шлиман</button>, разбогатевший в России, верил: Троя была — и он её найдёт.</p>
+<p>Он внимательно прочитал Гомера и вычислил место — холм Гиссарлык на берегу Малой Азии. Сейчас это Турция — страна, где ты была. В 1870 году Шлиман начал копать и нашёл девять городов: один над другим, каждый нижний древнее.</p>
+<p>Какой из них Троя? Шлиман решил: тот, где нашёлся «клад Приама» — множество драгоценных украшений. Позже учёные доказали, что Троя Гомера лежала в другом слое. Но славу Шлимана это не затмило.</p>
+<p>Потом он копал в Микенах и нашёл гробницы царей — ту самую золотую маску из §20. А в Тиринфе — дворец с фресками. Так Шлиман доказал: царства из поэм Гомера были на самом деле.</p>
+</div>
+<div class="book" hidden>
+<p>В течение многих столетий люди читали «Илиаду». Троянская война воспринималась не более чем вымыслом. Разбогатевший в России немецкий предприниматель и археолог-любитель Генрих Шлиман верил в то, что именно он сможет найти легендарный город. Внимательно изучив поэму Гомера, он определил предполагаемое местонахождение Трои — холм Гиссарлык на побережье Малой Азии. В 1870 году он приступил к раскопкам и обнаружил девять городов, один древнее другого. Вопрос, какой относится к Трое из поэмы Гомера, Шлиман решил после находки «клада Приама» — множество драгоценных украшений. Позже учёные доказали, что гомеровская Троя находилась в другом слое, но этот факт не затмил славы Шлимана.</p>
+<p>После Трои археолог вёл раскопки в Микенах и Тиринфе (Пелопоннес). В Микенах он обнаружил погребения микенских царей, в Тиринфе — дворец, украшенный фресками. Открытия Генриха Шлимана доказали, что царства, описанные Гомером, не выдумка, они существовали на самом деле.</p>
+</div>
+</div>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-shliman" src="img/5a72bd423b4a.jpg" alt="Портрет: мужчина с усами в тёмном костюме и белой рубашке" style="max-width:305px"><figcaption><span class="src">из учебника</span><b>Генрих Шлиман</b> — тот, кто поверил Гомеру и нашёл Трою.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-troya" src="img/c0f2fd6e6059.jpg" alt="Фотография: руины каменных стен и фундаментов среди травы и деревьев, вдали море" style="max-width:602px"><figcaption><span class="src">из учебника</span><b>Раскопки Трои.</b> Холм Гиссарлык на побережье Малой Азии — сейчас это Турция.</figcaption></div></figure>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 500 282" role="img" aria-label="Разрез холма: девять слоёв-городов, сверху самый новый, внизу самый древний. Второй снизу слой отмечен: здесь «клад Приама», Шлиман решил, что это Троя. Выше, у шестого и седьмого слоёв, отмечено: Троя Гомера — в другом слое."><use href="#v-sloi"/></svg><figcaption><b>Город на городе.</b> Новые жители строились прямо на развалинах старых — так и вырос холм. Шлиман копал вглубь и пролистал его, как книгу.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Что послужило поводом для начала Троянской войны?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Как связаны падение микенских царств и появление поэм Гомера?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац раздела и абзац о том, когда жил Гомер.</div>
+<div class="rev ans" id="a1" hidden>После падения Микен Греция остановилась в развитии, но греки помнили славное прошлое и передавали предания из поколения в поколение. Гомер жил в VIII веке до н. э. и воспел в поэмах эти давние события.</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему Шлиман искал Трою по поэме, хотя все считали её выдумкой? И что он в итоге доказал?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Рассказ о Шлимане — его начало и последний абзац.</div>
+<div class="rev ans" id="a2" hidden>Шлиман верил Гомеру. Изучив «Илиаду», он определил, где стояла Троя, — холм Гиссарлык, и нашёл там девять городов. А раскопки в Микенах и Тиринфе доказали: царства из поэм Гомера существовали на самом деле.</div>
+</div>
+<div class="think">
+<p class="qt">3. Агамемнона ты уже встречала в §20. Кто он в этой истории и при чём тут маска?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>§20 — подпись к золотой маске; этот раздел — кто возглавил поход.</div>
+<div class="rev ans" id="a3" hidden>Агамемнон — царь Микен, брат Менелая. Он возглавил поход ахейцев на Трою. Шлиман нашёл в Микенах золотую маску и решил, что она Агамемнона, — но маска оказалась на три века старше.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Поэма «Илиада»</h2></div>
+<div class="easy">
+<p>«Илиада» — не про всю войну, а только про её последний, десятый год.</p>
+<p>Начинается всё со ссоры. <button class="term" data-t="ahill">Ахилл</button> — самый могучий герой ахейцев — поссорился с Агамемноном из-за добычи. Обиделся, ушёл в свой шатёр и перестал сражаться.</p>
+<p>Троянцы узнали об этом. Их вождь <button class="term" data-t="gektor">Гектор</button>, сын царя <button class="term" data-t="priam">Приама</button>, напал на ахейцев и прижал их к самому морю, к кораблям.</p>
+<p>Друг Ахилла, <button class="term" data-t="patrokl">Патрокл</button>, не мог смотреть, как гибнут свои. Он попросил у Ахилла доспехи, надел их и бросился в бой. Ахейцы отогнали троянцев до самых стен Трои. Но там Гектор с помощью бога Аполлона убил Патрокла копьём и забрал доспехи Ахилла.</p>
+<p>Ахилл поклялся отомстить. Он помирился с Агамемноном и вернулся в бой. Бог-кузнец Гефест выковал ему новые доспехи. Ахилл сразил многих троянцев — а потом встретился с Гектором и убил его. Тело Гектора он привязал к колеснице и увёз в свой лагерь.</p>
+<p>К Ахиллу пришёл старый царь Приам с богатыми дарами. Он умолял отдать тело сына. И Ахилл отдал. Даже объявил перемирие на десять дней — чтобы троянцы достойно похоронили Гектора. Этими похоронами «Илиада» и заканчивается.</p>
+</div>
+<div class="book" hidden>
+<p>Последний, десятый год осады Трои Гомер описал в поэме «Илиада». Первая песнь поэмы начинается со ссоры Ахилла, самого могучего героя среди ахейцев, и царя Агамемнона из-за раздела добычи. Обиженный Ахилл удалился в свой шатёр и перестал участвовать в сражениях. Троянцам стало известно об этом. Их предводитель, сын царя Приама могучий Гектор, со своими воинами напал на ахейцев.</p>
+<p>Троянцы оттеснили противника до самого берега, где стояли греческие корабли. Друг Ахилла Патрокл не мог спокойно смотреть, как гибнут ахейцы. Он обратился к Ахиллу с просьбой дать ему на время свои доспехи. В сверкающих доспехах Ахилла Патрокл бросился на помощь ахейцам. Греки отбили троянцев от своего лагеря и прогнали их до стен Трои. У самых стен города Гектор при помощи бога Аполлона поразил Патрокла копьём, снял с него доспехи Ахилла и отнёс в Трою.</p>
+<p>Ахилл узнал о гибели своего друга и поклялся отомстить троянцам. Помирившись с Агамемноном, он вернулся в строй. Бог-кузнец Гефест выковал для него новые доспехи. Многих троянских героев сразил Ахилл, пока не встретился со своим главным врагом. Во время поединка копьё Ахилла поразило сына Приама. Ахилл привязал его тело к своей колеснице и вернулся в лагерь ахейцев.</p>
+<p>Царь Приам отправился в лагерь ахейцев с богатыми дарами и умолял Ахилла вернуть тело Гектора. Ахилл отдал Приаму тело сына. Он даже заключил с троянцами перемирие на десять дней. Столько времени требовалось, чтобы воздать последние почести Гектору и достойно похоронить его. Поэма заканчивается торжественным погребением Гектора.</p>
+</div>
+</div>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-ahill" src="img/8703fe4b2f95.jpg" alt="Роспись на вазе: воин с кудрявыми волосами в узорчатом панцире, через плечо перевязь" style="max-width:288px"><figcaption><span class="src">из учебника</span><b>Ахилл.</b> Рисунок на краснофигурной вазе. Главный герой Троянской войны. Его подвигам и гневу посвящена поэма «Илиада».</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-priam" src="img/f23719e88293.jpg" alt="Картина: старик в жёлтом плаще стоит на коленях перед сидящим воином в красном плаще, рядом воины в шлемах" style="max-width:449px"><figcaption><span class="src">из учебника</span><b>Приам, испрашивающий у Ахилла тело Гектора.</b> Художник А. Нотбек, 1824 г.</figcaption></div></figure>
+</div>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Назови главных персонажей поэмы «Илиада».</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Почему ссора Ахилла с Агамемноном чуть не погубила ахейцев?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Первые два абзаца раздела.</div>
+<div class="rev ans" id="a4" hidden>Обиженный Ахилл, самый могучий герой, перестал сражаться. Троянцы узнали об этом, и Гектор прижал ахейцев к самому берегу, к кораблям.</div>
+</div>
+<div class="think">
+<p class="qt">5. Как гибель Патрокла изменила ход войны?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Второй и третий абзацы.</div>
+<div class="rev ans" id="a5" hidden>Ахилл поклялся отомстить, помирился с Агамемноном и вернулся в бой в новых доспехах от Гефеста. Он сразил многих троянцев и в поединке убил Гектора.</div>
+</div>
+<div class="think">
+<p class="qt">6. Доспехи Ахилла встречаются в параграфе три раза. Где?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Раздел 2 — Патрокл и Гефест; раздел 3 — подпись к бюсту Одиссея.</div>
+<div class="rev ans" id="a6" hidden>Патрокл надел доспехи Ахилла, и Гектор снял их с убитого. Потом Гефест выковал Ахиллу новые. А после гибели Ахилла его доспехи, сделанные Гефестом, достались Одиссею.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Поэма «Одиссея»</h2></div>
+<div class="easy">
+<p>Чем кончилась война, рассказывают легенды. Хитроумный <button class="term" data-t="odissey">Одиссей</button> придумал план. Ахейцы построили огромного деревянного коня и спрятали в нём воинов. А войско погрузилось на корабли — будто уплывает домой.</p>
+<p>Один грек остался и сказал троянцам: конь — подарок богине Афине, он принесёт удачу. Троянцы поверили и сами втащили коня в город. Ночью воины вылезли из коня, открыли ворота и впустили тайком вернувшихся ахейцев. Троя пала. Греки поплыли домой и увезли с собой Елену.</p>
+<p>Поспешил домой и Одиссей. Но дорога заняла десять лет! Об этом — поэма «Одиссея».</p>
+<p>Сначала корабль прибило к острову великанов-<button class="term" data-t="tsiklopy">циклопов</button>. Греки зашли в пещеру, а тут вернулся хозяин — циклоп <button class="term" data-t="polifem">Полифем</button>, сын Посейдона, со стадом баранов. Он съел шестерых спутников Одиссея — так он нарушил закон гостеприимства.</p>
+<p>Одиссей напоил великана вином, а когда тот уснул, выколол ему единственный глаз. Слепой Полифем отодвинул камень от входа и выпустил баранов, надеясь поймать людей в пустой пещере. Но греки выбрались, спрятавшись под животами баранов.</p>
+<p>Полифем пожаловался отцу. И Посейдон с тех пор насылал на Одиссея несчастья — на всём пути домой.</p>
+<p>Проплывал Одиссей и мимо <button class="term" data-t="sireny">сирен</button> — полуженщин-полуптиц с волшебным пением. Спутникам он велел залить уши воском, а себя привязать к мачте. Так он стал единственным, кто услышал сирен и остался жив.</p>
+<p>Потеряв ещё спутников, он еле прошёл между скалами <button class="term" data-t="stsilla">Сциллой и Харибдой</button> — они сдвигаются, когда между ними корабль. Нимфа <button class="term" data-t="kalipso">Калипсо</button> держала его на своём острове семь лет, пока не вмешались боги. Дальше — один, на плоту. Посейдон поднял бурю, и Одиссея выбросило на остров гостеприимных <button class="term" data-t="feaki">феаков</button>. Они дали ему корабль, и он доплыл до родной Итаки.</p>
+<p><b>Двадцать лет его не было дома.</b> Все думали, что он погиб. Все, кроме жены <button class="term" data-t="penelopa">Пенелопы</button> и сына Телемаха. К Пенелопе сватались женихи. Она устроила им испытание: выстрелить из лука Одиссея.</p>
+<p>Ты стреляла из лука и знаешь: даже детский надо суметь натянуть. А с луком могучего Одиссея не справился ни один жених. Тут попросил попробовать нищий — это был переодетый Одиссей — и легко справился. Одиссей расправился с женихами и снова стал править Итакой.</p>
+</div>
+<div class="book" hidden>
+<p>О том, как закончилась Троянская война, рассказывают греческие легенды. По совету хитроумного Одиссея ахейцы построили огромного деревянного коня, внутри которого спрятались воины. Основное войско погрузилось на корабли, изображая отплытие на родину.</p>
+<p>Один грек, оставшийся у Трои для выполнения замысла Одиссея, рассказал жителям, что конь — это дар отплывших ахейцев богине Афине. Он принесёт удачу тому, кто им владеет. Троянцы поверили и втащили коня в город. Ночью, когда все уснули, из брюха коня выбрался отряд ахейцев во главе с Одиссеем. Они открыли ворота Трои и впустили тайком вернувшихся греков. Все мужчины — защитники города погибли, женщин и детей обратили в рабство. Разрушив Трою, греки отплыли домой, увозя с собой и прекрасную Елену. Поспешил домой и Одиссей.</p>
+<p>В поэме «Одиссея» Гомер повествует о скитаниях своего героя, которые продолжались десять лет. На одном из островов, куда прибило корабль Одиссея, обитали великаны-циклопы. Греки вошли в одну из пещер, и в это время вернулся её хозяин — циклоп Полифем, сын бога Посейдона, со стадом своих баранов. Полифем съел шестерых спутников Одиссея, грубо нарушив закон гостеприимства. Одиссей нашёл способ, как выбраться из пещеры: он напоил великана вином, а когда тот уснул, выколол ему единственный глаз. Ослепший Полифем схватил камень, закрывавший вход, и выпустил баранов, надеясь в пустой пещере отыскать людей. Одиссей перехитрил циклопа и на этот раз. Он и его спутники покинули пещеру, спрятавшись под животами баранов. С просьбой наказать обидчика Полифем обратился к отцу. Посейдон услышал мольбы сына и с тех пор посылал несчастья спешившему домой Одиссею.</p>
+<p>Потеряв нескольких спутников, герой с трудом пробрался между двумя скалами — Сциллой и Харибдой, сдвигающимися во время нахождения между ними кораблей. Нимфа Калипсо, на остров которой попал Одиссей после очередного кораблекрушения, удерживала его семь лет, пока не вмешались боги. Один, на плоту, герой продолжает путь. Но Посейдон поднимает бурю, и Одиссея, чудом оставшегося в живых, выбрасывает на остров утопического народа феаков. Гостеприимные феаки снарядили корабль, на котором Одиссей добрался до родной Итаки. Переодевшись нищим, он проникает во дворец.</p>
+<p>Прошло 20 лет с тех пор, как Одиссей покинул свой дом. Все считали его погибшим, кроме жены Пенелопы и сына Телемаха. Пенелопу одолевают женихи, каждый из которых предлагает себя в качестве нового супруга. Она устраивает им испытание, предлагая выстрелить из лука Одиссея. Женихи не могут выполнить это задание, им не под силу справиться с луком могучего Одиссея. Нищий пришелец тоже просит разрешения попытать счастья и легко справляется со своим луком. Одиссей расправился с женихами и вновь стал править на Итаке.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-kon" src="img/c14662ff21e3.jpg" alt="Рисунок: у городских стен воины в шлемах тянут огромного деревянного коня на колёсах, люди поднимают руки" style="max-width:339px"><figcaption><span class="src">из учебника</span><b>Троянцы ввозят коня в город.</b> «Троянским вирусом» или «трояном» сегодня, по аналогии с древнегреческим «конём», называют вредоносную программу, проникающую в компьютер под видом обычного программного обеспечения. Такие вирусы наносят вред системе или локальной сети.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-odissey" src="img/85c05b8be675.jpg" alt="Мраморная голова бородатого мужчины с кудрявыми волосами" style="max-width:322px"><figcaption><span class="src">из учебника</span><b>Одиссей.</b> Древнегреческий бюст. После гибели Ахилла именно Одиссею достались его доспехи, сделанные богом Гефестом.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-sireny" src="img/078f82ddf947.jpg" alt="Роспись на вазе: корабль с гребцами, к мачте привязан человек, над кораблём летают птицы с женскими головами" style="max-width:405px"><figcaption><span class="src">из учебника</span><b>Одиссей и сирены.</b> Роспись на краснофигурной вазе. Сирены — полуженщины-полуптицы заманивали мореплавателей своим дивным пением, затем пожирали их. Желая услышать, как поют сирены, Одиссей приказал привязать себя крепко к мачте, а своим спутникам — залить уши воском. Так Одиссей остался единственным живым человеком, который услышал пение сирен.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 284" role="img" aria-label="Восемь пронумерованных остановок по порядку, первая строка слева направо, вторая справа налево: 1 Троя, 2 циклопы, 3 сирены, 4 Сцилла и Харибда, 5 остров Калипсо — семь лет, 6 плот и буря, 7 феаки, 8 Итака — лук и женихи."><use href="#v-put"/></svg><figcaption><b>Восемь остановок.</b> Это не карта, а порядок событий: иди по номерам. Красная шестёрка — буря Посейдона, зелёная восьмёрка — дом.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 212" role="img" aria-label="Полоса из двух частей: 10 лет Троянской войны, из них «Илиада» — только последний, десятый год; потом 10 лет скитаний — «Одиссея», из них 7 лет у нимфы Калипсо. Ниже шкала: уплыл с Итаки, Троя взята, дома на Итаке."><use href="#v-20let"/></svg><figcaption><b>Как дорога из похода — только десять лет.</b> Помнишь вечер после похода: все устали, час шагаешь вдоль дороги, весело уже не очень, просто идёшь, чтобы наконец выйти из леса? Вот так Одиссей шёл домой. Только не час, а десять лет.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-penelopa" src="img/2618582af087.jpg" alt="Роспись на вазе: печальная женщина сидит у ткацкого станка, перед ней стоит юноша" style="max-width:448px"><figcaption><span class="src">из учебника</span><b>Пенелопа и Телемах.</b> Роспись на краснофигурной вазе. Телемах был младенцем, когда Одиссей отправился на Троянскую войну. Когда Одиссей вернулся на Итаку, он помог отцу расправиться с женихами своей матери Пенелопы.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопросы учебника</b>
+<ol><li>Какие сведения об Одиссее содержат греческие легенды?</li><li>Какие события отражены в поэме Гомера «Одиссея»?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Почему дорога Одиссея домой растянулась на десять лет? Кто в этом виноват?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Конец абзаца о Полифеме и следующий абзац.</div>
+<div class="rev ans" id="a7" hidden>Одиссей ослепил циклопа Полифема, а это сын Посейдона. Полифем пожаловался отцу, и Посейдон насылал несчастья: кораблекрушения, бурю. А ещё семь лет Одиссея держала у себя нимфа Калипсо.</div>
+</div>
+<div class="think">
+<p class="qt">8. Сколько лет Одиссей не был дома и из чего складываются эти годы?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Раздел 1 — сколько длилась война; раздел 3 — сколько длились скитания.</div>
+<div class="rev ans" id="a8" hidden>Двадцать лет: десять лет шла Троянская война и десять лет он добирался домой. Сына Телемаха он оставил младенцем, а вернулся — тот уже вырос и помог отцу справиться с женихами.</div>
+</div>
+<div class="think">
+<p class="qt">9. Что общего у хитрости с конём и возвращения во дворец на Итаке?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Начало раздела 3 и его последний абзац.</div>
+<div class="rev ans" id="a9" hidden>Оба раза Одиссей приходит под чужим видом: воины спрятаны в «подарке» для Афины, а сам он переодет нищим. И враги ничего не подозревают, пока не становится поздно.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">Греки считали Гомера автором двух великих поэм «Илиада» и «Одиссея». «Илиада» — поэма о Троянской войне. «Одиссея» рассказывает о возвращении после взятия Трои одного из ахейских царей — Одиссея. Эти произведения являются важнейшим источником знаний о Древней Греции.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Чему посвящены поэмы Гомера?</li><li>По твоему мнению, какое приключение Одиссея на пути домой было самым опасным? Объясни свой ответ.</li><li>Почему Одиссея называли хитроумным?</li><li>Какой персонаж поэмы «Илиада» вызывает у тебя наибольшее сочувствие и почему?</li><li>Как ты думаешь, почему в «Илиаде» одним из главных героев является Ахилл? Что выделяло Ахилла среди других греческих воинов?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказки ко второму и третьему вопросам</button></div>
+<div class="rev hint" id="r1" hidden><b>Второй:</b> правильного ответа нет — выбери сама и объясни. Например, сирены: их пение губило всех моряков; или Сцилла и Харибда — скалы, которые сдвигаются. <b>Третий:</b> вспомни деревянного коня и то, как Одиссей выбрался из пещеры Полифема под баранами.</div></div>
+<div class="sublabel">Работаем с понятиями</div>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Прочитай список понятий. Какое из них лишнее? Объясни почему. <b>Парис, Ахилл, Гектор, Шлиман.</b></p>
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Ответ</button></div>
+<div class="rev ans" id="r2" hidden>Лишний — <b>Шлиман</b>: это настоящий человек, археолог, который жил в XIX веке и раскопал Трою. Парис, Ахилл и Гектор — герои Троянской войны из поэм и легенд.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — почему поэмы Гомера популярны до сих пор? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от яблока до возвращения Одиссея домой.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="4"><span class="ord"></span>Ахилл поссорился с Агамемноном</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Эрида подкинула золотое яблоко</button>
+<button class="chip" data-ord="7"><span class="ord"></span>Троянцы ввезли коня в город</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Парис похитил Елену</button>
+<button class="chip" data-ord="9"><span class="ord"></span>Одиссей вернулся на Итаку</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Гектор убил Патрокла</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Ахейцы приплыли к Трое</button>
+<button class="chip" data-ord="8"><span class="ord"></span>Одиссей ослепил Полифема</button>
+<button class="chip" data-ord="6"><span class="ord"></span>Ахилл победил Гектора</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Гомер</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="gomer" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Слепой поэт VIII века до н. э., автор «Илиады» и «Одиссеи».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">«Илиада»</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 212" aria-hidden="true"><use href="#v-20let"/></svg><span class="ftext">Поэма о десятом годе Троянской войны: гнев Ахилла, Патрокл, Гектор.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">«Одиссея»</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 284" aria-hidden="true"><use href="#v-put"/></svg><span class="ftext">Поэма о десяти годах пути Одиссея домой, на Итаку.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Яблоко раздора</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 520 300" aria-hidden="true"><use href="#v-yabloko"/></svg><span class="ftext">Яблоко «прекраснейшей», из-за которого поспорили три богини.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ахилл</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="ahill" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Самый могучий герой ахейцев, победил Гектора.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Гектор</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="priam" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Сын Приама, предводитель троянцев. Убил Патрокла, погиб от руки Ахилла.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Троянский конь</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="kon" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Деревянный конь с воинами внутри — хитрость Одиссея, которой взяли Трою.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пенелопа</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="penelopa" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Жена Одиссея, ждала его двадцать лет. Устроила женихам испытание луком.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Шлиман</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="shliman" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Археолог, который поверил Гомеру и в 1870 году начал раскопки Трои.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Откуда название «Илиада»?</h3><div class="opts">
+<button class="opt">от имени Ахилла</button>
+<button class="opt" data-ok="1">от Илиона — другого названия Трои</button>
+<button class="opt">от острова Итака</button></div>
+<div class="fb">Илион — второе имя Трои. Итака — остров Одиссея.</div></div>
+<div class="q"><h3>2. Что было написано на яблоке Эриды?</h3><div class="opts">
+<button class="opt" data-ok="1">«прекраснейшей»</button>
+<button class="opt">«мудрейшей»</button>
+<button class="opt">«сильнейшей»</button></div>
+<div class="fb">Три богини спорили за это яблоко, выбирать пришлось Парису.</div></div>
+<div class="q"><h3>3. Кто возглавил поход ахейцев на Трою?</h3><div class="opts">
+<button class="opt">Менелай</button>
+<button class="opt">Одиссей</button>
+<button class="opt" data-ok="1">Агамемнон</button></div>
+<div class="fb">Агамемнон — царь Микен и брат Менелая. Менелай — муж похищенной Елены.</div></div>
+<div class="q"><h3>4. Сколько лет длилась Троянская война?</h3><div class="opts">
+<button class="opt">семь</button>
+<button class="opt" data-ok="1">десять</button>
+<button class="opt">двадцать</button></div>
+<div class="fb">Двадцать — столько Одиссей не был дома: десять лет войны и десять лет пути. Семь — у Калипсо.</div></div>
+<div class="q"><h3>5. Как ахейцы взяли Трою?</h3><div class="opts">
+<button class="opt" data-ok="1">спрятали воинов в деревянном коне</button>
+<button class="opt">разбили ворота тараном</button>
+<button class="opt">Ахилл перелез через стену</button></div>
+<div class="fb">Это придумал хитроумный Одиссей. Отсюда и «троян» — вирус под видом обычной программы.</div></div>
+<div class="q"><h3>6. Какое испытание Пенелопа устроила женихам?</h3><div class="opts">
+<button class="opt">переплыть море</button>
+<button class="opt">победить циклопа</button>
+<button class="opt" data-ok="1">выстрелить из лука Одиссея</button></div>
+<div class="fb">Ни один жених не справился — а переодетый нищим Одиссей справился легко.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Гомер и его поэмы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl3" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl3" hidden><ol><li>Гомер — великий поэт, жил в VIII веке до н. э., по преданию был слепым; семь городов спорили за право быть его родиной.</li><li>«Илиада» — о Троянской войне (Илион — другое имя Трои). «Одиссея» — о странствиях Одиссея домой.</li><li>Поэмы сложены из преданий, которые греки передавали из поколения в поколение после падения Микен.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как началась Троянская война</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Эрида подкинула яблоко «прекраснейшей»; Гера, Афина и Афродита спорят, выбирает Парис.</li><li>Афродита обещает Парису любовь Елены; Парис похищает Елену у Менелая.</li><li>Менелай и цари-женихи плывут к Трое, во главе — Агамемнон; война длится десять лет.</li></ol></div>
+</div>
+<div class="think">
+<h3>О чём «Илиада»</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Десятый год войны: Ахилл ссорится с Агамемноном и перестаёт сражаться.</li><li>Патрокл в доспехах Ахилла идёт в бой и гибнет от копья Гектора.</li><li>Ахилл мстит и убивает Гектора; Приам выпрашивает тело сына; поэма кончается похоронами Гектора.</li></ol></div>
+</div>
+<div class="think">
+<h3>Приключения Одиссея</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Троянский конь — хитрость Одиссея, Троя пала.</li><li>Десять лет пути: циклоп Полифем, сирены, Сцилла и Харибда, семь лет у Калипсо, буря Посейдона, феаки.</li><li>Через двадцать лет — Итака: испытание луком, Одиссей побеждает женихов.</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: почему поэмы Гомера популярны до сих пор</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Это захватывающие истории: война, подвиги, чудовища, хитрости и долгий путь домой.</li><li>Из них пришли выражения, которыми мы пользуемся: «яблоко раздора», «одиссея», «троянский конь» — и даже «троян».</li><li>Это важнейший источник знаний о Древней Греции — Шлиман по «Илиаде» нашёл Трою.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p21.html">‹ §21 Боги греков</a>
+  <span class="pn cur">§22 Поэмы Гомера</span>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 22 · История, 5 класс · страницы 131—136 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'v-20let':'0 0 540 212','v-storony':'0 0 520 330','v-yabloko':'0 0 520 300','v-put':'0 0 540 284','v-sloi':'0 0 500 282'};
+
+var T={
+gomer:{w:"Гомер",k:"поэт",p:"gomer",t:"Великий поэт Древней Греции, жил в VIII веке до н. э. По преданию, был слепым. Автор «Илиады» и «Одиссеи»."},
+iliada:{w:"«Илиада»",k:"поэма Гомера",s:"v-20let",t:"Поэма о последнем, десятом годе Троянской войны: гнев Ахилла, гибель Патрокла и Гектора. Название — от Илиона, другого имени Трои."},
+odisseya:{w:"«Одиссея»",k:"поэма Гомера",s:"v-put",t:"Поэма о десятилетних странствиях царя Одиссея по пути из-под Трои домой. Теперь «одиссеей» зовут любое долгое путешествие."},
+paris:{w:"Парис",k:"троянский царевич",s:"v-storony",t:"Сын царя Трои. Отдал золотое яблоко Афродите и увёз из Спарты царицу Елену — так началась война."},
+yabloko:{w:"яблоко раздора",k:"выражение",s:"v-yabloko",t:"Золотое яблоко с надписью «прекраснейшей», из-за которого поспорили три богини. Так и сейчас называют причину ссоры."},
+elena:{w:"Елена",k:"спартанская царица",s:"v-storony",t:"Прекраснейшая из земных женщин, жена царя Спарты Менелая. Её похищение стало поводом к Троянской войне."},
+agamemnon:{w:"Агамемнон",k:"царь Микен",s:"v-storony",t:"Брат Менелая, возглавил поход ахейцев на Трою. Помнишь «маску Агамемнона» из §20?"},
+shliman:{w:"Шлиман",k:"археолог",p:"shliman",t:"Генрих Шлиман — немецкий предприниматель, разбогатевший в России, и археолог-любитель. Поверил Гомеру и нашёл Трою."},
+ahill:{w:"Ахилл",k:"герой",p:"ahill",t:"Самый могучий герой ахейцев, главный герой «Илиады». Отомстил за друга Патрокла и победил Гектора."},
+gektor:{w:"Гектор",k:"троянский герой",p:"priam",t:"Сын царя Приама, предводитель троянцев. Убил Патрокла, а потом погиб в поединке с Ахиллом."},
+priam:{w:"Приам",k:"царь Трои",p:"priam",t:"Старый царь Трои, отец Гектора и Париса. Пришёл к Ахиллу просить тело сына — и Ахилл его отдал."},
+patrokl:{w:"Патрокл",k:"друг Ахилла",s:"v-storony",t:"Надел доспехи Ахилла и бросился на помощь ахейцам. Погиб от копья Гектора."},
+odissey:{w:"Одиссей",k:"царь Итаки",p:"odissey",t:"Хитроумный герой: придумал деревянного коня, перехитрил циклопа и через двадцать лет вернулся домой."},
+tsiklopy:{w:"циклопы",k:"великаны из мифов",s:"v-put",t:"Одноглазые великаны. Помнишь — по легенде, они сложили стены Микен (§20). Один из них — Полифем."},
+polifem:{w:"Полифем",k:"циклоп",s:"v-put",t:"Циклоп, сын Посейдона. Съел шестерых спутников Одиссея, и Одиссей его ослепил. За это Посейдон мстил герою."},
+sireny:{w:"сирены",k:"чудовища из мифа",p:"sireny",t:"Полуженщины-полуптицы. Заманивали моряков дивным пением, а потом пожирали."},
+stsilla:{w:"Сциллой и Харибдой",k:"скалы из мифа",s:"v-put",t:"Две скалы, которые сдвигались, когда между ними проплывал корабль. Одиссей прошёл между ними, потеряв спутников."},
+kalipso:{w:"Калипсо",k:"нимфа",s:"v-20let",t:"Нимфа, на острове которой Одиссей прожил семь лет, пока не вмешались боги."},
+feaki:{w:"феаков",k:"сказочный народ",s:"v-put",t:"Гостеприимный народ, на остров которого буря выбросила Одиссея. Феаки дали ему корабль до Итаки."},
+penelopa:{w:"Пенелопа",k:"жена Одиссея",p:"penelopa",t:"Двадцать лет ждала мужа и не верила, что он погиб. Устроила женихам испытание луком Одиссея."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p22:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p22:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>9){fb.textContent="Верно! Яблоко → Елена → война → «Илиада» → конь → «Одиссея» → дома.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Не то. Подсказка: сначала повод к войне, потом «Илиада», потом конь и только потом «Одиссея».";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p22:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p22:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
