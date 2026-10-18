@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Зеркала Архимеда, атомы, «Познай самого себя», «отец истории» и клятва врача, которой почти две с половиной тысячи лет. Трудные слова можно нажимать.">
+<title>Наука в Древней Греции</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="n-shkoly" viewBox="0 0 540 278">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">УЧИТЕЛЬ — УЧЕНИК — УЧЕНИК УЧЕНИКА</text>
+  <rect x="8" y="30" width="160" height="96" rx="10" fill="var(--paper2)"/>
+  <text x="20" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">СОКРАТ</text>
+  <text x="20" y="70" font-size="10" fill="var(--illink)">середина V века до н. э.;</text>
+  <text x="20" y="85" font-size="10" fill="var(--illink)">беседует на улицах</text>
+  <text x="20" y="100" font-size="10" fill="var(--illink)">и на агоре; сам не пишет;</text>
+  <text x="20" y="115" font-size="10" fill="var(--illink)">«Познай самого себя»</text>
+  <rect x="190" y="30" width="160" height="96" rx="10" fill="var(--paper2)"/>
+  <text x="202" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">ПЛАТОН</text>
+  <text x="202" y="70" font-size="10" fill="var(--illink)">ученик Сократа;</text>
+  <text x="202" y="85" font-size="10" fill="var(--illink)">записывает всё</text>
+  <text x="202" y="100" font-size="10" fill="var(--illink)">в виде диалогов;</text>
+  <text x="202" y="115" font-size="10" fill="var(--illink)">школа — Академия</text>
+  <rect x="372" y="30" width="160" height="96" rx="10" fill="var(--paper2)"/>
+  <text x="384" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">АРИСТОТЕЛЬ</text>
+  <text x="384" y="70" font-size="10" fill="var(--illink)">ученик Платона;</text>
+  <text x="384" y="85" font-size="10" fill="var(--illink)">придумал логику —</text>
+  <text x="384" y="100" font-size="10" fill="var(--illink)">как доказывать;</text>
+  <text x="384" y="115" font-size="10" fill="var(--illink)">школа — Ликей</text>
+  <g stroke="var(--illink)" stroke-width="2" fill="none">
+  <path d="M168 78 L186 78" marker-end="url(#arR)"/><path d="M350 78 L368 78" marker-end="url(#arR)"/>
+  </g>
+  <text x="8" y="152" font-size="11" font-weight="700" fill="var(--soft)">ГРЕЧЕСКИЕ СЛОВА, КОТОРЫЕ ТЫ СЛЫШАЛА</text>
+  <rect x="8" y="162" width="168" height="54" rx="8" fill="var(--ochre)"/>
+  <text x="92" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">академия</text>
+  <text x="92" y="202" text-anchor="middle" font-size="10" fill="#22190A">от школы Платона</text>
+  <rect x="186" y="162" width="168" height="54" rx="8" fill="var(--ochre)"/>
+  <text x="270" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">лицей</text>
+  <text x="270" y="202" text-anchor="middle" font-size="10" fill="#22190A">от Ликея Аристотеля</text>
+  <rect x="364" y="162" width="168" height="54" rx="8" fill="var(--ochre)"/>
+  <text x="448" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">гимназия</text>
+  <text x="448" y="202" text-anchor="middle" font-size="10" fill="#22190A">от гимнасия (§31)</text>
+  <text x="8" y="242" font-size="10.5" fill="var(--soft)">Свои беседы Аристотель вёл в гимнасии у храма Аполлона Ликейского — отсюда «Ликей».</text>
+  <text x="8" y="268" font-size="12" font-weight="700" fill="var(--moss)">Три поколения учёных — и три слова, которые живут до сих пор.</text>
+</symbol>
+
+<symbol id="n-istoriya" viewBox="0 0 540 250">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК ГРЕКИ ПРИДУМАЛИ НАУКУ ИСТОРИЮ</text>
+  <rect x="8" y="30" width="150" height="138" rx="10" fill="var(--paper2)"/>
+  <text x="20" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">РАНЬШЕ</text>
+  <text x="20" y="72" font-size="10" fill="var(--illink)">о прошлом узнавали</text>
+  <text x="20" y="87" font-size="10" fill="var(--illink)">из мифов (§21):</text>
+  <text x="20" y="102" font-size="10" fill="var(--illink)">боги, чудовища,</text>
+  <text x="20" y="117" font-size="10" fill="var(--illink)">герои</text>
+  <rect x="190" y="30" width="160" height="138" rx="10" fill="var(--ochre)"/>
+  <text x="202" y="52" font-size="12.5" font-weight="700" fill="#22190A">ГЕРОДОТ</text>
+  <text x="202" y="68" font-size="10" fill="#22190A">«отец истории»</text>
+  <text x="202" y="88" font-size="10" fill="#22190A">расспрашивает очевидцев,</text>
+  <text x="202" y="103" font-size="10" fill="#22190A">сам едет на места боёв;</text>
+  <text x="202" y="118" font-size="10" fill="#22190A">пишет о войне с персами,</text>
+  <text x="202" y="133" font-size="10" fill="#22190A">о Египте, Вавилоне,</text>
+  <text x="202" y="148" font-size="10" fill="#22190A">о скифах (§25)</text>
+  <rect x="372" y="30" width="160" height="138" rx="10" fill="var(--paper2)" stroke="var(--ochre)" stroke-width="2"/>
+  <text x="384" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">ФУКИДИД</text>
+  <text x="384" y="68" font-size="10" fill="var(--soft)">«История» в 8 книгах</text>
+  <text x="384" y="88" font-size="10" fill="var(--illink)">берёт только самые</text>
+  <text x="384" y="103" font-size="10" fill="var(--illink)">достоверные известия;</text>
+  <text x="384" y="118" font-size="10" fill="var(--illink)">объясняет события</text>
+  <text x="384" y="133" font-size="10" fill="var(--illink)">без вмешательства</text>
+  <text x="384" y="148" font-size="10" fill="var(--illink)">богов</text>
+  <g stroke="var(--illink)" stroke-width="2" fill="none">
+  <path d="M160 99 L186 99" marker-end="url(#arR)"/><path d="M352 99 L368 99" marker-end="url(#arR)"/>
+  </g>
+  <text x="8" y="194" font-size="10.5" fill="var(--soft)">Речь Перикла из §29 до нас донёс именно Фукидид.</text>
+  <text x="8" y="212" font-size="10.5" fill="var(--soft)">Без Геродота мы знали бы о скифах куда меньше.</text>
+  <text x="8" y="240" font-size="12" font-weight="700" fill="var(--moss)">Мифы → рассказы очевидцев → проверенные известия.</text>
+</symbol>
+
+<symbol id="n-gigieya" viewBox="0 0 540 264">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ДОЧЕРИ АСКЛЕПИЯ И ГИППОКРАТ</text>
+  <rect x="8" y="30" width="254" height="82" rx="10" fill="var(--paper2)"/>
+  <text x="20" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">ГИГИЕЯ</text>
+  <text x="20" y="70" font-size="10" fill="var(--illink)">у болезней разные причины —</text>
+  <text x="20" y="85" font-size="10" fill="var(--illink)">лечить разными средствами</text>
+  <text x="20" y="103" font-size="10" font-weight="700" fill="var(--moss)">→ наше слово «гигиена»</text>
+  <rect x="278" y="30" width="254" height="82" rx="10" fill="var(--paper2)"/>
+  <text x="290" y="52" font-size="12.5" font-weight="700" fill="var(--illink)">ПАНАЦЕЯ</text>
+  <text x="290" y="70" font-size="10" fill="var(--illink)">искала одно средство,</text>
+  <text x="290" y="85" font-size="10" fill="var(--illink)">которое лечит всё сразу</text>
+  <text x="290" y="103" font-size="10" font-weight="700" fill="var(--red)">→ «это не панацея» = не от всего</text>
+  <rect x="8" y="124" width="524" height="84" rx="10" fill="var(--ochre)"/>
+  <text x="20" y="146" font-size="12.5" font-weight="700" fill="#22190A">ГИППОКРАТ, 460—370 годы до н. э. (прожил 90 лет)</text>
+  <text x="20" y="164" font-size="10" fill="#22190A">1) смотрит на организм целиком, а не на один орган;</text>
+  <text x="20" y="179" font-size="10" fill="#22190A">2) ищет причину болезни;</text>
+  <text x="20" y="194" font-size="10" fill="#22190A">3) лечит травами, минералами и правильной едой — диетой</text>
+  <text x="8" y="232" font-size="10.5" fill="var(--soft)">Его клятва дошла до наших дней: на ней основана клятва врача России.</text>
+  <text x="8" y="256" font-size="12" font-weight="700" fill="var(--moss)">Не чудо от всех болезней, а поиск причины — так лечат и сейчас.</text>
+</symbol>
+
+<symbol id="n-luch" viewBox="0 0 540 278">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК СОЛНЕЧНЫЙ СВЕТ СОБИРАЮТ В ТОЧКУ</text>
+  <circle cx="34" cy="56" r="16" fill="var(--flame)"/>
+  <g stroke="var(--flame)" stroke-width="2">
+  <line x1="56" y1="44" x2="160" y2="44"/><line x1="56" y1="60" x2="160" y2="60"/><line x1="56" y1="76" x2="160" y2="76"/>
+  <line x1="56" y1="92" x2="160" y2="92"/>
+  <line x1="168" y1="44" x2="232" y2="68"/><line x1="168" y1="60" x2="232" y2="68"/><line x1="168" y1="76" x2="232" y2="68"/>
+  <line x1="168" y1="92" x2="232" y2="68"/>
+  </g>
+  <ellipse cx="164" cy="68" rx="7" ry="34" fill="var(--water)" opacity="0.8" stroke="var(--illink)" stroke-width="1.5"/>
+  <circle cx="234" cy="68" r="5" fill="var(--red)"/>
+  <rect x="236" y="62" width="40" height="12" fill="var(--paper2)" stroke="var(--illink)" stroke-width="1"/>
+  <text x="164" y="124" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--illink)">лупа</text>
+  <text x="256" y="96" text-anchor="middle" font-size="10" fill="var(--illink)">точка: горячо!</text>
+  <text x="300" y="44" font-size="12" font-weight="700" fill="var(--illink)">ЛУПА</text>
+  <text x="300" y="62" font-size="10" fill="var(--illink)">стекло сводит лучи</text>
+  <text x="300" y="77" font-size="10" fill="var(--illink)">в одну яркую точку —</text>
+  <text x="300" y="92" font-size="10" fill="var(--illink)">и бумага нагревается</text>
+  <circle cx="70" cy="138" r="11" fill="var(--flame)"/>
+  <g stroke="var(--flame)" stroke-width="2">
+  <line x1="40" y1="148" x2="96" y2="214"/><line x1="70" y1="148" x2="146" y2="214"/><line x1="100" y1="148" x2="196" y2="214"/>
+  <line x1="96" y1="214" x2="232" y2="168"/><line x1="146" y1="214" x2="232" y2="168"/><line x1="196" y1="214" x2="232" y2="168"/>
+  </g>
+  <g fill="var(--water)" stroke="var(--illink)" stroke-width="1.5">
+  <rect x="84" y="214" width="24" height="8" rx="2"/><rect x="134" y="214" width="24" height="8" rx="2"/><rect x="184" y="214" width="24" height="8" rx="2"/>
+  </g>
+  <path d="M226 160 H276 L268 176 H232 Z" fill="var(--brown)"/>
+  <circle cx="234" cy="166" r="5" fill="var(--red)"/>
+  <text x="146" y="240" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--illink)">зеркала</text>
+  <text x="252" y="196" text-anchor="middle" font-size="10" fill="var(--illink)">корабль</text>
+  <text x="300" y="164" font-size="12" font-weight="700" fill="var(--illink)">ЗЕРКАЛА АРХИМЕДА</text>
+  <text x="300" y="182" font-size="10" fill="var(--illink)">много зеркал направляют</text>
+  <text x="300" y="197" font-size="10" fill="var(--illink)">солнечные зайчики в одно</text>
+  <text x="300" y="212" font-size="10" fill="var(--illink)">место — дерево загорается</text>
+  <text x="8" y="270" font-size="12" font-weight="700" fill="var(--moss)">Секрет один: много света — в одну точку.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 32</span>
+    <h1>Наука в Древней Греции</h1>
+    <p class="lede">Зеркала Архимеда, атомы, «Познай самого себя», «отец истории» и клятва врача, которой почти две с половиной тысячи лет. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Какие науки возникли и развивались в Древней Греции?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p31.html">‹ §31 Повседневная жизнь</a>
+  <span class="pn cur">§32 Наука</span>
+  <a class="pn" href="p33.html">§33 Театр ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="«Человек есть мера всех вещей»">1</a><a href="#s2" data-j="s2" title="«Отец истории»">2</a><a href="#s3" data-j="s3" title="Клятва Гиппократа">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-arhimed" src="img/44f8570d5bcc.jpg" alt="Рисунок: седой учёный в зелёном плаще у огромного круглого зеркала на подставке, за ним гавань с кораблями"><figcaption><span class="src">из учебника</span><b>Архимед — величайший учёный Древней Греции.</b> Архимед создал зеркала, с помощью которых поджигались римские корабли при осаде его родного города — Сиракуз. При взятии города Архимед был убит римским солдатом, которого, по преданию, встретил словами: «Не трогай моих чертежей».</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>«Человек есть мера всех вещей»</h2></div>
+<div class="easy">
+<p>Греков интересовало всё на свете. Самый великий их учёный — <button class="term" data-t="arhimed">Архимед</button> (на картинке выше). Когда враги осадили его город, он собрал солнечный свет зеркалами в одну точку — и корабли загорелись.</p>
+<p>Больше всего греки любили <button class="term" data-t="filosofiya">философию</button>. Философы спорили: из чего состоят все вещи? Одни говорили — из огня, другие — из воды. А потом решили: каждый предмет состоит из мельчайших частичек — атомов.</p>
+<p>Философов интересовал и сам человек: как ему стать лучше? На храме Аполлона в Дельфах было высечено: «Познай самого себя». Это стало девизом философа <button class="term" data-t="sokrat">Сократа</button>. Он жил в середине V века до н. э., беседовал с людьми на улицах и на агоре о правде, добре и зле. Сам он ничего не записывал.</p>
+<p>А его ученик <button class="term" data-t="platon">Платон</button> записывал очень много — в виде диалогов, то есть разговоров.</p>
+<p>Ученик Платона — <button class="term" data-t="aristotel">Аристотель</button>. Он знал о мире так много, что его мысли о космосе, природе и человеке служили людям ещё тысячу лет. Он придумал, как правильно доказывать свою правоту, — так появилась наука <button class="term" data-t="logika">логика</button>.</p>
+<p>Ты любишь спорить — и хочешь, чтобы тебе приводили доводы, а не «потому что». Вот это и есть логика: правоту надо доказать.</p>
+<p>У Платона в Афинах была школа — Академия, у Аристотеля — Ликей. Отсюда наши слова «академия» и «лицей». А «гимназия» — от гимнасия из §31. Эти слова ты слышала — теперь знаешь, что они греческие.</p>
+</div>
+<div class="book" hidden>
+<p>В Древней Греции всеобщий интерес вызывали различные области знаний. Особенно заметным это было в философии. Пытаясь понять, что лежит в основе всех вещей в мире (одни считали, что огонь, другие — что вода), философы пришли к выводу, что каждый предмет состоит из мельчайших частичек — атомов.</p>
+<p>Философов интересовала не только природа. Они пытались найти основу для гармоничного развития человека. «Познай самого себя» — такая надпись была высечена на фронтоне храма Аполлона в Дельфах. Она стала девизом для философа Сократа, жившего в середине V (5) века до н. э.</p>
+<p>Один из учеников Сократа, философ Платон, в отличие от своего учителя, оставил громадное количество записей в форме диалогов.</p>
+<p>«Все люди от природы стремятся к знаниям» — это первая фраза труда под названием «Метафизика» ученика Платона — Аристотеля. Разрабатывая доказательства своей правоты, Аристотель заложил основы новой науки, которая получила название логика.</p>
+<p>Аристотель поражал современников обширностью и глубиной своих знаний о мире. Многие мысли Аристотеля о космосе, природе и о человеке долгое время оставались основой для большинства знаний о мире и через тысячу лет после его смерти. Он попытался создать проект идеального устройства полиса и государства.</p>
+<p>Свои беседы Аристотель проводил в гимнасии рядом с храмом Аполлона Ликейского. Учебное заведение унаследовало это имя. Платона считают основателем Академии, а Аристотеля — Ликея (от его названия происходит современное «лицей»). Эти две школы философов были наиболее известными в Афинах учебными заведениями.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-sokrat" src="img/70f21a7152da.jpg" alt="Мраморный бюст: лысоватый мужчина с широким носом и густой бородой" style="max-width:288px"><figcaption><span class="src">из учебника</span><b>Сократ. Древнегреческий бюст.</b> В беседах с прохожими на улицах и на агоре Сократ призывал людей размышлять о правде, добре и зле. Идеи философа распространяли его ученики, с которыми он вёл длительные беседы с целью найти истину. Поиски пути к совершенству Сократ предлагал начать с самого себя.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-platon" src="img/f4c4aa2b8310.jpg" alt="Мраморный бюст: мужчина с аккуратной бородой и волнистыми волосами" style="max-width:286px"><figcaption><span class="src">из учебника</span><b>Платон. Древнегреческий бюст.</b> В работе «Государство» Платон доказывал, что только всесторонне образованные люди, в первую очередь философы, могут взять на себя управление государством, воспитание детей и молодых людей. Справедливость в таком государстве должна обеспечиваться отсутствием собственности, всё должно быть общим.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-aristotel" src="img/c387c7ed3aab.jpg" alt="Мраморный бюст: мужчина с курчавой бородой и нахмуренным лбом" style="max-width:258px"><figcaption><span class="src">из учебника</span><b>Аристотель. Римская копия греческого бронзового бюста.</b> Аристотель писал: «Гражданин является таковым не в силу того, что он живёт в том или ином месте: ведь и метеки, и рабы также имеют своё местожительство наряду с гражданами… Мы считаем гражданами тех, кто участвует в суде и в Народном собрании. Основным началом демократического строя является свобода. А одно из условий свободы — по очереди быть управляемым и править».</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 278" role="img" aria-label="Цепочка: Сократ, середина V века до н. э., беседует на улицах и на агоре, сам не пишет, девиз «Познай самого себя» → Платон, ученик Сократа, записывает диалоги, школа Академия → Аристотель, ученик Платона, придумал логику, школа Ликей. Ниже три слова: академия — от школы Платона, лицей — от Ликея Аристотеля, гимназия — от гимнасия."><use href="#n-shkoly"/></svg><figcaption><b>Учитель и ученики.</b> Три поколения учёных — и три слова, которые живут до сих пор.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 278" role="img" aria-label="Две схемы. Лупа: параллельные солнечные лучи проходят через стекло и сходятся в одну яркую точку на бумаге — там горячо. Зеркала Архимеда: несколько зеркал направляют солнечные зайчики в одно место на корабле — дерево загорается."><use href="#n-luch"/></svg><figcaption><b>Как Архимед поджигал корабли.</b> Секрет один: много света — в одну точку.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Сделай вместе с папой: свет в одну точку.</b> В солнечный день возьмите лупу и поймайте солнце так, чтобы на тёмной бумаге получилась маленькая яркая точка. Подержите — бумага нагреется и может задымиться. Делайте это только со взрослым, на улице или на подоконнике, рядом держите стакан воды. И никогда не смотри через лупу на солнце. Так ты повторишь опыт Архимеда — только в миниатюре.</div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Как ты думаешь, почему в Древней Греции возникла новая наука философия?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Чем объяснение философов «всё состоит из атомов» отличается от мифов (§21)?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац раздела; §21 — как мифы объясняли мир.</div>
+<div class="rev ans" id="a1" hidden>Мифы объясняли мир делами богов. А философы искали, из чего состоят сами вещи, — сначала думали про огонь и воду, а потом пришли к мельчайшим частичкам — атомам.</div>
+</div>
+<div class="think">
+<p class="qt">2. Сократ сам ничего не записывал. Как же его идеи дошли до нас? Найди ответ в подписи к бюсту и в абзаце о Платоне.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Подпись к бюсту Сократа и третий абзац раздела.</div>
+<div class="rev ans" id="a2" hidden>Идеи Сократа распространяли его ученики. А ученик Платон оставил громадное количество записей — диалогов.</div>
+</div>
+<div class="think">
+<p class="qt">3. Аристотель писал: условие свободы — «по очереди быть управляемым и править». Что из §29 подходит под эти слова?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Подпись к бюсту Аристотеля; §29 — магистраты и гелиэя.</div>
+<div class="rev ans" id="a3" hidden>Магистратов выбирали на один год, и второй раз на ту же должность не выбирали. Судьёй в гелиэе каждый гражданин бывал много раз. Сегодня ты правишь, завтра — тобой.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>«Отец истории»</h2></div>
+<div class="easy">
+<p>Греция — родина науки истории. Раньше о прошлом узнавали в основном из мифов.</p>
+<p><button class="term" data-t="gerodot">Геродот</button> первым попробовал рассказать, как всё было на самом деле. Поэтому ещё в древности его назвали «отцом истории».</p>
+<p>Он расспрашивал участников событий и сам ездил туда, где шли бои. Свою «Историю» он посвятил войне греков с персами (§28) и старался точно передать то, что ему рассказали.</p>
+<p>Ещё Геродот описал Египет, Малую Азию, Финикию, Вавилон и Северное Причерноморье. Для истории нашей страны особенно важен его рассказ о греческих колониях на Чёрном море и о скифах (§24—25).</p>
+<p>Следующий историк — <button class="term" data-t="fukidid">Фукидид</button>. Он написал «Историю» в восьми книгах. Он брал только самые достоверные известия и объяснял события без вмешательства богов. Этим он отличался от Геродота. Кстати, речь Перикла из §29 записал как раз Фукидид.</p>
+</div>
+<div class="book" hidden>
+<p>Греция считается родиной науки истории, поскольку до этого знания о прошлом черпали в основном из мифов. Геродот первым попытался изложить исторические события. Он заложил основы исторического исследования, поэтому уже в древности его назвали «отцом истории».</p>
+<p>Геродот собирал свидетельства прошлого, основываясь на воспоминаниях участников событий. Он посетил многие места, связанные с военными действиями. Свою «Историю», посвящённую войне греков с персами, Геродот создавал, опираясь на устную традицию, он стремился точно передать то, что ему сообщали. Автор представил обширную картину областей, известных ему в то время: Египта, Малой Азии, Финикии, Вавилона, Северного Причерноморья. Для истории нашей страны большое значение имеет рассказ «отца истории» о греческих колониях в Северном Причерноморье, о варварских племенах, прежде всего скифах.</p>
+<p>Фукидид, автор «Истории» в восьми книгах, отбирал наиболее достоверные свидетельства. Он пытался объяснить любое событие без включения в его ход божественных сил. Этим Фукидид отличался от своего предшественника.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 250" role="img" aria-label="Три шага. Раньше: о прошлом узнавали из мифов — боги, чудовища, герои. Геродот, «отец истории»: расспрашивает очевидцев, сам едет на места боёв, пишет о войне с персами, о Египте, Вавилоне, о скифах. Фукидид: «История» в восьми книгах, берёт только достоверные известия, объясняет события без богов. Ниже: речь Перикла из §29 донёс Фукидид."><use href="#n-istoriya"/></svg><figcaption><b>Как история стала наукой.</b> Мифы → рассказы очевидцев → проверенные известия.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>В чём заслуги греков в развитии истории как науки?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Почему история — наука, а миф — нет? Свяжи начало раздела и абзац о Фукидиде.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Первый абзац раздела и последний.</div>
+<div class="rev ans" id="a4" hidden>В мифе события объясняются волей богов. Историк собирает свидетельства очевидцев, отбирает самые достоверные и объясняет события без вмешательства богов. Такие объяснения можно проверить.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему рассказ Геродота о скифах важен именно для истории нашей страны? Вспомни §24—25.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Абзац о том, что описал Геродот; §25 — где жили скифы.</div>
+<div class="rev ans" id="a5" hidden>Скифы кочевали в Северном Причерноморье, а греки основали там колонии (§24—25). Это юг нашей страны, и рассказ Геродота — одно из самых старых описаний этих земель.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-gippokrat" src="img/4c1272c91eb8.jpg" alt="Белый бюст на тёмном фоне: пожилой мужчина с бородой, лоб в морщинах" style="max-width:255px"><figcaption><span class="src">из учебника</span><b>Гиппократ. Древнегреческий бюст.</b> При окончании высших медицинских учебных заведений в нашей стране все выпускники произносят клятву врача России, в основе которой — клятва Гиппократа: «Получая высокое звание врача и приступая к профессиональной деятельности, я торжественно клянусь: честно исполнять свой врачебный долг, посвятить свои знания и умения предупреждению и лечению заболеваний, сохранению и укреплению здоровья человека...»</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Клятва Гиппократа</h2></div>
+<div class="easy">
+<p>Греки очень заботились о силе и красоте тела (помнишь палестру из §31?). Поэтому и медицина у них была сильной. С VI века до н. э. в разных полисах открывались медицинские школы.</p>
+<p><button class="term" data-t="gippokrat">Гиппократа</button> считают основателем научной медицины. Он жил в 460—370 годах до н. э. — целых 90 лет. Свой род он вёл от бога-целителя <button class="term" data-t="asklepiy">Асклепия</button> (§21) — того, чей посох со змеёй и сейчас рисуют на машинах скорой помощи.</p>
+<p>Гиппократ первым стал смотреть на организм целиком, а не на один больной орган. Он искал причину болезни. А потом лечил травами, минералами и правильной едой — диетой.</p>
+<p>Ты хочешь стать ветеринаром — тебе этот подход тоже пригодится: сначала понять причину, потом лечить.</p>
+<p>У Асклепия были дочери Гигиея и Панацея. Гигиея считала: у болезней разные причины — и лечить их надо разными средствами. Её имя живёт в слове «гигиена» — это и мытьё рук. А Панацея искала одно лекарство сразу от всех болезней. Когда говорят «это не панацея», имеют в виду: не поможет от всего.</p>
+<p>Книги Гиппократа — около 60 — изучали арабы в Средние века, по ним учились во всех университетах. Получая диплом, будущие врачи давали клятву Гиппократа — обещали отвечать за больного. И сейчас врачи России дают клятву, в основе которой — клятва Гиппократа.</p>
+</div>
+<div class="book" hidden>
+<p>Греки придавали большое значение развитию и совершенствованию человеческого тела, и это отразилось на уровне их медицинских знаний. С VI (6) века до н. э. медицинские школы открывались в разных полисах.</p>
+<p>Гиппократ, которого считают основателем научной медицины, жил в 460—370 годах до н. э. Свою родословную он возводил к богу-целителю Асклепию. Гиппократ первым начал рассматривать человеческий организм как единое целое, пытался установить причины болезни, исходя из нарушений функций организма в целом, а не каждого отдельного органа. После установления причины недуга он подбирал натуральные целебные средства — травы и минералы, назначал диеты с целью восстановить здоровье.</p>
+<p><b>Любопытные детали.</b> У греческого бога медицины Асклепия было много детей, среди них две дочери: Гигиея и Панацея. Они помогали отцу лечить больных людей. Гигиея считала, что заболевания имеют разные причины, поэтому следует лечить разные органы различными средствами. Панацея искала универсальное средство, которое могло лечить все заболевания сразу.</p>
+<p>Труд учёного, названный «Гиппократов сборник», включал около 60 книг. Он оказал большое влияние на развитие медицины во всём мире. Позднее, в Средние века, арабы изучали и переводили сочинения Гиппократа, во всех университетах будущие врачи знакомились с трудами Гиппократа, а получая диплом, позволявший лечить людей, приносили клятву Гиппократа, подчёркивающую особую ответственность врача перед больным.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 264" role="img" aria-label="Вверху две дочери Асклепия. Гигиея: у болезней разные причины, лечить разными средствами — отсюда слово «гигиена». Панацея: искала одно средство от всего — «это не панацея» значит «не от всего». Ниже Гиппократ, 460—370 годы до н. э.: смотрит на организм целиком, ищет причину болезни, лечит травами, минералами и диетой. Его клятва дошла до наших дней."><use href="#n-gigieya"/></svg><figcaption><b>Как лечил Гиппократ.</b> Не чудо от всех болезней, а поиск причины — так лечат и сейчас.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какой вклад в развитие медицины внёс Гиппократ?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Кто из дочерей Асклепия ближе к Гиппократу — Гигиея или Панацея? Почему?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>«Любопытные детали» и абзац о том, как лечил Гиппократ.</div>
+<div class="rev ans" id="a6" hidden>Гигиея. Она считала, что у болезней разные причины, и лечила разными средствами. Гиппократ тоже сначала искал причину болезни, а потом подбирал лечение. Одного средства «от всего», как у Панацеи, не бывает.</div>
+</div>
+<div class="think">
+<p class="qt">7. Почему клятву Гиппократа дают и через две с лишним тысячи лет? Свяжи последний абзац и подпись к бюсту.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Последний абзац раздела и подпись к бюсту Гиппократа.</div>
+<div class="rev ans" id="a7" hidden>В ней главное — ответственность врача перед больным: честно лечить, предупреждать болезни, беречь здоровье. Это нужно в любые времена, поэтому на ней основана и клятва врача России.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">В Древней Греции возникли и активно развивались науки: философия (Сократ, Платон, Аристотель), история (Геродот, Фукидид), зародилась научная медицина, основателем которой был Гиппократ. Многие достижения древнегреческой науки человечество продолжает использовать до сих пор.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Как ты думаешь, почему в Древней Греции наука достигла больших высот?</li><li>Как ты понимаешь греческое выражение «человек есть мера всех вещей»?</li><li>Что такое клятва Гиппократа? Почему ей следуют и в наши дни?</li><li>Перечисли, в каких областях греки применяли достижения науки.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказки к первому, второму и четвёртому вопросам</button></div>
+<div class="rev hint" id="r1" hidden><b>Первый:</b> в полисе спорили и выступали свободно (§29), были школы, гимнасии, Академия и Ликей, учёные учились друг у друга. <b>Второй:</b> человек сам решает, что для него хорошо, и сам познаёт мир — вспомни «Познай самого себя». <b>Четвёртый:</b> медицина (Гиппократ), устройство государства (Платон, Аристотель), рассказ о прошлом (Геродот, Фукидид), защита города (зеркала Архимеда).</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — какие науки возникли и развивались в Древней Греции? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам. Подсказка: ученик живёт после учителя.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="4"><span class="ord"></span>Аристотель, ученик Платона, придумывает логику</button>
+<button class="chip" data-ord="1"><span class="ord"></span>В полисах открываются медицинские школы · VI век до н. э.</button>
+<button class="chip" data-ord="6"><span class="ord"></span>Наши дни: клятва врача России</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Сократ беседует на агоре · середина V века до н. э.</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Средние века: арабы переводят книги Гиппократа</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Платон, ученик Сократа, записывает диалоги</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Философия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 278" aria-hidden="true"><use href="#n-shkoly"/></svg><span class="ftext">«Любовь к мудрости»: как устроен мир и как жить человеку.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Сократ</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="sokrat" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Беседовал на агоре, сам не писал. «Познай самого себя».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Платон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="platon" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Ученик Сократа, диалоги, школа — Академия.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Аристотель</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="aristotel" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Ученик Платона, логика, школа — Ликей.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Логика</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 278" aria-hidden="true"><use href="#n-shkoly"/></svg><span class="ftext">Наука о том, как доказывать свою правоту.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Геродот</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 250" aria-hidden="true"><use href="#n-istoriya"/></svg><span class="ftext">«Отец истории»: война с персами, скифы.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фукидид</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 250" aria-hidden="true"><use href="#n-istoriya"/></svg><span class="ftext">Только достоверные известия, без богов.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Гиппократ</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="gippokrat" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Основатель научной медицины; клятва врача.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Архимед</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="arhimed" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Величайший учёный: зеркала поджигали римские корабли.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Из чего, как решили философы, состоит каждый предмет?</h3><div class="opts">
+<button class="opt">из огня</button>
+<button class="opt">из воды</button>
+<button class="opt" data-ok="1">из мельчайших частичек — атомов</button></div>
+<div class="fb">Огонь и вода — это были ранние догадки.</div></div>
+<div class="q"><h3>2. Чьим девизом стали слова «Познай самого себя»?</h3><div class="opts">
+<button class="opt" data-ok="1">Сократа</button>
+<button class="opt">Геродота</button>
+<button class="opt">Гиппократа</button></div>
+<div class="fb">Эта надпись была на храме Аполлона в Дельфах.</div></div>
+<div class="q"><h3>3. Какую науку придумал Аристотель?</h3><div class="opts">
+<button class="opt">историю</button>
+<button class="opt" data-ok="1">логику</button>
+<button class="opt">медицину</button></div>
+<div class="fb">Историю начал Геродот, научную медицину — Гиппократ.</div></div>
+<div class="q"><h3>4. Кого назвали «отцом истории»?</h3><div class="opts">
+<button class="opt">Фукидида</button>
+<button class="opt">Платона</button>
+<button class="opt" data-ok="1">Геродота</button></div>
+<div class="fb">Фукидид писал после Геродота.</div></div>
+<div class="q"><h3>5. Как лечил Гиппократ?</h3><div class="opts">
+<button class="opt" data-ok="1">искал причину болезни и лечил травами, минералами, диетой</button>
+<button class="opt">одним средством от всех болезней</button>
+<button class="opt">только молитвами Асклепию</button></div>
+<div class="fb">Средство от всего искала Панацея — такого не бывает.</div></div>
+<div class="q"><h3>6. Откуда взялось слово «лицей»?</h3><div class="opts">
+<button class="opt">от Академии Платона</button>
+<button class="opt" data-ok="1">от Ликея — школы Аристотеля</button>
+<button class="opt">от гимнасия</button></div>
+<div class="fb">От Академии — «академия», от гимнасия — «гимназия».</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Философы: Сократ, Платон, Аристотель</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl2" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl2" hidden><ol><li>Из чего всё состоит: огонь, вода — и наконец атомы.</li><li>Сократ: беседы на агоре, «Познай самого себя»; Платон записал диалоги, основал Академию.</li><li>Аристотель: знания о мире на тысячу лет вперёд, логика, школа Ликей — отсюда «лицей».</li></ol></div>
+</div>
+<div class="think">
+<h3>Как появилась история</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl3" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl3" hidden><ol><li>Раньше о прошлом узнавали из мифов.</li><li>Геродот — «отец истории»: очевидцы, поездки, война с персами, скифы.</li><li>Фукидид: только достоверные известия, без вмешательства богов.</li></ol></div>
+</div>
+<div class="think">
+<h3>Гиппократ</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>460—370 годы до н. э.; род от Асклепия; основатель научной медицины.</li><li>Организм целиком, причина болезни, травы, минералы, диета.</li><li>Около 60 книг; клятва Гиппократа — основа клятвы врача России.</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: какие науки возникли в Греции</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Философия и логика.</li><li>История.</li><li>Научная медицина — и всё это мы используем до сих пор.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p31.html">‹ §31 Повседневная жизнь</a>
+  <span class="pn cur">§32 Наука</span>
+  <a class="pn" href="p33.html">§33 Театр ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 32 · История, 5 класс · страницы 185—188 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'n-shkoly':'0 0 540 278','n-istoriya':'0 0 540 250','n-gigieya':'0 0 540 264','n-luch':'0 0 540 278'};
+
+var T={
+filosofiya:{w:"философии",k:"наука",s:"n-shkoly",t:"В переводе с греческого — «любовь к мудрости»: наука о том, как устроен мир и как человеку правильно жить."},
+sokrat:{w:"Сократ",k:"философ",p:"sokrat",t:"Афинский философ середины V века до н. э. Беседовал с людьми на агоре, сам ничего не записывал. Девиз — «Познай самого себя»."},
+platon:{w:"Платон",k:"философ",p:"platon",t:"Ученик Сократа. Записывал свои мысли в виде диалогов, основал в Афинах школу — Академию."},
+aristotel:{w:"Аристотеля",k:"философ",p:"aristotel",t:"Ученик Платона. Знал о мире больше всех современников, придумал логику, основал школу — Ликей."},
+logika:{w:"логика",k:"наука",s:"n-shkoly",t:"Наука о том, как рассуждать и доказывать свою правоту. Её основы заложил Аристотель."},
+gerodot:{w:"Геродот",k:"историк",s:"n-istoriya",t:"«Отец истории». Расспрашивал очевидцев, ездил на места событий, написал «Историю» о войне греков с персами."},
+fukidid:{w:"Фукидид",k:"историк",s:"n-istoriya",t:"Автор «Истории» в восьми книгах. Отбирал самые достоверные известия и объяснял события без богов."},
+gippokrat:{w:"Гиппократ",k:"врач",p:"gippokrat",t:"Основатель научной медицины, 460—370 годы до н. э. Искал причину болезни и смотрел на организм целиком."},
+asklepiy:{w:"Асклепий",k:"бог-целитель",s:"n-gigieya",t:"Греческий бог врачевания (§21). Его посох со змеёй — знак медицины до сих пор."},
+arhimed:{w:"Архимед",k:"учёный",p:"arhimed",t:"Величайший учёный Древней Греции. Зеркалами поджигал римские корабли у своего города Сиракузы."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p32:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p32:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>6){fb.textContent="Верно! Школы → Сократ → Платон → Аристотель → Средние века → наши дни.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Вспомни, кто чей ученик.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p32:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p32:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
