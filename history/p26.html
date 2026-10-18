@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Каменные столбы долга на полях, мудрый Солон, тиран Писистрат и голосование черепками. Трудные слова можно нажимать.">
+<title>Древние Афины</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="h-lenta" viewBox="0 0 540 190">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЛЕНТА ВРЕМЕНИ (ГОДЫ ДО Н. Э.)</text>
+  <g text-anchor="middle">
+  <text x="63" y="56" font-size="14" font-weight="700" fill="var(--illink)">621</text>
+  <text x="63" y="74" font-size="10.5" fill="var(--illink)">законы Драконта</text>
+  <text x="163" y="56" font-size="14" font-weight="700" fill="var(--illink)">594</text>
+  <text x="163" y="74" font-size="10.5" fill="var(--illink)">архонт Солон</text>
+  <text x="288" y="56" font-size="14" font-weight="700" fill="var(--red)">560</text>
+  <text x="288" y="74" font-size="10.5" fill="var(--illink)">тиран Писистрат</text>
+  <text x="458" y="56" font-size="14" font-weight="700" fill="var(--moss)">510</text>
+  <text x="458" y="74" font-size="10.5" fill="var(--illink)">тирания пала</text>
+  </g>
+  <line x1="30" y1="110" x2="510" y2="110" stroke="var(--illink)" stroke-width="2"/>
+  <rect x="288" y="104" width="185" height="12" rx="6" fill="var(--red)" opacity=".35"/>
+  <g stroke="var(--illink)" stroke-width="1.5">
+  <line x1="63" y1="80" x2="63" y2="104"/><line x1="163" y1="80" x2="163" y2="104"/><line x1="288" y1="80" x2="288" y2="104"/><line x1="473" y1="80" x2="473" y2="104"/>
+  </g>
+  <circle cx="63" cy="110" r="6" fill="var(--illink)"/><circle cx="163" cy="110" r="6" fill="var(--ochre)"/>
+  <circle cx="288" cy="110" r="6" fill="var(--red)"/><circle cx="473" cy="110" r="6" fill="var(--moss)"/>
+  <g text-anchor="middle" font-size="10.5" fill="var(--soft)">
+  <text x="113" y="136">27 лет</text><text x="225" y="136">34 года</text><text x="380" y="136">50 лет тирании</text>
+  </g>
+  <text x="8" y="178" font-size="12" font-weight="700" fill="var(--moss)">До н. э. числа уменьшаются: 621 → 594 → 560 → 510. Всего 111 лет.</text>
+</symbol>
+
+<symbol id="h-dolg" viewBox="0 0 520 300">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК КРЕСТЬЯНИН ПОПАДАЛ В РАБСТВО ЗА ДОЛГИ</text>
+  <g font-size="11.5" fill="var(--illink)">
+  <rect x="8" y="28" width="420" height="36" rx="9" fill="var(--paper2)"/>
+  <text x="20" y="51">1. Земли мало, урожая не хватает, чтобы прокормить семью</text>
+  <rect x="8" y="76" width="420" height="36" rx="9" fill="var(--paper2)"/>
+  <text x="20" y="99">2. Просит у знатного в долг семена или скот</text>
+  <rect x="8" y="124" width="420" height="36" rx="9" fill="var(--paper2)"/>
+  <text x="20" y="147">3. Большую часть урожая отдаёт в уплату долга</text>
+  <rect x="8" y="172" width="420" height="36" rx="9" fill="var(--paper2)" stroke="var(--red)" stroke-width="2"/>
+  <text x="20" y="195">4. Не уплатил в срок — на поле ставят каменный столб долга</text>
+  <rect x="8" y="220" width="420" height="36" rx="9" fill="#3B342B"/>
+  <text x="20" y="243" fill="#F1E7D6">5. Землю забирают, а самого — в рабство, иногда за границу</text>
+  </g>
+  <g stroke="var(--illink)" stroke-width="2">
+  <line x1="218" y1="64" x2="218" y2="73" marker-end="url(#ar)"/><line x1="218" y1="112" x2="218" y2="121" marker-end="url(#ar)"/>
+  <line x1="218" y1="160" x2="218" y2="169" marker-end="url(#ar)"/><line x1="218" y1="208" x2="218" y2="217" marker-end="url(#ar)"/>
+  </g>
+  <path d="M428 142 H470 V94 H434" fill="none" stroke="var(--red)" stroke-width="2.5" marker-end="url(#arR)"/>
+  <text x="476" y="112" font-size="10.5" font-weight="700" fill="var(--red)">снова</text>
+  <text x="476" y="127" font-size="10.5" font-weight="700" fill="var(--red)">в долг</text>
+  <text x="8" y="286" font-size="12" font-weight="700" fill="var(--moss)">594 год до н. э.: Солон велел снять столбы, а проданных выкупили.</text>
+</symbol>
+
+<symbol id="h-lestnitsa" viewBox="0 0 540 316">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">СТУПЕНИ К ДЕМОКРАТИИ В АФИНАХ</text>
+  <rect x="8" y="232" width="250" height="70" rx="10" fill="var(--stone)"/>
+  <text x="20" y="254" font-size="12.5" font-weight="700" fill="#22190A">ДО СОЛОНА</text>
+  <text x="20" y="272" font-size="10.5" fill="#22190A">правит знать: ареопаг и архонты;</text>
+  <text x="20" y="288" font-size="10.5" fill="#22190A">621 — законы Драконта</text>
+  <rect x="96" y="128" width="280" height="96" rx="10" fill="var(--ochre)"/>
+  <text x="108" y="150" font-size="12.5" font-weight="700" fill="#22190A">СОЛОН, 594</text>
+  <text x="108" y="168" font-size="10.5" fill="#22190A">нет долгового рабства · разряды по доходу</text>
+  <text x="108" y="184" font-size="10.5" fill="#22190A">Совет четырёхсот · суд гелиэя (с 30 лет)</text>
+  <text x="108" y="200" font-size="10.5" fill="#22190A">Народное собрание — все граждане с 20 лет</text>
+  <text x="108" y="216" font-size="10.5" fill="#22190A">но архонты — по-прежнему знать</text>
+  <rect x="400" y="176" width="132" height="48" rx="10" fill="#3B342B"/>
+  <text x="410" y="196" font-size="11" font-weight="700" fill="#F1E7D6">ТИРАНИЯ 560—510</text>
+  <text x="410" y="213" font-size="10" fill="#F1E7D6">шаг назад</text>
+  <rect x="270" y="28" width="262" height="92" rx="10" fill="var(--moss)"/>
+  <text x="282" y="50" font-size="12.5" font-weight="700" fill="#FFF6E9">КЛИСФЕН</text>
+  <text x="282" y="68" font-size="10.5" fill="#FFF6E9">10 фил — по месту, а не по роду</text>
+  <text x="282" y="84" font-size="10.5" fill="#FFF6E9">Совет пятисот — по жребию</text>
+  <text x="282" y="100" font-size="10.5" fill="#FFF6E9">остракизм · 10 стратегов</text>
+  <path d="M258 252 H280 V227" fill="none" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M376 206 H397" fill="none" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M466 176 V123" fill="none" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="8" y="60" font-size="11" fill="var(--soft)">Власть понемногу</text>
+  <text x="8" y="76" font-size="11" fill="var(--soft)">переходит от знати</text>
+  <text x="8" y="92" font-size="11" fill="var(--soft)">к народу: это</text>
+  <text x="8" y="108" font-size="11" font-weight="700" fill="var(--moss)">демократия.</text>
+</symbol>
+
+<symbol id="h-razryady" viewBox="0 0 520 252">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">РАЗРЯДЫ СОЛОНА — ПО ДОХОДУ</text>
+  <g font-size="11">
+  <rect x="8" y="28" width="300" height="34" rx="8" fill="var(--ochre)"/>
+  <text x="20" y="50" font-weight="700" fill="#22190A">I — самые богатые</text>
+  <rect x="8" y="68" width="300" height="34" rx="8" fill="var(--ochre)" opacity=".75"/>
+  <text x="20" y="90" font-weight="700" fill="#22190A">II</text>
+  <rect x="8" y="108" width="300" height="34" rx="8" fill="var(--ochre)" opacity=".5"/>
+  <text x="20" y="130" font-weight="700" fill="#22190A">III</text>
+  <rect x="8" y="148" width="300" height="34" rx="8" fill="var(--paper2)" stroke="var(--line)" stroke-width="2"/>
+  <text x="20" y="170" font-weight="700" fill="var(--illink)">IV — феты, бедняки</text>
+  </g>
+  <path d="M316 34 V136" fill="none" stroke="var(--illink)" stroke-width="2"/>
+  <text x="326" y="64" font-size="10.5" fill="var(--illink)">могут занимать должности;</text>
+  <text x="326" y="80" font-size="10.5" fill="var(--illink)">служат всадниками</text>
+  <text x="326" y="96" font-size="10.5" fill="var(--illink)">(кто богаче) или гоплитами</text>
+  <text x="326" y="164" font-size="10.5" fill="var(--illink)">нет денег на оружие —</text>
+  <text x="326" y="180" font-size="10.5" fill="var(--illink)">гребцы на кораблях</text>
+  <rect x="8" y="196" width="504" height="44" rx="9" fill="var(--moss)"/>
+  <text x="20" y="215" font-size="11" font-weight="700" fill="#FFF6E9">У всех четырёх: Народное собрание (с 20 лет)</text>
+  <text x="20" y="232" font-size="11" font-weight="700" fill="#FFF6E9">и суд присяжных — гелиэя (с 30 лет)</text>
+</symbol>
+
+<symbol id="h-ostrakizm" viewBox="0 0 520 236">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ОСТРАКИЗМ — ГОЛОСОВАНИЕ ЧЕРЕПКАМИ</text>
+  <path d="M20 52 L96 34 L150 58 L142 118 L84 136 L28 108 Z" fill="var(--flame)" opacity=".75" stroke="var(--brownD)" stroke-width="2"/>
+  <text x="85" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#22190A">имя того,</text>
+  <text x="85" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#22190A">кто опасен</text>
+  <text x="85" y="156" text-anchor="middle" font-size="10.5" fill="var(--soft)">черепок — остракон</text>
+  <g font-size="11" fill="var(--illink)">
+  <rect x="180" y="30" width="332" height="36" rx="9" fill="var(--paper2)"/>
+  <text x="192" y="53">1. На Народном собрании каждый пишет имя</text>
+  <rect x="180" y="74" width="332" height="36" rx="9" fill="var(--paper2)"/>
+  <text x="192" y="97">2. Черепки считают</text>
+  <rect x="180" y="118" width="332" height="36" rx="9" fill="var(--ochre)"/>
+  <text x="192" y="141" fill="#22190A">3. Больше половины против — в изгнание</text>
+  </g>
+  <text x="180" y="180" font-size="10.5" fill="var(--soft)">Изгнанный остаётся гражданином и с имуществом —</text>
+  <text x="180" y="196" font-size="10.5" fill="var(--soft)">просто надолго уходит из политики.</text>
+  <text x="8" y="226" font-size="12" font-weight="700" fill="var(--moss)">Так граждане не давали одному человеку забрать всю власть.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 26</span>
+    <h1>Древние Афины</h1>
+    <p class="lede">Каменные столбы долга на полях, мудрый Солон, тиран Писистрат и голосование черепками. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Чем различались аристократы и основное население Афин — демос?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p25.html">‹ §25 Причерноморье</a>
+  <span class="pn cur">§26 Древние Афины</span>
+  <a class="pn" href="p27.html">§27 Древняя Спарта ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Власть в Афинах">1</a><a href="#s2" data-j="s2" title="Реформы Солона">2</a><a href="#s3" data-j="s3" title="Афинские тираны">3</a><a href="#s4" data-j="s4" title="Демократические преобразования Клисфена">4</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-sobranie" src="img/da804a2406b2.jpg" alt="Рисунок: толпа мужчин в плащах на площади поднимает руки, на возвышении оратор, вдали здания и холм"><figcaption><span class="src">из учебника</span><b>Народное собрание в Афинах.</b> В его работе имели право участвовать все граждане мужского пола старше 20 лет. Собрания проходили в строго определяемые сроки, 40 раз в год. Вопросы, которые обсуждались на собраниях, заранее готовились.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Власть в Афинах</h2></div>
+<div class="easy">
+<p>Сначала Афинами правил совет знати. Он собирался на холме бога войны Ареса — поэтому и назывался <button class="term" data-t="areopag">ареопаг</button>.</p>
+<p>Совет решал почти все важные дела и наказывал нарушителей. Он выбирал девять главных начальников — <button class="term" data-t="arhonty">архонтов</button>. Сначала архонтов выбирали на всю жизнь, потом на 10 лет, а потом всего на один год. Архонты заменили царя.</p>
+<p>Отслужив свой срок, архонт входил в ареопаг — и оставался там до конца жизни.</p>
+<p>Споры раньше решали по старым обычаям родов. В 621 году до н. э. архонт <button class="term" data-t="drakont">Драконт</button> впервые записал законы. Зачем? Чтобы прекратить кровную месть между знатными родами — она раскачивала весь полис. И чтобы знатные не толковали законы как им удобно.</p>
+</div>
+<div class="book" hidden>
+<p>Древнейшим органом управления в Афинах был совет знати. Заседания совета проходили на холме, посвящённом богу войны Аресу, отсюда его название — ареопаг.</p>
+<p>Первоначально совет распоряжался большинством важных дел в государстве, налагая кары и взыскания на всех нарушителей порядка. Совет выбирал девять высших должностных лиц — архонтов (сначала пожизненно, затем на 10 лет, потом на один год). Постепенно расширяя свои полномочия, коллегия архонтов заменила власть царя.</p>
+<p>Спорные дела в Афинах издавна решались на основе родовых обычаев. Их дополнили новыми законами. Первый свод письменных законов был составлен архонтом по имени Драконт в 621 году до н. э. Целями законов были пресечение кровной мести среди аристократических родов, которая угрожала стабильности полиса, и ограничение произвола аристократов при толковании законов.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-arhonty" src="img/caef5a2b19bf.jpg" alt="Рисунок: два седобородых мужчины в белых плащах, у одного посох, у другого свиток" style="max-width:282px"><figcaption><span class="src">из учебника</span><b>Архонты.</b> После окончания срока полномочий архонты входили в ареопаг и находились в его составе пожизненно.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 190" role="img" aria-label="Лента времени до н. э.: 621 — законы Драконта, 594 — архонт Солон, 560 — тиран Писистрат, 510 — тирания пала. Между ними 27 лет, 34 года и 50 лет тирании, всего 111 лет."><use href="#h-lenta"/></svg><figcaption><b>Четыре даты параграфа.</b> До нашей эры числа уменьшаются: 621 древнее, чем 510.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Как было устроено управление древними Афинами?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Архонтов стали выбирать всего на год. Почему же знать всё равно держала власть в руках?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Второй абзац и подпись к рисунку «Архонты».</div>
+<div class="rev ans" id="a1" hidden>Архонтов выбирали из знати, а отслужив год, архонт входил в ареопаг до конца жизни. Совет знати оставался пожизненным и решал важнейшие дела.</div>
+</div>
+<div class="think">
+<p class="qt">2. Зачем записывать законы, если их и так все знают по обычаю?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a2" hidden>Пока законы не записаны, знатные толковали их как им выгодно. Записанный закон один для всех. А ещё законы Драконта должны были прекратить кровную месть между знатными родами.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Реформы Солона</h2></div>
+<div class="easy">
+<p>Большинство афинян были крестьянами: сеяли ячмень и пшеницу, на склонах гор растили виноград и оливки, держали коз и овец и делали из их молока сыр. Ещё жили ремесленники, торговцы, <button class="term" data-t="meteki">метеки</button> (помнишь их из §23?) и рабы. Раб-ремесленник, накопивший денег, мог выкупить себе свободу.</p>
+<p>Лучшие земли захватили знатные. У крестьянина участок маленький — семью не прокормить. Он брал у знатного в долг семена или скот и почти весь урожай отдавал в уплату. Не вернул вовремя — землю забирали, а самого обращали в рабство и даже продавали за границу. Демос злился, и дело шло к большому конфликту.</p>
+<p>Мир вернул <button class="term" data-t="solon">Солон</button>. Он сам был знатным, но его знали как умного, честного и справедливого человека. В 594 году до н. э. афиняне выбрали его архонтом.</p>
+<p>Первым делом Солон велел снять с полей каменные столбы долга: пока такой столб стоял, крестьянин не мог распоряжаться своим урожаем. А афинян, проданных за долги за границу, разыскали и выкупили на деньги государства.</p>
+<p>Всех граждан Солон разделил на <button class="term" data-t="razryady">разряды</button> по доходу. Первые три разряда могли занимать должности и служили всадниками (кто побогаче) или гоплитами. Бедняки — <button class="term" data-t="fety">феты</button> — денег на оружие не имели: они служили гребцами на кораблях.</p>
+<p>Ещё Солон учредил Совет четырёхсот и <button class="term" data-t="geliea">гелиэю</button> — суд присяжных. Судьёй мог стать гражданин любого разряда, если ему 30 лет. Теперь даже беднейшего защищали суд и закон от произвола богачей.</p>
+<p>Главные законы стало принимать Народное собрание — все граждане с 20 лет. Женщины, рабы и метеки политических прав не имели. Так в Афинах начала складываться <button class="term" data-t="demokratiya">демократия</button> — «власть народа». Но архонтами и членами ареопага по-прежнему становились только знатные.</p>
+<p><b>Законы Солона были с характером.</b> Кто во время раздора не встанет ни на чью сторону — лишается прав гражданина: будь хозяином своего государства на деле. Кто не может сказать, на что живёт, — тоже лишается прав. А если отец не научил сына никакому делу, сын не обязан кормить его в старости.</p>
+<p>Солон гордился тем, что не дал перевеса ни богатым, ни бедным, — встал между ними, «щитом прикрывая обоих».</p>
+</div>
+<div class="book" hidden>
+<p>В Афинах большинство населения занималось сельским хозяйством. Крестьяне сеяли ячмень и пшеницу, на склонах гор сажали виноград и оливки, разводили коз и овец, из молока которых получали сыр. Кроме знати и крестьян, здесь жили ремесленники, торговцы, переселенцы из других полисов Греции — метеки, а также рабы, труд которых использовали на рудниках, в ремесленных мастерских. Рабы-ремесленники, сумевшие скопить денег, могли купить себе свободу.</p>
+<p>Лучшие земли захватили аристократы. Крестьяне, владевшие небольшими участками земли, не всегда могли прокормить свои семьи собранным урожаем. Они были вынуждены просить у знатных людей в долг семена, скот. Крестьянин, работая с утра до ночи, не мог выбраться из нужды, потому что значительную часть урожая отдавал в уплату долга. При неуплате долга в срок аристократы захватывали земли крестьян, превращая их в рабов. Часто рабов-должников продавали в чужие страны. Недовольство демоса своим разорением и закабалением грозило перерасти в серьёзный конфликт.</p>
+<p>Мир в Афинах восстановил Солон, которого знали как умного, честного и справедливого человека. Сам Солон происходил из аристократов. В 594 году до н. э. жители Афин избрали его архонтом. Прежде всего Солон приказал снять с полей каменные столбы, на которых обозначались сумма долга крестьянина и срок уплаты. Пока стоял такой столб, крестьянин не мог распоряжаться своим урожаем. Граждан Афин, проданных в рабство за границу полиса, разыскивали и выкупали за счёт государства.</p>
+<p>Всех граждан Афин разделили на разряды в соответствии с их доходом. Граждане первых трёх разрядов имели право занимать государственные должности и служить всадниками (представители этих разрядов с более высоким доходом) или гоплитами. Бедняки, феты, не имели средств для приобретения оружия, поэтому составляли вспомогательные войска или служили гребцами на кораблях.</p>
+<p><b>Любопытные детали.</b> Афинянин Солон считался самым мудрым из законодателей своего времени. Греки надолго запомнили законы Солона, которые служили воспитанию гражданских нравов. Раньше считалось, что междоусобные раздоры — это зло, и сам Солон так считал. Однако он издал такой закон: «Кто во время междоусобных раздоров не примкнёт ни к одной из сторон, тот лишается гражданских прав». Это учило граждан быть хозяевами своего государства не только в мыслях, но и на деле.</p>
+<p>Законы Солона учили трудолюбию. Был закон: «Кто не может указать, на какие средства он живёт, тот лишается гражданских прав». Считалось, что этот закон Солон заимствовал у египтян. Был и другой закон: «Если отец не научил сына никакому делу, то такого отца такой сын не обязан содержать в старости». Этот закон Солон ввёл сам.</p>
+<p>Солон больше всего гордился тем, что не дал своими законами перевеса ни богатым и ни бедным, ни знатным и ни безродным, ни землевладельцам и ни торговцам: «Я меж народом и знатью, щитом прикрывая обоих, / Стал, — и ни тем, ни другим кривдой не дал побеждать».</p>
+<p>Наряду с существовавшим аристократическим ареопагом Солон учредил выборный Совет четырёхсот. Была введена гелиэя — суд присяжных. Членом гелиэи мог стать каждый гражданин любого из четырёх разрядов, достигший тридцатилетнего возраста. Теперь даже беднейший гражданин был защищён судом и законом от произвола богачей.</p>
+<p>Высшую законодательную власть передали Народному собранию. Участвовать в его заседаниях могли все афинские граждане, достигшие двадцатилетнего возраста. Женщины, рабы и метеки не имели политических прав. Благодаря деятельности Солона в Афинах начала утверждаться демократия (означает «власть народа»). Тем не менее в ареопаг и на должности архонтов избирались только представители аристократии.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-dolg" src="img/89bf5bb19d39.jpg" alt="Рисунок: на склоне холма люди выкапывают и опрокидывают каменный столб, вокруг стоят и радуются горожане" style="max-width:449px"><figcaption><span class="src">из учебника</span><b>Отмена долгового рабства.</b></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 520 300" role="img" aria-label="Пять шагов сверху вниз: земли мало, урожая не хватает; крестьянин просит в долг семена или скот; отдаёт урожай в уплату и снова берёт в долг; не уплатил в срок — на поле столб долга; землю забирают, самого в рабство. Внизу: в 594 году Солон велел снять столбы, а проданных выкупили."><use href="#h-dolg"/></svg><figcaption><b>Ловушка долга.</b> Красная стрелка — круг, из которого крестьянину было не выбраться. Солон этот круг разорвал.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-solon" src="img/522c1bfffdcb.jpg" alt="Мраморный бюст пожилого мужчины с густой бородой и кудрявыми волосами" style="max-width:288px"><figcaption><span class="src">из учебника</span><b>Солон.</b> Древнегреческий бюст. Он привлёк к управлению государством не только аристократов, но и богатых людей простого происхождения.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 520 252" role="img" aria-label="Четыре разряда по доходу: первые три могут занимать должности и служат всадниками или гоплитами; четвёртый — феты, бедняки — гребцы на кораблях. У всех четырёх — Народное собрание с 20 лет и суд гелиэя с 30 лет."><use href="#h-razryady"/></svg><figcaption><b>Богатство решает, кем служить, но голос есть у всех.</b> Даже бедняк-фет голосует в собрании и может стать судьёй.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Как ты думаешь, что побудило Солона провести свои реформы?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Почему Солон начал именно со столбов на полях?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Абзац о том, как крестьяне попадали в долги, и абзац о первых делах Солона.</div>
+<div class="rev ans" id="a3" hidden>Столб долга значил, что крестьянин уже не хозяин своему урожаю и скоро потеряет землю и свободу. Из-за долгов демос был готов к большому конфликту. Убрав столбы и выкупив проданных, Солон убрал главную причину раздора.</div>
+</div>
+<div class="think">
+<p class="qt">4. Бедняк-фет при Солоне: что он мог, а чего нет?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Абзацы о разрядах, о гелиэе и о Народном собрании.</div>
+<div class="rev ans" id="a4" hidden>Мог голосовать в Народном собрании с 20 лет и быть судьёй в гелиэе с 30 лет, служил гребцом. А стать архонтом или членом ареопага не мог — туда избирали только знать.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему Солон говорил, что встал «щитом» между народом и знатью?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>«Любопытные детали» и подпись к бюсту Солона.</div>
+<div class="rev ans" id="a5" hidden>Он не дал перевеса ни бедным, ни богатым: бедных освободил от долгового рабства, но знати оставил высшие должности. А к управлению привлёк и богатых людей простого происхождения.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Афинские тираны</h2></div>
+<div class="easy">
+<p>Со второй половины VII до конца VI века до н. э. в богатых полисах иногда власть захватывали <button class="term" data-t="tirany">тираны</button> — люди, которые правили одни. В Афинах самым известным тираном был <button class="term" data-t="pisistrat">Писистрат</button>, а после него — его сыновья.</p>
+<p>Почему так вышло? Реформами Солона были недовольны и бедные — землю поровну не поделили, полного равенства нет, — и знатные: им хотелось вернуть потерянное. Ссорились народ со знатью и знатные между собой.</p>
+<p>В 560 году до н. э. Писистрат, сам из знатного рода, захватил власть и стал править как древний царь.</p>
+<p>Чтобы граждане его поддерживали, он давал им ссуды из казны и затеял большую стройку — работа и заработок для ремесленников. На Акрополе вместо деревянных построек выросли каменные храмы, проложили новые улицы, начали строить водопровод и стены до порта Пирей. А ещё по его приказу впервые записали «Илиаду» и «Одиссею» (§22) — до этого их только пересказывали.</p>
+<p>Писистрат помогал ремеслу и торговле. Афины укрепились на островах Эгейского моря и на обоих берегах пролива Геллеспонт (сейчас — Дарданеллы). Это было время расцвета Афин.</p>
+<p>А вот сыновья Писистрата, Гиппий и Гиппарх, правили жестоко. Многие семьи бежали из Афин, спасая жизнь. Гиппарха убили, Гиппия изгнали. В 510 году до н. э. тирания в Афинах пала.</p>
+</div>
+<div class="book" hidden>
+<p>В Древней Греции в период со второй половины VII (7) века до н. э. и до конца VI (6) века до н. э. в экономически развитых полисах на короткое время к власти приходили тираны. Так называли людей, установивших единоличное правление. Самой известной была тирания Писистрата и его сыновей в Афинах.</p>
+<p>Не все преобразования Солона удовлетворили беднейшую часть горожан. Они были недовольны тем, что Солон не разделил землю поровну и не установил полного равенства граждан. Аристократы хотели вернуть потерянные привилегии. Конфликты вспыхивали не только между народом и знатью, но и в среде самой аристократии. Писистрат, представитель аристократического рода, в 560 году до н. э. захватил власть и стал править подобно древним царям.</p>
+<p>Писистрат стремился расположить к себе граждан, чтобы укрепить свою власть. Гражданам полиса выдавали ссуды из государственной казны. Тиран развернул в Афинах бурное строительство, чтобы обеспечить занятость населения и дать заработок ремесленникам. На месте старых деревянных построек на Акрополе выросли каменные храмы, были проложены новые улицы, началось строительство водопровода и крепостных стен до гавани в Пирее. Ко двору привлекали деятелей литературы и искусства. По приказу Писистрата впервые записали поэмы Гомера «Илиада» и «Одиссея», до этого передававшиеся только устно.</p>
+<p>Писистрат поощрял развитие ремесла и торговли. При нём Афины распространили своё влияние на несколько островов в Эгейском море и укрепились на обоих берегах Геллеспонта (современный пролив Дарданеллы). Годы правления Писистрата отмечены экономическим и культурным расцветом Афин.</p>
+<p>Жестокостью отличались правления преемников Писистрата — его сыновей Гиппия и Гиппарха. Многие семьи вынуждены были бежать из Афин, спасая свою жизнь. Гиппарх был убит, а Гиппий изгнан из Афин. Таким образом, в 510 году до н. э. тирания в Афинах пала.</p>
+</div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие причины позволили Писистрату захватить власть в Афинах?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Писистрат захватил власть силой. Почему же годы его правления называют временем расцвета?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Четвёртый и пятый абзацы раздела.</div>
+<div class="rev ans" id="a6" hidden>Он дал работу ремесленникам: каменные храмы, улицы, водопровод, стены до Пирея. Помогал ремеслу и торговле, Афины укрепились на островах и у Геллеспонта. И впервые записали поэмы Гомера.</div>
+</div>
+<div class="think">
+<p class="qt">7. Чем правление Писистрата отличалось от правления его сыновей — и чем это кончилось?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Абзац о том, как Писистрат привлекал граждан, и последний абзац.</div>
+<div class="rev ans" id="a7" hidden>Писистрат старался расположить к себе граждан — ссудами, стройкой, работой. Сыновья правили жестоко, и семьи бежали из Афин. Поэтому Гиппарха убили, Гиппия изгнали, и в 510 году до н. э. тирания пала.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Демократические преобразования Клисфена</h2></div>
+<div class="easy">
+<p><button class="term" data-t="klisfen">Клисфен</button> возглавил борьбу против сыновей Писистрата, а потом сам встал во главе Афин.</p>
+<p>Раньше граждане делились на четыре объединения по родам. Клисфен разделил их на десять <button class="term" data-t="fily">фил</button> — округов по месту жительства. В каждой филе смешались люди из разных мест, и знатным родам стало труднее командовать.</p>
+<p>Совет четырёхсот, который выбирали по родам, он заменил Советом пятисот. В него попадали по <button class="term" data-t="zhrebiy">жребию</button> от каждой из десяти фил. Как считалочка во дворе, когда решают, кто водит: решает случай, а не знатность или богатство.</p>
+<p>Клисфен ввёл <button class="term" data-t="ostrakizm">остракизм</button>. На Народном собрании каждый писал на черепке имя того, кто, по его мнению, опасен для демократии. Если против человека голосовало больше половины граждан, его отправляли в изгнание. Прав гражданина и имущества он не терял, но надолго уходил из политики.</p>
+<p>Войском стала руководить коллегия из десяти <button class="term" data-t="strategi">стратегов</button>.</p>
+<p>Реформы Клисфена смели последние остатки родового строя. Афины стали демократическим полисом.</p>
+</div>
+<div class="book" hidden>
+<p>Клисфен возглавил движение против тирании преемников Писистрата, а затем встал во главе государства. Он ввёл новое административное деление, распределив всех граждан по десяти территориальным филам (округам) вместо прежде существовавших четырёх родоплеменных объединений. Смешанное население различных территорий ослабило влияние родовой знати в таких филах.</p>
+<p>Клисфен заменил Совет четырёхсот, избиравшийся по родовым филам, на Совет пятисот. В новый орган управления входили выборные по жребию от каждой из десяти территориальных фил. Введение остракизма (голосование при помощи черепков-остраконов) на заседании Народного собрания было направлено против возможного усиления личной власти отдельных граждан. На черепке следовало написать имя гражданина, угрожавшего афинской демократии. Каждый, против кого голосовало больше половины граждан, отправлялся в изгнание.</p>
+<p>Созданная Клисфеном коллегия из десяти стратегов возглавила афинское войско. Реформы Клисфена, уничтожив последние остатки родового строя, завершили процесс формирования демократического полиса в Афинах.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-klisfen" src="img/c3b9e65b07f5.jpg" alt="Белый бюст бородатого мужчины на подставке с надписью греческими буквами" style="max-width:286px"><figcaption><span class="src">из учебника</span><b>Клисфен.</b> Древнегреческий бюст. Человек, подвергнутый остракизму, не лишался гражданского статуса и имущества, он лишь на длительный срок исключался из политической борьбы.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 520 236" role="img" aria-label="Слева черепок с надписью «имя того, кто опасен». Справа три шага: на Народном собрании каждый пишет имя; черепки считают; больше половины против — в изгнание. Изгнанный остаётся гражданином и с имуществом."><use href="#h-ostrakizm"/></svg><figcaption><b>Черепок вместо бюллетеня.</b> Глиняных черепков в Греции было сколько угодно — ими и голосовали.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Игра дома: остракизм.</b> Устройте семейное голосование записками — это будут ваши «черепки». Например, какой фильм смотреть вечером. Каждый пишет тайно, складывает бумажку, потом считаете. Что набрало больше половины — побеждает.</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 316" role="img" aria-label="Ступени: до Солона правит знать, ареопаг и архонты, 621 — законы Драконта; Солон, 594 — нет долгового рабства, разряды, Совет четырёхсот, гелиэя, Народное собрание для всех граждан с 20 лет; тирания 560—510 — шаг назад; Клисфен — 10 фил, Совет пятисот по жребию, остракизм, 10 стратегов."><use href="#h-lestnitsa"/></svg><figcaption><b>Весь параграф одной картинкой.</b> Ступень за ступенью власть уходит от знати к народу. Тирания — ступенька вниз, Клисфен — снова вверх.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Каким образом Клисфен расширил демократию в Афинах?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Жребий и остракизм — оба против одного и того же. Против чего?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Абзацы о Совете пятисот и об остракизме; вспомни раздел 3.</div>
+<div class="rev ans" id="a8" hidden>Против того, чтобы власть забрали знатные роды или один человек. Жребий не смотрит на знатность и богатство, а остракизм позволял изгнать того, кто мог стать новым тираном, как Писистрат.</div>
+</div>
+<div class="think">
+<p class="qt">9. Совет четырёхсот при Солоне, Совет пятисот при Клисфене. Что изменилось, кроме числа?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Раздел 2 — Совет четырёхсот; здесь — второй абзац.</div>
+<div class="rev ans" id="a9" hidden>Совет четырёхсот избирали по родовым филам, а Совет пятисот набирали по жребию от десяти фил, устроенных по месту жительства. Родовая знать потеряла влияние.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">Древнейшим органом Афинского полиса был совет знати, носивший название ареопага. Совет ежегодно выбирал девять высших должностных лиц — архонтов. Реформы, проведённые Солоном, разделили граждан Афин на разряды в соответствии с их доходом. При Солоне был учреждён народный суд — гелиэя.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Что значили реформы Солона для афинского общества?</li><li>Какую политику и почему проводил Писистрат?</li><li>Что такое остракизм и в каких случаях он применялся?</li><li>Как повлияли реформы Клисфена на структуру афинского полиса?</li></ol></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Прочитай отрывок из сочинения «Афинская полития» и ответь на вопросы.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">Порядок древнего государственного устройства, существовавшего до Драконта, был следующий. На высшие должности выбирали по благородству происхождения и по богатству; правили должностные лица сначала пожизненно, а впоследствии в течение десяти лет.</p><p style="margin:0 0 10px">Важнейшими и первыми по времени из должностей были царь, полемарх и архонт. Из них первою была должность царя, она была унаследована от отцов. Второй присоединилась к ней должность полемарха, ввиду того что некоторые из царей оказались в военных делах слабыми… Последней является должность архонта… Архонты имели право решать дела окончательно. …Наконец, Совет ареопагитов, хотя и имел обязанность быть только блюстителем законов, распоряжался большинством важных дел в государстве, налагая кары и взыскания безапелляционно на всех нарушителей порядка. Это объясняется тем, что выбор архонтов производился по благородству происхождения и по богатству, а из них-то и избирались ареопагиты. Вот почему — это единственная из должностей, которая остаётся пожизненной и теперь.</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq1" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq1" hidden>1. По какому принципу выбирали на высшие должности? 2. Как изменились сроки избрания на высшие должности? 3. Какая из должностей осталась пожизненной?</div>
+<div class="rev ans" id="sa2" hidden>1. По благородству происхождения и по богатству. 2. Сначала пожизненно, потом на десять лет (а в разделе 1 — ещё позже на один год). 3. Ареопаг: членом совета ареопагитов оставались до конца жизни.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — чем различались аристократы и основное население Афин — демос? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Работаем с хронологией</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Установление тирании Писистрата · 560 год до н. э.</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Первые писаные законы — Драконт · 621 год до н. э.</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Падение тирании в Афинах · 510 год до н. э.</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Солон избран архонтом · 594 год до н. э.</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ареопаг</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="arhonty" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Совет знати на холме Ареса — древнейшая власть в Афинах.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Архонты</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="arhonty" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Девять высших начальников; потом — пожизненно в ареопаге.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Солон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="solon" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">594 год: снял столбы долга, ввёл разряды, гелиэю, Совет четырёхсот.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Гелиэя</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 520 252" aria-hidden="true"><use href="#h-razryady"/></svg><span class="ftext">Суд присяжных: судья — любой гражданин с 30 лет.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Демократия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 316" aria-hidden="true"><use href="#h-lestnitsa"/></svg><span class="ftext">«Власть народа»: законы принимают сами граждане.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Тирания</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 190" aria-hidden="true"><use href="#h-lenta"/></svg><span class="ftext">Единоличная власть. В Афинах — Писистрат и сыновья, 560—510.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Остракизм</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 520 236" aria-hidden="true"><use href="#h-ostrakizm"/></svg><span class="ftext">Голосование черепками: опасного гражданина изгоняли надолго.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Стратеги</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 316" aria-hidden="true"><use href="#h-lestnitsa"/></svg><span class="ftext">Десять военачальников при Клисфене.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Где заседал ареопаг?</h3><div class="opts">
+<button class="opt">на агоре</button>
+<button class="opt" data-ok="1">на холме бога Ареса</button>
+<button class="opt">на Акрополе</button></div>
+<div class="fb">Отсюда и название: холм Ареса — ареопаг.</div></div>
+<div class="q"><h3>2. Кто первым записал законы Афин?</h3><div class="opts">
+<button class="opt" data-ok="1">Драконт</button>
+<button class="opt">Солон</button>
+<button class="opt">Клисфен</button></div>
+<div class="fb">В 621 году до н. э. Солон стал архонтом позже — в 594 году.</div></div>
+<div class="q"><h3>3. Что Солон велел убрать с полей?</h3><div class="opts">
+<button class="opt">межевые заборы</button>
+<button class="opt" data-ok="1">каменные столбы долга</button>
+<button class="opt">статуи богов</button></div>
+<div class="fb">Пока стоял столб, крестьянин не мог распоряжаться своим урожаем.</div></div>
+<div class="q"><h3>4. Что такое гелиэя?</h3><div class="opts">
+<button class="opt">совет знати</button>
+<button class="opt">коллегия военачальников</button>
+<button class="opt" data-ok="1">суд присяжных</button></div>
+<div class="fb">Совет знати — ареопаг, военачальники — стратеги.</div></div>
+<div class="q"><h3>5. Что впервые записали по приказу Писистрата?</h3><div class="opts">
+<button class="opt" data-ok="1">поэмы Гомера</button>
+<button class="opt">законы Драконта</button>
+<button class="opt">список граждан</button></div>
+<div class="fb">«Илиаду» и «Одиссею» до этого только пересказывали (§22).</div></div>
+<div class="q"><h3>6. Как голосовали при остракизме?</h3><div class="opts">
+<button class="opt">поднимали руки</button>
+<button class="opt" data-ok="1">писали имя на черепке</button>
+<button class="opt">кричали</button></div>
+<div class="fb">Криками голосовали в Спарте — это следующий параграф.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Как управлялись Афины до Солона</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl3" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl3" hidden><ol><li>Ареопаг — совет знати на холме Ареса — решал важные дела и наказывал нарушителей.</li><li>Девять архонтов: сначала пожизненно, потом на 10 лет, потом на год; потом — в ареопаг пожизненно.</li><li>621 год до н. э. — Драконт записал первые законы: против кровной мести и произвола знати.</li></ol></div>
+</div>
+<div class="think">
+<h3>Реформы Солона</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Долги разоряли крестьян; в 594 году до н. э. Солон снял столбы долга и выкупил проданных в рабство.</li><li>Разряды по доходу: первые три — должности, всадники и гоплиты; феты — гребцы.</li><li>Совет четырёхсот, гелиэя с 30 лет, Народное собрание с 20 лет — начало демократии; архонты — по-прежнему знать.</li></ol></div>
+</div>
+<div class="think">
+<h3>Тирания Писистрата</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Недовольны и бедные, и знатные; в 560 году до н. э. Писистрат захватил власть.</li><li>Ссуды, стройка: храмы на Акрополе, улицы, водопровод, стены; впервые записали Гомера; расцвет Афин.</li><li>Сыновья Гиппий и Гиппарх правили жестоко; в 510 году до н. э. тирания пала.</li></ol></div>
+</div>
+<div class="think">
+<h3>Реформы Клисфена</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Десять фил по месту жительства вместо четырёх родовых.</li><li>Совет пятисот по жребию от каждой филы; десять стратегов во главе войска.</li><li>Остракизм: имя на черепке, больше половины голосов — изгнание.</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: аристократы и демос</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Аристократы — знатные и богатые: ареопаг, архонты, лучшие земли.</li><li>Демос — крестьяне, ремесленники, торговцы: трудились, попадали в долги и даже в рабство.</li><li>Солон и Клисфен шаг за шагом давали демосу права: собрание, суд, жребий, остракизм.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p25.html">‹ §25 Причерноморье</a>
+  <span class="pn cur">§26 Древние Афины</span>
+  <a class="pn" href="p27.html">§27 Древняя Спарта ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 26 · История, 5 класс · страницы 155—160 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'h-lenta':'0 0 540 190','h-dolg':'0 0 520 300','h-lestnitsa':'0 0 540 316','h-razryady':'0 0 520 252','h-ostrakizm':'0 0 520 236'};
+
+var T={
+areopag:{w:"ареопаг",k:"совет знати",p:"arhonty",t:"Древнейший орган власти в Афинах — совет знати. Заседал на холме бога войны Ареса, отсюда и название."},
+arhonty:{w:"архонты",k:"высшие начальники",p:"arhonty",t:"Девять высших должностных лиц Афин. Выбирали их сначала пожизненно, потом на 10 лет, потом на год. Они заменили царя."},
+drakont:{w:"Драконт",k:"архонт",s:"h-lenta",t:"Архонт, который в 621 году до н. э. впервые записал законы Афин."},
+meteki:{w:"метеки",k:"чужеземцы",p:"sobranie",t:"Свободные переселенцы из других полисов без прав гражданина (§23)."},
+solon:{w:"Солон",k:"архонт и законодатель",p:"solon",t:"Умный и справедливый аристократ. В 594 году до н. э. стал архонтом: отменил долговое рабство, разделил граждан на разряды."},
+razryady:{w:"разряды",k:"группы граждан",s:"h-razryady",t:"Солон разделил граждан на четыре разряда по доходу. От разряда зависело, какие должности доступны и как служить в войске."},
+fety:{w:"феты",k:"бедняки",s:"h-razryady",t:"Самый бедный, четвёртый разряд. Денег на оружие не было — служили гребцами на кораблях."},
+geliea:{w:"гелиэя",k:"суд",s:"h-razryady",t:"Суд присяжных, введённый Солоном. Судьёй мог стать любой гражданин с 30 лет, из любого разряда."},
+demokratiya:{w:"демократия",k:"«власть народа»",s:"h-lestnitsa",t:"Власть народа: законы принимают сами граждане на Народном собрании."},
+tirany:{w:"тираны",k:"единоличные правители",s:"h-lenta",t:"Так называли людей, которые захватили власть и правили одни, — установили единоличное правление."},
+pisistrat:{w:"Писистрат",k:"тиран Афин",s:"h-lenta",t:"Аристократ, в 560 году до н. э. захвативший власть. При нём строили храмы и водопровод и впервые записали поэмы Гомера."},
+klisfen:{w:"Клисфен",k:"реформатор",p:"klisfen",t:"Возглавил борьбу с сыновьями Писистрата, а потом Афины. Ввёл 10 фил, Совет пятисот, остракизм и 10 стратегов."},
+fily:{w:"филы",k:"округа",s:"h-lestnitsa",t:"Округа, на которые Клисфен разделил граждан, — десять, по месту жительства, а не по родам."},
+zhrebiy:{w:"жребий",k:"способ выбора",s:"h-lestnitsa",t:"Выбор случаем, а не голосованием. Так набирали Совет пятисот — от каждой из десяти фил."},
+ostrakizm:{w:"остракизм",k:"голосование черепками",s:"h-ostrakizm",t:"На черепке писали имя того, кто опасен для демократии. Больше половины голосов против — изгнание надолго."},
+strategi:{w:"стратеги",k:"военачальники",s:"h-lestnitsa",t:"Коллегия из десяти военачальников, которая при Клисфене возглавила войско Афин."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p26:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p26:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>4){fb.textContent="Верно! 621 → 594 → 560 → 510. До нашей эры числа уменьшаются.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. До н. э.: чем больше число, тем раньше.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p26:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p26:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

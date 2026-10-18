@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Марафон и гонец с вестью о победе, триеры — «деревянные стены», 300 спартанцев у Фермопил и битва в узком проливе. Трудные слова можно нажимать.">
+<title>Греко-персидские войны</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="j-lenta" viewBox="0 0 540 266">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ГРЕКО-ПЕРСИДСКИЕ ВОЙНЫ (ГОДЫ ДО Н. Э.)</text>
+  <g text-anchor="middle">
+  <text x="30" y="46" font-size="13" font-weight="700" fill="var(--illink)">500</text>
+  <text x="34" y="62" font-size="10" fill="var(--soft)">восстание</text>
+  <text x="190" y="46" font-size="13" font-weight="700" fill="var(--red)">480</text>
+  <text x="190" y="62" font-size="10" fill="var(--soft)">Фермопилы, Саламин</text>
+  <text x="438" y="46" font-size="13" font-weight="700" fill="var(--moss)">449</text>
+  <text x="438" y="62" font-size="10" fill="var(--soft)">мир</text>
+  <text x="110" y="88" font-size="13" font-weight="700" fill="var(--illink)">490</text>
+  <text x="110" y="104" font-size="10" fill="var(--soft)">Марафон</text>
+  <text x="256" y="88" font-size="13" font-weight="700" fill="var(--illink)">479</text>
+  <text x="256" y="104" font-size="10" fill="var(--soft)">Платеи</text>
+  </g>
+  <g stroke="var(--illink)" stroke-width="1.5">
+  <line x1="30" y1="68" x2="30" y2="126"/><line x1="190" y1="68" x2="190" y2="126"/><line x1="438" y1="68" x2="438" y2="126"/>
+  <line x1="110" y1="110" x2="110" y2="126"/><path d="M240 108 L198 126" fill="none"/>
+  </g>
+  <line x1="22" y1="130" x2="518" y2="130" stroke="var(--illink)" stroke-width="2"/>
+  <circle cx="30" cy="130" r="5" fill="var(--illink)"/><circle cx="110" cy="130" r="5" fill="var(--illink)"/>
+  <circle cx="190" cy="130" r="5" fill="var(--red)"/><circle cx="198" cy="130" r="5" fill="var(--illink)"/>
+  <circle cx="438" cy="130" r="5" fill="var(--moss)"/>
+  <rect x="30" y="144" width="112" height="22" rx="6" fill="var(--ochre)"/>
+  <text x="86" y="160" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22190A">царь Дарий I</text>
+  <rect x="142" y="144" width="160" height="22" rx="6" fill="var(--red)"/>
+  <text x="222" y="160" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF6E9">Ксеркс, сын Дария</text>
+  <text x="8" y="196" font-size="10.5" fill="var(--soft)">В «Подведём итоги» учебника сказано, что при Марафоне разбили войска Ксеркса.</text>
+  <text x="8" y="212" font-size="10.5" fill="var(--soft)">По тексту параграфа при Марафоне воевал Дарий, а Ксеркс стал царём позже.</text>
+  <text x="8" y="236" font-size="12" font-weight="700" fill="var(--moss)">С 500 до 449 года до н. э. — войны шли около 50 лет.</text>
+  <text x="8" y="256" font-size="10.5" fill="var(--soft)">Год 479 стоит почти вплотную к 480: Платеи — через год после Саламина.</text>
+</symbol>
+
+<symbol id="j-marafon" viewBox="0 0 540 260">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ХИТРОСТЬ МИЛЬТИАДА ПРИ МАРАФОНЕ (ВИД СВЕРХУ)</text>
+  <text x="18" y="40" font-size="11.5" font-weight="700" fill="var(--illink)">1. Перед боем</text>
+  <rect x="30" y="50" width="210" height="30" rx="4" fill="var(--red)"/>
+  <text x="135" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF6E9">персы — 20 тысяч</text>
+  <rect x="30" y="140" width="60" height="44" rx="4" fill="var(--ochre)"/>
+  <rect x="90" y="140" width="90" height="12" rx="3" fill="var(--ochre)"/>
+  <rect x="180" y="140" width="60" height="44" rx="4" fill="var(--ochre)"/>
+  <line x1="135" y1="136" x2="135" y2="90" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="140" y="118" font-size="10" fill="var(--soft)">последние 100 м —</text>
+  <text x="140" y="131" font-size="10" fill="var(--soft)">бегом</text>
+  <text x="30" y="204" font-size="10.5" fill="var(--illink)">греки: центр слабый,</text>
+  <text x="30" y="219" font-size="10.5" fill="var(--illink)">фланги — в много рядов</text>
+  <text x="290" y="40" font-size="11.5" font-weight="700" fill="var(--illink)">2. В бою</text>
+  <rect x="380" y="96" width="70" height="30" rx="4" fill="var(--red)"/>
+  <text x="415" y="116" text-anchor="middle" font-size="10" font-weight="700" fill="#FFF6E9">прорвали</text>
+  <rect x="300" y="130" width="60" height="44" rx="4" fill="var(--ochre)"/>
+  <rect x="470" y="130" width="60" height="44" rx="4" fill="var(--ochre)"/>
+  <path d="M330 128 Q340 100 372 106" fill="none" stroke="var(--illink)" stroke-width="2.5" marker-end="url(#ar)"/>
+  <path d="M500 128 Q490 100 458 106" fill="none" stroke="var(--illink)" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="415" y1="92" x2="415" y2="56" stroke="var(--red)" stroke-width="2.5" marker-end="url(#arR)"/>
+  <text x="425" y="70" font-size="10" fill="var(--red)">бегут к кораблям</text>
+  <text x="300" y="194" font-size="10.5" fill="var(--illink)">сильные фланги смыкаются</text>
+  <text x="300" y="209" font-size="10.5" fill="var(--illink)">и бьют прорвавшихся</text>
+  <text x="8" y="246" font-size="12" font-weight="700" fill="var(--moss)">Погибло больше 6000 персов и 192 грека.</text>
+</symbol>
+
+<symbol id="j-km" viewBox="0 0 540 238">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">42 КИЛОМЕТРА 195 МЕТРОВ — ЭТО СКОЛЬКО?</text>
+  <g font-size="11">
+  <text x="8" y="48" fill="var(--illink)">от дома до «Пятёрочки» — 400 м</text>
+  <rect x="250" y="38" width="5" height="14" rx="1" fill="var(--ochre)"/>
+  <text x="266" y="50" font-weight="700" fill="var(--illink)">марафон — около 105 таких дорог</text>
+  <text x="8" y="84" fill="var(--illink)">от дома до «динозаврика» — 500 м</text>
+  <rect x="250" y="74" width="6" height="14" rx="1" fill="var(--ochre)"/>
+  <text x="266" y="86" font-weight="700" fill="var(--illink)">около 84 таких дорог</text>
+  <text x="8" y="120" fill="var(--illink)">от подъезда до метро — 800 м</text>
+  <rect x="250" y="110" width="10" height="14" rx="1" fill="var(--ochre)"/>
+  <text x="270" y="122" font-weight="700" fill="var(--illink)">около 53 таких дорог</text>
+  </g>
+  <rect x="8" y="140" width="524" height="14" rx="4" fill="var(--red)"/>
+  <text x="8" y="174" font-size="10.5" fill="var(--soft)">Красная полоса — весь марафон. Оранжевые чёрточки — твои дороги в том же масштабе.</text>
+  <text x="8" y="198" font-size="10.5" fill="var(--soft)">А последние 100 метров перед врагом гоплиты бежали бегом —</text>
+  <text x="8" y="213" font-size="10.5" fill="var(--soft)">это четверть пути до «Пятёрочки».</text>
+</symbol>
+
+<symbol id="j-tesnina" viewBox="0 0 540 278">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ДВЕ ПОБЕДЫ ТЕСНОТОЙ</text>
+  <text x="18" y="40" font-size="11.5" font-weight="700" fill="var(--illink)">Фермопильское ущелье</text>
+  <rect x="18" y="50" width="240" height="66" fill="var(--stone)"/>
+  <text x="24" y="66" font-size="10.5" font-weight="700" fill="#22190A">отвесные скалы и горы</text>
+  <rect x="18" y="136" width="240" height="56" fill="var(--water)"/>
+  <text x="138" y="174" text-anchor="middle" font-size="10.5" font-weight="700" fill="#14262F">море</text>
+  <rect x="150" y="118" width="16" height="16" rx="2" fill="var(--ochre)" stroke="var(--illink)" stroke-width="1"/>
+  <g fill="var(--red)"><rect x="24" y="119" width="10" height="6"/><rect x="38" y="119" width="10" height="6"/><rect x="52" y="119" width="10" height="6"/><rect x="66" y="119" width="10" height="6"/><rect x="80" y="119" width="10" height="6"/><rect x="24" y="127" width="10" height="6"/><rect x="38" y="127" width="10" height="6"/><rect x="52" y="127" width="10" height="6"/><rect x="66" y="127" width="10" height="6"/><rect x="80" y="127" width="10" height="6"/></g>
+  <path d="M60 116 C84 84 186 84 214 116" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arR)"/>
+  <text x="18" y="212" font-size="10.5" fill="var(--illink)">в проходе — греки (оранжевые),</text>
+  <text x="18" y="227" font-size="10.5" fill="var(--illink)">персам всей толпой не пройти;</text>
+  <text x="18" y="242" font-size="10.5" fill="var(--red)">пунктир — тайная тропа предателя</text>
+  <text x="290" y="40" font-size="11.5" font-weight="700" fill="var(--illink)">Саламинский пролив</text>
+  <rect x="290" y="50" width="240" height="40" fill="var(--stone)"/>
+  <text x="410" y="74" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22190A">берег Аттики</text>
+  <rect x="290" y="90" width="240" height="64" fill="var(--water)"/>
+  <rect x="290" y="154" width="240" height="38" fill="var(--stone)"/>
+  <text x="410" y="178" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22190A">остров Саламин</text>
+  <g fill="var(--ochre)" stroke="var(--illink)" stroke-width="1"><rect x="300" y="100" width="22" height="8" rx="4"/><rect x="300" y="116" width="22" height="8" rx="4"/><rect x="300" y="132" width="22" height="8" rx="4"/></g>
+  <g fill="var(--red)"><rect x="440" y="98" width="20" height="8" rx="4" transform="rotate(-12 450 102)"/><rect x="452" y="110" width="20" height="8" rx="4"/><rect x="438" y="122" width="20" height="8" rx="4" transform="rotate(15 448 126)"/><rect x="470" y="104" width="20" height="8" rx="4"/><rect x="466" y="126" width="20" height="8" rx="4" transform="rotate(-20 476 130)"/><rect x="494" y="116" width="20" height="8" rx="4"/><rect x="460" y="138" width="20" height="8" rx="4"/></g>
+  <line x1="332" y1="120" x2="420" y2="120" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="290" y="212" font-size="10.5" fill="var(--illink)">персидские корабли (красные)</text>
+  <text x="290" y="227" font-size="10.5" fill="var(--illink)">сбились в кучу — греческие</text>
+  <text x="290" y="242" font-size="10.5" fill="var(--illink)">триеры бьют их по очереди</text>
+  <text x="8" y="270" font-size="12" font-weight="700" fill="var(--moss)">В тесноте неважно, сколько у врага людей и кораблей.</text>
+</symbol>
+
+<symbol id="j-sily" viewBox="0 0 540 250">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">СИЛЫ И ПОТЕРИ В ЧИСЛАХ</text>
+  <text x="8" y="40" font-size="11" font-weight="700" fill="var(--illink)">Погибли при Марафоне</text>
+  <rect x="8" y="48" width="300" height="16" rx="4" fill="var(--red)"/>
+  <text x="316" y="61" font-size="11" fill="var(--illink)">персов — больше 6000</text>
+  <rect x="8" y="70" width="10" height="16" rx="3" fill="var(--ochre)"/>
+  <text x="26" y="83" font-size="11" fill="var(--illink)">греков — 192: в 30 с лишним раз меньше</text>
+  <text x="8" y="114" font-size="11" font-weight="700" fill="var(--illink)">Корабли в 480 году</text>
+  <rect x="8" y="122" width="360" height="16" rx="4" fill="var(--red)"/>
+  <text x="376" y="135" font-size="11" fill="var(--illink)">у Ксеркса — около 800</text>
+  <rect x="8" y="144" width="171" height="16" rx="4" fill="var(--ochre)"/>
+  <rect x="8" y="144" width="81" height="16" rx="4" fill="var(--brown)"/>
+  <text x="187" y="157" font-size="11" fill="var(--illink)">у греков — 380, из них 180 афинских</text>
+  <text x="8" y="188" font-size="11" font-weight="700" fill="var(--illink)">Войско Ксеркса — около 150 тысяч.</text>
+  <text x="8" y="206" font-size="11" fill="var(--illink)">В Фермопилах его остановили 300 спартанцев и несколько сотен</text>
+  <text x="8" y="222" font-size="11" fill="var(--illink)">добровольцев — пока предатель не провёл персов в тыл.</text>
+  <text x="8" y="244" font-size="12" font-weight="700" fill="var(--moss)">Греки побеждали не числом, а умением и единством.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 28</span>
+    <h1>Греко-персидские войны</h1>
+    <p class="lede">Марафон и гонец с вестью о победе, триеры — «деревянные стены», 300 спартанцев у Фермопил и битва в узком проливе. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Почему огромная Персидская держава не смогла покорить разрозненные греческие полисы?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p27.html">‹ §27 Древняя Спарта</a>
+  <span class="pn cur">§28 Греко-персидские войны</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Начало войны. Битва при Марафоне">1</a><a href="#s2" data-j="s2" title="Фемистокл">2</a><a href="#s3" data-j="s3" title="Вторжение Ксеркса. Битва при Фермопилах">3</a><a href="#s4" data-j="s4" title="Саламинское сражение">4</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-leonid" src="img/ad350eb24b16.jpg" alt="Белый каменный барельеф: воины в шлемах с круглыми щитами стоят плотным рядом" style="max-width:466px"><figcaption><span class="src">из учебника</span><b>Фрагмент барельефа на памятнике царю Леониду и спартанцам в Фермопилах.</b> Греческие воины покрыли себя неувядаемой славой. Под градом стрел и перед огромным численным преимуществом персов они защищали родную землю, и все погибли. Благодарные эллины впоследствии воздвигли героям обелиск с надписью: «Путник, поди, возвести нашим гражданам в Лакедемоне, / Что, их заветы блюдя, здесь мы костьми полегли».</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Начало войны. Битва при Марафоне</h2></div>
+<div class="easy">
+<p>В конце VI века до н. э. над Грецией нависла беда — <button class="term" data-t="persiya">Персидская держава</button> (§16). Её царь мечтал покорить весь мир. Персы завоевали всё от Индийского океана до Чёрного моря и подошли к Элладе.</p>
+<p>Сначала они захватили греческие полисы на берегу Малой Азии: обложили тяжёлой данью и поставили своих правителей. В 500 году до н. э. греки там восстали. Центром восстания был Милет — тот самый, что основал 75 колоний (§24). Афины и Эретрия послали восставшим корабли. Но войска персидского царя <button class="term" data-t="dariy">Дария I</button> восстание подавили: Милет разрушили, жителей продали в рабство. А помощь Афин стала для Дария поводом напасть на саму Грецию.</p>
+<p>Дарий разослал по полисам послов: отдайте <button class="term" data-t="zemlya">«землю и воду»</button> — то есть признайте мою власть. Многие полисы испугались и согласились. Отказали только двое: в Афинах послов сбросили со скалы, в Спарте — в колодец. Вот вам, мол, и земля, и вода. Взбешённый Дарий решил наказать непокорных.</p>
+<p>В 490 году до н. э. 20 тысяч персов переплыли Эгейское море и высадились в Аттике у местечка <button class="term" data-t="marafon">Марафон</button>. Все афиняне, кто мог носить оружие, вышли защищать родину, к ним пришла тысяча воинов из города Платеи. Спартанцы помощь отложили — по одной из версий, у них был праздник в честь Аполлона. Афиняне остались почти одни.</p>
+<p>Полководец <button class="term" data-t="miltiad">Мильтиад</button> придумал хитрость. Войско у него маленькое — и он сделал центр строя слабым, а края, фланги, — сильными, в много рядов. А последние 100 метров до врага гоплиты бежали бегом: так меньше воинов гибло от стрел, а удар фаланги был сильнее.</p>
+<p>Персы прорвали слабый центр. Но сильные фланги ударили с двух сторон — и персы побежали к кораблям. Греки гнались за ними и захватили несколько кораблей. Погибло больше 6 тысяч персов и всего 192 грека. Их похоронили с почестями и насыпали над могилой курган.</p>
+<p>По легенде, Мильтиад сразу послал в Афины гонца с вестью о победе. Тот прибежал на агору, успел крикнуть радостную весть — и упал замертво. В его память на Олимпийских играх бегут марафон — 42 километра 195 метров.</p>
+<p>Весть о Марафоне облетела всю Грецию: оказалось, персов можно победить!</p>
+</div>
+<div class="book" hidden>
+<p>В конце VI (6) века до н. э. над греками нависла угроза завоевания их родины Персидской державой. В это время она представляла собой могущественное государство, а её царь мечтал покорить весь мир. Персы, завоевавшие все страны от Индийского океана до Чёрного моря, приблизились к Элладе.</p>
+<p>Первыми персы захватили греческие полисы на побережье Малой Азии, обязали их платить тяжёлую дань и назначили здесь правителями своих ставленников. Свободолюбивые греки в 500 году до н. э. подняли восстание. После нескольких поражений восставшие обратились за помощью к полисам на Балканах. Афины и Эретрия отправили корабли в Милет, который был центром восстания. Но его подавили войска персидского царя Дария I (1). Город Милет был разрушен, а оставшиеся в живых жители проданы в рабство. Помощь, оказанная восставшим, стала предлогом для Дария отомстить Афинам и начать войну против материковой Греции.</p>
+<p><b>Любопытные детали.</b> Персидский царь разослал во все греческие полисы послов, требуя от населения «земли и воды», что означало признание его власти. Многие полисы, опасаясь расправы, учинённой в Милете, выполнили требования Дария. Только два отвергли притязания персов. В Афинах граждане сбросили послов со скалы, в Спарте — в колодец, предложив тем самым взять «землю и воду». Взбешённый Дарий решил наказать непокорные полисы.</p>
+<p>В 490 году до н. э. 20 тысяч персидских воинов на кораблях преодолели Эгейское море и высадились на побережье Аттики у местечка Марафон. Все граждане, способные носить оружие, выступили на защиту родного полиса. К ним присоединилась тысяча воинов из города Платеи. Афиняне обратились за помощью к Спарте, но спартанцы отложили выступление своего войска (по одной из версий, потому, что в то время они отмечали большой религиозный праздник в честь Аполлона). Афинянам оставалось рассчитывать только на свои силы.</p>
+<p>Афинский полководец Мильтиад, располагая небольшим войском, перед сражением ослабил его центр, но усилил фланги большим количеством рядов воинов. По его приказу последние 100 метров перед вражескими воинами гоплиты должны были преодолеть бегом, чтобы снизить потери от выпущенных противником стрел и усилить удар бегущей фаланги.</p>
+<p>Во время сражения войско Дария смогло прорвать слабый центр греков. Однако ответный удар сильных флангов опрокинул персов, и они бросились к своим кораблям. Греки преследовали врага и захватили несколько кораблей. Более 6 тысяч персов было уничтожено. Потери греков составили 192 человека. Их похоронили с почестями, а над могилой насыпали погребальный курган.</p>
+<p>Известие о победе в Марафонском сражении облетело всю Грецию. Оно рассеяло миф о непобедимости персидской армии.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 266" role="img" aria-label="Лента: 500 — восстание, 490 — Марафон, 480 — Фермопилы и Саламин, 479 — Платеи, 449 — мир. Под лентой: до смерти Дария правит царь Дарий I, потом его сын Ксеркс. Ниже разбор: в «Подведём итоги» учебника сказано, что при Марафоне разбили войска Ксеркса, а по тексту параграфа при Марафоне воевал Дарий."><use href="#j-lenta"/></svg><figcaption><b>Все даты войны на одной ленте.</b> И заодно разбор опечатки в учебнике: при Марафоне персами правил Дарий, а не Ксеркс.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-more" src="img/52f3a1c12831.jpg" alt="Фотография: оранжевое небо, солнце над морем, вдали силуэт острова, внизу тёмные деревья" style="max-width:445px"><figcaption><span class="src">из учебника</span><b>Восход солнца. Вид на Эгейское море. Греция. 2013 г.</b> Эгейское море с большим количеством островов (около 2 тысяч) находится в восточной части Средиземного моря, между Балканским полуостровом, Малой Азией и островом Крит.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-marafon" src="img/ed404cc04747.jpg" alt="Рисунок: греческие гоплиты в шлемах с гребнями и со щитами сшибаются с персидскими воинами, летят копья"><figcaption><span class="src">из учебника</span><b>Битва при Марафоне.</b> По легенде, сразу же после разгрома персов Мильтиад отправил из Марафона в Афины гонца с сообщением о победе. Прибежав на агору, он едва успел выкрикнуть радостную весть, как упал замертво. В память о его подвиге марафонский бег на дистанцию в 42 километра 195 метров включён в программу Олимпийских игр.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 260" role="img" aria-label="План боя сверху. Перед боем: вверху персы, 20 тысяч; внизу греки — слабый узкий центр и сильные широкие фланги; последние 100 метров бегом. В бою: персы прорвали центр, но фланги смыкаются с двух сторон, и персы бегут к кораблям."><use href="#j-marafon"/></svg><figcaption><b>Ответ к тексту древнего автора в итогах.</b> Прорыв в центре был ловушкой: сильные края строя смыкаются, как клещи.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 238" role="img" aria-label="Сравнение: от дома до «Пятёрочки» 400 метров — марафон около 105 таких дорог; до «динозаврика» 500 метров — около 84; от подъезда до метро 800 метров — около 53. Под ними длинная красная полоса — весь марафон, а твои дороги в том же масштабе — крошечные чёрточки."><use href="#j-km"/></svg><figcaption><b>Марафон твоими шагами.</b> Сто с лишним раз сходить до «Пятёрочки» — и только тогда добежишь от Марафона до Афин.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему Дарий I повёл свои войска на Грецию?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Милет основал 75 колоний (§24) и стал центром восстания. Что с ним случилось — и как это напугало другие полисы?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Второй абзац раздела и «Любопытные детали».</div>
+<div class="rev ans" id="a1" hidden>Персы подавили восстание: Милет разрушили, жителей продали в рабство. Поэтому многие полисы испугались такой же расправы и согласились дать Дарию «землю и воду».</div>
+</div>
+<div class="think">
+<p class="qt">2. Как маленькое войско Мильтиада победило 20 тысяч персов? Найди две хитрости.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Абзацы о Мильтиаде и о ходе сражения.</div>
+<div class="rev ans" id="a2" hidden>Первая: слабый центр и сильные фланги — персы прорвали центр, а фланги ударили с двух сторон. Вторая: последние 100 метров бегом — меньше потерь от стрел и сильнее удар фаланги.</div>
+</div>
+<div class="think">
+<p class="qt">3. Почему победа при Марафоне так много значила для всей Греции, хотя сражались почти одни афиняне?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Абзац о том, кто пришёл на помощь, и последний абзац раздела.</div>
+<div class="rev ans" id="a3" hidden>Спартанцы не пришли, помогла лишь тысяча воинов из Платей. Но победа рассеяла миф о непобедимости персидской армии — все греки увидели, что персов можно бить.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Фемистокл</h2></div>
+<div class="easy">
+<p>Марафон не закончил войну. Дарий умер, но новый царь — его сын <button class="term" data-t="kserks">Ксеркс</button> — пока был занят: усмирял покорённые народы.</p>
+<p>В Афинах понимали: Персия — морская держава, и победить её можно только с сильным флотом. Так думал и полководец <button class="term" data-t="femistokl">Фемистокл</button>. Было предсказание, что Афины от персов спасут «деревянные стены». Фемистокл хитро объяснил: «деревянные стены» — это военные корабли!</p>
+<p>На серебро из Лаврийских рудников (§23) афиняне быстро построили 180 <button class="term" data-t="triery">триер</button> — лучших военных кораблей того времени. Ты каталась на вёсельной лодке — а на триере гребцы сидели в три ряда, один над другим. Гребцами и матросами служили простые граждане, и их влияние в Афинах от этого выросло.</p>
+<p>Ещё Фемистокл мирил полисы, которые враждовали друг с другом: одним Афинам такого врага не одолеть. По его почину 30 полисов во главе с Афинами и Спартой заключили союз против персов. Фемистокл стал стратегом афинского флота, а главное командование и на суше, и на море отдали спартанцам.</p>
+</div>
+<div class="book" hidden>
+<p>Победа греков в Марафонском сражении и последовавшая позже смерть персидского царя Дария не означали окончания войны с персами. Но новый царь Персидской державы Ксеркс, сын Дария, был занят усмирением покорённых народов, и пока ему было не до греков.</p>
+<p>В Афинах понимали, что победа над морской державой, какой и являлась Персия, возможна только при наличии сильного флота. Одним из тех людей, кто разделял это мнение, был политический деятель и полководец Фемистокл. Он убедил в этом сограждан, хитроумно используя предсказание, что Афины от персов спасут «деревянные стены». Этими «деревянными стенами» должны были стать военные корабли.</p>
+<p>Фемистокл приложил немало усилий, чтобы примирить многие враждовавшие между собой полисы и объединить греков. Афинам в одиночку было трудно противостоять могущественному врагу. По его инициативе 30 греческих полисов во главе с Афинами и Спартой заключили союз для борьбы с персами. Фемистокла назначили стратегом афинского флота, верховное командование на суше и на море передали спартанцам.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-triery" src="img/6141a37a51a4.jpg" alt="Рисунок: длинный военный корабль с красным парусом и рядами вёсел вдоль борта" style="max-width:436px"><figcaption><span class="src">из учебника</span><b>Греческие триеры.</b> Для строительства флота использовали серебро, которое добывали в Лаврионских рудниках возле Афин. За короткое время афиняне построили 180 триер — лучших военных кораблей того времени. Гребцами и матросами на них служили простые афинские граждане. Морская служба усилила их влияние в афинском обществе.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какую роль сыграл Фемистокл в объединении греков в борьбе с персами?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Как серебро из рудников превратилось в победу на море? Свяжи §23 и этот раздел.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>§23 — что добывали в горах Афин; здесь — подпись к рисунку «Греческие триеры».</div>
+<div class="rev ans" id="a4" hidden>В Лаврийских рудниках добывали серебро. На него афиняне построили 180 триер — лучших кораблей того времени. Этот флот потом и разбил персов.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему морская служба сделала простых афинян влиятельнее? Вспомни фетов из §26.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Подпись «Греческие триеры»; §26 — разряды Солона.</div>
+<div class="rev ans" id="a5" hidden>Гребцами служили простые граждане, в том числе бедняки-феты, у которых не было денег на доспехи. Теперь от них зависела победа флота — и их влияние в Афинах выросло.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Вторжение Ксеркса. Битва при Фермопилах</h2></div>
+<div class="easy">
+<p>Весной 480 года до н. э. Ксеркс двинулся на Элладу: около 150 тысяч воинов и почти 800 кораблей.</p>
+<p>Чтобы переправиться через пролив Геллеспонт (сейчас Дарданеллы), он велел построить мост. Буря мост разрушила. Разъярённый царь казнил строителей, а море приказал высечь кнутами! Потом сделали новый мост: связали корабли канатами и положили сверху помост. Войско перешло и заняло Северную Грецию.</p>
+<p>«Ксеркс, секущий море» — так потом говорили о человеке, который винит в своих неудачах кого угодно, только не себя.</p>
+<p>Дальше путь шёл через <button class="term" data-t="fermopily">Фермопильское ущелье</button>: с одной стороны отвесные скалы и горы, с другой — море. Проход узкий.</p>
+<p>Там встало союзное греческое войско во главе со спартанским царём <button class="term" data-t="leonid">Леонидом</button>. В тесноте огромное войско персов ничего не могло сделать и несло большие потери. Ксеркс бросил в бой лучших — 10 тысяч <button class="term" data-t="bessmertnye">«бессмертных»</button>. Гоплиты разбили и их.</p>
+<p>Но нашёлся предатель: за золото он провёл персов тайными тропами в тыл грекам. Леонид понял, что их окружат, и велел всем отступить — кроме спартанцев. Закон чести запрещал спартанцам уходить с поля боя (помнишь «С ним или на нём!» из §27?). 300 спартанцев и несколько сотен добровольцев из других полисов остались и приняли бой.</p>
+<p>Все они погибли. Но их подвиг поднял дух всех греков — и уже через год греки начали побеждать персов.</p>
+</div>
+<div class="book" hidden>
+<p>Весной 480 года до н. э. Ксеркс с огромным войском, в котором было около 150 тысяч воинов и почти 800 кораблей, вторгся в Элладу. Для переправы через пролив Геллеспонт (Дарданеллы) он приказал построить мост, но буря уничтожила его. Разъярённый царь казнил строителей, а воды пролива приказал сечь кнутами. По новому мосту — персы связали канатами корабли, а сверху положили помост — войско переправилось в Северную Грецию и заняло её.</p>
+<p>Дальнейший путь, соединявший Северную и Среднюю Грецию, пролегал через Фермопильское ущелье. С одной стороны поднимались отвесные скалы и горные хребты, с другой — раскинулось море.</p>
+<p>Союзное греческое войско во главе со спартанским царём Леонидом заняло здесь оборону. В узком месте численное превосходство персов оказалось бесполезным, они несли большие потери. Ксеркс бросил в бой свои лучшие отряды — 10 тысяч «бессмертных». Греческие гоплиты разбили их, упорно защищая вход в ущелье. Однако в рядах греков нашёлся предатель, который за золото провёл персов тайными тропами в тыл. Царь Леонид ввиду угрозы окружения приказал всем, кроме спартанцев, отступить. Закон чести запрещал спартанцам покидать поле боя. 300 спартанцев и ещё несколько сотен добровольцев из других полисов, решившихся остаться со спартанцами, приняли бой.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-sekut" src="img/d1374b16edc2.jpg" alt="Рисунок: на берегу стоит царь в длинном плаще, рядом воины замахиваются кнутами на волны" style="max-width:449px"><figcaption><span class="src">из учебника</span><b>Воины Ксеркса высекают море.</b> Образом «Ксеркса, секущего море» пользовались впоследствии многие писатели, имея в виду человека, который винит во всех своих неудачах кого угодно, только не себя, и в таких претензиях доходит до абсурда.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-fermopily" src="img/e9ef5082f508.jpg" alt="Рисунок: в узком ущелье между скалами плотный строй спартанцев в красных плащах и шлемах со щитами" style="max-width:446px"><figcaption><span class="src">из учебника</span><b>Битва в Фермопильском ущелье.</b> Подвиг спартанцев поддержал моральный дух греческой армии. Мужество и героизм спартанцев стали примером для всех эллинов, и уже через год они начали побеждать персов. Пожертвовавшие собой воины стали героями на все времена.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 250" role="img" aria-label="Полосы: при Марафоне погибло больше 6000 персов и 192 грека; кораблей в 480 году у Ксеркса около 800, у греков 380, из них 180 афинских. Войско Ксеркса около 150 тысяч, в Фермопилах его остановили 300 спартанцев и несколько сотен добровольцев."><use href="#j-sily"/></svg><figcaption><b>Посмотри на длину полос.</b> Персов всегда было больше — а побеждали греки.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Подумай, какое значение имело Фермопильское сражение для борьбы греков за свободу.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Почему у Фермопил горстка греков могла сдерживать огромное войско? Вспомни природу Греции из §20.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Второй абзац раздела; §20 — какая страна Греция.</div>
+<div class="rev ans" id="a6" hidden>Греция — горная страна, а проход между скалами и морем был совсем узким. В тесноте численное превосходство персов было бесполезным: сражаться одновременно могли лишь немногие.</div>
+</div>
+<div class="think">
+<p class="qt">7. Спартанцы остались, хотя знали, что погибнут. Какие законы Спарты из §27 это объясняют?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>§27 — что значило покинуть место в строю; здесь — абзац о Леониде.</div>
+<div class="rev ans" id="a7" hidden>Покинуть место в строю у спартанцев считалось преступлением, закон чести запрещал уходить с поля боя. С детства их растили воинами, которые принадлежат не себе, а отечеству.</div>
+</div>
+<div class="think">
+<p class="qt">8. Сравни Фермопилы и взятие Трои (§22). Что общего?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>§22 — троянский конь; здесь — абзац о предателе.</div>
+<div class="rev ans" id="a8" hidden>Троя пала из-за хитрости с конём — врагов впустили внутрь. У Фермопил персы обошли греков по тайной тропе, которую показал предатель. Оба раза защитников победили не в открытом бою, а обманом.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Саламинское сражение</h2></div>
+<div class="easy">
+<p>Персы шли к Афинам. По совету Фемистокла афиняне ушли из города: женщин и детей увезли на Пелопоннес, а мужчин, способных воевать, — на остров <button class="term" data-t="salamin">Саламин</button>. Там собрался весь греческий флот — 380 кораблей, из них 180 афинских.</p>
+<p>На глазах у греков персы сожгли Афины. Греки решили не отстраивать город, пока не выгонят захватчиков из Аттики.</p>
+<p>Испуганные союзники хотели увести флот к Пелопоннесу. Но Фемистокл уговорил остаться: в узком проливе персы не смогут пустить в ход все свои корабли.</p>
+<p>Битва при Саламине была 28 сентября 480 года до н. э. Персидские корабли вошли в узкий пролив — и строй сломался. Корабли сбились в кучу и перестали слушаться руля. Греческие триеры бросились в атаку. Большую часть персидских кораблей уничтожили.</p>
+<p>Ксеркс ушёл из Греции, но оставил войско с полководцем Мардонием. В 479 году до н. э. у города <button class="term" data-t="platei">Платеи</button> объединённое греческое войско разбило персов: погибли и «бессмертные», и сам Мардоний. В том же году греческий флот победил у мыса Микале.</p>
+<p>Война шла ещё несколько десятков лет, в основном на море, и главным стал афинский флот. Афины освободили от персов все греческие полисы. В 449 году до н. э. заключили мир: персы признали независимость всех греческих полисов, а персидским кораблям запретили плавать в Эгейском море.</p>
+</div>
+<div class="book" hidden>
+<p>Персы двигались к Афинам, оставленным жителями. По совету Фемистокла афиняне переправили женщин и детей на Пелопоннес, боеспособных граждан — на Саламин, где собрался весь союзный греческий флот в составе 380 кораблей (Афинам принадлежали 180 судов), составлявших главную силу греческого войска.</p>
+<p>На глазах греков персы сожгли занятый ими город. Греки не восстанавливали Афины до тех пор, пока не выгнали захватчиков из родной Аттики.</p>
+<p>Эллины, устрашённые пожаром, хотели переправить флот к берегам Пелопоннеса. Фемистокл убеждал союзников остаться и дать сражение у Саламина. Он знал, что в узком проливе персы не смогут использовать все свои корабли.</p>
+<p>Саламинское сражение произошло 28 сентября 480 года до н. э. Корабли персов вошли в узкий Саламинский пролив, где их строй нарушился. Корабли сбивались в кучу, теряя управление. Греческие триеры атаковали противника. Персы не выдержали натиска, большая часть их кораблей была уничтожена.</p>
+<p>Ксеркс ушёл из Греции, но оставил здесь войско под командованием полководца Мардония. В 479 году до н. э. у города Платеи произошло сражение объединённого греческого войска с персами. Лучшая часть персидского войска — «бессмертные» — погибла вместе со своим полководцем. В том же году греческий флот одержал победу у мыса Микале.</p>
+<p>Греко-персидские войны продолжались ещё несколько десятков лет. Сражения в основном проходили на море. Решающая роль в войне перешла к афинскому флоту. Под руководством Афин от персов были освобождены все греческие полисы. В 449 году до н. э. был заключён мир. Персы признали независимость всех греческих полисов, персидским судам запрещалось плавать в Эгейском море.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 278" role="img" aria-label="Две схемы. Фермопильское ущелье: вверху скалы и горы, внизу море, в узком проходе греки, слева толпа персов, пунктир — тайная тропа предателя через горы в тыл грекам. Саламинский пролив: вверху берег Аттики, внизу остров Саламин, между ними узкий пролив; слева греческие триеры в ряд, справа персидские корабли сбились в кучу."><use href="#j-tesnina"/></svg><figcaption><b>Одна хитрость — дважды.</b> И в ущелье, и в проливе греки выбрали место, где врагу негде развернуться.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему греки смогли отстоять свою свободу от персидских захватчиков?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">9. Как сбылось предсказание о «деревянных стенах» из раздела 2?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Раздел 2 — что Фемистокл назвал «деревянными стенами»; здесь — абзац о битве.</div>
+<div class="rev ans" id="a9" hidden>Фемистокл объяснил, что «деревянные стены» — это военные корабли. Афиняне построили триеры, и именно они разбили персидский флот при Саламине. Спасли не каменные стены — город персы как раз сожгли, — а корабли.</div>
+</div>
+<div class="think">
+<p class="qt">10. Чем мир 449 года до н. э. был выгоден грекам? Сравни с тем, с чего война началась.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Раздел 1 — первые два абзаца; здесь — последний абзац.</div>
+<div class="rev ans" id="a10" hidden>Война началась с того, что персы захватили греческие полисы Малой Азии и обложили их данью. А по миру персы признали независимость всех греческих полисов и не могли больше плавать в Эгейском море.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">В конце VI (6) века до н. э. персидский царь Ксеркс решил покорить Грецию. Но в 490 году до н. э. его войска потерпели поражение в битве при Марафоне. Благодаря объединению усилий греческих полисов, афиняне и другие греки создали мощный военный флот и нанесли поражение персам в Саламинском сражении и разгромили их при Платеях.</div>
+<div class="blocknote"><b>Осторожно, в этом абзаце учебника перепутаны цари.</b> При Марафоне, в 490 году до н. э., персами правил Дарий I — так написано в самом параграфе. Ксеркс, его сын, пришёл в Грецию в 480 году. Смотри ленту в разделе 1.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>За что, по легенде, Ксеркс высек море?</li><li>Расскажи о главных сражениях Греко-персидских войн.</li><li>Определи, сколько лет продолжались Греко-персидские войны. Каковы были их итоги?</li><li>Используя дополнительные источники информации, подготовь сообщение об одном из сражений Греко-персидских войн или их известных участниках на твой выбор. Представь работу перед классом.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказки к первому и третьему вопросам</button></div>
+<div class="rev hint" id="r1" hidden><b>Первый:</b> буря разрушила мост через Геллеспонт (раздел 3). <b>Третий:</b> от восстания в 500 году до мира в 449 году: 500 − 449 = 51 год. Если считать от Марафона (490), то 41 год. Итоги — в последнем абзаце раздела 4.</div></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Прочитай отрывок из текста античного автора и выполни задание: определи и напиши, о каком событии рассказывается.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">…Одержав победу, персы прорвали строй афинян и погнали их вглубь материка. Но на обоих флангах победа была на стороне афинян и платейцев. Победив противника, они не стали преследовать бегущих варваров, а, сомкнув оба фланга, вступили в бой с теми варварами, которые прорвали центр, и в этой стычке афиняне победили. Обращённых в бегство персов афиняне преследовали.</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq2" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq2" hidden>О каком событии рассказывается в отрывке?</div>
+<div class="rev ans" id="sa3" hidden>О битве при Марафоне в 490 году до н. э. Подсказки: афиняне и платейцы вместе, персы прорвали центр, а фланги сомкнулись — это хитрость Мильтиада (схема в разделе 1).</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — почему огромная Персидская держава не смогла покорить разрозненные греческие полисы? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Работаем с хронологией</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Фермопилы и Саламин · 480 год до н. э.</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Окончание войн, мир · 449 год до н. э.</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Восстание греков Малой Азии · 500 год до н. э.</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Сражение у Платей · 479 год до н. э.</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Победа при Марафоне · 490 год до н. э.</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Марафон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="marafon" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">490 год до н. э.: афиняне разбили персов. Марафонский бег — 42 км 195 м.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Мильтиад</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 260" aria-hidden="true"><use href="#j-marafon"/></svg><span class="ftext">Полководец при Марафоне: слабый центр, сильные фланги.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фемистокл</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 278" aria-hidden="true"><use href="#j-tesnina"/></svg><span class="ftext">Создал флот — «деревянные стены», объединил полисы, победил при Саламине.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Триера</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="triery" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Лучший военный корабль того времени. Гребцы — простые граждане.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ксеркс</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="sekut" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Сын Дария, вторгся в Грецию в 480 году; велел высечь море.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фермопилы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="fermopily" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Узкое ущелье, где погибли царь Леонид и 300 спартанцев.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Саламин</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 278" aria-hidden="true"><use href="#j-tesnina"/></svg><span class="ftext">28 сентября 480 года: греческий флот разбил персов в узком проливе.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">«Земля и вода»</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="more" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Требование персов: признать власть их царя.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что персидские послы требовали от греческих полисов?</h3><div class="opts">
+<button class="opt" data-ok="1">«землю и воду»</button>
+<button class="opt">золото и серебро</button>
+<button class="opt">все корабли</button></div>
+<div class="fb">Это значило признать власть персидского царя. Афины и Спарта отказались.</div></div>
+<div class="q"><h3>2. Кто командовал греками при Марафоне?</h3><div class="opts">
+<button class="opt">Леонид</button>
+<button class="opt" data-ok="1">Мильтиад</button>
+<button class="opt">Фемистокл</button></div>
+<div class="fb">Леонид — у Фермопил, Фемистокл — при Саламине.</div></div>
+<div class="q"><h3>3. Что Фемистокл называл «деревянными стенами»?</h3><div class="opts">
+<button class="opt">стены Афин</button>
+<button class="opt">деревянного коня</button>
+<button class="opt" data-ok="1">военные корабли</button></div>
+<div class="fb">Деревянный конь — это Троя (§22). А Афины спас флот из 180 триер.</div></div>
+<div class="q"><h3>4. Кто возглавил греков у Фермопил?</h3><div class="opts">
+<button class="opt" data-ok="1">спартанский царь Леонид</button>
+<button class="opt">Мильтиад</button>
+<button class="opt">Ксеркс</button></div>
+<div class="fb">Ксеркс — персидский царь, он и шёл на Грецию.</div></div>
+<div class="q"><h3>5. Почему персы проиграли при Саламине?</h3><div class="opts">
+<button class="opt">у них не было кораблей</button>
+<button class="opt" data-ok="1">в узком проливе их корабли сбились в кучу</button>
+<button class="opt">началась буря</button></div>
+<div class="fb">Фемистокл нарочно выбрал узкий пролив.</div></div>
+<div class="q"><h3>6. Чем кончились Греко-персидские войны в 449 году до н. э.?</h3><div class="opts">
+<button class="opt">персы захватили Афины</button>
+<button class="opt" data-ok="1">мир: персы признали независимость греческих полисов</button>
+<button class="opt">Греция вошла в Персию</button></div>
+<div class="fb">И персидским кораблям запретили плавать в Эгейском море.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Начало войны и Марафон</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Персы захватили полисы Малой Азии; в 500 году до н. э. восстание с центром в Милете, Афины помогли; Дарий разрушил Милет.</li><li>«Земля и вода»: Афины и Спарта отказались; в 490 году до н. э. 20 тысяч персов высадились у Марафона.</li><li>Мильтиад: слабый центр, сильные фланги, бег последние 100 метров; 6000 персов и 192 грека; марафонский бег.</li></ol></div>
+</div>
+<div class="think">
+<h3>Фемистокл и флот</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Персия — морская держава, нужен флот; «деревянные стены» — это корабли.</li><li>180 триер на серебро Лаврийских рудников; гребцы — простые граждане.</li><li>Союз 30 полисов во главе с Афинами и Спартой.</li></ol></div>
+</div>
+<div class="think">
+<h3>Фермопилы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>480 год до н. э.: Ксеркс, 150 тысяч воинов и 800 кораблей; мост через Геллеспонт и «высеченное» море.</li><li>Узкое ущелье: царь Леонид, в тесноте персы бессильны, «бессмертные» разбиты.</li><li>Предатель провёл персов в тыл; 300 спартанцев и добровольцы остались и погибли — пример для всех эллинов.</li></ol></div>
+</div>
+<div class="think">
+<h3>Саламин и конец войны</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Афиняне покинули город, персы его сожгли; флот — 380 кораблей у Саламина.</li><li>28 сентября 480 года до н. э.: в узком проливе персидские корабли сбились в кучу и были разбиты.</li><li>479 — Платеи и Микале; 449 — мир: независимость греческих полисов.</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: почему Персия не покорила Грецию</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Греки объединились: союз 30 полисов, Фемистокл, общее командование.</li><li>Побеждали умением: хитрость Мильтиада, бой в тесных местах, сильный флот.</li><li>Защищали свою свободу и свою землю — как спартанцы у Фермопил.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p27.html">‹ §27 Древняя Спарта</a>
+  <span class="pn cur">§28 Греко-персидские войны</span>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 28 · История, 5 класс · страницы 166—171 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'j-lenta':'0 0 540 266','j-marafon':'0 0 540 260','j-km':'0 0 540 238','j-tesnina':'0 0 540 278','j-sily':'0 0 540 250'};
+
+var T={
+persiya:{w:"Персидская держава",k:"государство",p:"marafon",t:"Огромное государство, которое ты знаешь по §16. Её цари мечтали покорить весь мир."},
+dariy:{w:"Дария I",k:"царь Персии",s:"j-lenta",t:"Персидский царь. Подавил восстание в Милете и в 490 году до н. э. послал войско на Грецию — к Марафону."},
+zemlya:{w:"«землю и воду»",k:"требование персов",p:"more",t:"Так персидские послы требовали признать власть своего царя."},
+marafon:{w:"Марафон",k:"местечко в Аттике",p:"marafon",t:"Место, где в 490 году до н. э. афиняне разбили персов. В память о гонце — марафонский бег, 42 км 195 м."},
+miltiad:{w:"Мильтиад",k:"афинский полководец",s:"j-marafon",t:"Командовал греками при Марафоне: слабый центр, сильные фланги и последние 100 метров бегом."},
+kserks:{w:"Ксеркс",k:"царь Персии",p:"sekut",t:"Сын Дария. В 480 году до н. э. вторгся в Грецию; велел высечь море, когда буря разрушила его мост."},
+femistokl:{w:"Фемистокл",k:"афинский полководец",s:"j-tesnina",t:"Убедил афинян построить флот — «деревянные стены», объединил полисы и уговорил дать бой при Саламине."},
+triery:{w:"триер",k:"корабли",p:"triery",t:"Лучшие военные корабли того времени. Афиняне построили 180 триер на серебро из своих рудников."},
+fermopily:{w:"Фермопильское ущелье",k:"узкий проход",p:"fermopily",t:"Узкий проход между отвесными скалами и морем на пути из Северной Греции в Среднюю."},
+leonid:{w:"Леонидом",k:"царь Спарты",p:"leonid",t:"Спартанский царь, возглавивший оборону Фермопил. Погиб вместе с 300 спартанцами."},
+bessmertnye:{w:"«бессмертных»",k:"лучшие воины Персии",s:"j-sily",t:"Лучшие отряды персидского войска — 10 тысяч воинов. Гоплиты разбили их у Фермопил."},
+salamin:{w:"Саламин",k:"остров",s:"j-tesnina",t:"Остров у берегов Аттики. В узком проливе у Саламина 28 сентября 480 года до н. э. греки разбили флот персов."},
+platei:{w:"Платеи",k:"город",s:"j-lenta",t:"Город, у которого в 479 году до н. э. греки разбили персидское войско Мардония."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p28:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p28:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>5){fb.textContent="Верно! 500 → 490 → 480 → 479 → 449. До нашей эры числа уменьшаются.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. До н. э.: чем больше число, тем раньше.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p28:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p28:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
