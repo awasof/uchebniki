@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Как человек меняет природу: нефть на озере, ртуть в пищевой цепи, зелёная Волга у Ягодного — и что люди уже научились исправлять.">
+<title>Изменения в природе в связи с деятельностью человека</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="h-steps" viewBox="0 0 330 216">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Человек меняет природу всё сильнее</text>
+<g fill="var(--illink,#2B2620)">
+<text x="8" y="46" font-size="12" font-weight="700">Охота и собирательство</text>
+<text x="8" y="61" font-size="11">страдали только отдельные виды</text>
+<text x="8" y="100" font-size="12" font-weight="700">Земледелие и скотоводство</text>
+<text x="8" y="115" font-size="11">вырубка лесов, плотины, осушение болот, поля</text>
+<text x="8" y="154" font-size="12" font-weight="700">XX век — вся биосфера</text>
+<text x="8" y="169" font-size="11">«геологическая сила планетарного масштаба»</text>
+</g>
+<rect x="6" y="68" width="60" height="12" rx="4" fill="var(--leaf,#2D7A55)" fill-opacity=".55"/>
+<rect x="6" y="122" width="180" height="12" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".75"/>
+<rect x="6" y="176" width="318" height="12" rx="4" fill="var(--no,#B03A2E)" fill-opacity=".6"/>
+<text x="165" y="208" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">длина полосы — сила воздействия на природу</text>
+</g></symbol>
+
+<symbol id="h-levels" viewBox="0 0 330 234">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Три уровня экологических проблем</text>
+<rect x="6" y="32" width="318" height="52" rx="8" fill="var(--leaf,#2D7A55)" fill-opacity=".2"/>
+<rect x="6" y="94" width="318" height="52" rx="8" fill="var(--ochre,#E2A31F)" fill-opacity=".28"/>
+<rect x="6" y="156" width="318" height="52" rx="8" fill="var(--no,#B03A2E)" fill-opacity=".2"/>
+<circle cx="34" cy="58" r="7" fill="var(--leaf,#2D7A55)"/>
+<circle cx="34" cy="120" r="14" fill="var(--ochre,#E2A31F)"/>
+<circle cx="34" cy="182" r="21" fill="var(--no,#B03A2E)" fill-opacity=".8"/>
+<g fill="var(--illink,#2B2620)">
+<text x="66" y="53" font-size="13" font-weight="700">Местные</text>
+<text x="66" y="70" font-size="11">одна река, озеро, пруд — отходы завода</text>
+<text x="66" y="115" font-size="13" font-weight="700">Региональные</text>
+<text x="66" y="132" font-size="11">море, большой город, авария</text>
+<text x="66" y="177" font-size="13" font-weight="700">Глобальные</text>
+<text x="66" y="194" font-size="11">вся планета: потепление, озоновый слой</text>
+</g>
+<text x="165" y="226" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">кружок — сколько земли задевает беда</text>
+</g></symbol>
+
+<symbol id="h-chain" viewBox="0 0 330 262">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Ртуть идёт по пищевой цепи</text>
+<rect x="6" y="32" width="160" height="34" rx="8" fill="var(--water,#6FA8C4)" fill-opacity=".35"/>
+<rect x="6" y="86" width="160" height="34" rx="8" fill="var(--ochre,#E2A31F)" fill-opacity=".25"/>
+<rect x="6" y="140" width="160" height="34" rx="8" fill="var(--ochre,#E2A31F)" fill-opacity=".25"/>
+<rect x="6" y="194" width="160" height="34" rx="8" fill="var(--no,#B03A2E)" fill-opacity=".18"/>
+<g text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">
+<text x="86" y="54" font-weight="700">соли ртути в воде</text>
+<text x="86" y="108">мелкие рачки</text>
+<text x="86" y="162">рыба</text>
+<text x="86" y="216" font-weight="700">человек</text>
+</g>
+<g stroke="var(--illink,#2B2620)" stroke-width="2"><path d="M86 67 V83" marker-end="url(#ar)"/><path d="M86 121 V137" marker-end="url(#ar)"/><path d="M86 175 V191" marker-end="url(#ar)"/></g>
+<g fill="var(--no,#B03A2E)">
+<circle cx="190" cy="49" r="4"/>
+<circle cx="190" cy="103" r="4"/><circle cx="202" cy="103" r="4"/>
+<circle cx="190" cy="157" r="4"/><circle cx="202" cy="157" r="4"/><circle cx="214" cy="157" r="4"/><circle cx="226" cy="157" r="4"/>
+<circle cx="190" cy="211" r="4"/><circle cx="202" cy="211" r="4"/><circle cx="214" cy="211" r="4"/><circle cx="226" cy="211" r="4"/><circle cx="238" cy="211" r="4"/><circle cx="250" cy="211" r="4"/><circle cx="262" cy="211" r="4"/>
+</g>
+<g font-size="11" fill="var(--soft,#5F5648)"><text x="246" y="99">каждый ест</text><text x="246" y="113">многих</text></g>
+<text x="165" y="252" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">точки — ртуть: чем дальше по цепи, тем её больше</text>
+</g></symbol>
+
+<symbol id="h-film" viewBox="0 0 330 204">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Нефть на озере</text>
+<rect x="6" y="84" width="318" height="88" rx="6" fill="var(--water,#6FA8C4)" fill-opacity=".45"/>
+<rect x="6" y="76" width="318" height="10" rx="3" fill="var(--illink,#2B2620)" fill-opacity=".85"/>
+<g stroke="var(--pb,#3B6FA8)" stroke-width="2" fill="none">
+<path d="M60 34 V68" marker-end="url(#ar)"/><path d="M165 34 V68" marker-end="url(#ar)"/><path d="M270 34 V68" marker-end="url(#ar)"/>
+</g>
+<g font-size="11" fill="var(--illink,#2B2620)">
+<text x="72" y="46">воздух</text><text x="177" y="46">воздух</text><text x="282" y="46">воздух</text>
+</g>
+<text x="165" y="104" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">плёнка не пропускает воздух</text>
+<text x="165" y="126" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">кислород в воде кончается —</text>
+<text x="165" y="142" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)">жители водоёма задыхаются</text>
+<text x="165" y="196" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">нефть легче воды и растекается тонкой плёнкой</text>
+</g></symbol>
+
+<symbol id="h-filter" viewBox="0 0 330 236">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Безотходная технология</text>
+<rect x="6" y="150" width="120" height="50" rx="6" fill="var(--stone,#BCB2A2)" fill-opacity=".7"/>
+<rect x="80" y="62" width="26" height="88" fill="var(--stone,#BCB2A2)"/>
+<rect x="72" y="80" width="42" height="22" rx="4" fill="var(--leaf,#2D7A55)" fill-opacity=".85"/>
+<text x="66" y="180" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)">завод</text>
+<text x="93" y="95" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">фильтр</text>
+<path d="M93 60 V34" stroke="var(--pb,#3B6FA8)" stroke-width="2" marker-end="url(#ar)"/>
+<text x="102" y="40" font-size="11" fill="var(--illink,#2B2620)">чистый воздух</text>
+<rect x="196" y="78" width="128" height="40" rx="8" fill="var(--ochre,#E2A31F)" fill-opacity=".28"/>
+<g text-anchor="middle" font-size="11" fill="var(--illink,#2B2620)"><text x="260" y="94">яд из фильтра —</text><text x="260" y="109">в безопасные вещества</text></g>
+<rect x="196" y="150" width="128" height="50" rx="8" fill="var(--leaf,#2D7A55)" fill-opacity=".22"/>
+<g text-anchor="middle" font-size="11" fill="var(--illink,#2B2620)"><text x="260" y="171">снова идут</text><text x="260" y="186">в производство</text></g>
+<g stroke="var(--illink,#2B2620)" stroke-width="2" fill="none">
+<path d="M116 91 H192" marker-end="url(#ar)"/>
+<path d="M260 119 V146" marker-end="url(#ar)"/>
+<path d="M195 175 H130" marker-end="url(#ar)"/>
+</g>
+<text x="154" y="84" text-anchor="middle" font-size="10" fill="var(--soft,#5F5648)">чистка</text>
+<text x="165" y="228" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">часто яд разрушают особые микроорганизмы</text>
+</g></symbol>
+
+<symbol id="h-wind" viewBox="0 0 330 236">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Зачем деревья вдоль поля</text>
+<text x="8" y="44" font-size="12" font-weight="700" fill="var(--no,#B03A2E)">без лесополосы</text>
+<rect x="6" y="90" width="318" height="12" fill="var(--brown,#8B5E3C)" fill-opacity=".55"/>
+<g stroke="var(--pb,#3B6FA8)" stroke-width="2"><path d="M10 64 H70" marker-end="url(#ar)"/><path d="M10 80 H60" marker-end="url(#ar)"/></g>
+<g fill="var(--brown,#8B5E3C)"><circle cx="110" cy="80" r="3"/><circle cx="140" cy="70" r="3"/><circle cx="170" cy="62" r="3"/><circle cx="205" cy="74" r="3"/><circle cx="240" cy="58" r="3"/><circle cx="280" cy="66" r="3"/><circle cx="300" cy="52" r="3"/></g>
+<text x="150" y="44" font-size="11" fill="var(--illink,#2B2620)">ветер уносит почву с поля</text>
+<text x="8" y="136" font-size="12" font-weight="700" fill="var(--ok,#3D7A38)">с лесополосой</text>
+<rect x="6" y="196" width="318" height="12" fill="var(--brown,#8B5E3C)" fill-opacity=".55"/>
+<g stroke="var(--pb,#3B6FA8)" stroke-width="2"><path d="M10 168 H60" marker-end="url(#ar)"/><path d="M10 184 H52" marker-end="url(#ar)"/></g>
+<g fill="var(--brown,#8B5E3C)"><rect x="84" y="170" width="4" height="26"/><rect x="104" y="166" width="4" height="30"/><rect x="124" y="170" width="4" height="26"/></g>
+<g fill="var(--leaf,#2D7A55)"><circle cx="86" cy="164" r="13"/><circle cx="106" cy="158" r="15"/><circle cx="126" cy="164" r="13"/></g>
+<text x="150" y="172" font-size="11" fill="var(--illink,#2B2620)">за деревьями ветер слабее —</text>
+<text x="150" y="188" font-size="11" fill="var(--illink,#2B2620)">почва остаётся на поле</text>
+<text x="165" y="228" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">ветрозащитные посадки, рис. 116</text>
+</g></symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 26</span>
+    <h1>Изменения в природе в связи с деятельностью человека</h1>
+    <p class="lede">Как человек меняет природу: нефть на озере, ртуть в пищевой цепи, зелёная Волга у Ягодного — и что люди уже научились исправлять.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>Какие искусственные сообщества ты знаешь? Почему агросообщества очень неустойчивы?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b25.html">‹ §25 Природные зоны</a>
+  <span class="pn cur">§26 Человек и природа</span>
+  <a class="pn" href="b27.html">§27 Охрана природы ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Как человек менял природу">1</a><a href="#s2" data-j="s2" title="Экологические проблемы">2</a><a href="#s3" data-j="s3" title="Загрязнение окружающей среды">3</a><a href="#s4" data-j="s4" title="Ресурсы и как сохранить природу">4</a><a href="#s5" data-j="s5" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Как человек менял природу</h2></div>
+<div class="easy">
+<p>С самого появления человек брал у природы всё нужное для жизни. Древние люди <b>охотились и собирали</b> растения — от этого страдали только отдельные виды.</p>
+<p>Потом люди начали разводить домашних животных и сажать культурные растения. Тут воздействие на природу стало сильнее: рубили леса под пашни и пастбища, строили плотины, осушали болота, а на месте природных сообществ создавали искусственные. Некоторые виды вымерли совсем, многих стало намного меньше. Менялись и целые сообщества: степи и саванны превращались в пустыни, леса — в болота.</p>
+<p>В XX веке человек стал влиять уже на всю биосферу. Учёный <b>Владимир Иванович Вернадский</b> сказал, что человечество превратилось «в геологическую силу планетарного масштаба».</p>
+<p>Люди производят всё больше и не думают о последствиях. Многое из того, что взято у природы, возвращается в неё <b>отходами</b> — часто ядовитыми. А природные сообщества человек заменяет искусственными.</p>
+</div>
+<div class="book" hidden>
+<p><b>Влияние деятельности человека на природные сообщества.</b> С самого момента своего появления как вида человек стал использовать богатства окружающей среды для удовлетворения своих жизненно важных потребностей. Древние люди в основном занимались охотой и собирательством. От такой деятельности человека страдали только отдельные виды растений или животных.</p>
+<p>Постепенно люди начали разводить домашних животных и сажать культурные растения, пользуясь при этом продуктами, которые эти живые существа производили. С этого времени началось более сильное воздействие человека на природные сообщества — люди начали вырубать леса под пашни и пастбища, строить плотины на реках, осушать болота, а также создавать на месте естественных сообществ искусственные. Это сказалось на жизни многих обитателей нашей планеты — некоторые виды растений и животных под воздействием человека вымерли полностью, а численность многих других существенно сократилась. Изменения затронули и целые сообщества: степи и саванны начали превращаться в пустыни, леса — в болота, а некоторые участки пустынь — в небольшие рощицы.</p>
+<p>В XX веке эти изменения нарастали, человек начал оказывать воздействие уже на всю биосферу. Именно тогда, как справедливо отметил отечественный учёный, создатель науки биогеохимии Владимир Иванович Вернадский, «человечество превратилось в геологическую силу планетарного масштаба, оказывающую воздействие на все оболочки Земли».</p>
+<p>Стремясь к улучшению условий своей жизни, человек постоянно наращивает темпы производства, не задумываясь о последствиях. При таком подходе большая часть взятых от природы ресурсов возвращается ей в виде отходов, часто ядовитых или непригодных для утилизации. Кроме того, человек, преследуя свои экономические интересы, заменяет естественные экосистемы искусственными, что также может приводить к негативным последствиям.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 216" role="img" aria-label="Три полосы растущей длины. Короткая: охота и собирательство, страдали отдельные виды. Средняя: земледелие и скотоводство — вырубка лесов, плотины, осушение болот, поля. Самая длинная: XX век — вся биосфера, геологическая сила планетарного масштаба"><use href="#h-steps"/></svg><figcaption>Чем ближе к нашему времени, тем сильнее человек меняет природу.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-x_tree" src="img/159e80b10ef0.jpg" alt="Дерево в круге: левая половина голая и засохшая, под ней потрескавшаяся сухая земля и дымное небо; правая половина в зелёных листьях, под ней трава"><figcaption><span class="src">из учебника</span>Заставка главы 5 «Живая природа и человек»<br><span style="color:var(--soft)">▲ Сравни две половины дерева. Что случилось с землёй и небом слева?</span></figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Чем воздействие древних охотников на природу отличалось от воздействия земледельцев?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первые два абзаца раздела.</div>
+<div class="rev ans" id="a1" hidden>Охотники и собиратели вредили только отдельным видам растений и животных. Земледельцы и скотоводы стали менять целые сообщества: рубить леса под пашни и пастбища, осушать болота, строить плотины, создавать искусственные сообщества.</div>
+</div>
+<div class="think">
+<p class="qt">2. Что значит «человечество — геологическая сила»?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Слова Вернадского в третьем абзаце.</div>
+<div class="rev ans" id="a2" hidden>Человек меняет Землю так же сильно, как природные силы — реки, ветер, вулканы: он влияет на все оболочки планеты — воздух, воду, почву и всё живое.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Экологические проблемы</h2></div>
+<div class="easy">
+<p>Из-за деятельности человека в биосфере возникают <span class="term" role="button" tabindex="0" data-t="ekopr">экологические проблемы</span>. Их делят на три уровня (схема ниже).</p>
+<p><b>Местные</b> (локальные): завод загрязнил своими отходами воздух, реку или озеро.</p>
+<p><b>Региональные</b> — на большой территории: загрязнены моря и бассейны рек, природа целых городов, огромные земли после аварии. Например, после аварии на Чернобыльской атомной станции местность заражена радиацией.</p>
+<p><span class="term" role="button" tabindex="0" data-t="glob">Глобальные проблемы</span> возникают, когда человек меняет процессы во всей биосфере: потепление климата, истощение озонового слоя, массовое сведение лесов. О них ты узнаешь в старших классах. А сейчас — одна такая проблема: загрязнение.</p>
+</div>
+<div class="book" hidden>
+<p><b>Экологические проблемы биосферы.</b> В результате деятельности человека в биосфере нашей планеты происходят изменения и возникают различные <span class="term" role="button" tabindex="0" data-t="ekopr">экологические проблемы</span>. Принято выделять местные (локальные), региональные и глобальные экологические проблемы. Загрязнение атмосферы, реки, озера отходами какого-либо предприятия — пример местной экологической проблемы.</p>
+<p>Загрязнение морей, речных бассейнов, природной среды городов, загрязнение обширных территорий в результате крупных техногенных аварий (например, радиоактивное заражение местности при аварии на Чернобыльской атомной станции) являются региональными экологическими проблемами.</p>
+<p>Если деятельность человека существенно изменяет ход течения ряда процессов в биосфере, то возникают <span class="term" role="button" tabindex="0" data-t="glob">глобальные экологические проблемы</span>. К ним можно отнести потепление климата, истощение озонового слоя, массовое сведение лесов и другие. С ними вы будете знакомиться в старших классах. Рассмотрим такую глобальную экологическую проблему, как загрязнение окружающей среды.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 234" role="img" aria-label="Три полосы. Местные проблемы — маленький кружок: одна река, озеро, пруд, отходы завода. Региональные — кружок побольше: море, большой город, авария. Глобальные — самый большой кружок: вся планета, потепление, озоновый слой"><use href="#h-levels"/></svg><figcaption>Чем больше территория, тем выше уровень проблемы.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Плотина и зелёная Волга</span></div><div class="lifebody"><p>Помнишь, летом вода в Волге у Ягодного бывает зелёной (§16)? Волга там — не просто река, а <b>водохранилище</b>. В 1950-х годах у Тольятти построили плотину Жигулёвской ГЭС, и река разлилась широким «Жигулёвским морем».</p><p>Течение стало медленным, вода летом хорошо прогревается, а с полей и из городов в неё попадают удобрения и стоки. Микроскопические водоросли размножаются так бурно, что вода «цветёт» на огромной площади. Это уже не беда одного пруда, а проблема целого края.</p></div><p class="lifebook">В учебнике это называется: <b>региональная экологическая проблема</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Местная проблема — у дома</span></div><div class="lifebody"><p>Когда пойдёшь к Кошачьему пруду или в Терлецкий парк, посмотри по сторонам: есть ли на берегу и у тропинок мусор — бутылки, пакеты, фантики? Мусор у одного пруда — маленькая <b>местная</b> проблема.</p><p>Её можно решить на месте: поставить урны, убрать берег на субботнике и самим уносить мусор с собой. А вот глобальную проблему один двор не решит — нужны усилия многих стран.</p></div><p class="lifebook">В учебнике это называется: <b>местная экологическая проблема</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Чем местная экологическая проблема отличается от глобальной?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Схема и первые абзацы раздела.</div>
+<div class="rev ans" id="a3" hidden>Местная касается одного места — реки, озера, пруда, которые загрязнил один завод. Глобальная меняет процессы во всей биосфере, всей планете: потепление климата, истощение озонового слоя, сведение лесов.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Загрязнение окружающей среды</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="zagr">Загрязнение</span> — это появление в природе новых веществ из-за деятельности человека (рис. 115) или природных явлений, например извержения вулкана. <span class="term" role="button" tabindex="0" data-t="zagrz">Загрязнителями</span> называют вещества, которых раньше не было в сообществе в таком количестве.</p>
+<p>Загрязнение опасно не только для отдельных организмов — оно может разрушить <b>всё сообщество</b>. Нефть на поверхности небольшого озера создаёт плёнку, через которую не проходит воздух. Все обитатели водоёма гибнут от удушья.</p>
+<p>Жители сообщества связаны друг с другом, поэтому загрязнитель из одного организма скоро окажется в теле многих. Соли ртути в воде глотают мелкие рачки, рачков ест рыба, а рыбу ловит и ест человек.</p>
+<p>Всё, что люди выбрасывают в природу, возвращается к ним с пищей, водой и другими нужными вещами. Поэтому с загрязнением надо бороться.</p>
+<p>Как? Например, перейти на <span class="term" role="button" tabindex="0" data-t="bezoth">безотходные технологии</span>. На некоторых заводах на трубы ставят фильтры, и загрязнители не вылетают в воздух. Потом фильтры чистят, а пойманные ядовитые вещества превращают в безопасные — и снова используют. Часто яд разрушают особые микроорганизмы, которых для этого вывели учёные.</p>
+</div>
+<div class="book" hidden>
+<p><b>Загрязнение окружающей среды.</b> <span class="term" role="button" tabindex="0" data-t="zagr"><b>Загрязнением</b></span> называют появление в природной среде новых веществ (загрязнителей), вызванное деятельностью человека (рис. 115) или какими-либо природными явлениями (например, вулканической деятельностью). К <span class="term" role="button" tabindex="0" data-t="zagrz">загрязнителям</span> же относят все те вещества, которые до процесса загрязнения не присутствовали в природных сообществах в таком количестве, как после него.</p>
+<p>Основная опасность загрязнения состоит в том, что оно может не только нарушать жизнедеятельность отдельных организмов, но и разрушать целые природные сообщества. Например, попавшая на поверхность небольшого озера нефть создаёт непроницаемую для воздуха плёнку, которая приводит к гибели всех обитателей водоёма от удушья и, следовательно, уничтожению всего сообщества целиком.</p>
+<p>Кроме того, поскольку обитатели любого сообщества всегда связаны друг с другом, попавший в один организм загрязнитель через какое-то время появится в теле большинства жителей сообщества. Например, оказавшиеся в воде соли ртути сначала заглатываются мелкими рачками, потом они оказываются в организме рыбы, питающейся этими рачками, а потом попадают в тело человека, поймавшего и съевшего эту рыбу.</p>
+<p>Таким образом, загрязнения представляют собой опасность для всех обитателей нашей планеты, в том числе и для нас с вами, поскольку всё, что мы выбрасываем в окружающую среду, возвращается к нам с пищей, строительными материалами и другими необходимыми для нашей жизни ресурсами. Именно поэтому с загрязнениями необходимо бороться.</p>
+<p>Можно ли предотвратить загрязнение окружающей среды? Конечно же, можно. Например, перейти на <b><span class="term" role="button" tabindex="0" data-t="bezoth">безотходные технологии</span></b>. Этот способ уже используется на некоторых заводах и фабриках, на трубы которых ставятся специальные фильтры, препятствующие выходу загрязнителей в атмосферу. После использования эти фильтры очищаются, а задержанные ими ядовитые вещества превращаются в безопасные, которые вновь применяются на производстве. Часто в роли разрушителей ядовитых веществ используются специальные микроорганизмы, выведенные для этой цели учёными. При использовании таких фильтров опасность загрязнения сводится к минимуму.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s115" src="img/23f1d59349c7.jpg" alt="Из толстой ржавой трубы в водоём льётся жёлто-зелёная грязная вода"><figcaption><span class="src">из учебника</span><b>Рис. 115.</b> Промышленное загрязнение окружающей среды<br><span style="color:var(--soft)">▲ Это местная проблема или глобальная? Почему?</span></figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Загрязнение</b><p>то, что происходит: в природе появляются новые вещества</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Загрязнитель</b><p>само вещество: нефть, соли ртути, ядовитые отходы</p></div></div><p class="pairkey">Загрязнение — это событие, загрязнитель — вещество.</p></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 204" role="img" aria-label="Озеро в разрезе. Сверху на воде тёмная полоса — плёнка нефти. Стрелки воздуха упираются в неё и не проходят. Кислород в воде кончается, жители водоёма задыхаются"><use href="#h-film"/></svg><figcaption>Так гибнет всё сообщество озера.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Вероника, что нефть делает с пером?</span></div><div class="lifebody"><p>Позови папу или маму. Нужны два стакана с водой, ложка растительного масла (оно будет вместо нефти), два одинаковых пёрышка — например, из набора для творчества — и капля средства для мытья посуды.</p><p><b>1.</b> В один стакан налей масло. Посмотри сбоку: где оно — сверху или на дне? Какая получилась плёнка?<br><b>2.</b> Второй стакан — чистая вода. Он для сравнения.<br><b>3.</b> Окуни одно перо в чистую воду, другое — в воду с маслом. Достань оба и сравни. Какое слиплось? Какое распушится, когда высохнет?<br><b>4.</b> Попробуй отмыть «нефтяное» перо в тёплой воде с каплей средства для посуды. Легко ли?<br><b>5.</b> Нарисуй оба пера и запиши, что заметила.</p></div><p class="lifebook">В учебнике это называется: <b>загрязнение нефтью</b></p></aside>
+<div class="think"><p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Сначала сделай опыт и запиши, что увидела.</p>
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Что получится и почему</button></div>
+<div class="rev ans" id="r1" hidden>Масло легче воды: оно не смешивается с ней и растекается сверху плёнкой — так нефть закрывает озеро от воздуха. Перо из чистой воды высыхает и снова становится пушистым. А перо из воды с маслом слипается в тонкую прядку и тяжелеет. У птиц, попавших в нефть, перья слипаются так же: перестают греть и держать птицу на воде. Отмыть перо трудно даже со средством для посуды — после разлива нефти спасатели долго отмывают каждую птицу. Не загрязнять гораздо проще, чем убирать.</div></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 262" role="img" aria-label="Пищевая цепь сверху вниз: соли ртути в воде, мелкие рачки, рыба, человек. Рядом красные точки ртути: у воды одна, у рачков две, у рыбы четыре, у человека семь"><use href="#h-chain"/></svg><figcaption>Вспомни пищевые цепи из §22: загрязнитель идёт по тем же стрелкам.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Батарейки, градусники и синие контейнеры</span></div><div class="lifebody"><p>Ртуть бывает в старых стеклянных градусниках и в энергосберегающих лампах. У вас дома градусник электронный, в нём ртути нет. Зато в нём есть <b>батарейка</b>. Батарейки нельзя выбрасывать в обычный мусор: на свалке они разрушаются, вредные вещества уходят в почву и воду, а оттуда — в пищевую цепь, как на схеме. Для батареек в магазинах стоят специальные коробки.</p><p>Посмотри во дворе: у контейнеров в Москве бывают наклейки двух цветов. В контейнер с <b>синей</b> наклейкой бросают то, что можно переработать, — бумагу, пластик, стекло, металл. С <b>серой</b> — всё остальное. Переработка — шаг к безотходной жизни: старая вещь становится сырьём для новой.</p></div><p class="lifebook">В учебнике это называется: <b>загрязнитель</b></p></aside>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 236" role="img" aria-label="Завод с трубой, на трубе фильтр, из трубы идёт чистый воздух. Фильтр чистят, яд из него превращают в безопасные вещества, и они снова идут на завод — получается круг"><use href="#h-filter"/></svg><figcaption>Ничего не уходит в природу — всё возвращается в дело.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. В чём основная опасность загрязнения окружающей среды?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Второй и третий абзацы раздела.</div>
+<div class="rev ans" id="a4" hidden>Загрязнение может разрушить целое сообщество: нефтяная плёнка губит всех жителей озера. А загрязнитель из одного организма по пищевым цепям попадает в тела большинства жителей сообщества — и в конце концов к человеку.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему сейчас необходим переход на безотходные технологии?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Последний абзац раздела и схема с фильтром.</div>
+<div class="rev ans" id="a5" hidden>Всё, что выбрасывают в природу, возвращается к нам с пищей и водой. Лучший способ избежать опасности — вообще не выбрасывать загрязнители. Безотходные технологии задерживают их фильтрами и превращают в безопасные вещества, которые снова идут в дело.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Ресурсы и как сохранить природу</h2></div>
+<div class="easy">
+<p>Каждый год люди добывают около <b>100 миллиардов тонн</b> руды, угля, нефти и сырья для удобрений. Нужно всё больше топлива, металлов и сырья, и запасы кончаются — это <span class="term" role="button" tabindex="0" data-t="istosh">истощение ресурсов</span>. Поэтому важно помнить правило: «Ресурсы ограниченны и не должны расходоваться впустую; нельзя бесконечно открывать новые ресурсы».</p>
+<p>За последние сто лет люди научились <b>исправлять вред</b>, который наносят природе. Они восстанавливают леса, в степях сажают <span class="term" role="button" tabindex="0" data-t="vetroz">ветрозащитные посадки</span> — и сильный ветер не сдувает почву (рис. 116). Исчезающие виды разводят в неволе, а потом возвращают в природу (рис. 117) — так спасли лошадь Пржевальского, о которой ты читала в §25.</p>
+<p>В 1972 году в Стокгольме под эгидой ООН собрались представители 113 стран. Они приняли Декларацию по окружающей среде с правилами <span class="term" role="button" tabindex="0" data-t="ustoy">устойчивого развития</span>: люди получают нужное, но природа при этом сохраняется. В таком обществе экономика стабильна, люди справедливы друг к другу, берегут природу и разумно тратят её богатства.</p>
+<p>Человек — часть природы: он вредит ей и сам от этого страдает. В нашей стране приняты законы об охране природы и созданы особо охраняемые природные территории (о них — в §27). Но многое зависит от каждого человека. Хочется верить, что следующий этап можно будет назвать эпохой <span class="term" role="button" tabindex="0" data-t="racio">рационального природопользования</span>.</p>
+</div>
+<div class="book" hidden>
+<p><b>Истощение ресурсов.</b> Ежегодно люди добывают около 100 млрд т руды, угля, нефти и сырья для минеральных удобрений. Быстрый рост потребности в топливе, металлах, минеральном сырье и их добычи ведёт к <span class="term" role="button" tabindex="0" data-t="istosh">истощению этих ресурсов</span>. Поэтому нельзя забывать об экологическом принципе, который гласит: «Ресурсы ограниченны и не должны расходоваться впустую; нельзя бесконечно открывать новые ресурсы».</p>
+<p><b>Как сохранить природу.</b> За последние сто лет люди научились компенсировать ущерб, который наносит природным сообществам их деятельность. Они восстанавливают леса, в степях сажают <span class="term" role="button" tabindex="0" data-t="vetroz">ветрозащитные посадки</span>, которые предотвращают сдувание почвы сильными ветрами (рис. 116). Человек научился разводить в неволе особей исчезающих видов растений и животных, а потом возвращать их обратно в дикую природу (рис. 117).</p>
+<p>В 1972 году в Стокгольме под эгидой Организации Объединённых Наций прошла международная конференция, посвящённая проблемам окружающей среды. Представители 113 стран обсуждали необходимость перехода человечества к экоцентрическим отношениям с природой. Участники конференции единогласно приняли Декларацию по окружающей среде, которая содержит основные принципы <span class="term" role="button" tabindex="0" data-t="ustoy">устойчивого развития</span> общества — развития, при котором сохраняется баланс между удовлетворением потребностей людей, с одной стороны, и возможностями окружающей среды, с другой стороны.</p>
+<p>В обществе с устойчивым развитием существующее поколение поддерживает стабильную экономику, обеспечивает справедливость в отношениях между всеми членами общества, заботится об охране окружающей среды и разумно управляет использованием природных ресурсов.</p>
+<p>Отрицательное влияние хозяйственной деятельности человека не проходит бесследно для природы. Человек, как часть природы, сам наносит ей вред и сам же страдает от этого. В нашей стране приняты законы об охране и рациональном использовании природы, созданы особо охраняемые природные территории. Однако многое зависит от осознания каждым человеком необходимости бережного отношения к окружающей среде, ответственности за её сохранение. Природные ресурсы нашей планеты весьма ограничены. Только знание и соблюдение законов природы даст нам возможность сохранить её многообразие.</p>
+<p>Хочется верить, что воздействие хозяйственной деятельности человека на биосферу удастся снизить и следующий её этап можно будет назвать эпохой <b><span class="term" role="button" tabindex="0" data-t="racio">рационального природопользования</span></b>.</p>
+</div>
+</div>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-s116" src="img/5cd98e4a172c.jpg" alt="Зелёные поля, между ними ровными линиями тянутся тёмные полосы деревьев, вдали горы"><figcaption><span class="src">из учебника</span><b>Рис. 116.</b> Ветрозащитные посадки<br><span style="color:var(--soft)">▲ Найди полосы деревьев. Откуда может дуть ветер?</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s117" src="img/7916f17365d6.jpg" alt="Светло-бурая лошадь Пржевальского с жеребёнком стоят на степной траве"><figcaption><span class="src">из учебника</span><b>Рис. 117.</b> Лошадь Пржевальского разводится человеком и впоследствии возвращается в дикую природу<br><span style="color:var(--soft)">▲ Вспомни §25: чем её грива отличается от гривы домашней лошади?</span></figcaption></div></figure>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 236" role="img" aria-label="Два разреза поля. Без лесополосы: стрелки ветра, частицы почвы летят над полем. С лесополосой: стрелки ветра упираются в три дерева, за ними почва остаётся на месте"><use href="#h-wind"/></svg><figcaption>Деревья ослабляют ветер, и он не уносит плодородную почву.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Лесополосы по дороге в Ягодное</span></div><div class="lifebody"><p>Когда поедете в Ягодное или дальше на Урал, посмотри в окно на поля. Между ними часто тянутся ровные полосы деревьев — <b>лесополосы</b>. Их посадили люди, как на рис. 116. Зимой они ещё и задерживают снег, а весной талая вода остаётся в поле.</p><p>Посчитай, сколько лесополос увидишь, пока едете мимо полей. Сфотографируй одну — пригодится для презентации.</p></div><p class="lifebook">В учебнике это называется: <b>ветрозащитные посадки</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Деревья, которые сажала ты</span></div><div class="lifebody"><p>Ты, наверное, этого не помнишь: когда ты была маленькой, вы с папой и его командой с работы ездили к одной школе и сажали там деревья. Это было доброе дело — и для школы, и для природы.</p><p>Сажать деревья и восстанавливать леса — как раз то, о чём пишет учебник: люди учатся исправлять вред, который наносят природе. Спроси папу, что это были за деревья и где та школа. Может, их можно навестить — они уже подросли.</p></div><p class="lifebook">В учебнике это называется: <b>как сохранить природу</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. К чему может привести вырубка лесов?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Раздел 1 этого параграфа и средообразователи из §21.</div>
+<div class="rev ans" id="a6" hidden>Погибнут растения, животные и грибы, для которых лес — дом и еда; исчезнут средообразователи, которые создают условия для всего сообщества. Почву без корней размывают дожди и выдувает ветер, лес может превратиться в болото. Станет меньше растений, которые выделяют кислород.</div>
+</div>
+<div class="think">
+<p class="qt">7. Что такое устойчивое развитие?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Третий и четвёртый абзацы раздела.</div>
+<div class="rev ans" id="a7" hidden>Развитие общества, при котором сохраняется баланс между потребностями людей и возможностями окружающей среды: экономика стабильна, люди берегут природу и разумно тратят её богатства.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Загрязнение · Безотходные технологии · Рациональное природопользование</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>В чём заключается основная опасность загрязнения окружающей среды?</li><li>К чему может привести вырубка лесов?</li><li>Почему в настоящее время необходим переход на безотходные технологии?</li><li>Используя справочную литературу и Интернет, объясните значение термина «рациональное природопользование».</li><li>Используя дополнительные источники информации, подготовьте сообщение на тему «Влияние деятельности человека на экосистему моего города (края)». Представьте сообщение в виде презентации.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка к вопросу 4</button></div>
+<div class="rev hint" id="r2" hidden>«Рациональное» значит «разумное». Природопользование — это то, как люди берут у природы воду, землю, лес, руду, нефть. Рациональное природопользование — брать у природы столько и так, чтобы она успевала восстановиться, ничего не тратить впустую и не загрязнять среду. Например: на месте вырубки сажают новый лес, мусор перерабатывают, на трубы заводов ставят фильтры.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к вопросу 5</button></div>
+<div class="rev hint" id="r3" hidden>Твой город — Москва. Что можно взять: мусор у Кошачьего пруда и в парке; утоптанные тропинки в Терлецком парке (§24); раздельный сбор мусора — синие и серые контейнеры; охраняемые природные территории — Лосиный остров и Измайлово (о них — в §27). Презентации ты делаешь сама: собери свои фотографии и подпиши, где природе плохо и что люди уже делают.</div></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Какие примеры рационального природопользования уже используются или планируются в вашем регионе?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Подсказка</button></div>
+<div class="rev hint" id="r4" hidden>В Москве — раздельный сбор мусора в синие контейнеры, коробки для батареек в магазинах, охраняемые природные территории: Лосиный остров, Измайлово. В Ягодном — бочка со скошенной травой, из которой получается перегной для грядок. По дороге туда — лесополосы вдоль полей.</div></div>
+<div class="rubric">Моя лаборатория · Задания для любознательных</div>
+<div class="easy">
+<p><b>1.</b> Любой загрязнитель, выброшенный в природу, в конце концов окажется в организме человека. Поэтому лучше всего вообще не выбрасывать загрязнители — для этого и придумали безотходные технологии. Придумай свой пример безотходной технологии и обсуди его с одноклассниками и учителем. Подумай: не станет ли людям из-за неё труднее зарабатывать?</p>
+<p><b>2.</b> В истории бывало, что люди бездумно разрушали природу, на её месте возникали пустыни, и целые цивилизации исчезали. Узнай, какая экологическая обстановка в твоём регионе. Свяжись со службами охраны природы и экологическими объединениями своего района. Помоги искать, откуда берётся загрязнение.</p>
+</div>
+<div class="book" hidden>
+<p><b>1.</b> Известно, что любой загрязнитель, выброшенный во внешнюю среду, в конце концов окажется в человеческом организме. Поэтому самый лучший способ избавиться от этой опасности — не выбрасывать во внешнюю среду вообще никаких загрязнителей. Именно поэтому люди изобрели безотходные технологии.<br>Предложите свой собственный пример безотходной технологии и обсудите его с товарищами и учителем. В процессе обсуждения попытайтесь учесть, не отразится ли внедрение такой технологии на экономическом благополучии людей.</p>
+<p><b>2.</b> Из истории мы знаем немало примеров, когда бездумная деятельность человека приводила к разрушению естественных экосистем, на месте которых возникали безжизненные пустыни, что влекло за собой исчезновение целых цивилизаций, процветавших ранее.<br>Выясните, какова экологическая ситуация в вашем регионе. Свяжитесь со службами охраны природы и экологическими объединениями в вашем районе. Примите участие в работе по выявлению источников загрязнения окружающей среды.</p>
+</div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Безотходная технология в Ягодном</span></div><div class="lifebody"><p>Для задания 1 у тебя уже есть пример. В Ягодном скошенную траву не выбрасывают, а кидают в <b>бочку</b>. Там редуценты превращают её в перегной (§18 и §21). Перегноем удобряют грядки, на грядках растут помидоры и огурцы. Ботву и очистки тоже можно класть в бочку — и всё пойдёт по кругу.</p><p>Это тот же круговорот веществ, что в лесу, только его устроил человек. Ничего не уходит на свалку — всё снова идёт в дело.</p></div><p class="lifebook">В учебнике это называется: <b>безотходные технологии</b></p></aside>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt5" data-n="7">
+<div class="sortlab">Какого уровня проблема?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Завод сливает отходы в одну речку</p><div class="sbtns"><button class="sbtn" data-b="0">местная</button><button class="sbtn" data-b="1">региональная</button><button class="sbtn" data-b="2">глобальная</button></div><p class="swhy" hidden>Загрязнена одна река.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Потепление климата</p><div class="sbtns"><button class="sbtn" data-b="0">местная</button><button class="sbtn" data-b="1">региональная</button><button class="sbtn" data-b="2">глобальная</button></div><p class="swhy" hidden>Меняется климат всей планеты.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Радиация после аварии на Чернобыльской АЭС</p><div class="sbtns"><button class="sbtn" data-b="0">местная</button><button class="sbtn" data-b="1">региональная</button><button class="sbtn" data-b="2">глобальная</button></div><p class="swhy" hidden>Заражена огромная территория вокруг станции.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Мусор на берегу одного пруда</p><div class="sbtns"><button class="sbtn" data-b="0">местная</button><button class="sbtn" data-b="1">региональная</button><button class="sbtn" data-b="2">глобальная</button></div><p class="swhy" hidden>Беда одного места.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Истощение озонового слоя</p><div class="sbtns"><button class="sbtn" data-b="0">местная</button><button class="sbtn" data-b="1">региональная</button><button class="sbtn" data-b="2">глобальная</button></div><p class="swhy" hidden>Озоновый слой окружает всю Землю.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Загрязнение целого моря</p><div class="sbtns"><button class="sbtn" data-b="0">местная</button><button class="sbtn" data-b="1">региональная</button><button class="sbtn" data-b="2">глобальная</button></div><p class="swhy" hidden>Большая территория, но не вся планета.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Массовое сведение лесов на Земле</p><div class="sbtns"><button class="sbtn" data-b="0">местная</button><button class="sbtn" data-b="1">региональная</button><button class="sbtn" data-b="2">глобальная</button></div><p class="swhy" hidden>Учебник называет его глобальной проблемой.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt6" data-n="6">
+<div class="sortlab">Вредит природе или помогает?</div>
+<div class="sitem" data-r="1"><p class="stext">Фильтры на трубах завода</p><div class="sbtns"><button class="sbtn" data-b="0">вредит</button><button class="sbtn" data-b="1">помогает</button></div><p class="swhy" hidden>Загрязнители не вылетают в воздух.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Осушение болот</p><div class="sbtns"><button class="sbtn" data-b="0">вредит</button><button class="sbtn" data-b="1">помогает</button></div><p class="swhy" hidden>Гибнет сообщество болота.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Лесополосы вдоль полей</p><div class="sbtns"><button class="sbtn" data-b="0">вредит</button><button class="sbtn" data-b="1">помогает</button></div><p class="swhy" hidden>Ветер не сдувает почву.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Нефть, пролитая в озеро</p><div class="sbtns"><button class="sbtn" data-b="0">вредит</button><button class="sbtn" data-b="1">помогает</button></div><p class="swhy" hidden>Плёнка не пропускает воздух.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Разведение исчезающих видов в неволе</p><div class="sbtns"><button class="sbtn" data-b="0">вредит</button><button class="sbtn" data-b="1">помогает</button></div><p class="swhy" hidden>Так спасли лошадь Пржевальского.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Батарейка в обычном мусоре</p><div class="sbtns"><button class="sbtn" data-b="0">вредит</button><button class="sbtn" data-b="1">помогает</button></div><p class="swhy" hidden>Вредные вещества уйдут в почву и воду.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Экологическая проблема</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 234" aria-hidden="true"><use href="#h-levels"/></svg><span class="ftext">Опасное изменение в природе из-за человека: местное, региональное или глобальное.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Загрязнение</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s115" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Появление в природе новых веществ из-за человека или природных явлений.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Загрязнитель</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 262" aria-hidden="true"><use href="#h-chain"/></svg><span class="ftext">Само вредное вещество: нефть, соли ртути, ядовитые отходы.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Безотходные технологии</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 236" aria-hidden="true"><use href="#h-filter"/></svg><span class="ftext">Загрязнители задерживают и превращают в безопасные вещества для производства.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Истощение ресурсов</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 216" aria-hidden="true"><use href="#h-steps"/></svg><span class="ftext">Запасы руды, угля, нефти кончаются, потому что их добывают всё больше.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ветрозащитные посадки</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s116" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Полосы деревьев вдоль полей — ветер не сдувает почву.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Устойчивое развитие</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 216" aria-hidden="true"><use href="#h-steps"/></svg><span class="ftext">Баланс между потребностями людей и возможностями природы.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Рациональное природопользование</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 236" aria-hidden="true"><use href="#h-filter"/></svg><span class="ftext">Брать у природы разумно: без потерь, без загрязнения, давая ей восстановиться.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Почему нефть на озере губит всех его жителей?</h3><div class="opts">
+<button class="opt" data-ok="1">Плёнка не пропускает воздух</button>
+<button class="opt">Нефть очень горячая</button>
+<button class="opt">Нефть съедают рыбы</button>
+<button class="opt">Озеро от нефти мелеет</button></div>
+<div class="fb">Обитатели водоёма гибнут от удушья.</div></div>
+<div class="q"><h3>2. Как ртуть из воды попадает в человека?</h3><div class="opts">
+<button class="opt" data-ok="1">По пищевой цепи: рачки → рыба → человек</button>
+<button class="opt">Через воздух</button>
+<button class="opt">Через кожу при купании</button>
+<button class="opt">Никак не попадает</button></div>
+<div class="fb">Вспомни схему с красными точками.</div></div>
+<div class="q"><h3>3. Что делают с ядовитыми веществами при безотходной технологии?</h3><div class="opts">
+<button class="opt" data-ok="1">Превращают в безопасные и снова используют</button>
+<button class="opt">Выбрасывают в реку</button>
+<button class="opt">Закапывают</button>
+<button class="opt">Выпускают в воздух</button></div>
+<div class="fb">Часто им помогают особые микроорганизмы.</div></div>
+<div class="q"><h3>4. Зачем в степях сажают полосы деревьев?</h3><div class="opts">
+<button class="opt" data-ok="1">Чтобы ветер не сдувал почву</button>
+<button class="opt">Чтобы собирать орехи</button>
+<button class="opt">Чтобы было тенисто</button>
+<button class="opt">Для красоты</button></div>
+<div class="fb">Это ветрозащитные посадки, рис. 116.</div></div>
+<div class="q"><h3>5. Кто назвал человечество «геологической силой планетарного масштаба»?</h3><div class="opts">
+<button class="opt" data-ok="1">В. И. Вернадский</button>
+<button class="opt">Н. М. Пржевальский</button>
+<button class="opt">Ч. Дарвин</button>
+<button class="opt">К. Линней</button></div>
+<div class="fb">Он создал науку биогеохимию.</div></div>
+<div class="q"><h3>6. Какая проблема глобальная?</h3><div class="opts">
+<button class="opt" data-ok="1">Потепление климата</button>
+<button class="opt">Мусор у пруда</button>
+<button class="opt">Отходы одного завода в реке</button>
+<button class="opt">Грязный подъезд</button></div>
+<div class="fb">Глобальная касается всей биосферы.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Как человек менял природу</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Охота и собирательство — страдали отдельные виды.</li><li>Земледелие и скотоводство — вырубка лесов, плотины, осушение болот.</li><li>XX век — человек влияет на всю биосферу (Вернадский).</li></ol></div>
+</div>
+<div class="think">
+<h3>Экологические проблемы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Местные — одна река или озеро.</li><li>Региональные — моря, города, Чернобыль.</li><li>Глобальные — потепление, озоновый слой, сведение лесов.</li><li>Мой пример — «цветение» Волги у Ягодного.</li></ol></div>
+</div>
+<div class="think">
+<h3>Загрязнение</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Что такое загрязнение и загрязнитель.</li><li>Нефть на озере — гибнет всё сообщество.</li><li>Ртуть идёт по пищевой цепи до человека.</li><li>Безотходные технологии и фильтры.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как сохранить природу</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Ресурсы ограниченны.</li><li>Восстановление лесов, лесополосы, разведение в неволе.</li><li>Стокгольм, 1972: устойчивое развитие.</li><li>Рациональное природопользование.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b25.html">‹ §25 Природные зоны</a>
+  <span class="pn cur">§26 Человек и природа</span>
+  <a class="pn" href="b27.html">§27 Охрана природы ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 26, с. 150—153. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'h-steps':'0 0 330 216','h-levels':'0 0 330 234','h-chain':'0 0 330 262','h-film':'0 0 330 204','h-filter':'0 0 330 236','h-wind':'0 0 330 236'};
+
+var T={
+ekopr:{w:"Экологическая проблема",k:"беда для природы из-за человека",s:"h-levels",t:"Опасное изменение в природе, которое возникло из-за деятельности человека. Бывают местные (локальные), региональные и глобальные.",r:"",e:""},
+glob:{w:"Глобальная проблема",k:"касается всей планеты",s:"h-levels",t:"Экологическая проблема, при которой меняется ход процессов во всей биосфере: потепление климата, истощение озонового слоя, массовое сведение лесов.",r:"",e:""},
+zagr:{w:"Загрязнение",k:"новые вещества в природе",p:"s115",t:"Появление в природной среде новых веществ (загрязнителей), вызванное деятельностью человека или природными явлениями, например извержением вулкана.",r:"",e:""},
+zagrz:{w:"Загрязнитель",k:"само вредное вещество",s:"h-chain",t:"Вещество, которого до загрязнения не было в природном сообществе в таком количестве: нефть, соли ртути, ядовитые отходы.",r:"",e:""},
+bezoth:{w:"Безотходные технологии",k:"ничего не выбрасывать",s:"h-filter",t:"Способы производства, при которых загрязнители не попадают в природу: их задерживают фильтры и превращают в безопасные вещества, которые снова идут в дело.",r:"",e:""},
+istosh:{w:"Истощение ресурсов",k:"запасы кончаются",s:"h-steps",t:"Уменьшение запасов руды, угля, нефти и другого сырья из-за того, что люди добывают их всё больше. Ресурсы ограниченны.",r:"",e:""},
+vetroz:{w:"Ветрозащитные посадки",k:"лесополосы вдоль полей",p:"s116",t:"Полосы деревьев, которые сажают в степях вдоль полей. Они ослабляют ветер, и он не сдувает почву.",r:"",e:""},
+ustoy:{w:"Устойчивое развитие",k:"баланс людей и природы",s:"h-steps",t:"Развитие общества, при котором сохраняется баланс между потребностями людей и возможностями окружающей среды.",r:"",e:""},
+racio:{w:"Рациональное природопользование",k:"разумно брать у природы",s:"h-filter",t:"Использование природных богатств так, чтобы не тратить их впустую, не загрязнять среду и давать природе восстановиться.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b26:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b26:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b26:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b26:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

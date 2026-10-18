@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Заповедник, где ты видела зубров, Лосиный остров — первый нацпарк России, стерхи, манул из Московского зоопарка и Красная книга. Последний параграф учебника.">
+<title>Охрана природы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="o-paths" viewBox="0 0 330 250">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Как спасают редкий вид</text>
+<rect x="6" y="32" width="318" height="48" rx="8" fill="var(--pb,#3B6FA8)" fill-opacity=".16"/>
+<rect x="6" y="90" width="318" height="48" rx="8" fill="var(--leaf,#2D7A55)" fill-opacity=".2"/>
+<rect x="6" y="148" width="318" height="48" rx="8" fill="var(--ochre,#E2A31F)" fill-opacity=".28"/>
+<g font-size="20" font-weight="700" fill="var(--illink,#2B2620)" text-anchor="middle"><text x="26" y="63">1</text><text x="26" y="121">2</text><text x="26" y="179">3</text></g>
+<g fill="var(--illink,#2B2620)">
+<text x="46" y="52" font-size="13" font-weight="700">Законы</text>
+<text x="46" y="69" font-size="11">ловить и рвать редкие виды — по разрешению</text>
+<text x="46" y="110" font-size="13" font-weight="700">Охраняемые территории</text>
+<text x="46" y="127" font-size="11">заповедники, нацпарки, заказники, памятники</text>
+<text x="46" y="168" font-size="13" font-weight="700">Разведение в неволе</text>
+<text x="46" y="185" font-size="11">вырастить детёнышей и выпустить на волю</text>
+</g>
+<rect x="6" y="206" width="318" height="30" rx="8" fill="var(--no,#B03A2E)" fill-opacity=".16"/>
+<text x="165" y="226" text-anchor="middle" font-size="12" fill="var(--illink,#2B2620)"><tspan font-weight="700">Красная книга</tspan> — список тех, кого надо спасать</text>
+</g></symbol>
+
+<symbol id="o-oopt" viewBox="0 0 330 302">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Четыре вида охраняемых территорий</text>
+<rect x="6" y="32" width="318" height="58" rx="8" fill="var(--no,#B03A2E)" fill-opacity=".16"/>
+<rect x="6" y="98" width="318" height="58" rx="8" fill="var(--leaf,#2D7A55)" fill-opacity=".2"/>
+<rect x="6" y="164" width="318" height="58" rx="8" fill="var(--ochre,#E2A31F)" fill-opacity=".28"/>
+<rect x="6" y="230" width="318" height="46" rx="8" fill="var(--pb,#3B6FA8)" fill-opacity=".16"/>
+<g fill="var(--illink,#2B2620)">
+<text x="16" y="53" font-size="13" font-weight="700">Заповедник</text>
+<text x="16" y="70" font-size="11">огромная территория; нельзя ничего —</text>
+<text x="16" y="84" font-size="11">даже просто зайти без разрешения</text>
+<text x="16" y="119" font-size="13" font-weight="700">Национальный парк</text>
+<text x="16" y="136" font-size="11">туристам можно, но строго по правилам;</text>
+<text x="16" y="150" font-size="11">человек — гость, хозяева — животные</text>
+<text x="16" y="185" font-size="13" font-weight="700">Заказник</text>
+<text x="16" y="202" font-size="11">хозяйство не запрещено, а ограничено;</text>
+<text x="16" y="216" font-size="11">правила свои — для цели заказника</text>
+<text x="16" y="251" font-size="13" font-weight="700">Памятник природы</text>
+<text x="16" y="268" font-size="11">маленький: старое дерево, водопад, родник</text>
+</g>
+<g font-size="22" font-weight="700" text-anchor="middle">
+<text x="304" y="68" fill="var(--no,#B03A2E)">✕</text>
+<text x="304" y="134" fill="var(--ok,#3D7A38)">✓</text>
+<text x="304" y="200" fill="var(--ochre,#E2A31F)">½</text>
+<text x="304" y="261" fill="var(--ok,#3D7A38)">✓</text>
+</g>
+<text x="165" y="294" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">значок — можно ли туда прийти погулять</text>
+</g></symbol>
+
+<symbol id="o-crane" viewBox="0 0 330 284">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Как спасали стерхов</text>
+<text x="8" y="46" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">в природе</text>
+<g fill="var(--card,#FFFBF2)" stroke="var(--illink,#2B2620)" stroke-width="1.5"><ellipse cx="30" cy="70" rx="11" ry="14"/><ellipse cx="58" cy="70" rx="11" ry="14"/></g>
+<path d="M76 70 H112" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<text x="120" y="66" font-size="12" fill="var(--illink,#2B2620)">выживает только</text>
+<text x="120" y="82" font-size="12" font-weight="700" fill="var(--no,#B03A2E)">1 птенец из 2</text>
+<line x1="6" y1="104" x2="324" y2="104" stroke="var(--line,#D9CDB7)" stroke-width="1.5"/>
+<text x="8" y="128" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">с помощью людей</text>
+<g fill="var(--card,#FFFBF2)" stroke="var(--illink,#2B2620)" stroke-width="1.5"><ellipse cx="30" cy="160" rx="11" ry="14"/><ellipse cx="30" cy="218" rx="11" ry="14"/></g>
+<g font-size="11" fill="var(--illink,#2B2620)"><text x="48" y="164">остаётся в гнезде → 1 птенец</text>
+<text x="48" y="208">забирают с вертолёта → инкубатор →</text><text x="48" y="224">питомник → выпускают в природу</text></g>
+<rect x="70" y="240" width="190" height="24" rx="6" fill="var(--ok,#3D7A38)" fill-opacity=".18"/>
+<text x="165" y="257" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ok,#3D7A38)">итого 2 птенца вместо 1</text>
+<text x="165" y="276" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">часть птиц оставляют в питомнике для изучения</text>
+</g></symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 27</span>
+    <h1>Охрана природы</h1>
+    <p class="lede">Заповедник, где ты видела зубров, Лосиный остров — первый нацпарк России, стерхи, манул из Московского зоопарка и Красная книга. Последний параграф учебника.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>Какие изменения происходят в природе из-за человека? Почему нужно охранять живую природу?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b26.html">‹ §26 Человек и природа</a>
+  <span class="pn cur">§27 Охрана природы</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Как защитить вид">1</a><a href="#s2" data-j="s2" title="Заповедник, нацпарк, заказник, памятник">2</a><a href="#s3" data-j="s3" title="Разведение в неволе">3</a><a href="#s4" data-j="s4" title="Красная книга">4</a><a href="#s5" data-j="s5" title="Что можешь сделать ты">5</a><a href="#s6" data-j="s6" title="Итоги главы 5 и всего учебника">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Как защитить вид</h2></div>
+<div class="easy">
+<p>Как защитить вид живых организмов от уничтожения? Путей несколько.</p>
+<p>Первый — <b>законы</b>, которые запрещают добывать редкие виды. По особому разрешению можно поймать немного животных или собрать семена редких растений — чтобы разводить и изучать их в неволе.</p>
+<p>Второй — создать <span class="term" role="button" tabindex="0" data-t="oopt">особо охраняемые территории</span> там, где охраняемый вид живёт, выводит потомство или отдыхает во время перелётов. Это заповедники, национальные парки, заказники и памятники природы.</p>
+</div>
+<div class="book" hidden>
+<p><b>Охраняемые природные территории.</b> Как можно защитить конкретный вид живых организмов от уничтожения? Существует несколько путей. Один из них подразумевает принятие и исполнение законов, запрещающих добычу редких видов в природе. Согласно этим законам, можно отлавливать лишь ограниченное количество животных или собирать семена редких растений по специальным разрешениям для размножения и изучения в условиях неволи.</p>
+<p>Другой путь предусматривает создание <span class="term" role="button" tabindex="0" data-t="oopt">особо охраняемых территорий</span> в тех местах, где обитает, размножается или останавливается на путях миграций охраняемый вид. К таким особо охраняемым территориям относят заповедники, национальные парки, заказники и памятники природы. Чем же они различаются?</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 250" role="img" aria-label="Три пути спасти редкий вид. Первый — законы: ловить и рвать редкие виды только по разрешению. Второй — охраняемые территории: заповедники, национальные парки, заказники, памятники природы. Третий — разведение в неволе: вырастить детёнышей и выпустить на волю. Внизу — Красная книга, список тех, кого надо спасать"><use href="#o-paths"/></svg><figcaption>Об этих путях — весь параграф по порядку.</figcaption></div></figure>
+<div class="col">
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Заповедник, нацпарк, заказник, памятник</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="zapov">Заповедник</span> — большая охраняемая территория, где запрещено любое хозяйство: пасти скот, строить, собирать грибы и ягоды, охотиться, рыбачить. Туда нельзя даже зайти без специального разрешения. Известные заповедники — Астраханский, Кедровая Падь, Кавказский, Окский, Красноярские Столбы (рис. 118).</p>
+<p>В <span class="term" role="button" tabindex="0" data-t="nacpark">национальный парк</span> могут приходить туристы, но только если строго соблюдают правила. Правила всегда висят у входа. В национальном парке человек — гость, а хозяева — все живые организмы, ради которых парк создали.</p>
+<p>В <span class="term" role="button" tabindex="0" data-t="zakaz">заказнике</span> хозяйство не запрещено, а <b>ограничено</b>. Правила зависят от цели. Если заказник устроили там, где отдыхают перелётные птицы, в это время туда нельзя, а в остальное время можно гулять и собирать грибы и ягоды — в заповеднике так нельзя. Бывают и охотничьи заказники: там помогают размножаться промысловым животным, а охота разрешена по очень строгим правилам.</p>
+<p><span class="term" role="button" tabindex="0" data-t="pamyat">Памятник природы</span> — небольшая охраняемая территория: очень старое дерево, группа редких растений, водопад (рис. 119) или необычный родник.</p>
+</div>
+<div class="book" hidden>
+<p><b><span class="term" role="button" tabindex="0" data-t="zapov">Заповедником</span></b> называют охраняемый природный комплекс на обширной территории, где запрещена не только любая хозяйственная деятельность (выпас скота, строительство, сбор грибов, ягод, охота, рыбалка и др.), но даже нахождение людей без специального разрешения. Широко известны такие заповедники, как Астраханский, Кедровая Падь, Кавказский, Окский, Красноярские столбы (рис. 118).</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="nacpark">Национальный парк</span></b> отличается от заповедника тем, что его могут посещать туристы, но при условии неукоснительного соблюдения правил поведения в национальном парке. Эти правила всегда вывешены при входе, чтобы посетители могли заблаговременно ознакомиться с ними. Посещая национальные парки, нельзя забывать, что человек в них лишь гость, а главные хозяева там все обитающие организмы, ради которых парки и создавались.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="zakaz">Заказник</span></b> отличается от заповедника тем, что в нём не запрещена, а лишь ограничена хозяйственная деятельность человека. В зависимости от цели его создания в разных заказниках существуют различные правила.</p>
+<p>Если заказник создаётся на пути остановки птиц во время сезонных миграций, то он может быть полностью закрыт для посещения в определённые сезоны, а в остальное время там можно гулять, собирать ягоды или грибы, чего нельзя делать в заповеднике. Кроме природных, существуют ещё и <i>охотничьи заказники</i>. На их территории создаются такие условия, которые способствуют размножению животных, являющихся объектами промысловой и спортивной охоты. В таких местах охота разрешена, однако она регулируется весьма строгими правилами.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="pamyat">Памятник природы</span></b> представляет собой небольшую по площади особо охраняемую территорию. Такой статус может иметь, например, очень старое дерево или группа редких для этой местности многолетних растений, а также водопад (рис. 119), необычный родник.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 302" role="img" aria-label="Четыре полосы. Заповедник — огромная территория, нельзя ничего, даже зайти без разрешения, крестик. Национальный парк — туристам можно, но строго по правилам, человек гость, галочка. Заказник — хозяйство ограничено, правила свои, половинка. Памятник природы — маленький: старое дерево, водопад, родник"><use href="#o-oopt"/></svg><figcaption>Чем строже охрана, тем меньше там людей.</figcaption></div></figure>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-s118" src="img/f46e39ac1d8c.jpg" alt="Высокие серые скалы-столбы поднимаются над тайгой, деревья желтеют по-осеннему"><figcaption><span class="src">из учебника</span><b>Рис. 118.</b> Заповедник Красноярские столбы (Красноярск)<br><span style="color:var(--soft)">▲ Чем эти скалы похожи на столбы?</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s119" src="img/0ed5c9b26dc1.jpg" alt="Водопад в два каскада среди скал и хвойного леса"><figcaption><span class="src">из учебника</span><b>Рис. 119.</b> Памятник природы — водопад Кивач (Республика Карелия)<br><span style="color:var(--soft)">▲ Почему водопад охраняют, хотя он не живой?</span></figcaption></div></figure>
+</div>
+<div class="col">
+<div class="blocknote">Учебник называет Красноярские Столбы заповедником, но с 2019 года это национальный парк.</div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Заповедник</b><p>людям нельзя даже зайти без разрешения; запрещено любое хозяйство</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Национальный парк</b><p>туристам можно, но строго по правилам у входа</p></div></div><p class="pairkey">В заповеднике природа без людей, в нацпарке люди — гости.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Ты была в заповеднике</span></div><div class="lifebody"><p>Вы ездили в <b>Приокско-Террасный заповедник</b> под Серпуховом и видели там зубров. Это настоящий заповедник: просто так гулять по его лесу нельзя, гостей водят по особым тропам и к питомнику зубров.</p><p>Вспомни: вы ведь шли не куда захотели, а куда разрешено? Вот так и работает заповедник.</p></div><p class="lifebook">В учебнике это называется: <b>заповедник</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Лосиный остров — национальный парк</span></div><div class="lifebody"><p>Лосиный остров, где на биостанции ты видела лосей и северных оленей, — это <b>национальный парк</b>, самый первый в России. Его создали в 1983 году, и часть его — прямо в Москве.</p><p>Гулять там можно, но по правилам. В следующий раз найди у входа стенд с правилами и прочитай, что там запрещено. Сравни со своими догадками из раздела 5.</p></div><p class="lifebook">В учебнике это называется: <b>национальный парк</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Жигули через Волгу</span></div><div class="lifebody"><p>С другого берега Волги, со стороны Тольятти, видны <b>Жигулёвские горы</b> — ты их видела. Там рядом два разных охраняемых места:</p><p>• <b>Жигулёвский заповедник</b> — туристам открыты лишь редкие тропы, остальная природа живёт без людей;<br>• национальный парк <b>«Самарская Лука»</b> — туда приезжают туристы и ходят по пешим маршрутам.</p><p>Одни и те же горы, а правила разные — смотря что это за территория.</p></div><p class="lifebook">В учебнике это называется: <b>заповедник и национальный парк</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Терлецкий парк тоже под охраной</span></div><div class="lifebody"><p>Твой Терлецкий парк входит в <b>природно-исторический парк «Измайлово»</b>. Это тоже особо охраняемая природная территория — в Москве есть и такой вид, учебник о нём не пишет. Его берегут, чтобы среди большого города сохранилась старая дубрава с её жителями.</p></div><p class="lifebook">В учебнике это называется: <b>особо охраняемая природная территория</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Чем заповедник отличается от заказника?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Абзацы про заповедник и заказник.</div>
+<div class="rev ans" id="a1" hidden>В заповеднике запрещена любая хозяйственная деятельность и даже нахождение людей без разрешения. В заказнике хозяйство не запрещено, а только ограничено: в какое-то время там можно гулять, собирать грибы и ягоды, а в охотничьих заказниках даже охотиться по строгим правилам.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Разведение в неволе</h2></div>
+<div class="easy">
+<p>Ещё один способ сохранить вид — <span class="term" role="button" tabindex="0" data-t="nevol">разведение в неволе</span>: животных разводят или выращивают детёнышей, мальков, птенцов, а потом выпускают на волю.</p>
+<p>В Окском заповеднике спасали белых журавлей — <b>стерхов</b> (рис. 120). У пары стерхов появляются два птенца, но выживает только один, более сильный. Учёные стали искать гнёзда с вертолёта и забирать одно яйцо. Птенца выводили в инкубаторе, выращивали и выпускали в природу. Для этого в заповеднике устроили журавлиный питомник; часть птиц оставляли там для изучения и размножения.</p>
+<p>Очень важны <b>зоопарки</b>: там изучают редкие виды и разводят их. Есть Международная <span class="term" role="button" tabindex="0" data-t="plem">племенная книга</span>: по ней подбирают пары животных так, чтобы детёныши были здоровыми. Например, есть Племенная книга тигров. Некоторые виды сохранились только в зоопарках — лошадь Пржевальского, олень Давида. Лошадей Пржевальского теперь достаточно, чтобы вернуть их в природу.</p>
+</div>
+<div class="book" hidden>
+<p><b>Разведение вида в неволе.</b> Ещё одним способом сохранения вида является <span class="term" role="button" tabindex="0" data-t="nevol">разведение его в условиях неволи</span> или выращивание детёнышей животных, мальков рыб, птенцов для того, чтобы впоследствии выпустить их на волю.</p>
+<p>Так, в Окском заповеднике проведена операция по спасению журавлей. Особенностью белых журавлей, или стерхов (рис. 120), является то, что у родителей появляется всего два птенца, причём один неизбежно погибает, и выживает более сильный птенец. Тогда было решено отыскивать гнёзда стерхов с вертолётов и забирать одно яйцо для искусственного выведения птенца в инкубаторе, выращивания его и возвращения в природу. Для этой цели в Окском заповеднике был организован журавлиный питомник. В нём оставляли часть птиц для изучения и размножения в неволе.</p>
+<p>Важнейшая роль в сохранении редких видов принадлежит зоопаркам, где изучают особенность биологии редких видов и занимаются их размножением. Существует Международная <span class="term" role="button" tabindex="0" data-t="plem">племенная книга</span>, с помощью которой подбирают пары животных так, чтобы у них были здоровые детёныши. Например, есть Племенная книга тигров. Некоторые виды животных сохранились только в зоопарках, например лошадь Пржевальского, олень Давида. В настоящее время поголовье лошади Пржевальского достаточно для того, чтобы вернуть этот вид в природу.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s120" src="img/c5631bdeddf2.jpg" alt="Белый журавль с красным клювом и красными ногами стоит в воде, рядом плавают утки"><figcaption><span class="src">из учебника</span><b>Рис. 120.</b> Белый журавль (стерх)<br><span style="color:var(--soft)">▲ Найди красные клюв и ноги. Какого цвета кончики крыльев?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 284" role="img" aria-label="В природе: два яйца, выживает только один птенец из двух. С помощью людей: одно яйцо остаётся в гнезде, из него один птенец; второе забирают с вертолёта, выводят в инкубаторе, растят в питомнике и выпускают в природу. Итого два птенца"><use href="#o-crane"/></svg><figcaption>Люди не дают пропасть второму птенцу.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Как спасли зубров</span></div><img class="lifepic" src="img/d493179ae2c3.jpg" alt=""><div class="lifebody"><p>К 1927 году в природе не осталось ни одного зубра. Всего 48 зверей жили в зоопарках и зверинцах разных стран. Учёные стали разводить их в неволе, подбирая пары, — как по племенной книге.</p><p>В 1948 году в Приокско-Террасном заповеднике открыли <b>Центральный зубровый питомник</b> — тот самый, где ты видела зубров. Из таких питомников зубров выпускают в леса, и теперь они снова живут на воле. Зубр — самый крупный наземный зверь Европы, и все зубры сегодня — потомки тех немногих зверей из зоопарков.</p></div><p class="lifebook">В учебнике это называется: <b>разведение вида в неволе</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Московский зоопарк и манул</span></div><div class="lifebody"><p>В Московском зоопарке ты была давно. Если успеете съездить снова, найди там <b>манула</b> (рис. 121 г). Это символ зоопарка: он нарисован на его эмблеме.</p><p>Манул — дикий кот степей и гор, с очень густой шерстью. У него круглые зрачки, а не щёлочки, как у домашней кошки. В зоопарке манулов разводят — это и есть работа зоопарка по спасению редких видов.</p></div><p class="lifebook">В учебнике это называется: <b>роль зоопарков</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">2. Зачем учёные забирали из гнезда стерхов одно яйцо?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Второй абзац раздела и схема.</div>
+<div class="rev ans" id="a2" hidden>У стерхов из двух птенцов выживает только один, более сильный. Яйцо забирали, выводили птенца в инкубаторе, выращивали и выпускали в природу — так вместо одного птенца выживали два.</div>
+</div>
+<div class="think">
+<p class="qt">3. Как зоопарки помогают сохранить редкие виды?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Третий абзац раздела.</div>
+<div class="rev ans" id="a3" hidden>Изучают их биологию и разводят. По Международной племенной книге подбирают пары, чтобы детёныши были здоровыми. Некоторые виды — лошадь Пржевальского, олень Давида — сохранились только в зоопарках, и их можно вернуть в природу.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Красная книга</h2></div>
+<div class="easy">
+<p>В последние десятилетия <span class="term" role="button" tabindex="0" data-t="bioraz">биологическое разнообразие</span> снижается. Главная причина — деятельность человека: он рубит леса, распахивает степи, осушает болота и разрушает места, где живут животные. Только когда многие животные, растения и грибы исчезли навсегда, люди поняли, какой непоправимый вред наносят природе.</p>
+<p>Спасать исчезающих животных начал Международный союз охраны природы. В 1963 году он составил список редких и исчезающих животных — <span class="term" role="button" tabindex="0" data-t="krasn">Красную книгу</span>. Красный цвет — сигнал запрета, понятный всем людям мира. Позже в книгу внесли редкие растения и грибы.</p>
+<p>В России Красная книга впервые вышла в 1983 году. Это официальный справочник о живых организмах, которым нужна особая охрана (рис. 121). По Красным книгам учёные следят за охраняемыми видами и решают, как их охранять и восстанавливать. Важно, чтобы каждый человек берёг места, где живут организмы, и их разнообразие: от этого зависит устойчивость всей живой природы.</p>
+</div>
+<div class="book" hidden>
+<p><b>Красная книга.</b> <span class="term" role="button" tabindex="0" data-t="bioraz">Биологическое разнообразие</span> организмов в последние десятилетия снижается. Главной причиной исчезновения животных стала деятельность человека. Вырубая леса, распахивая степи, осушая болота, человек разрушает места обитания животных, и они погибают. И только после того как многие животные, растения и грибы исчезли безвозвратно, люди стали понимать, что наносят непоправимый ущерб видовому многообразию природы. Инициативу по спасению исчезающих животных проявил Международный союз охраны природы. В 1963 году был составлен список редких и исчезающих животных — <b><span class="term" role="button" tabindex="0" data-t="krasn">Красная книга</span></b>. Её название объясняется тем, что красный цвет — сигнал запрета, понятный людям всего мира. Позже в эту книгу были включены редкие и исчезающие растения и грибы.</p>
+<p>В России национальная Красная книга была впервые издана в 1983 году. Это официальный справочник, содержащий сведения о состоянии живых организмов, нуждающихся в специальной охране (рис. 121). Красные книги необходимы для организации исследований и слежения за состоянием охраняемых организмов и их местообитаний, для разработки и осуществления особых мер по их охране, восстановлению и научно обоснованному использованию. Очень важно, чтобы каждый человек был внимательным к живому миру, стремился сохранять места обитания и видовое разнообразие живых организмов. От этого зависит устойчивость всей живой природы на нашей планете.</p>
+</div>
+<p class="lifebody"><b>Рис. 121.</b> Животные, находящиеся под угрозой исчезновения</p>
+</div>
+<div class="w3">
+<figure class="photo"><div class="fig"><img id="ph-x_zubr" src="img/d493179ae2c3.jpg" alt="Зубр — огромный бурый бык с горбом на холке — стоит в заснеженном лесу"><figcaption><span class="src">из учебника</span><b>Рис. 121 а.</b> Зубр<br><span style="color:var(--soft)">▲ Ты видела зубров в Приокско-Террасном заповеднике.</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-x_mandarin" src="img/f1cc068c9845.jpg" alt="Два пёстрых селезня утки-мандаринки с рыжими «бакенбардами» стоят на мелководье"><figcaption><span class="src">из учебника</span><b>Рис. 121 б.</b> Утка мандаринка<br><span style="color:var(--soft)">▲ Посчитай, сколько цветов в оперении.</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-x_dolphin" src="img/a93e5924b236.jpg" alt="Два серых дельфина плывут в синей воде"><figcaption><span class="src">из учебника</span><b>Рис. 121 в.</b> Дельфин<br><span style="color:var(--soft)">▲ Дельфин — рыба или зверь? Вспомни, как он дышит.</span></figcaption></div></figure>
+</div>
+<div class="w3">
+<figure class="photo"><div class="fig"><img id="ph-x_manul" src="img/e6ba8bc0296e.jpg" alt="Манул — пушистый серый дикий кот с полосатым хвостом — лежит на бревне"><figcaption><span class="src">из учебника</span><b>Рис. 121 г.</b> Манул<br><span style="color:var(--soft)">▲ Найди полоски на хвосте и круглые зрачки.</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-x_kabarga" src="img/09db4ccebfa3.jpg" alt="Кабарга — маленький бурый олень без рогов — стоит в лесу на опавших листьях"><figcaption><span class="src">из учебника</span><b>Рис. 121 д.</b> Кабарга<br><span style="color:var(--soft)">▲ Найди рога. Есть они?</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-x_polar" src="img/46431d176029.jpg" alt="Белая медведица с двумя медвежатами на снегу среди льдин"><figcaption><span class="src">из учебника</span><b>Рис. 121 е.</b> Белый медведь<br><span style="color:var(--soft)">▲ Сколько здесь медведей?</span></figcaption></div></figure>
+</div>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Кого из рис. 121 ты знаешь</span></div><div class="lifebody"><p><b>Зубра</b> ты видела вживую — в Приокско-Террасном заповеднике. <b>Дельфинов</b> — на шоу в Валенсии, когда была совсем маленькой. <b>Белого медведя</b> пока нет: он живёт в арктической пустыне (§25).</p><p><b>Мандаринки</b> живут на Дальнем Востоке: селезень — самый нарядный из наших уток. У <b>кабарги</b> — маленького оленя — нет рогов, зато у самцов длинные клыки торчат изо рта. А <b>манул</b> — символ Московского зоопарка.</p></div><p class="lifebook">В учебнике это называется: <b>Красная книга</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Что такое Красная книга и для чего она нужна?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Второй и третий абзацы раздела.</div>
+<div class="rev ans" id="a4" hidden>Это список редких и исчезающих животных, растений и грибов, которым нужна особая охрана. По ней учёные следят за состоянием охраняемых видов и мест, где они живут, и решают, как их охранять и восстанавливать.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему виды исчезают?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a5" hidden>Главная причина — деятельность человека: вырубка лесов, распашка степей, осушение болот разрушают места обитания, и животные погибают.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">5</span><h2>Что можешь сделать ты</h2></div>
+<div class="easy">
+<p>Каждый школьник может охранять природу родного края. Вместе с учителем можно изучить свой край: какие природные богатства в нём есть и какие из них тратятся неразумно. Можно исследовать леса, почву, поля, найти, откуда берётся загрязнение, и помочь благоустроить свой район.</p>
+<p>Самое ценное на Земле — <b>жизнь</b> во всём её многообразии. Всё в природе связано. Все организмы приспосабливаются к среде, и только человек приспосабливает среду к себе. Если он не знает законов природы, он разрушает экосистемы. Чтобы этого не случилось, надо понять: мы — часть биосферы, и её судьба зависит от нас.</p>
+</div>
+<div class="book" hidden>
+<p><b>Роль учащихся в охране природы.</b> Каждый из вас может принять активное участие в охране природы родного края. С этой целью под руководством учителя проведите ознакомление с местным краем, выявление его природных ресурсов, особенно тех, которые используются нерационально и поэтому нуждаются в охране и восстановлении. Ваши исследования могут касаться состояния лесов, эрозии почв, засорённости и заражённости вредителями полей и др. Вы можете изучить экологическое состояние окружающей среды в своём районе, выявить источники загрязнений, принять участие в его благоустройстве.</p>
+<p><b>Осознание жизни как великой ценности.</b> Самое ценное и важное, что существует на Земле, — это жизнь во всём её многообразии. Всё в природе находится во взаимодействии. Все живые организмы приспосабливаются к условиям окружающей среды, кроме человека, который приспосабливает среду к собственным потребностям. Хозяйственная деятельность человека, если она не опирается на знания законов природы, приводит к разрушению сложившихся в природе экосистем. Чтобы предотвратить беду, необходимо понять и осознать, что мы являемся частью биосферы, судьба которой зависит от нас.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-x_birdhouse" src="img/6c7fb32470ab.jpg" alt="Деревянный домик-гнездовье на столбе, на краю летка сидит маленькая синица с чёрной шапочкой"><figcaption><span class="src">из учебника</span>Заставка главы 5: домик для птиц<br><span style="color:var(--soft)">▲ Где у домика вход? Кто может в нём жить?</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твоя кормушка</span></div><div class="lifebody"><p>Ты уже делала <b>кормушку</b> для птиц — это и есть охрана природы своими руками. Зимой птицам трудно найти корм, и кормушка помогает им дожить до весны.</p><p>На заставке главы — домик-гнездовье. Такие домики вешают там, где мало старых деревьев с дуплами, и в них выводят птенцов синицы и скворцы. Ты замечала скворечники в Терлецком парке и в Измайлове — посчитай, сколько их на твоём обычном маршруте.</p></div><p class="lifebook">В учебнике это называется: <b>роль учащихся в охране природы</b></p></aside>
+<div class="sortgame" id="srt1" data-n="8">
+<div class="sortlab">Как вести себя в национальном парке?</div>
+<p class="sortnote">Это задание 4 из «Проверьте себя». Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Ходить по тропинкам</p><div class="sbtns"><button class="sbtn" data-b="0">так можно</button><button class="sbtn" data-b="1">так нельзя</button></div><p class="swhy" hidden>Тропинки сделаны, чтобы не вытаптывать остальную землю (§24).</p></div>
+<div class="sitem" data-r="1"><p class="stext">Разжечь костёр, где захочется</p><div class="sbtns"><button class="sbtn" data-b="0">так можно</button><button class="sbtn" data-b="1">так нельзя</button></div><p class="swhy" hidden>Огонь может перекинуться на лес.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Унести свой мусор с собой</p><div class="sbtns"><button class="sbtn" data-b="0">так можно</button><button class="sbtn" data-b="1">так нельзя</button></div><p class="swhy" hidden>Мусор в лесу — местная экологическая проблема (§26).</p></div>
+<div class="sitem" data-r="1"><p class="stext">Сорвать редкий цветок на память</p><div class="sbtns"><button class="sbtn" data-b="0">так можно</button><button class="sbtn" data-b="1">так нельзя</button></div><p class="swhy" hidden>Лучше сфотографировать — и цветок останется.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Громко включить музыку</p><div class="sbtns"><button class="sbtn" data-b="0">так можно</button><button class="sbtn" data-b="1">так нельзя</button></div><p class="swhy" hidden>Шум пугает животных: человек здесь гость.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Фотографировать зверей издалека</p><div class="sbtns"><button class="sbtn" data-b="0">так можно</button><button class="sbtn" data-b="1">так нельзя</button></div><p class="swhy" hidden>Животных нельзя трогать и пугать, а смотреть можно.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Кормить диких зверей хлебом</p><div class="sbtns"><button class="sbtn" data-b="0">так можно</button><button class="sbtn" data-b="1">так нельзя</button></div><p class="swhy" hidden>Им вредна наша еда, и они перестают бояться людей.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Отпустить собаку без поводка</p><div class="sbtns"><button class="sbtn" data-b="0">так можно</button><button class="sbtn" data-b="1">так нельзя</button></div><p class="swhy" hidden>Собака может напугать или поймать диких животных.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Для чего необходимо сохранять все виды живых организмов на Земле?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Раздел 5 и пищевые сети из §22.</div>
+<div class="rev ans" id="a6" hidden>Всё в природе связано: виды кормят друг друга, создают среду, разлагают остатки. Если исчезнет один вид, нарушатся пищевые цепи и может пострадать всё сообщество. А человек — часть биосферы, и её судьба — это и наша судьба.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги главы 5 и всего учебника</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Заповедник · Национальный парк · Заказник · Памятник природы · Красная книга</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Для чего необходимо сохранять все виды живых организмов на Земле?</li><li>В чём различия заповедников, заказников, национальных парков и памятников природы?</li><li>Что такое Красная книга и для чего она нужна?</li><li>Сформулируйте правила поведения в природе.</li><li>Подготовьте сообщение о редком животном, обитающем в вашем регионе, и его охране.</li><li>Используя интернет-источники, научно-популярные журналы, газеты, книги, подготовьте сообщение на тему «Заповедник моего региона».</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка к вопросу 4</button></div>
+<div class="rev hint" id="r2" hidden>Возьми ответы из игры в разделе 5: ходи по тропинкам, уноси мусор с собой, не разжигай костёр где попало, не рви редкие растения, не шуми, не корми и не трогай диких животных, держи собаку на поводке. В национальном парке правила висят у входа — человек там гость.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к вопросам 5 и 6</button></div>
+<div class="rev hint" id="r3" hidden>Твой регион — Москва и Московская область. Редкое животное — <b>зубр</b>: его спасли в неволе, а ты сама видела зубров в Приокско-Террасном заповеднике. Это и есть «заповедник моего региона» — у тебя есть свои впечатления. Презентации ты делаешь сама: расскажи, почему зубры исчезли, как их спасли и что ты видела в питомнике.</div></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Что можете сделать лично вы для охраны природы?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Подсказка</button></div>
+<div class="rev hint" id="r4" hidden>Делать кормушки и подкармливать птиц зимой, как ты уже делала. Уносить мусор из леса и парка. Сдавать батарейки в коробки, бросать бумагу и пластик в синий контейнер. Ходить по тропинкам, не рвать редкие цветы. Сажать деревья. И рассказывать другим — например, своей презентацией.</div></div>
+<div class="rubric">Краткое содержание главы 5</div>
+<div class="easy">
+<p>Человек берёт у природы всё нужное для жизни. Его деятельность часто вредит природным сообществам, но люди научились исправлять этот вред. Правила <b>рационального природопользования</b> помогают меньше вредить биосфере.</p>
+<p>Чтобы сохранить многообразие организмов на планете, создают <b>особо охраняемые природные территории</b>.</p>
+</div>
+<div class="book" hidden>
+<p>Для удовлетворения своих жизненно важных потребностей человек использует богатства окружающей среды. Его деятельность нередко наносит вред природным сообществам, но люди научились компенсировать ущерб, который они наносят природе. Принципы рационального природопользования помогают снизить воздействие хозяйственной деятельности человека на биосферу.</p>
+<p>Чтобы сохранить многообразие организмов на планете, создаются особо охраняемые природные территории.</p>
+</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r5" aria-expanded="false">Вся глава 5 коротко</button></div>
+<div class="rev plan" id="r5" hidden><b>§26</b> Как человек менял природу; местные, региональные и глобальные проблемы; загрязнение и безотходные технологии; устойчивое развитие.<br><b>§27</b> Заповедники, национальные парки, заказники, памятники природы; разведение в неволе; Красная книга.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r6" aria-expanded="false">Весь учебник коротко</button></div>
+<div class="rev plan" id="r6" hidden><b>Введение</b> (§1—3). Чем живое отличается от неживого; биология — система наук; зачем она людям.<br><b>Глава 1</b> (§4—7). Методы изучения живой природы: наблюдение, измерение, эксперимент, таблицы и графики.<br><b>Глава 2</b> (§8—14). Организмы: клетка и микроскоп, ткани и органы, жизнедеятельность; классификация; растения, животные, грибы, бактерии, вирусы.<br><b>Глава 3</b> (§15—20). Среды обитания: водная, наземно-воздушная, почвенная, организмы как среда; сезонные изменения.<br><b>Глава 4</b> (§21—25). Природные сообщества: пищевые цепи и сети, разнообразие сообществ, природные зоны.<br><b>Глава 5</b> (§26—27). Живая природа и человек: как мы меняем природу и как её охраняем.<br><br>Ты прошла весь учебник биологии за 5 класс!</div></div>
+<div class="done"><button class="donebtn" data-s="s6" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt7" data-n="8">
+<div class="sortlab">Что это за территория?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Без специального разрешения туда нельзя даже зайти</p><div class="sbtns"><button class="sbtn" data-b="0">заповедник</button><button class="sbtn" data-b="1">национальный парк</button><button class="sbtn" data-b="2">заказник</button><button class="sbtn" data-b="3">памятник природы</button></div><p class="swhy" hidden>Запрещено любое хозяйство и даже нахождение людей.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Туристы гуляют по правилам, которые висят у входа</p><div class="sbtns"><button class="sbtn" data-b="0">заповедник</button><button class="sbtn" data-b="1">национальный парк</button><button class="sbtn" data-b="2">заказник</button><button class="sbtn" data-b="3">памятник природы</button></div><p class="swhy" hidden>Человек там гость.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Весной закрыт — там отдыхают перелётные птицы, а летом можно собирать грибы</p><div class="sbtns"><button class="sbtn" data-b="0">заповедник</button><button class="sbtn" data-b="1">национальный парк</button><button class="sbtn" data-b="2">заказник</button><button class="sbtn" data-b="3">памятник природы</button></div><p class="swhy" hidden>Хозяйство ограничено, а не запрещено.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Очень старое дерево</p><div class="sbtns"><button class="sbtn" data-b="0">заповедник</button><button class="sbtn" data-b="1">национальный парк</button><button class="sbtn" data-b="2">заказник</button><button class="sbtn" data-b="3">памятник природы</button></div><p class="swhy" hidden>Небольшая охраняемая территория.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Лосиный остров</p><div class="sbtns"><button class="sbtn" data-b="0">заповедник</button><button class="sbtn" data-b="1">национальный парк</button><button class="sbtn" data-b="2">заказник</button><button class="sbtn" data-b="3">памятник природы</button></div><p class="swhy" hidden>Самый первый в России, 1983 год.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Приокско-Террасный, где ты видела зубров</p><div class="sbtns"><button class="sbtn" data-b="0">заповедник</button><button class="sbtn" data-b="1">национальный парк</button><button class="sbtn" data-b="2">заказник</button><button class="sbtn" data-b="3">памятник природы</button></div><p class="swhy" hidden>Гостей водят только по особым тропам.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Водопад Кивач</p><div class="sbtns"><button class="sbtn" data-b="0">заповедник</button><button class="sbtn" data-b="1">национальный парк</button><button class="sbtn" data-b="2">заказник</button><button class="sbtn" data-b="3">памятник природы</button></div><p class="swhy" hidden>Рис. 119.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Охота разрешена, но по строгим правилам</p><div class="sbtns"><button class="sbtn" data-b="0">заповедник</button><button class="sbtn" data-b="1">национальный парк</button><button class="sbtn" data-b="2">заказник</button><button class="sbtn" data-b="3">памятник природы</button></div><p class="swhy" hidden>Это охотничий заказник.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Заповедник</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s118" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Запрещено любое хозяйство; людям нельзя без разрешения.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Национальный парк</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 302" aria-hidden="true"><use href="#o-oopt"/></svg><span class="ftext">Туристам можно, но строго по правилам у входа.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Заказник</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 302" aria-hidden="true"><use href="#o-oopt"/></svg><span class="ftext">Хозяйство не запрещено, а ограничено.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Памятник природы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s119" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Маленький: старое дерево, водопад, родник.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Разведение в неволе</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 284" aria-hidden="true"><use href="#o-crane"/></svg><span class="ftext">Вырастить детёнышей и выпустить на волю: стерхи, зубры.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Племенная книга</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 250" aria-hidden="true"><use href="#o-paths"/></svg><span class="ftext">По ней в зоопарках подбирают пары для здоровых детёнышей.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Красная книга</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="x_manul" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Список редких и исчезающих видов; с 1963 года.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Биологическое разнообразие</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="x_mandarin" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Многообразие видов; оно снижается из-за человека.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Где нельзя даже находиться без специального разрешения?</h3><div class="opts">
+<button class="opt" data-ok="1">В заповеднике</button>
+<button class="opt">В национальном парке</button>
+<button class="opt">В заказнике</button>
+<button class="opt">У памятника природы</button></div>
+<div class="fb">В заповеднике природа живёт без людей.</div></div>
+<div class="q"><h3>2. Почему Красная книга — красная?</h3><div class="opts">
+<button class="opt" data-ok="1">Красный — сигнал запрета, понятный всем</button>
+<button class="opt">Так захотел художник</button>
+<button class="opt">Её печатают на красной бумаге</button>
+<button class="opt">В ней только красные животные</button></div>
+<div class="fb">Его понимают люди всего мира.</div></div>
+<div class="q"><h3>3. Почему у стерхов забирали одно яйцо?</h3><div class="opts">
+<button class="opt" data-ok="1">Из двух птенцов в природе выживает один</button>
+<button class="opt">Чтобы съесть</button>
+<button class="opt">Яиц было слишком много</button>
+<button class="opt">Чтобы родители отдохнули</button></div>
+<div class="fb">Второго птенца выращивали в питомнике.</div></div>
+<div class="q"><h3>4. Какой национальный парк — первый в России?</h3><div class="opts">
+<button class="opt" data-ok="1">Лосиный остров</button>
+<button class="opt">Самарская Лука</button>
+<button class="opt">Кедровая Падь</button>
+<button class="opt">Окский</button></div>
+<div class="fb">Его создали в 1983 году.</div></div>
+<div class="q"><h3>5. Какой вид сохранился только в зоопарках?</h3><div class="opts">
+<button class="opt" data-ok="1">Лошадь Пржевальского</button>
+<button class="opt">Бурый медведь</button>
+<button class="opt">Лось</button>
+<button class="opt">Северный олень</button></div>
+<div class="fb">А теперь её возвращают в природу.</div></div>
+<div class="q"><h3>6. Кто символ Московского зоопарка?</h3><div class="opts">
+<button class="opt" data-ok="1">Манул</button>
+<button class="opt">Зубр</button>
+<button class="opt">Белый медведь</button>
+<button class="opt">Стерх</button></div>
+<div class="fb">Дикий кот с круглыми зрачками, рис. 121 г.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Как защитить вид</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Законы о запрете добычи редких видов.</li><li>Охраняемые территории.</li><li>Разведение в неволе.</li></ol></div>
+</div>
+<div class="think">
+<h3>Охраняемые территории</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Заповедник: нельзя ничего (Приокско-Террасный).</li><li>Национальный парк: можно по правилам (Лосиный остров).</li><li>Заказник: хозяйство ограничено.</li><li>Памятник природы: старое дерево, водопад Кивач.</li></ol></div>
+</div>
+<div class="think">
+<h3>Разведение в неволе и Красная книга</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Стерхи в Окском заповеднике.</li><li>Зоопарки и племенные книги; зубры, лошадь Пржевальского.</li><li>Красная книга: 1963 год, в России — 1983.</li></ol></div>
+</div>
+<div class="think">
+<h3>Что могу сделать я</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl11" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl11" hidden><ol><li>Кормушки, мусор с собой, батарейки отдельно.</li><li>Правила поведения в природе.</li><li>Мы — часть биосферы.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b26.html">‹ §26 Человек и природа</a>
+  <span class="pn cur">§27 Охрана природы</span>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 27, с. 154—157. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'o-paths':'0 0 330 250','o-oopt':'0 0 330 302','o-crane':'0 0 330 284'};
+
+var T={
+oopt:{w:"Особо охраняемая природная территория",k:"место, где природу берегут",s:"o-oopt",t:"Территория, где обитает, размножается или останавливается на пути миграции охраняемый вид. Это заповедники, национальные парки, заказники и памятники природы.",r:"",e:""},
+zapov:{w:"Заповедник",k:"людям нельзя",p:"s118",t:"Охраняемый природный комплекс на обширной территории, где запрещена любая хозяйственная деятельность и даже нахождение людей без специального разрешения.",r:"",e:""},
+nacpark:{w:"Национальный парк",k:"можно по правилам",s:"o-oopt",t:"Охраняемая территория, которую могут посещать туристы при строгом соблюдении правил. Человек там гость, а хозяева — все обитающие организмы.",r:"",e:""},
+zakaz:{w:"Заказник",k:"что-то можно, что-то нельзя",s:"o-oopt",t:"Охраняемая территория, где хозяйственная деятельность не запрещена, а ограничена. Правила зависят от цели заказника.",r:"",e:""},
+pamyat:{w:"Памятник природы",k:"маленький и особенный",p:"s119",t:"Небольшая охраняемая территория: очень старое дерево, группа редких растений, водопад, необычный родник.",r:"",e:""},
+nevol:{w:"Разведение в неволе",k:"вырастить и выпустить",s:"o-crane",t:"Способ сохранения вида: животных разводят или выращивают детёнышей, мальков, птенцов, чтобы потом выпустить на волю.",r:"",e:""},
+plem:{w:"Племенная книга",k:"подбор пар в зоопарках",s:"o-paths",t:"Международный список животных редкого вида в зоопарках. По нему подбирают пары так, чтобы у них были здоровые детёныши. Например, Племенная книга тигров.",r:"",e:""},
+krasn:{w:"Красная книга",k:"список исчезающих",s:"o-paths",t:"Список редких и исчезающих животных, растений и грибов. Первую составил Международный союз охраны природы в 1963 году. Красный цвет — сигнал запрета.",r:"",e:""},
+bioraz:{w:"Биологическое разнообразие",k:"сколько разных видов",p:"x_manul",t:"Многообразие видов живых организмов. В последние десятилетия оно снижается, главная причина — деятельность человека.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b27:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b27:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b27:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b27:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
