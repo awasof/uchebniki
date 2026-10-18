@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Кошачий пруд, луг с венками, болото, которое пружинит под ногами, и лес из пяти этажей.">
+<title>Разнообразие природных сообществ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="o-pond" viewBox="0 0 330 230">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Кто где живёт в пруду</text>
+<rect x="6" y="32" width="92" height="170" rx="10" fill="var(--leaf,#2D7A55)" fill-opacity=".2"/>
+<rect x="104" y="32" width="220" height="48" rx="8" fill="var(--water,#6FA8C4)" fill-opacity=".18"/>
+<rect x="104" y="84" width="220" height="66" rx="8" fill="var(--water,#6FA8C4)" fill-opacity=".34"/>
+<rect x="104" y="154" width="220" height="48" rx="8" fill="var(--brown,#8B5E3C)" fill-opacity=".28"/>
+<g fill="var(--illink,#2B2620)">
+<g text-anchor="middle"><text x="52" y="52" font-size="12" font-weight="700">у берега</text>
+<g font-size="11"><text x="52" y="72">камыш</text><text x="52" y="88">рогоз</text><text x="52" y="104">тростник</text><text x="52" y="120">частуха</text>
+<text x="52" y="146">утки</text><text x="52" y="162">цапли</text><text x="52" y="178">ондатры</text></g></g>
+<text x="114" y="50" font-size="12" font-weight="700">на поверхности</text>
+<text x="114" y="68" font-size="11">ряска, водокрас, водомерки</text>
+<text x="114" y="102" font-size="12" font-weight="700">в толще воды</text>
+<text x="114" y="120" font-size="11">водоросли, элодея, кувшинка</text>
+<text x="114" y="136" font-size="11">караси, щуки, жуки-плавунцы</text>
+<text x="114" y="172" font-size="12" font-weight="700">на дне</text>
+<text x="114" y="190" font-size="11">беззубки, наполовину в грунте</text>
+</g>
+<text x="165" y="222" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">у каждого жителя пруда — своё место</text>
+</g></symbol>
+
+<symbol id="o-dern" viewBox="0 0 330 196">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Луг: сверху и под землёй</text>
+<rect x="6" y="110" width="236" height="56" rx="6" fill="var(--brown,#8B5E3C)" fill-opacity=".25"/>
+<g fill="none" stroke="var(--leaf,#2D7A55)" stroke-width="1.6" stroke-linecap="round"><path d="M13.3 110 Q16.0 79.7 18.8 49.4"/><path d="M16.4 110 Q15.8 84.7 15.3 59.4"/><path d="M23.3 110 Q21.1 91.2 19.0 72.4"/><path d="M28.6 110 Q28.3 89.9 28.0 69.8"/><path d="M33.0 110 Q34.4 91.8 35.9 73.6"/><path d="M39.8 110 Q41.4 85.8 43.0 61.6"/><path d="M45.2 110 Q47.2 92.2 49.1 74.4"/><path d="M51.5 110 Q52.3 83.8 53.2 57.6"/><path d="M58.2 110 Q60.0 87.9 61.8 65.8"/><path d="M62.0 110 Q63.1 85.0 64.3 60.0"/><path d="M67.4 110 Q67.3 91.8 67.1 73.6"/><path d="M74.3 110 Q73.9 84.7 73.5 59.5"/><path d="M79.6 110 Q77.4 90.5 75.1 70.9"/><path d="M84.3 110 Q82.1 81.6 80.0 53.2"/><path d="M89.2 110 Q86.0 91.6 82.8 73.2"/><path d="M95.3 110 Q97.6 85.0 99.8 60.0"/><path d="M101.1 110 Q99.6 87.8 98.1 65.6"/><path d="M106.6 110 Q107.0 82.1 107.3 54.2"/><path d="M112.1 110 Q114.1 91.5 116.0 73.0"/><path d="M119.0 110 Q117.2 81.4 115.4 52.8"/><path d="M124.1 110 Q124.8 80.1 125.4 50.3"/><path d="M130.9 110 Q134.3 90.7 137.6 71.3"/><path d="M133.9 110 Q130.5 87.2 127.2 64.3"/><path d="M141.7 110 Q145.0 83.4 148.4 56.8"/><path d="M147.3 110 Q147.6 79.7 147.9 49.4"/><path d="M153.5 110 Q152.4 82.5 151.3 55.0"/><path d="M159.0 110 Q156.9 87.7 154.7 65.4"/><path d="M161.9 110 Q159.8 86.5 157.7 63.0"/><path d="M170.1 110 Q168.1 79.7 166.1 49.4"/><path d="M173.2 110 Q170.9 85.6 168.6 61.2"/><path d="M180.1 110 Q178.4 81.6 176.7 53.2"/><path d="M185.4 110 Q185.0 80.4 184.6 50.8"/><path d="M190.7 110 Q192.9 80.5 195.1 51.0"/><path d="M198.0 110 Q197.4 83.4 196.8 56.7"/><path d="M203.0 110 Q204.0 81.4 204.9 52.8"/><path d="M207.2 110 Q206.6 88.9 205.9 67.7"/><path d="M214.4 110 Q214.8 85.2 215.1 60.4"/><path d="M220.2 110 Q221.1 91.5 222.0 73.0"/><path d="M224.3 110 Q226.6 85.2 229.0 60.3"/><path d="M229.6 110 Q226.7 79.7 223.7 49.4"/></g>
+<path d="M180.7 70.0 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="180.7" cy="67.0" r="3.2" fill="var(--pa,#C2185B)"/><path d="M20.6 62.1 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="20.6" cy="59.1" r="3.2" fill="var(--pb,#3B6FA8)"/><path d="M169.9 68.6 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="169.9" cy="65.6" r="3.2" fill="var(--ochre,#E2A31F)"/><path d="M128.7 58.8 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="128.7" cy="55.8" r="3.2" fill="var(--pa,#C2185B)"/><path d="M100.7 56.1 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="100.7" cy="53.1" r="3.2" fill="var(--pb,#3B6FA8)"/><path d="M80.8 62.7 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="80.8" cy="59.7" r="3.2" fill="var(--ochre,#E2A31F)"/><path d="M191.4 65.6 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="191.4" cy="62.6" r="3.2" fill="var(--pa,#C2185B)"/><path d="M102.3 59.4 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="102.3" cy="56.4" r="3.2" fill="var(--pb,#3B6FA8)"/><path d="M80.7 67.1 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="80.7" cy="64.1" r="3.2" fill="var(--ochre,#E2A31F)"/><path d="M109.1 58.1 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="109.1" cy="55.1" r="3.2" fill="var(--pa,#C2185B)"/><path d="M191.1 65.4 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="191.1" cy="62.4" r="3.2" fill="var(--pb,#3B6FA8)"/><path d="M222.9 64.7 V110" stroke="var(--leaf,#2D7A55)" stroke-width="1"/><circle cx="222.9" cy="61.7" r="3.2" fill="var(--ochre,#E2A31F)"/>
+<g fill="none" stroke="var(--brown,#8B5E3C)" stroke-width="1.1" stroke-linecap="round"><path d="M18.0 112 Q18.6 129.4 19.1 146.8"/><path d="M18.0 112 Q15.6 129.6 13.2 147.2"/><path d="M18.0 112 Q17.7 128.5 17.5 145.0"/><path d="M18.0 112 Q20.0 124.0 21.9 136.1"/><path d="M33.5 112 Q32.4 131.9 31.3 151.7"/><path d="M33.5 112 Q30.3 132.7 27.1 153.3"/><path d="M33.5 112 Q30.8 130.8 28.2 149.6"/><path d="M33.5 112 Q30.6 128.5 27.6 145.0"/><path d="M49.0 112 Q48.3 124.8 47.6 137.6"/><path d="M49.0 112 Q50.8 128.8 52.6 145.6"/><path d="M49.0 112 Q50.7 129.4 52.4 146.8"/><path d="M49.0 112 Q49.5 129.3 50.0 146.5"/><path d="M64.5 112 Q62.7 133.0 60.9 154.0"/><path d="M64.5 112 Q60.8 132.8 57.1 153.5"/><path d="M64.5 112 Q67.8 129.0 71.0 146.0"/><path d="M64.5 112 Q67.0 130.7 69.5 149.5"/><path d="M80.0 112 Q80.9 126.9 81.9 141.8"/><path d="M80.0 112 Q78.4 127.5 76.8 143.0"/><path d="M80.0 112 Q78.2 133.6 76.4 155.2"/><path d="M80.0 112 Q78.6 127.9 77.1 143.8"/><path d="M95.5 112 Q94.8 132.2 94.1 152.3"/><path d="M95.5 112 Q95.3 129.5 95.1 147.1"/><path d="M95.5 112 Q93.3 126.8 91.1 141.6"/><path d="M95.5 112 Q91.8 126.2 88.1 140.3"/><path d="M111.0 112 Q108.9 132.5 106.7 153.0"/><path d="M111.0 112 Q111.0 125.1 111.0 138.2"/><path d="M111.0 112 Q110.7 125.2 110.3 138.4"/><path d="M111.0 112 Q111.6 128.4 112.2 144.8"/><path d="M126.5 112 Q129.7 126.6 132.9 141.2"/><path d="M126.5 112 Q129.7 126.5 132.8 141.0"/><path d="M126.5 112 Q130.8 130.3 135.2 148.7"/><path d="M126.5 112 Q122.4 132.1 118.3 152.1"/><path d="M142.0 112 Q140.0 127.6 138.0 143.2"/><path d="M142.0 112 Q138.8 132.4 135.6 152.7"/><path d="M142.0 112 Q138.3 131.4 134.6 150.8"/><path d="M142.0 112 Q141.1 130.8 140.1 149.6"/><path d="M157.5 112 Q155.6 124.8 153.8 137.6"/><path d="M157.5 112 Q161.2 130.5 165.0 149.1"/><path d="M157.5 112 Q154.5 133.8 151.6 155.5"/><path d="M157.5 112 Q161.2 125.8 164.9 139.7"/><path d="M173.0 112 Q168.7 130.1 164.3 148.2"/><path d="M173.0 112 Q169.8 131.3 166.5 150.6"/><path d="M173.0 112 Q172.7 131.1 172.4 150.2"/><path d="M173.0 112 Q173.6 131.7 174.3 151.4"/><path d="M188.5 112 Q191.4 130.0 194.3 148.1"/><path d="M188.5 112 Q189.3 127.3 190.1 142.5"/><path d="M188.5 112 Q185.2 124.9 181.9 137.8"/><path d="M188.5 112 Q191.7 126.1 194.9 140.1"/><path d="M204.0 112 Q203.3 127.2 202.7 142.3"/><path d="M204.0 112 Q205.1 129.3 206.2 146.7"/><path d="M204.0 112 Q207.2 128.4 210.5 144.7"/><path d="M204.0 112 Q202.8 130.5 201.5 149.0"/><path d="M219.5 112 Q221.7 133.3 223.9 154.5"/><path d="M219.5 112 Q217.8 132.9 216.1 153.7"/><path d="M219.5 112 Q223.8 133.8 228.2 155.6"/><path d="M219.5 112 Q216.2 127.8 212.8 143.6"/></g>
+<path d="M6 110 H242" stroke="var(--illink,#2B2620)" stroke-width="1.5"/>
+<g fill="var(--illink,#2B2620)" font-size="11">
+<text x="250" y="48" font-weight="700">злаки</text><text x="250" y="62">и разно-</text><text x="250" y="76">травье</text>
+<text x="250" y="126" font-weight="700">корни</text><text x="250" y="140">пучком —</text><text x="250" y="154">плотный</text><text x="250" y="168">дёрн</text>
+</g>
+<text x="165" y="188" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">дёрн держит влагу и не даёт почве высохнуть</text>
+</g></symbol>
+
+<symbol id="o-bog" viewBox="0 0 330 206">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Почему болото пружинит</text>
+<g fill="var(--leaf,#2D7A55)" fill-opacity=".55"><circle cx="12.0" cy="64.5" r="4.1"/><circle cx="19.2" cy="64.4" r="4.9"/><circle cx="26.4" cy="65.9" r="4.5"/><circle cx="33.6" cy="63.7" r="3.6"/><circle cx="40.8" cy="65.4" r="4.1"/><circle cx="48.0" cy="63.5" r="3.6"/><circle cx="55.2" cy="62.1" r="4.1"/><circle cx="62.4" cy="65.9" r="4.6"/><circle cx="69.6" cy="64.8" r="4.5"/><circle cx="76.8" cy="63.1" r="3.8"/><circle cx="84.0" cy="64.4" r="3.6"/><circle cx="91.2" cy="64.4" r="4.3"/><circle cx="98.4" cy="64.2" r="3.7"/><circle cx="105.6" cy="62.3" r="4.2"/><circle cx="112.8" cy="62.6" r="4.5"/><circle cx="120.0" cy="63.2" r="4.4"/><circle cx="127.2" cy="65.0" r="4.4"/><circle cx="134.4" cy="64.1" r="3.8"/><circle cx="141.6" cy="63.4" r="5.0"/><circle cx="148.8" cy="63.1" r="3.9"/><circle cx="156.0" cy="64.0" r="4.3"/><circle cx="163.2" cy="65.2" r="3.9"/><circle cx="170.4" cy="65.9" r="3.5"/><circle cx="177.6" cy="65.2" r="4.4"/><circle cx="184.8" cy="65.6" r="3.7"/><circle cx="192.0" cy="64.8" r="4.9"/><circle cx="199.2" cy="64.7" r="3.7"/><circle cx="206.4" cy="65.7" r="5.0"/><circle cx="213.6" cy="62.4" r="4.7"/><circle cx="220.8" cy="62.3" r="3.6"/><circle cx="228.0" cy="65.2" r="4.6"/><circle cx="235.2" cy="65.8" r="4.4"/></g>
+<rect x="6" y="66" width="234" height="38" rx="4" fill="var(--brown,#8B5E3C)" fill-opacity=".35"/>
+<rect x="6" y="104" width="234" height="44" fill="var(--water,#6FA8C4)" fill-opacity=".4"/>
+<rect x="6" y="148" width="234" height="28" rx="4" fill="var(--brown,#8B5E3C)" fill-opacity=".65"/>
+<g fill="var(--illink,#2B2620)" font-size="11">
+<text x="16" y="46" font-weight="700">сфагнум, клюква, росянка</text>
+<text x="16" y="90">ковёр из мха и корней</text>
+<text x="16" y="130">вода</text>
+<text x="16" y="166">торф — старый спрессованный мох</text>
+</g>
+<path d="M286 40 V96" stroke="var(--illink,#2B2620)" stroke-width="2" marker-end="url(#ar)"/>
+<g font-size="11" fill="var(--soft,#5F5648)"><text x="250" y="116">ковёр</text><text x="250" y="130">прогибается,</text><text x="250" y="144">но держит</text></g>
+<text x="165" y="198" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">идти можно только по тропе и со взрослыми</text>
+</g></symbol>
+
+<symbol id="o-tiers" viewBox="0 0 330 244">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Ярусы смешанного леса</text>
+<rect x="6" y="32" width="86" height="32" rx="4" fill="var(--leaf,#2D7A55)" fill-opacity="0.75"/>
+<text x="98" y="45" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">1-й ярус — высокие деревья</text>
+<text x="98" y="60" font-size="11" fill="var(--soft,#5F5648)">дуб, ясень, ель</text>
+<rect x="6" y="72" width="64" height="32" rx="4" fill="var(--leaf,#2D7A55)" fill-opacity="0.65"/>
+<text x="98" y="85" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">2-й — деревья пониже</text>
+<text x="98" y="100" font-size="11" fill="var(--soft,#5F5648)">рябина, яблоня дикая, клён татарский</text>
+<rect x="6" y="112" width="44" height="32" rx="4" fill="var(--leaf,#2D7A55)" fill-opacity="0.55"/>
+<text x="98" y="125" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">3-й — кустарники</text>
+<text x="98" y="140" font-size="11" fill="var(--soft,#5F5648)">лещина, жимолость, крушина, бересклет</text>
+<rect x="6" y="152" width="25" height="32" rx="4" fill="var(--leaf,#2D7A55)" fill-opacity="0.45"/>
+<text x="98" y="165" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">4-й — травы и кустарнички</text>
+<text x="98" y="180" font-size="11" fill="var(--soft,#5F5648)">ландыш, медуница, брусника</text>
+<rect x="6" y="192" width="10" height="32" rx="4" fill="var(--leaf,#2D7A55)" fill-opacity="0.35"/>
+<text x="98" y="205" font-size="12" font-weight="700" fill="var(--illink,#2B2620)">5-й — мхи и лишайники</text>
+<text x="98" y="220" font-size="11" fill="var(--soft,#5F5648)">у самой земли</text>
+<text x="165" y="236" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">длина полоски — высота яруса</text>
+</g></symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 23</span>
+    <h1>Разнообразие природных сообществ</h1>
+    <p class="lede">Кошачий пруд, луг с венками, болото, которое пружинит под ногами, и лес из пяти этажей.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>1. Каковы особенности водной среды обитания? 2. Какие животные обитают в лесах?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b22.html">‹ §22 Пищевые связи</a>
+  <span class="pn cur">§23 Разнообразие сообществ</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Озёра и пруды">1</a><a href="#s2" data-j="s2" title="Луга">2</a><a href="#s3" data-j="s3" title="Болота">3</a><a href="#s4" data-j="s4" title="Леса и их ярусы">4</a><a href="#s5" data-j="s5" title="Лесные животные">5</a><a href="#s6" data-j="s6" title="Итоги и «Моя лаборатория»">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Озёра и пруды</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="ozero">Озеро</span> — природный водоём в углублении суши, который не связан напрямую с морем. В нашей стране 2,7 миллиона озёр. Среди них Байкал — самое глубокое озеро в мире и самое большое по запасу пресной воды. Небольшой искусственный водоём, не больше 1 км², называют <span class="term" role="button" tabindex="0" data-t="prud">прудом</span>.</p>
+<p>В озёрах и прудах есть всё для жизни: свет, тепло, воздух и питательные вещества. Солнечные лучи освещают и нагревают воду. В воде растворены кислород и минеральные вещества.</p>
+<p>Главные производители органических веществ в озёрах и прудах — <b>микроскопические водоросли</b>. Это они делают воду тёмно-зелёной (вспомни зелёную Волгу из §16). Водоросли — основная растительная пища для более крупных организмов. Когда водорослей много, в воде размножается огромное количество микроскопических животных.</p>
+<p>У берега растут растения, наполовину погружённые в воду, — камыш, рогоз, частуха, тростник. Кувшинка, кубышка и стрелолист растут под водой, а листья у них плавают. По поверхности плавают ряска и водокрас, глубже — заросли элодеи. Водоросли и части цветковых растений едят многие растительноядные животные.</p>
+<p>Здесь много насекомых, больше всего — <b>комаров</b>. Летом над водой летают <b>стрекозы</b> и откладывают яйца на листья водных растений. Личинки стрекоз живут в воде и едят насекомых, головастиков и мальков рыб. По поверхности бегают клопы-водомерки и кружатся жуки-вертячки — они ловят мелких животных, упавших на воду. В толще воды живут клопы-гладыши, жуки-плавунцы и водолюбы.</p>
+<p>Среди растений ползают моллюски — прудовики, лужанки, катушки. На дне живут <b>беззубки</b>: они наполовину зарываются в грунт.</p>
+<p>Всю жизнь в воде или рядом с ней проводят тритон, озёрная и прудовая лягушки. В толще воды плавают рыбы — растительноядные, хищные и всеядные; в заросших прудах часто встречаются караси, сазаны, щуки.</p>
+<p>В прибрежных зарослях живут утки, гуси, лебеди, чайки. Самая известная утка — <b>кряква</b>. Она кормится на мелководье: клювом достаёт водные растения, насекомых, моллюсков и мелких рачков. На мелководье охотятся <b>цапли</b>: длинные ноги с широко расставленными пальцами держат их даже на топком дне, а длинной шеей и сильным клювом они хватают рыбу, лягушек и насекомых.</p>
+<p>По берегам озёр живут ондатры и водяные полёвки. Ондатры роют норы с входом чуть ниже уровня воды. На зиму они строят на отмелях хатки из растений и ила, а выход из гнезда открывается прямо в воду.</p>
+</div>
+<div class="book" hidden>
+<p><b>Природные сообщества озёр и прудов.</b> <b><span class="term" role="button" tabindex="0" data-t="ozero">Озером</span></b> называют природный водоём в углублении суши, не имеющий прямой связи с морем. В нашей стране находится 2,7 млн озёр. Среди них озеро Байкал — самое глубокое и крупнейшее в мире озеро по объёму пресной воды. Небольшой искусственный водоём, площадью не более 1 км², называют <b><span class="term" role="button" tabindex="0" data-t="prud">прудом</span></b>.</p>
+<p>В озёрах и прудах есть все необходимые для жизни условия: свет, тепло, воздух и питательные вещества. Проникая в толщу воды, солнечные лучи освещают её. От солнечных лучей вода нагревается. В воде в растворённом виде содержатся кислород и необходимые организмам минеральные вещества.</p>
+<p>В природных сообществах озёр и прудов (рис. 102) основными производителями органических веществ являются микроскопические водоросли, придающие воде тёмно-зелёный цвет и составляющие основную часть растительной пищи для более крупных организмов. При обилии водорослей в озёрах и прудах в огромном количестве размножаются микроскопические животные.</p>
+<p>В прибрежной части озёр и прудов растут влаголюбивые растения, которые наполовину погружены в воду, — <i>камыш, рогоз, частуха, тростник</i>. Полностью погружены в воду растения с плавающими листьями — <i>стрелолист, кувшинка, кубышка</i>. На поверхности воды плавают <i>ряска</i> и <i>водокрас</i>. Полностью погружены в воду заросли <i>элодеи</i>. Микроскопические водоросли, надводные и подводные части цветковых растений служат пищей многим растительноядным животным.</p>
+<p>Озёра и пруды являются местом обитания разнообразных насекомых. Самыми многочисленными из них являются <i>комары</i>. В летние дни вблизи водоёмов в разных направлениях летают <i>стрекозы</i>. Они откладывают яйца на листья водных растений. Личинки стрекоз живут в воде и питаются насекомыми, головастиками и мальками рыб. На поверхности воды часто можно увидеть <i>клопов-водомерок, жуков-вертячек</i>. Они питаются мелкими животными, попадающими на поверхность воды. В толще воды обитают <i>клопы-гладыши, жуки-плавунцы, жуки-водолюбы</i>.</p>
+<p>В водоёмах с большим количеством растений можно увидеть разнообразных моллюсков — <i>прудовиков, лужанок, катушек</i>. На дне водоёмов обитают <i>беззубки</i>, которые наполовину зарываются в грунт.</p>
+<p>Всю жизнь проводят в воде или рядом с ней <i>обыкновенный тритон, озёрная и прудовая лягушки</i>. В толще воды обитают разнообразные рыбы, среди которых есть растительноядные, хищные и всеядные. В прудах и озёрах с обильной растительностью часто встречаются <i>караси, сазаны, щуки</i>.</p>
+<p>В прибрежных зарослях обитает много водоплавающих птиц — <i>уток, гусей, лебедей, чаек</i>. Из уток наиболее известна и широко распространена <i>обыкновенная кряква</i>. Она кормится на мелководье, доставая с помощью клюва водные растения, насекомых, моллюсков, мелких рачков.</p>
+<p>К жизни на прибрежных мелководьях озёр и прудов приспособились <i>цапли</i>. Высокие ноги с широко расставленными пальцами позволяют им передвигаться даже по болотистому грунту. Благодаря длинной шее и сильному клюву они схватывают мелкую рыбу, лягушек, насекомых и других водных животных.</p>
+<p>По берегам озёр встречаются <i>ондатры</i> и <i>водяные полёвки</i>. Ондатры роют подземные норы, устраивая вход в них немного ниже уровня воды. Для зимовки они сооружают на отмелях хатки из растительного материала, смешанного с илом. Внутри хатки устраивается гнездо, выход из которого открывается в толщу воды.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s102" src="img/8e59545c2400.jpg" alt="Заросший пруд с кувшинками и камышом, поверх кружки: цапля, кряква, лягушка, ондатра, карась, ёрш, водомерка, прудовик, тритон, рак"><figcaption><span class="src">из учебника</span><b>Рис. 102.</b> Природное сообщество пруда<br><span style="color:var(--soft)">▲ Кто из них живёт в воде всю жизнь, а кто — у воды?</span></figcaption></div></figure>
+<div class="col">
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Озеро</b><p>природный водоём в углублении суши, не связан с морем; бывает огромным, как Байкал</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Пруд</b><p>небольшой искусственный водоём, не больше 1 км²</p></div></div></div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 230" role="img" aria-label="Пруд по зонам. У берега: камыш, рогоз, тростник, частуха; утки, цапли, ондатры. На поверхности: ряска, водокрас, водомерки. В толще воды: водоросли, элодея, кувшинка; караси, щуки, жуки-плавунцы. На дне: беззубки, наполовину в грунте"><use href="#o-pond"/></svg><figcaption>Каждый житель пруда занимает своё место.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Кошачий пруд</span></div><div class="lifebody"><p>У дома есть свой пруд — Кошачий. Ты видела там уток и водомерок. Утки там, скорее всего, кряквы: они кормятся на мелководье — опускают голову в воду и клювом достают растения, насекомых, моллюсков. А водомерки бегают по поверхности и ловят мелких животных, упавших на воду, — ноги у них не тонут.</p><p>Ты кормила уток. Будущему ветеринару полезно знать: белый хлеб уткам вреден, лучше дать овсяные хлопья, нарезанную зелень или специальный корм. А однажды в Кошачьем пруду искупался даже лось — об этом писали в новостях.</p></div><p class="lifebook">В учебнике это называется: <b>природное сообщество пруда</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Чем пруд отличается от озера?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a1" hidden>Озеро — природный водоём в углублении суши без прямой связи с морем. Пруд — небольшой искусственный водоём площадью не более 1 км².</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему вода в прудах бывает тёмно-зелёной? Вспомни §16.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Третий абзац раздела и цветение воды в §16.</div>
+<div class="rev ans" id="a2" hidden>Её окрашивают микроскопические водоросли — главные производители органических веществ в озёрах и прудах. Когда их очень много, вода «цветёт».</div>
+</div>
+<div class="think">
+<p class="qt">3. Как цапля приспособлена к жизни на мелководье?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Абзац про цапель.</div>
+<div class="rev ans" id="a3" hidden>Высокие ноги с широко расставленными пальцами держат её даже на болотистом грунте, а длинная шея и сильный клюв помогают хватать рыбу, лягушек, насекомых.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Луга</h2></div>
+<div class="easy">
+<p>На равнинах лежат <span class="term" role="button" tabindex="0" data-t="lug">луга</span> — участки земли, сплошь покрытые многолетними травами. В долинах рек бывают <b>заливные луга</b>: весной в половодье их заливает водой. Луговые травы хорошо освещены солнцем — света и тепла им хватает.</p>
+<p>Основа луга — <b>злаки</b>: овсяница, мятлик, тимофеевка, лисохвост. Это многолетние травы с сильными корнями, которые уходят широко и глубоко в почву. Корни растут пучком и образуют плотный <span class="term" role="button" tabindex="0" data-t="dern">дёрн</span> — он не даёт почве высохнуть. Ещё на лугу растёт <b>разнотравье</b>: лютики, колокольчики, васильки, нивяники (это луговые ромашки), клевер.</p>
+<p>Животные луга приспособились жить среди трав (рис. 103). Особенно много <b>насекомых</b>: жуков, мух, бабочек, кузнечиков, пчёл, шмелей, ос. Обилие растений и насекомых привлекает птиц — перепелов, коростелей, трясогузок. Из хищных птиц здесь охотятся луговой и полевой луни. Часто встречаются полевая мышь и обыкновенная полёвка, а из крупных животных — лисица и заяц-русак.</p>
+</div>
+<div class="book" hidden>
+<p><b>Природные сообщества лугов.</b> На равнинах располагаются <b><span class="term" role="button" tabindex="0" data-t="lug">луга</span></b> — участки земной поверхности, на которых сплошным покровом растут многолетние травы. В долинах рек располагаются заливные луга, покрывающиеся водой во время половодья. Луговые травы хорошо освещаются солнцем, получая много света и тепла. Основу растительности на лугах средней увлажнённости составляют злаковые растения: <i>овсяница, мятлик, тимофеевка, лисохвост</i>. Это многолетние травы с хорошо развитыми корнями, которые широко и глубоко проникают в почву. Корни растут пучком, образуя плотный <span class="term" role="button" tabindex="0" data-t="dern">дёрн</span>, который предохраняет почву от высыхания. Разнотравье лугов составляют <i>лютики, колокольчики, васильки, нивяники, клевер</i>.</p>
+<p>На лугах обитают животные, которые приспособились к жизни среди травянистых растений (рис. 103). Особенно много здесь насекомых: жуков, мух, бабочек, кузнечиков, пчёл, шмелей, ос. Обилие растительной пищи и насекомых привлекает на луг птиц — <i>перепелов, коростелей, трясогузок</i>. Из хищных птиц на лугах можно встретить <i>лугового</i> и <i>полевого луней</i>. На лугах часто встречаются <i>полевая мышь</i> и <i>обыкновенная полёвка</i>. Из более крупных животных на лугах можно встретить <i>обыкновенную лисицу</i> и <i>зайца-русака</i>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s103" src="img/0f60977cc5f4.jpg" alt="Цветущий луг, поверх кружки: жаворонок, коростель, пустельга, голубянка, кузнечик, ящерица, мышь, клевер, цикорий, тысячелистник"><figcaption><span class="src">из учебника</span><b>Рис. 103.</b> Природное сообщество луга<br><span style="color:var(--soft)">▲ Найди клевер — ты плела из него венки. Кто из животных на рисунке опыляет цветы?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 196" role="img" aria-label="Луг в разрезе. Над землёй — густые злаки и разнотравье с цветами. Под землёй — корни, растущие пучком, сплетаются в плотный дёрн"><use href="#o-dern"/></svg><figcaption>Под лугом — плотный дёрн из корней, он держит влагу.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твой луг</span></div><div class="lifebody"><p>За городом ты бывала на лугу: плела венки из одуванчиков и клевера, собирала ромашки и ловила кузнечиков. Ромашки, которые растут на лугу, — это и есть <b>нивяники</b> из учебника.</p><p>Почему там столько кузнечиков, пчёл и бабочек? Луг — это много цветов и травы, то есть много еды: насекомые едят листья, пьют нектар и опыляют цветы. А насекомых ловят птицы и ящерицы — пищевая сеть из §22.</p></div><p class="lifebook">В учебнике это называется: <b>природное сообщество луга</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Какие растения преобладают на лугах?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a4" hidden>Злаки — овсяница, мятлик, тимофеевка, лисохвост; ещё разнотравье: лютики, колокольчики, васильки, нивяники, клевер.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему на лугах обитает много насекомых-опылителей?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Оба абзаца раздела.</div>
+<div class="rev ans" id="a5" hidden>Луговые травы получают много света и тепла и обильно цветут. Много цветов — много нектара и пыльцы, поэтому здесь много пчёл, шмелей, бабочек.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Болота</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="boloto">Болота</span> — сообщества на <b>очень сырых</b> участках земли. Там растут низкие сосны с корнями у самой поверхности. Из кустарников обычен багульник болотный, встречается ягодный кустарник голубика.</p>
+<p>Больше всего на болоте <b>мхов</b>: белого мха сфагнума и зелёного мха кукушкина льна. На сфагновых болотах стелется <b>клюква</b> — кустарничек с лежачими стеблями. Растёт много разных осок.</p>
+<p>Насекомых на болоте много. Живут черви, моллюски, лягушки, гадюки. Многие птицы приспособились к болоту: аисты, цапли, выпи, бекасы, кроншнепы. Длинные ноги с широко расставленными пальцами держат их на топких местах, а длинной шеей и сильным клювом они хватают подвижных водных животных. Охотятся здесь болотный лунь и болотная сова, а из зверей встречаются водяная полёвка, выдра, ондатра (рис. 104).</p>
+</div>
+<div class="book" hidden>
+<p><b>Природные сообщества болот.</b> <b><span class="term" role="button" tabindex="0" data-t="boloto">Болота</span></b> — это природные сообщества, которые образуются на сильно увлажнённых участках земной поверхности. На болотах встречаются низкорослые сосны, корни которых располагаются близко к поверхности. Из кустарников на болотах обычен <i>багульник болотный</i>, встречается ягодный кустарник <i>голубика</i>.</p>
+<p>Больше всего на болоте мхов. К их числу относится белый мох <i>сфагнум</i> и зелёный мох <i>кукушкин лён</i>. На сфагновых болотах распространён кустарничек с лежачими стеблями — <i>клюква</i>. На болотах растёт много различных видов осок.</p>
+<p>Из животных на болотах встречается много насекомых. Здесь обитают различные черви, моллюски, лягушки, гадюки. К жизни на болотах приспособились многие птицы. К их числу относятся <i>аисты, цапли, выпи, бекасы, кроншнепы</i>. Длинные ноги с широко расставленными пальцами позволяют им передвигаться по топким местам, а длинная шея и сильный клюв — схватывать различных подвижных водных животных. Обитают на болотах и хищные птицы. К ним относятся <i>болотный лунь, болотная сова</i>. Из млекопитающих на болотах встречаются <i>водяные полёвки, выдра, ондатра</i> (рис. 104).</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s104" src="img/4edb791f8840.jpg" alt="Болото с мхом и редкими деревцами, поверх кружки: журавль, выпь, лунь, лягушка, жук-плавунец, паук-волк, сфагнум, клюква, росянка"><figcaption><span class="src">из учебника</span><b>Рис. 104.</b> Природное сообщество болота<br><span style="color:var(--soft)">▲ Найди сфагнум — этот мох ты трогала в походе.</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Болото, которое пружинит</span></div><div class="lifebody"><p>В походе со «СлаваДетям» ты шла прямо по болоту, и оно держало, но чуть проседало под ногами. Так бывает, когда мох и корни сплелись в плотный ковёр, а под ним вода. Такой ковёр называют <b>сплавиной</b>.</p><p>Мох, который ты трогала, — <b>сфагнум</b>. Он как губка: впитывает воды в двадцать раз больше, чем весит сам. Отмерший мох почти не гниёт, а слёживается в торф.</p><p>А на рис. 104 есть <b>росянка</b> — растение-хищник. На её листьях блестят липкие капельки: к ним прилипают мелкие насекомые, и росянка их переваривает. Так она добывает вещества, которых мало в болотной воде.</p></div><p class="lifebook">В учебнике это называется: <b>природное сообщество болота</b></p></aside>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 330 206" role="img" aria-label="Болото в разрезе. Сверху сфагнум, клюква, росянка; под ними ковёр из мха и корней; под ковром вода; в самом низу торф — старый спрессованный мох. Ковёр прогибается, но держит"><use href="#o-bog"/></svg><figcaption>Ковёр из мха лежит прямо на воде. Ходить по нему можно только по тропе и со взрослыми.</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Какие растения растут на болоте больше всего?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Второй абзац раздела.</div>
+<div class="rev ans" id="a6" hidden>Мхи: белый мох сфагнум и зелёный мох кукушкин лён. На сфагновых болотах — клюква, много осок.</div>
+</div>
+<div class="think">
+<p class="qt">7. Чем похожи болотные птицы и цапли из раздела про пруды?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Последний абзац раздела и абзац про цапель в разделе 1.</div>
+<div class="rev ans" id="a7" hidden>У них длинные ноги с широко расставленными пальцами, чтобы ходить по топкому грунту, и длинная шея с сильным клювом, чтобы хватать водных животных.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Леса и их ярусы</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="les">Лес</span> — сообщество, в котором обязательно есть <b>деревья</b> (рис. 105). А ещё кустарники, кустарнички, травы, мхи, грибы, лишайники и множество животных.</p>
+<p>Леса различают по главным деревьям. В <b>мелколиственных</b> растут берёза, осина, ольха. В <b>широколиственных</b> — дуб черешчатый, бук, клён платановидный, ясень, а из трав — ландыш, вороний глаз, лютик, медуница. В <b>светлохвойных</b> — сосна обыкновенная и лиственница сибирская. В <b>темнохвойных</b> — ель, пихта, сосна сибирская. Бывают и <b>смешанные</b> леса. Многие растения хвойного леса вечнозелёные: грушанки, кислица, вероника лекарственная, брусника, зимолюбка, линнея северная.</p>
+<p>Растения в лесу растут <span class="term" role="button" tabindex="0" data-t="yarus">ярусами</span>, как этажи (рис. 106). Высокие деревья — ясень, дуб, ель — это первый ярус. Под ними — деревья пониже: рябина, яблоня дикая, клён татарский. Третий ярус — кустарники: лещина, жимолость, крушина, бересклет. Четвёртый — травы и кустарнички. А у самой земли — мхи и лишайники, пятый ярус.</p>
+<p>На земле в лесу всегда лежат опавшие листья, отмершие побеги, сухие ветки — это <span class="term" role="button" tabindex="0" data-t="podst">лесная подстилка</span>. В ней много грибов и бактерий: они разлагают остатки и обогащают почву гумусом и минеральными солями.</p>
+</div>
+<div class="book" hidden>
+<p><b>Природные сообщества лесов.</b> <b><span class="term" role="button" tabindex="0" data-t="les">Лес</span></b> — это природное сообщество, обязательной частью которого являются деревья (рис. 105). В состав лесных сообществ также входят различные кустарники, кустарнички, травы, мхи, грибы, лишайники и разнообразные животные.</p>
+<p>В зависимости от преобладающих видов деревьев различают леса мелколиственные и широколиственные, темнохвойные и светлохвойные, а также смешанные. В мелколиственных лесах растут такие деревья, как <i>берёза, осина, ольха</i>. Для широколиственных лесов характерны <i>дуб черешчатый, бук лесной, клён платановидный, ясень обыкновенный</i>. Из травянистых растений в широколиственном лесу обычны <i>ландыш, вороний глаз, лютик, медуница</i>.</p>
+<p>Для светлохвойных лесов характерны <i>сосна обыкновенная, лиственница сибирская</i>. В темнохвойных лесах растут <i>ель, пихта, сосна сибирская</i>. Многие растения хвойных лесов являются вечнозелёными. Это <i>грушанки, кислица обыкновенная, вероника лекарственная, брусника, зимолюбка, линнея северная</i>.</p>
+<p><b>Ярусное расположение растений в лесу.</b> Высокоствольные деревья (ясень, дуб, ель) в лесу образуют верхний ярус. Под ними размещаются более низкоствольные деревья второго яруса: рябина, яблоня дикая, клён татарский. Свободное пространство между ними занято кустарниками, образующими третий ярус: лещина, жимолость, крушина, бересклет. Ближе к поверхности почвы располагаются травы и кустарнички — четвёртый ярус, а под ними и рядом с ними — мхи и лишайники, составляющие пятый ярус (рис. 106).</p>
+<p>На почве в лесу всегда имеются опавшие листья, отмершие побеги, сухие ветки. Это <b><span class="term" role="button" tabindex="0" data-t="podst">лесная подстилка</span></b>. В ней много грибов и бактерий, которые разлагают остатки погибших организмов, обогащают почву гумусом и минеральными солями.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s105" src="img/670130662260.jpg" alt="Смешанный лес, поверх кружки: воробьиный сычик, сойка, крапивник, хорёк, лисица, кабан, белка, рябина, кислица, лещина"><figcaption><span class="src">из учебника</span><b>Рис. 105.</b> Природное сообщество смешанного леса<br><span style="color:var(--soft)">▲ Кто здесь хищник, а кто ест растения?</span></figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-s106" src="img/e13644f26056.jpg" alt="Опушка леса, подписаны четыре яруса: высокие деревья, деревья пониже, кустарники, травы"><figcaption><span class="src">из учебника</span><b>Рис. 106.</b> Ярусы в смешанном лесу<br><span style="color:var(--soft)">▲ Сколько ярусов видно на фото? Какой спрятался у самой земли?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 244" role="img" aria-label="Пять ярусов смешанного леса. Первый — высокие деревья: дуб, ясень, ель. Второй — деревья пониже: рябина, яблоня дикая, клён татарский. Третий — кустарники: лещина, жимолость, крушина, бересклет. Четвёртый — травы и кустарнички: ландыш, медуница, брусника. Пятый — мхи и лишайники у самой земли"><use href="#o-tiers"/></svg><figcaption>Ярусы — как этажи: каждому растению достаётся свой свет.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Найди ярусы в Измайлове</span></div><div class="lifebody"><p>Твои леса — смешанные. В Измайловском лесу больше всего лип и берёз, есть дубы и сосны. В Терлецкой дубраве — старые дубы, липы, клёны.</p><p>Когда пойдёшь туда, найди ярусы: <b>1.</b> самые высокие кроны; <b>2.</b> деревья пониже — рябина или молодой клён; <b>3.</b> кусты; <b>4.</b> травы; <b>5.</b> мох у корней. Сфотографируй каждый ярус — получится своя «лесная лестница».</p><p>А <b>недотрога</b>, с которой ты играла, — трава из нижнего яруса, она любит сырые тенистые места. Её спелые коробочки лопаются от лёгкого касания и разбрасывают семена в стороны. Так растение расселяется.</p></div><p class="lifebook">В учебнике это называется: <b>ярусное расположение растений</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Какие приспособления к совместной жизни есть у растений леса?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Абзац про ярусы и схема.</div>
+<div class="rev ans" id="a8" hidden>Растения располагаются ярусами: каждый ярус занимает свою высоту и получает свою долю света. Под высокими деревьями растут теневыносливые деревья пониже, кустарники, травы, мхи.</div>
+</div>
+<div class="think">
+<p class="qt">9. Зачем лесу подстилка? Вспомни §21.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Последний абзац раздела и редуценты из §21.</div>
+<div class="rev ans" id="a9" hidden>Грибы и бактерии подстилки разлагают остатки и обогащают почву гумусом и минеральными солями, которые снова получают растения.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">5</span><h2>Лесные животные</h2></div>
+<div class="easy">
+<p>В лесах множество насекомых: жуков, бабочек, мух, комаров. Важная часть лесного сообщества — <b>рыжие лесные муравьи</b>. Из хвои, веточек и стебельков они строят муравейники выше 1 метра. Кроме верхней части у муравейника есть подземная, с ходами. В одной семье — десятки тысяч муравьёв. Муравьи — хищники: личинок они кормят другими насекомыми и спасают лес от пилильщиков, совок, пядениц, которые едят хвою и листья (§22).</p>
+<p>В смешанных и широколиственных лесах живут остромордая и травяная лягушки, обыкновенная и зелёная жабы, зелёная ящерица, обыкновенная гадюка. Из птиц много зябликов, дроздов, дятлов, синиц, щеглов. Мелкие звери — лесная и желтогорлая мыши, рыжая полёвка, сони, бурозубка. Один из самых распространённых лесных зверей — <b>кабан</b>. Хищники леса — лисицы, волки, хорьки, горностаи.</p>
+</div>
+<div class="book" hidden>
+<p><b>Лесные животные.</b> В лесах встречается большое количество разнообразных насекомых. Среди них много жуков, бабочек, мух, комаров. Важной частью лесного сообщества являются <i>рыжие лесные муравьи</i>. Из хвои, обломков веточек и стебельков трав они строят гнёзда — муравейники, высота которых может превышать 1 м. Кроме надземной части в муравейнике есть и подземная часть с ходами. В каждой муравьиной семье насчитываются десятки тысяч особей. Муравьи — хищники. Они выкармливают своих личинок другими насекомыми и их личинками. Рыжие лесные муравьи защищают лес от массового размножения насекомых, поедающих хвою и листья деревьев, — пилильщиков, совок, пядениц.</p>
+<p>В смешанных и широколиственных лесах встречаются <i>остромордая и травяная лягушки, обыкновенная и зелёная жабы, зелёная ящерица, обыкновенная гадюка</i>. Из птиц многочисленны <i>зяблики, дрозды, дятлы, синицы, щеглы</i>. В лесах живёт много мелких зверей. Это <i>лесная и желтогорлая мыши, рыжая полёвка, сони, бурозубка</i>. Одним из наиболее широко распространённых животных лесов является <i>кабан</i>. В лесах обитают такие хищные животные, как <i>лисицы, волки, хорьки, горностаи</i>.</p>
+</div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">10. Почему рыжих лесных муравьёв называют важной частью леса? Вспомни §22.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Первый абзац раздела и «Для любознательных» в §22.</div>
+<div class="rev ans" id="a10" hidden>Муравьи — хищники: они выкармливают личинок насекомыми и защищают лес от массового размножения пилильщиков, совок, пядениц, которые едят хвою и листья.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги и «Моя лаборатория»</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Природные сообщества: озеро, пруд, болото, лес, луг</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Чем пруд отличается от озера?</li><li>Почему основными производителями органических веществ в озёрах и прудах служат микроскопические водоросли?</li><li>Какие растения преобладают на лугах?</li><li>Почему на лугах обитает много насекомых-опылителей?</li><li>Какие приспособления к совместному существованию развились у растений, произрастающих в лесах?</li><li>Используя рис. 104, расскажите об организмах, населяющих болота.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к вопросу 2</button></div>
+<div class="rev hint" id="r1" hidden>Перечитай третий абзац раздела 1: микроскопические водоросли есть во всей толще воды, куда проникает свет, их огромное количество. Они придают воде тёмно-зелёный цвет и составляют основную часть растительной пищи для более крупных организмов.</div></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Почему сообщество живых организмов в аквариуме не может существовать без помощи человека?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка</button></div>
+<div class="rev hint" id="r2" hidden>Вспомни §21: сообщество долго живёт, только если есть продуценты, консументы и редуценты и вещества идут по кругу. В аквариуме он маленький и неполный: растения не успевают прокормить рыб, редуценты не справляются с остатками, а воду некому очистить. Поэтому человек кормит рыб, чистит аквариум, меняет воду и включает свет и воздух.</div></div>
+<div class="rubric">Моя лаборатория · Для любознательных</div>
+<div class="easy">
+<p>За последние 500 лет люди уничтожили <b>две трети</b> лесов Земли. Быстрее всего леса исчезают в Южной Америке, Африке и Юго-Восточной Азии. За последние 200 лет площадь тропических лесов уменьшилась вдвое.</p>
+<p>Из-за этого в воздухе остаётся примерно пятая часть углекислого газа, который люди выпустили за последние 10 лет: раньше его поглощали деревья.</p>
+</div>
+<div class="book" hidden>
+<p>За последние 500 лет при участии человека было уничтожено 2/3 покрывающих Землю лесов. Быстрее всего леса уничтожают в Южной Америке, Африке и Юго-Восточной Азии. За последние 200 лет площадь тропических лесов сократилась в 2 раза. Сокращение площади лесов приводит к тому, что в воздушной оболочке Земли остаётся примерно 1/5 часть углекислого газа, который поступил в неё в результате деятельности человека за последние 10 лет.</p>
+</div>
+<div class="done"><button class="donebtn" data-s="s6" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt3" data-n="8">
+<div class="sortlab">Где это живёт?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Кувшинка</p><div class="sbtns"><button class="sbtn" data-b="0">пруд</button><button class="sbtn" data-b="1">луг</button><button class="sbtn" data-b="2">болото</button><button class="sbtn" data-b="3">лес</button></div><p class="swhy" hidden>Листья плавают на воде.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Клевер</p><div class="sbtns"><button class="sbtn" data-b="0">пруд</button><button class="sbtn" data-b="1">луг</button><button class="sbtn" data-b="2">болото</button><button class="sbtn" data-b="3">лес</button></div><p class="swhy" hidden>Разнотравье луга.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Сфагнум</p><div class="sbtns"><button class="sbtn" data-b="0">пруд</button><button class="sbtn" data-b="1">луг</button><button class="sbtn" data-b="2">болото</button><button class="sbtn" data-b="3">лес</button></div><p class="swhy" hidden>Белый болотный мох.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Рябина</p><div class="sbtns"><button class="sbtn" data-b="0">пруд</button><button class="sbtn" data-b="1">луг</button><button class="sbtn" data-b="2">болото</button><button class="sbtn" data-b="3">лес</button></div><p class="swhy" hidden>Второй ярус леса.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Кряква</p><div class="sbtns"><button class="sbtn" data-b="0">пруд</button><button class="sbtn" data-b="1">луг</button><button class="sbtn" data-b="2">болото</button><button class="sbtn" data-b="3">лес</button></div><p class="swhy" hidden>Кормится на мелководье.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Перепел</p><div class="sbtns"><button class="sbtn" data-b="0">пруд</button><button class="sbtn" data-b="1">луг</button><button class="sbtn" data-b="2">болото</button><button class="sbtn" data-b="3">лес</button></div><p class="swhy" hidden>Птица луга.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Клюква</p><div class="sbtns"><button class="sbtn" data-b="0">пруд</button><button class="sbtn" data-b="1">луг</button><button class="sbtn" data-b="2">болото</button><button class="sbtn" data-b="3">лес</button></div><p class="swhy" hidden>Растёт на сфагновых болотах.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Кабан</p><div class="sbtns"><button class="sbtn" data-b="0">пруд</button><button class="sbtn" data-b="1">луг</button><button class="sbtn" data-b="2">болото</button><button class="sbtn" data-b="3">лес</button></div><p class="swhy" hidden>Один из самых распространённых лесных зверей.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt4" data-n="6">
+<div class="sortlab">Какой это ярус леса?</div>
+<div class="sitem" data-r="0"><p class="stext">Дуб</p><div class="sbtns"><button class="sbtn" data-b="0">1–2: деревья</button><button class="sbtn" data-b="1">3: кустарники</button><button class="sbtn" data-b="2">4–5: травы и мхи</button></div><p class="swhy" hidden>Первый ярус.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Лещина</p><div class="sbtns"><button class="sbtn" data-b="0">1–2: деревья</button><button class="sbtn" data-b="1">3: кустарники</button><button class="sbtn" data-b="2">4–5: травы и мхи</button></div><p class="swhy" hidden>Третий ярус.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Ландыш</p><div class="sbtns"><button class="sbtn" data-b="0">1–2: деревья</button><button class="sbtn" data-b="1">3: кустарники</button><button class="sbtn" data-b="2">4–5: травы и мхи</button></div><p class="swhy" hidden>Трава — четвёртый ярус.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Рябина</p><div class="sbtns"><button class="sbtn" data-b="0">1–2: деревья</button><button class="sbtn" data-b="1">3: кустарники</button><button class="sbtn" data-b="2">4–5: травы и мхи</button></div><p class="swhy" hidden>Второй ярус.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Жимолость</p><div class="sbtns"><button class="sbtn" data-b="0">1–2: деревья</button><button class="sbtn" data-b="1">3: кустарники</button><button class="sbtn" data-b="2">4–5: травы и мхи</button></div><p class="swhy" hidden>Третий ярус.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Мох</p><div class="sbtns"><button class="sbtn" data-b="0">1–2: деревья</button><button class="sbtn" data-b="1">3: кустарники</button><button class="sbtn" data-b="2">4–5: травы и мхи</button></div><p class="swhy" hidden>Пятый ярус.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Озеро</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s102" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Природный водоём в углублении суши, без связи с морем.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пруд</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s102" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Небольшой искусственный водоём, не больше 1 км².</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Луг</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s103" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Сплошной покров многолетних трав.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Дёрн</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 196" aria-hidden="true"><use href="#o-dern"/></svg><span class="ftext">Корни злаков пучком; не даёт почве высохнуть.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Болото</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s104" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Сообщество на очень сырой земле; больше всего мхов.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Лес</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s105" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Сообщество, где обязательно есть деревья.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ярусы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 244" aria-hidden="true"><use href="#o-tiers"/></svg><span class="ftext">Этажи леса: деревья, деревья пониже, кусты, травы, мхи.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Лесная подстилка</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s105" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Опавшие листья и ветки; из неё получается гумус.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Какое озеро самое глубокое в мире?</h3><div class="opts">
+<button class="opt" data-ok="1">Байкал</button>
+<button class="opt">Ладожское</button>
+<button class="opt">Онежское</button>
+<button class="opt">Каспийское</button></div>
+<div class="fb">И крупнейшее по объёму пресной воды.</div></div>
+<div class="q"><h3>2. Кто главные производители в прудах и озёрах?</h3><div class="opts">
+<button class="opt" data-ok="1">Микроскопические водоросли</button>
+<button class="opt">Кувшинки</button>
+<button class="opt">Рыбы</button>
+<button class="opt">Утки</button></div>
+<div class="fb">Они придают воде тёмно-зелёный цвет.</div></div>
+<div class="q"><h3>3. Что защищает почву луга от высыхания?</h3><div class="opts">
+<button class="opt" data-ok="1">Плотный дёрн из корней злаков</button>
+<button class="opt">Камни</button>
+<button class="opt">Тень деревьев</button>
+<button class="opt">Вода из реки</button></div>
+<div class="fb">Корни злаков растут пучком.</div></div>
+<div class="q"><h3>4. Каких растений больше всего на болоте?</h3><div class="opts">
+<button class="opt" data-ok="1">Мхов</button>
+<button class="opt">Деревьев</button>
+<button class="opt">Злаков</button>
+<button class="opt">Кувшинок</button></div>
+<div class="fb">Сфагнум и кукушкин лён.</div></div>
+<div class="q"><h3>5. Сколько ярусов в смешанном лесу?</h3><div class="opts">
+<button class="opt" data-ok="1">Пять</button>
+<button class="opt">Два</button>
+<button class="opt">Три</button>
+<button class="opt">Десять</button></div>
+<div class="fb">Деревья, деревья пониже, кустарники, травы, мхи и лишайники.</div></div>
+<div class="q"><h3>6. Как ондатра попадает из хатки в воду?</h3><div class="opts">
+<button class="opt" data-ok="1">Выход из гнезда открывается в толщу воды</button>
+<button class="opt">Через крышу</button>
+<button class="opt">Через берег</button>
+<button class="opt">Никак</button></div>
+<div class="fb">И вход в нору — чуть ниже уровня воды.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Озёра и пруды</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Озеро и пруд: чем отличаются.</li><li>Производители — микроскопические водоросли; растения берега, плавающие и подводные.</li><li>Животные: насекомые, моллюски, рыбы, кряква, цапля, ондатра; мой пример — Кошачий пруд.</li></ol></div>
+</div>
+<div class="think">
+<h3>Луга</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Многолетние травы: злаки и разнотравье; заливные луга.</li><li>Корни пучком образуют дёрн.</li><li>Много насекомых-опылителей, птицы, мыши, лисица, заяц-русак.</li></ol></div>
+</div>
+<div class="think">
+<h3>Болота</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Сильно увлажнённые участки; низкорослые сосны, багульник, голубика.</li><li>Больше всего мхов: сфагнум, кукушкин лён; клюква, осоки.</li><li>Птицы с длинными ногами и клювом; мой поход по болоту.</li></ol></div>
+</div>
+<div class="think">
+<h3>Леса</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Лес обязательно с деревьями; мелколиственные, широколиственные, хвойные, смешанные.</li><li>Пять ярусов и лесная подстилка.</li><li>Лесные животные: муравьи, лягушки, птицы, мелкие звери, кабан, хищники.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b22.html">‹ §22 Пищевые связи</a>
+  <span class="pn cur">§23 Разнообразие сообществ</span>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 23, с. 134—139. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'o-pond':'0 0 330 230','o-dern':'0 0 330 196','o-bog':'0 0 330 206','o-tiers':'0 0 330 244'};
+
+var T={
+ozero:{w:"Озеро",k:"природный водоём",p:"s102",t:"Природный водоём в углублении суши, не имеющий прямой связи с морем.",r:"",e:"Байкал — самое глубокое озеро в мире."},
+prud:{w:"Пруд",k:"маленький искусственный водоём",p:"s102",t:"Небольшой искусственный водоём площадью не более 1 км².",r:"",e:"Кошачий пруд у дома."},
+lug:{w:"Луг",k:"сплошь многолетние травы",p:"s103",t:"Участок земной поверхности, на котором сплошным покровом растут многолетние травы.",r:"",e:""},
+dern:{w:"Дёрн",k:"корни пучком",s:"o-dern",t:"Плотный слой почвы, густо переплетённый корнями злаков. Он предохраняет почву от высыхания.",r:"",e:""},
+boloto:{w:"Болото",k:"сильно увлажнённое место",p:"s104",t:"Природное сообщество на сильно увлажнённом участке земной поверхности. Больше всего на болоте мхов.",r:"",e:""},
+les:{w:"Лес",k:"сообщество с деревьями",p:"s105",t:"Природное сообщество, обязательная часть которого — деревья. В нём есть кустарники, травы, мхи, грибы, лишайники и животные.",r:"",e:""},
+yarus:{w:"Ярусы",k:"этажи леса",s:"o-tiers",t:"Слои растений в лесу по высоте: высокие деревья, деревья пониже, кустарники, травы и кустарнички, мхи и лишайники.",r:"",e:""},
+podst:{w:"Лесная подстилка",k:"опавшее на земле",p:"s105",t:"Опавшие листья, отмершие побеги и сухие ветки на почве леса. Грибы и бактерии разлагают её и обогащают почву гумусом.",r:"",e:"Тёмная труха на дне кучи листьев из §21."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b23:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b23:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b23:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b23:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
