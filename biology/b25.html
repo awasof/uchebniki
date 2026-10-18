@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="От тропического леса до Арктики: где живут хамелеоны, верблюд из этнопарка, лошадь Пржевальского и северные олени с биостанции.">
+<title>Животный и растительный мир природных зон</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== Биология: своя гамма (зелёный вместо красного), новые блоки ===== */
+:root{
+  --red:#2D7A55; --ochre:#E2A31F; --leaf:#2D7A55; --life:#3B6FA8; --lifebg:#E7EFF8;
+  --pa:#C9672C; --pb:#3B6FA8;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC596; --ochre:#F0B84A; --leaf:#6CC596; --life:#8DB7E6; --lifebg:#1D2633;
+  --pa:#EE9A62; --pb:#8DB7E6;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--leaf);color:#F6FFF9;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2D7A55" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">Биология</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="z-zones" viewBox="0 0 330 318">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Природные зоны с севера на юг</text>
+<rect x="6" y="32" width="318" height="34" rx="7" fill="#C9C3D6" fill-opacity=".75"/>
+<text x="14" y="47" font-size="12" font-weight="700" fill="#2B2620">арктическая пустыня</text>
+<text x="14" y="61" font-size="10.5" fill="#2B2620">льды, зимой до −60 °С</text>
+<rect x="6" y="70" width="318" height="34" rx="7" fill="#B9D3E3" fill-opacity=".75"/>
+<text x="14" y="85" font-size="12" font-weight="700" fill="#2B2620">тундра</text>
+<text x="14" y="99" font-size="10.5" fill="#2B2620">мхи, лишайники, мерзлота</text>
+<rect x="6" y="108" width="318" height="34" rx="7" fill="#7FB7A6" fill-opacity=".75"/>
+<text x="14" y="123" font-size="12" font-weight="700" fill="#2B2620">тайга</text>
+<text x="14" y="137" font-size="10.5" fill="#2B2620">ель, пихта, сосна, лиственница</text>
+<rect x="6" y="146" width="318" height="34" rx="7" fill="#B7D58A" fill-opacity=".75"/>
+<text x="14" y="161" font-size="12" font-weight="700" fill="#2B2620">смешанные и широколиственные леса</text>
+<text x="14" y="175" font-size="10.5" fill="#2B2620">дуб, липа, клён, ель</text>
+<circle cx="236" cy="171" r="4" fill="#B03A2E"/><text x="244" y="175" font-size="11" font-weight="700" fill="#2B2620">Москва</text>
+<rect x="6" y="184" width="318" height="34" rx="7" fill="#EFE08A" fill-opacity=".75"/>
+<text x="14" y="199" font-size="12" font-weight="700" fill="#2B2620">лесостепи и степи</text>
+<text x="14" y="213" font-size="10.5" fill="#2B2620">травы, мало деревьев</text>
+<circle cx="236" cy="209" r="4" fill="#B03A2E"/><text x="244" y="213" font-size="11" font-weight="700" fill="#2B2620">Ягодное</text>
+<rect x="6" y="222" width="318" height="34" rx="7" fill="#F2C98A" fill-opacity=".75"/>
+<text x="14" y="237" font-size="12" font-weight="700" fill="#2B2620">пустыни</text>
+<text x="14" y="251" font-size="10.5" fill="#2B2620">мало дождей, днём жара</text>
+<rect x="6" y="260" width="318" height="34" rx="7" fill="#6FB36A" fill-opacity=".75"/>
+<text x="14" y="275" font-size="12" font-weight="700" fill="#2B2620">влажные тропические леса</text>
+<text x="14" y="289" font-size="10.5" fill="#2B2620">жарко и влажно весь год</text>
+<text x="165" y="310" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">цвета — как на карте рис. 110</text>
+</g></symbol>
+
+<symbol id="z-frost" viewBox="0 0 330 186">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="165" y="18" text-anchor="middle" font-size="15" font-weight="700" fill="var(--illink,#2B2620)">Вечная мерзлота</text>
+<g fill="var(--leaf,#2D7A55)" fill-opacity=".6"><circle cx="12.0" cy="59.5" r="4.4"/><circle cx="19.1" cy="61.4" r="3.3"/><circle cx="26.2" cy="61.5" r="4.0"/><circle cx="33.3" cy="58.2" r="4.4"/><circle cx="40.4" cy="59.0" r="3.5"/><circle cx="47.5" cy="59.7" r="3.9"/><circle cx="54.6" cy="58.5" r="4.0"/><circle cx="61.7" cy="61.3" r="3.8"/><circle cx="68.8" cy="61.2" r="3.9"/><circle cx="75.9" cy="61.3" r="3.3"/><circle cx="83.0" cy="59.4" r="3.7"/><circle cx="90.1" cy="58.4" r="4.5"/><circle cx="97.2" cy="60.5" r="3.1"/><circle cx="104.3" cy="60.3" r="3.6"/><circle cx="111.4" cy="58.8" r="3.2"/><circle cx="118.5" cy="59.8" r="3.1"/><circle cx="125.6" cy="60.3" r="3.8"/><circle cx="132.7" cy="58.5" r="4.3"/><circle cx="139.8" cy="58.2" r="3.3"/><circle cx="146.9" cy="61.3" r="3.3"/><circle cx="154.0" cy="59.7" r="3.8"/><circle cx="161.1" cy="59.7" r="3.7"/><circle cx="168.2" cy="60.0" r="3.7"/><circle cx="175.3" cy="58.2" r="4.2"/><circle cx="182.4" cy="59.1" r="3.1"/><circle cx="189.5" cy="59.6" r="4.2"/><circle cx="196.6" cy="60.5" r="3.7"/><circle cx="203.7" cy="59.9" r="3.3"/><circle cx="210.8" cy="60.5" r="3.5"/><circle cx="217.9" cy="58.3" r="3.2"/><circle cx="225.0" cy="58.4" r="4.0"/><circle cx="232.1" cy="61.5" r="4.1"/></g>
+<rect x="6" y="62" width="234" height="36" rx="4" fill="var(--brown,#8B5E3C)" fill-opacity=".35"/>
+<rect x="6" y="98" width="234" height="80" rx="4" fill="var(--sky,#9CC9E8)" fill-opacity=".55"/>
+<g fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-opacity=".9">
+<path d="M30 120 l6 6 M36 120 l-6 6"/><path d="M90 150 l6 6 M96 150 l-6 6"/><path d="M150 118 l6 6 M156 118 l-6 6"/><path d="M200 156 l6 6 M206 156 l-6 6"/><path d="M60 166 l6 6 M66 166 l-6 6"/></g>
+<g fill="var(--illink,#2B2620)" font-size="11">
+<text x="16" y="44" font-weight="700">мхи, лишайники, кустарнички</text>
+<text x="16" y="84">летом оттаивает тонкий слой</text>
+<text x="16" y="136" font-weight="700">мёрзлая земля круглый год</text>
+</g>
+<g font-size="11" fill="var(--soft,#5F5648)"><text x="250" y="76">корням</text><text x="250" y="90">тесно,</text><text x="250" y="116">вода</text><text x="250" y="130">не уходит</text><text x="250" y="144">вглубь</text></g>
+</g></symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Биология · § 25</span>
+    <h1>Животный и растительный мир природных зон</h1>
+    <p class="lede">От тропического леса до Арктики: где живут хамелеоны, верблюд из этнопарка, лошадь Пржевальского и северные олени с биостанции.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Вспомни перед чтением:</b><br>Какие организмы обитают в хвойном лесу?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b24.html">‹ §24 Искусственные сообщества</a>
+  <span class="pn cur">§25 Природные зоны</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Природные зоны">1</a><a href="#s2" data-j="s2" title="Влажные тропические леса и пустыни">2</a><a href="#s3" data-j="s3" title="Степи и смешанные леса">3</a><a href="#s4" data-j="s4" title="Тайга">4</a><a href="#s5" data-j="s5" title="Тундра и арктическая пустыня">5</a><a href="#s6" data-j="s6" title="Итоги главы 4">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Природные зоны</h2></div>
+<div class="easy">
+<p>В разном климате преобладают разные природные сообщества. Поэтому учёные выделяют <span class="term" role="button" tabindex="0" data-t="zona">природные зоны</span> — части географической оболочки Земли, у каждой из которых свой животный и растительный мир, рельеф и климат (рис. 110).</p>
+<p>Крупные природные зоны — это экваториальные тропические леса, пустыни и полупустыни, степи, смешанные и широколиственные леса, тайга, тундра, арктическая и антарктическая пустыни. В каждой — свои растения и животные.</p>
+</div>
+<div class="book" hidden>
+<p><b>Природные зоны.</b> В зависимости от того, какие природные сообщества преобладают в условиях определённого климата, учёные выделяют <b><span class="term" role="button" tabindex="0" data-t="zona">природные зоны</span></b> — части географической оболочки Земли, которые отличаются особенностями животного и растительного мира, рельефа и климата (рис. 110).</p>
+<p>Выделяют такие крупные природные зоны, как экваториальные тропические леса, пустыни и полупустыни, степи, смешанные и широколиственные леса, тайга, тундра, арктическая и антарктическая пустыни. Для каждой природной зоны характерен свой растительный и животный мир.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s110" src="img/407f2ca1f23c.jpg" alt="Карта мира, раскрашенная по природным зонам: на севере серые арктические пустыни и голубая тундра, ниже бирюзовая тайга, зелёные леса, жёлтые степи, оранжевые пустыни, у экватора тёмно-зелёные влажные леса; внизу легенда цветов"><figcaption><span class="src">из учебника</span><b>Рис. 110.</b> Природные зоны Земли<br><span style="color:var(--soft)">▲ Найди Москву и посмотри, какого цвета вокруг неё зона. А какого цвета Турция и Кипр?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 318" role="img" aria-label="Природные зоны с севера на юг: арктическая пустыня — льды, зимой до минус 60; тундра — мхи, лишайники, мерзлота; тайга — ель, пихта, сосна, лиственница; смешанные и широколиственные леса — дуб, липа, клён, ель, здесь Москва; лесостепи и степи — травы, мало деревьев, здесь Ягодное; пустыни — мало дождей, днём жара; влажные тропические леса — жарко и влажно весь год"><use href="#z-zones"/></svg><figcaption>Чем ближе к экватору, тем теплее. Москва и Ягодное — в разных зонах.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твои зоны</span></div><div class="lifebody"><p><b>Москва</b> — в зоне смешанных и широколиственных лесов. Поэтому в Измайлове и в Терлецкой дубраве растут дубы, липы, клёны.</p><p><b>Ягодное</b> и Тольятти — южнее, там начинаются <b>лесостепи</b>: леса чередуются с открытыми степными просторами. Отсюда и поля подсолнухов и пшеницы — степи почти все распаханы.</p><p><b>Турция и Кипр</b> на карте рис. 110 — в зоне жестколистных вечнозелёных лесов и кустарников. В учебнике про неё не рассказано, но цвет на карте найти можно.</p></div><p class="lifebook">В учебнике это называется: <b>природные зоны</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Что такое природная зона?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац раздела.</div>
+<div class="rev ans" id="a1" hidden>Часть географической оболочки Земли, которая отличается особенностями животного и растительного мира, рельефа и климата.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Влажные тропические леса и пустыни</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="tropl">Влажные экваториальные тропические леса</span> растут у <b>экватора</b>. Здесь весь год жарко и влажно, а дожди идут равномерно во все времена года.</p>
+<p>Здесь <b>больше всего видов</b> растений и животных (рис. 111): на одном гектаре бывает до 200 видов деревьев. Огромное множество насекомых. Звери — леопарды, обезьяны, белки-летяги, ленивцы, тапиры. Птицы — орлы-гарпии, попугаи, дятлы, туканы, гоацины, колибри. Пресмыкающиеся — хамелеоны, древесные змеи, гекконы, игуаны, агамы.</p>
+<p>Главная угроза тропическим лесам — <b>вырубка</b> ради древесины: вместе с лесом исчезают многие виды растений и животных.</p>
+<p>В <span class="term" role="button" tabindex="0" data-t="pust">пустынях</span> выпадает мало осадков, а температура за сутки сильно меняется. Растений мало (рис. 112). Большинство животных живут в <b>норах</b>, у многих защитная окраска цвета песка. Крупные звери — верблюды, джейраны; хищник — пустынная рысь каракал. Много пресмыкающихся: вараны, агамы, змеи, черепахи. Птицы — рябки, саджи, саксаульные воробьи, пустынные вьюрки, белоголовый сип, ястребиный орёл.</p>
+</div>
+<div class="book" hidden>
+<p><b>Влажные экваториальные тропические леса.</b> Зона влажных экваториальных тропических лесов расположена вблизи экватора. В этой зоне в течение всего года высокая температура и влажность воздуха. Обильные осадки равномерно распределены по всем временам года.</p>
+<p>Во влажном экваториальном лесу обитает самое большее количество видов растений и животных (рис. 111). На одном гектаре иногда произрастает до 200 видов деревьев. Здесь обитает великое множество видов насекомых. Представителями млекопитающих являются <i>леопарды, обезьяны, белки-летяги, ленивцы, тапиры</i>. В этой зоне много птиц, которые представлены <i>орлами-гарпиями, попугаями, дятлами, туканами, гоацинами, колибри</i>. Из пресмыкающихся во влажном тропическом лесу обитают <i>хамелеоны, древесные змеи, гекконы, игуаны, агамы</i>.</p>
+<p>Основную угрозу для влажных тропических лесов представляет заготовка человеком древесины, приводящая к исчезновению многих видов растений и животных.</p>
+<p><b>Пустыни.</b> В <span class="term" role="button" tabindex="0" data-t="pust">пустынях</span> выпадает мало осадков и происходят большие суточные изменения температуры. Растительность в пустынях скудная (рис. 112). Большинство животных пустынь живут в норах. Многие из них имеют защитную песчаную окраску. Из крупных млекопитающих в пустынях обитают <i>верблюды, джейраны</i>. Из хищных млекопитающих здесь встречаются пустынные рыси — <i>каракалы</i>. В пустынях многочисленны различные пресмыкающиеся: <i>вараны, агамы, змеи, черепахи</i>. Из птиц в этой природной зоне встречаются <i>рябки, саджи, саксаульные воробьи, пустынные вьюрки, белоголовый сип, ястребиный орёл</i>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s111" src="img/2df2dce0e81e.jpg" alt="Густой влажный тропический лес: высокие деревья, лианы, папоротники, всё зелёное"><figcaption><span class="src">из учебника</span><b>Рис. 111.</b> Влажный тропический лес<br><span style="color:var(--soft)">▲ Сколько ярусов ты здесь видишь?</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Тропики в Москве</span></div><div class="lifebody"><p>Хамелеонов, агам и попугаев ты знаешь в лицо — по Рептилиуму. Это жители <b>тропического леса</b>: хамелеон сидит на ветке и меняет цвет, а глаза у него поворачиваются по отдельности. Ты была и в тропической оранжерее: там жарко и влажно, как у экватора, и всё растёт ярусами, как на рис. 111.</p></div><p class="lifebook">В учебнике это называется: <b>влажный тропический лес</b></p></aside>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s112" src="img/1476f194af7f.jpg" alt="Песчаные барханы до горизонта и одинокое кривое деревце"><figcaption><span class="src">из учебника</span><b>Рис. 112.</b> Жаркая пустыня<br><span style="color:var(--soft)">▲ Почему растений здесь так мало?</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Верблюд из этнопарка</span></div><div class="lifebody"><p>В этнопарке под Москвой ты каталась на верблюде. Это житель <b>пустыни</b>, и он устроен для жары и безводья:</p><p>• в горбах — запас жира, а не воды: его хватает надолго, когда еды мало;<br>• верблюд может долго не пить, а потом выпить почти сто литров — это десять вёдер;<br>• широкие мягкие подошвы не тонут в песке;<br>• длинные ресницы и ноздри, которые закрываются, спасают от песка.</p></div><p class="lifebook">В учебнике это называется: <b>пустыня</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">2. Почему во влажных тропических лесах так много видов? Вспомни §21.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Первые абзацы раздела и «Видовая структура» в §21.</div>
+<div class="rev ans" id="a2" hidden>Там круглый год тепло, влажно и много света: условия хороши для жизни всех. Растения растут во много ярусов, у каждого вида своё место и своя пища.</div>
+</div>
+<div class="think">
+<p class="qt">3. Как растения и животные приспособлены к жизни в пустыне?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Абзац про пустыни и блок про верблюда.</div>
+<div class="rev ans" id="a3" hidden>Растений мало; животные прячутся в норах от жары и холода, имеют песчаную окраску; верблюд запасает жир в горбах и долго обходится без воды.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Степи и смешанные леса</h2></div>
+<div class="easy">
+<p>В <span class="term" role="button" tabindex="0" data-t="step">степях</span> (рис. 113) преобладают травы, деревьев мало. Степная зона — на юге России. Сейчас степи почти полностью <b>распаханы</b>: поля чередуются с пастбищами, лесопосадками, садами и посёлками.</p>
+<p>В степи много сурков, сусликов, тушканчиков, полёвок и мышей. Водятся степные пищухи, волки, лисы, степные хорьки. Птицы — стрепеты, журавли-красавки, степные орлы, степные луни. Типичные жители степи — <b>жаворонки</b>: они быстро бегают по земле и высматривают насекомых. Из пресмыкающихся — полозы, гадюки, ужи, ящерицы. Много насекомых, особенно кузнечиков.</p>
+<p><span class="term" role="button" tabindex="0" data-t="smesh">Смешанные и широколиственные леса</span> занимают большую часть нашей страны. Высокие деревья здесь — дуб, липа, клён, вяз, сосна, ель. Под ними растут деревья пониже, а землю покрывают травы.</p>
+<p>Здесь живут благородный олень, косуля, кабан, лесная куница, иволга, зелёный и седой дятлы, гадюка, уж. Там, где леса вырубили, поселились жители полей и пастбищ: заяц-русак, ёж, чёрный хорь, серая куропатка.</p>
+</div>
+<div class="book" hidden>
+<p><b>Степи.</b> В <span class="term" role="button" tabindex="0" data-t="step">степях</span> (рис. 113) преобладает травянистая растительность, деревьев мало. Зона степей находится на юге России. В настоящее время степи почти полностью распаханы. Поэтому для этой зоны характерен культурный ландшафт, в котором поля чередуются с пастбищами, искусственными лесными посадками, садами и населёнными пунктами.</p>
+<p>В степной зоне многочисленны <i>сурки, суслики, тушканчики, различные полёвки и мыши</i>. Здесь водятся степные виды <i>пищух, волки, лисы, степные хорьки</i>. Степными птицами являются <i>стрепеты, журавли-красавки, степные орлы, степные луни</i>.</p>
+<p>Типичными обитателями степей являются <i>жаворонки</i>. Они быстро бегают по земле, высматривая насекомых. Из пресмыкающихся в степной зоне обитают <i>полозы, гадюки, ужи, ящерицы</i>. Довольно широко в степи представлены насекомые. Здесь много кузнечиков.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="smesh">Смешанные и широколиственные леса</span>.</b> Зона смешанных и широколиственных лесов занимает значительную часть территории нашей страны. Для этой зоны характерны такие высокоствольные деревья, как дуб, липа, клён, вяз, сосна, ель. Под их пологом располагаются невысокие деревья. Напочвенный покров образован различными травами.</p>
+<p>Обитателями этой природной зоны являются <i>благородный олень, косуля, кабан, лесная куница, иволга, зелёный и седой дятлы</i>. Из пресмыкающихся здесь встречаются <i>гадюка, обыкновенный уж</i>. В зоне лесов вслед за вырубкой лесных массивов расселилось много животных, характерных для полей и пастбищ: <i>заяц-русак, ёж, чёрный хорь, серая куропатка</i>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s113" src="img/a752bb93ba1b.jpg" alt="Широкая степь с травой до горизонта, поверх кружки: журавль, перепел, дрофа, лошадь Пржевальского, хомяк, корсак, мак, ковыль, тимофеевка"><figcaption><span class="src">из учебника</span><b>Рис. 113.</b> Растительный и животный мир степей<br><span style="color:var(--soft)">▲ Найди лошадь Пржевальского. Чем её грива не похожа на гриву обычной лошади?</span></figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Степи по дороге на Урал</span></div><div class="lifebody"><p>Когда вы ехали из Тольятти на Урал — через Уфу к Магнитогорску, — за окном тянулись <b>степи</b>: травы до горизонта и совсем мало деревьев.</p><p>Похожие степи есть в Оренбургской области. Там, в Оренбургском заповеднике, с 2015 года снова пасутся табуны <b>лошадей Пржевальского</b> — как на рис. 113.</p></div><p class="lifebook">В учебнике это называется: <b>степь</b></p></aside>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Лошадь Пржевальского</b><p>дикая степная лошадь: короткая стоячая грива, чёлки нет, у основания хвоста короткие волосы, голова крупная</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Домашняя лошадь</b><p>длинная грива лежит на шее, есть чёлка, хвост длинный от самого основания</p></div></div><p class="pairkey">Ты любишь лошадей — найди отличия на рис. 113.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Почему лошадь Пржевальского особенная</span></div><div class="lifebody"><p>Для науки её нашёл русский путешественник <b>Николай Пржевальский</b> — он привёз из Центральной Азии её шкуру и череп, и лошадь назвали в его честь. Это дикая лошадь степей: она живёт табунами на воле.</p><p>В XX веке лошади Пржевальского исчезли из природы и сохранились только в зоопарках. Учёные их разводили и потом вернули в степи — в Монголию, Казахстан и Оренбургский заповедник. В России их уже больше сотни.</p></div><p class="lifebook">В учебнике это называется: <b>степь</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Каковы особенности растительного и животного мира степей?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Первые три абзаца раздела.</div>
+<div class="rev ans" id="a4" hidden>Преобладают травы, деревьев мало. Много грызунов — сурков, сусликов, тушканчиков; хищники — волки, лисы, хорьки; птицы — стрепеты, журавли-красавки, жаворонки; много кузнечиков.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему в лесной зоне появились заяц-русак и ёж? Вспомни §24.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a5" hidden>Леса вырубили, и на их месте появились поля и пастбища — туда расселились животные, характерные для полей и пастбищ.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Тайга</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="taiga">Тайга</span> лежит к северу от лиственных лесов. Здесь преобладают хвойные деревья: ель, пихта, сосна, лиственница. Вечнозелёные хвойные круглый год дают густую тень. В тайге много воды на поверхности и много болот. Тайга занимает большую часть Сибири, Дальнего Востока России и Канады.</p>
+<p>Летом здесь огромные тучи мелких кровососущих насекомых — <span class="term" role="button" tabindex="0" data-t="gnus">гнус</span>. Вредители хвойных лесов — сибирский шелкопряд, серая лиственничная листовёртка, еловые усачи, короед-типограф.</p>
+<p>Многие животные тайги питаются <b>семенами хвойных</b>. Здесь живут бурый медведь, лось, рысь, лесной лемминг, красная полёвка, волк, марал, бурундук, горностай, белка; птицы — свиристель, снегирь, кедровка, трёхпалый дятел, глухарь, рябчик, тетерев, ястребиная сова, длиннохвостая неясыть, клёст-еловик. Большинство птиц едят ягоды и зелёные части растений.</p>
+</div>
+<div class="book" hidden>
+<p><b>Тайга.</b> Зона тайги находится севернее лиственных лесов. В этой природной зоне преобладают хвойные деревья: ель, пихта, сосна, лиственница. Вечнозелёные хвойные деревья круглый год создают густую тень. Для тайги характерно обилие поверхностных вод и значительное заболачивание территории. Тайгой занята большая часть Сибири, российского Дальнего Востока, Канады.</p>
+<p>Для тайги характерны огромные скопления мелких кровососущих насекомых — <b><span class="term" role="button" tabindex="0" data-t="gnus">гнус</span></b>. Вредителями хвойных лесов являются сибирский шелкопряд, серая лиственничная листовёртка, еловые усачи, короед-типограф.</p>
+<p>Большое значение в питании многих животных имеют семена хвойных деревьев. В тайге обитают <i>бурый медведь, лось, рысь, лесной лемминг, красная полёвка, волк, марал, бурундук, горностай, белка, свиристель, обыкновенный снегирь, кедровка, трёхпалый дятел, глухарь, рябчик, тетерев, ястребиная сова, длиннохвостая неясыть, клёст-еловик</i>. Источник пищи для большинства птиц — ягоды и зелёные части растений.</p>
+</div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Тайга</b><p>почти только хвойные: ель, пихта, сосна, лиственница; круглый год густая тень, много болот</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Смешанный лес</b><p>хвойные вместе с лиственными: дуб, липа, клён, вяз, сосна, ель; под ними деревья пониже и травы</p></div></div></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Тайга у биостанции</span></div><div class="lifebody"><p>Бурых медведей ты видела в зоопарке, а лосей и маралов — у Лосиной биостанции. В природе все они живут в тайге (и в смешанных лесах). Лось зимой ест ветки и кору, а марал — крупный таёжный олень.</p></div><p class="lifebook">В учебнике это называется: <b>тайга</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Чем тайга отличается от смешанных лесов?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Первый абзац раздела и абзац о смешанных лесах в разделе 3.</div>
+<div class="rev ans" id="a6" hidden>В тайге преобладают хвойные деревья — ель, пихта, сосна, лиственница; круглый год густая тень, много болот. В смешанных лесах хвойные растут вместе с лиственными — дубом, липой, клёном, вязом.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">5</span><h2>Тундра и арктическая пустыня</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="tundra">Тундра</span> лежит к северу от тайги, на побережье Северного Ледовитого океана. Это огромное <b>безлесное</b> пространство: лето короткое и холодное, а суровая зима длится 8—9 месяцев. Под почвой — <span class="term" role="button" tabindex="0" data-t="merzl">вечная мерзлота</span>, поэтому здесь растут в основном мхи, лишайники, влаголюбивые травы и кустарнички.</p>
+<p>Животные тундры приспособились к суровым условиям (рис. 114). Многие к зиме становятся <b>белыми</b>, под цвет снега. Звери — северный олень, тундровый волк, песец, лемминги. Птицы — белая и тундровая куропатки, белая сова, кречет, мохноногий канюк. Летом гнездиться прилетают лебеди, утки, гуси. Насекомых много: комары, мошки, мокрецы, слепни.</p>
+<p><span class="term" role="button" tabindex="0" data-t="arkt">Арктическая пустыня</span> — самая северная зона. Климат крайне суровый: зимой до −60 °С, летом не выше +8 °С. На некоторых островах толщина ледников больше 200 м. Постоянных жителей мало, и почти все они связаны с <b>морем</b>.</p>
+<p>Полярным днём сюда прилетают огромные стаи морских птиц: кайры, гагарки, чистики, тупики, топорики. Они быстро летают, хорошо плавают и ныряют, едят мелкую рыбу, раков, моллюсков, морских червей. На зиму птицы улетают.</p>
+<p>Летом на дрейфующих льдах встречаются тюлени — большую часть жизни они проводят в воде и там добывают пищу. Типичные жители — <b>моржи</b>: они живут там, где в океане есть большие отмели с моллюсками — главной едой моржей.</p>
+<p>Крупный хищник Арктики — <b>белый медведь</b>. Он быстро плавает, хорошо ныряет и на суше так же ловок, как в воде. Густая плотная шерсть не даёт его телу намокнуть.</p>
+</div>
+<div class="book" hidden>
+<p><b>Тундра.</b> Зона тундры находится севернее тайги и занимает побережье Северного Ледовитого океана. <b><span class="term" role="button" tabindex="0" data-t="tundra">Тундра</span></b> — обширное безлесное пространство, для которого характерны короткое и холодное лето, продолжительная и суровая зима, которая длится 8—9 месяцев. Подстилаемые <span class="term" role="button" tabindex="0" data-t="merzl">вечной мерзлотой</span> почвы определяют преобладание здесь мхов, лишайников, влаголюбивых травянистых растений и кустарничков.</p>
+<p>В тундре обитают животные, приспособившиеся к суровым условиям (рис. 114). Многие из них на зиму приобретают белую окраску под цвет снега. Из млекопитающих характерны <i>северный олень, тундровый волк, песец и лемминги</i>. Из птиц для этой природной зоны типичны <i>белая и тундровая куропатки, белая сова, кречет, мохноногий канюк</i>. В летний период в тундру прилетают гнездиться лебеди, утки, гуси. Из насекомых в тундре много кровососущих комаров, мошек, мокрецов, слепней.</p>
+<p><b><span class="term" role="button" tabindex="0" data-t="arkt">Арктическая пустыня</span>.</b> Арктическая пустыня является самой северной природной зоной. В этой зоне крайне суровый климат и температура зимой опускается до –60 °С, а летом поднимается только до +8 °С. Характерной особенностью арктических пустынь являются ледники, толщина которых на некоторых островах превышает 200 м. Из-за суровых условий постоянными обитателями здесь являются немногие животные, жизнь которых связана преимущественно с морем.</p>
+<p>Во время длинного полярного дня сюда прилетают огромные стаи водоплавающих птиц: <i>кайры, гагарки, чистики, тупики, топорики</i>. Все эти птицы быстро летают, хорошо приспособлены к плаванию и нырянию. Основной пищей им служат мелкая рыба, раки, моллюски, морские черви. На зиму птицы покидают арктическую пустыню.</p>
+<p>Летом в Арктике на дрейфующих льдах можно встретить <i>тюленей</i>. Большую часть жизни они проводят в воде. Здесь они добывают пищу. К типичным животным арктической пустыни относятся <i>моржи</i>. Они обитают в тех местах океана, где имеются обширные отмели, богатые моллюсками, которые составляют основу питания моржей.</p>
+<p>В арктической пустыне обитает крупный хищник — <i>белый медведь</i>. Он быстро плавает, хорошо ныряет. На суше он так же ловок, как и в воде. Густая и плотная шерсть надёжно защищает тело белого медведя от намокания.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-s114" src="img/5392bb7ad5bb.jpg" alt="Тундра с низкой травой и холмами, поверх кружки: полярная сова, полярная куропатка, песец, северный олень, лемминг, морошка, ягель, карликовая берёза"><figcaption><span class="src">из учебника</span><b>Рис. 114.</b> Растительный и животный мир тундры<br><span style="color:var(--soft)">▲ Найди ягель — это лишайник. Кто из животных на рисунке его ест?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 330 186" role="img" aria-label="Тундра в разрезе: сверху мхи, лишайники, кустарнички; под ними тонкий слой, который летом оттаивает; ещё ниже мёрзлая земля круглый год. Корням тесно, вода не уходит вглубь"><use href="#z-frost"/></svg><figcaption>Поэтому в тундре нет высоких деревьев и много болот.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Северные олени у биостанции</span></div><div class="lifebody"><p>На Лосиной биостанции в Лосином острове живут <b>северные олени</b> — их привезли с Ямала, из тундры. Ты их видела.</p><p>В тундре северный олень зимой копытами разгребает снег и ест <b>ягель</b> — лишайник с рис. 114. Широкие копыта не проваливаются ни в снег, ни в болото, а густая шерсть греет в мороз. Олени — консументы первого порядка, а охотится на них тундровый волк: вот и пищевая цепь тундры.</p></div><p class="lifebook">В учебнике это называется: <b>тундра</b></p></aside>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Бурый медведь</b><p>тайга и смешанные леса; ест и растения, и животных; зимой спит в берлоге (§20)</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Белый медведь</b><p>арктическая пустыня; хищник, быстро плавает и ныряет; густая шерсть не намокает</p></div></div><p class="pairkey">Бурого ты видела в зоопарке, белого пока нет.</p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Чем растения тундры отличаются от растений смешанных лесов?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Первый абзац раздела и схема мерзлоты.</div>
+<div class="rev ans" id="a7" hidden>В тундре нет деревьев: растут низкие мхи, лишайники, влаголюбивые травы и кустарнички. Мешают вечная мерзлота, короткое холодное лето и долгая зима. В смешанных лесах — высокие деревья дуб, липа, клён, ель.</div>
+</div>
+<div class="think">
+<p class="qt">8. Почему почти все жители арктической пустыни связаны с морем?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Абзацы про арктическую пустыню.</div>
+<div class="rev ans" id="a8" hidden>На суше ледники и мороз, растений почти нет. Пищу — рыбу, раков, моллюсков — можно добыть только в море: там кормятся птицы, тюлени, моржи и белый медведь.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги главы 4</h2></div>
+<div class="rubric">Запомните</div>
+<p class="lifebody" style="font-size:18px"><b>Природная зона · Экваториальный тропический лес · Пустыня · Степь · Смешанный лес · Тайга · Тундра · Арктическая пустыня</b></p>
+<div class="ask"><b>Проверьте себя</b>
+<ol><li>Что такое природная зона?</li><li>Каковы особенности растительного и животного мира степей?</li><li>Чем тайга отличается от смешанных лесов?</li><li>Как растения и животные приспособлены к обитанию в пустынях?</li><li>Чем растения тундры отличаются от растений смешанных лесов?</li><li>Используя рис. 114, расскажите о растительном и животном мире тундры.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к вопросу 6</button></div>
+<div class="rev hint" id="r1" hidden>Растения: морошка, ягель (лишайник), карликовая берёза — всё низкое, у самой земли. Животные: полярная сова и полярная куропатка, песец, северный олень, лемминг. Многие зимой белые. Олени едят ягель, лемминги — растения, а песцы и совы охотятся на леммингов.</div></div>
+<div class="ask"><b>Подумайте!</b>
+<p style="margin:0">Почему во влажных экваториальных тропических лесах самое большое видовое разнообразие растительного и животного мира?</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка</button></div>
+<div class="rev hint" id="r2" hidden>Вспомни раздел 2 и §21. Там круглый год тепло, влажно и светло — нет зимы, засухи и мороза. Растения растут без перерыва во много ярусов, и для каждого вида найдётся своё место и своя пища. А чем больше видов растений, тем больше и животных, которые ими питаются.</div></div>
+<div class="rubric">Краткое содержание главы 4</div>
+<div class="easy">
+<p>На одной территории живут вместе растения, животные, грибы и бактерии. Они связаны друг с другом и со средой. Живая природа состоит не только из отдельных организмов и видов, но и из <b>природных сообществ</b> — биоценозов.</p>
+<p>Сообщество живёт как единое целое, почти как один организм. Если связи в нём нарушить, может погибнуть всё сообщество.</p>
+<p>Чтобы выращивать растения и разводить животных, человек создаёт <b>искусственные сообщества</b> — их создаёт и поддерживает человек.</p>
+</div>
+<div class="book" hidden>
+<p>В сходных природных условиях на одной территории живут особи разных видов растений, животных, грибов и бактерий. Они взаимодействуют между собой, приспосабливаются к условиям среды обитания и поддерживают своё существование через связи друг с другом. Это означает, что живая природа состоит не только из отдельных организмов и видов, но и из разнообразных природных сообществ, или биоценозов.</p>
+<p>Любое природное сообщество существует как единое целое, как единый организм. Это обеспечивается взаимодействием обитающих в нём организмов друг с другом и с окружающей средой. Если эти связи нарушаются, то это может привести к гибели всего сообщества.</p>
+<p>Для выращивания растений и разведения животных человек создаёт искусственные сообщества — это сообщества организмов, создаваемые и поддерживаемые человеком.</p>
+</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Вся глава 4 коротко</button></div>
+<div class="rev plan" id="r3" hidden><b>§21</b> Природное сообщество; продуценты, консументы, редуценты; круговорот веществ; средообразователи.<br><b>§22</b> Пищевые связи, цепи и сети; к следующему звену переходит около 10 % энергии.<br><b>§23</b> Озёра и пруды, луга, болота, леса; ярусы и лесная подстилка.<br><b>§24</b> Искусственные сообщества: поле, сад, лесопарк; они держатся трудом человека.<br><b>§25</b> Природные зоны: от тропического леса до арктической пустыни.</div></div>
+<div class="done"><button class="donebtn" data-s="s6" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt4" data-n="8">
+<div class="sortlab">В какой зоне живёт?</div>
+<p class="sortnote">Ошиблась — не страшно, попробуй другую кнопку.</p>
+<div class="sitem" data-r="0"><p class="stext">Тукан</p><div class="sbtns"><button class="sbtn" data-b="0">тропический лес</button><button class="sbtn" data-b="1">пустыня</button><button class="sbtn" data-b="2">степь</button><button class="sbtn" data-b="3">тундра</button></div><p class="swhy" hidden>Яркая птица экваториальных лесов.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Верблюд</p><div class="sbtns"><button class="sbtn" data-b="0">тропический лес</button><button class="sbtn" data-b="1">пустыня</button><button class="sbtn" data-b="2">степь</button><button class="sbtn" data-b="3">тундра</button></div><p class="swhy" hidden>Запасает жир в горбах.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Суслик</p><div class="sbtns"><button class="sbtn" data-b="0">тропический лес</button><button class="sbtn" data-b="1">пустыня</button><button class="sbtn" data-b="2">степь</button><button class="sbtn" data-b="3">тундра</button></div><p class="swhy" hidden>Степной грызун.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Северный олень</p><div class="sbtns"><button class="sbtn" data-b="0">тропический лес</button><button class="sbtn" data-b="1">пустыня</button><button class="sbtn" data-b="2">степь</button><button class="sbtn" data-b="3">тундра</button></div><p class="swhy" hidden>Ест ягель.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Ленивец</p><div class="sbtns"><button class="sbtn" data-b="0">тропический лес</button><button class="sbtn" data-b="1">пустыня</button><button class="sbtn" data-b="2">степь</button><button class="sbtn" data-b="3">тундра</button></div><p class="swhy" hidden>Живёт на деревьях у экватора.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Каракал</p><div class="sbtns"><button class="sbtn" data-b="0">тропический лес</button><button class="sbtn" data-b="1">пустыня</button><button class="sbtn" data-b="2">степь</button><button class="sbtn" data-b="3">тундра</button></div><p class="swhy" hidden>Пустынная рысь.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Лошадь Пржевальского</p><div class="sbtns"><button class="sbtn" data-b="0">тропический лес</button><button class="sbtn" data-b="1">пустыня</button><button class="sbtn" data-b="2">степь</button><button class="sbtn" data-b="3">тундра</button></div><p class="swhy" hidden>Рис. 113.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Песец</p><div class="sbtns"><button class="sbtn" data-b="0">тропический лес</button><button class="sbtn" data-b="1">пустыня</button><button class="sbtn" data-b="2">степь</button><button class="sbtn" data-b="3">тундра</button></div><p class="swhy" hidden>Зимой белый.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt5" data-n="6">
+<div class="sortlab">Тайга, смешанный лес или Арктика?</div>
+<div class="sitem" data-r="0"><p class="stext">Кедровка</p><div class="sbtns"><button class="sbtn" data-b="0">тайга</button><button class="sbtn" data-b="1">смешанный лес</button><button class="sbtn" data-b="2">арктическая пустыня</button></div><p class="swhy" hidden>Ест семена хвойных.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Липа и дуб</p><div class="sbtns"><button class="sbtn" data-b="0">тайга</button><button class="sbtn" data-b="1">смешанный лес</button><button class="sbtn" data-b="2">арктическая пустыня</button></div><p class="swhy" hidden>Высокоствольные деревья зоны.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Морж</p><div class="sbtns"><button class="sbtn" data-b="0">тайга</button><button class="sbtn" data-b="1">смешанный лес</button><button class="sbtn" data-b="2">арктическая пустыня</button></div><p class="swhy" hidden>Ест моллюсков с отмелей.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Бурундук</p><div class="sbtns"><button class="sbtn" data-b="0">тайга</button><button class="sbtn" data-b="1">смешанный лес</button><button class="sbtn" data-b="2">арктическая пустыня</button></div><p class="swhy" hidden>Житель тайги.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Косуля</p><div class="sbtns"><button class="sbtn" data-b="0">тайга</button><button class="sbtn" data-b="1">смешанный лес</button><button class="sbtn" data-b="2">арктическая пустыня</button></div><p class="swhy" hidden>Обитатель лесной зоны.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Белый медведь</p><div class="sbtns"><button class="sbtn" data-b="0">тайга</button><button class="sbtn" data-b="1">смешанный лес</button><button class="sbtn" data-b="2">арктическая пустыня</button></div><p class="swhy" hidden>Хищник, плавает и ныряет.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Природная зона</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s110" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Часть Земли со своим климатом, растениями и животными.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Влажный тропический лес</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s111" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">У экватора: жарко и влажно весь год, больше всего видов.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пустыня</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s112" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Мало осадков, жара днём; животные в норах.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Степь</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s113" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Травы и мало деревьев; почти вся распахана.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Тайга</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 318" aria-hidden="true"><use href="#z-zones"/></svg><span class="ftext">Хвойные леса: ель, пихта, сосна, лиственница.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Тундра</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="s114" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Безлесная, мерзлота; мхи, лишайники, северный олень.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Вечная мерзлота</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 186" aria-hidden="true"><use href="#z-frost"/></svg><span class="ftext">Земля, мёрзлая круглый год.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Арктическая пустыня</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 330 318" aria-hidden="true"><use href="#z-zones"/></svg><span class="ftext">Самая северная зона: льды; жизнь связана с морем.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. В какой зоне больше всего видов растений и животных?</h3><div class="opts">
+<button class="opt" data-ok="1">Во влажном тропическом лесу</button>
+<button class="opt">В тундре</button>
+<button class="opt">В пустыне</button>
+<button class="opt">В степи</button></div>
+<div class="fb">На одном гектаре — до 200 видов деревьев.</div></div>
+<div class="q"><h3>2. В какой природной зоне находится Москва?</h3><div class="opts">
+<button class="opt" data-ok="1">Смешанных и широколиственных лесов</button>
+<button class="opt">Тайги</button>
+<button class="opt">Степей</button>
+<button class="opt">Тундры</button></div>
+<div class="fb">Поэтому в Измайлове растут дубы и липы.</div></div>
+<div class="q"><h3>3. Что в горбах у верблюда?</h3><div class="opts">
+<button class="opt" data-ok="1">Запас жира</button>
+<button class="opt">Вода</button>
+<button class="opt">Воздух</button>
+<button class="opt">Мышцы для бега</button></div>
+<div class="fb">Жир — запас на то время, когда еды мало.</div></div>
+<div class="q"><h3>4. Почему степи сейчас почти не похожи на рис. 113?</h3><div class="opts">
+<button class="opt" data-ok="1">Их почти полностью распахали</button>
+<button class="opt">Там выросли леса</button>
+<button class="opt">Там стало холодно</button>
+<button class="opt">Их залило водой</button></div>
+<div class="fb">Поля чередуются с пастбищами, садами и посёлками.</div></div>
+<div class="q"><h3>5. Сколько длится зима в тундре?</h3><div class="opts">
+<button class="opt" data-ok="1">8—9 месяцев</button>
+<button class="opt">3 месяца</button>
+<button class="opt">Месяц</button>
+<button class="opt">Её нет</button></div>
+<div class="fb">А лето короткое и холодное.</div></div>
+<div class="q"><h3>6. Что ест северный олень зимой?</h3><div class="opts">
+<button class="opt" data-ok="1">Ягель из-под снега</button>
+<button class="opt">Рыбу</button>
+<button class="opt">Мох с деревьев</button>
+<button class="opt">Ничего, он спит</button></div>
+<div class="fb">Ягель — лишайник, его видно на рис. 114.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Природные зоны</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Определение природной зоны.</li><li>Зоны с севера на юг: арктическая пустыня, тундра, тайга, смешанные леса, степи, пустыни, тропические леса.</li><li>Москва — смешанные леса; Ягодное — лесостепь.</li></ol></div>
+</div>
+<div class="think">
+<h3>Тропический лес и пустыня</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Тропический лес: жарко и влажно, больше всего видов; угроза — вырубка.</li><li>Пустыня: мало осадков, суточные перепады температуры, норы, песчаная окраска.</li><li>Мой пример — верблюд в этнопарке.</li></ol></div>
+</div>
+<div class="think">
+<h3>Степь, смешанный лес, тайга</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Степь: травы, грызуны, жаворонки; почти распахана; лошадь Пржевальского.</li><li>Смешанные леса: дуб, липа, клён; олень, косуля, кабан.</li><li>Тайга: хвойные, болота, гнус; медведь, лось, рысь.</li></ol></div>
+</div>
+<div class="think">
+<h3>Тундра и Арктика</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Тундра: мерзлота, мхи и лишайники, белая окраска зимой; северный олень и ягель.</li><li>Арктическая пустыня: льды, −60 °С; птицы, тюлени, моржи.</li><li>Белый медведь: плавает, ныряет, шерсть не намокает.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="b24.html">‹ §24 Искусственные сообщества</a>
+  <span class="pn cur">§25 Природные зоны</span>
+ </div>
+</div>
+
+<footer><div class="wrap">Биология, 5 класс. В. В. Пасечник и др., «Линия жизни», 2024. § 25, с. 144—148. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'z-zones':'0 0 330 318','z-frost':'0 0 330 186'};
+
+var T={
+zona:{w:"Природная зона",k:"пояс со своим климатом",p:"s110",t:"Часть географической оболочки Земли, которая отличается особенностями животного и растительного мира, рельефа и климата.",r:"",e:""},
+tropl:{w:"Влажный тропический лес",k:"жарко и влажно весь год",p:"s111",t:"Зона у экватора: круглый год высокая температура и влажность, обильные осадки. Здесь больше всего видов растений и животных.",r:"",e:""},
+pust:{w:"Пустыня",k:"мало осадков",p:"s112",t:"Зона, где выпадает мало осадков и сильно меняется температура за сутки. Растений мало, многие животные живут в норах.",r:"",e:""},
+step:{w:"Степь",k:"травы и мало деревьев",p:"s113",t:"Зона, где преобладают травы, а деревьев мало. В России — на юге; сейчас степи почти полностью распаханы.",r:"",e:""},
+smesh:{w:"Смешанные и широколиственные леса",k:"зона Москвы",s:"z-zones",t:"Зона, где растут дуб, липа, клён, вяз, сосна, ель, под ними — деревья пониже и травы.",r:"",e:""},
+taiga:{w:"Тайга",k:"хвойные леса",s:"z-zones",t:"Зона хвойных лесов к северу от лиственных: ель, пихта, сосна, лиственница. Много болот; летом — тучи гнуса.",r:"",e:""},
+tundra:{w:"Тундра",k:"безлесная и холодная",p:"s114",t:"Безлесная зона у Северного Ледовитого океана: лето короткое и холодное, зима — 8—9 месяцев, под почвой вечная мерзлота.",r:"",e:""},
+merzl:{w:"Вечная мерзлота",k:"земля, не оттаивающая годами",s:"z-frost",t:"Слой земли, который остаётся мёрзлым круглый год; летом оттаивает лишь тонкий верхний слой.",r:"",e:""},
+arkt:{w:"Арктическая пустыня",k:"самая северная зона",s:"z-zones",t:"Самая северная природная зона: ледники, зимой до −60 °С, летом не выше +8 °С. Жизнь животных связана с морем.",r:"",e:""},
+gnus:{w:"Гнус",k:"тучи мошкары",s:"z-zones",t:"Огромные скопления мелких кровососущих насекомых — комаров, мошек, мокрецов — в тайге и тундре.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('biology:b25:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('biology:b25:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('biology:b25:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('biology:b25:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
