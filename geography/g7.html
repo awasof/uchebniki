@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Как спутники, карты и Интернет помогают узнавать о Земле — и как проверить, правда ли то, что ты нашла.">
+<title>§7 География сегодня</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term .tl{white-space:nowrap}
+.term .tl::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover .tl::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== География: морская гамма (синий вместо красного), блоки учебника «Полярная звезда» ===== */
+:root{
+  --red:#1B6A8C; --ochre:#E2A31F; --leaf:#1B6A8C; --life:#8A4CB0; --lifebg:#F2E9F8;
+  --pa:#C9672C; --pb:#1B6A8C; --pink:#C23C86; --pinkbg:#FBE4F0; --yel:#FFF3C4; --yelb:#D9A21A;
+  --grn:#E3F2E1; --grnb:#3E8E4A; --sea:#BFE0EE; --land:#F3E6C4; --landb:#B9A57A;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--pink);color:#FFF6FB;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+:root[data-theme="dark"] .rubric{color:#20101A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rubric{color:#20101A}}
+
+/* --- вывод (розовая плашка учебника) --- */
+.vyvod{margin:24px 0;background:var(--pinkbg);border-left:8px solid var(--pink);border-radius:0 16px 16px 0;
+  padding:13px 16px 14px;box-shadow:var(--sh)}
+.vyvod .vlab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:4px}
+.vyvod p{margin:0;font-size:18px;font-weight:600;line-height:1.5}
+
+/* --- заметки на полях учебника --- */
+.side{margin:22px 0;border-radius:14px;padding:12px 15px;font-size:17px;line-height:1.5;border:2.5px solid}
+.side .slab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.side.yellow{background:var(--yel);border-color:var(--yelb)} .side.yellow .slab{color:var(--yelb)}
+.side.green{background:var(--grn);border-color:var(--grnb)} .side.green .slab{color:var(--grnb)}
+.side p{margin:0}
+
+/* --- запомните --- */
+.remember{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.remember span{background:var(--card);border:2.5px solid var(--pink);border-radius:999px;padding:6px 13px;
+  font-weight:600;font-size:16px;box-shadow:var(--sh)}
+
+/* --- заставка параграфа --- */
+.banner{margin:0;background:var(--paper2);border-bottom:3px solid var(--line)}
+.banner .wrap{padding-block:14px}
+.banner img{display:block;width:100%;max-width:860px;height:auto;max-height:220px;object-fit:cover;margin:0 auto;border-radius:16px;border:3px solid var(--line)}
+.banner figcaption{text-align:center;margin-top:6px}
+
+/* --- таблица учебника для заполнения --- */
+.ttab{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:var(--card)}
+.ttab th,.ttab td{border:2px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.ttab th{background:var(--paper2);font-weight:600}
+.tscroll{overflow-x:auto}
+
+/* маленькие картинки учебника (портреты) не растягиваем на всю ширину */
+.photo img.small{max-width:320px}
+
+/* --- увеличение по нажатию --- */
+.fig{position:relative}
+.fig svg,.photo img{cursor:zoom-in}
+.fig:has(> svg)::after{content:"⤢ нажми на картинку — увеличится";display:block;margin-top:6px;text-align:right;
+  font-size:12px;font-weight:600;color:var(--soft);pointer-events:none}
+.zoom{position:fixed;inset:0;z-index:120;background:var(--paper);overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom[hidden]{display:none!important}
+.zoombar{position:sticky;top:0;left:0;z-index:2;display:flex;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--paper2);border-bottom:2px solid var(--line);font-size:14px;color:var(--soft)}
+.zoomclose{white-space:nowrap;font:inherit;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.zoomin{padding:14px}
+.zoomin svg,.zoomin img{display:block;background:var(--card);border-radius:12px}
+
+/* жирное слово внутри задания учебника — обычное, а не заголовок блока */
+.ask li b,.ask p b,.ask ol b{display:inline;font-size:inherit;letter-spacing:normal;text-transform:none;color:inherit;margin:0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2F6F8F" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">География</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<defs><marker id="ar7-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--illink,#2B2620)"/></marker><marker id="ar7-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--red,#1B6A8C)"/></marker><marker id="ar7-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pink,#C23C86)"/></marker><marker id="ar7-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--moss,#5E7A3A)"/></marker><marker id="ar7-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--no,#B03A2E)"/></marker></defs>
+<symbol id="g7-sat" viewBox="0 0 360 343">
+<g font-family="Golos Text, Arial, sans-serif">
+<ellipse cx="180" cy="82" rx="128" ry="32" fill="none" stroke="var(--illink,#2B2620)" stroke-width="1.6" stroke-dasharray="5 5"/>
+<path d="M60 95 A128 32 0 0 0 98 107" stroke="var(--illink,#2B2620)" stroke-width="2.4" fill="none" marker-end="url(#ar7-k)"/>
+<circle cx="180" cy="82" r="38" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="2.5"/>
+<text x="180.0" y="87.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Земля</text>
+<g transform="translate(300.0 71.0) scale(1.15)"><rect x="-21" y="-4" width="13" height="8" rx="1.5" fill="var(--red,#1B6A8C)"/><rect x="8" y="-4" width="13" height="8" rx="1.5" fill="var(--red,#1B6A8C)"/><path d="M-8 0 L-6 0 M6 0 L8 0" stroke="var(--illink,#2B2620)" stroke-width="2"/><rect x="-6" y="-7" width="12" height="14" rx="2.5" fill="var(--ochre,#E2A31F)" stroke="var(--illink,#2B2620)" stroke-width="1.4"/><path d="M0 -7 L0 -12" stroke="var(--illink,#2B2620)" stroke-width="1.6"/><circle cx="0" cy="-13" r="1.8" fill="var(--illink,#2B2620)"/></g>
+<text x="300.0" y="44.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">спутник</text>
+<text x="10.0" y="22.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">летают вокруг Земли</text>
+<text x="10.0" y="37.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">постоянно</text>
+<rect x="8" y="136" width="168" height="54" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/><circle cx="21" cy="168" r="7" fill="var(--paper2,#E8DFCC)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><circle cx="31" cy="162" r="9" fill="var(--paper2,#E8DFCC)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><circle cx="41" cy="168" r="7" fill="var(--paper2,#E8DFCC)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><rect x="21" y="167" width="22" height="8" fill="var(--paper2,#E8DFCC)"/><path d="M21 175 L41 175" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><text x="54.0" y="160.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >наблюдают</text><text x="54.0" y="178.0" text-anchor="start" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >за погодой</text>
+<rect x="184" y="136" width="168" height="54" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/><path d="M207 162 L207 180 M200 180 L214 180" stroke="var(--red,#1B6A8C)" stroke-width="2.2"/><circle cx="207" cy="160" r="3" fill="var(--red,#1B6A8C)"/><path d="M201 167 a9 9 0 0 1 0 -14 M213 167 a9 9 0 0 0 0 -14" stroke="var(--red,#1B6A8C)" stroke-width="1.8" fill="none"/><path d="M196 171 a15 15 0 0 1 0 -22 M218 171 a15 15 0 0 0 0 -22" stroke="var(--red,#1B6A8C)" stroke-width="1.8" fill="none"/><text x="230.0" y="160.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >обеспечивают</text><text x="230.0" y="178.0" text-anchor="start" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >связь</text>
+<rect x="8" y="200" width="168" height="54" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/><rect x="17" y="222" width="28" height="20" rx="4" fill="var(--paper2,#E8DFCC)" stroke="var(--red,#1B6A8C)" stroke-width="1.8"/><rect x="21" y="218" width="9" height="5" rx="1.5" fill="var(--red,#1B6A8C)"/><circle cx="31" cy="232" r="6" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.8"/><text x="54.0" y="224.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >фотографируют</text><text x="54.0" y="242.0" text-anchor="start" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >Землю</text>
+<rect x="184" y="200" width="168" height="54" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.5"/><path d="M207 246 C195 232 197 216 207 216 C217 216 219 232 207 246 Z" fill="var(--pink,#C23C86)"/><circle cx="207" cy="227" r="4" fill="var(--card,#FFFBF2)"/><text x="230.0" y="224.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >вычисляют</text><text x="230.0" y="242.0" text-anchor="start" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >местоположение</text>
+<path d="M92.0 255.0 L92.0 270.0" stroke="var(--red,#1B6A8C)" stroke-width="2.2" fill="none" marker-end="url(#ar7-b)"/>
+<path d="M268.0 255.0 L268.0 270.0" stroke="var(--red,#1B6A8C)" stroke-width="2.2" fill="none" marker-end="url(#ar7-b)"/>
+<rect x="8" y="273" width="168" height="62" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="2.5"/>
+<text x="92.0" y="294.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--red,#1B6A8C)" >снимки → карты</text>
+<text x="92.0" y="312.0" text-anchor="middle" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >острова в бухте Визе</text>
+<text x="92.0" y="327.0" text-anchor="middle" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >нашли по снимкам</text>
+<rect x="184" y="273" width="168" height="62" rx="10" fill="var(--red,#1B6A8C)"/>
+<text x="268.0" y="294.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--card,#FFFBF2)" >навигационные системы</text>
+<text x="268.0" y="312.0" text-anchor="middle" font-size="12" font-weight="400" fill="var(--card,#FFFBF2)" >пилотам, лоцманам,</text>
+<text x="268.0" y="327.0" text-anchor="middle" font-size="12" font-weight="400" fill="var(--card,#FFFBF2)" >водителям</text>
+</g>
+</symbol>
+<symbol id="g7-nav" viewBox="0 0 340 320">
+<g font-family="Golos Text, Arial, sans-serif">
+<g transform="translate(52.0 28.0) scale(0.9)"><rect x="-21" y="-4" width="13" height="8" rx="1.5" fill="var(--red,#1B6A8C)"/><rect x="8" y="-4" width="13" height="8" rx="1.5" fill="var(--red,#1B6A8C)"/><path d="M-8 0 L-6 0 M6 0 L8 0" stroke="var(--illink,#2B2620)" stroke-width="2"/><rect x="-6" y="-7" width="12" height="14" rx="2.5" fill="var(--ochre,#E2A31F)" stroke="var(--illink,#2B2620)" stroke-width="1.4"/><path d="M0 -7 L0 -12" stroke="var(--illink,#2B2620)" stroke-width="1.6"/><circle cx="0" cy="-13" r="1.8" fill="var(--illink,#2B2620)"/></g>
+<g transform="translate(170.0 20.0) scale(0.9)"><rect x="-21" y="-4" width="13" height="8" rx="1.5" fill="var(--red,#1B6A8C)"/><rect x="8" y="-4" width="13" height="8" rx="1.5" fill="var(--red,#1B6A8C)"/><path d="M-8 0 L-6 0 M6 0 L8 0" stroke="var(--illink,#2B2620)" stroke-width="2"/><rect x="-6" y="-7" width="12" height="14" rx="2.5" fill="var(--ochre,#E2A31F)" stroke="var(--illink,#2B2620)" stroke-width="1.4"/><path d="M0 -7 L0 -12" stroke="var(--illink,#2B2620)" stroke-width="1.6"/><circle cx="0" cy="-13" r="1.8" fill="var(--illink,#2B2620)"/></g>
+<g transform="translate(288.0 28.0) scale(0.9)"><rect x="-21" y="-4" width="13" height="8" rx="1.5" fill="var(--red,#1B6A8C)"/><rect x="8" y="-4" width="13" height="8" rx="1.5" fill="var(--red,#1B6A8C)"/><path d="M-8 0 L-6 0 M6 0 L8 0" stroke="var(--illink,#2B2620)" stroke-width="2"/><rect x="-6" y="-7" width="12" height="14" rx="2.5" fill="var(--ochre,#E2A31F)" stroke="var(--illink,#2B2620)" stroke-width="1.4"/><path d="M0 -7 L0 -12" stroke="var(--illink,#2B2620)" stroke-width="1.6"/><circle cx="0" cy="-13" r="1.8" fill="var(--illink,#2B2620)"/></g>
+<path d="M52 36 L156 70" stroke="var(--red,#1B6A8C)" stroke-width="1.6" stroke-dasharray="3 4"/>
+<path d="M170 28 L170 62" stroke="var(--red,#1B6A8C)" stroke-width="1.6" stroke-dasharray="3 4"/>
+<path d="M288 36 L184 70" stroke="var(--red,#1B6A8C)" stroke-width="1.6" stroke-dasharray="3 4"/>
+<rect x="156" y="66" width="28" height="14" rx="5" fill="var(--pink,#C23C86)"/>
+<rect x="146" y="76" width="48" height="14" rx="5" fill="var(--pink,#C23C86)"/>
+<circle cx="158" cy="91" r="5" fill="var(--illink,#2B2620)"/><circle cx="182" cy="91" r="5" fill="var(--illink,#2B2620)"/>
+<text x="200.0" y="86.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">ваша машина</text>
+<text x="170.0" y="120.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >1. Спутники помогают узнать, где машина</text>
+<rect x="110" y="136" width="120" height="88" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--illink,#2B2620)" stroke-width="3"/>
+<path d="M170 216 L170 172 L222 172" stroke="var(--paper2,#E8DFCC)" stroke-width="12" fill="none" stroke-linejoin="round"/>
+<path d="M170 206 L170 172 L212 172" stroke="var(--red,#1B6A8C)" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#ar7-b)"/>
+<circle cx="170.0" cy="206.0" r="6" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="104.0" y="210.0" text-anchor="end" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">вы здесь</text>
+<text x="238.0" y="168.0" text-anchor="start" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">«Поверните</text>
+<text x="238.0" y="184.0" text-anchor="start" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">направо»</text>
+<text x="170.0" y="246.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >2. Навигатор говорит, куда повернуть</text>
+<text x="170.0" y="274.0" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--soft,#5F5648)" >Навигационные системы помогают:</text>
+<rect x="14" y="284" width="96" height="28" rx="14" fill="var(--red,#1B6A8C)"/>
+<text x="62.0" y="303.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--card,#FFFBF2)" >пилотам</text>
+<rect x="122" y="284" width="96" height="28" rx="14" fill="var(--red,#1B6A8C)"/>
+<text x="170.0" y="303.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--card,#FFFBF2)" >лоцманам</text>
+<rect x="230" y="284" width="96" height="28" rx="14" fill="var(--red,#1B6A8C)"/>
+<text x="278.0" y="303.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--card,#FFFBF2)" >водителям</text>
+</g>
+</symbol>
+<symbol id="g7-map" viewBox="0 0 420 399">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="0" y="0" width="420" height="398.4" rx="6" fill="var(--sea,#BFE0EE)"/>
+<path d="M4.1 284.9L6.3 285.1L8.7 287.3L7.4 287.5L4.8 290.3L2.4 290.5L1.0 294.0L-0.0 294.5L-0.1 293.6L1.2 291.4L-0.8 289.9L-0.1 288.2L-0.9 286.6L1.8 286.5L2.2 285.4L4.1 284.9ZM-2.6 5.6L0.3 5.9L2.0 10.8L6.5 10.4L9.5 11.9L7.6 12.8L7.3 14.1L11.0 15.7L14.7 15.4L19.1 17.4L14.0 18.7L11.4 21.5L9.1 22.7L7.2 22.6L5.3 24.1L3.6 24.2L3.1 23.3L2.9 21.9L4.5 20.2L-7.0 21.5L-7.4 20.1L-5.2 19.3L-4.4 17.2L-2.3 15.1L-6.3 13.1L-8.0 10.4L-9.7 9.4L-9.4 8.1L-10.7 8.2L-11.6 7.3L-2.6 5.6ZM185.5 137.2L185.2 139.1L184.4 138.0L181.3 141.8L176.6 143.4L175.0 143.5L173.5 142.5L172.7 140.6L172.7 136.0L176.2 132.9L178.7 132.6L185.5 137.2ZM252.3 126.7L252.3 129.6L248.1 130.1L246.6 129.4L246.1 127.7L243.8 126.9L242.5 127.3L240.7 125.1L239.4 122.1L241.5 119.7L242.9 119.3L252.3 126.7ZM319.4 82.5L315.3 83.3L314.5 82.7L315.0 78.9L316.0 77.7L321.2 76.7L325.4 79.9L325.7 81.5L319.4 82.5ZM300.3 38.6L290.6 42.2L273.4 46.6L258.3 51.5L254.1 55.0L251.2 55.8L251.0 56.3L252.7 57.3L249.9 59.3L247.7 59.5L247.2 61.4L244.4 60.2L243.1 63.1L239.8 62.9L240.3 66.7L239.1 68.1L234.7 69.7L235.4 72.0L234.7 73.1L231.8 72.2L233.2 74.7L230.6 76.8L229.5 78.8L227.3 79.6L220.2 78.9L216.6 77.5L212.0 79.0L210.9 77.2L211.3 76.3L208.4 73.2L214.2 70.5L219.3 63.8L224.0 63.0L220.9 62.1L220.4 61.1L222.6 58.8L226.4 56.5L225.3 55.7L223.1 55.9L221.9 54.6L222.6 53.6L224.2 53.3L226.9 54.5L228.9 52.5L228.7 51.0L233.7 51.1L234.8 48.8L236.9 47.6L236.6 46.7L242.0 44.0L249.6 42.2L251.2 40.6L255.6 40.9L256.3 40.3L256.2 38.7L257.3 38.0L268.9 38.6L278.7 36.7L287.2 33.8L289.2 31.5L294.2 29.0L299.6 27.8L305.1 28.9L308.1 32.0L307.8 33.9L303.0 38.0L300.3 38.6ZM218.7 79.6L225.9 81.1L224.4 83.4L223.9 86.6L221.3 87.1L220.6 89.5L219.2 90.2L218.9 92.1L220.0 94.8L218.5 98.8L226.1 110.3L233.8 115.6L230.6 117.6L225.7 115.5L224.8 115.8L226.8 117.5L226.0 117.9L224.0 116.6L221.8 117.2L221.1 116.1L216.9 116.5L214.2 115.4L213.9 116.3L206.0 113.6L207.5 112.5L207.8 110.6L211.0 110.1L207.3 107.7L207.5 107.2L206.1 107.1L205.5 106.3L206.1 104.4L195.7 105.0L193.7 102.8L193.2 98.8L194.6 96.5L196.1 95.7L198.5 96.0L201.0 93.6L202.9 88.5L201.4 88.3L200.5 87.1L202.9 85.3L205.9 85.0L204.7 82.4L205.8 80.7L208.4 79.8L211.3 79.9L215.3 78.4L218.7 79.6ZM-7.2 -17.5L-3.0 -17.4L-2.0 -16.2L1.9 -14.7L2.9 -16.6L3.0 -19.6L6.6 -20.6L8.6 -19.9L7.3 -16.6L11.1 -16.9L12.8 -18.2L14.7 -18.2L15.1 -19.0L25.2 -16.4L31.9 -16.2L33.8 -14.8L34.1 -12.7L26.3 -8.6L23.9 -5.6L20.6 -4.7L18.1 -5.1L12.8 -2.7L5.9 -3.2L4.6 -4.6L5.7 -5.8L-7.5 -5.6L-13.8 -7.5L-15.3 -8.3L-14.8 -8.6L-9.9 -8.8L-8.0 -10.5L-20.1 -10.3L-24.1 -12.0L-24.6 -13.0L-20.6 -14.5L-26.8 -16.0L-21.1 -16.7L-17.4 -15.6L-16.2 -16.3L-17.4 -16.6L-18.5 -18.6L-14.8 -17.1L-14.4 -18.6L-15.7 -20.4L-10.8 -19.6L-7.2 -17.5ZM-34.2 -12.7L-33.0 -13.4L-31.4 -13.1L-27.3 -11.2L-26.5 -9.8L-28.3 -7.5L-28.4 -5.4L-23.6 -8.5L-20.9 -6.0L-20.9 -4.2L-21.8 -3.7L-19.1 -2.2L-14.8 -2.1L-13.8 -0.8L-12.4 -1.1L-12.1 -2.0L-9.1 -1.5L-8.1 -0.8L-9.8 0.3L-4.0 3.6L-5.9 4.5L-15.3 5.4L-18.7 8.7L-20.0 11.4L-19.7 12.8L-23.4 13.6L-24.7 20.7L-27.3 21.0L-31.8 27.3L-31.2 28.4L-33.0 30.6L-32.4 32.7L-34.8 33.8L-42.3 29.5L-45.1 26.8L-50.1 24.7L-52.5 20.9L-52.0 20.1L-50.0 19.9L-47.9 20.6L-46.5 18.3L-32.6 16.8L-33.4 15.4L-51.9 17.2L-53.9 16.0L-54.6 13.6L-52.9 12.8L-50.5 13.9L-50.9 13.0L-41.4 10.8L-41.6 9.8L-40.8 9.4L-32.8 8.8L-31.7 8.1L-34.1 8.4L-36.4 7.0L-34.8 5.4L-34.2 4.7L-35.9 4.8L-39.8 7.1L-43.2 7.4L-44.3 5.7L-43.4 3.2L-45.8 5.2L-48.0 3.9L-49.4 4.5L-49.7 7.1L-48.3 8.2L-51.8 10.2L-58.1 10.7L-61.3 8.6L-63.9 5.7L-66.5 4.5L-67.3 3.3L-66.5 2.3L-69.8 0.7L-68.6 0.2L-63.8 1.3L-63.0 0.6L-65.7 -0.4L-66.3 -2.1L-65.1 -3.8L-65.8 -4.1L-68.4 -4.0L-68.8 -2.1L-70.8 -1.8L-73.9 -7.3L-73.4 -9.0L-74.3 -10.6L-73.1 -11.1L-71.2 -10.0L-70.5 -11.0L-67.6 -11.5L-63.7 -10.0L-63.8 -11.4L-60.7 -10.8L-54.5 -12.0L-53.1 -11.4L-53.9 -10.0L-58.8 -9.6L-62.0 -8.0L-56.9 -8.0L-56.5 -6.7L-52.8 -4.7L-52.1 -5.4L-52.2 -8.2L-48.6 -11.2L-45.6 -9.4L-40.9 -2.4L-37.1 0.3L-40.2 -7.3L-40.5 -9.9L-38.7 -12.4L-38.8 -14.1L-37.8 -14.7L-35.9 -14.3L-34.2 -12.7ZM1036.9 140.0L1044.3 143.2L1046.5 145.6L1045.1 144.5L1045.5 146.1L1049.3 147.8L1049.6 150.1L1051.3 149.0L1048.4 146.2L1053.1 149.6L1052.7 150.6L1054.6 150.7L1067.4 158.3L1068.2 161.5L1067.2 162.7L1069.7 161.6L1070.7 162.9L1070.1 166.4L1071.2 170.8L1070.2 173.0L1073.0 174.2L1073.7 176.9L1075.7 175.1L1075.8 178.5L1077.7 175.7L1074.7 172.9L1076.2 170.8L1075.7 168.5L1072.6 166.5L1078.4 165.7L1081.8 166.8L1080.6 169.0L1081.1 170.0L1081.6 167.8L1083.1 168.5L1086.0 168.4L1082.8 166.8L1090.7 168.7L1093.6 172.3L1099.2 176.9L1098.5 178.3L1100.5 177.6L1100.9 179.3L1103.9 179.7L1104.3 180.9L1103.6 181.7L1102.5 181.3L1099.9 182.7L1098.1 187.0L1095.2 186.0L1093.2 184.4L1095.6 188.0L1094.8 188.7L1090.0 188.8L1086.5 186.3L1084.2 186.2L1087.1 188.8L1086.6 189.4L1087.9 189.3L1087.3 191.8L1085.0 192.2L1087.5 192.8L1088.0 195.0L1085.5 197.0L1082.4 197.8L1084.1 198.6L1083.5 200.9L1086.2 202.1L1086.9 203.6L1084.5 203.9L1083.4 202.3L1083.4 204.5L1081.8 205.8L1080.3 204.7L1080.7 202.1L1078.9 204.6L1078.0 204.6L1072.5 199.7L1069.5 198.3L1066.8 198.3L1064.1 195.6L1064.1 192.4L1062.5 189.1L1056.2 187.1L1053.4 188.7L1047.3 188.8L1046.5 187.4L1046.7 185.4L1044.8 183.6L1043.8 181.3L1045.1 181.5L1046.5 176.1L1044.0 179.2L1042.8 178.5L1042.5 176.5L1041.2 177.7L1041.3 179.4L1039.4 179.9L1039.0 179.1L1038.3 181.5L1038.6 184.5L1041.0 186.8L1041.1 188.5L1038.8 193.1L1035.7 195.2L1033.3 198.2L1027.2 201.3L1022.1 199.7L1018.4 195.5L1016.4 194.6L1014.7 195.2L1013.3 194.7L1012.9 195.0L1013.6 195.3L1017.4 195.7L1018.7 197.6L1017.6 198.7L1016.1 197.8L1013.4 197.7L1011.0 196.3L1009.2 197.9L1001.1 200.1L1008.5 198.7L1011.0 197.0L1012.3 197.9L1012.9 199.8L1011.5 201.5L1014.0 200.1L1016.2 200.8L1019.7 198.9L1020.0 203.5L1021.7 205.4L1024.0 206.6L1025.3 204.6L1026.9 207.9L1026.7 209.5L1028.0 210.2L1028.3 211.9L1028.6 214.3L1026.8 215.6L1028.0 215.9L1028.6 218.1L1029.0 216.1L1029.8 218.8L1032.5 221.0L1033.0 222.6L1032.0 223.5L1034.1 226.8L1033.4 229.1L1031.5 231.1L1031.1 233.2L1023.9 230.0L1019.1 229.3L1019.4 226.7L1017.3 226.8L1017.0 228.4L1018.2 229.8L1015.2 230.6L1012.8 232.8L1002.2 238.4L1000.9 240.1L998.4 240.5L996.3 242.1L995.0 241.6L991.8 245.9L990.0 245.1L990.3 247.3L989.2 247.2L988.2 248.9L987.0 249.3L987.0 250.8L975.2 259.5L973.6 266.1L971.1 264.7L968.7 259.5L966.2 257.3L959.0 257.6L953.1 259.9L946.8 267.6L946.2 267.7L945.9 265.9L947.3 258.8L946.2 258.9L939.0 264.2L938.1 267.8L937.0 267.4L935.3 264.7L934.3 264.8L932.6 267.0L932.8 265.8L930.2 265.2L927.7 268.6L927.1 275.3L925.9 277.7L924.9 278.0L925.1 279.8L919.7 287.3L918.5 292.5L919.0 294.7L921.4 296.6L921.3 297.5L923.0 294.3L926.8 296.5L926.5 298.6L923.9 302.5L923.8 304.1L924.0 310.2L924.8 311.4L927.0 311.9L927.5 318.2L925.6 320.9L924.3 320.6L922.9 318.3L925.6 314.2L923.2 314.7L922.0 315.9L922.2 317.9L919.3 320.3L916.9 328.6L917.3 332.6L919.4 338.9L916.3 342.2L914.1 342.2L913.0 341.1L910.7 341.9L906.1 346.8L904.6 352.5L905.8 361.6L902.9 360.1L898.7 362.8L897.4 364.7L896.2 362.7L895.6 363.0L895.3 364.0L896.5 365.2L895.7 372.1L893.2 380.1L884.3 391.8L882.8 386.1L881.8 370.3L880.1 365.3L876.5 332.7L877.5 320.5L879.3 311.8L884.9 303.5L885.8 301.0L884.6 297.1L885.1 296.3L888.9 296.4L890.3 293.3L894.3 293.4L895.5 291.3L900.4 286.3L904.6 277.8L917.1 263.5L919.2 259.1L925.1 254.6L927.6 254.4L930.0 252.8L929.0 251.2L931.9 246.8L931.7 245.7L930.6 245.2L932.0 241.7L933.2 233.6L935.8 231.1L939.8 232.4L939.8 231.4L941.2 231.4L941.1 230.7L937.1 229.6L934.6 227.8L927.5 229.9L925.4 239.2L925.4 240.5L927.0 241.8L925.9 243.6L925.3 244.0L924.4 241.8L923.3 242.5L921.3 242.4L912.4 252.1L910.6 255.1L908.8 255.2L906.8 256.7L908.1 251.3L906.8 251.0L904.2 252.2L905.3 249.8L904.9 247.5L907.2 242.6L907.6 239.1L902.7 241.6L900.3 238.6L893.0 241.1L889.0 240.4L886.5 242.2L883.8 244.9L883.5 247.8L879.7 251.7L877.5 256.0L872.6 260.3L868.2 267.9L867.2 272.2L868.0 272.9L870.1 272.0L872.6 273.3L873.9 274.5L873.9 276.9L870.9 277.6L869.3 276.6L866.3 278.5L864.2 276.4L862.0 276.6L861.5 278.3L860.2 278.4L858.5 280.6L855.2 279.2L853.7 280.8L848.7 281.3L847.4 278.4L849.9 277.3L853.1 277.3L854.8 276.4L854.2 275.7L851.8 275.0L848.8 271.7L846.8 271.4L845.4 273.1L843.2 272.6L844.4 271.8L837.6 268.8L836.2 268.9L833.9 270.8L834.8 272.7L832.9 272.9L832.1 272.1L831.8 274.3L833.2 274.4L832.9 275.6L831.6 276.0L830.1 275.9L828.6 273.8L826.0 274.2L823.7 275.8L817.3 273.2L815.6 276.5L814.1 277.2L812.2 274.3L810.8 273.8L803.8 274.3L799.8 273.8L797.5 274.8L795.3 274.4L791.3 276.2L787.7 279.6L784.9 284.5L779.6 289.3L777.3 296.2L774.4 297.9L773.1 300.3L765.6 308.0L759.2 319.6L743.3 336.3L743.3 339.2L747.2 341.3L753.3 340.8L752.9 352.2L755.7 352.0L756.4 349.1L755.3 347.7L755.6 346.9L757.2 345.5L759.1 345.5L756.9 348.1L760.2 350.2L756.3 355.8L760.9 355.0L762.9 353.3L763.7 350.7L764.7 350.0L765.0 352.0L762.9 356.1L764.2 355.9L765.8 351.3L765.8 345.0L769.9 346.8L773.0 345.9L775.6 348.7L776.6 352.1L778.9 355.1L783.4 359.4L783.6 360.9L782.1 363.2L779.9 362.2L782.6 365.7L781.8 371.3L784.1 374.9L783.4 378.5L780.5 382.7L777.8 394.2L777.5 397.7L778.5 404.2L777.4 406.6L777.8 411.0L776.5 417.7L776.9 419.8L775.1 427.4L770.3 434.9L767.8 442.0L765.1 446.5L763.5 453.7L759.2 463.8L753.4 472.9L749.0 482.4L747.3 484.0L744.7 491.6L742.4 495.9L735.1 504.0L729.5 507.5L726.5 505.0L723.9 504.9L723.9 498.8L721.5 501.9L721.0 501.9L722.0 499.3L720.5 499.7L716.4 508.4L713.4 508.0L714.2 509.9L713.5 512.6L712.9 513.4L711.7 513.0L710.3 514.6L707.2 521.2L706.8 533.2L704.4 535.0L702.9 538.3L700.2 540.7L699.0 543.3L697.6 544.7L695.4 545.2L692.8 548.2L691.7 556.2L694.2 558.0L697.8 563.6L704.9 586.3L704.8 600.3L705.2 601.0L706.0 600.4L705.9 601.8L703.6 612.5L702.1 613.6L699.0 613.6L698.5 616.9L696.2 616.0L695.9 614.7L693.7 615.7L693.8 619.0L693.2 619.4L692.5 617.3L691.7 617.5L692.2 620.3L691.2 622.5L690.2 621.4L690.7 618.5L688.4 622.9L687.5 621.9L686.0 624.6L685.7 622.1L684.2 619.6L684.5 619.0L685.9 619.3L685.6 618.4L686.4 617.5L685.3 617.5L684.4 612.9L686.5 607.1L685.7 606.0L687.4 602.9L686.0 598.7L685.7 591.4L685.0 592.0L683.7 591.4L683.6 590.3L685.7 587.0L687.6 587.8L688.2 589.5L688.9 587.9L687.4 584.4L687.7 583.0L686.2 577.1L686.7 576.2L684.9 574.8L683.3 576.7L682.8 574.9L681.0 573.3L678.3 577.0L678.0 575.3L675.9 574.1L677.3 572.0L673.9 571.3L675.1 569.9L676.4 565.3L678.0 563.8L679.6 563.5L677.0 561.9L678.6 555.1L678.3 551.8L674.5 548.5L673.6 550.5L671.7 545.0L670.1 547.4L667.8 547.6L667.1 546.8L666.6 548.1L661.8 550.7L658.4 554.0L656.1 558.4L654.1 559.1L654.0 561.0L650.8 562.9L650.4 560.3L654.1 557.6L653.8 556.1L655.1 553.7L651.5 553.8L651.5 551.5L653.1 550.2L653.1 547.3L654.9 545.8L658.0 538.2L657.2 535.6L655.3 533.4L655.2 531.5L654.5 533.3L650.8 532.6L646.3 541.9L640.4 546.5L639.1 548.6L638.0 553.4L636.4 556.6L634.1 556.7L632.0 558.2L630.3 556.0L628.6 557.3L627.1 563.5L627.7 567.2L630.1 570.5L633.6 571.8L635.2 571.3L636.2 572.5L637.1 577.3L636.3 582.5L637.3 584.3L639.5 585.3L641.6 584.9L642.4 582.2L645.2 578.4L644.8 577.6L648.1 575.4L653.9 580.7L656.0 580.9L656.6 579.7L658.5 581.4L660.6 581.5L659.2 586.1L659.7 587.8L658.5 589.4L657.3 587.7L655.8 587.7L650.0 592.5L648.5 592.2L649.0 594.9L647.8 595.3L647.3 599.3L645.7 600.3L645.3 597.9L644.3 598.2L643.8 599.4L645.0 601.3L639.4 610.8L637.7 617.2L637.9 618.6L638.9 618.5L644.9 625.2L648.8 642.8L648.7 647.7L651.9 651.0L652.3 654.1L654.6 657.1L655.3 659.6L655.4 661.1L654.1 661.0L652.0 659.0L649.5 658.8L648.3 656.5L646.5 655.5L643.3 657.9L644.4 658.3L646.4 656.7L647.8 657.2L648.3 659.5L654.0 666.5L655.4 672.1L652.4 673.9L649.7 677.1L648.5 680.0L646.1 679.5L644.4 681.6L646.4 680.7L647.3 683.1L649.1 682.7L651.4 680.7L654.1 685.2L656.8 686.8L653.0 692.1L655.5 690.2L656.0 692.1L655.7 697.0L654.4 695.3L653.2 695.6L652.6 697.1L654.1 699.6L653.2 699.9L654.0 701.0L652.8 703.9L653.7 708.8L653.0 708.4L651.5 709.8L651.1 708.1L650.6 708.3L649.4 712.4L648.0 712.8L648.6 714.4L647.0 718.8L647.1 721.1L645.0 725.5L643.7 731.5L642.9 732.7L642.4 732.3L642.0 729.0L641.2 730.7L640.4 729.9L642.3 736.2L639.6 740.1L637.5 739.2L638.7 741.6L640.6 740.8L640.1 746.6L640.7 749.4L639.3 748.4L637.8 748.5L638.4 751.6L636.4 751.9L636.0 755.8L634.2 757.1L634.3 760.1L631.9 760.8L630.6 760.0L630.0 762.1L629.0 762.2L629.2 763.3L630.2 763.5L630.4 765.4L627.6 771.1L626.5 771.0L625.8 774.6L625.3 772.8L624.0 774.7L622.8 773.8L622.5 776.5L621.0 777.9L621.5 778.9L620.4 780.3L620.0 783.6L618.5 783.0L617.9 784.4L615.9 785.6L614.5 784.8L613.6 786.7L611.6 785.4L609.4 788.1L608.0 786.2L607.4 789.4L606.0 788.5L605.5 789.2L605.5 792.6L603.1 791.2L603.8 789.6L601.2 784.7L601.2 781.0L600.6 781.4L600.1 783.6L599.4 784.0L600.8 788.5L600.8 793.7L598.2 795.7L597.8 793.9L596.9 798.1L595.9 797.5L594.5 799.9L593.0 797.1L592.6 800.4L590.3 798.9L588.0 802.9L586.2 804.0L584.2 803.6L584.1 804.7L582.6 805.3L581.2 807.8L580.2 806.0L578.5 811.5L578.7 812.7L579.9 813.0L579.6 815.3L580.9 817.5L579.8 820.6L577.1 820.6L577.3 818.5L575.3 811.9L575.4 808.9L577.1 804.0L575.9 802.9L575.5 803.4L574.4 801.1L574.5 803.2L573.2 804.4L571.5 804.6L571.6 802.5L569.4 801.9L568.3 798.2L567.5 798.1L567.7 801.9L567.3 802.3L566.5 801.1L566.0 802.9L563.1 803.8L560.5 806.8L560.1 810.0L558.9 811.5L558.3 810.8L557.1 811.4L555.7 810.7L556.2 814.4L554.9 817.4L554.7 820.7L552.3 824.8L551.1 825.6L548.8 839.2L550.5 845.7L554.5 853.4L554.4 856.6L553.6 856.0L563.3 876.1L564.6 876.0L569.8 889.3L572.9 910.6L572.7 918.7L573.9 928.2L573.1 926.1L572.4 927.5L572.6 937.2L572.2 936.6L572.2 940.4L571.2 942.3L570.8 945.8L569.8 946.1L566.2 951.5L565.0 952.0L564.4 954.4L559.5 959.0L557.8 955.3L557.5 958.9L556.0 957.0L555.2 958.0L556.1 958.3L556.2 960.4L554.3 960.3L556.4 962.9L555.2 966.5L552.2 961.4L555.0 969.5L553.7 970.7L550.1 964.5L552.3 970.2L552.3 973.0L548.0 977.2L545.4 983.7L543.2 984.1L544.0 982.0L543.7 970.0L544.1 967.1L545.3 965.9L544.9 963.6L543.4 961.7L542.5 962.1L539.8 956.9L537.7 956.3L537.3 955.4L535.9 957.4L535.4 956.8L535.1 955.2L536.3 952.1L535.1 948.5L533.9 951.6L532.6 951.8L532.4 944.1L528.9 933.7L528.6 935.0L526.7 931.1L526.5 931.9L523.2 926.9L521.3 927.9L517.8 927.4L518.2 916.5L515.8 914.6L513.4 915.8L512.0 917.6L512.5 922.0L511.6 926.9L511.8 934.2L506.4 960.1L507.0 974.8L507.9 975.5L510.1 974.1L510.8 974.5L511.8 984.2L512.7 986.5L512.9 985.4L513.7 988.7L515.4 1003.3L514.4 998.9L513.7 998.7L514.0 996.5L513.6 995.6L512.9 996.3L512.9 998.1L514.7 1003.8L515.7 1004.0L518.6 1008.4L520.4 1007.7L521.7 1008.3L523.7 1013.8L525.7 1017.1L527.2 1018.0L528.5 1022.3L532.9 1030.7L534.5 1039.0L533.9 1051.6L534.4 1063.3L536.9 1068.2L537.9 1072.7L540.0 1083.6L539.3 1085.2L538.0 1081.6L538.1 1084.0L536.1 1084.0L534.7 1085.7L533.9 1082.7L529.8 1078.4L520.4 1064.0L520.4 1058.8L516.6 1048.9L517.1 1048.1L515.9 1043.2L514.1 1020.6L512.7 1014.3L509.9 1008.2L509.2 1001.5L507.7 1001.3L507.0 997.8L506.5 996.4L505.8 996.4L505.6 994.0L503.9 991.6L503.4 988.9L502.5 987.7L501.5 990.0L500.7 989.3L500.3 981.7L503.4 961.8L502.4 964.0L502.2 963.0L501.8 955.1L503.2 950.7L503.6 942.3L504.5 940.5L504.0 939.6L502.9 940.2L503.3 933.4L502.7 933.1L503.2 931.7L502.5 920.3L500.4 912.3L500.3 909.5L499.5 912.6L499.4 906.3L498.1 899.5L498.3 898.9L498.9 899.5L497.5 896.6L496.8 882.4L496.0 880.4L496.9 872.7L494.7 873.3L493.5 865.3L491.2 861.1L491.6 866.2L490.7 870.7L488.5 873.6L486.9 869.9L487.8 874.4L484.1 878.3L481.6 884.5L481.0 884.0L481.3 879.3L480.2 883.1L478.7 883.2L478.4 878.1L476.8 882.0L477.1 873.5L475.4 879.3L474.0 880.4L476.4 858.7L473.6 842.5L474.1 842.3L473.0 840.2L472.8 834.7L472.0 840.1L470.6 838.3L469.2 833.5L469.7 833.1L471.4 835.4L472.5 832.6L469.9 827.9L470.6 826.0L469.8 826.0L467.6 823.7L466.8 826.7L465.9 823.7L466.4 819.4L464.8 822.2L465.2 820.0L464.2 816.9L464.1 820.6L461.4 813.7L459.7 808.3L458.5 791.9L458.0 792.6L456.0 784.4L454.2 787.8L452.5 788.4L450.4 781.5L450.2 774.5L449.9 776.9L448.0 776.4L450.1 779.1L449.1 786.3L450.3 791.7L447.8 799.2L446.7 798.4L447.6 794.6L446.0 796.4L445.7 795.2L446.1 790.3L445.0 797.0L443.4 800.0L442.9 792.9L443.0 798.0L442.0 800.7L440.8 799.8L440.0 795.5L439.9 797.7L439.3 797.6L440.0 801.6L439.1 801.6L438.8 800.4L438.0 802.6L437.3 795.1L437.0 801.5L436.1 802.2L435.0 800.2L434.8 802.0L433.9 801.9L433.5 801.1L434.4 794.8L432.7 791.5L432.9 793.2L434.2 795.1L432.8 799.2L431.0 801.6L427.2 803.7L425.6 807.4L426.4 814.9L424.9 820.3L422.5 824.6L421.6 824.0L422.1 824.9L421.4 826.2L417.2 829.0L416.7 826.3L415.1 828.1L414.6 830.4L415.9 829.2L416.3 830.0L411.9 836.9L407.6 848.6L404.6 851.7L401.6 858.2L396.1 865.3L395.4 872.8L392.2 876.0L389.1 875.9L387.0 884.0L386.0 883.9L385.8 882.5L384.9 882.1L382.6 884.7L381.0 893.6L381.8 901.9L381.4 905.6L382.6 915.8L381.7 912.6L381.0 914.1L382.9 917.5L382.1 926.9L379.7 936.7L378.6 946.2L379.3 945.8L379.6 946.8L379.6 960.0L377.5 959.9L376.1 960.9L373.7 970.6L374.2 973.8L376.8 975.8L373.9 974.7L370.3 977.0L368.8 980.0L367.9 987.1L364.3 991.4L361.4 988.1L358.0 979.9L356.5 972.2L356.0 965.5L356.8 970.9L357.4 971.0L356.7 965.6L355.8 964.2L352.6 945.5L347.4 928.7L343.8 901.7L340.9 893.6L340.0 889.1L340.8 889.1L339.7 886.6L340.1 885.4L339.2 884.7L336.9 874.2L333.9 843.7L334.7 838.4L334.5 836.6L333.6 839.1L333.4 837.6L333.5 834.5L334.6 834.8L333.3 833.6L332.5 827.1L334.0 815.3L333.5 809.1L332.2 805.5L332.9 804.2L332.2 804.3L335.4 800.3L333.6 801.2L331.7 801.0L332.7 797.2L331.5 797.1L331.8 794.5L333.4 793.5L329.3 793.0L330.1 794.1L329.9 795.5L328.4 799.3L329.5 800.6L329.8 803.3L328.2 808.6L321.7 814.4L319.7 814.4L318.2 813.0L315.2 808.3L308.2 792.7L308.8 790.7L310.3 792.8L316.2 788.8L318.2 781.5L317.2 783.6L315.8 783.5L312.8 786.2L310.0 784.9L307.2 782.1L304.6 774.8L307.0 770.9L303.4 774.5L303.0 770.8L302.6 772.3L300.9 770.2L300.7 771.2L299.7 771.4L299.6 769.9L299.0 770.5L297.3 766.4L296.4 758.2L293.4 756.8L293.3 751.7L291.6 746.8L290.2 746.6L289.6 747.9L291.1 747.7L291.8 748.6L290.3 748.3L286.7 749.9L280.7 750.5L279.9 752.3L276.0 749.2L275.2 750.0L273.8 749.4L272.7 749.9L272.3 751.9L266.9 751.1L264.6 753.0L263.8 751.7L261.9 753.0L259.4 752.1L258.6 753.4L253.7 750.9L252.7 748.7L252.0 750.5L246.8 749.2L245.8 748.1L243.1 749.0L241.5 747.1L237.6 746.6L235.8 745.2L234.9 745.7L234.5 744.7L231.9 743.8L229.9 729.7L227.9 725.1L225.5 724.1L223.9 724.9L220.8 727.2L219.3 730.1L218.5 729.9L215.9 733.1L214.2 733.7L211.6 731.1L208.1 730.7L206.4 727.7L201.4 722.4L200.0 718.3L197.1 715.4L194.2 714.8L192.1 711.1L190.7 702.8L189.3 699.9L189.5 698.0L188.2 696.9L188.0 693.0L184.9 686.1L184.2 682.2L180.8 684.6L177.4 680.3L177.5 679.4L178.8 679.2L178.7 678.3L177.2 677.9L176.1 684.5L173.6 685.8L171.6 684.4L170.5 684.8L171.6 690.9L170.4 690.3L168.8 693.4L171.0 694.0L175.9 714.3L175.9 716.8L178.7 720.0L178.3 720.8L179.8 724.3L184.7 731.6L183.8 731.4L185.2 736.6L184.8 739.5L184.0 739.3L188.5 756.7L189.0 757.8L189.3 756.4L188.7 749.2L190.3 741.1L192.0 738.7L193.9 742.2L193.5 747.5L194.3 754.1L193.1 759.5L192.1 760.3L193.1 761.4L192.3 764.0L193.8 764.8L194.3 764.1L194.7 765.3L195.3 765.3L195.8 768.7L197.7 769.2L201.1 766.6L208.7 767.8L211.0 766.4L212.6 764.9L214.9 757.5L222.7 743.7L224.2 738.0L225.8 735.9L225.1 745.8L225.6 754.6L227.3 762.3L231.1 769.9L238.4 774.1L240.0 773.8L241.3 775.6L245.6 787.5L248.2 789.6L248.2 792.5L245.2 803.8L242.1 809.2L239.4 819.0L237.6 818.8L237.9 816.3L237.4 816.5L235.3 821.3L234.4 829.2L235.0 838.5L230.9 840.1L228.5 842.2L225.6 852.9L219.7 854.9L218.2 858.5L218.4 862.2L217.0 866.1L215.1 867.2L213.7 866.2L210.4 866.6L207.4 870.0L205.4 870.5L200.7 874.1L198.4 878.2L198.3 885.5L192.4 891.4L187.2 894.1L184.9 896.7L183.1 897.0L179.5 899.7L177.5 902.2L175.0 907.9L172.5 908.6L170.6 907.9L166.7 913.3L162.7 916.1L155.3 917.9L153.5 921.6L152.0 922.6L151.2 925.2L149.3 925.9L148.4 925.1L146.7 927.2L143.9 927.9L142.0 926.1L141.0 926.8L139.3 918.8L139.7 912.9L138.4 908.5L137.4 895.5L136.9 892.8L135.6 891.4L135.8 890.1L136.4 890.9L136.5 890.1L136.0 885.5L136.8 880.2L136.4 874.3L133.2 860.6L129.0 852.6L126.2 843.2L123.1 828.2L118.7 821.0L116.3 819.3L113.4 811.1L111.5 798.4L112.0 788.5L108.0 772.8L104.5 766.2L102.0 764.8L99.6 757.4L100.2 755.4L99.4 750.8L86.5 712.4L83.5 711.1L82.8 712.0L85.1 691.2L83.6 695.1L81.4 712.7L80.2 716.2L77.2 712.2L73.8 705.0L73.0 699.2L70.4 691.6L69.3 685.3L68.7 686.0L68.0 690.1L69.6 694.4L69.9 699.9L75.8 714.3L75.8 718.4L77.8 724.3L78.5 731.8L86.6 762.2L90.4 769.7L88.9 769.9L88.6 771.9L89.9 783.6L91.3 786.4L93.4 788.0L97.3 795.4L98.0 802.6L100.1 809.2L100.1 810.2L99.4 809.3L99.4 811.0L99.7 823.0L101.5 841.2L104.5 844.9L106.3 849.2L106.9 848.7L108.8 851.7L111.0 860.7L113.5 881.7L114.9 887.2L116.7 892.9L117.2 888.1L119.5 894.4L121.7 895.5L123.4 898.2L125.8 899.9L129.0 908.8L132.9 914.4L133.9 919.6L134.7 919.5L136.5 924.5L137.6 925.3L137.8 924.0L138.4 925.0L140.1 931.4L140.0 936.2L136.5 940.2L135.5 942.7L134.7 942.5L134.8 943.5L137.2 942.3L138.9 942.6L140.7 945.7L143.4 953.5L146.2 957.9L146.9 958.5L150.6 958.4L156.3 952.8L161.2 954.1L166.7 948.1L168.7 949.0L170.8 948.6L174.4 946.0L177.6 946.8L184.5 943.1L186.8 940.4L187.9 937.3L188.9 936.8L192.0 938.9L190.9 945.9L191.2 955.3L190.5 958.3L191.5 957.8L191.6 956.8L192.7 957.9L192.8 959.1L191.7 958.5L189.9 959.8L189.2 972.5L184.4 989.7L182.8 993.0L178.7 1009.6L177.5 1018.0L170.5 1041.4L157.8 1069.7L150.4 1079.0L142.5 1092.3L131.1 1117.9L127.2 1130.4L125.4 1132.0L124.7 1131.6L124.4 1133.0L124.0 1132.6L123.5 1137.7L122.3 1139.8L120.8 1140.0L119.6 1141.9L118.9 1149.7L117.2 1154.3L114.8 1166.9L114.0 1169.0L113.1 1169.5L110.3 1189.2L110.7 1192.8L115.1 1202.5L113.5 1209.4L113.4 1213.2L113.7 1212.6L114.4 1213.5L114.5 1216.3L113.6 1222.3L114.5 1229.3L115.8 1232.8L116.3 1244.1L120.7 1249.0L122.1 1253.3L121.3 1254.8L122.0 1255.7L120.8 1262.7L121.9 1280.9L121.0 1285.1L121.0 1285.8L121.8 1285.8L122.0 1301.7L122.8 1303.0L122.4 1307.5L123.2 1305.9L123.7 1310.0L122.2 1315.6L121.8 1320.6L118.0 1331.1L116.7 1332.1L117.1 1334.0L113.2 1339.0L112.1 1341.5L105.9 1345.3L101.8 1349.9L98.0 1355.8L94.5 1366.7L94.0 1367.0L93.6 1366.0L93.4 1367.9L92.7 1367.7L90.9 1369.8L85.0 1381.2L83.0 1379.7L83.7 1381.4L83.4 1390.5L85.2 1395.2L87.1 1406.9L87.4 1417.4L87.8 1418.2L88.3 1413.4L88.9 1416.0L89.1 1425.3L87.8 1435.7L87.9 1437.5L88.5 1436.8L88.9 1437.3L88.2 1442.2L85.3 1448.9L74.5 1457.4L70.8 1462.8L69.5 1467.8L71.2 1471.5L71.9 1468.9L71.5 1479.4L69.1 1498.5L67.5 1504.4L64.2 1508.8L61.3 1515.0L52.3 1542.1L38.4 1566.4L33.3 1572.9L30.3 1575.5L29.1 1576.2L25.0 1575.9L23.4 1580.1L19.7 1579.2L18.6 1581.9L17.0 1582.0L11.1 1579.5L8.3 1580.7L3.6 1579.7L1.6 1580.5L-1.4 1584.8L-4.3 1585.3L-6.6 1584.7L-9.7 1586.0L-13.0 1590.5L-15.5 1590.1L-17.1 1588.0L-17.7 1588.2L-17.5 1586.4L-19.0 1584.5L-20.8 1584.7L-21.3 1580.7L-23.0 1581.1L-23.2 1584.4L-24.1 1580.6L-23.2 1578.0L-23.4 1575.6L-27.2 1563.2L-26.5 1561.5L-26.0 1562.4L-25.4 1562.1L-24.1 1558.7L-24.9 1548.0L-30.5 1529.9L-34.5 1509.8L-36.2 1504.7L-41.2 1495.2L-44.1 1485.6L-47.0 1463.9L-47.0 1454.2L-49.2 1442.6L-49.5 1418.1L-56.1 1396.7L-58.0 1386.4L-62.6 1368.9L-65.4 1362.5L-67.1 1355.9L-67.3 1325.6L-65.5 1321.2L-62.0 1292.1L-59.2 1282.9L-56.3 1279.3L-54.6 1273.8L-53.5 1258.8L-59.1 1230.8L-56.7 1225.7L-56.6 1221.3L-60.2 1201.5L-63.8 1189.9L-60.4 1188.2L-58.6 1186.3L-60.0 1186.1L-62.6 1188.2L-64.0 1185.5L-64.5 1178.7L-67.1 1168.1L-76.5 1146.4L-80.3 1139.5L-80.6 1138.8L-78.7 1140.5L-78.4 1139.9L-81.2 1137.4L-83.3 1130.9L-82.1 1131.7L-82.1 1130.8L-83.6 1129.8L-85.1 1122.6L-83.2 1127.1L-81.9 1126.6L-82.0 1126.0L-83.4 1125.5L-83.0 1122.8L-84.0 1123.6L-84.9 1122.4L-87.3 1112.6L-86.5 1114.2L-85.7 1113.9L-83.4 1109.2L-83.0 1099.5L-82.2 1102.1L-80.1 1103.7L-80.0 1102.5L-78.7 1101.6L-80.2 1101.6L-81.7 1100.2L-83.2 1096.6L-82.1 1095.0L-81.3 1096.2L-81.4 1089.6L-82.8 1088.4L-80.0 1077.4L-79.1 1061.3L-80.9 1054.9L-80.3 1053.6L-81.1 1053.8L-81.7 1051.2L-81.2 1050.2L-80.5 1050.4L-80.8 1047.6L-82.1 1047.5L-82.5 1049.5L-85.3 1047.1L-85.8 1040.6L-87.5 1039.0L-87.4 1040.7L-88.1 1041.0L-88.1 1037.9L-89.0 1037.9L-90.2 1035.5L-90.0 1040.6L-94.2 1041.1L-95.0 1039.2L-95.4 1040.6L-96.6 1040.7L-97.9 1038.4L-97.4 1041.2L-98.9 1042.9L-100.0 1038.3L-99.4 1043.2L-100.8 1043.6L-101.2 1041.7L-101.4 1043.6L-103.3 1044.1L-103.2 1042.3L-103.7 1044.3L-104.5 1044.3L-107.7 1039.3L-108.3 1036.7L-109.1 1029.7L-108.0 1027.8L-109.0 1028.8L-110.2 1027.0L-108.6 1025.9L-109.4 1024.5L-110.4 1026.0L-110.8 1025.4L-112.5 1020.1L-115.3 1015.5L-117.3 1014.7L-121.7 1014.5L-120.0 1012.1L-121.9 1013.1L-122.5 1014.9L-129.4 1015.8L-135.8 1018.4L-137.1 1019.7L-138.1 1023.1L-142.7 1023.8L-149.6 1031.2L-154.2 1033.9L-157.5 1037.7L-160.1 1035.4L-165.7 1032.8L-164.2 1032.6L-165.2 1031.6L-165.1 1029.5L-166.3 1032.6L-169.8 1031.3L-170.5 1030.3L-173.0 1030.2L-174.6 1031.1L-170.9 1031.2L-176.5 1032.5L-177.3 1031.6L-179.0 1031.5L-179.6 1032.3L-177.6 1032.6L-183.2 1034.3L-189.3 1039.0L-193.1 1043.1L-194.6 1043.3L-198.6 1040.1L-204.3 1033.7L-211.8 1019.3L-215.1 1016.1L-215.6 1013.9L-218.5 1010.8L-221.4 1005.2L-226.3 1001.1L-226.3 995.9L-226.9 996.7L-227.7 996.5L-228.7 995.0L-229.4 990.4L-230.7 989.5L-231.5 986.5L-231.4 985.7L-230.2 986.5L-229.0 983.7L-230.9 984.4L-231.0 980.7L-230.1 980.2L-231.5 978.7L-232.6 972.6L-233.4 970.9L-234.2 971.0L-234.2 965.5L-235.1 966.1L-236.5 962.5L-237.4 962.7L-239.1 961.0L-240.3 956.8L-240.1 953.8L-240.7 954.9L-241.3 951.5L-242.1 951.0L-242.9 953.3L-243.2 948.5L-244.3 950.1L-244.2 948.4L-245.4 947.5L-245.6 943.6L-243.3 942.2L-244.3 940.9L-245.5 941.9L-246.1 939.7L-245.6 938.4L-244.2 938.4L-243.3 937.0L-245.7 937.3L-248.2 939.9L-249.0 939.5L-248.9 937.4L-250.3 937.7L-251.5 935.8L-251.0 933.2L-252.2 933.7L-254.3 931.0L-254.4 929.2L-252.3 928.0L-253.3 926.6L-254.0 928.1L-254.4 927.8L-254.3 916.6L-253.8 915.9L-253.0 918.3L-252.1 918.8L-250.6 918.6L-250.4 917.2L-245.6 916.0L-250.3 916.3L-252.3 917.6L-254.4 909.9L-253.4 908.0L-254.6 908.5L-257.0 899.7L-258.2 898.4L-258.9 899.5L-259.4 898.0L-256.9 895.7L-253.1 884.4L-252.4 872.2L-249.6 854.2L-250.8 838.7L-252.8 833.6L-251.4 831.5L-252.3 832.1L-250.7 821.5L-252.2 815.6L-252.9 814.8L-253.1 816.3L-253.5 815.9L-255.1 809.5L-255.5 809.1L-255.9 810.2L-256.3 813.5L-256.6 812.8L-255.5 798.2L-251.7 788.5L-250.7 781.4L-248.0 771.7L-249.3 773.4L-248.7 771.0L-242.2 758.8L-241.5 749.2L-239.0 737.3L-233.5 730.6L-230.8 717.7L-229.3 714.1L-223.0 711.1L-219.4 707.6L-217.1 702.9L-213.2 698.0L-207.8 683.4L-207.7 678.7L-209.2 674.9L-208.7 665.0L-205.7 655.8L-205.1 649.0L-200.2 639.5L-189.7 629.5L-186.1 618.2L-183.3 604.1L-179.8 602.0L-179.0 602.4L-178.9 606.5L-176.1 611.1L-174.7 612.2L-172.8 612.8L-168.6 611.1L-166.6 612.1L-165.4 611.7L-163.9 609.4L-163.0 613.3L-156.9 613.7L-153.2 610.0L-150.4 605.7L-147.2 603.0L-144.7 603.4L-142.3 598.8L-136.1 593.8L-127.4 592.7L-124.9 590.1L-121.3 590.0L-119.6 588.6L-113.2 588.6L-109.6 592.0L-104.6 589.0L-101.8 585.9L-101.2 587.0L-98.9 588.2L-96.9 587.5L-97.1 585.8L-95.6 586.3L-92.5 589.1L-86.5 587.1L-84.4 584.4L-80.8 582.3L-79.8 582.8L-79.9 585.2L-79.6 583.6L-77.5 584.2L-76.8 590.2L-76.0 590.9L-72.5 586.3L-71.8 586.1L-71.4 588.9L-75.5 597.5L-74.9 602.7L-72.2 606.2L-71.4 611.7L-74.2 619.5L-78.3 626.1L-78.4 628.3L-76.7 632.8L-75.8 633.8L-74.1 633.4L-74.0 635.8L-72.8 635.6L-72.5 634.2L-70.5 638.7L-70.9 639.5L-66.8 641.7L-63.8 645.0L-60.7 645.8L-57.2 644.2L-51.5 647.1L-49.1 649.8L-44.8 651.5L-43.6 654.8L-42.7 661.8L-41.3 665.0L-38.6 667.3L-34.2 668.0L-27.4 672.0L-20.1 680.9L-17.8 680.9L-15.8 679.2L-13.0 673.8L-12.1 669.9L-13.6 659.5L-12.3 653.9L-9.0 648.9L-6.2 646.1L-3.8 645.8L-2.4 643.9L1.2 644.1L7.1 648.3L7.3 652.3L8.4 654.0L11.8 654.8L14.0 656.9L18.9 657.2L21.2 663.5L22.2 663.8L25.5 662.3L31.3 664.4L34.4 665.7L36.3 668.0L38.3 668.2L39.2 669.6L42.7 670.3L46.4 673.3L48.7 672.0L52.0 667.8L54.0 667.3L55.1 664.6L58.6 663.1L56.2 665.1L59.1 664.5L59.6 662.5L62.5 664.6L64.9 663.4L66.5 666.2L64.9 664.2L64.1 666.9L65.7 667.9L66.3 669.7L67.5 668.2L67.3 666.8L69.6 670.0L73.0 668.6L73.5 669.8L78.1 668.4L79.9 666.7L81.9 662.7L89.6 625.6L91.7 621.4L91.5 611.9L90.3 607.1L91.6 601.1L90.6 596.8L93.1 591.9L93.0 589.8L92.2 588.4L87.9 593.0L83.4 589.7L76.7 598.5L70.8 600.6L68.1 598.5L65.8 593.6L60.6 589.6L56.7 589.0L55.4 597.3L54.0 596.8L50.5 598.9L47.4 596.5L45.7 591.1L44.7 591.6L41.4 589.7L40.1 592.0L39.5 592.2L39.9 590.6L36.4 591.5L35.9 590.6L39.4 589.4L41.0 586.7L35.1 586.8L34.5 587.4L34.8 585.3L36.3 584.8L36.2 583.6L34.2 581.7L33.3 577.9L34.3 577.0L34.3 573.4L32.0 572.3L30.7 570.4L30.1 571.0L28.1 569.2L29.0 568.0L29.1 564.2L30.1 565.3L30.7 568.4L31.0 567.3L31.9 567.9L33.7 566.8L32.2 566.4L31.3 563.2L32.9 560.7L31.6 559.7L31.9 557.5L30.7 555.1L32.1 551.4L27.0 552.6L27.4 545.3L31.1 539.6L34.7 538.8L35.9 540.7L37.6 540.6L38.4 539.8L37.6 538.4L38.5 538.0L39.3 538.3L39.1 540.0L46.0 539.7L46.3 539.2L44.5 537.7L45.7 536.4L51.5 534.8L48.3 533.9L46.7 532.1L46.2 531.1L46.9 528.1L52.0 529.1L54.8 528.4L57.8 530.0L60.7 529.7L62.1 526.7L67.6 521.0L74.7 517.0L83.7 517.8L85.3 516.3L86.3 516.8L86.1 518.7L87.3 521.0L89.0 522.3L91.3 521.2L92.2 521.6L93.0 525.2L94.5 527.4L97.0 526.1L98.9 528.6L107.5 532.2L114.4 529.7L116.9 531.4L119.9 531.7L127.4 525.3L129.7 518.8L127.4 506.9L117.3 496.6L109.7 485.2L106.2 483.4L104.0 479.5L103.1 480.0L101.7 479.5L99.8 475.7L96.0 473.2L98.1 471.2L96.6 470.1L97.6 469.3L99.9 471.5L102.7 470.0L102.4 467.4L104.6 461.3L105.1 460.6L105.5 462.2L106.2 460.0L108.2 460.0L105.5 455.8L104.4 455.6L103.5 452.4L104.8 452.7L106.5 451.5L108.3 452.0L107.9 449.9L113.3 446.7L112.8 443.6L111.7 443.5L111.1 444.8L109.4 445.3L108.6 445.2L110.0 443.7L108.8 444.0L106.2 446.2L102.0 446.3L100.7 448.5L98.7 449.0L97.1 451.3L95.6 450.6L93.7 452.1L90.7 452.6L85.7 459.8L87.1 457.4L86.8 455.1L85.7 457.6L84.3 458.6L85.5 465.5L88.3 470.9L90.8 469.6L92.0 470.1L93.0 468.9L95.6 469.8L94.5 474.4L91.0 475.2L89.8 473.8L88.4 473.9L85.9 478.0L83.5 478.0L81.8 479.2L80.6 481.7L78.2 483.8L76.5 483.2L75.1 481.5L76.2 476.6L75.8 473.9L74.8 472.7L73.4 472.6L71.6 470.4L69.6 470.7L68.9 469.6L76.6 462.0L76.1 459.9L75.0 460.5L73.5 458.8L68.8 460.1L64.5 457.3L64.2 456.8L65.6 456.2L65.7 455.3L62.7 453.5L68.0 454.6L69.4 452.7L68.0 453.4L65.9 452.3L64.0 444.3L65.1 448.3L64.8 452.2L62.5 452.0L62.8 450.4L61.7 452.5L57.7 453.6L56.8 457.6L53.9 463.1L50.1 465.2L50.7 470.5L49.6 477.5L46.2 478.6L46.6 475.6L45.5 475.7L44.7 481.3L45.2 481.2L43.6 485.1L43.1 496.2L42.4 497.8L40.2 497.7L38.9 500.6L38.6 506.7L36.0 510.7L39.3 516.6L40.7 523.4L46.3 528.0L45.7 531.1L44.5 531.5L40.5 530.0L38.9 531.3L36.1 531.5L34.5 535.6L31.3 538.2L27.6 544.1L27.9 540.8L31.5 536.4L26.9 536.6L25.3 533.4L20.4 531.3L18.3 533.2L16.3 531.9L13.7 535.0L11.6 534.7L12.2 539.3L14.5 540.6L15.4 543.1L12.6 540.1L11.4 540.6L12.9 543.6L12.8 545.6L10.9 542.0L9.4 541.5L9.6 544.1L11.0 545.7L10.7 546.2L9.2 545.3L8.6 542.1L5.9 539.6L6.1 536.9L4.1 538.2L3.9 544.7L8.7 556.7L7.6 557.7L7.6 555.5L6.5 554.5L6.0 554.9L5.8 556.8L6.3 558.7L7.0 558.6L5.3 560.5L3.7 561.0L8.2 563.9L11.0 568.2L12.9 569.3L13.3 571.2L13.3 577.6L9.9 572.6L6.8 574.8L7.9 578.4L9.2 579.0L9.8 580.9L7.6 582.4L6.2 579.9L5.1 578.9L4.8 579.5L7.6 594.8L4.7 590.0L4.0 590.2L3.2 594.8L2.8 594.4L2.5 591.3L0.5 586.7L-0.3 587.2L-0.7 590.8L-2.7 586.0L-2.1 581.7L-5.8 574.6L-3.9 570.4L-2.2 570.7L-1.1 568.5L6.0 573.7L5.9 572.4L7.4 572.1L7.5 570.7L5.5 569.8L2.8 567.0L2.1 568.1L-0.2 567.3L-3.5 568.6L-4.4 566.3L-4.6 567.9L-5.8 567.7L-8.1 560.9L-7.3 560.0L-5.8 560.6L-5.8 558.7L-8.0 559.0L-11.1 554.6L-14.1 544.6L-17.1 541.2L-17.6 539.5L-16.7 539.5L-17.5 535.9L-15.9 520.2L-18.5 517.9L-22.0 511.0L-22.9 511.1L-27.4 506.1L-32.5 503.0L-31.4 502.9L-28.1 505.3L-33.4 497.7L-36.8 495.6L-39.5 495.9L-39.8 494.1L-44.7 486.8L-45.1 485.7L-42.8 485.4L-46.1 480.8L-46.9 474.1L-48.9 471.1L-50.5 470.5L-52.7 477.6L-53.4 477.5L-54.9 473.7L-55.7 468.5L-53.9 466.5L-54.9 464.5L-56.0 465.3L-57.7 464.5L-58.9 466.4L-62.4 468.8L-62.4 467.6L-63.8 469.0L-64.2 471.9L-62.2 475.7L-63.1 478.1L-63.8 477.6L-64.0 479.2L-63.0 486.1L-61.1 489.3L-55.4 495.2L-52.4 507.6L-48.9 513.8L-44.8 518.1L-38.3 518.7L-38.4 520.6L-39.9 522.5L-40.0 524.0L-32.1 530.3L-26.5 536.0L-23.2 542.1L-24.0 547.7L-25.7 546.0L-27.1 541.3L-29.7 540.8L-31.6 538.1L-33.3 538.8L-35.9 548.7L-35.5 550.2L-34.0 551.1L-32.1 553.8L-31.7 559.2L-32.2 560.3L-33.1 560.0L-35.3 561.9L-35.8 567.4L-37.5 569.6L-39.0 573.9L-41.2 574.0L-41.7 572.6L-40.2 564.5L-39.6 563.2L-38.1 562.5L-38.0 560.0L-41.4 545.3L-42.1 544.4L-44.0 544.2L-46.3 541.8L-46.3 538.6L-47.5 535.8L-50.3 536.8L-49.5 535.0L-50.5 533.8L-52.2 533.8L-54.3 527.9L-58.8 527.5L-61.5 524.6L-68.0 513.2L-70.3 511.3L-71.3 511.7L-71.1 509.7L-74.1 504.1L-75.4 503.7L-75.3 500.4L-77.5 490.0L-83.4 484.8L-86.9 483.4L-88.3 484.4L-91.8 491.0L-96.7 493.5L-100.3 498.0L-101.2 500.4L-104.2 502.2L-106.3 501.8L-108.9 500.0L-109.5 498.4L-111.1 498.1L-111.2 497.0L-113.5 498.0L-116.7 496.5L-117.8 494.9L-123.0 500.5L-124.4 505.5L-122.7 513.2L-123.6 513.6L-123.1 518.0L-130.7 527.2L-137.6 530.3L-139.7 533.7L-138.5 535.1L-140.5 536.6L-146.5 551.9L-145.7 558.3L-143.1 562.5L-147.8 568.7L-149.7 576.3L-149.1 578.3L-149.8 579.0L-153.1 579.3L-155.1 581.7L-158.7 590.7L-160.5 589.4L-162.7 591.1L-165.0 590.5L-166.9 591.2L-169.5 590.5L-173.0 591.0L-175.1 594.0L-176.8 594.1L-178.3 595.2L-179.6 599.2L-180.1 599.0L-180.2 600.1L-181.3 600.7L-184.0 598.5L-185.5 592.7L-186.3 592.2L-186.5 590.9L-185.2 588.3L-186.3 589.4L-189.6 584.4L-189.4 583.2L-190.1 584.3L-193.6 584.7L-195.8 587.0L-200.8 585.4L-203.4 586.6L-202.2 581.1L-202.6 566.9L-201.3 567.2L-202.1 565.9L-204.8 566.9L-205.1 563.9L-203.6 562.7L-203.0 559.2L-202.1 558.0L-203.1 558.9L-204.3 562.7L-205.8 563.4L-206.5 562.9L-205.9 554.4L-204.4 551.5L-202.4 543.5L-201.2 530.8L-201.8 521.4L-202.7 520.5L-202.0 518.0L-202.6 517.9L-202.7 515.7L-201.4 513.4L-202.2 513.2L-201.7 511.5L-202.2 508.3L-203.7 508.9L-203.0 506.0L-205.0 503.5L-204.6 500.8L-202.6 498.5L-200.4 498.5L-198.5 497.1L-198.6 495.1L-194.9 492.5L-190.7 495.5L-182.8 494.2L-174.1 497.4L-168.0 496.0L-164.4 498.0L-163.2 496.9L-159.7 498.6L-157.5 498.4L-155.1 497.1L-154.1 495.3L-152.5 481.4L-151.5 479.6L-151.9 478.6L-152.5 479.9L-151.5 467.8L-149.8 469.9L-148.0 475.3L-149.6 468.7L-152.2 465.3L-152.3 464.5L-151.1 464.9L-151.9 456.9L-156.1 454.1L-158.1 449.2L-157.6 446.8L-158.8 445.0L-158.2 443.6L-155.8 444.3L-157.3 443.0L-160.8 443.0L-160.3 440.7L-161.1 439.9L-162.6 440.1L-162.7 438.6L-164.5 438.6L-165.1 437.6L-170.0 435.6L-172.7 435.8L-173.4 433.8L-175.1 432.8L-172.8 431.0L-174.4 429.3L-172.2 429.1L-173.2 428.2L-175.3 428.2L-175.4 425.8L-174.1 424.7L-168.7 423.4L-165.6 421.6L-164.1 422.3L-162.0 425.8L-160.4 424.3L-158.0 424.3L-157.5 425.2L-156.9 423.6L-156.3 424.5L-153.4 424.2L-154.6 422.1L-154.8 416.5L-156.6 409.8L-152.6 409.9L-151.9 413.9L-145.4 415.2L-141.6 413.1L-143.5 412.3L-143.2 409.5L-135.1 404.1L-133.9 401.8L-134.0 395.0L-132.8 392.3L-128.3 390.5L-121.9 385.9L-116.7 386.0L-120.8 385.1L-121.7 383.8L-119.8 383.1L-117.2 385.0L-116.3 384.8L-118.1 383.1L-116.9 382.9L-118.5 380.1L-118.0 378.4L-114.9 373.1L-113.1 364.3L-112.3 364.7L-111.2 364.0L-108.1 359.7L-104.6 357.8L-99.6 357.3L-98.6 358.9L-97.1 359.5L-98.1 358.2L-97.1 354.3L-94.3 353.7L-91.8 353.8L-90.6 357.4L-89.7 355.0L-88.6 356.2L-88.6 357.9L-87.8 351.2L-84.0 351.5L-81.5 355.1L-80.2 355.7L-83.3 351.4L-85.5 350.5L-85.9 345.8L-87.6 345.4L-87.6 343.9L-85.6 342.9L-85.6 341.9L-87.4 338.4L-88.1 333.6L-87.5 333.3L-87.6 330.9L-87.8 329.6L-91.0 327.1L-90.8 313.0L-87.5 314.6L-86.1 311.2L-84.9 310.4L-84.0 311.7L-83.6 307.4L-84.6 306.9L-85.4 307.3L-86.8 311.4L-88.8 312.2L-90.1 311.0L-87.8 306.0L-82.5 305.1L-79.0 299.4L-74.7 297.2L-75.7 298.9L-75.3 304.1L-76.8 307.5L-76.9 312.8L-75.5 314.2L-73.2 314.2L-72.7 315.3L-73.8 318.1L-75.2 318.7L-76.3 318.0L-77.6 323.4L-79.4 323.7L-78.6 324.8L-81.4 328.6L-80.9 331.8L-82.3 334.9L-80.8 335.5L-80.4 338.2L-78.6 340.0L-79.6 342.9L-77.8 342.6L-77.4 343.7L-76.4 343.3L-74.0 345.0L-72.1 344.2L-71.8 345.5L-73.4 348.4L-73.1 349.3L-69.6 350.2L-67.0 347.4L-64.9 347.1L-61.8 342.9L-58.9 343.7L-56.1 347.5L-54.3 347.3L-52.8 352.2L-48.7 354.5L-48.8 351.9L-53.0 351.2L-53.6 347.7L-50.0 350.5L-38.1 345.4L-35.7 341.7L-31.1 339.3L-25.7 337.8L-24.1 337.8L-21.3 339.9L-21.0 340.6L-23.4 339.0L-21.9 343.4L-20.8 344.3L-17.0 344.1L-14.0 340.6L-13.3 336.6L-10.5 336.2L-8.7 334.0L-5.8 326.9L-6.3 330.6L-9.2 335.7L-7.3 336.8L-5.3 336.4L-5.0 329.1L-6.2 324.1L-6.3 312.6L-6.1 310.0L-4.3 307.3L-3.6 303.0L-1.8 299.5L3.6 297.4L7.5 303.0L8.4 306.3L10.8 307.9L12.7 307.4L15.6 304.0L15.1 296.6L16.6 288.6L15.3 288.2L13.9 289.8L11.6 288.5L9.9 284.3L11.0 282.5L9.9 282.5L9.4 280.7L9.8 276.8L13.7 275.5L13.5 274.4L15.6 273.0L22.6 272.3L23.0 270.6L30.3 271.8L32.6 273.3L38.7 273.8L39.8 271.8L39.7 268.6L41.6 269.9L42.8 267.7L45.6 268.0L46.9 265.6L53.3 267.4L53.6 266.2L50.7 262.9L46.4 262.9L43.6 260.3L42.6 258.0L43.5 258.7L43.6 257.0L42.7 256.1L35.9 259.1L34.1 258.0L29.8 259.8L30.0 256.8L28.7 259.7L27.6 259.9L26.0 259.0L26.5 260.8L24.7 261.8L24.0 260.9L17.1 264.0L16.1 265.3L9.6 265.8L6.7 268.2L7.9 265.3L6.0 262.6L4.9 264.8L3.0 265.2L3.8 260.3L-1.0 258.5L-1.3 257.3L-2.5 258.2L-3.7 257.3L-4.2 252.1L-2.8 244.8L-3.3 243.9L-2.6 243.3L-4.9 237.8L-4.3 233.7L-5.5 231.9L-5.9 228.9L-3.5 223.2L-2.3 223.1L-3.0 220.8L-0.7 220.7L2.1 219.3L1.6 217.5L2.3 217.5L2.1 216.6L2.6 216.8L3.5 214.6L5.0 214.1L10.5 209.1L16.8 198.5L19.3 197.3L21.6 197.6L21.2 196.4L22.1 195.6L21.4 193.7L22.0 189.0L17.6 186.3L17.3 183.7L15.8 184.8L11.1 184.1L7.2 185.4L4.9 183.5L3.5 184.6L2.6 183.6L1.7 187.4L0.6 187.2L1.0 188.0L-0.5 188.2L-0.8 189.8L-2.8 190.0L-2.6 192.0L-3.9 191.3L-2.8 194.0L-5.7 198.4L-3.2 203.2L-6.4 207.2L-8.1 211.5L-13.7 215.1L-14.9 217.2L-16.4 216.5L-16.4 217.7L-17.4 217.0L-19.5 220.3L-20.9 220.1L-20.6 220.8L-22.3 221.2L-22.8 222.8L-24.2 223.7L-23.0 223.8L-23.2 225.1L-25.1 226.6L-27.0 225.4L-26.9 228.4L-26.0 229.2L-28.6 231.3L-30.1 230.5L-30.0 232.9L-28.6 234.4L-30.3 239.5L-29.8 242.0L-31.5 241.5L-32.0 243.6L-31.2 255.8L-29.2 256.6L-28.5 258.1L-26.5 257.3L-25.2 259.9L-22.6 262.0L-22.7 263.5L-21.1 264.5L-19.9 269.0L-26.5 274.5L-25.4 275.1L-22.6 274.1L-22.2 275.0L-23.5 275.5L-24.4 278.0L-32.9 284.4L-38.0 284.7L-34.2 285.4L-33.3 286.7L-35.1 287.5L-34.3 290.6L-34.8 294.7L-35.5 294.8L-35.7 296.2L-35.1 300.5L-36.3 303.8L-35.9 306.6L-37.1 311.6L-40.5 319.7L-41.8 318.9L-47.4 319.2L-47.5 321.0L-48.8 320.8L-49.9 321.8L-51.1 323.9L-50.3 328.1L-51.4 329.9L-53.8 329.5L-56.9 330.6L-59.8 329.7L-59.2 325.0L-62.5 317.4L-61.0 318.2L-60.4 317.8L-61.3 315.4L-60.0 315.2L-59.8 312.9L-62.9 308.8L-65.3 301.3L-65.9 301.6L-66.4 298.0L-67.4 297.5L-67.6 293.9L-68.6 293.5L-69.2 291.9L-69.4 288.8L-70.6 288.4L-71.2 279.7L-70.9 278.5L-69.7 278.6L-73.3 277.0L-74.5 274.1L-74.8 268.9L-75.0 271.4L-76.1 272.3L-75.9 275.7L-77.6 279.4L-79.8 280.1L-81.7 278.0L-81.0 280.0L-83.3 281.6L-82.7 282.3L-83.2 283.1L-88.4 289.3L-90.8 291.5L-95.4 293.2L-98.4 293.2L-99.2 291.4L-100.2 292.6L-101.1 292.2L-100.7 289.9L-102.5 289.8L-104.6 288.3L-107.7 284.9L-107.6 279.4L-104.3 281.4L-102.6 279.6L-104.3 280.2L-105.7 278.2L-105.3 275.4L-102.4 271.7L-107.9 275.5L-109.2 277.2L-110.4 277.3L-110.7 276.4L-109.6 270.6L-108.5 269.6L-106.5 270.3L-103.6 268.1L-106.1 268.4L-106.8 267.5L-104.5 264.4L-104.1 262.3L-101.6 259.9L-101.6 263.5L-100.3 259.7L-98.5 258.4L-104.0 260.8L-105.8 264.6L-110.6 270.6L-110.2 264.4L-108.3 264.6L-107.0 263.9L-109.7 262.7L-110.7 259.4L-107.3 256.0L-110.0 257.6L-110.8 256.7L-111.5 251.1L-105.1 250.0L-102.3 250.4L-99.9 249.6L-98.2 252.3L-98.2 250.3L-94.5 248.7L-95.8 248.5L-96.2 247.4L-95.5 245.5L-96.6 249.1L-97.3 249.3L-100.7 248.7L-101.1 247.6L-102.5 249.7L-104.5 249.3L-109.4 250.1L-110.9 249.0L-111.5 245.5L-109.4 244.8L-112.0 241.7L-112.0 239.3L-108.5 239.1L-104.9 240.6L-100.2 239.5L-104.1 239.7L-109.8 238.5L-110.9 237.3L-110.6 235.4L-109.2 235.5L-108.1 233.3L-105.6 231.8L-104.5 232.8L-101.2 232.0L-100.5 231.1L-104.1 231.9L-102.7 229.1L-98.7 228.9L-95.2 230.0L-93.9 229.5L-95.0 229.1L-94.9 228.2L-91.3 227.4L-91.6 226.9L-100.2 227.6L-98.8 224.6L-94.7 222.3L-91.2 222.4L-87.8 225.8L-90.8 221.4L-90.1 219.6L-87.7 218.9L-88.0 217.7L-89.3 217.4L-89.5 216.7L-87.4 214.9L-84.4 215.4L-84.3 217.2L-83.2 215.7L-80.7 214.9L-78.6 218.2L-77.5 217.3L-73.8 217.2L-74.0 214.9L-69.8 212.4L-71.0 211.1L-69.4 209.3L-70.2 209.0L-71.7 209.8L-72.8 210.8L-71.9 211.8L-72.6 212.9L-78.4 216.5L-79.3 216.4L-80.3 213.9L-81.4 214.2L-81.3 212.5L-75.0 203.8L-68.7 199.3L-68.5 198.2L-70.3 199.1L-69.0 196.0L-64.6 193.2L-63.6 194.5L-62.3 194.3L-60.8 192.7L-59.6 191.0L-62.9 193.1L-64.7 191.8L-64.8 190.6L-61.1 183.1L-58.8 182.3L-60.5 180.3L-54.6 179.2L-52.3 177.6L-58.3 178.5L-58.6 175.7L-57.7 172.8L-55.0 170.6L-52.8 170.6L-54.8 169.0L-51.8 166.1L-43.2 164.9L-43.1 164.3L-44.0 164.2L-49.6 164.0L-46.2 159.7L-43.2 161.1L-42.0 162.9L-41.4 160.5L-42.8 160.5L-44.3 159.3L-43.9 157.0L-46.9 158.5L-47.3 156.4L-45.1 154.2L-43.3 154.9L-41.9 154.5L-43.6 153.7L-43.9 152.8L-39.3 150.6L-37.3 155.4L-37.7 153.7L-36.8 152.5L-37.7 151.8L-38.0 149.3L-36.8 148.3L-33.1 148.8L-29.2 147.8L-30.0 147.0L-35.5 147.2L-36.0 146.3L-35.1 145.0L-32.0 144.1L-30.3 142.6L-28.2 138.4L-25.6 137.6L-25.7 135.2L-24.5 133.2L-23.1 134.7L-20.6 135.4L-22.2 132.9L-19.7 131.9L-18.4 129.3L-15.2 128.5L-15.5 133.9L-13.4 128.3L-11.0 126.6L-10.9 131.2L-12.4 135.0L-9.9 132.2L-8.3 132.5L-9.6 130.1L-9.0 127.0L-5.5 127.4L-4.9 125.8L-3.7 125.6L-0.2 128.1L-1.3 124.9L-4.2 122.5L-1.4 122.6L1.5 121.5L2.1 122.1L2.8 121.1L4.5 120.6L6.2 121.5L6.9 124.4L8.9 126.0L8.4 124.3L9.1 122.3L10.9 120.2L13.4 119.0L15.9 116.0L14.8 114.3L17.4 111.8L21.4 114.0L22.5 113.1L24.7 113.9L21.1 119.0L19.6 122.8L20.0 124.3L22.4 122.5L22.8 121.1L29.6 113.0L30.6 112.7L31.1 113.9L29.9 116.4L30.5 116.9L30.1 120.1L32.7 118.7L34.8 114.6L36.4 114.6L34.6 113.1L35.0 111.9L36.7 110.5L40.3 111.2L41.9 112.2L41.9 113.7L38.7 116.3L41.2 116.5L40.6 122.3L43.4 115.2L44.8 113.7L46.6 113.8L50.8 116.8L52.9 116.0L54.1 117.1L53.9 118.2L56.4 118.5L58.6 120.2L58.7 122.0L54.2 124.1L44.5 123.8L44.7 124.5L49.9 126.1L50.5 129.4L53.1 129.8L54.1 127.7L55.3 129.7L55.7 128.7L57.2 128.7L62.0 130.2L63.4 129.7L64.2 128.4L65.6 128.5L65.5 126.5L72.2 129.7L71.6 131.4L66.8 130.4L66.2 131.0L68.1 133.1L72.2 133.2L72.0 134.6L75.2 133.8L74.3 137.7L73.1 138.8L75.0 138.0L76.7 135.4L80.3 135.4L85.4 136.7L87.2 135.9L90.9 137.1L103.2 144.1L107.8 148.8L110.5 149.2L115.3 152.8L117.0 152.9L116.9 151.7L120.6 156.1L124.5 157.8L125.6 164.0L127.0 164.8L125.9 170.2L121.5 175.5L118.8 177.5L113.5 179.9L109.3 180.7L104.3 180.4L98.3 177.9L88.7 176.2L84.2 173.2L81.9 174.0L81.7 172.6L73.2 169.9L71.2 167.5L71.7 166.5L64.9 165.5L68.9 167.7L68.7 168.9L71.3 171.6L73.4 172.2L73.6 174.3L76.5 175.5L74.5 177.1L79.5 178.6L83.3 182.4L83.9 184.9L82.8 188.6L81.4 190.2L84.0 195.9L84.2 198.5L85.0 199.1L84.4 201.8L85.5 203.5L88.2 204.8L89.6 204.4L92.8 207.0L94.3 209.6L101.3 212.3L104.8 210.4L105.4 208.4L104.7 205.2L103.3 204.1L99.6 204.0L95.7 198.6L95.4 196.5L97.0 195.9L97.7 193.3L99.4 193.0L101.9 194.2L105.1 197.4L107.7 197.7L115.3 201.7L116.5 201.6L118.5 198.9L121.0 198.8L120.0 195.7L116.8 190.8L116.9 187.4L120.3 185.2L122.7 182.2L127.8 180.0L132.6 174.5L135.2 175.8L139.4 175.9L142.1 178.2L141.4 180.0L143.3 179.7L145.1 181.6L145.0 178.4L147.6 172.3L147.2 168.6L146.3 166.4L143.4 165.1L142.9 164.2L145.8 153.8L145.7 150.2L145.5 149.2L140.0 144.3L144.7 146.1L151.4 145.7L156.8 147.1L162.0 154.2L162.0 155.9L154.4 157.2L150.3 162.0L150.6 162.8L154.6 165.1L156.7 169.3L160.7 170.5L168.4 168.1L170.0 161.4L169.8 159.6L176.1 158.2L175.6 155.2L178.2 155.6L189.2 148.9L196.8 146.2L198.7 147.3L198.1 148.5L199.5 148.8L201.6 147.0L200.5 145.5L199.1 145.3L208.7 139.8L213.2 139.9L208.7 141.1L209.8 142.0L208.4 144.9L209.5 147.7L208.9 148.4L205.7 149.0L205.1 150.0L209.8 150.6L213.1 149.6L214.7 151.2L215.7 151.0L216.1 148.5L219.3 145.8L223.4 144.7L230.5 146.0L237.4 141.3L237.8 142.1L238.6 141.0L243.2 139.7L245.2 143.5L243.5 145.2L243.5 147.6L247.6 148.8L248.9 147.2L248.7 143.9L252.6 143.6L255.5 140.0L255.0 137.7L253.7 138.2L250.5 131.5L255.4 127.9L271.4 130.3L276.9 132.3L281.7 135.2L281.5 136.3L282.4 136.0L291.5 140.5L295.3 141.6L300.1 146.6L304.3 149.4L305.2 148.9L307.3 145.8L309.4 140.5L306.9 140.9L305.4 140.2L302.6 136.5L301.9 133.1L299.4 131.6L295.7 130.1L294.6 132.0L294.0 129.4L294.8 125.6L295.8 125.7L296.9 124.3L296.3 122.7L297.2 115.5L296.2 114.1L293.4 114.4L293.1 113.2L294.3 110.9L292.9 110.7L294.8 107.9L298.9 106.1L303.6 102.3L308.7 88.5L311.0 84.5L313.0 84.2L312.7 85.3L313.3 85.5L324.8 85.1L333.5 88.2L331.9 97.7L330.0 102.1L327.6 104.2L327.2 105.4L328.6 107.5L331.9 109.7L332.7 112.3L332.7 119.4L331.2 122.0L332.1 128.7L331.9 140.2L333.5 142.4L338.3 145.7L338.6 147.0L335.6 151.2L335.1 157.0L332.0 159.5L327.1 167.6L325.9 168.6L324.0 168.3L325.1 172.2L323.8 172.1L319.8 174.5L317.5 173.3L319.5 171.3L316.8 172.1L314.2 169.9L308.5 170.7L309.7 173.6L314.9 176.1L317.2 176.9L323.9 176.7L328.6 178.2L330.2 177.1L330.9 173.9L338.1 169.7L339.9 167.8L341.7 161.9L346.3 157.0L346.1 152.7L343.8 147.9L345.1 143.3L348.6 141.7L357.4 140.1L362.5 147.2L362.1 156.9L366.0 159.8L373.5 159.5L364.8 157.2L364.5 153.7L365.3 151.1L367.5 150.1L365.2 141.1L354.4 136.5L350.6 136.4L346.6 138.5L343.6 137.8L341.1 138.2L339.8 137.0L340.5 133.9L338.4 129.9L338.5 128.6L340.1 123.4L343.5 117.7L338.5 108.8L335.3 105.6L339.1 100.0L347.8 95.8L348.5 92.0L346.4 86.5L348.8 85.9L350.2 86.7L351.8 89.7L352.7 93.7L349.6 98.4L349.4 100.5L351.1 102.7L350.9 104.4L349.6 105.8L350.0 107.1L352.6 108.1L359.3 109.0L360.5 110.0L360.9 109.3L364.8 109.5L369.6 112.8L374.2 112.5L374.6 111.8L372.2 112.2L370.7 111.5L368.9 108.1L366.9 107.3L364.1 107.5L357.2 104.1L354.6 99.1L357.2 97.8L360.1 97.4L364.5 100.1L368.7 99.1L369.0 98.5L367.6 96.6L364.2 96.8L363.8 95.7L367.3 93.2L370.7 92.3L376.8 92.5L380.3 94.7L385.6 96.6L386.2 98.3L391.5 101.8L398.7 101.2L401.0 101.8L401.9 102.5L400.2 105.5L395.9 108.2L395.3 111.9L395.9 114.5L394.8 117.4L395.2 120.3L397.6 113.4L399.4 112.5L400.4 113.3L400.5 117.7L398.2 122.8L399.4 124.4L400.8 124.5L400.8 121.9L403.6 121.0L405.1 118.2L401.3 110.4L403.9 104.2L403.8 102.3L401.6 99.6L398.0 98.9L394.4 94.1L387.8 92.4L386.0 91.0L384.9 87.9L386.1 84.6L384.0 82.7L383.4 80.6L383.2 78.9L384.5 77.3L384.4 75.9L392.5 74.7L403.9 74.6L411.7 73.2L416.4 73.6L417.4 72.4L425.9 71.5L426.8 72.4L420.6 75.8L418.6 77.7L418.8 79.3L424.4 82.4L419.8 79.0L419.6 77.5L422.5 75.9L427.3 75.3L430.3 72.5L427.9 71.6L423.8 66.5L420.0 65.5L421.2 64.0L422.6 63.6L425.9 65.3L428.1 64.8L422.8 61.7L418.6 60.9L419.2 59.5L420.4 59.7L421.3 58.5L424.3 60.4L426.8 59.0L429.6 55.7L426.2 55.0L426.6 53.5L431.0 54.1L437.9 50.8L441.7 49.3L443.6 49.5L447.5 47.6L456.0 46.8L473.0 43.2L473.5 42.5L469.7 42.6L468.6 43.3L467.1 42.5L465.2 43.2L465.8 40.9L466.6 41.6L467.6 40.6L470.2 41.2L476.3 39.8L482.9 40.0L486.1 40.8L483.4 43.4L489.0 41.8L489.6 42.1L488.9 43.4L494.5 41.5L495.5 42.2L496.6 40.9L503.1 38.5L509.0 40.4L510.4 41.5L508.2 44.7L508.9 44.8L510.9 42.9L510.7 40.0L504.0 35.2L504.5 34.8L509.1 35.3L517.4 34.6L522.4 35.8L522.9 35.1L518.0 34.2L519.1 32.1L517.9 30.4L518.4 28.1L529.0 20.9L532.4 19.2L535.2 19.1L539.3 17.8L549.3 20.6L551.6 22.5L547.2 24.6L539.4 26.5L548.9 26.6L549.4 27.9L550.1 28.0L552.2 27.3L557.4 27.5L560.6 29.0L555.4 33.9L553.8 33.7L554.0 34.8L562.6 34.6L563.7 34.0L564.6 31.9L565.6 31.6L584.8 31.8L590.2 34.2L591.2 35.2L590.2 36.6L592.6 35.9L594.7 36.6L595.9 40.1L594.9 41.2L597.8 40.1L598.2 39.5L597.1 38.6L599.0 38.4L600.9 43.4L602.8 43.0L602.9 44.0L601.2 47.6L600.4 48.0L599.8 46.4L593.6 44.3L596.9 47.9L598.8 47.4L602.0 49.6L601.2 51.8L596.7 55.7L576.4 65.4L576.9 66.2L576.3 67.5L571.4 69.4L565.7 74.2L559.6 75.2L555.7 79.2L552.5 79.6L549.1 84.4L545.6 87.0L549.3 86.2L554.4 81.9L562.7 81.5L566.7 79.5L571.5 78.6L573.1 77.1L576.6 77.3L582.6 74.2L583.2 73.7L582.2 73.0L578.1 74.0L575.6 73.5L575.3 72.7L576.6 70.9L579.2 69.7L584.4 70.7L584.9 69.1L587.7 69.5L585.6 70.3L586.7 72.3L591.6 74.0L595.8 73.4L596.8 72.2L596.1 70.4L597.4 71.1L599.9 74.8L598.2 77.4L600.4 79.0L600.3 83.2L598.0 86.2L598.2 87.1L599.2 88.7L601.6 89.0L598.6 86.6L600.8 83.1L600.8 80.6L603.0 79.0L600.7 77.8L600.5 76.8L604.2 75.7L609.1 75.4L612.5 74.0L633.0 75.6L635.7 76.4L636.1 77.2L633.0 77.4L632.8 80.4L641.5 84.2L649.7 84.8L654.6 84.3L656.4 85.3L659.8 85.6L661.2 85.2L659.5 84.3L659.7 83.6L663.9 84.5L666.9 81.2L664.9 77.9L665.5 75.0L668.0 75.1L669.5 73.9L672.9 73.4L680.0 76.6L679.9 77.6L684.2 76.2L684.8 76.8L684.4 78.4L686.1 79.2L689.3 76.2L693.9 77.1L697.5 79.2L697.3 80.1L699.5 80.2L701.5 81.2L701.6 82.3L702.8 82.3L699.6 85.3L702.3 85.6L703.8 88.0L698.4 90.4L704.0 91.7L704.9 93.4L704.9 95.5L704.0 96.6L701.8 96.7L694.3 91.8L693.8 92.1L701.6 101.3L703.0 100.3L703.0 98.5L703.6 99.0L705.2 101.5L701.2 102.6L701.7 103.4L703.1 103.5L707.2 110.2L712.3 113.3L713.1 113.4L713.7 112.4L715.5 115.4L718.1 114.2L722.1 108.4L721.9 106.9L723.4 102.9L726.2 98.9L729.3 103.3L733.0 105.8L735.7 106.5L739.6 106.4L741.7 104.6L745.2 103.3L748.7 103.2L755.5 106.0L760.9 110.0L760.2 108.7L763.3 107.3L760.7 106.5L762.8 103.5L764.7 104.0L766.4 103.0L769.2 105.6L774.3 105.0L772.4 102.0L772.6 99.5L770.2 98.5L772.0 97.9L773.4 95.8L775.6 95.2L771.9 94.7L769.0 95.6L768.7 93.2L771.8 90.9L777.3 91.0L781.5 89.7L780.8 87.8L778.7 86.1L779.7 85.4L787.9 87.8L797.5 88.1L815.4 91.7L815.3 93.0L805.7 92.5L801.7 94.2L802.6 95.2L807.5 94.2L819.2 93.7L817.7 96.1L814.5 98.6L813.8 98.6L815.3 95.9L812.2 94.7L811.5 96.9L812.2 98.7L809.9 99.4L807.6 98.9L807.1 101.3L808.4 102.1L814.2 100.5L822.0 93.3L829.5 93.5L836.7 95.5L839.7 98.0L840.1 99.3L839.2 100.0L833.8 100.7L833.2 102.2L836.7 102.5L840.4 104.7L843.9 104.6L844.4 105.5L840.6 108.7L846.4 106.5L850.4 107.8L853.7 111.5L851.6 112.1L856.5 114.1L864.9 113.5L878.7 110.5L888.9 110.8L897.1 112.7L901.4 114.7L905.0 118.7L905.7 121.5L903.8 127.6L904.5 128.8L911.6 131.3L912.4 138.4L914.4 141.1L913.0 144.6L911.2 146.2L912.9 145.9L915.9 141.1L915.7 134.5L919.8 131.2L926.6 129.8L931.5 129.5L935.2 131.3L950.8 132.8L955.7 129.4L957.2 129.6L959.1 131.7L960.1 136.0L966.7 138.7L968.7 142.8L974.8 142.2L977.8 139.2L977.8 137.9L975.1 131.6L972.3 131.0L974.6 127.8L974.4 124.3L988.0 126.2L992.8 128.3L993.8 126.5L997.2 127.6L1002.7 127.8L1010.1 127.3L1016.7 130.8L1029.3 134.4L1030.0 135.7L1032.1 136.1L1036.9 140.0ZM297.6 132.4L297.1 133.6L295.5 133.0L296.7 131.7L297.6 132.4ZM6.1 282.0L5.5 282.7L5.0 282.1L3.6 283.9L2.7 281.5L0.4 280.4L3.0 279.9L4.3 278.4L6.0 279.7L6.6 281.9L6.1 282.0ZM90.7 193.1L90.8 195.7L90.4 196.0L89.4 194.9L88.8 193.6L90.7 193.1ZM32.0 4.9L29.3 3.9L29.2 2.7L32.9 4.2L32.0 4.9ZM46.2 1.2L50.2 1.1L48.0 2.1L42.6 1.6L39.6 2.4L38.6 2.1L42.1 0.5L44.9 0.4L46.2 1.2ZM204.4 108.4L204.8 109.6L203.8 111.4L204.2 112.1L203.6 112.3L201.7 109.3L199.7 108.5L198.5 107.9L198.8 106.8L201.7 106.9L201.7 106.2L204.4 108.4ZM345.6 85.6L341.9 83.6L342.6 82.3L343.9 82.1L347.6 83.0L346.1 83.4L345.6 85.6ZM351.1 77.5L350.1 77.8L350.3 77.2L351.6 76.3L354.6 76.0L353.2 77.4L351.1 77.5ZM359.3 77.6L358.7 77.7L355.9 77.2L354.9 76.5L355.3 76.1L356.0 76.1L359.3 77.6ZM365.1 93.8L360.1 93.4L364.7 89.0L369.3 90.1L369.9 91.1L365.1 93.8ZM377.4 87.8L373.3 87.3L371.7 86.0L375.1 82.5L377.6 85.0L377.4 87.8ZM403.9 68.9L403.0 69.3L399.1 68.6L401.3 67.8L403.7 68.2L404.4 68.6L403.9 68.9ZM411.8 63.5L411.5 64.3L409.7 63.9L410.4 63.0L412.6 62.7L411.8 63.5ZM424.3 56.2L426.6 56.0L427.4 56.7L426.1 58.3L424.5 58.0L421.7 57.4L424.3 56.2ZM394.9 50.0L395.2 51.0L394.1 51.1L393.6 52.5L392.8 51.5L391.8 52.0L391.0 51.3L390.5 50.8L391.9 49.6L393.3 50.2L393.2 49.0L394.8 48.7L394.9 50.0ZM356.0 -9.1L364.5 -7.3L358.6 -6.9L358.5 -7.6L355.4 -8.1L354.7 -9.0L356.0 -9.1ZM315.1 174.7L314.0 174.9L311.5 171.7L311.7 171.2L314.5 171.8L315.5 172.0L315.1 174.7ZM1.1 260.4L2.7 261.3L2.0 261.8L2.4 263.3L1.7 263.3L0.5 261.6L1.1 260.4ZM18.7 195.8L16.9 196.0L16.9 195.1L18.3 194.5L19.7 195.2L18.7 195.8ZM9.5 114.4L7.0 117.5L5.4 118.2L2.8 118.7L1.1 117.9L-0.0 116.6L6.3 115.9L7.9 114.4L9.5 114.4ZM-8.0 124.5L-8.9 125.0L-10.5 124.1L-8.8 122.6L-7.7 122.9L-8.0 124.5ZM23.5 109.8L27.2 111.3L27.1 111.9L24.9 112.3L21.7 111.3L23.5 109.8ZM10.6 118.1L10.8 119.3L8.8 121.4L7.2 121.7L7.1 120.5L6.0 120.4L6.7 119.0L10.1 117.2L10.6 118.1ZM13.2 117.9L12.0 118.4L10.9 117.5L11.7 115.4L13.6 116.7L13.2 117.9Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width="0.6"/>
+<path d="M179.9 356.3 Q141.2 330.6 102.5 325.0" stroke="var(--pa,#C9672C)" stroke-width="2.4" fill="none" stroke-dasharray="5 4"/>
+<circle cx="102.5" cy="325.0" r="4.4" fill="var(--illink,#2B2620)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="104.5" y="315.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Москва</text>
+<circle cx="179.9" cy="356.3" r="4.4" fill="var(--pa,#C9672C)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="187.9" y="360.3" text-anchor="start" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Тольятти</text>
+<text x="199.2" y="328.6" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">14 часов на машине</text>
+<circle cx="66.0" cy="338.6" r="5" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="8.0" y="362.6" text-anchor="start" font-size="12" font-weight="700" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Смоленская область —</text>
+<text x="8.0" y="377.6" text-anchor="start" font-size="12" font-weight="600" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">родина Юрия Гагарина</text>
+<text x="354.4" y="51.7" text-anchor="middle" font-size="13" font-weight="700" fill="var(--red,#1B6A8C)" font-style="italic" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Карское море</text>
+<text x="354.4" y="67.7" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">бухта Визе: острова</text>
+<text x="354.4" y="81.7" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">нашли по снимкам</text>
+<text x="105.0" y="89.5" text-anchor="middle" font-size="12" font-weight="600" fill="var(--red,#1B6A8C)" font-style="italic" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Баренцево море</text>
+<text x="105.0" y="103.5" text-anchor="middle" font-size="11" font-weight="400" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">(§5)</text>
+<text x="235.5" y="65.5" text-anchor="end" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Новая Земля</text>
+<text x="210.0" y="18.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--red,#1B6A8C)" font-style="italic" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный Ледовитый океан</text>
+</g>
+</symbol>
+<symbol id="g7-flow" viewBox="0 0 340 391">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="6" y="6" width="328" height="76" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="3"/>
+<path d="M6 18 a12 12 0 0 1 12 -12 h304 a12 12 0 0 1 12 12 v16 h-328 Z" fill="var(--red,#1B6A8C)"/>
+<text x="18.0" y="26.0" text-anchor="start" font-size="14" font-weight="700" fill="var(--card,#FFFBF2)" >1. Собирают</text>
+<text x="18.0" y="52.0" text-anchor="start" font-size="12.5" font-weight="400" fill="var(--illink,#2B2620)" >спутники: космические снимки</text>
+<text x="18.0" y="71.0" text-anchor="start" font-size="12.5" font-weight="400" fill="var(--illink,#2B2620)" >экспедиции, наблюдения, путешествия</text>
+<path d="M170.0 83.0 L170.0 97.0" stroke="var(--illink,#2B2620)" stroke-width="2.4" fill="none" marker-end="url(#ar7-k)"/>
+<rect x="6" y="100" width="328" height="95" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--ochre,#E2A31F)" stroke-width="3"/>
+<path d="M6 112 a12 12 0 0 1 12 -12 h304 a12 12 0 0 1 12 12 v16 h-328 Z" fill="var(--ochre,#E2A31F)"/>
+<text x="18.0" y="120.0" text-anchor="start" font-size="14" font-weight="700" fill="#22190A" >2. Хранят</text>
+<text x="18.0" y="146.0" text-anchor="start" font-size="12.5" font-weight="400" fill="var(--illink,#2B2620)" >географические карты и атласы</text>
+<text x="18.0" y="165.0" text-anchor="start" font-size="12.5" font-weight="400" fill="var(--illink,#2B2620)" >энциклопедии, справочники, путеводители</text>
+<text x="18.0" y="184.0" text-anchor="start" font-size="12.5" font-weight="400" fill="var(--illink,#2B2620)" >сайты в Интернете, ГИС в компьютерах</text>
+<path d="M170.0 196.0 L170.0 210.0" stroke="var(--illink,#2B2620)" stroke-width="2.4" fill="none" marker-end="url(#ar7-k)"/>
+<rect x="6" y="213" width="328" height="76" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="3"/>
+<path d="M6 225 a12 12 0 0 1 12 -12 h304 a12 12 0 0 1 12 12 v16 h-328 Z" fill="var(--pa,#C9672C)"/>
+<text x="18.0" y="233.0" text-anchor="start" font-size="14" font-weight="700" fill="var(--card,#FFFBF2)" >3. Находят</text>
+<text x="18.0" y="259.0" text-anchor="start" font-size="12.5" font-weight="400" fill="var(--illink,#2B2620)" >поисковые системы: правильно набери</text>
+<text x="18.0" y="278.0" text-anchor="start" font-size="12.5" font-weight="400" fill="var(--illink,#2B2620)" >название — найдёшь материалы</text>
+<path d="M170.0 290.0 L170.0 304.0" stroke="var(--illink,#2B2620)" stroke-width="2.4" fill="none" marker-end="url(#ar7-k)"/>
+<rect x="6" y="307" width="328" height="76" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--moss,#5E7A3A)" stroke-width="3"/>
+<path d="M6 319 a12 12 0 0 1 12 -12 h304 a12 12 0 0 1 12 12 v16 h-328 Z" fill="var(--moss,#5E7A3A)"/>
+<text x="18.0" y="327.0" text-anchor="start" font-size="14" font-weight="700" fill="var(--card,#FFFBF2)" >4. Выбирают и оценивают</text>
+<text x="18.0" y="353.0" text-anchor="start" font-size="12.5" font-weight="400" fill="var(--illink,#2B2620)" >сравнивают несколько источников —</text>
+<text x="18.0" y="372.0" text-anchor="start" font-size="12.5" font-weight="400" fill="var(--illink,#2B2620)" >так легче отличить правду от ошибки</text>
+</g>
+</symbol>
+<symbol id="g7-gis" viewBox="0 0 360 148">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >ГИС — географические информационные системы</text>
+<rect x="44" y="44" width="52" height="42" rx="4" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="1.8"/>
+<rect x="50" y="50" width="52" height="42" rx="4" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="1.8"/>
+<rect x="56" y="56" width="52" height="42" rx="4" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="1.8"/>
+<path d="M64 64 h34 M64 72 h28 M64 80 h34" stroke="var(--line,#D9CDB7)" stroke-width="2"/>
+<rect x="66" y="84" width="10" height="6" fill="var(--ochre,#E2A31F)"/><rect x="80" y="84" width="10" height="6" fill="var(--pink,#C23C86)"/>
+<text x="78.0" y="124.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >огромное</text>
+<text x="78.0" y="139.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >количество данных</text>
+<path d="M112.0 72.0 L138.0 72.0" stroke="var(--illink,#2B2620)" stroke-width="2.4" fill="none" marker-end="url(#ar7-k)"/>
+<rect x="146" y="44" width="68" height="46" rx="5" fill="var(--paper2,#E8DFCC)" stroke="var(--illink,#2B2620)" stroke-width="2.4"/>
+<path d="M180 90 L180 100 M164 102 L196 102" stroke="var(--illink,#2B2620)" stroke-width="3"/>
+<path d="M156 56 h48 M156 66 h36 M156 76 h44" stroke="var(--red,#1B6A8C)" stroke-width="2"/>
+<text x="180.0" y="124.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >мощный</text>
+<text x="180.0" y="139.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >компьютер</text>
+<path d="M222.0 72.0 L252.0 72.0" stroke="var(--illink,#2B2620)" stroke-width="2.4" fill="none" marker-end="url(#ar7-k)"/>
+<rect x="258" y="42" width="78" height="56" rx="5" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="2.4"/>
+<path d="M266 58 q14 -10 30 -2 q16 6 30 -2 l0 30 q-18 8 -30 0 q-16 -8 -30 4 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width="1.4"/>
+<path d="M284 42 L284 98 M310 42 L310 98 M258 70 L336 70" stroke="var(--red,#1B6A8C)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="296.0" cy="66.0" r="4" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="297.0" y="124.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >электронная</text>
+<text x="297.0" y="139.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >карта</text>
+</g>
+</symbol>
+<symbol id="g7-check" viewBox="0 0 340 226">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="8" y="8" width="100" height="50" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.4"/>
+<path d="M32 20 h40 M32 28 h52 M32 36 h30" stroke="var(--red,#1B6A8C)" stroke-width="2.4"/>
+<text x="58.0" y="52.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >сайт 1</text>
+<rect x="120" y="8" width="100" height="50" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.4"/>
+<path d="M144 20 h40 M144 28 h52 M144 36 h30" stroke="var(--red,#1B6A8C)" stroke-width="2.4"/>
+<text x="170.0" y="52.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >справочник</text>
+<rect x="232" y="8" width="100" height="50" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2.4"/>
+<path d="M256 20 h40 M256 28 h52 M256 36 h30" stroke="var(--red,#1B6A8C)" stroke-width="2.4"/>
+<text x="282.0" y="52.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >сайт 2</text>
+<path d="M58.0 60.0 L140.0 92.0" stroke="var(--illink,#2B2620)" stroke-width="2.2" fill="none" marker-end="url(#ar7-k)"/>
+<path d="M170.0 60.0 L170.0 90.0" stroke="var(--illink,#2B2620)" stroke-width="2.2" fill="none" marker-end="url(#ar7-k)"/>
+<path d="M282.0 60.0 L200.0 92.0" stroke="var(--illink,#2B2620)" stroke-width="2.2" fill="none" marker-end="url(#ar7-k)"/>
+<rect x="110" y="96" width="120" height="32" rx="16" fill="var(--ochre,#E2A31F)"/>
+<text x="170.0" y="117.0" text-anchor="middle" font-size="14" font-weight="700" fill="#22190A" >сравни</text>
+<path d="M140.0 129.0 L90.0 152.0" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none" marker-end="url(#ar7-g)"/>
+<path d="M200.0 129.0 L250.0 152.0" stroke="var(--no,#B03A2E)" stroke-width="2.4" fill="none" marker-end="url(#ar7-n)"/>
+<rect x="8" y="156" width="156" height="62" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--moss,#5E7A3A)" stroke-width="3"/>
+<text x="86.0" y="178.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--moss,#5E7A3A)" >совпадает —</text>
+<text x="86.0" y="196.0" text-anchor="middle" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >скорее всего,</text>
+<text x="86.0" y="211.0" text-anchor="middle" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >это правда</text>
+<rect x="176" y="156" width="156" height="62" rx="10" fill="var(--card,#FFFBF2)" stroke="var(--no,#B03A2E)" stroke-width="3"/>
+<text x="254.0" y="178.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--no,#B03A2E)" >не совпадает —</text>
+<text x="254.0" y="196.0" text-anchor="middle" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >где-то ошибка</text>
+<text x="254.0" y="211.0" text-anchor="middle" font-size="12" font-weight="400" fill="var(--illink,#2B2620)" >или искажение</text>
+</g>
+</symbol>
+<symbol id="g7-time" viewBox="0 0 360 414">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="17.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >Как люди открывали Землю: §2—§7</text>
+<path d="M116 32 L116 362" stroke="var(--illink,#2B2620)" stroke-width="3" marker-end="url(#ar7-k)"/>
+<circle cx="116" cy="50" r="8" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="2"/>
+<text x="100.0" y="55.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" >IV в. до н. э.</text>
+<text x="132.0" y="51.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >Аристотель: Земля — шар</text>
+<text x="132.0" y="67.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Древняя Греция · §2</text>
+<circle cx="116" cy="98" r="8" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="2"/>
+<text x="100.0" y="103.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" >XIII в.</text>
+<text x="132.0" y="99.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >Марко Поло в Китае</text>
+<text x="132.0" y="115.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Средние века · §3</text>
+<circle cx="116" cy="146" r="8" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="2"/>
+<text x="100.0" y="151.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" >1492</text>
+<text x="132.0" y="147.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >Колумб открыл Америку</text>
+<text x="132.0" y="163.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Великие открытия · §4</text>
+<circle cx="116" cy="194" r="8" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="2"/>
+<text x="100.0" y="199.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" >1519—1522</text>
+<text x="132.0" y="195.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >экспедиция Магеллана</text>
+<text x="132.0" y="211.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >впервые обогнула земной шар · §4</text>
+<circle cx="116" cy="242" r="8" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="2"/>
+<text x="100.0" y="247.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" >XVII в.</text>
+<text x="132.0" y="243.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >открыта Австралия</text>
+<text x="132.0" y="259.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >вывод §5</text>
+<circle cx="116" cy="290" r="8" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="2"/>
+<text x="100.0" y="295.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--pink,#C23C86)" >1820</text>
+<text x="132.0" y="291.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >открыта Антарктида</text>
+<text x="132.0" y="307.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Беллинсгаузен и Лазарев · §5, §6</text>
+<circle cx="116" cy="338" r="8" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="2"/>
+<text x="100.0" y="343.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--pink,#C23C86)" >1961</text>
+<text x="132.0" y="339.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >Юрий Гагарин в космосе</text>
+<text x="132.0" y="355.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >первый пилотируемый полёт · §7</text>
+<circle cx="24" cy="384" r="7" fill="var(--pink,#C23C86)"/>
+<text x="38.0" y="388.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >открытия наших соотечественников</text>
+<text x="38.0" y="405.0" text-anchor="start" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" >время идёт сверху вниз, шкала не в масштабе</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">География · § 7</span>
+    <h1>География сегодня</h1>
+    <p class="lede">Как спутники, карты и Интернет помогают узнавать о Земле — и как проверить, правда ли то, что ты нашла.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>О чём параграф:</b><br>1. Как сегодня собирают информацию о Земле? 2. Откуда получают и где хранят географическую информацию?</div></div>
+  </div>
+</header>
+
+<figure class="banner"><div class="wrap"><img id="ph-g7_banner" src="img/9cafe3bb692e.jpg" alt="Космическая станция с солнечными панелями на фоне Земли и снимок прибрежного городка сверху"><figcaption><span class="src">из учебника</span>Заставка параграфа</figcaption></div></figure>
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <span class="pn cur">§7 География сегодня</span>
+  <span class="pn dim">§8 Мы во Вселенной · скоро</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Как сегодня собирают информацию о Земле?">1</a><a href="#s2" data-j="s2" title="Откуда получают и где хранят географическую информацию?">2</a><a href="#s3" data-j="s3" title="Итоги параграфа">★</a><a href="#s4" data-j="s4" title="Обобщение по теме «Как люди открывали Землю»">◆</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Как сегодня собирают информацию о Земле?</h2></div>
+<div class="easy">
+<p>Как сегодня следят за всей Землёй сразу? С помощью <span class="term" role="button" tabindex="0" data-t="sputnik">искусственных спутников <span class="tl">Земли</span></span>. Это космические аппараты. Они всё время летают вокруг нашей планеты и наблюдают за ней без перерыва.</p>
+<p>Русское слово «спутник» знают во всём мире. Его везде понимают без перевода.</p>
+<p><span class="big">12 апреля 1961 года</span> человек впервые полетел в космос. Это был первый <span class="term" role="button" tabindex="0" data-t="pilot">пилотируемый <span class="tl">полёт</span></span>. Первым в мире космонавтом стал русский — <span class="term" role="button" tabindex="0" data-t="gagarin"><b>Юрий <span class="tl">Гагарин</span></b></span>. Он родом из Смоленской области.</p>
+<p><span class="big">Что делают спутники?</span> Собирают огромное количество информации. Фотографируют Землю. Наблюдают за погодой. Обеспечивают связь между странами и континентами.</p>
+<p>По <span class="term" role="button" tabindex="0" data-t="snimok">космическим <span class="tl">снимкам</span></span> составляют географические карты и изучают территорию.</p>
+<p>Пример: в бухте Визе в Карском море ледник прятал острова. Учёные изучили снимки со спутников — и открыли там новые острова.</p>
+<p><span class="big">А ещё спутники помогают найти дорогу.</span> Их вокруг Земли очень много. Вместе они помогают довольно точно вычислить, где находится любой объект.</p>
+<p>Так люди научились создавать <span class="term" role="button" tabindex="0" data-t="navsys">навигационные <span class="tl">системы</span></span>. Они помогают пилотам, <span class="term" role="button" tabindex="0" data-t="lotsman"><span class="tl">лоцманам</span></span> и водителям автомобилей.</p>
+</div>
+<div class="book" hidden>
+<p>Непрерывное наблюдение за поверхностью Земли стало возможным с созданием <span class="term" role="button" tabindex="0" data-t="sputnik"><i>искусственных спутников <span class="tl">Земли</span></i></span> — космических аппаратов, постоянно обращающихся вокруг нашей планеты. Русское слово <i>спутник</i> вошло во все языки мира и теперь везде понимается без перевода. А 12 апреля 1961 г. был совершён и первый <span class="term" role="button" tabindex="0" data-t="pilot">пилотируемый <span class="tl">полёт</span></span>: первым в мире космонавтом был русский, уроженец Смоленской области <span class="term" role="button" tabindex="0" data-t="gagarin"><span class="tl"><b><i>Юрий Гагарин</i></b></span></span>.</p>
+<p>Спутники собирают огромное количество информации. Они фотографируют Землю, наблюдают за погодой, обеспечивают связь между странами и континентами. На основе <span class="term" role="button" tabindex="0" data-t="snimok">космических <span class="tl">снимков</span></span> составляют географические карты, проводят разнообразные исследования территории. Например, открыть новые острова, ранее скрытые ледником, в бухте Визе в Карском море учёным помог анализ спутниковых снимков.</p>
+<p>Множество спутников, постоянно летающих вокруг Земли, позволили решить очень важную задачу — достаточно точно вычислять местоположение любого объекта. Человек научился создавать <span class="term" role="button" tabindex="0" data-t="navsys"><b>навигационные <span class="tl">системы</span></b></span>, помогающие пилотам, <span class="term" role="button" tabindex="0" data-t="lotsman"><span class="tl">лоцманам</span></span>, водителям автомобилей.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g7_gagarin" src="img/4cf52a15be22.jpg" alt="Фотография Юрия Гагарина в шлемофоне" style="max-width:230px"><figcaption><span class="src">из учебника</span><b>Ю. А. Гагарин</b> (1934—1968) — первый космонавт Земли, наш соотечественник. <span style="color:var(--soft)">(с. 9 учебника, открывашка раздела)</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 343" role="img" aria-label="Схема: спутник летает вокруг Земли. Спутники наблюдают за погодой, обеспечивают связь, фотографируют Землю и вычисляют местоположение. Из снимков делают карты, например нашли острова в бухте Визе. Местоположение нужно навигационным системам для пилотов, лоцманов и водителей"><use href="#g7-sat"/></svg><figcaption>Четыре дела спутников из учебника — и что из них получается.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 340 320" role="img" aria-label="Схема: три спутника и машина. Первый шаг: спутники помогают узнать, где машина. Второй шаг: навигатор на экране показывает путь и говорит «Поверните направо». Навигационные системы помогают пилотам, лоцманам, водителям"><use href="#g7-nav"/></svg><figcaption>Так работает навигатор: сначала надо узнать, где ты, потом — куда ехать.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 420 399" role="img" aria-label="Карта: Москва, Тольятти и дорога между ними — 14 часов на машине; Смоленская область — родина Юрия Гагарина; на севере Баренцево и Карское море, Новая Земля; в Карском море бухта Визе, где по снимкам нашли острова"><use href="#g7-map"/></svg><figcaption>Места из этого раздела на одной карте. Бухту Визе ищи в Карском море — точное место на карте не отмечено.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">Запомни дату</span><p>12 апреля 1961 г. — первый пилотируемый полёт. Первый в мире космонавт — Юрий Гагарин, уроженец Смоленской области.</p></div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Информация, получаемая со спутников и пилотируемых космических кораблей, позволяет исследовать поверхность Земли.</p></div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Спутник</b><p>космический аппарат: постоянно летает вокруг Земли, фотографирует её, наблюдает за погодой, даёт связь</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Пилотируемый полёт</b><p>полёт человека в космос. Первый — Юрий Гагарин, 12 апреля 1961 года</p></div></div><p class="pairkey"><b>Пилот</b> — тот, кто ведёт самолёт или космический корабль. Пилотируемый — значит, на корабле летит человек.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Яндекс Навигатор в машине</span></div><div class="lifebody"><p>Ты смотришь в машине Яндекс Навигатор и иногда сама проговариваешь, куда ехать. Это и есть навигационная система из учебника!</p><p>Как навигатор узнаёт, где вы едете? Вокруг Земли летает множество спутников. С их помощью можно довольно точно вычислить, где сейчас ваша машина. А навигатор по карте подсказывает: «Через сто метров поверните направо».</p><p>Твоя самая долгая дорога — из Тольятти в Москву на машине, 14 часов. На таком длинном пути много развилок и поворотов. В следующей поездке попробуй побыть помощником водителя: смотри в навигатор и заранее говори, где поворот.</p></div><p class="lifebook">В учебнике это называется: <b>навигационные системы помогают водителям автомобилей</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Русское слово «спутник» понимают во всём мире без перевода. Как ты думаешь, почему именно русское?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Загляни в «Обобщение по теме» в конце страницы: что наши соотечественники сделали первыми?</div>
+<div class="rev ans" id="a1" hidden>В «Обобщении» сказано: наши соотечественники первыми запустили искусственный спутник и полетели в космос. Скорее всего, поэтому русское слово «спутник» и вошло во все языки мира.</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему острова в бухте Визе не замечали раньше — и что помогло их открыть?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Второй абзац раздела: чем были скрыты острова?</div>
+<div class="rev ans" id="a2" hidden>Острова были скрыты ледником. Открыть их учёным помог анализ спутниковых снимков — сверху, из космоса, видно то, что трудно заметить с земли или с корабля.</div>
+</div>
+<div class="think">
+<p class="qt">3. Что общего у пилота, лоцмана и водителя? Чем им помогают спутники?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Третий абзац раздела и схема с навигатором.</div>
+<div class="rev ans" id="a3" hidden>Все они ведут транспорт: самолёт, корабль, автомобиль. Им надо знать, где они сейчас и куда двигаться. Спутники позволяют достаточно точно вычислять местоположение, а навигационные системы помогают найти путь.</div>
+</div>
+<div class="think">
+<p class="qt">4. Аристотель догадался, что Земля — шар (§2). По каким наблюдениям? А как Землю изучают сегодня?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Вспомни §2: тень во время лунного затмения. Сравни с первым абзацем этого раздела.</div>
+<div class="rev ans" id="a4" hidden>Аристотеля подтолкнули к выводу наблюдения за лунными затмениями: от Земли падала тень дугообразной формы. Сегодня за поверхностью Земли наблюдают непрерывно — спутники постоянно летают вокруг планеты и фотографируют её.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Откуда получают и где хранят географическую информацию?</h2></div>
+<div class="easy">
+<p>Где искать сведения о Земле? На рисунке 19 показаны <span class="term" role="button" tabindex="0" data-t="istoch">источники географической <span class="tl">информации</span></span>.</p>
+<p><span class="big">Географические карты.</span> На них нанесено всё, что люди открыли на Земле за века. Собрание карт называется <span class="term" role="button" tabindex="0" data-t="atlas"><span class="tl">атлас</span></span>. На уроках ты познакомишься с разными видами карт.</p>
+<p><span class="big">Энциклопедии и справочники.</span> В них есть описания стран, районов и городов. Особый вид справочников — <span class="term" role="button" tabindex="0" data-t="putev"><span class="tl">путеводители</span></span>. Их любят туристы.</p>
+<p><span class="big">Интернет.</span> Там огромное количество информации. Специальные программы показывают всю планету и прокладывают маршруты. Пример из учебника — сервис Гугл Карты (Google Maps).</p>
+<p>Много <span class="term" role="button" tabindex="0" data-t="poisk">поисковых <span class="tl">систем</span></span> помогает найти материалы о любой точке земного шара. Главное — правильно набрать нужное географическое название.</p>
+<p>По каждой стране, району России, почти по каждому городу есть <span class="term" role="button" tabindex="0" data-t="sait"><span class="tl">сайты</span></span> — специальные страницы. Там собрано всё: официальные материалы, статистика, путевые дневники, впечатления, фотографии.</p>
+<p><span class="big">Что самое важное?</span> Информации в Интернете очень много. Мало её найти — главное выбрать и оценить. Сравни, что пишут в нескольких источниках. Тогда легче отличить правду от ошибки или искажения.</p>
+<p><span class="big">Экспедиции, наблюдения, путешествия.</span> Они и сегодня — важный источник информации.</p>
+<p><span class="big">ГИС.</span> Когда появились мощные компьютеры, учёные создали <span class="term" role="button" tabindex="0" data-t="gis">географические информационные <span class="tl">системы</span></span> — сокращённо ГИС. В них огромное количество данных. А показывают они эти данные в виде электронных карт.</p>
+</div>
+<div class="book" hidden>
+<p>На рисунке 19 показаны <span class="term" role="button" tabindex="0" data-t="istoch"><b>источники географической <span class="tl">информации</span></b></span>. На <i>географические карты</i> нанесено всё то, что человечество открыло на Земле за века. Собрание карт называют <span class="term" role="button" tabindex="0" data-t="atlas"><i><span class="tl">атласом</span></i></span>. Изучая географию, вы будете знакомиться с разными видами карт. Географические описания стран, районов и городов можно найти в <i>энциклопедиях</i> и <i>справочниках</i>. Особый вид справочников — <span class="term" role="button" tabindex="0" data-t="putev"><i><span class="tl">путеводители</span></i></span>, популярные среди туристов.</p>
+<p>Огромное количество информации можно получить в сети <i>Интернет</i>. С помощью специальных программ (например, сервис Гугл Карты — <i>Google Maps</i>) можно увидеть всю планету, проложить маршруты. Множество <span class="term" role="button" tabindex="0" data-t="poisk">поисковых <span class="tl">систем</span></span> помогает нам найти материалы о любой точке земного шара — стоит лишь правильно набрать нужное географическое название. По каждой стране мира, району России, почти по каждому городу в Интернете есть специальные страницы — <span class="term" role="button" tabindex="0" data-t="sait"><span class="tl">сайты</span></span>, где собирается информация по этой территории. Это и официальные материалы, и статистика, и путевые дневники, и просто впечатления, фотографии и многое другое. Информации в Интернете очень много. Важно не только уметь её найти, но и, главное, выбрать и оценить. Правильнее сравнить информацию из нескольких источников. Тогда легче отличить правдивые данные от ошибочных или искажённых.</p>
+<p>Однако по-прежнему важным источником информации остаются экспедиции, наблюдения, путешествия.</p>
+<p>Появление мощных компьютеров позволило учёным создать <span class="term" role="button" tabindex="0" data-t="gis"><b>географические информационные <span class="tl">системы</span></b></span> (сокращённо ГИС). Они содержат огромное количество данных и отображают их в виде электронных карт.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g7_r19" src="img/c1493442adbd.jpg" alt="Схема с фотографиями: карты и атласы, аэрокосмические снимки, географические информационные системы, поисковые системы Интернета, путешествия и полевые исследования, путеводители, книги, газеты, журналы, справочники и энциклопедии"><figcaption><span class="src">из учебника</span><b>Рис. 19.</b> Источники географической информации</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 340 391" role="img" aria-label="Схема из четырёх шагов. Собирают: спутники, экспедиции, наблюдения, путешествия. Хранят: карты и атласы, энциклопедии, справочники, путеводители, сайты, ГИС. Находят: поисковые системы. Выбирают и оценивают: сравнивают несколько источников"><use href="#g7-flow"/></svg><figcaption>Путь информации о Земле: от спутника или экспедиции — до твоего ответа на уроке.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 148" role="img" aria-label="Схема ГИС: огромное количество данных попадает в мощный компьютер, и он показывает их электронной картой"><use href="#g7-gis"/></svg><figcaption>ГИС — это не одна карта, а огромная «копилка» данных, которую компьютер превращает в карты.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 340 226" role="img" aria-label="Схема: сайт 1, справочник и сайт 2 сравниваем. Если совпадает — скорее всего, это правда. Если не совпадает — где-то ошибка или искажение"><use href="#g7-check"/></svg><figcaption>Правило учебника: сравни несколько источников.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">Самое важное</span><p>Важно не только уметь найти информацию, но и, главное, выбрать и оценить. Правильнее сравнить информацию из нескольких источников.</p></div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Современные технологии позволяют быстро найти, обработать и сохранить любую географическую информацию.</p></div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Поисковая система</b><p>помогает найти материалы: набираешь географическое название — получаешь список</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Сайт</b><p>специальная страница, где собрана информация о стране, районе или городе</p></div></div><p class="pairkey">Поисковая система — как библиотекарь. Сайт — как книга на полке, которую он тебе нашёл.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Глобус дома</span></div><div class="lifebody"><p>Дома у тебя есть глобус. Найди на нём Москву. Потом найди Волгу — Тольятти стоит на ней, там, где Волга делает большой изгиб, Самарскую Луку.</p><p>Теперь поищи Карское море — на севере, у Северного Ледовитого океана. Там, в бухте Визе, по спутниковым снимкам открыли новые острова.</p><p>Подумай: можно ли на глобусе проложить маршрут, как в навигаторе? А в специальной программе в Интернете — можно: учебник пишет, что с ней видно всю планету и можно проложить маршруты.</p></div><p class="lifebook">В учебнике это называется: <b>карты, атласы и специальные программы в Интернете</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. На одном сайте написано одно, на другом — другое. Что делать? Почему нельзя просто поверить первому сайту?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Ищи предложения после слов «главное, выбрать и оценить». И посмотри, что бывает на сайтах: «официальные материалы… и просто впечатления».</div>
+<div class="rev ans" id="a5" hidden>Надо сравнить информацию из нескольких источников — тогда легче отличить правдивые данные от ошибочных или искажённых. На сайтах бывают и официальные материалы, и просто чьи-то впечатления, а впечатления одного человека могут оказаться ошибкой.</div>
+</div>
+<div class="think">
+<p class="qt">6. Зачем сегодня, когда есть спутники и Интернет, люди всё равно едут в экспедиции и путешествия?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Предложение со словом «по-прежнему» и ответ Мишеля Песселя в «Обобщении по теме».</div>
+<div class="rev ans" id="a6" hidden>Учебник говорит: экспедиции, наблюдения, путешествия по-прежнему остаются важным источником информации. А путешественник Мишель Пессель отвечал, что на Земле открыто ещё не всё, а в путешествии ты открываешь новые земли для себя.</div>
+</div>
+<div class="think">
+<p class="qt">7. Чем ГИС похожа на атлас и чем отличается?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Определение атласа — в первом абзаце, ГИС — в последнем.</div>
+<div class="rev ans" id="a7" hidden>И атлас, и ГИС показывают информацию картами. Атлас — собрание карт. ГИС учёные создали, когда появились мощные компьютеры: в ней огромное количество данных, и она показывает их в виде электронных карт.</div>
+</div>
+<div class="think">
+<p class="qt">8. Какой источник с рис. 19 помог открыть острова в бухте Визе? А какие пригодятся туристу, который едет в незнакомый город?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Первый раздел (бухта Визе) и рис. 19.</div>
+<div class="rev ans" id="a8" hidden>Острова открыли по спутниковым снимкам — это аэрокосмические снимки. Туристу пригодятся путеводитель (он популярен среди туристов), карта и поисковые системы Интернета.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги параграфа</h2></div>
+<div class="rubric">Запомните</div>
+<div class="remember"><span>Навигационные системы</span><span>Источники географической информации</span><span>Географические информационные системы (ГИС)</span></div>
+<div class="rubric">Это я знаю</div>
+<div class="ask"><b>Вопросы учебника</b>
+<ol><li>Как учёные собирают информацию о Земле?</li><li>Перечислите источники географической информации. Какова их роль в изучении географии?</li><li>Каково значение космических технологий для развития географической науки?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к вопросу 2</button></div>
+<div class="rev hint" id="r1" hidden>Все источники — на рис. 19 (их восемь). Роль ищи в схеме «Собирают → хранят → находят → оценивают»: одни источники собирают сведения (снимки, путешествия), другие хранят (карты, атласы, справочники, ГИС), третьи помогают найти (поисковые системы).</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка к вопросу 3</button></div>
+<div class="rev hint" id="r2" hidden>Космические технологии — это спутники и полёты в космос. Что они дали географии: непрерывное наблюдение за поверхностью Земли, космические снимки → карты, открытие островов в бухте Визе, навигационные системы. Вспомни вывод первого раздела.</div></div>
+<div class="rubric">Это я могу</div>
+<div class="ask"><b>Задания учебника</b><ol start="4"><li>Прочитав параграф, составьте его конспект. Для выполнения задания используйте подсказку (с. 8) о том, что должен содержать конспект.</li><li>Найдите в тексте параграфа ответ на вопрос: как наблюдения и исследования в космосе помогают решать земные проблемы?</li><li>Выпишите географические термины, которые встречаются в тексте параграфа. Какие из них вам уже знакомы? Какие вы встретили впервые?</li><li>Найдите в Интернете информацию по вашему городу, району.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к заданию 4</button></div>
+<div class="rev hint" id="r3" hidden>На с. 8 учебника сказано: конспект должен содержать главную идею; новые термины, понятия, географические названия; основные мысли. Конспект можно сделать в виде текста или схемы. Схема «Собирают → хранят → находят → оценивают» во втором разделе — уже почти готовый конспект-схема.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Подсказка к заданию 5</button></div>
+<div class="rev hint" id="r4" hidden>Ответ — в первом разделе. Спутники фотографируют Землю (по снимкам составляют карты и открывают острова, как в бухте Визе), наблюдают за погодой, обеспечивают связь между странами и континентами, помогают вычислять местоположение — на этом работают навигационные системы.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r5" aria-expanded="false">Подсказка к заданию 6</button></div>
+<div class="rev hint" id="r5" hidden>Термины параграфа: искусственный спутник Земли, космические снимки, навигационные системы, источники географической информации, географические карты, атлас, энциклопедии, справочники, путеводители, поисковые системы, ГИС. Знакомые отметь одним цветом, новые — другим. Все новые слова на странице выделены — нажми на любое, чтобы вспомнить.</div></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Москва — к заданию 7</span></div><div class="lifebody"><p>Твой город — Москва. Задание 7 можно сделать вместе с папой или мамой:</p><p><b>1.</b> Открой поисковую систему и правильно набери название: «Москва». Потом — название вашего района.<br><b>2.</b> Найди сайты о городе: какие там официальные материалы, фотографии, впечатления.<br><b>3.</b> Выпиши один и тот же факт из двух-трёх источников и сравни. Совпадает? Значит, ему легче верить.</p><p>Ещё можно заглянуть в путеводитель по Москве — это тоже источник с рис. 19.</p></div><p class="lifebook">В учебнике это называется: <b>информация в Интернете: найти, выбрать, оценить</b></p></aside>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">◆</span><h2>Обобщение по теме «Как люди открывали Землю»</h2></div>
+<div class="rubric">Обобщение по теме</div>
+<div class="easy">
+<p>Это итог всего раздела «Как люди открывали Землю» — параграфов 2—7.</p>
+<p>Люди открывали новые земли всю свою историю. Сначала искали места для охоты, рыболовства, земледелия. Потом отправлялись в другие земли торговать и завоёвывать.</p>
+<p>В XV—XVII веках наступила эпоха Великих географических открытий. Христофор Колумб открыл Америку для людей своего времени. Экспедиция Фернана Магеллана впервые обогнула земной шар.</p>
+<p>Рубежи <span class="term" role="button" tabindex="0" data-t="oikum"><span class="tl">ойкумены</span></span> — известных земель — сильно раздвинулись. Стали понятны очертания материков, на которых живут люди. Новые земли заселяли и осваивали. Развивались торговля, хозяйство, науки.</p>
+<p>Имена многих мореплавателей, <span class="term" role="button" tabindex="0" data-t="zemlepr"><span class="tl">землепроходцев</span></span> и учёных остались на географической карте. Среди них немало российских. Наши соотечественники освоили Сибирь, открыли Антарктиду, первыми запустили искусственный спутник и полетели в космос.</p>
+<p>А новейшие компьютеры позволили создать географические информационные системы.</p>
+</div>
+<div class="book" hidden>
+<p>Географические открытия совершались на Земле на протяжении всей истории человечества. Сначала человек искал новые территории для охоты, рыболовства, земледелия. В дальнейшем отправлялся в другие земли для торговли, завоеваний. В XV—XVII вв. наступила эпоха Великих географических открытий. Христофор Колумб открыл для своих современников Америку, экспедиция Фернана Магеллана впервые обогнула земной шар. Рубежи <span class="term" role="button" tabindex="0" data-t="oikum"><span class="tl">ойкумены</span></span> (известных земель) значительно раздвинулись. Были определены основные контуры обитаемых материков. Происходило заселение и освоение новых земель. Развивались торговля, хозяйство, науки.</p>
+<p>Многие имена мореплавателей, <span class="term" role="button" tabindex="0" data-t="zemlepr"><span class="tl">землепроходцев</span></span>, учёных остались на географической карте. Среди них немало российских имён. Наши соотечественники освоили Сибирь, открыли Антарктиду и первыми запустили искусственный спутник и полетели в космос.</p>
+<p>Появление новейших компьютеров позволило создать географические информационные системы.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 414" role="img" aria-label="Шкала времени всего раздела: IV век до нашей эры — Аристотель, Земля — шар; XIII век — Марко Поло в Китае; 1492 — Колумб открыл Америку; 1519—1522 — экспедиция Магеллана обогнула земной шар; XVII век — открыта Австралия; 1820 — открыта Антарктида; 1961 — Юрий Гагарин в космосе"><use href="#g7-time"/></svg><figcaption>Весь раздел на одной шкале. Розовым — открытия наших соотечественников.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote">Про Австралию. В выводе §5 сказано: «В XVII в. была открыта Австралия» — в XVII веке к её берегам подходили голландские моряки, а Абель Тасман плавал в 1642—1644 гг. Но в том же §5 написано, что открытие Австралии чаще всего связывают с Джеймсом Куком. А Кук объявил восточное побережье Австралии британским владением в 1770 г. — это уже XVIII век. На шкале и в игре стоит XVII век, как в выводе §5. Главное — Австралию открыли раньше Антарктиды.</div>
+<div class="blocknote">Про Магеллана. На полях §4 стоит 1519—1521 гг. — это годы, когда экспедицию вёл сам Магеллан (в 1521 г. он погиб). А вернулась «Виктория» в Испанию в 1522 г. Поэтому на шкале — 1519—1522.</div>
+<div class="ask"><b>Задания обобщения</b>
+<ol><li>Выберите любую газету. Выпишите все встретившиеся вам географические термины и названия. Систематизируйте их в группы: а) здесь я побывал; б) об этом часто слышал; в) слышу это впервые; г) очень хочу побывать; д) здесь живут мои родные, друзья; е) другое. На основе проделанной работы сформулируйте ответ на вопрос: как в повседневной жизни человек сталкивается с географическими знаниями?</li><li>У знаменитого французского путешественника Мишеля Песселя спросили, зачем он отправляется в тяжёлые и опасные путешествия, ведь на Земле уже всё открыто. Он ответил: «Во-первых, ещё не всё. Во-вторых, вы открываете новые земли для себя. И наконец, путешествие — это открытие себя». А как вы считаете?</li></ol></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твои группы — к заданию 1</span></div><div class="lifebody"><p>Газету можно взять у родителей. Когда выпишешь названия, раскладывай их так:</p><p><b>а) здесь я побывала</b> — Москва, Тольятти, Турция, Кипр, Испания (ты была там совсем маленькой);<br><b>б) об этом часто слышала</b> — может быть, Португалия, Италия, Англия: там бывали мама с папой, а ты знаешь эти страны по названиям;<br><b>д) здесь живут мои родные</b> — село Ягодное у Тольятти: дом дедушки Анатолия и бабушки Гали;<br><b>в), г), е)</b> — реши сама.</p><p>Если в газете такие названия попадутся — сразу понятно, в какую они группу.</p></div><p class="lifebook">В учебнике это называется: <b>как человек сталкивается с географическими знаниями</b></p></aside>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r6" aria-expanded="false">С чего начать ответ на задание 1</button></div>
+<div class="rev hint" id="r6" hidden>Посмотри, сколько названий набралось. Географические названия встречаются каждый день: в новостях, в навигаторе в машине, когда семья выбирает, куда поехать, когда звонишь родным в другой город. Вот и ответ: человек сталкивается с географическими знаниями постоянно.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r7" aria-expanded="false">С чего начать ответ на задание 2</button></div>
+<div class="rev hint" id="r7" hidden><b>Во-первых, ещё не всё</b> — вспомни бухту Визе: острова, скрытые ледником, открыли по спутниковым снимкам. <b>Во-вторых, новые земли для себя</b> — Турцию и Кипр открыли давным-давно, но для тебя они были новыми. <b>И наконец, открытие себя</b> — что ты узнала о себе в самой долгой поездке, 14 часов на машине? Согласна ли ты с Песселем — это ответ уже твой.</div></div>
+<div class="side green"><span class="slab">Подсказка учебника</span><p>Не забудьте отметить свои достижения! На с. 8 учебник советует: в тетради составьте таблицу из трёх столбцов — «Я знаю», «Я могу», «Мне интересно» — и заполняйте её после изучения каждой темы.</p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">9. Зачем люди отправлялись открывать новые земли? Как менялись причины со временем?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Первые предложения «Обобщения». И вспомни §4: за чем европейцы плыли в «Индию»?</div>
+<div class="rev ans" id="a9" hidden>Сначала искали новые территории для охоты, рыболовства, земледелия. Потом отправлялись в другие земли для торговли и завоеваний. Например, в §4 европейцы искали морской путь в «Индию» за дорогими пряностями — это торговля.</div>
+</div>
+<div class="think">
+<p class="qt">10. В «Обобщении» названы три дела наших соотечественников. Что это за дела и где о них рассказано?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Второй абзац «Обобщения» и шкала времени (розовые точки).</div>
+<div class="rev ans" id="a10" hidden>Освоили Сибирь — §6 (в 1581 г. казак Ермак перешёл Уральские горы). Открыли Антарктиду — 1820 г., экспедиция Беллинсгаузена и Лазарева (§5, §6). Первыми запустили искусственный спутник и полетели в космос — 12 апреля 1961 г., Юрий Гагарин (§7).</div>
+</div>
+<div class="think">
+<p class="qt">11. Что значит «рубежи ойкумены значительно раздвинулись»? Благодаря чему это случилось?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Слово в скобках после «ойкумены» и предложение перед ним.</div>
+<div class="rev ans" id="a11" hidden>Ойкумена — известные земли, а рубежи — её границы. Известный людям мир стал гораздо больше в эпоху Великих географических открытий: Колумб открыл Америку, экспедиция Магеллана обогнула земной шар, определили контуры обитаемых материков.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Весь раздел «Как люди открывали Землю» — расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам. Можно подглядеть шкалу в разделе «Обобщение по теме».</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Колумб открыл Америку</button>
+<button class="chip" data-ord="7"><span class="ord"></span>Юрий Гагарин — первый полёт в космос</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Древние греки: Аристотель — Земля шар</button>
+<button class="chip" data-ord="6"><span class="ord"></span>Открыта Антарктида</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Экспедиция Магеллана обогнула земной шар</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Средние века: Марко Поло в Китае</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Открыта Австралия</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sortgame" id="srt8" data-n="6">
+<div class="sortlab">Какой это источник? Часть 1: то, что можно взять в руки</div>
+<p class="sortnote">Нажми на правильный ответ. Ошиблась — ничего страшного, пробуй ещё.</p>
+<div class="sitem" data-r="0"><p class="stext">Собрание карт в одной книге</p><div class="sbtns"><button class="sbtn" data-b="0">карты, атласы</button><button class="sbtn" data-b="1">путеводители</button><button class="sbtn" data-b="2">справочники, энциклопедии</button><button class="sbtn" data-b="3">книги, газеты, журналы</button></div><p class="swhy" hidden>Собрание карт называют атласом.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Книжка для туристов «Москва»: что посмотреть и как добраться</p><div class="sbtns"><button class="sbtn" data-b="0">карты, атласы</button><button class="sbtn" data-b="1">путеводители</button><button class="sbtn" data-b="2">справочники, энциклопедии</button><button class="sbtn" data-b="3">книги, газеты, журналы</button></div><p class="swhy" hidden>Путеводитель — особый вид справочников, популярный среди туристов.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Описания стран, районов и городов — по алфавиту, в толстом томе</p><div class="sbtns"><button class="sbtn" data-b="0">карты, атласы</button><button class="sbtn" data-b="1">путеводители</button><button class="sbtn" data-b="2">справочники, энциклопедии</button><button class="sbtn" data-b="3">книги, газеты, журналы</button></div><p class="swhy" hidden>Географические описания стран, районов и городов можно найти в энциклопедиях и справочниках.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Газета, в которой ты ищешь географические названия к заданию 1</p><div class="sbtns"><button class="sbtn" data-b="0">карты, атласы</button><button class="sbtn" data-b="1">путеводители</button><button class="sbtn" data-b="2">справочники, энциклопедии</button><button class="sbtn" data-b="3">книги, газеты, журналы</button></div><p class="swhy" hidden>Это газета. На рис. 19 газеты, книги и журналы — отдельный источник.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Журнал о путешествиях с фотографиями</p><div class="sbtns"><button class="sbtn" data-b="0">карты, атласы</button><button class="sbtn" data-b="1">путеводители</button><button class="sbtn" data-b="2">справочники, энциклопедии</button><button class="sbtn" data-b="3">книги, газеты, журналы</button></div><p class="swhy" hidden>Журналы — источник с рис. 19. Там на картинке как раз журналы о путешествиях.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Карта на стене в кабинете географии</p><div class="sbtns"><button class="sbtn" data-b="0">карты, атласы</button><button class="sbtn" data-b="1">путеводители</button><button class="sbtn" data-b="2">справочники, энциклопедии</button><button class="sbtn" data-b="3">книги, газеты, журналы</button></div><p class="swhy" hidden>На географические карты нанесено всё, что человечество открыло на Земле.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt9" data-n="7">
+<div class="sortlab">Какой это источник? Часть 2: из космоса, компьютера и дороги</div>
+<div class="sitem" data-r="0"><p class="stext">Фотография Земли, которую сделал спутник</p><div class="sbtns"><button class="sbtn" data-b="0">снимки из космоса</button><button class="sbtn" data-b="1">ГИС</button><button class="sbtn" data-b="2">Интернет</button><button class="sbtn" data-b="3">путешествия, исследования</button></div><p class="swhy" hidden>Спутники фотографируют Землю — это космические снимки.</p></div>
+<div class="sitem" data-r="0"><p class="stext">По ним нашли острова в бухте Визе</p><div class="sbtns"><button class="sbtn" data-b="0">снимки из космоса</button><button class="sbtn" data-b="1">ГИС</button><button class="sbtn" data-b="2">Интернет</button><button class="sbtn" data-b="3">путешествия, исследования</button></div><p class="swhy" hidden>Учёным помог анализ спутниковых снимков.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Мощный компьютер хранит огромное количество данных и показывает их электронными картами</p><div class="sbtns"><button class="sbtn" data-b="0">снимки из космоса</button><button class="sbtn" data-b="1">ГИС</button><button class="sbtn" data-b="2">Интернет</button><button class="sbtn" data-b="3">путешествия, исследования</button></div><p class="swhy" hidden>Это географические информационные системы.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Набрать в поисковой системе «Москва» и найти сайты о городе</p><div class="sbtns"><button class="sbtn" data-b="0">снимки из космоса</button><button class="sbtn" data-b="1">ГИС</button><button class="sbtn" data-b="2">Интернет</button><button class="sbtn" data-b="3">путешествия, исследования</button></div><p class="swhy" hidden>Поисковые системы помогают найти материалы о любой точке земного шара.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Яндекс Карты на телефоне: найти улицу и проложить маршрут</p><div class="sbtns"><button class="sbtn" data-b="0">снимки из космоса</button><button class="sbtn" data-b="1">ГИС</button><button class="sbtn" data-b="2">Интернет</button><button class="sbtn" data-b="3">путешествия, исследования</button></div><p class="swhy" hidden>Это специальная программа в Интернете — как сервис Гугл Карты из учебника: с ней можно увидеть всю планету и проложить маршрут.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Мама-геолог едет на карьер искать минералы</p><div class="sbtns"><button class="sbtn" data-b="0">снимки из космоса</button><button class="sbtn" data-b="1">ГИС</button><button class="sbtn" data-b="2">Интернет</button><button class="sbtn" data-b="3">путешествия, исследования</button></div><p class="swhy" hidden>Работа на месте, на природе — это полевое исследование.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Экспедиция: учёные едут изучать северные моря</p><div class="sbtns"><button class="sbtn" data-b="0">снимки из космоса</button><button class="sbtn" data-b="1">ГИС</button><button class="sbtn" data-b="2">Интернет</button><button class="sbtn" data-b="3">путешествия, исследования</button></div><p class="swhy" hidden>Экспедиции, наблюдения, путешествия по-прежнему остаются важным источником информации.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Искусственный спутник Земли</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 343" aria-hidden="true"><use href="#g7-sat"/></svg><span class="ftext">Космический аппарат, постоянно летает вокруг Земли: снимки, погода, связь.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Юрий Гагарин</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="g7_gagarin" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">12 апреля 1961 г. — первый пилотируемый полёт. Родом из Смоленской области.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Навигационные системы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 340 320" aria-hidden="true"><use href="#g7-nav"/></svg><span class="ftext">Вычисляют, где ты, и помогают найти путь пилотам, лоцманам, водителям.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Источники географической информации</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="g7_r19" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Рис. 19: карты, снимки, ГИС, Интернет, путеводители, справочники, книги и журналы, путешествия.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Атлас</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 340 391" aria-hidden="true"><use href="#g7-flow"/></svg><span class="ftext">Собрание карт.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">ГИС</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 148" aria-hidden="true"><use href="#g7-gis"/></svg><span class="ftext">Географические информационные системы: огромное количество данных в виде электронных карт.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Сравни источники</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 340 226" aria-hidden="true"><use href="#g7-check"/></svg><span class="ftext">Так легче отличить правдивые данные от ошибочных или искажённых.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ойкумена</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 414" aria-hidden="true"><use href="#g7-time"/></svg><span class="ftext">Известные земли. В эпоху Великих открытий её рубежи раздвинулись.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что такое искусственный спутник Земли?</h3><div class="opts">
+<button class="opt" data-ok="1">Космический аппарат, который постоянно летает вокруг Земли</button>
+<button class="opt">Луна</button>
+<button class="opt">Самолёт, который летает очень высоко</button>
+<button class="opt">Звезда на небе</button></div>
+<div class="fb">Спутники — космические аппараты, постоянно обращающиеся вокруг нашей планеты.</div></div>
+<div class="q"><h3>2. Кто и когда совершил первый пилотируемый полёт?</h3><div class="opts">
+<button class="opt" data-ok="1">Юрий Гагарин, 12 апреля 1961 г.</button>
+<button class="opt">Христофор Колумб, 1492 г.</button>
+<button class="opt">Фернан Магеллан, 1519 г.</button>
+<button class="opt">Аристотель, IV в. до н. э.</button></div>
+<div class="fb">Первым в мире космонавтом был русский, уроженец Смоленской области Юрий Гагарин.</div></div>
+<div class="q"><h3>3. Что помогло открыть новые острова в бухте Визе в Карском море?</h3><div class="opts">
+<button class="opt">Путеводитель</button>
+<button class="opt" data-ok="1">Анализ спутниковых снимков</button>
+<button class="opt">Старинная карта</button>
+<button class="opt">Газета</button></div>
+<div class="fb">Острова были скрыты ледником — их нашли по снимкам со спутников.</div></div>
+<div class="q"><h3>4. Кому, по учебнику, помогают навигационные системы?</h3><div class="opts">
+<button class="opt">Только космонавтам</button>
+<button class="opt" data-ok="1">Пилотам, лоцманам, водителям автомобилей</button>
+<button class="opt">Только учёным</button>
+<button class="opt">Только туристам</button></div>
+<div class="fb">Спутники позволяют точно вычислять местоположение — на этом и работают навигационные системы.</div></div>
+<div class="q"><h3>5. Как легче отличить правдивые данные от ошибочных?</h3><div class="opts">
+<button class="opt">Поверить первому найденному сайту</button>
+<button class="opt">Выбрать самый длинный текст</button>
+<button class="opt" data-ok="1">Сравнить информацию из нескольких источников</button>
+<button class="opt">Спросить один раз и больше не проверять</button></div>
+<div class="fb">Правильнее сравнить информацию из нескольких источников.</div></div>
+<div class="q"><h3>6. ГИС — это…</h3><div class="opts">
+<button class="opt">Собрание бумажных карт</button>
+<button class="opt">Особый вид путеводителя</button>
+<button class="opt" data-ok="1">Географические информационные системы: данные в виде электронных карт</button>
+<button class="opt">Искусственный спутник</button></div>
+<div class="fb">Собрание карт — атлас. А ГИС создали благодаря мощным компьютерам.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Как сегодня собирают информацию о Земле</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Искусственные спутники Земли постоянно летают вокруг планеты: непрерывное наблюдение за поверхностью.</li><li>Спутники фотографируют Землю, наблюдают за погодой, обеспечивают связь; по снимкам составляют карты (острова в бухте Визе).</li><li>Спутники помогают вычислять местоположение — так появились навигационные системы для пилотов, лоцманов, водителей.</li></ol></div>
+</div>
+<div class="think">
+<h3>Первый полёт человека в космос</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl11" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl11" hidden><ol><li>12 апреля 1961 г. — первый пилотируемый полёт.</li><li>Первый в мире космонавт — русский, уроженец Смоленской области Юрий Гагарин.</li><li>Русское слово «спутник» вошло во все языки мира.</li></ol></div>
+</div>
+<div class="think">
+<h3>Источники географической информации</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl12" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl12" hidden><ol><li>Карты и атласы; энциклопедии, справочники, путеводители; книги, газеты, журналы.</li><li>Аэрокосмические снимки, Интернет (поисковые системы, сайты, специальные программы), ГИС.</li><li>Экспедиции, наблюдения, путешествия по-прежнему важный источник.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как не ошибиться с информацией из Интернета</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl13" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl13" hidden><ol><li>Информации очень много: важно не только найти, но и выбрать и оценить.</li><li>На сайтах есть и официальные материалы, и просто впечатления.</li><li>Правильнее сравнить несколько источников — так легче отличить правдивые данные от ошибочных.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как люди открывали Землю (обобщение)</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl14" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl14" hidden><ol><li>Сначала искали земли для охоты, рыболовства, земледелия, потом — для торговли и завоеваний.</li><li>XV—XVII вв. — эпоха Великих географических открытий: Колумб, Магеллан; рубежи ойкумены раздвинулись.</li><li>Наши соотечественники освоили Сибирь, открыли Антарктиду, первыми запустили спутник и полетели в космос.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <span class="pn cur">§7 География сегодня</span>
+  <span class="pn dim">§8 Мы во Вселенной · скоро</span>
+ </div>
+</div>
+
+<footer><div class="wrap">География, 5—6 классы. А. И. Алексеев и др., «Полярная звезда», 2023. § 7, с. 26—28. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'g7-sat':'0 0 360 343','g7-nav':'0 0 340 320','g7-map':'0 0 420 399','g7-flow':'0 0 340 391','g7-gis':'0 0 360 148','g7-check':'0 0 340 226','g7-time':'0 0 360 414'};
+
+var T={
+sputnik:{w:"Искусственный спутник Земли",k:"что это",s:"g7-sat",t:"Космический аппарат, который постоянно летает вокруг Земли. Спутники фотографируют Землю, наблюдают за погодой, обеспечивают связь. Русское слово «спутник» понимают во всём мире без перевода.",r:"<b>спутник</b> — тот, кто идёт рядом, попутчик",e:""},
+pilot:{w:"Пилотируемый полёт",k:"что это",p:"g7_gagarin",t:"Полёт в космос, когда на корабле летит человек. Первый совершил Юрий Гагарин 12 апреля 1961 года.",r:"<b>пилот</b> — тот, кто ведёт самолёт или корабль",e:""},
+gagarin:{w:"Юрий Гагарин",k:"кто это",p:"g7_gagarin",t:"Первый в мире космонавт. 12 апреля 1961 года совершил первый пилотируемый полёт. Родом из Смоленской области.",r:"",e:""},
+snimok:{w:"Космические снимки",k:"что это",p:"g7_banner",t:"Фотографии Земли из космоса. Их делают спутники. По снимкам составляют карты и изучают территорию. По ним открыли новые острова в бухте Визе в Карском море.",r:"",e:""},
+navsys:{w:"Навигационные системы",k:"что это",s:"g7-nav",t:"С помощью спутников вычисляют, где находится объект, и помогают найти дорогу. Ими пользуются пилоты, лоцманы, водители автомобилей.",r:"<b>навигация</b> — умение найти путь и вести корабль, самолёт, машину",e:"Яндекс Навигатор в вашей машине, который подсказывает, куда повернуть, — навигационная система."},
+lotsman:{w:"Лоцман",k:"кто это",s:"g7-nav",t:"Моряк, который хорошо знает трудные места на воде и проводит через них корабли.",r:"",e:""},
+istoch:{w:"Источники географической информации",k:"что это",p:"g7_r19",t:"Откуда берут сведения о Земле: карты и атласы, аэрокосмические снимки, ГИС, поисковые системы Интернета, путеводители, справочники и энциклопедии, книги, газеты, журналы, путешествия и полевые исследования.",r:"<b>источник</b> — то, откуда что-то берётся, как родник, из которого течёт ручей",e:""},
+atlas:{w:"Атлас",k:"что это",s:"g7-flow",t:"Собрание карт. На географические карты нанесено всё, что человечество открыло на Земле за века.",r:"",e:""},
+putev:{w:"Путеводитель",k:"особый справочник",p:"g7_r19",t:"Особый вид справочника. Путеводители популярны среди туристов.",r:"",e:""},
+poisk:{w:"Поисковая система",k:"что это",s:"g7-flow",t:"Помогает найти в Интернете материалы о любой точке земного шара. Главное — правильно набрать нужное географическое название.",r:"",e:""},
+sait:{w:"Сайт",k:"что это",s:"g7-check",t:"Специальная страница в Интернете. По каждой стране мира, району России, почти по каждому городу есть сайты, где собирается информация об этой территории.",r:"",e:""},
+gis:{w:"ГИС — географические информационные системы",k:"что это",s:"g7-gis",t:"Их создали учёные, когда появились мощные компьютеры. В ГИС огромное количество данных, и показывают они их в виде электронных карт.",r:"",e:""},
+oikum:{w:"Ойкумена",k:"что это",s:"g7-time",t:"Известные людям земли. В эпоху Великих географических открытий рубежи (границы) ойкумены сильно раздвинулись.",r:"<b>ойкумена</b> (греч.) — обитаемая земля",e:""},
+zemlepr:{w:"Землепроходцы",k:"кто это",s:"g7-time",t:"Люди, которые шли по суше в неизвестные земли и открывали их. Русские землепроходцы освоили Сибирь (§6).",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('geography:g7:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('geography:g7:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>7){fb.textContent="Верно! IV в. до н. э. — Аристотель, XIII в. — Марко Поло, 1492 — Колумб, 1519—1522 — Магеллан, XVII в. — Австралия, 1820 — Антарктида, 1961 — Гагарин.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Не этот. Подумай: что было раньше? Подсказка — шкала в «Обобщении по теме».";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('geography:g7:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('geography:g7:read_'+id,on?'1':'0')});
+  });
+});
+
+/* --- увеличение карт, схем и картинок по нажатию (на телефоне мелкие подписи) --- */
+var zoom=document.createElement('div');zoom.className='zoom';zoom.hidden=true;
+zoom.setAttribute('role','dialog');zoom.setAttribute('aria-modal','true');zoom.setAttribute('aria-label','Увеличенная картинка');
+zoom.innerHTML='<div class="zoombar"><span>Двигай пальцем, чтобы рассмотреть</span><button class="zoomclose">Закрыть ✕</button></div><div class="zoomin"></div>';
+document.body.appendChild(zoom);
+function openZoom(el){
+  var box=zoom.querySelector('.zoomin');box.innerHTML='';
+  var c=el.cloneNode(true);c.removeAttribute('id');
+  if(c.tagName.toLowerCase()==='svg'){
+    var v=(c.getAttribute('viewBox')||'0 0 400 300').split(/\s+/);
+    c.style.width=Math.round(Math.max(parseFloat(v[2])*2.3,window.innerWidth-24))+'px';
+  }else{
+    c.style.width=Math.round(Math.max((el.naturalWidth||600)*1.1,window.innerWidth*1.5))+'px';
+  }
+  c.style.maxWidth='none';c.style.height='auto';
+  box.appendChild(c);zoom.hidden=false;document.documentElement.style.overflow='hidden';
+  zoom.querySelector('.zoomclose').focus();
+}
+function closeZoom(){zoom.hidden=true;document.documentElement.style.overflow='';}
+document.addEventListener('click',function(e){
+  if(e.target.closest('.zoomclose')){closeZoom();return}
+  var s=e.target.closest('.fig svg, .photo img, .banner img');
+  if(s&&!zoom.contains(s)){openZoom(s);}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!zoom.hidden)closeZoom()});
+
+</script>
+</body>
+</html>
