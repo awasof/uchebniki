@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Колонны-«воины» и колонны-«девушки», вазы как граттаж, бескрылая богиня победы и Зевс высотой с четырёхэтажный дом. Трудные слова можно нажимать.">
+<title>Культура Древней Греции</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="l-hram" viewBox="0 0 540 256">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ГРЕЧЕСКИЙ ХРАМ: ИЗ ЧЕГО ОН СОСТОИТ</text>
+  <path d="M100 92 L240 40 L380 92 Z" fill="var(--ochre)" stroke="var(--illink)" stroke-width="2"/>
+  <rect x="94" y="92" width="292" height="14" fill="var(--paper2)" stroke="var(--illink)" stroke-width="2"/>
+  <g fill="var(--paper2)" stroke="var(--illink)" stroke-width="1.5">
+  <rect x="110" y="106" width="16" height="76"/><rect x="160" y="106" width="16" height="76"/>
+  <rect x="210" y="106" width="16" height="76"/><rect x="254" y="106" width="16" height="76"/>
+  <rect x="304" y="106" width="16" height="76"/><rect x="354" y="106" width="16" height="76"/>
+  </g>
+  <g fill="var(--stone)">
+  <rect x="88" y="182" width="304" height="8"/><rect x="80" y="190" width="320" height="8"/><rect x="72" y="198" width="336" height="8"/>
+  </g>
+  <g stroke="var(--soft)" stroke-width="1.2" fill="none">
+  <path d="M318 69 L410 44"/><path d="M290 80 L410 80"/><path d="M372 140 L410 140"/><path d="M402 194 L418 194"/>
+  </g>
+  <text x="414" y="48" font-size="10.5" fill="var(--illink)">двускатная крыша</text>
+  <text x="414" y="78" font-size="10.5" font-weight="700" fill="var(--illink)">фронтон:</text>
+  <text x="414" y="92" font-size="10.5" fill="var(--illink)">рельефы, статуи</text>
+  <text x="414" y="144" font-size="10.5" fill="var(--illink)">колонны</text>
+  <text x="422" y="190" font-size="10.5" fill="var(--illink)">ступенчатое</text>
+  <text x="422" y="204" font-size="10.5" fill="var(--illink)">возвышение</text>
+  <text x="8" y="230" font-size="10.5" fill="var(--soft)">Ряд колонн под крышей — портик. В его тени греки прятались от зноя.</text>
+  <text x="8" y="250" font-size="12" font-weight="700" fill="var(--moss)">Ступени, колонны, крыша, а в треугольнике — скульптуры.</text>
+</symbol>
+
+<symbol id="l-ordera" viewBox="0 0 540 262">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ДВА ОРДЕРА — ДВА ХАРАКТЕРА</text>
+  <rect x="44" y="36" width="72" height="10" fill="var(--paper2)" stroke="var(--illink)" stroke-width="1.5"/>
+  <path d="M50 46 H110 L100 60 H60 Z" fill="var(--paper2)" stroke="var(--illink)" stroke-width="1.5"/>
+  <path d="M60 60 H100 L104 200 H56 Z" fill="var(--paper2)" stroke="var(--illink)" stroke-width="1.5"/>
+  <g stroke="var(--stone)" stroke-width="1.2"><line x1="70" y1="64" x2="69" y2="196"/><line x1="80" y1="64" x2="80" y2="196"/><line x1="90" y1="64" x2="91" y2="196"/></g>
+  <rect x="30" y="200" width="100" height="10" fill="var(--stone)"/>
+  <text x="142" y="62" font-size="12.5" font-weight="700" fill="var(--illink)">ДОРИЧЕСКАЯ</text>
+  <text x="142" y="82" font-size="10.5" fill="var(--illink)">мощная, строгая,</text>
+  <text x="142" y="97" font-size="10.5" fill="var(--illink)">без украшений;</text>
+  <text x="142" y="112" font-size="10.5" fill="var(--illink)">вверху — простая</text>
+  <text x="142" y="127" font-size="10.5" fill="var(--illink)">«подушка» и плита;</text>
+  <text x="142" y="142" font-size="10.5" fill="var(--illink)">стоит прямо на ступени</text>
+  <text x="142" y="166" font-size="11" font-weight="700" fill="var(--ochre)">как суровый воин</text>
+  <rect x="318" y="36" width="76" height="6" fill="var(--paper2)" stroke="var(--illink)" stroke-width="1.5"/>
+  <rect x="324" y="42" width="64" height="12" fill="var(--paper2)" stroke="var(--illink)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--illink)" stroke-width="1.6">
+  <circle cx="322" cy="56" r="10"/><path d="M322 56 m-5 0 a5 5 0 1 1 5 5"/>
+  <circle cx="390" cy="56" r="10"/><path d="M390 56 m5 0 a5 5 0 1 0 -5 5"/>
+  </g>
+  <rect x="344" y="56" width="24" height="134" fill="var(--paper2)" stroke="var(--illink)" stroke-width="1.5"/>
+  <g stroke="var(--stone)" stroke-width="1"><line x1="352" y1="60" x2="352" y2="186"/><line x1="360" y1="60" x2="360" y2="186"/></g>
+  <rect x="338" y="190" width="36" height="5" fill="var(--paper2)" stroke="var(--illink)" stroke-width="1.2"/>
+  <rect x="334" y="195" width="44" height="5" fill="var(--paper2)" stroke="var(--illink)" stroke-width="1.2"/>
+  <rect x="306" y="200" width="100" height="10" fill="var(--stone)"/>
+  <text x="414" y="62" font-size="12.5" font-weight="700" fill="var(--illink)">ИОНИЧЕСКАЯ</text>
+  <text x="414" y="82" font-size="10.5" fill="var(--illink)">стройная, тоньше;</text>
+  <text x="414" y="97" font-size="10.5" fill="var(--illink)">вверху — каменные</text>
+  <text x="414" y="112" font-size="10.5" fill="var(--illink)">завитки;</text>
+  <text x="414" y="127" font-size="10.5" fill="var(--illink)">внизу — подножие</text>
+  <text x="414" y="166" font-size="11" font-weight="700" fill="var(--ochre)">как девушка</text>
+  <text x="8" y="234" font-size="10.5" fill="var(--soft)">Сначала храмы украшали дорическими колоннами, позднее — ионическими.</text>
+  <text x="8" y="254" font-size="12" font-weight="700" fill="var(--moss)">Завитки наверху — ионическая, «подушка» — дорическая.</text>
+</symbol>
+
+<symbol id="l-vazy" viewBox="0 0 540 268">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЧЁРНОФИГУРНАЯ И КРАСНОФИГУРНАЯ ВАЗА</text>
+  <g stroke="#2A2420" stroke-width="3" fill="none">
+  <path d="M117 50 Q92 46 86 74"/><path d="M153 50 Q178 46 184 74"/>
+  <path d="M387 50 Q362 46 356 74"/><path d="M423 50 Q448 46 454 74"/>
+  </g>
+  <path d="M113 32 H157 L151 46 Q153 62 185 82 Q199 112 179 152 L161 166 H109 L91 152 Q71 112 85 82 Q117 62 119 46 Z" fill="#C46A3A"/>
+  <rect x="115" y="166" width="40" height="8" fill="#C46A3A"/>
+  <g transform="translate(135 120)" fill="#2A2420">
+  <ellipse cx="0" cy="-8" rx="6" ry="17"/>
+  <ellipse cx="0" cy="-8" rx="5" ry="15" transform="rotate(-38 0 6)"/><ellipse cx="0" cy="-8" rx="5" ry="15" transform="rotate(38 0 6)"/>
+  <ellipse cx="0" cy="-6" rx="4" ry="12" transform="rotate(-72 0 6)"/><ellipse cx="0" cy="-6" rx="4" ry="12" transform="rotate(72 0 6)"/>
+  <circle cx="0" cy="8" r="6"/>
+  </g>
+  <g transform="translate(135 120)" stroke="#E9B48C" stroke-width="1.2" fill="none">
+  <line x1="0" y1="-20" x2="0" y2="2"/><line x1="-9" y1="-12" x2="-3" y2="3"/><line x1="9" y1="-12" x2="3" y2="3"/>
+  </g>
+  <path d="M383 32 H427 L421 46 Q423 62 455 82 Q469 112 449 152 L431 166 H379 L361 152 Q341 112 355 82 Q387 62 389 46 Z" fill="#2A2420"/>
+  <rect x="385" y="166" width="40" height="8" fill="#2A2420"/>
+  <g transform="translate(405 120)" fill="#C46A3A">
+  <ellipse cx="0" cy="-8" rx="6" ry="17"/>
+  <ellipse cx="0" cy="-8" rx="5" ry="15" transform="rotate(-38 0 6)"/><ellipse cx="0" cy="-8" rx="5" ry="15" transform="rotate(38 0 6)"/>
+  <ellipse cx="0" cy="-6" rx="4" ry="12" transform="rotate(-72 0 6)"/><ellipse cx="0" cy="-6" rx="4" ry="12" transform="rotate(72 0 6)"/>
+  <circle cx="0" cy="8" r="6"/>
+  </g>
+  <g transform="translate(405 120)" stroke="#2A2420" stroke-width="1.2" fill="none">
+  <line x1="0" y1="-20" x2="0" y2="2"/><line x1="-9" y1="-12" x2="-3" y2="3"/><line x1="9" y1="-12" x2="3" y2="3"/>
+  </g>
+  <text x="135" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink)">ЧЁРНОФИГУРНАЯ · VI век</text>
+  <text x="135" y="213" text-anchor="middle" font-size="10.5" fill="var(--illink)">фон — цвета глины, фигуры — чёрные;</text>
+  <text x="135" y="228" text-anchor="middle" font-size="10.5" fill="var(--illink)">светлые линии процарапаны</text>
+  <text x="405" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink)">КРАСНОФИГУРНАЯ · конец VI века</text>
+  <text x="405" y="213" text-anchor="middle" font-size="10.5" fill="var(--illink)">фон — чёрный лак,</text>
+  <text x="405" y="228" text-anchor="middle" font-size="10.5" fill="var(--illink)">фигуры — цвета глины</text>
+  <text x="8" y="258" font-size="12" font-weight="700" fill="var(--moss)">Процарапать светлую линию по чёрному — это твой граттаж.</text>
+</symbol>
+
+<symbol id="l-akropol" viewBox="0 0 540 292">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">АФИНСКИЙ АКРОПОЛЬ: ПЛАН СВЕРХУ</text>
+  <path d="M48 120 Q52 64 120 52 L300 40 Q420 34 486 70 Q520 110 500 170 Q480 222 380 232 L180 240 Q96 242 66 200 Q44 168 48 120 Z"
+        fill="var(--paper2)" stroke="var(--stone)" stroke-width="3"/>
+  <path d="M8 140 H60" stroke="var(--illink)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+  <text x="8" y="132" font-size="10" fill="var(--soft)">вход</text>
+  <rect x="64" y="112" width="52" height="56" rx="3" fill="var(--ochre)"/>
+  <text x="90" y="136" text-anchor="middle" font-size="9.5" font-weight="700" fill="#22190A">ПРО-</text>
+  <text x="90" y="149" text-anchor="middle" font-size="9.5" font-weight="700" fill="#22190A">ПИЛЕИ</text>
+  <rect x="70" y="184" width="22" height="16" rx="2" fill="var(--water)"/>
+  <text x="98" y="197" font-size="10" fill="var(--illink)">храм Ники без крыльев</text>
+  <circle cx="168" cy="132" r="9" fill="var(--flame)"/>
+  <text x="168" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">Афина</text>
+  <text x="168" y="121" text-anchor="middle" font-size="10" fill="var(--illink)">Воительница</text>
+  <rect x="254" y="66" width="70" height="30" rx="3" fill="var(--water)"/>
+  <text x="289" y="85" text-anchor="middle" font-size="10" font-weight="700" fill="#14262F">ЭРЕХТЕЙОН</text>
+  <text x="340" y="78" font-size="9.5" fill="var(--soft)">олива Афины и</text>
+  <text x="340" y="91" font-size="9.5" fill="var(--soft)">колодец Посейдона</text>
+  <rect x="270" y="140" width="170" height="62" rx="3" fill="var(--red)"/>
+  <g fill="#FFF6E9"><circle cx="280" cy="148" r="2"/><circle cx="430" cy="148" r="2"/><circle cx="280" cy="194" r="2"/><circle cx="430" cy="194" r="2"/>
+  <circle cx="305" cy="148" r="2"/><circle cx="330" cy="148" r="2"/><circle cx="355" cy="148" r="2"/><circle cx="380" cy="148" r="2"/><circle cx="405" cy="148" r="2"/>
+  <circle cx="305" cy="194" r="2"/><circle cx="330" cy="194" r="2"/><circle cx="355" cy="194" r="2"/><circle cx="380" cy="194" r="2"/><circle cx="405" cy="194" r="2"/></g>
+  <text x="355" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#FFF6E9">ПАРФЕНОН</text>
+  <text x="355" y="184" text-anchor="middle" font-size="9.5" fill="#FFF6E9">внутри Афина Парфенос</text>
+  <path d="M118 140 H154 M180 136 Q226 122 300 120 H462" stroke="var(--illink)" stroke-width="1.6" stroke-dasharray="5 4" fill="none" marker-end="url(#ar)"/>
+  <text x="462" y="112" text-anchor="end" font-size="9.5" fill="var(--soft)">главная улица</text>
+  <text x="505" y="40" text-anchor="middle" font-size="11" font-weight="700" fill="var(--soft)">С</text>
+  <path d="M505 62 V46" stroke="var(--soft)" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="8" y="264" font-size="10.5" fill="var(--soft)">Прошёл Пропилеи и статую Афины — Эрехтейон по левую руку, Парфенон по правую.</text>
+  <text x="8" y="284" font-size="12" font-weight="700" fill="var(--moss)">Весь холм — памятник победе над персами.</text>
+</symbol>
+
+<symbol id="l-vysota" viewBox="0 0 540 270">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ВЫСОТА СТАТУЙ ФИДИЯ (В ОДНОМ МАСШТАБЕ)</text>
+  <line x1="16" y1="224" x2="524" y2="224" stroke="var(--illink)" stroke-width="2"/>
+  <rect x="30" y="56" width="74" height="168" fill="var(--paper2)" stroke="var(--stone)" stroke-width="2"/>
+  <g fill="var(--water)"><rect x="40" y="70" width="18" height="18"/><rect x="76" y="70" width="18" height="18"/>
+  <rect x="40" y="112" width="18" height="18"/><rect x="76" y="112" width="18" height="18"/>
+  <rect x="40" y="154" width="18" height="18"/><rect x="76" y="154" width="18" height="18"/>
+  <rect x="40" y="196" width="18" height="18"/></g>
+  <rect x="78" y="196" width="16" height="28" fill="var(--brown)"/>
+  <text x="67" y="44" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">дом в 4 этажа</text>
+  <rect x="140" y="56" width="70" height="168" rx="4" fill="var(--ochre)"/>
+  <text x="175" y="44" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">Зевс в Олимпии</text>
+  <text x="175" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">12 м</text>
+  <rect x="246" y="84" width="70" height="140" rx="4" fill="var(--ochre)"/>
+  <text x="281" y="58" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">Афина Парфенос</text>
+  <text x="281" y="72" text-anchor="middle" font-size="10" fill="var(--soft)">в Парфеноне</text>
+  <text x="281" y="160" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">больше</text>
+  <text x="281" y="176" text-anchor="middle" font-size="12" font-weight="700" fill="#22190A">10 м</text>
+  <rect x="352" y="98" width="70" height="126" rx="4" fill="var(--flame)"/>
+  <text x="387" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">Афина</text>
+  <text x="387" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">Воительница</text>
+  <text x="387" y="166" text-anchor="middle" font-size="13" font-weight="700" fill="#22190A">9 м</text>
+  <rect x="460" y="196" width="34" height="28" rx="2" fill="var(--brown)"/>
+  <text x="477" y="186" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">дверь 2 м</text>
+  <text x="8" y="244" font-size="10.5" fill="var(--soft)">Этаж — около 3 метров. Все три статуи — работы Фидия.</text>
+  <text x="8" y="262" font-size="12" font-weight="700" fill="var(--moss)">Зевс Фидия — высотой с четырёхэтажный дом.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 30</span>
+    <h1>Культура Древней Греции</h1>
+    <p class="lede">Колонны-«воины» и колонны-«девушки», вазы как граттаж, бескрылая богиня победы и Зевс высотой с четырёхэтажный дом. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Что свидетельствовало о расцвете культуры в Афинах?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p29.html">‹ §29 Афинская демократия</a>
+  <span class="pn cur">§30 Культура Греции</span>
+  <a class="pn" href="p31.html">§31 Повседневная жизнь ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Архитектура">1</a><a href="#s2" data-j="s2" title="Скульптура и живопись">2</a><a href="#s3" data-j="s3" title="Афинский Акрополь">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-zevs" src="img/6d8ba8466a2b.jpg" alt="Рисунок: в храме между колоннами на огромном золотом троне сидит Зевс со скипетром, у его ног крошечные люди" style="max-width:611px"><figcaption><span class="src">из учебника</span><b>Статуя Зевса в Олимпии.</b> Двенадцатиметровую скульптуру Зевса, изготовленную Фидием для храма этого бога в городе Олимпия, греки называли одним из чудес света. Сохранилось свыше 60 античных упоминаний о статуе, уничтоженной в результате пожара в V (5) веке н. э.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Архитектура</h2></div>
+<div class="easy">
+<p>В V—IV веках до н. э. культура Греции так расцвела, что тысячи лет потом ей подражали. Это время называют <button class="term" data-t="klassika">эпохой классики</button>.</p>
+<p>Новые города строили по одному плану: кварталы прямоугольные и одинаковые, улицы прямые.</p>
+<p>В городах строили храмы и общественные здания. Храм ставили на ступенчатое каменное возвышение. Крыша — двускатная, как у домика.</p>
+<p>Храмы украшали колонны. Вид колонн называют <button class="term" data-t="order">ордером</button>. Сначала строили мощные <button class="term" data-t="dorich">дорические</button> колонны без всяких украшений — их сравнивали с суровыми воинами. Позднее — стройные <button class="term" data-t="ionich">ионические</button>, с каменными завитками наверху. Их сравнивали с девушками.</p>
+<p>Треугольник между крышей и карнизом — <button class="term" data-t="fronton">фронтон</button> — украшали рельефами и статуями. А ряды колонн под крышей — <button class="term" data-t="portik">портики</button> — давали тень и спасали от жары.</p>
+</div>
+<div class="book" hidden>
+<p>Культура Древней Греции V (5) — IV (4) веков до н. э. стала эталоном и образцом для подражания на многие тысячелетия. Время расцвета древнегреческой культуры называют эпохой классики.</p>
+<p>Строительство новых городов производилось по единому плану: кварталам города придавали прямоугольную форму, их возводили одинаковыми по размеру, с прямыми улицами.</p>
+<p>В городах Греции строили храмы и общественные здания. Храмы возводили на ступенчатом каменном возвышении прямоугольной формы. Крыша была двускатная. Храмы сначала украшали высокие дорические колонны (дорический ордер), позднее — более стройные ионические колонны (ионический ордер) с изящными каменными завитками вверху. Строгие дорические колонны, выполненные без всяких украшений, сравнивали с мужественными, суровыми воинами, а нарядные ионические — с девушками. Треугольное пространство между двускатной крышей и карнизом здания — фронтон — украшали рельефами и скульптурами. Многочисленные портики с колоннами служили защитой от зноя.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 256" role="img" aria-label="Схема греческого храма спереди: ступенчатое возвышение, на нём ряд колонн, над ними карниз и треугольный фронтон под двускатной крышей. Ряд колонн под крышей — портик, в его тени прятались от зноя."><use href="#l-hram"/></svg><figcaption><b>Храм по частям.</b> Запомни три слова: колонны, фронтон, портик.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 262" role="img" aria-label="Две колонны рядом. Дорическая: мощная, без украшений, вверху простая «подушка» и плита, стоит прямо на ступени — как суровый воин. Ионическая: стройная, тоньше, вверху каменные завитки, внизу подножие — как девушка."><use href="#l-ordera"/></svg><figcaption><b>Как отличить.</b> Завитки наверху — ионическая. Простая «подушка» — дорическая.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Найди колонны в Москве.</b> Ты видела Большой театр — посмотри на его колонны ещё раз, хотя бы на фото. Есть наверху завитки? А теперь вспомни станции метро «Таганская» и «Новокузнецкая». Похожи там колонны и столбы на греческие? Какие — строгие или нарядные?</div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Как ты думаешь, какую роль в восприятии архитектуры храмов и зданий играли колонны?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Вход на Акрополь — Пропилеи — сделали с дорическими колоннами, а храм Ники рядом — с ионическими (раздел 3). Зачем такая пара? Свяжи с тем, с кем сравнивали колонны.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Здесь — абзац о колоннах; раздел 3 — абзац о Пропилеях.</div>
+<div class="rev ans" id="a1" hidden>Строгие дорические колонны сравнивали с суровыми воинами — Пропилеи построили в память о грозных сражениях. Лёгкие ионические сравнивали с девушками — изящный храм Ники оттенял суровую простоту ворот.</div>
+</div>
+<div class="think">
+<p class="qt">2. Зачем грекам столько портиков? Вспомни природу Греции из §20.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>§20 — какое в Греции лето; здесь — последнее предложение раздела.</div>
+<div class="rev ans" id="a2" hidden>Лето в Греции долгое, жаркое и сухое. Портики с колоннами давали тень и защищали от зноя.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-fidiy" src="img/988553b2eb65.jpg" alt="Мраморная голова пожилого бородатого мужчины" style="max-width:260px"><figcaption><span class="src">из учебника</span><b>Древнегреческий скульптор Фидий.</b></figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Скульптура и живопись</h2></div>
+<div class="easy">
+<p>Во времена Перикла говорили: «статуй в Афинах больше, чем жителей». Статуи стояли везде — и в домах, и на улицах.</p>
+<p>Их делали из дерева, мрамора или металла и раскрашивали под цвет кожи. Иногда статуи одевали в дорогие одежды, а в глаза вставляли драгоценные камни. Белыми мы видим их сейчас потому, что краска за тысячи лет сошла.</p>
+<p>Лучшие скульпторы — Поликлет (его статуя «Копьеносец»), Пракситель («Афродита Книдская») и <button class="term" data-t="fidiy">Фидий</button>. Фидий сделал двенадцатиметрового Зевса для Олимпии — одно из чудес света.</p>
+<p>Живопись греков мы знаем по росписям на вазах. В VI веке до н. э. фон оставляли цвета глины, а фигуры покрывали чёрным лаком. Получались <button class="term" data-t="chernofig">чёрнофигурные</button> вазы.</p>
+<p>В конце VI века сделали наоборот: фон чёрный, а фигуры цвета глины. Это <button class="term" data-t="krasnofig">краснофигурные</button> вазы.</p>
+<p>Ты делала граттаж и расписывала керамику — значит, знаешь, как это: царапаешь по чёрному, и проступает светлая линия.</p>
+<p>А вот спор двух художников, Зевксиса и Паррасия. Каждый принёс картину под покрывалом. Зевксис открыл свою — там виноград, такой настоящий, что слетелись птицы клевать. «Теперь ты открой покрывало!» — сказал он Паррасию. «Не могу, — ответил тот. — Оно у меня и нарисовано». Зевксис признал: «Ты победил! Я обманул птиц, а ты — художника».</p>
+</div>
+<div class="book" hidden>
+<p>Во времена Перикла говорили, что «статуй в Афинах больше, чем жителей». Скульптурные изображения встречались повсеместно: и в помещениях, и на улицах. Обычно скульптуру, выполненную из дерева, мрамора или металла, раскрашивали, придавая ей оттенок человеческой кожи. Иногда статуи облачали в дорогие одежды, а в глаза вставляли драгоценные камни. Среди лучших образцов древнегреческой скульптуры — «Копьеносец» Поликлета, «Афродита Книдская» Праксителя и многие другие.</p>
+<p>Образцами древнегреческой живописи являются росписи на вазах. В VI (6) веке до н. э. художники оставляли фон вазы цвета глины, а контуры фигур сначала процарапывали, а потом покрывали чёрным лаком. Его наносили на естественный красноватый цвет глиняных сосудов и получали чёрнофигурные вазы.</p>
+<p><b>Любопытные детали.</b> В V (5) веке до н. э. в живописи соперничали художники Зевксис и Паррасий. Как-то они поспорили, кто лучше напишет картину. Собрался народ, вышли двое соперников, у каждого в руках была картина под покрывалом. Зевксис отдёрнул покрывало — картина изображала виноградную гроздь, столь похожую на настоящую, что птицы слетелись её клевать. Народ рукоплескал. «Теперь ты отдёрни покрывало!» — сказал Зевксис Паррасию. «Не могу, — ответил тот, — оно-то у меня и нарисовано». Зевксис признал победу своего соперника: «Ты победил! Я обманул глаз птиц, а ты обманул глаз живописца».</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-vaza" src="img/c3b4baa16199.jpg" alt="Чёрная ваза с двумя ручками, на ней фигуры цвета глины: сидящий человек и двое стоящих" style="max-width:339px"><figcaption><span class="src">из учебника</span><b>Краснофигурная ваза.</b> В конце VI (6) века до н. э. фигуры на вазе оставляли цвета глины, а фон рисунка раскрашивали чёрным лаком. Такие вазы назвали краснофигурными.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 268" role="img" aria-label="Две вазы рядом. Чёрнофигурная, VI век: ваза цвета глины, узор на ней чёрный, а светлые линии на узоре процарапаны. Краснофигурная, конец VI века: ваза чёрная, узор цвета глины, тонкие линии на нём нарисованы чёрным. Процарапать светлую линию по чёрному — это граттаж."><use href="#l-vazy"/></svg><figcaption><b>Две росписи — наоборот друг другу.</b> Где фон чёрный, там ваза краснофигурная.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Два описания в одном параграфе.</b> В тексте учебника сказано: контуры фигур сначала процарапывали, а потом покрывали чёрным лаком. А в «Работаем с источником» (в итогах) — наоборот: фигуры покрывали чёрным, а по чёрному процарапывали светлые линии. Второе точнее: только так и получается светлая линия на чёрной фигуре, как в граттаже. На уроке можно рассказать оба.</div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие новые приёмы применяли греческие мастера?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Статуи раскрашивали под цвет кожи, а Зевксис нарисовал виноград, который клевали птицы. Чего добивались греческие мастера — и в скульптуре, и в живописи?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Первый абзац раздела и «Любопытные детали».</div>
+<div class="rev ans" id="a3" hidden>Чтобы было как настоящее, как в жизни. Статуи раскрашивали и вставляли в глаза камни, а лучшей картиной считали ту, которая обманет глаз — птицы или даже художника.</div>
+</div>
+<div class="think">
+<p class="qt">4. Вспомни §10: по каким правилам лепили статуи в Египте? Чем греческие статуи на них не похожи?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>§10 — схема «По каким правилам лепили и рисовали»; здесь — первый абзац раздела.</div>
+<div class="rev ans" id="a4" hidden>В Египте лепили по строгим правилам: у сидящего руки на коленях, фараон крупнее всех, статую «читали, как надпись». А греки делали статуи похожими на живых людей: раскрашивали под цвет кожи, одевали, вставляли в глаза камни.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-akropol" src="img/374d93d09d54.jpg" alt="Фотография: скалистый холм, поросший деревьями, наверху за стеной — храмы с колоннами" style="max-width:449px"><figcaption><span class="src">из учебника</span><b>Афинский Акрополь. Современный вид.</b> Общим ходом постройки ансамбля афинского Акрополя руководил скульптор Фидий. Ему помогали лучшие архитекторы, скульпторы и художники. Все работы на Акрополе выполняли сами афинские граждане.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Афинский Акрополь</h2></div>
+<div class="easy">
+<p>В V веке до н. э. главным городом Эллады стали Афины. Перикл пригласил туда лучших архитекторов, художников и скульпторов.</p>
+<p>Акрополь разрушили персы в 480 году до н. э. (§28). В 449 году — в тот же год, когда заключили мир с персами, — Народное собрание решило его перестроить. Значит, больше 30 лет Акрополь стоял в руинах.</p>
+<p>Новый Акрополь задумали как памятник победе над персами — такой красивый, чтобы Афины затмили все другие города.</p>
+<p>Входили на Акрополь через ворота — <button class="term" data-t="propilei">Пропилеи</button>. Это строгий мраморный портик с дорическими колоннами, в память о грозных боях. Рядом — лёгкий храм с ионическими колоннами, храм богини победы <button class="term" data-t="nika">Ники</button>. Её статую сделали без крыльев — чтобы победа больше никогда не улетала из Афин.</p>
+<p>Дальше на главной улице стояла бронзовая Афина Воительница работы Фидия — 9 метров, со щитом и копьём. Её видели издалека все, кто подплывал к Афинам и заходил в порт Пирей. Лицом богиня смотрела на север — откуда пришли персы.</p>
+<p>Слева от Афины — храм <button class="term" data-t="erehteyon">Эрехтейон</button>. По легенде, здесь Афина и Посейдон спорили, кто будет покровителем города. Посейдон ударил трезубцем — и появился колодец с солёной водой. Афина подарила людям оливу. Победила Афина, и город назвали её именем. Оливки ты видела в греческом салате — это подарок Афины.</p>
+<p>Крышу одного из портиков Эрехтейона держат не колонны, а <button class="term" data-t="kariatidy">кариатиды</button> — каменные девушки.</p>
+<p>Главный храм — <button class="term" data-t="parfenon">Парфенон</button>, в честь Афины. Строил его архитектор <button class="term" data-t="kallikrat">Калликрат</button>. Со всех сторон храм окружают дорические колонны. Внутри стояла Афина Парфенос, то есть Дева, работы Фидия — больше 10 метров, из золота и слоновой кости. Под эту статую рассчитали размеры всего храма.</p>
+<p>Официально храм назывался храмом Афины Полиады — Афины-защитницы города. За свою долгую жизнь Парфенон побывал греческим храмом, православной церковью, католическим собором и мечетью.</p>
+</div>
+<div class="book" hidden>
+<p>Центром духовной и творческой жизни Эллады в V (5) веке до н. э. стали Афины. Здесь по приглашению Перикла работали известные архитекторы, художники и скульпторы. Афинский Акрополь задумывался как величественный памятник, символизировавший вклад, который внесли Афины в победу Греции над Персидской державой. Великолепие Акрополя должно было помочь Афинам затмить все прочие города Эллады.</p>
+<p>На Акрополь входили через ворота — Пропилеи. В память о грозных сражениях они были созданы в виде мраморного портика в дорическом стиле. Суровую простоту Пропилей оттенял лёгкий и изящный храм Бескрылой Ники с ионическими колоннами. Афиняне специально создали скульптуру богини победы Ники без крыльев, чтобы она после победы над персами никогда уже не покидала их город.</p>
+<p>Далее на главной улице Акрополя возвышалась бронзовая скульптура Афины Воительницы работы Фидия. Девятиметровая фигура богини со щитом и копьём была видна издали каждому, кто прибывал в Афины с моря, заходя в порт Пирей. Она символизировала защиту полиса олимпийскими богами и служила грозным предупреждением любому, кто вынашивал планы нападения. Лицо богини было повёрнуто в сторону севера, откуда пришли персы.</p>
+<p>Храм Эрехтейон располагался слева от Афины. Его построили на месте, где, по легенде, Афина и Посейдон спорили о том, кому из них быть покровителем города. В храме находился колодец с солёной водой, согласно мифу, пробитый трезубцем Посейдона. У стены храма росла олива, которую, по преданию, подарила Афина жителям города. Богиня выиграла спор и стала покровительницей города, который назвали её именем.</p>
+<p>Храм Парфенон воздвигли в честь богини Афины. Руководил строительством храма архитектор Калликрат. Это самое величественное сооружение на Акрополе со всех сторон окружали дорические колонны. Внутри храма находилась скульптура Афины Парфенос (Девы) работы Фидия.</p>
+<p>Обычно этот храм называют Парфеноном, производя его название от эпитета богини Афины — Дева (по-древнегречески Парфенос). Это не совсем верно, так как данный эпитет характерен для более позднего времени. Официально храм назывался храмом Афины Полиады, то есть Афины — защитницы города, «Градской». За время своего существования Парфенон был и древнегреческим храмом богини Афины-Девы, и православной церковью, и католическим собором, и мусульманской мечетью.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 292" role="img" aria-label="План Акрополя сверху, север вверху. Вход с запада, слева: Пропилеи, рядом внизу маленький храм Ники без крыльев. Дальше по главной улице — статуя Афины Воительницы. Выше улицы, на севере, — Эрехтейон с оливой Афины и колодцем Посейдона. Ниже улицы, на юге, — большой Парфенон, внутри Афина Парфенос."><use href="#l-akropol"/></svg><figcaption><b>Прогулка по Акрополю.</b> Прошёл Пропилеи и статую Афины — Эрехтейон по левую руку, Парфенон по правую.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-erehteyon" src="img/0b0c49334563.jpg" alt="Фотография: светлый храм с колоннами, сбоку портик, крышу которого держат каменные девушки; на переднем плане камни" style="max-width:449px"><figcaption><span class="src">из учебника</span><b>Эрехтейон. Современный вид.</b> Внешний вид храма украшали кариатиды — скульптурные изображения стоящих женских фигур, которые служили опорой крыши.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-parfenon" src="img/caf2d56d25a2.jpg" alt="Фотография: длинный храм из светлого камня, со всех сторон окружённый колоннами, крыши нет" style="max-width:442px"><figcaption><span class="src">из учебника</span><b>Парфенон (современный вид).</b> В 449 году до н. э. Народное собрание Афин приняло решение о перестройке важнейшего общественного центра города — Акрополя, который со времени персидского нашествия лежал в руинах. Важнейшую часть программы перестройки Акрополя составляло возведение главного храма города, храма его богини-покровительницы — Афины.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-afina" src="img/fdb255c6adc4.jpg" alt="Рисунок: внутри храма между рядами колонн стоит огромная золотая статуя Афины со щитом, у её ног маленькие люди" style="max-width:439px"><figcaption><span class="src">из учебника</span><b>Реконструкция статуи Афины.</b> Храм предназначался для хрисоэлефантинной (то есть сделанной из золота и слоновой кости) статуи Афины (не сохранилась до наших дней). Все размеры здания были согласованы с величиной статуи, высота которой, по подсчётам современных исследователей, составляла больше 10 метров.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 270" role="img" aria-label="Столбики в одном масштабе: дом в четыре этажа — около 12 метров; Зевс в Олимпии — 12 метров; Афина Парфенос — больше 10 метров; Афина Воительница — 9 метров; дверь — 2 метра. Все три статуи — работы Фидия."><use href="#l-vysota"/></svg><figcaption><b>Насколько велики статуи Фидия.</b> Зевс — высотой с четырёхэтажный дом.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Посмотри вживую.</b> В Москве, в Пушкинском музее на Волхонке, есть залы слепков — точных гипсовых копий греческих статуй и частей храмов в натуральную величину. Греческий дворик там нарочно устроен ступенями, чтобы напоминать подъём на Акрополь. Сходите вместе и найдите колонну с завитками и колонну без них, статуи богов и рельефы с храмов. Перед походом проверьте на сайте музея, какие залы открыты.</div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какой был главный храм, находившийся на Акрополе?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Нику сделали без крыльев, а Афину Воительницу повернули лицом на север. Что общего у этих двух решений?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Абзацы о Пропилеях и об Афине Воительнице.</div>
+<div class="rev ans" id="a5" hidden>Оба связаны с победой над персами. Бескрылая Ника — чтобы победа больше не покидала город. Афина смотрит туда, откуда пришли персы, — это защита полиса и грозное предупреждение врагам.</div>
+</div>
+<div class="think">
+<p class="qt">6. Почему в споре победила Афина? Подумай, что полезнее жителям: солёный колодец или олива. Вспомни §20.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Абзац об Эрехтейоне; §20 — что растёт на склонах гор Греции.</div>
+<div class="rev ans" id="a6" hidden>Солёную воду пить нельзя, а олива даёт плоды и масло. В §20 мы видели, что оливы хорошо растут на склонах гор Греции, — это одно из главных богатств страны.</div>
+</div>
+<div class="think">
+<p class="qt">7. Кто строил Акрополь? Найди ответ в подписи к фотографии и свяжи с §29.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Подпись к фото «Афинский Акрополь»; §29 — что Перикл дал беднякам.</div>
+<div class="rev ans" id="a7" hidden>Все работы выполняли сами афинские граждане под руководством Фидия. При Перикле бедняки получали за работу на стройке плату (§29).</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">Культура Афин достигла высокого уровня развития, став эталоном на многие века и тысячелетия для многих народов. Время расцвета афинской культуры называют эпохой классики.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Какие архитектурные приёмы использовали афинские мастера?</li><li>Чем был Акрополь для афинян?</li><li>Какие храмы находились на афинском Акрополе?</li><li>Сравни скульптуры греческих мастеров со скульптурами Древнего Востока. В чём их различия?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к четвёртому вопросу</button></div>
+<div class="rev hint" id="r1" hidden>Вспомни §10: в Египте лепили по строгим правилам, фараона делали крупнее всех, позы повторялись. Греки старались, чтобы статуя была как живой человек: раскрашивали под цвет кожи, одевали, вставляли в глаза камни (раздел 2, второй вопрос «Подумай и ответь»).</div></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Прочитай современный текст о работе древнегреческих мастеров и ответь на вопросы.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">В мастерской художника все сосуды расписывались чёрным лаком по краснорыжей обожжённой глине. Более старая манера росписи была чёрнофигурная, более новая — краснофигурная.</p><p style="margin:0 0 10px">При чёрнофигурной росписи фон оставался красным, фигуры покрывались чёрным, а по чёрному фону процарапывались светлые линии складок одежды и черт лица. При краснофигурной росписи, наоборот, фон заливался чёрным, а фигуры оставлялись красными, и на них наносились чёрные линии складок и прочие подробности. У амфор, кратеров расписывались бока, у чаш-киликов — круглые донца. Вписать живое изображение в круг так, чтобы оно его заполняло равномерно и симметрично, очень нелегко. Греки умели это делать замечательно. Темой росписей были главным образом мифологические сюжеты.</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq2" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq2" hidden>1. Как ты думаешь, почему у греков изменилась манера росписи гончарных изделий? 2. Чем это могло быть вызвано?</div>
+<div class="rev ans" id="sa3" hidden>На краснофигурной вазе фигуры остаются светлыми, и на них можно кистью нарисовать тонкие чёрные линии — складки одежды, черты лица. Рисунок получается подробнее и живее, чем процарапанные линии. Мастера хотели, чтобы люди на вазах были как настоящие, — так же, как скульпторы раскрашивали статуи под цвет кожи.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — что говорило о расцвете культуры в Афинах? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам. Осторожно: последнее событие — уже нашей эры.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="4"><span class="ord"></span>Решение перестроить Акрополь · 449 год до н. э.</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Чёрнофигурные вазы · VI век до н. э.</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Пожар уничтожил статую Зевса · V век н. э.</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Краснофигурные вазы · конец VI века до н. э.</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Персы разрушили Акрополь · 480 год до н. э.</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Эпоха классики</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="akropol" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Время расцвета греческой культуры, V—IV века до н. э.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Дорическая колонна</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 262" aria-hidden="true"><use href="#l-ordera"/></svg><span class="ftext">Мощная, строгая, без украшений — «воин».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ионическая колонна</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 262" aria-hidden="true"><use href="#l-ordera"/></svg><span class="ftext">Стройная, с завитками наверху — «девушка».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фронтон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 256" aria-hidden="true"><use href="#l-hram"/></svg><span class="ftext">Треугольник под двускатной крышей, украшенный рельефами и статуями.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Краснофигурная ваза</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="vaza" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Фон чёрный, фигуры цвета глины.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пропилеи</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 292" aria-hidden="true"><use href="#l-akropol"/></svg><span class="ftext">Ворота Акрополя с дорическими колоннами.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Эрехтейон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="erehteyon" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Храм на месте спора Афины и Посейдона; крышу держат кариатиды.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Парфенон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="parfenon" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Главный храм Афины; архитектор Калликрат, статуя Фидия внутри.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фидий</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="fidiy" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Скульптор: Зевс в Олимпии, Афина Парфенос, Афина Воительница.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Как называют время расцвета древнегреческой культуры?</h3><div class="opts">
+<button class="opt">«тёмные века»</button>
+<button class="opt" data-ok="1">эпоха классики</button>
+<button class="opt">век железа</button></div>
+<div class="fb">«Тёмные века» были раньше (§23). Классика — V—IV века до н. э.</div></div>
+<div class="q"><h3>2. Какие колонны сравнивали с девушками?</h3><div class="opts">
+<button class="opt" data-ok="1">ионические</button>
+<button class="opt">дорические</button>
+<button class="opt">любые колонны Пропилей</button></div>
+<div class="fb">У ионических — изящные завитки наверху. Дорические — суровые воины.</div></div>
+<div class="q"><h3>3. Что такое фронтон?</h3><div class="opts">
+<button class="opt">ворота Акрополя</button>
+<button class="opt">ряд колонн под крышей</button>
+<button class="opt" data-ok="1">треугольник между крышей и карнизом</button></div>
+<div class="fb">Ворота — Пропилеи, ряд колонн — портик.</div></div>
+<div class="q"><h3>4. Какая ваза краснофигурная?</h3><div class="opts">
+<button class="opt">фон цвета глины, фигуры чёрные</button>
+<button class="opt" data-ok="1">фон чёрный, фигуры цвета глины</button>
+<button class="opt">ваза, раскрашенная красной краской</button></div>
+<div class="fb">Первая — чёрнофигурная, она старше.</div></div>
+<div class="q"><h3>5. Почему статую Ники сделали без крыльев?</h3><div class="opts">
+<button class="opt" data-ok="1">чтобы победа никогда не покидала Афины</button>
+<button class="opt">крылья отломали персы</button>
+<button class="opt">не хватило мрамора</button></div>
+<div class="fb">Ника — богиня победы. Без крыльев она не улетит.</div></div>
+<div class="q"><h3>6. Кто создал статуи Зевса в Олимпии и Афины Парфенос?</h3><div class="opts">
+<button class="opt">Калликрат</button>
+<button class="opt">Перикл</button>
+<button class="opt" data-ok="1">Фидий</button></div>
+<div class="fb">Калликрат — архитектор Парфенона, Перикл пригласил мастеров в Афины.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Греческий храм</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Каменное ступенчатое возвышение, двускатная крыша, фронтон с рельефами и статуями.</li><li>Колонны: дорические — строгие «воины», ионические — стройные «девушки» с завитками.</li><li>Портики защищали от зноя; новые города строили по плану, с прямыми улицами.</li></ol></div>
+</div>
+<div class="think">
+<h3>Скульптура и живопись</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>«Статуй больше, чем жителей»; статуи раскрашивали под цвет кожи, вставляли в глаза камни.</li><li>Мастера: Поликлет, Пракситель, Фидий — его Зевс в Олимпии стал чудом света.</li><li>Вазы: сначала чёрнофигурные, потом краснофигурные; спор Зевксиса и Паррасия.</li></ol></div>
+</div>
+<div class="think">
+<h3>Прогулка по Акрополю</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Пропилеи и храм Бескрылой Ники — память о победе над персами.</li><li>Афина Воительница лицом на север; Эрехтейон — спор Афины и Посейдона, кариатиды.</li><li>Парфенон: архитектор Калликрат, Афина Парфенос из золота и слоновой кости, больше 10 метров.</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: что говорит о расцвете культуры Афин</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>При Перикле в Афины съехались лучшие мастера.</li><li>Акрополь — памятник победе, который затмил все города Эллады.</li><li>Греческим храмам и статуям потом подражали тысячи лет — это эпоха классики.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p29.html">‹ §29 Афинская демократия</a>
+  <span class="pn cur">§30 Культура Греции</span>
+  <a class="pn" href="p31.html">§31 Повседневная жизнь ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 30 · История, 5 класс · страницы 176—180 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'l-hram':'0 0 540 256','l-ordera':'0 0 540 262','l-vazy':'0 0 540 268','l-akropol':'0 0 540 292','l-vysota':'0 0 540 270'};
+
+var T={
+klassika:{w:"эпохой классики",k:"время расцвета",p:"akropol",t:"Время расцвета культуры Древней Греции, V—IV века до н. э. Ей потом подражали тысячи лет."},
+order:{w:"ордер",k:"вид колонн",s:"l-ordera",t:"Вид колонн и того, что они держат. Главные у греков — дорический и ионический."},
+dorich:{w:"дорические",k:"колонны",s:"l-ordera",t:"Мощные строгие колонны без украшений. Их сравнивали с суровыми воинами."},
+ionich:{w:"ионические",k:"колонны",s:"l-ordera",t:"Стройные колонны с каменными завитками наверху. Их сравнивали с девушками."},
+fronton:{w:"фронтон",k:"часть храма",s:"l-hram",t:"Треугольник между двускатной крышей и карнизом. Его украшали рельефами и статуями."},
+portik:{w:"портики",k:"ряды колонн",s:"l-hram",t:"Ряды колонн под крышей. В их тени прятались от зноя."},
+fidiy:{w:"Фидий",k:"скульптор",p:"fidiy",t:"Величайший скульптор Афин. Сделал Зевса в Олимпии и обе Афины на Акрополе, руководил всей стройкой Акрополя."},
+chernofig:{w:"чёрнофигурные",k:"вазы",s:"l-vazy",t:"Вазы VI века до н. э.: фон цвета глины, фигуры чёрные, светлые линии на них процарапаны."},
+krasnofig:{w:"краснофигурные",k:"вазы",p:"vaza",t:"Вазы конца VI века до н. э.: фон чёрный, фигуры цвета глины."},
+propilei:{w:"Пропилеи",k:"ворота Акрополя",s:"l-akropol",t:"Вход на Акрополь — мраморный портик со строгими дорическими колоннами, в память о грозных сражениях."},
+nika:{w:"Ники",k:"богиня победы",s:"l-akropol",t:"Богиня победы. Афиняне сделали её статую без крыльев, чтобы победа никогда не покидала их город."},
+erehteyon:{w:"Эрехтейон",k:"храм",p:"erehteyon",t:"Храм на месте спора Афины с Посейдоном: внутри солёный колодец, у стены — олива Афины."},
+kariatidy:{w:"кариатиды",k:"статуи-опоры",p:"erehteyon",t:"Каменные девушки, которые держат крышу вместо колонн."},
+parfenon:{w:"Парфенон",k:"главный храм",p:"parfenon",t:"Главный храм Акрополя, в честь Афины. Внутри стояла Афина Парфенос (Дева) из золота и слоновой кости."},
+kallikrat:{w:"Калликрат",k:"архитектор",p:"parfenon",t:"Архитектор, который руководил строительством Парфенона."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p30:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p30:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>5){fb.textContent="Верно! VI век → конец VI века → 480 → 449 до н. э. → V век уже нашей эры.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. До н. э.: чем больше число, тем раньше; а нашей эры — всегда позже.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p30:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p30:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

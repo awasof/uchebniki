@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Флот и общая казна союза, Народное собрание три-четыре раза в месяц, судьи числом шесть тысяч и Перикл по прозвищу Олимпиец. Трудные слова можно нажимать.">
+<title>Афинская демократия</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="k-soyuz" viewBox="0 0 540 226">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">АФИНСКИЙ МОРСКОЙ СОЮЗ: ОБЩАЯ КАЗНА</text>
+  <rect x="8" y="34" width="120" height="30" rx="7" fill="var(--paper2)"/>
+  <text x="68" y="53" text-anchor="middle" font-size="10.5" fill="var(--illink)">полис-союзник</text>
+  <rect x="8" y="76" width="120" height="30" rx="7" fill="var(--paper2)"/>
+  <text x="68" y="95" text-anchor="middle" font-size="10.5" fill="var(--illink)">полис-союзник</text>
+  <rect x="8" y="118" width="120" height="30" rx="7" fill="var(--paper2)"/>
+  <text x="68" y="137" text-anchor="middle" font-size="10.5" fill="var(--illink)">полис-союзник</text>
+  <g stroke="var(--illink)" stroke-width="2" fill="none">
+  <path d="M130 49 L176 80" marker-end="url(#ar)"/>
+  <path d="M130 91 L176 91" marker-end="url(#ar)"/>
+  <path d="M130 133 L176 102" marker-end="url(#ar)"/>
+  <path d="M350 91 L384 91" marker-end="url(#ar)"/>
+  </g>
+  <rect x="180" y="50" width="168" height="82" rx="10" fill="var(--ochre)"/>
+  <text x="264" y="74" text-anchor="middle" font-size="12.5" font-weight="700" fill="#22190A">ОБЩАЯ КАЗНА</text>
+  <text x="264" y="94" text-anchor="middle" font-size="10" fill="#22190A">взносы на армию</text>
+  <text x="264" y="109" text-anchor="middle" font-size="10" fill="#22190A">+ корабли</text>
+  <text x="264" y="124" text-anchor="middle" font-size="10" fill="#22190A">в общий флот</text>
+  <rect x="388" y="34" width="144" height="114" rx="10" fill="var(--paper2)" stroke="var(--red)" stroke-width="2"/>
+  <text x="400" y="56" font-size="12" font-weight="700" fill="var(--red)">АФИНЫ ТРАТЯТ</text>
+  <text x="400" y="73" font-size="10" fill="var(--illink)">как сами решат:</text>
+  <text x="400" y="93" font-size="10.5" fill="var(--illink)">• флот</text>
+  <text x="400" y="111" font-size="10.5" fill="var(--illink)">• Акрополь</text>
+  <text x="400" y="129" font-size="10.5" fill="var(--illink)">• Длинные стены</text>
+  <text x="8" y="174" font-size="10.5" fill="var(--soft)">Родители собирают деньги на подарок учителю — и тратят их только на подарок.</text>
+  <text x="8" y="190" font-size="10.5" fill="var(--soft)">А Афины брали общие деньги союза на свои храмы и стены.</text>
+  <text x="8" y="216" font-size="12" font-weight="700" fill="var(--moss)">Платили все союзники — а решали за всех Афины.</text>
+</symbol>
+
+<symbol id="k-vlast" viewBox="0 0 540 294">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">КАК РЕШАЛИ ДЕЛА В АФИНАХ ПРИ ПЕРИКЛЕ</text>
+  <rect x="8" y="28" width="150" height="62" rx="10" fill="var(--paper2)"/>
+  <text x="83" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink)">СОВЕТ ПЯТИСОТ</text>
+  <text x="83" y="69" text-anchor="middle" font-size="10" fill="var(--illink)">готовит вопросы</text>
+  <text x="83" y="83" text-anchor="middle" font-size="10" fill="var(--illink)">для собрания</text>
+  <line x1="160" y1="59" x2="194" y2="59" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="198" y="28" width="334" height="62" rx="10" fill="var(--ochre)"/>
+  <text x="210" y="49" font-size="12" font-weight="700" fill="#22190A">НАРОДНОЕ СОБРАНИЕ · 3—4 раза в месяц</text>
+  <text x="210" y="66" font-size="10" fill="#22190A">любой гражданин может предложить закон и выступить;</text>
+  <text x="210" y="81" font-size="10" fill="#22190A">голосуют поднятием рук, когда выслушают всех</text>
+  <g stroke="var(--illink)" stroke-width="2" fill="none">
+  <path d="M250 92 L170 116" marker-end="url(#ar)"/>
+  <path d="M430 92 L430 116" marker-end="url(#ar)"/>
+  </g>
+  <text x="262" y="110" font-size="10" fill="var(--soft)">выбирает</text>
+  <text x="440" y="110" font-size="10" fill="var(--soft)">ежегодно</text>
+  <rect x="8" y="120" width="258" height="80" rx="10" fill="var(--paper2)" stroke="var(--ochre)" stroke-width="2"/>
+  <text x="20" y="141" font-size="12" font-weight="700" fill="var(--illink)">МАГИСТРАТЫ — начальники</text>
+  <text x="20" y="158" font-size="10" fill="var(--illink)">выбирают на 1 год;</text>
+  <text x="20" y="173" font-size="10" fill="var(--illink)">в конце года — отчёт о работе;</text>
+  <text x="20" y="188" font-size="10" fill="var(--illink)">второй раз на ту же должность — нельзя</text>
+  <rect x="282" y="120" width="250" height="80" rx="10" fill="var(--paper2)" stroke="var(--ochre)" stroke-width="2"/>
+  <text x="294" y="141" font-size="12" font-weight="700" fill="var(--illink)">ГЕЛИЭЯ — суд</text>
+  <text x="294" y="158" font-size="10" fill="var(--illink)">6 тысяч судей на каждый год;</text>
+  <text x="294" y="173" font-size="10" fill="var(--illink)">приговор — голосованием судей;</text>
+  <text x="294" y="188" font-size="10" fill="var(--illink)">чаще всего наказание — штраф</text>
+  <text x="8" y="224" font-size="10.5" fill="var(--soft)">Как твоё дежурство: один день в неделю твой — потом очередь другого.</text>
+  <text x="8" y="240" font-size="10.5" fill="var(--soft)">Так и магистрат: год служит полису — и уступает место, да ещё отчитывается.</text>
+  <text x="8" y="258" font-size="10.5" fill="var(--soft)">Перикл стал платить за должности — чтобы и бедняк мог служить полису.</text>
+  <text x="8" y="284" font-size="12" font-weight="700" fill="var(--moss)">Решает большинство граждан — это и есть демократия.</text>
+</symbol>
+
+<symbol id="k-lenta" viewBox="0 0 540 238">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">АФИНЫ: ОТ СОЛОНА ДО ПЕРИКЛА (ГОДЫ ДО Н. Э.)</text>
+  <g text-anchor="middle">
+  <text x="40" y="42" font-size="13" font-weight="700" fill="var(--illink)">594</text>
+  <text x="40" y="57" font-size="10" fill="var(--soft)">Солон (§26)</text>
+  <text x="344" y="42" font-size="13" font-weight="700" fill="var(--red)">480</text>
+  <text x="344" y="57" font-size="10" fill="var(--soft)">Саламин</text>
+  <text x="427" y="42" font-size="13" font-weight="700" fill="var(--moss)">449</text>
+  <text x="427" y="57" font-size="10" fill="var(--soft)">мир с персами</text>
+  <text x="300" y="84" font-size="13" font-weight="700" fill="var(--red)">490</text>
+  <text x="300" y="99" font-size="10" fill="var(--soft)">Марафон</text>
+  <text x="389" y="84" font-size="13" font-weight="700" fill="var(--ochre)">463</text>
+  <text x="389" y="99" font-size="10" fill="var(--soft)">Перикл</text>
+  <text x="482" y="84" font-size="13" font-weight="700" fill="var(--ochre)">429</text>
+  </g>
+  <g stroke="var(--illink)" stroke-width="1.5">
+  <line x1="40" y1="62" x2="40" y2="120"/><line x1="344" y1="62" x2="344" y2="120"/><line x1="427" y1="62" x2="427" y2="120"/>
+  <path d="M300 104 L317 120" fill="none"/><line x1="389" y1="104" x2="389" y2="120"/><line x1="480" y1="90" x2="480" y2="120"/>
+  </g>
+  <rect x="291" y="126" width="136" height="10" rx="3" fill="var(--red)" opacity="0.35"/>
+  <text x="359" y="152" text-anchor="middle" font-size="10" fill="var(--soft)">войны с персами, 500—449 (§28)</text>
+  <line x1="22" y1="120" x2="520" y2="120" stroke="var(--illink)" stroke-width="2"/>
+  <circle cx="40" cy="120" r="5" fill="var(--illink)"/><circle cx="317" cy="120" r="5" fill="var(--red)"/>
+  <circle cx="344" cy="120" r="5" fill="var(--red)"/><circle cx="389" cy="120" r="5" fill="var(--ochre)"/>
+  <circle cx="427" cy="120" r="5" fill="var(--moss)"/><circle cx="480" cy="120" r="5" fill="var(--ochre)"/>
+  <path d="M389 166 V174 H480 V166" fill="none" stroke="var(--ochre)" stroke-width="2"/>
+  <text x="530" y="192" text-anchor="end" font-size="11" font-weight="700" fill="var(--illink)">«век Перикла»: 463—429, это 34 года</text>
+  <text x="8" y="210" font-size="10.5" fill="var(--soft)">«Век» здесь — не сто лет, а время, когда Перикл вёл Афины.</text>
+  <text x="8" y="230" font-size="12" font-weight="700" fill="var(--moss)">От Солона до Перикла — около 165 лет: демократия росла шаг за шагом.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 29</span>
+    <h1>Афинская демократия</h1>
+    <p class="lede">Флот и общая казна союза, Народное собрание три-четыре раза в месяц, судьи числом шесть тысяч и Перикл по прозвищу Олимпиец. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Почему Перикл считал, что Афины — это школа всей Эллады?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p28.html">‹ §28 Греко-персидские войны</a>
+  <span class="pn cur">§29 Афинская демократия</span>
+  <a class="pn" href="p30.html">§30 Культура Греции ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Возвышение Афин">1</a><a href="#s2" data-j="s2" title="Развитие афинской демократии">2</a><a href="#s3" data-j="s3" title="Перикл — человек и политик">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-perikl-rech" src="img/30e0bba18274.jpg" alt="Картина: на ступенях стоит оратор в шлеме и красном плаще с поднятой рукой, вокруг толпа слушателей, вдали на холме белые храмы"><figcaption><span class="src">из учебника</span><b>Выступление Перикла.</b> С именем Перикла связан расцвет афинской демократии. Он обладал прекрасными ораторскими способностями, умел убеждать, обладал высоким авторитетом. За свою невозмутимость и спокойствие в любых, даже самых сложных ситуациях Перикл получил прозвище Олимпиец.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Возвышение Афин</h2></div>
+<div class="easy">
+<p>Время, о котором этот параграф, связывают с именем <button class="term" data-t="perikl">Перикла</button>. Его даже называют «веком Перикла».</p>
+<p>Войны с персами (§28) принесли грекам не только горе и разрушения, но и богатство. Им досталась большая добыча и много пленных. Пленных делали рабами или отпускали за выкуп. Страна разбогатела и быстро восстановила хозяйство.</p>
+<p>Афины стали сильной морской державой. Спартанцев от командования на море отстранили — во главе общего флота встали афинские <button class="term" data-t="strateg">стратеги</button>.</p>
+<p>Под их началом создали <button class="term" data-t="soyuz">Афинский морской союз</button>. В него вошли все полисы, которые воевали с персами на море.</p>
+<p>Каждый полис союза давал корабли в общий флот и платил взносы в общую казну — на содержание армии. Но со временем Афины стали тратить эту казну так, как решат сами.</p>
+<p>Родители в классе собирают деньги под одну задачу — на подарок учителю — и тратят их только на подарок. А тут общие деньги союза стали тратить на дела одного полиса.</p>
+</div>
+<div class="book" hidden>
+<p>Войны с Персией принесли Элладе не только жертвы и разрушения, но и значительные доходы. В руки греков попала богатая добыча и масса военнопленных, которых обращали в рабов или обменивали на выкуп. Это способствовало обогащению страны, быстрому восстановлению хозяйства.</p>
+<p>Афины превратились в сильную морскую державу. Спартанцы были отстранены от командования на море, и во главе объединённого флота встали афинские стратеги. Под их руководством был создан Афинский морской союз, который объединил все полисы, боровшиеся с персами на море.</p>
+<p>Полисы — члены союза должны были поставлять в союзный флот корабли и платить в общую казну взносы на содержание армии. Со временем правители Афин стали распоряжаться ей по своему усмотрению.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 226" role="img" aria-label="Схема: три полиса-союзника дают взносы и корабли в общую казну; из казны стрелка к Афинам, которые тратят её как сами решат: на флот, Акрополь и Длинные стены. Ниже: родители собирают деньги на подарок учителю и тратят только на подарок, а Афины брали общие деньги союза на свои храмы и стены."><use href="#k-soyuz"/></svg><figcaption><b>Чьи это деньги?</b> Платили все союзники — а решали за всех Афины.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>С какими причинами было связано возвышение Афин после победы над Персией?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Откуда у Афин после войн взялись деньги? Найди два источника в разных абзацах.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Первый абзац раздела — про добычу; третий — про морской союз.</div>
+<div class="rev ans" id="a1" hidden>Первый — военная добыча и пленные: их делали рабами или отпускали за выкуп. Второй — взносы полисов-союзников в общую казну, которой Афины со временем стали распоряжаться сами.</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему союзники могли быть недовольны Афинами? Свяжи этот раздел с подписью к схеме Длинных стен в разделе 3.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Здесь — последнее предложение раздела; в разделе 3 — подпись к схеме стен.</div>
+<div class="rev ans" id="a2" hidden>Союзники платили взносы на общий флот и армию. А Перикл брал деньги из этой казны на храмы и стены самих Афин. Платили все — а пользовался один полис.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Развитие афинской демократии</h2></div>
+<div class="easy">
+<p>Основы демократии в Афинах заложил Солон (§26). А дальше её двигал флот — главная военная сила Афин.</p>
+<p>Гребцами на флоте служили в основном <button class="term" data-t="fety">феты</button> — бедняки, у которых было меньше прав, чем у других граждан (§26). После войн с персами феты получили право избираться на должности. Их голос в собрании стал много значить: ведь на них держался флот.</p>
+<p><button class="term" data-t="sobranie">Народное собрание</button> стало собираться чаще — три-четыре раза в месяц — и решало все важные дела. Вопросы для него готовил <button class="term" data-t="sovet">Совет пятисот</button>.</p>
+<p>Любой гражданин мог предложить закон, выступить и убеждать других. Голосовали, только когда выслушают всех, — поднятием рук.</p>
+<p>Главных начальников полиса — <button class="term" data-t="magistrat">магистратов</button> — выбирали на один год. В конце года они отчитывались о работе. На ту же должность второй раз не выбирали. Похоже на твоё дежурство: один день в неделю твой — потом очередь другого.</p>
+<p>В суд — <button class="term" data-t="geliea">гелиэю</button> — каждый год выбирали 6 тысяч человек. За жизнь каждый афинский гражданин много раз бывал судьёй. В суде спорили две стороны, а судьи решали голосованием. Чаще всего наказывали штрафом в пользу государства.</p>
+<p>Так в Афинах правил народ. Перикл называл это «народоправством» — по-гречески <button class="term" data-t="demokratiya">демократия</button>.</p>
+</div>
+<div class="book" hidden>
+<p>Основы демократии в Афинах заложил Солон, а её дальнейшее развитие было связано с главной военной силой — флотом. На флоте служили в основном феты, которые не имели таких же прав, как другие граждане полиса. Но после окончания Греко-персидских войн феты получили право избираться на государственные должности. Их голос в Народном собрании приобрёл большой вес.</p>
+<p>Возросла роль самого Народного собрания. Оно стало собираться чаще — три-четыре раза в месяц. Собрание обсуждало и принимало решения по всем важным вопросам. Их готовил для обсуждения Совет пятисот.</p>
+<p>Каждый гражданин мог внести проект закона, выступить, отстаивать свою точку зрения, убеждать присутствующих в своей правоте. К голосованию приступали, когда все мнения были выслушаны. Голосование по законам проходило поднятием рук.</p>
+<p>На Народном собрании выбирали высших должностных лиц — магистратов — сроком на один год. По окончании этого срока заслушивали отчёт о проделанной ими работе. Дважды на одну и ту же должность граждане не избирались.</p>
+<p>В гелиэю ежегодно избирали 6 тысяч человек. Каждый гражданин в Афинах в течение жизни многократно выполнял высшие судебные функции. Судебный процесс был построен на основе состязательного принципа: судьи выносили приговор голосованием. Обычной мерой наказания был штраф в пользу государства, размер которого часто устанавливался в суде.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 294" role="img" aria-label="Схема: Совет пятисот готовит вопросы для Народного собрания, которое собирается 3—4 раза в месяц; любой гражданин может предложить закон, голосуют поднятием рук. Собрание выбирает магистратов на год: в конце отчёт, второй раз нельзя. Гелиэя — суд из 6 тысяч судей, избираемых ежегодно. Ниже: как твоё дежурство — один день твой, потом очередь другого; Перикл платил за должности, чтобы и бедняк мог служить полису."><use href="#k-vlast"/></svg><figcaption><b>Демократия на одной картинке.</b> Решает большинство граждан, а начальники меняются каждый год.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Как участие разных групп жителей Афин в Греко-персидских войнах повлияло на развитие демократии в полисе?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Сравни Народное собрание при Солоне (§26) и при Перикле. Что изменилось?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>§26 — кто мог приходить в собрание при Солоне; здесь — второй и третий абзацы.</div>
+<div class="rev ans" id="a3" hidden>При Солоне в собрание могли приходить все граждане с 20 лет, но бедные феты не могли занимать должности. При Перикле собрание собиралось три-четыре раза в месяц, решало все важные дела, а феты получили право избираться.</div>
+</div>
+<div class="think">
+<p class="qt">4. Магистраты служили всего год и потом отчитывались. Чем такой порядок мешал им стать тиранами, как Писистрат (§26)?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Абзац о магистратах; §26 — как тиран захватил власть.</div>
+<div class="rev ans" id="a4" hidden>Тиран захватывает власть и держит её сам, сколько сможет. А магистрат через год уходил, отчитывался перед народом, и второй раз на ту же должность его не выбирали — удержать власть надолго не получалось.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-perikl" src="img/5c4d1cd1c8f7.jpg" alt="Мраморный бюст: бородатый мужчина в шлеме, сдвинутом на лоб" style="max-width:275px"><figcaption><span class="src">из учебника</span><b>Перикл. Древнегреческий бюст.</b> Перикл говорил: «Так как у нас полисом управляет не горсть людей, а большинство народа, то наш государственный строй называется народоправством. Мы развиваем нашу склонность к прекрасному без расточительности и предаёмся наукам не в ущерб силе духа. Одним словом, я утверждаю, что полис наш — школа всей Эллады».</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Перикл — человек и политик</h2></div>
+<div class="easy">
+<p>Перикл был из знатного, аристократического рода. Умный, красноречивый, хороший политик и полководец — он стал вождём афинского народа. За спокойствие в любой беде его прозвали Олимпийцем — как богов с Олимпа (§21).</p>
+<p>Стратегом его выбирали много раз, впервые — в 463 году до н. э. Первый стратег не только командовал армией и флотом, но и решал все дела полиса — и внутри, и с соседями.</p>
+<p>Перикл ввёл плату за должности. Зачем? Бедняк, который занят делами полиса, не может работать на своём участке. Теперь ему платили, и о еде можно было не думать. Немного похоже на твои карманные: полис платил гражданину за то, что он трудится для всех.</p>
+<p>При Перикле в Афинах много строили. Заново отстроили <button class="term" data-t="akropol">Акрополь</button>, который разрушили персы Ксеркса (§28). Бедняки получили работу на стройке за плату. Город украшали статуями и красивыми зданиями — об этом весь следующий параграф.</p>
+<p>От Афин до порта <button class="term" data-t="pirey">Пирей</button> построили <button class="term" data-t="steny">Длинные стены</button>. Они тянулись примерно на 6 километров — это как семь с половиной раз дойти от подъезда до метро. Деньги на храмы и стены Перикл брал из казны морского союза.</p>
+<p>Перикл всю жизнь служил народу. Он не терпел несправедливости, и подкупить его было невозможно. Зазнавшихся афинян он успокаивал, а испуганным придавал смелости.</p>
+</div>
+<div class="book" hidden>
+<p>Расцвет демократии в Афинах связан с именем Перикла. Он происходил из аристократического рода. Благодаря уму, владению ораторским искусством (красноречием), таланту политика и полководца этот человек стал лидером афинского народа.</p>
+<p>Перикл избирался стратегом много раз в течение своей жизни (впервые — в 463 году до н. э.). В обязанности первого стратега входило не только командование армией и флотом. Он решал все вопросы внешней политики и внутренней жизни полиса. Чтобы привлечь простых граждан к активной политической деятельности, Перикл ввёл плату за исполнение должностей в полисе. Теперь гражданину, занятому государственными делами, не нужно было заботиться о пропитании.</p>
+<p>При Перикле в Афинах развернулось большое строительство. В частности, заново отстроили афинский Акрополь, разрушенный во время похода Ксеркса. Бедняки получили возможность за плату трудиться на строительных работах. Кроме строительства, Перикл выделял большие средства на украшение города статуями и зданиями.</p>
+<p>Свою жизнь Перикл посвятил служению народу. Он осуждал несправедливость и прослыл среди сограждан неподкупным; замечая в афинянах заносчивость, усмирял их; когда видел необоснованный страх, внушал людям отвагу.</p>
+</div>
+<div class="blocknote"><b>Не запутайся.</b> В разделе 2 сказано: на одну и ту же должность дважды не выбирали. А Перикла выбирали стратегом много раз. Учебник этого не объясняет. Дело в том, что стратеги — военачальники — были исключением: их можно было выбирать снова и снова, ведь на войне нужен опытный командир.</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-steny" src="img/e8e0b27f8a07.jpg" alt="Схема: город Афины соединён с портом Пирей двумя стенами; рядом Фалерон, Эгейское море, оливковая роща и река Кефис" style="max-width:622px"><figcaption><span class="src">из учебника</span><b>Афинские Длинные стены.</b> От Афин до порта Пирей построили так называемые Длинные стены, которые могли защитить население от опасности. Возведение общественных зданий и красивых храмов требовало больших средств, и Перикл брал деньги из казны Афинского морского союза.<br><span style="color:var(--soft)">▲ Рассмотри схему афинских Длинных стен. Подумай, для чего их построили.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 238" role="img" aria-label="Лента: 594 — Солон, 490 — Марафон, 480 — Саламин, 463 — Перикл впервые стратег, 449 — мир с персами, 429 — Перикл всё ещё стратег. Под лентой полоса войн с персами, 500—449, и скобка «век Перикла»: 463—429, это 34 года. «Век» здесь — не сто лет, а время, когда Перикл вёл Афины. От Солона до Перикла около 165 лет."><use href="#k-lenta"/></svg><figcaption><b>«Век Перикла» на ленте.</b> Всего 34 года — но такие, что их назвали веком.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие изменения произошли в Афинах при Перикле?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Феты получили право избираться (раздел 2). Почему без платы Перикла это право мало что давало бедняку?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Раздел 2 — о фетах; здесь — абзац о плате за должности.</div>
+<div class="rev ans" id="a5" hidden>Бедняк живёт своим трудом: если он весь день занят делами полиса, ему нечего есть. Право избираться у него было, а возможности — нет. Плата за должности позволила и бедным служить полису.</div>
+</div>
+<div class="think">
+<p class="qt">6. Стройка на Акрополе помогала не только красоте города. Кому ещё и чем?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Абзац о строительстве — предложение про бедняков.</div>
+<div class="rev ans" id="a6" hidden>Беднякам: они получили работу на стройке за плату. А разрушенный персами Акрополь снова стал украшением Афин.</div>
+</div>
+<div class="think">
+<p class="qt">7. Почему Перикла прозвали Олимпийцем? Найди черты характера в подписи к картине и в последнем абзаце.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Подпись к картине «Выступление Перикла» в начале страницы; последний абзац раздела.</div>
+<div class="rev ans" id="a7" hidden>Он был невозмутим и спокоен даже в самых трудных положениях — как боги на Олимпе. Не терпел несправедливости, был неподкупен, усмирял заносчивых и ободрял испуганных.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">По итогам Греко-персидских войн могущественной морской державой стали Афины. В управлении полисом возросла роль Народного собрания. Основы афинской демократии заложил Солон, большую роль в её укреплении сыграла политика Перикла.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Какие события и как повлияли на развитие афинской демократии?</li><li>Как ты понимаешь выражение «век Перикла»?</li><li>Как создание мощного флота повлияло на возвышение Афин?</li><li>Рассмотри схему афинских Длинных стен. Подумай, для чего их построили.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказки ко второму и четвёртому вопросам</button></div>
+<div class="rev hint" id="r1" hidden><b>Второй:</b> «век» здесь — не сто лет, а время, когда Перикл стоял во главе Афин: 463—429 годы до н. э., 34 года (лента в разделе 3). В эти годы Афины расцвели. <b>Четвёртый:</b> стены соединили город с портом. Даже если враг подойдёт по суше, Афины не отрезаны от моря: по коридору между стенами из Пирея можно доставлять всё нужное, а флот у Афин — самый сильный (раздел 1).</div></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Прочитай отрывок из «Надгробной речи Перикла», которую записал древнегреческий историк Фукидид, и ответь на вопросы.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">…Для нашего государственного устройства мы не взяли за образец никаких чужеземных установлений. Напротив, мы скорее сами являем пример другим, нежели в чём-нибудь подражаем кому-либо. И так как у нас городом управляет не горстка людей, а большинство народа, то наш государственный строй называется народоправством (демократией). В частных делах все пользуются одинаковыми правами по законам. Что же до дел государственных, то на почётные государственные должности выдвигают каждого по достоинству, поскольку он чем-нибудь отличился не в силу принадлежности к определённому сословию, но из-за личной доблести. Бедность и тёмное происхождение или низкое общественное положение не мешают человеку занять почётную должность, если он способен оказать услуги государству. В нашем государстве мы живём свободно… в общественной жизни не нарушаем законов, главным образом из уважения к ним, и повинуемся властям и законам, особенно установленным в защиту обижаемых, а также законам неписаным, нарушение которых все считают постыдным.</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq2" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq2" hidden>1. Какое государственное устройство Перикл называет демократией? 2. По какому принципу выдвигали на почётные государственные должности? 3. Какова роль законов при демократии?</div>
+<div class="rev ans" id="sa3" hidden>1. Такое, при котором городом управляет не горстка людей, а большинство народа. 2. По достоинству — за личную доблесть и умение послужить государству, а не за богатство или знатный род: бедность не мешает. 3. Перед законом все равны, законы защищают обижаемых, и граждане не нарушают их из уважения, а не из страха.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — почему Перикл считал, что Афины — это школа всей Эллады? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам. Тут есть и §26, и §28.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="4"><span class="ord"></span>Перикл впервые избран стратегом · 463 год до н. э.</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Законы Солона · 594 год до н. э.</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Мир с персами · 449 год до н. э.</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Победа при Марафоне · 490 год до н. э.</button>
+<button class="chip" data-ord="6"><span class="ord"></span>Перикл ещё стратег, конец «века Перикла» · 429 год до н. э.</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Саламинское сражение · 480 год до н. э.</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Перикл</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="perikl" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Стратег и оратор, вождь афинского народа. Прозвище — Олимпиец.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Афинский морской союз</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 226" aria-hidden="true"><use href="#k-soyuz"/></svg><span class="ftext">Союз полисов против персов: корабли и взносы в общую казну.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Народное собрание</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 294" aria-hidden="true"><use href="#k-vlast"/></svg><span class="ftext">3—4 раза в месяц, любой гражданин предлагает закон, голосуют руками.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Магистрат</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 294" aria-hidden="true"><use href="#k-vlast"/></svg><span class="ftext">Должностное лицо: на один год, потом отчёт, второй раз нельзя.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Гелиэя</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 294" aria-hidden="true"><use href="#k-vlast"/></svg><span class="ftext">Суд Афин: 6 тысяч судей каждый год, приговор — голосованием.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Феты</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 294" aria-hidden="true"><use href="#k-vlast"/></svg><span class="ftext">Бедняки-гребцы. После войн с персами получили право избираться.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Длинные стены</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="steny" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Стены от Афин до порта Пирей.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Демократия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="perikl" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">«Народоправство»: управляет не горстка людей, а большинство народа.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Какой полис стал главной морской державой Греции после войн с персами?</h3><div class="opts">
+<button class="opt">Спарта</button>
+<button class="opt" data-ok="1">Афины</button>
+<button class="opt">Милет</button></div>
+<div class="fb">Спартанцев отстранили от командования на море, во главе флота встали афинские стратеги.</div></div>
+<div class="q"><h3>2. Что давали полисы — члены морского союза?</h3><div class="opts">
+<button class="opt" data-ok="1">корабли и взносы в общую казну</button>
+<button class="opt">только воинов-гоплитов</button>
+<button class="opt">хлеб и вино для Афин</button></div>
+<div class="fb">А распоряжаться казной со временем стали Афины.</div></div>
+<div class="q"><h3>3. Как голосовали по законам в Народном собрании Афин?</h3><div class="opts">
+<button class="opt">черепками</button>
+<button class="opt">криком</button>
+<button class="opt" data-ok="1">поднятием рук</button></div>
+<div class="fb">Черепками голосовали при остракизме (§26), криком — в Спарте (§27).</div></div>
+<div class="q"><h3>4. На какой срок выбирали магистратов?</h3><div class="opts">
+<button class="opt" data-ok="1">на один год</button>
+<button class="opt">на всю жизнь</button>
+<button class="opt">на десять лет</button></div>
+<div class="fb">В конце года — отчёт, а на ту же должность второй раз не выбирали.</div></div>
+<div class="q"><h3>5. Зачем Перикл ввёл плату за должности?</h3><div class="opts">
+<button class="opt">чтобы разбогатеть самому</button>
+<button class="opt" data-ok="1">чтобы и бедные граждане могли заниматься делами полиса</button>
+<button class="opt">чтобы нанимать иноземцев</button></div>
+<div class="fb">Гражданину, занятому делами полиса, больше не нужно было думать о пропитании.</div></div>
+<div class="q"><h3>6. Что соединили Длинные стены?</h3><div class="opts">
+<button class="opt">Афины и Спарту</button>
+<button class="opt">Марафон и Афины</button>
+<button class="opt" data-ok="1">Афины и порт Пирей</button></div>
+<div class="fb">Деньги на стройку Перикл брал из казны морского союза.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Как возвысились Афины</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>После войн с персами — добыча и пленные, страна разбогатела.</li><li>Афины — морская держава: спартанцев отстранили, флот возглавили афинские стратеги.</li><li>Афинский морской союз: корабли и взносы в общую казну, которой Афины стали распоряжаться сами.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как работала афинская демократия</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Феты служили на флоте и получили право избираться на должности.</li><li>Народное собрание 3—4 раза в месяц; вопросы готовит Совет пятисот; любой может предложить закон; голосуют руками.</li><li>Магистраты на один год с отчётом, второй раз нельзя; гелиэя — 6 тысяч судей.</li></ol></div>
+</div>
+<div class="think">
+<h3>Перикл</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Аристократ, оратор и полководец; прозвище Олимпиец; стратег много раз, впервые в 463 году до н. э.</li><li>Плата за должности — чтобы и бедняк мог служить полису.</li><li>Стройка: Акрополь заново, статуи, Длинные стены до Пирея — на деньги морского союза.</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: почему Афины — «школа всей Эллады»</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Управляет большинство народа, должности — по достоинству, а не по богатству (речь Перикла).</li><li>Законы защищают всех, особенно обижаемых; граждане уважают законы.</li><li>Афины — самый сильный и красивый полис: флот, Акрополь, статуи. С них берут пример.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p28.html">‹ §28 Греко-персидские войны</a>
+  <span class="pn cur">§29 Афинская демократия</span>
+  <a class="pn" href="p30.html">§30 Культура Греции ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 29 · История, 5 класс · страницы 172—175 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'k-soyuz':'0 0 540 226','k-vlast':'0 0 540 294','k-lenta':'0 0 540 238'};
+
+var T={
+perikl:{w:"Перикл",k:"вождь Афин",p:"perikl",t:"Афинский стратег и оратор из знатного рода. При нём расцвела демократия; за спокойствие его прозвали Олимпийцем."},
+strateg:{w:"стратеги",k:"военачальники",p:"perikl-rech",t:"Военачальники Афин (§26). Первый стратег командовал и армией, и флотом и решал все дела полиса."},
+soyuz:{w:"Афинский морской союз",k:"союз полисов",s:"k-soyuz",t:"Союз полисов, воевавших с персами на море. Давали корабли и платили взносы в общую казну, а распоряжались ею Афины."},
+fety:{w:"феты",k:"беднейшие граждане",s:"k-vlast",t:"Самые бедные афиняне (§26). Служили гребцами на флоте и после войн с персами получили право избираться на должности."},
+sobranie:{w:"Народное собрание",k:"собрание граждан",s:"k-vlast",t:"Собрание всех граждан Афин. При Перикле — три-четыре раза в месяц; решало все важные дела, голосовало поднятием рук."},
+sovet:{w:"Совет пятисот",k:"совет",s:"k-vlast",t:"Совет, который готовил вопросы для Народного собрания (§26)."},
+magistrat:{w:"магистратов",k:"должностные лица",s:"k-vlast",t:"Высшие должностные лица полиса. Их выбирали на один год, потом слушали отчёт; второй раз на ту же должность не выбирали."},
+geliea:{w:"гелиэю",k:"суд",s:"k-vlast",t:"Суд Афин (§26). Каждый год в него выбирали 6 тысяч граждан; приговор судьи выносили голосованием."},
+demokratiya:{w:"демократия",k:"«власть народа»",p:"perikl",t:"Строй, при котором полисом управляет не горстка людей, а большинство народа. Перикл называл его «народоправством»."},
+akropol:{w:"Акрополь",k:"«верхний город»",p:"perikl-rech",t:"Холм в Афинах с главными храмами (§23). Персы его разрушили, при Перикле отстроили заново."},
+pirey:{w:"Пирей",k:"порт Афин",p:"steny",t:"Главный порт Афин на берегу Эгейского моря."},
+steny:{w:"Длинные стены",k:"укрепление",p:"steny",t:"Две стены от Афин до порта Пирей. Защищали жителей от опасности."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p29:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p29:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>6){fb.textContent="Верно! 594 → 490 → 480 → 463 → 449 → 429. До нашей эры числа уменьшаются.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. До н. э.: чем больше число, тем раньше.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p29:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p29:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
