@@ -1,0 +1,1769 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Где Земля во Вселенной, как устроена Солнечная система — и из чего состоит наша планета: материки, части света, оболочки.">
+<title>§8 Мы во Вселенной</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term .tl{white-space:nowrap}
+.term .tl::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover .tl::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== География: морская гамма (синий вместо красного), блоки учебника «Полярная звезда» ===== */
+:root{
+  --red:#1B6A8C; --ochre:#E2A31F; --leaf:#1B6A8C; --life:#8A4CB0; --lifebg:#F2E9F8;
+  --pa:#C9672C; --pb:#1B6A8C; --pink:#C23C86; --pinkbg:#FBE4F0; --yel:#FFF3C4; --yelb:#D9A21A;
+  --grn:#E3F2E1; --grnb:#3E8E4A; --sea:#BFE0EE; --land:#F3E6C4; --landb:#B9A57A;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--pink);color:#FFF6FB;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+:root[data-theme="dark"] .rubric{color:#20101A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rubric{color:#20101A}}
+
+/* --- вывод (розовая плашка учебника) --- */
+.vyvod{margin:24px 0;background:var(--pinkbg);border-left:8px solid var(--pink);border-radius:0 16px 16px 0;
+  padding:13px 16px 14px;box-shadow:var(--sh)}
+.vyvod .vlab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:4px}
+.vyvod p{margin:0;font-size:18px;font-weight:600;line-height:1.5}
+
+/* --- заметки на полях учебника --- */
+.side{margin:22px 0;border-radius:14px;padding:12px 15px;font-size:17px;line-height:1.5;border:2.5px solid}
+.side .slab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.side.yellow{background:var(--yel);border-color:var(--yelb)} .side.yellow .slab{color:var(--yelb)}
+.side.green{background:var(--grn);border-color:var(--grnb)} .side.green .slab{color:var(--grnb)}
+.side p{margin:0}
+
+/* --- запомните --- */
+.remember{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.remember span{background:var(--card);border:2.5px solid var(--pink);border-radius:999px;padding:6px 13px;
+  font-weight:600;font-size:16px;box-shadow:var(--sh)}
+
+/* --- заставка параграфа --- */
+.banner{margin:0;background:var(--paper2);border-bottom:3px solid var(--line)}
+.banner .wrap{padding-block:14px}
+.banner img{display:block;width:100%;max-width:860px;height:auto;max-height:220px;object-fit:cover;margin:0 auto;border-radius:16px;border:3px solid var(--line)}
+.banner figcaption{text-align:center;margin-top:6px}
+
+/* --- таблица учебника для заполнения --- */
+.ttab{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:var(--card)}
+.ttab th,.ttab td{border:2px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.ttab th{background:var(--paper2);font-weight:600}
+.tscroll{overflow-x:auto}
+
+/* маленькие картинки учебника (портреты) не растягиваем на всю ширину */
+.photo img.small{max-width:320px}
+
+/* --- увеличение по нажатию --- */
+.fig{position:relative}
+.fig svg,.photo img{cursor:zoom-in}
+.fig:has(> svg)::after{content:"⤢ нажми на картинку — увеличится";display:block;margin-top:6px;text-align:right;
+  font-size:12px;font-weight:600;color:var(--soft);pointer-events:none}
+.zoom{position:fixed;inset:0;z-index:120;background:var(--paper);overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom[hidden]{display:none!important}
+.zoombar{position:sticky;top:0;left:0;z-index:2;display:flex;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--paper2);border-bottom:2px solid var(--line);font-size:14px;color:var(--soft)}
+.zoomclose{white-space:nowrap;font:inherit;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.zoomin{padding:14px}
+.zoomin svg,.zoomin img{display:block;background:var(--card);border-radius:12px}
+
+/* жирное слово внутри задания учебника — обычное, а не заголовок блока */
+.ask li b,.ask p b,.ask ol b{display:inline;font-size:inherit;letter-spacing:normal;text-transform:none;color:inherit;margin:0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2F6F8F" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">География</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<defs><marker id="ar8-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--illink,#2B2620)"/></marker><marker id="ar8-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--red,#1B6A8C)"/></marker><marker id="ar8-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pink,#C23C86)"/></marker><marker id="ar8-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--moss,#5E7A3A)"/></marker><marker id="ar8-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pa,#C9672C)"/></marker><marker id="ar8-l" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--life,#8A4CB0)"/></marker></defs>
+<symbol id="g8-adres" viewBox="0 0 360 372">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Твой космический адрес</text>
+<rect x="6" y="30" width="348" height="288" rx="14" fill="var(--card,#FFFBF2)" stroke="var(--line,#D9CDB7)" stroke-width="2"/>
+<path d="M34.0 67.0 L34.0 82.0" stroke="var(--soft,#5F5648)" stroke-width="1.6" fill="none" marker-end="url(#ar8-k)"/>
+<path d="M34.0 114.0 L34.0 129.0" stroke="var(--soft,#5F5648)" stroke-width="1.6" fill="none" marker-end="url(#ar8-k)"/>
+<path d="M34.0 161.0 L34.0 176.0" stroke="var(--soft,#5F5648)" stroke-width="1.6" fill="none" marker-end="url(#ar8-k)"/>
+<path d="M34.0 208.0 L34.0 223.0" stroke="var(--soft,#5F5648)" stroke-width="1.6" fill="none" marker-end="url(#ar8-k)"/>
+<path d="M34.0 255.0 L34.0 270.0" stroke="var(--soft,#5F5648)" stroke-width="1.6" fill="none" marker-end="url(#ar8-k)"/>
+<path d="M25.9 47.0 L26.0 47.1 L26.1 47.1 L26.2 47.2 L26.3 47.3 L26.3 47.4 L26.3 47.6 L26.3 47.7 L26.3 47.8 L26.2 48.0 L26.1 48.1 L26.0 48.2 L25.8 48.4 L25.6 48.5 L25.4 48.6 L25.1 48.7 L24.8 48.8 L24.5 48.8 L24.2 48.9 L23.8 48.9 L23.5 48.9 L23.1 48.8 L22.7 48.8 L22.3 48.7 L22.0 48.6 L21.6 48.4 L21.3 48.2 L21.0 48.0 L20.7 47.8 L20.4 47.6 L20.2 47.3 L20.1 47.0 L20.0 46.7 L19.9 46.4 L19.9 46.0 L20.0 45.7 L20.1 45.4 L20.3 45.0 L20.6 44.7 L20.9 44.4 L21.3 44.1 L21.7 43.8 L22.2 43.6 L22.8 43.3 L23.4 43.1 L24.0 43.0 L24.7 42.9 L25.4 42.8 L26.1 42.8" stroke="var(--red,#1B6A8C)" stroke-width="3" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M25.9 47.0 L26.0 47.1 L26.1 47.1 L26.2 47.2 L26.3 47.3 L26.3 47.4 L26.3 47.6 L26.3 47.7 L26.3 47.8 L26.2 48.0 L26.1 48.1 L26.0 48.2 L25.8 48.4 L25.6 48.5 L25.4 48.6 L25.1 48.7 L24.8 48.8 L24.5 48.8 L24.2 48.9 L23.8 48.9 L23.5 48.9 L23.1 48.8 L22.7 48.8 L22.3 48.7 L22.0 48.6 L21.6 48.4 L21.3 48.2 L21.0 48.0 L20.7 47.8 L20.4 47.6 L20.2 47.3 L20.1 47.0 L20.0 46.7 L19.9 46.4 L19.9 46.0 L20.0 45.7 L20.1 45.4 L20.3 45.0 L20.6 44.7 L20.9 44.4 L21.3 44.1 L21.7 43.8 L22.2 43.6 L22.8 43.3 L23.4 43.1 L24.0 43.0 L24.7 42.9 L25.4 42.8 L26.1 42.8" stroke="var(--red,#1B6A8C)" stroke-width="0.8" stroke-opacity=".8" fill="none" stroke-linecap="round"/><path d="M24.1 47.0 L24.0 46.9 L23.9 46.9 L23.8 46.8 L23.7 46.7 L23.7 46.6 L23.7 46.4 L23.7 46.3 L23.7 46.2 L23.8 46.0 L23.9 45.9 L24.0 45.8 L24.2 45.6 L24.4 45.5 L24.6 45.4 L24.9 45.3 L25.2 45.2 L25.5 45.2 L25.8 45.1 L26.2 45.1 L26.5 45.1 L26.9 45.2 L27.3 45.2 L27.7 45.3 L28.0 45.4 L28.4 45.6 L28.7 45.8 L29.0 46.0 L29.3 46.2 L29.6 46.4 L29.8 46.7 L29.9 47.0 L30.0 47.3 L30.1 47.6 L30.1 48.0 L30.0 48.3 L29.9 48.6 L29.7 49.0 L29.4 49.3 L29.1 49.6 L28.7 49.9 L28.3 50.2 L27.8 50.4 L27.2 50.7 L26.6 50.9 L26.0 51.0 L25.3 51.1 L24.6 51.2 L23.9 51.2" stroke="var(--red,#1B6A8C)" stroke-width="3" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M24.1 47.0 L24.0 46.9 L23.9 46.9 L23.8 46.8 L23.7 46.7 L23.7 46.6 L23.7 46.4 L23.7 46.3 L23.7 46.2 L23.8 46.0 L23.9 45.9 L24.0 45.8 L24.2 45.6 L24.4 45.5 L24.6 45.4 L24.9 45.3 L25.2 45.2 L25.5 45.2 L25.8 45.1 L26.2 45.1 L26.5 45.1 L26.9 45.2 L27.3 45.2 L27.7 45.3 L28.0 45.4 L28.4 45.6 L28.7 45.8 L29.0 46.0 L29.3 46.2 L29.6 46.4 L29.8 46.7 L29.9 47.0 L30.0 47.3 L30.1 47.6 L30.1 48.0 L30.0 48.3 L29.9 48.6 L29.7 49.0 L29.4 49.3 L29.1 49.6 L28.7 49.9 L28.3 50.2 L27.8 50.4 L27.2 50.7 L26.6 50.9 L26.0 51.0 L25.3 51.1 L24.6 51.2 L23.9 51.2" stroke="var(--red,#1B6A8C)" stroke-width="0.8" stroke-opacity=".8" fill="none" stroke-linecap="round"/><ellipse cx="25.0" cy="47.0" rx="1.43" ry="0.858" fill="var(--ochre,#E2A31F)"/>
+<path d="M42.7 44.0 L42.8 44.0 L42.9 44.1 L43.0 44.2 L43.0 44.3 L43.1 44.4 L43.1 44.5 L43.1 44.6 L43.1 44.7 L43.0 44.8 L42.9 44.9 L42.8 45.0 L42.7 45.1 L42.5 45.2 L42.3 45.3 L42.1 45.4 L41.9 45.4 L41.6 45.5 L41.3 45.5 L41.0 45.5 L40.7 45.5 L40.4 45.5 L40.1 45.4 L39.8 45.4 L39.5 45.3 L39.2 45.2 L38.9 45.0 L38.7 44.8 L38.5 44.7 L38.3 44.5 L38.1 44.2 L38.0 44.0 L37.9 43.7 L37.8 43.5 L37.9 43.2 L37.9 42.9 L38.0 42.7 L38.2 42.4 L38.4 42.1 L38.6 41.9 L39.0 41.6 L39.3 41.4 L39.7 41.2 L40.2 41.0 L40.7 40.8 L41.2 40.7 L41.7 40.6 L42.3 40.6 L42.9 40.5" stroke="var(--red,#1B6A8C)" stroke-width="3" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M42.7 44.0 L42.8 44.0 L42.9 44.1 L43.0 44.2 L43.0 44.3 L43.1 44.4 L43.1 44.5 L43.1 44.6 L43.1 44.7 L43.0 44.8 L42.9 44.9 L42.8 45.0 L42.7 45.1 L42.5 45.2 L42.3 45.3 L42.1 45.4 L41.9 45.4 L41.6 45.5 L41.3 45.5 L41.0 45.5 L40.7 45.5 L40.4 45.5 L40.1 45.4 L39.8 45.4 L39.5 45.3 L39.2 45.2 L38.9 45.0 L38.7 44.8 L38.5 44.7 L38.3 44.5 L38.1 44.2 L38.0 44.0 L37.9 43.7 L37.8 43.5 L37.9 43.2 L37.9 42.9 L38.0 42.7 L38.2 42.4 L38.4 42.1 L38.6 41.9 L39.0 41.6 L39.3 41.4 L39.7 41.2 L40.2 41.0 L40.7 40.8 L41.2 40.7 L41.7 40.6 L42.3 40.6 L42.9 40.5" stroke="var(--red,#1B6A8C)" stroke-width="0.8" stroke-opacity=".8" fill="none" stroke-linecap="round"/><path d="M41.3 44.0 L41.2 44.0 L41.1 43.9 L41.0 43.8 L41.0 43.7 L40.9 43.6 L40.9 43.5 L40.9 43.4 L40.9 43.3 L41.0 43.2 L41.1 43.1 L41.2 43.0 L41.3 42.9 L41.5 42.8 L41.7 42.7 L41.9 42.6 L42.1 42.6 L42.4 42.5 L42.7 42.5 L43.0 42.5 L43.3 42.5 L43.6 42.5 L43.9 42.6 L44.2 42.6 L44.5 42.7 L44.8 42.8 L45.1 43.0 L45.3 43.2 L45.5 43.3 L45.7 43.5 L45.9 43.8 L46.0 44.0 L46.1 44.3 L46.2 44.5 L46.1 44.8 L46.1 45.1 L46.0 45.3 L45.8 45.6 L45.6 45.9 L45.4 46.1 L45.0 46.4 L44.7 46.6 L44.3 46.8 L43.8 47.0 L43.3 47.2 L42.8 47.3 L42.3 47.4 L41.7 47.4 L41.1 47.5" stroke="var(--red,#1B6A8C)" stroke-width="3" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M41.3 44.0 L41.2 44.0 L41.1 43.9 L41.0 43.8 L41.0 43.7 L40.9 43.6 L40.9 43.5 L40.9 43.4 L40.9 43.3 L41.0 43.2 L41.1 43.1 L41.2 43.0 L41.3 42.9 L41.5 42.8 L41.7 42.7 L41.9 42.6 L42.1 42.6 L42.4 42.5 L42.7 42.5 L43.0 42.5 L43.3 42.5 L43.6 42.5 L43.9 42.6 L44.2 42.6 L44.5 42.7 L44.8 42.8 L45.1 43.0 L45.3 43.2 L45.5 43.3 L45.7 43.5 L45.9 43.8 L46.0 44.0 L46.1 44.3 L46.2 44.5 L46.1 44.8 L46.1 45.1 L46.0 45.3 L45.8 45.6 L45.6 45.9 L45.4 46.1 L45.0 46.4 L44.7 46.6 L44.3 46.8 L43.8 47.0 L43.3 47.2 L42.8 47.3 L42.3 47.4 L41.7 47.4 L41.1 47.5" stroke="var(--red,#1B6A8C)" stroke-width="0.8" stroke-opacity=".8" fill="none" stroke-linecap="round"/><ellipse cx="42.0" cy="44.0" rx="1.17" ry="0.702" fill="var(--ochre,#E2A31F)"/>
+<path d="M36.8 57.0 L36.9 57.1 L37.0 57.1 L37.1 57.2 L37.2 57.3 L37.2 57.4 L37.2 57.5 L37.2 57.6 L37.2 57.8 L37.1 57.9 L37.0 58.0 L36.9 58.1 L36.8 58.2 L36.6 58.4 L36.4 58.5 L36.1 58.5 L35.9 58.6 L35.6 58.7 L35.3 58.7 L34.9 58.7 L34.6 58.7 L34.3 58.7 L33.9 58.6 L33.6 58.5 L33.2 58.4 L32.9 58.3 L32.6 58.1 L32.3 57.9 L32.1 57.7 L31.8 57.5 L31.7 57.3 L31.5 57.0 L31.4 56.7 L31.4 56.4 L31.4 56.1 L31.5 55.8 L31.6 55.5 L31.8 55.2 L32.0 54.9 L32.3 54.6 L32.6 54.4 L33.0 54.1 L33.5 53.9 L34.0 53.7 L34.5 53.5 L35.1 53.4 L35.7 53.2 L36.4 53.2 L37.0 53.1" stroke="var(--red,#1B6A8C)" stroke-width="3" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M36.8 57.0 L36.9 57.1 L37.0 57.1 L37.1 57.2 L37.2 57.3 L37.2 57.4 L37.2 57.5 L37.2 57.6 L37.2 57.8 L37.1 57.9 L37.0 58.0 L36.9 58.1 L36.8 58.2 L36.6 58.4 L36.4 58.5 L36.1 58.5 L35.9 58.6 L35.6 58.7 L35.3 58.7 L34.9 58.7 L34.6 58.7 L34.3 58.7 L33.9 58.6 L33.6 58.5 L33.2 58.4 L32.9 58.3 L32.6 58.1 L32.3 57.9 L32.1 57.7 L31.8 57.5 L31.7 57.3 L31.5 57.0 L31.4 56.7 L31.4 56.4 L31.4 56.1 L31.5 55.8 L31.6 55.5 L31.8 55.2 L32.0 54.9 L32.3 54.6 L32.6 54.4 L33.0 54.1 L33.5 53.9 L34.0 53.7 L34.5 53.5 L35.1 53.4 L35.7 53.2 L36.4 53.2 L37.0 53.1" stroke="var(--red,#1B6A8C)" stroke-width="0.8" stroke-opacity=".8" fill="none" stroke-linecap="round"/><path d="M35.2 57.0 L35.1 56.9 L35.0 56.9 L34.9 56.8 L34.8 56.7 L34.8 56.6 L34.8 56.5 L34.8 56.4 L34.8 56.2 L34.9 56.1 L35.0 56.0 L35.1 55.9 L35.2 55.8 L35.4 55.6 L35.6 55.5 L35.9 55.5 L36.1 55.4 L36.4 55.3 L36.7 55.3 L37.1 55.3 L37.4 55.3 L37.7 55.3 L38.1 55.4 L38.4 55.5 L38.8 55.6 L39.1 55.7 L39.4 55.9 L39.7 56.1 L39.9 56.3 L40.2 56.5 L40.3 56.7 L40.5 57.0 L40.6 57.3 L40.6 57.6 L40.6 57.9 L40.5 58.2 L40.4 58.5 L40.2 58.8 L40.0 59.1 L39.7 59.4 L39.4 59.6 L39.0 59.9 L38.5 60.1 L38.0 60.3 L37.5 60.5 L36.9 60.6 L36.3 60.8 L35.6 60.8 L35.0 60.9" stroke="var(--red,#1B6A8C)" stroke-width="3" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M35.2 57.0 L35.1 56.9 L35.0 56.9 L34.9 56.8 L34.8 56.7 L34.8 56.6 L34.8 56.5 L34.8 56.4 L34.8 56.2 L34.9 56.1 L35.0 56.0 L35.1 55.9 L35.2 55.8 L35.4 55.6 L35.6 55.5 L35.9 55.5 L36.1 55.4 L36.4 55.3 L36.7 55.3 L37.1 55.3 L37.4 55.3 L37.7 55.3 L38.1 55.4 L38.4 55.5 L38.8 55.6 L39.1 55.7 L39.4 55.9 L39.7 56.1 L39.9 56.3 L40.2 56.5 L40.3 56.7 L40.5 57.0 L40.6 57.3 L40.6 57.6 L40.6 57.9 L40.5 58.2 L40.4 58.5 L40.2 58.8 L40.0 59.1 L39.7 59.4 L39.4 59.6 L39.0 59.9 L38.5 60.1 L38.0 60.3 L37.5 60.5 L36.9 60.6 L36.3 60.8 L35.6 60.8 L35.0 60.9" stroke="var(--red,#1B6A8C)" stroke-width="0.8" stroke-opacity=".8" fill="none" stroke-linecap="round"/><ellipse cx="36.0" cy="57.0" rx="1.3" ry="0.78" fill="var(--ochre,#E2A31F)"/>
+<text x="66.0" y="48.0" text-anchor="start" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Вселенная</text>
+<text x="66.0" y="64.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >множество звёздных скоплений — галактик</text>
+<path d="M62.0 73.0 L346.0 73.0" stroke="var(--line,#D9CDB7)" stroke-width="1" fill="none" stroke-dasharray="3 4"/>
+<path d="M35.7 97.0 L35.9 97.1 L36.1 97.3 L36.3 97.6 L36.5 97.8 L36.6 98.1 L36.6 98.4 L36.6 98.7 L36.6 99.0 L36.4 99.4 L36.2 99.7 L36.0 100.0 L35.6 100.3 L35.3 100.6 L34.8 100.9 L34.3 101.1 L33.7 101.3 L33.1 101.5 L32.4 101.6 L31.7 101.6 L31.0 101.6 L30.2 101.5 L29.5 101.3 L28.8 101.1 L28.0 100.8 L27.3 100.5 L26.7 100.0 L26.1 99.5 L25.5 99.0 L25.1 98.4 L24.7 97.7 L24.4 97.0 L24.2 96.2 L24.1 95.4 L24.1 94.6 L24.2 93.8 L24.5 93.0 L24.9 92.2 L25.4 91.4 L26.0 90.6 L26.7 89.9 L27.6 89.2 L28.6 88.6 L29.6 88.0 L30.8 87.6 L32.1 87.2 L33.4 86.9 L34.8 86.7 L36.2 86.6" stroke="var(--red,#1B6A8C)" stroke-width="3.6" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M35.7 97.0 L35.9 97.1 L36.1 97.3 L36.3 97.6 L36.5 97.8 L36.6 98.1 L36.6 98.4 L36.6 98.7 L36.6 99.0 L36.4 99.4 L36.2 99.7 L36.0 100.0 L35.6 100.3 L35.3 100.6 L34.8 100.9 L34.3 101.1 L33.7 101.3 L33.1 101.5 L32.4 101.6 L31.7 101.6 L31.0 101.6 L30.2 101.5 L29.5 101.3 L28.8 101.1 L28.0 100.8 L27.3 100.5 L26.7 100.0 L26.1 99.5 L25.5 99.0 L25.1 98.4 L24.7 97.7 L24.4 97.0 L24.2 96.2 L24.1 95.4 L24.1 94.6 L24.2 93.8 L24.5 93.0 L24.9 92.2 L25.4 91.4 L26.0 90.6 L26.7 89.9 L27.6 89.2 L28.6 88.6 L29.6 88.0 L30.8 87.6 L32.1 87.2 L33.4 86.9 L34.8 86.7 L36.2 86.6" stroke="var(--red,#1B6A8C)" stroke-width="0.96" stroke-opacity=".8" fill="none" stroke-linecap="round"/><path d="M32.3 97.0 L32.1 96.9 L31.9 96.7 L31.7 96.4 L31.5 96.2 L31.4 95.9 L31.4 95.6 L31.4 95.3 L31.4 95.0 L31.6 94.6 L31.8 94.3 L32.0 94.0 L32.4 93.7 L32.7 93.4 L33.2 93.1 L33.7 92.9 L34.3 92.7 L34.9 92.5 L35.6 92.4 L36.3 92.4 L37.0 92.4 L37.8 92.5 L38.5 92.7 L39.2 92.9 L40.0 93.2 L40.7 93.5 L41.3 94.0 L41.9 94.5 L42.5 95.0 L42.9 95.6 L43.3 96.3 L43.6 97.0 L43.8 97.8 L43.9 98.6 L43.9 99.4 L43.8 100.2 L43.5 101.0 L43.1 101.8 L42.6 102.6 L42.0 103.4 L41.3 104.1 L40.4 104.8 L39.4 105.4 L38.4 106.0 L37.2 106.4 L35.9 106.8 L34.6 107.1 L33.2 107.3 L31.8 107.4" stroke="var(--red,#1B6A8C)" stroke-width="3.6" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M32.3 97.0 L32.1 96.9 L31.9 96.7 L31.7 96.4 L31.5 96.2 L31.4 95.9 L31.4 95.6 L31.4 95.3 L31.4 95.0 L31.6 94.6 L31.8 94.3 L32.0 94.0 L32.4 93.7 L32.7 93.4 L33.2 93.1 L33.7 92.9 L34.3 92.7 L34.9 92.5 L35.6 92.4 L36.3 92.4 L37.0 92.4 L37.8 92.5 L38.5 92.7 L39.2 92.9 L40.0 93.2 L40.7 93.5 L41.3 94.0 L41.9 94.5 L42.5 95.0 L42.9 95.6 L43.3 96.3 L43.6 97.0 L43.8 97.8 L43.9 98.6 L43.9 99.4 L43.8 100.2 L43.5 101.0 L43.1 101.8 L42.6 102.6 L42.0 103.4 L41.3 104.1 L40.4 104.8 L39.4 105.4 L38.4 106.0 L37.2 106.4 L35.9 106.8 L34.6 107.1 L33.2 107.3 L31.8 107.4" stroke="var(--red,#1B6A8C)" stroke-width="0.96" stroke-opacity=".8" fill="none" stroke-linecap="round"/><ellipse cx="34.0" cy="97.0" rx="2.8" ry="2.1" fill="var(--ochre,#E2A31F)"/>
+<text x="66.0" y="95.0" text-anchor="start" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Галактика — Млечный Путь</text>
+<text x="66.0" y="111.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >наша галактика: более 100 миллиардов звёзд</text>
+<path d="M62.0 120.0 L346.0 120.0" stroke="var(--line,#D9CDB7)" stroke-width="1" fill="none" stroke-dasharray="3 4"/>
+<ellipse cx="34" cy="144" rx="17" ry="7" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1.2"/>
+<circle cx="34.0" cy="144.0" r="6" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<circle cx="50.5" cy="146.0" r="3" fill="var(--red,#1B6A8C)" stroke="none" stroke-width="0"/>
+<text x="66.0" y="142.0" text-anchor="start" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Солнечная система</text>
+<text x="66.0" y="158.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Солнце, 8 планет, спутники, астероиды, кометы</text>
+<path d="M62.0 167.0 L346.0 167.0" stroke="var(--line,#D9CDB7)" stroke-width="1" fill="none" stroke-dasharray="3 4"/>
+<g transform="translate(34.0 191.0) scale(1)"><circle r="12" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><path d="M-7 -6 C-3 -9 2 -7 1 -3 C0 0 -4 1 -5 4 C-7 2 -9 -2 -7 -6 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/><path d="M3 2 C6 1 8 3 7 6 C5 8 2 7 3 2 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/></g>
+<text x="66.0" y="189.0" text-anchor="start" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Планета Земля</text>
+<text x="66.0" y="205.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >третья по счёту от Солнца</text>
+<path d="M62.0 214.0 L346.0 214.0" stroke="var(--line,#D9CDB7)" stroke-width="1" fill="none" stroke-dasharray="3 4"/>
+<path d="M20 234 C24 228 34 227 40 230 C47 232 50 237 46 243 C42 247 36 244 30 246 C24 246 18 241 20 234 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width="1.4"/>
+<text x="66.0" y="236.0" text-anchor="start" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Материк Евразия, часть света Европа</text>
+<text x="66.0" y="252.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >суша Земли делится на материки и части света</text>
+<path d="M62.0 261.0 L346.0 261.0" stroke="var(--line,#D9CDB7)" stroke-width="1" fill="none" stroke-dasharray="3 4"/>
+<g transform="translate(34.0 284.0) scale(1.6)"><path d="M-7 1 L0 -6 L7 1 L5 1 L5 7 L-5 7 L-5 1 Z" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/><rect x="-1.6" y="2.5" width="3.2" height="4.5" fill="var(--card,#FFFBF2)"/></g>
+<text x="66.0" y="283.0" text-anchor="start" font-size="13.5" font-weight="700" fill="var(--life,#8A4CB0)" >Россия, Москва, Новогиреево</text>
+<text x="66.0" y="299.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >здесь живёшь ты</text>
+<text x="180.0" y="348.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--soft,#5F5648)" >Как адрес на конверте: от самого большого</text>
+<text x="180.0" y="364.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--soft,#5F5648)" >к самому маленькому. Каждое — внутри предыдущего.</text>
+</g>
+</symbol>
+<symbol id="g8-milk" viewBox="0 0 360 304">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="86.0" y="18.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >Галактика сверху</text>
+<ellipse cx="86" cy="98" rx="68" ry="68" fill="var(--red,#1B6A8C)" fill-opacity=".12"/>
+<path d="M93.7 98.0 L94.8 99.2 L95.7 100.7 L96.3 102.5 L96.6 104.5 L96.5 106.6 L96.0 108.8 L95.1 111.0 L93.7 113.2 L92.0 115.2 L89.8 117.0 L87.2 118.6 L84.3 119.7 L81.1 120.4 L77.7 120.6 L74.1 120.3 L70.5 119.4 L66.9 117.9 L63.4 115.8 L60.1 113.2 L57.2 109.9 L54.7 106.2 L52.7 101.9 L51.3 97.3 L50.6 92.4 L50.6 87.3 L51.3 82.0 L52.9 76.8 L55.2 71.7 L58.3 66.8 L62.2 62.3 L66.8 58.4 L72.0 55.0 L77.8 52.3 L84.1 50.5 L90.8 49.5 L97.7 49.5 L104.6 50.4 L111.5 52.4 L118.3 55.4 L124.6 59.4 L130.5 64.3 L135.7 70.2 L140.1 76.8 L143.7 84.2 L146.2 92.1 L147.6 100.4 L147.8 109.0 L146.9 117.8" stroke="var(--red,#1B6A8C)" stroke-width="6.6" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M93.7 98.0 L94.8 99.2 L95.7 100.7 L96.3 102.5 L96.6 104.5 L96.5 106.6 L96.0 108.8 L95.1 111.0 L93.7 113.2 L92.0 115.2 L89.8 117.0 L87.2 118.6 L84.3 119.7 L81.1 120.4 L77.7 120.6 L74.1 120.3 L70.5 119.4 L66.9 117.9 L63.4 115.8 L60.1 113.2 L57.2 109.9 L54.7 106.2 L52.7 101.9 L51.3 97.3 L50.6 92.4 L50.6 87.3 L51.3 82.0 L52.9 76.8 L55.2 71.7 L58.3 66.8 L62.2 62.3 L66.8 58.4 L72.0 55.0 L77.8 52.3 L84.1 50.5 L90.8 49.5 L97.7 49.5 L104.6 50.4 L111.5 52.4 L118.3 55.4 L124.6 59.4 L130.5 64.3 L135.7 70.2 L140.1 76.8 L143.7 84.2 L146.2 92.1 L147.6 100.4 L147.8 109.0 L146.9 117.8" stroke="var(--red,#1B6A8C)" stroke-width="1.76" stroke-opacity=".8" fill="none" stroke-linecap="round"/><path d="M78.3 98.0 L77.2 96.8 L76.3 95.3 L75.7 93.5 L75.4 91.5 L75.5 89.4 L76.0 87.2 L76.9 85.0 L78.3 82.8 L80.0 80.8 L82.2 79.0 L84.8 77.4 L87.7 76.3 L90.9 75.6 L94.3 75.4 L97.9 75.7 L101.5 76.6 L105.1 78.1 L108.6 80.2 L111.9 82.8 L114.8 86.1 L117.3 89.8 L119.3 94.1 L120.7 98.7 L121.4 103.6 L121.4 108.7 L120.7 114.0 L119.1 119.2 L116.8 124.3 L113.7 129.2 L109.8 133.7 L105.2 137.6 L100.0 141.0 L94.2 143.7 L87.9 145.5 L81.2 146.5 L74.3 146.5 L67.4 145.6 L60.5 143.6 L53.7 140.6 L47.4 136.6 L41.5 131.7 L36.3 125.8 L31.9 119.2 L28.3 111.8 L25.8 103.9 L24.4 95.6 L24.2 87.0 L25.1 78.2" stroke="var(--red,#1B6A8C)" stroke-width="6.6" stroke-opacity=".28" fill="none" stroke-linecap="round"/><path d="M78.3 98.0 L77.2 96.8 L76.3 95.3 L75.7 93.5 L75.4 91.5 L75.5 89.4 L76.0 87.2 L76.9 85.0 L78.3 82.8 L80.0 80.8 L82.2 79.0 L84.8 77.4 L87.7 76.3 L90.9 75.6 L94.3 75.4 L97.9 75.7 L101.5 76.6 L105.1 78.1 L108.6 80.2 L111.9 82.8 L114.8 86.1 L117.3 89.8 L119.3 94.1 L120.7 98.7 L121.4 103.6 L121.4 108.7 L120.7 114.0 L119.1 119.2 L116.8 124.3 L113.7 129.2 L109.8 133.7 L105.2 137.6 L100.0 141.0 L94.2 143.7 L87.9 145.5 L81.2 146.5 L74.3 146.5 L67.4 145.6 L60.5 143.6 L53.7 140.6 L47.4 136.6 L41.5 131.7 L36.3 125.8 L31.9 119.2 L28.3 111.8 L25.8 103.9 L24.4 95.6 L24.2 87.0 L25.1 78.2" stroke="var(--red,#1B6A8C)" stroke-width="1.76" stroke-opacity=".8" fill="none" stroke-linecap="round"/><ellipse cx="86.0" cy="98.0" rx="12.8" ry="12.8" fill="var(--ochre,#E2A31F)"/>
+<circle cx="56.0" cy="128.0" r="5" fill="var(--ochre,#E2A31F)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="48.0" y="150.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Солнце</text>
+<text x="174.0" y="40.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >Галактика — огромный</text>
+<text x="174.0" y="56.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >вращающийся диск</text>
+<text x="174.0" y="72.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >из звёзд: их больше</text>
+<text x="174.0" y="88.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >100 миллиардов.</text>
+<text x="174.0" y="104.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >Солнце — одна из них.</text>
+<text x="174.0" y="128.0" text-anchor="start" font-size="12" font-weight="400" fill="var(--soft,#5F5648)" >Снаружи нашу Галактику</text>
+<text x="174.0" y="144.0" text-anchor="start" font-size="12" font-weight="400" fill="var(--soft,#5F5648)" >никто не видел — так</text>
+<text x="174.0" y="160.0" text-anchor="start" font-size="12" font-weight="400" fill="var(--soft,#5F5648)" >её рисуют учёные.</text>
+<path d="M8.0 176.0 L352.0 176.0" stroke="var(--line,#D9CDB7)" stroke-width="1.2" fill="none" stroke-dasharray="4 4"/>
+<text x="10.0" y="198.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >Галактика сбоку — «ребро»</text>
+<ellipse cx="180" cy="236" rx="150" ry="10" fill="var(--red,#1B6A8C)" fill-opacity=".35" stroke="var(--red,#1B6A8C)" stroke-width="1.4"/>
+<ellipse cx="180" cy="236" rx="26" ry="15" fill="var(--ochre,#E2A31F)"/>
+<path d="M261.0 236.0 L40.0 236.0" stroke="var(--pa,#C9672C)" stroke-width="1.8" fill="none" marker-end="url(#ar8-o)"/>
+<path d="M277.0 236.0 L328.0 236.0" stroke="var(--pa,#C9672C)" stroke-width="1.8" fill="none" marker-end="url(#ar8-o)"/>
+<path d="M270.0 227.0 L270.0 202.0" stroke="var(--soft,#5F5648)" stroke-width="1.4" fill="none" stroke-dasharray="3 3" marker-end="url(#ar8-k)"/>
+<circle cx="270.0" cy="236.0" r="4.5" fill="var(--ochre,#E2A31F)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="262.0" y="214.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">вверх — звёзд мало</text>
+<text x="270.0" y="260.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Солнце</text>
+<text x="180.0" y="280.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--pa,#C9672C)" >Смотрим вдоль диска — звёзд очень много:</text>
+<text x="180.0" y="296.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >на небе белёсая полоса — это и есть Млечный Путь</text>
+</g>
+</symbol>
+<symbol id="g8-sys" viewBox="0 0 360 238">
+<g font-family="Golos Text, Arial, sans-serif">
+<circle cx="-42" cy="118" r="94" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="-42" cy="118" r="122" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="-42" cy="118" r="152" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="-42" cy="118" r="180" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="-42" cy="118" r="228" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="-42" cy="118" r="280" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="-42" cy="118" r="330" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="-42" cy="118" r="374" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="-42.0" cy="118.0" r="62" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<text x="4.0" y="204.0" text-anchor="start" font-size="12.5" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Солнце</text>
+<circle cx="159.2" cy="62.9" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="148.5" cy="59.1" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="160.7" cy="66.9" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="156.4" cy="98.7" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="161.7" cy="108.7" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="145.9" cy="194.9" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="150.5" cy="66.8" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="161.7" cy="122.0" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="158.6" cy="163.1" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="135.0" cy="210.3" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="147.8" cy="181.3" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="161.4" cy="85.6" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="146.5" cy="196.4" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="157.8" cy="134.0" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="157.2" cy="125.7" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="157.2" cy="56.6" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="162.7" cy="109.2" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="156.1" cy="75.9" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="151.6" cy="45.8" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="160.0" cy="124.3" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="145.7" cy="206.3" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="158.6" cy="142.4" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="162.0" cy="123.7" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="156.2" cy="179.6" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="160.2" cy="126.9" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="155.2" cy="78.1" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="160.2" cy="102.8" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="144.2" cy="193.0" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="151.8" cy="41.7" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="155.9" cy="58.6" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="150.6" cy="42.2" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="156.3" cy="87.1" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="142.9" cy="195.3" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="160.9" cy="107.3" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="146.2" cy="33.9" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="141.9" cy="39.1" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="158.5" cy="123.3" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="158.5" cy="115.7" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="139.3" cy="35.5" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="161.1" cy="86.1" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="154.8" cy="165.8" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="141.4" cy="21.2" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="144.5" cy="32.6" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="150.1" cy="54.2" r="1.1" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="157.5" cy="106.6" r="1.4" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="157.6" cy="62.8" r="0.9" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<text x="110.0" y="80.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">мы здесь</text>
+<circle cx="52.0" cy="118.0" r="3" fill="var(--soft,#5F5648)" stroke="var(--illink,#2B2620)" stroke-width="0.8"/>
+<text x="52.0" y="96.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Меркурий</text>
+<circle cx="80.0" cy="118.0" r="5" fill="var(--ochre,#E2A31F)" stroke="var(--illink,#2B2620)" stroke-width="0.8"/>
+<text x="80.0" y="148.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Венера</text>
+<g transform="translate(110.0 118.0) scale(0.458333)"><circle r="12" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><path d="M-7 -6 C-3 -9 2 -7 1 -3 C0 0 -4 1 -5 4 C-7 2 -9 -2 -7 -6 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/><path d="M3 2 C6 1 8 3 7 6 C5 8 2 7 3 2 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/></g>
+<circle cx="120.0" cy="110.0" r="2.2" fill="var(--soft,#5F5648)" stroke="var(--card,#FFFBF2)" stroke-width="0.8"/>
+<text x="110.0" y="96.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Земля</text>
+<circle cx="138.0" cy="118.0" r="4" fill="var(--no,#B03A2E)" stroke="var(--illink,#2B2620)" stroke-width="0.8"/>
+<text x="138.0" y="148.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Марс</text>
+<circle cx="186.0" cy="118.0" r="13" fill="var(--pa,#C9672C)" stroke="var(--illink,#2B2620)" stroke-width="0.8"/>
+<text x="186.0" y="96.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Юпитер</text>
+<ellipse cx="238" cy="118" rx="19" ry="5" fill="none" stroke="var(--ochre,#E2A31F)" stroke-width="2" transform="rotate(-18 238 118)"/>
+<circle cx="238.0" cy="118.0" r="10" fill="var(--ochre,#E2A31F)" stroke="var(--illink,#2B2620)" stroke-width="0.8"/>
+<text x="238.0" y="148.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Сатурн</text>
+<circle cx="288.0" cy="118.0" r="8" fill="var(--sea,#BFE0EE)" stroke="var(--illink,#2B2620)" stroke-width="0.8"/>
+<text x="288.0" y="96.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Уран</text>
+<circle cx="332.0" cy="118.0" r="8" fill="var(--red,#1B6A8C)" stroke="var(--illink,#2B2620)" stroke-width="0.8"/>
+<text x="332.0" y="148.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Нептун</text>
+<path d="M120.0 109.0 L110.0 158.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none" stroke-dasharray="2 2"/>
+<text x="96.0" y="170.0" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Луна — спутник Земли</text>
+<path d="M162.0 70.0 L162.0 54.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none" stroke-dasharray="2 2"/>
+<text x="162.0" y="50.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">астероиды</text>
+<path d="M292 46 L346 22 L344 30 Z" fill="var(--sea,#BFE0EE)" fill-opacity=".45"/>
+<path d="M292 46 L348 34" stroke="var(--red,#1B6A8C)" stroke-width="1" stroke-opacity=".6"/>
+<circle cx="292.0" cy="46.0" r="3.2" fill="var(--red,#1B6A8C)" stroke="none" stroke-width="0"/>
+<text x="286.0" y="40.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">комета</text>
+<text x="350.0" y="214.0" text-anchor="end" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Порядок планет — настоящий.</text>
+<text x="350.0" y="230.0" text-anchor="end" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Размеры и расстояния — не в масштабе.</text>
+</g>
+</symbol>
+<symbol id="g8-dist" viewBox="0 0 360 200">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--illink,#2B2620)" >Расстояния от Солнца — в одном масштабе</text>
+<path d="M22.0 112.0 L344.0 112.0" stroke="var(--illink,#2B2620)" stroke-width="1.6" fill="none"/>
+<path d="M22.0 112.0 L22.0 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M57.3 112.0 L57.3 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M92.7 112.0 L92.7 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M128.0 112.0 L128.0 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M163.3 112.0 L163.3 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M198.7 112.0 L198.7 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M234.0 112.0 L234.0 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M269.3 112.0 L269.3 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M304.7 112.0 L304.7 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M340.0 112.0 L340.0 117.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M22.0 103.0 A9 9 0 0 1 22.0 121.0 Z" fill="var(--ochre,#E2A31F)"/>
+<circle cx="26.1" cy="112.0" r="1.8" fill="var(--illink,#2B2620)" stroke="var(--card,#FFFBF2)" stroke-width="0.8"/>
+<circle cx="29.6" cy="112.0" r="2.2" fill="var(--illink,#2B2620)" stroke="var(--card,#FFFBF2)" stroke-width="0.8"/>
+<circle cx="32.6" cy="112.0" r="2.6" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="0.8"/>
+<circle cx="38.1" cy="112.0" r="2" fill="var(--no,#B03A2E)" stroke="var(--card,#FFFBF2)" stroke-width="0.8"/>
+<circle cx="77.0" cy="112.0" r="5.5" fill="var(--pa,#C9672C)" stroke="var(--card,#FFFBF2)" stroke-width="0.8"/>
+<circle cx="123.1" cy="112.0" r="4.8" fill="var(--ochre,#E2A31F)" stroke="var(--card,#FFFBF2)" stroke-width="0.8"/>
+<circle cx="224.8" cy="112.0" r="4" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="0.8"/>
+<circle cx="340.0" cy="112.0" r="4" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="0.8"/>
+<path d="M26.1 84 L26.1 78 L38.1 78 L38.1 84" stroke="var(--red,#1B6A8C)" stroke-width="1.2" fill="none"/>
+<path d="M32.6 84.0 L32.6 107.0" stroke="var(--red,#1B6A8C)" stroke-width="1" fill="none" stroke-dasharray="2 2"/>
+<text x="14.0" y="46.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Меркурий, Венера, Земля, Марс —</text>
+<text x="14.0" y="62.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">все тесно у Солнца: до 228 млн км</text>
+<text x="77.0" y="100.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Юпитер</text>
+<text x="119.1" y="100.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Сатурн</text>
+<text x="224.8" y="100.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Уран</text>
+<text x="340.0" y="100.0" text-anchor="end" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Нептун</text>
+<text x="22.0" y="134.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >0</text>
+<text x="77.0" y="134.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >778</text>
+<text x="119.1" y="134.0" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >1 430</text>
+<text x="224.8" y="134.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >2 870</text>
+<text x="340.0" y="134.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >4 500</text>
+<text x="180.0" y="152.0" text-anchor="middle" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" >миллионов километров от Солнца; деление — 500</text>
+<text x="180.0" y="176.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >Земля — 150 млн км от Солнца, Нептун — 4 500 млн км:</text>
+<text x="180.0" y="192.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--red,#1B6A8C)" >Нептун в 30 раз дальше от Солнца, чем Земля.</text>
+</g>
+</symbol>
+<symbol id="g8-road" viewBox="0 0 360 334">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Если бы в космос вела дорога</text>
+<g transform="translate(28.0 46.0) scale(1.3)"><path d="M-7 1 L0 -6 L7 1 L5 1 L5 7 L-5 7 L-5 1 Z" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/><rect x="-1.6" y="2.5" width="3.2" height="4.5" fill="var(--card,#FFFBF2)"/></g>
+<path d="M42.0 46.0 L92.0 46.0" stroke="var(--life,#8A4CB0)" stroke-width="3" fill="none"/>
+<circle cx="98.0" cy="46.0" r="4" fill="var(--life,#8A4CB0)" stroke="none" stroke-width="0"/>
+<text x="108.0" y="43.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--life,#8A4CB0)" >Тольятти — Москва: около 1000 км,</text>
+<text x="108.0" y="59.0" text-anchor="start" font-size="12" font-weight="400" fill="var(--soft,#5F5648)" >14 часов на машине — это одна «дорога»</text>
+<g transform="translate(22.0 98.0) scale(0.916667)"><circle r="12" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><path d="M-7 -6 C-3 -9 2 -7 1 -3 C0 0 -4 1 -5 4 C-7 2 -9 -2 -7 -6 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/><path d="M3 2 C6 1 8 3 7 6 C5 8 2 7 3 2 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/></g>
+<path d="M36.0 98.0 L318.0 98.0" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+<circle cx="326.0" cy="98.0" r="7" fill="var(--paper2,#E8DFCC)" stroke="var(--soft,#5F5648)" stroke-width="1.2"/>
+<text x="22.0" y="80.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Земля</text>
+<text x="326.0" y="80.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Луна</text>
+<text x="180.0" y="88.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">384 тыс. км = 384 таких дороги</text>
+<text x="180.0" y="124.0" text-anchor="middle" font-size="12" font-weight="400" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">на машине без остановок — больше 7 месяцев</text>
+<text x="180.0" y="148.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--pa,#C9672C)" >До Солнца — 150 млн км: 390 расстояний до Луны</text>
+<rect x="30" y="160" width="8" height="8" rx="1.5" fill="var(--soft,#5F5648)" fill-opacity="1"/>
+<rect x="40" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="160" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="170" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="180" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="190" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="200" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="210" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="220" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="230" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="240" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="250" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="260" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="270" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="30" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="40" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="50" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="60" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="70" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="80" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="90" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="100" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="110" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="120" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="130" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="140" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="150" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="160" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="170" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="180" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="190" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="200" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="210" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="220" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="230" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="240" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="250" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="260" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="270" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="280" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="290" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="300" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="310" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<rect x="320" y="280" width="8" height="8" rx="1.5" fill="var(--ochre,#E2A31F)" fill-opacity=".55"/>
+<text x="30.0" y="304.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >одна клеточка — это расстояние от Земли до Луны</text>
+<text x="180.0" y="324.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--pa,#C9672C)" >на машине без остановок — около 240 лет</text>
+</g>
+</symbol>
+<symbol id="g8-models" viewBox="0 0 360 222">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="92.0" y="20.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--no,#B03A2E)" >Птолемей, I—II века</text>
+<text x="92.0" y="37.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >Земля в центре</text>
+<circle cx="92" cy="112" r="28" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="92" cy="112" r="46" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="92" cy="112" r="64" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<g transform="translate(92.0 112.0) scale(0.916667)"><circle r="12" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><path d="M-7 -6 C-3 -9 2 -7 1 -3 C0 0 -4 1 -5 4 C-7 2 -9 -2 -7 -6 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/><path d="M3 2 C6 1 8 3 7 6 C5 8 2 7 3 2 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/></g>
+<circle cx="115.1" cy="96.2" r="2.6" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<circle cx="58.1" cy="143.1" r="8" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<text x="58.1" y="165.1" text-anchor="middle" font-size="11" font-weight="600" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Солнце</text>
+<circle cx="154.7" cy="99.3" r="3.5" fill="var(--no,#B03A2E)" stroke="none" stroke-width="0"/>
+<path d="M138 52 l12 12 M150 52 l-12 12" stroke="var(--no,#B03A2E)" stroke-width="3.4" stroke-linecap="round"/>
+<text x="92.0" y="198.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--no,#B03A2E)" >геоцентрическая</text>
+<text x="92.0" y="214.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >гео — Земля</text>
+<text x="270.0" y="20.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--red,#1B6A8C)" >Коперник, XVI век</text>
+<text x="270.0" y="37.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >Солнце в центре</text>
+<circle cx="270" cy="112" r="28" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="270" cy="112" r="46" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="270" cy="112" r="64" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-opacity=".7"/>
+<circle cx="270.0" cy="112.0" r="12" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<circle cx="293.1" cy="96.2" r="3" fill="var(--soft,#5F5648)" stroke="none" stroke-width="0"/>
+<g transform="translate(236.1 143.1) scale(0.5)"><circle r="12" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><path d="M-7 -6 C-3 -9 2 -7 1 -3 C0 0 -4 1 -5 4 C-7 2 -9 -2 -7 -6 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/><path d="M3 2 C6 1 8 3 7 6 C5 8 2 7 3 2 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/></g>
+<text x="236.1" y="163.1" text-anchor="middle" font-size="11" font-weight="600" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Земля</text>
+<circle cx="332.7" cy="99.3" r="3.5" fill="var(--no,#B03A2E)" stroke="none" stroke-width="0"/>
+<path d="M313 58 l6 7 l12 -14" stroke="var(--moss,#5E7A3A)" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="270.0" y="198.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" >гелиоцентрическая</text>
+<text x="270.0" y="214.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >гелиос — Солнце</text>
+<path d="M180.0 14.0 L180.0 214.0" stroke="var(--line,#D9CDB7)" stroke-width="1.2" fill="none" stroke-dasharray="4 4"/>
+</g>
+</symbol>
+<symbol id="g8-geoid" viewBox="0 0 360 286">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="96.0" y="18.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Геоид: почти шар</text>
+<ellipse cx="96" cy="122" rx="60" ry="50" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="2"/>
+<circle cx="96" cy="122" r="60" fill="none" stroke="var(--illink,#2B2620)" stroke-width="1.4" stroke-dasharray="5 4"/>
+<path d="M30.0 122.0 L162.0 122.0" stroke="var(--pa,#C9672C)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<text x="96.0" y="116.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">экватор</text>
+<path d="M96.0 46.0 L96.0 70.0" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar8-k)"/>
+<path d="M96.0 198.0 L96.0 174.0" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar8-k)"/>
+<circle cx="96.0" cy="72.0" r="2.6" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<circle cx="96.0" cy="172.0" r="2.6" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<text x="96.0" y="40.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный полюс</text>
+<text x="96.0" y="212.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Южный полюс</text>
+<text x="96.0" y="232.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >у полюсов чуть сплюснута;</text>
+<text x="96.0" y="247.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >пунктир — ровный шар.</text>
+<text x="96.0" y="264.0" text-anchor="middle" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" >На рисунке сплюснутость</text>
+<text x="96.0" y="278.0" text-anchor="middle" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" >сильно преувеличена</text>
+<path d="M196.0 14.0 L196.0 278.0" stroke="var(--line,#D9CDB7)" stroke-width="1.2" fill="none" stroke-dasharray="4 4"/>
+<text x="278.0" y="18.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Поверхность Земли</text>
+<text x="278.0" y="35.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" >510 млн км²</text>
+<rect x="220" y="56" width="20" height="20" rx="3" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.2"/>
+<rect x="244" y="56" width="20" height="20" rx="3" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.2"/>
+<rect x="268" y="56" width="20" height="20" rx="3" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.2"/>
+<rect x="292" y="56" width="20" height="20" rx="3" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.2"/>
+<rect x="316" y="56" width="20" height="20" rx="3" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.2"/>
+<rect x="220" y="80" width="20" height="20" rx="3" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.2"/>
+<rect x="244" y="80" width="20" height="20" rx="3" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.2"/>
+<rect x="268" y="80" width="20" height="20" rx="3" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width="1.2"/>
+<rect x="292" y="80" width="20" height="20" rx="3" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width="1.2"/>
+<rect x="316" y="80" width="20" height="20" rx="3" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width="1.2"/>
+<text x="278.0" y="126.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >из 10 частей примерно</text>
+<text x="278.0" y="142.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--red,#1B6A8C)" >7 — вода, 3 — суша</text>
+<text x="278.0" y="168.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >Суша — это материки</text>
+<text x="278.0" y="184.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >и острова</text>
+</g>
+</symbol>
+<symbol id="g8-mat" viewBox="0 0 360 340">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="80.0" y="20.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >6 материков</text>
+<text x="282.0" y="20.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >6 частей света</text>
+<path d="M156 44 C186 44 186 44 214 44" stroke="var(--pink,#C23C86)" stroke-width="2.4" fill="none"/>
+<path d="M156 44 C186 44 186 84 214 84" stroke="var(--pink,#C23C86)" stroke-width="2.4" fill="none"/>
+<path d="M156 84 C186 84 186 124 214 124" stroke="var(--ochre,#E2A31F)" stroke-width="2.4" fill="none"/>
+<path d="M156 124 C186 124 186 164 214 164" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none"/>
+<path d="M156 164 C186 164 186 164 214 164" stroke="var(--red,#1B6A8C)" stroke-width="2.4" fill="none"/>
+<path d="M156 204 C186 204 186 204 214 204" stroke="var(--pa,#C9672C)" stroke-width="2.4" fill="none"/>
+<path d="M156 244 C186 244 186 244 214 244" stroke="var(--soft,#5F5648)" stroke-width="2.4" fill="none"/>
+<rect x="6" y="29" width="150" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pink,#C23C86)" stroke-width="2.2"/>
+<text x="81.0" y="49.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Евразия</text>
+<rect x="6" y="69" width="150" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--ochre,#E2A31F)" stroke-width="2.2"/>
+<text x="81.0" y="89.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Африка</text>
+<rect x="6" y="109" width="150" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--moss,#5E7A3A)" stroke-width="2.2"/>
+<text x="81.0" y="129.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Северная Америка</text>
+<rect x="6" y="149" width="150" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="2.2"/>
+<text x="81.0" y="169.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Южная Америка</text>
+<rect x="6" y="189" width="150" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="2.2"/>
+<text x="81.0" y="209.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Австралия</text>
+<rect x="6" y="229" width="150" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--soft,#5F5648)" stroke-width="2.2"/>
+<text x="81.0" y="249.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Антарктида</text>
+<rect x="214" y="29" width="138" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pink,#C23C86)" stroke-width="2.2"/>
+<text x="283.0" y="49.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Европа</text>
+<rect x="214" y="69" width="138" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pink,#C23C86)" stroke-width="2.2"/>
+<text x="283.0" y="89.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Азия</text>
+<rect x="214" y="109" width="138" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--ochre,#E2A31F)" stroke-width="2.2"/>
+<text x="283.0" y="129.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Африка</text>
+<rect x="214" y="149" width="138" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--moss,#5E7A3A)" stroke-width="2.2"/>
+<text x="283.0" y="169.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Америка</text>
+<rect x="214" y="189" width="138" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="2.2"/>
+<text x="283.0" y="209.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Австралия</text>
+<rect x="214" y="229" width="138" height="30" rx="9" fill="var(--card,#FFFBF2)" stroke="var(--soft,#5F5648)" stroke-width="2.2"/>
+<text x="283.0" y="249.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Антарктида</text>
+<g transform="translate(18.0 278.0) scale(1.2)"><path d="M-7 1 L0 -6 L7 1 L5 1 L5 7 L-5 7 L-5 1 Z" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/><rect x="-1.6" y="2.5" width="3.2" height="4.5" fill="var(--card,#FFFBF2)"/></g>
+<text x="32.0" y="282.0" text-anchor="start" font-size="12.5" font-weight="700" fill="var(--life,#8A4CB0)" >Россия — на одном материке Евразия,</text>
+<text x="32.0" y="299.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >но в двух частях света: Москва и Тольятти</text>
+<text x="32.0" y="315.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >в Европе, Сибирь — в Азии.</text>
+<text x="32.0" y="332.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Граница Европы и Азии — Уральские горы (§ 6).</text>
+</g>
+</symbol>
+<symbol id="g8-obol" viewBox="0 0 360 308">
+<g font-family="Golos Text, Arial, sans-serif">
+<rect x="0" y="0" width="360" height="150" fill="var(--sea,#BFE0EE)" fill-opacity=".45"/>
+<g transform="translate(64 74) scale(1)" fill="#FFFFFF" stroke="#B8C7D0" stroke-width="1"><ellipse cx="0" cy="0" rx="22" ry="9"/><ellipse cx="-12" cy="-6" rx="10" ry="8"/><ellipse cx="8" cy="-8" rx="12" ry="10"/></g>
+<g transform="translate(300 56) scale(0.8)" fill="#FFFFFF" stroke="#B8C7D0" stroke-width="1"><ellipse cx="0" cy="0" rx="22" ry="9"/><ellipse cx="-12" cy="-6" rx="10" ry="8"/><ellipse cx="8" cy="-8" rx="12" ry="10"/></g>
+<path d="M0 150 L40 150 L96 92 L128 120 L150 104 L190 150 L206 150 L224 194 L360 198 L360 246 L0 246 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width="1.6"/>
+<path d="M0.0 208.0 L360.0 210.0" stroke="var(--landb,#B9A57A)" stroke-width="1" fill="none" stroke-dasharray="10 6"/>
+<path d="M0.0 222.0 L360.0 224.0" stroke="var(--landb,#B9A57A)" stroke-width="1" fill="none" stroke-dasharray="10 6"/>
+<path d="M0.0 236.0 L360.0 238.0" stroke="var(--landb,#B9A57A)" stroke-width="1" fill="none" stroke-dasharray="10 6"/>
+<path d="M206 150 L360 150 L360 198 L224 194 Z" fill="var(--red,#1B6A8C)" stroke="var(--red,#1B6A8C)" stroke-width="1.4"/>
+<path d="M6 150 L18 150 L12 136 Z" fill="var(--moss,#5E7A3A)"/>
+<path d="M7 142 L17 142 L12 128 Z" fill="var(--moss,#5E7A3A)"/>
+<path d="M22 150 L34 150 L28 136 Z" fill="var(--moss,#5E7A3A)"/>
+<path d="M23 142 L33 142 L28 128 Z" fill="var(--moss,#5E7A3A)"/>
+<path d="M191 150 L203 150 L197 136 Z" fill="var(--moss,#5E7A3A)"/>
+<path d="M192 142 L202 142 L197 128 Z" fill="var(--moss,#5E7A3A)"/>
+<path d="M238 194 C234 184 242 178 238 168" stroke="var(--moss,#5E7A3A)" stroke-width="2" fill="none"/>
+<path d="M344 194 C340 184 348 178 344 168" stroke="var(--moss,#5E7A3A)" stroke-width="2" fill="none"/>
+<path d="M2 124 C80 118 150 118 210 132 C260 140 320 138 358 134 L358 196 L226 192 L208 160 L2 160 Z" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="12.0" y="22.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">атмосфера — воздушная</text>
+<text x="12.0" y="38.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">атмос — пар</text>
+<text x="354.0" y="96.0" text-anchor="end" font-size="13" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">биосфера — сфера жизни</text>
+<text x="354.0" y="112.0" text-anchor="end" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">био — жизнь</text>
+<text x="350.0" y="172.0" text-anchor="end" font-size="12" font-weight="700" fill="var(--card,#FFFBF2)" >гидросфера — водная</text>
+<text x="350.0" y="187.0" text-anchor="end" font-size="11" font-weight="400" fill="var(--card,#FFFBF2)" >гидор — вода</text>
+<text x="12.0" y="206.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">литосфера — твёрдая</text>
+<text x="12.0" y="222.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">литос — камень</text>
+<text x="180.0" y="268.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >Все четыре вместе, влияя друг на друга,</text>
+<text x="180.0" y="284.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--pink,#C23C86)" >образуют географическую оболочку</text>
+<text x="180.0" y="300.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >сфера — шар: каждая оболочка окружает всю Землю</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">География · § 8</span>
+    <h1>Мы во Вселенной</h1>
+    <p class="lede">Где Земля во Вселенной, как устроена Солнечная система — и из чего состоит наша планета: материки, части света, оболочки.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>О чём параграф:</b><br>1. Как устроена Солнечная система? 2. Как устроена наша планета?</div></div>
+  </div>
+</header>
+
+<figure class="banner"><div class="wrap"><img id="ph-g8_banner" src="img/4dd636f6db4b.jpg" alt="Спиральная галактика и купол обсерватории под ночным небом, по которому тянутся следы звёзд"><figcaption><span class="src">из учебника</span>Заставка параграфа</figcaption></div></figure>
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g7.html">‹ §7 География сегодня</a>
+  <span class="pn cur">§8 Мы во Вселенной</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s0" data-j="s0" title="Планета Земля">◆</a><a href="#s1" data-j="s1" title="Как устроена Солнечная система?">1</a><a href="#s2" data-j="s2" title="Как устроена наша планета?">2</a><a href="#s3" data-j="s3" title="Итоги параграфа">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s0">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">◆</span><h2>Планета Земля</h2></div>
+<div class="rubric">Новый раздел учебника</div>
+<div class="easy">
+<p>Этот параграф открывает новый раздел учебника — <b>«Планета Земля»</b>.</p>
+<p><span class="big">«Космос» (kosmos) по-гречески — Вселенная.</span> На первой странице раздела — космос: снимки с Луны и из открытого космоса, космический аппарат, старинная карта звёздного неба и Земля из космоса.</p>
+<p>Справа — шкала. На ней Солнце и все планеты по порядку. Цифры — расстояние от Солнца в миллионах километров.</p>
+<p>Ещё на странице два стихотворения. Михаил Ломоносов пишет о споре двух астрономов: кто вокруг кого ходит — Земля вокруг Солнца или Солнце вокруг Земли? Кто прав — узнаешь в первом разделе.</p>
+<p><i>Случились вместе два Астронома в пиру<br>И спорили весьма между собой в жару.<br>Один твердит: Земля, вертясь, круг Солнца ходит;<br>Другой, что Солнце все с собой планеты водит,<br>Один Коперник был, другой слыл Птолемей.</i><br><span style="color:var(--soft)">М. В. Ломоносов</span></p>
+<p><i>Мы живём, точно во сне неразгаданном,<br>На одной из удобных планет.</i><br><span style="color:var(--soft)">И. Северянин</span></p>
+</div>
+<div class="book" hidden>
+<p>«Космос» (kosmos) по-гречески — Вселенная</p>
+<p><i>Случились вместе два Астронома в пиру<br>И спорили весьма между собой в жару.<br>Один твердит: Земля, вертясь, круг Солнца ходит;<br>Другой, что Солнце все с собой планеты водит,<br>Один Коперник был, другой слыл Птолемей.</i><br>М. В. Ломоносов</p>
+<p><i>Мы живём, точно во сне неразгаданном,<br>На одной из удобных планет.</i><br>И. Северянин</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g8_open" src="img/b8b099c9a10d.jpg" alt="Первая страница раздела «Планета Земля»: астронавт на Луне, космическая станция, космонавт в открытом космосе, Луна, космический аппарат, старинная карта звёздного неба с созвездиями-рисунками, Земля из космоса в круге знаков зодиака; справа — шкала: Солнце, Меркурий, Венера, Земля, Марс, Юпитер, Сатурн, Уран, Нептун и расстояние от Солнца в миллионах километров" style="max-width:520px"><figcaption><span class="src">из учебника</span>Первая страница раздела «Планета Земля». «Космос» (kosmos) по-гречески — Вселенная. <span style="color:var(--soft)">(с. 29 учебника, открывашка раздела)</span></figcaption></div></figure>
+<div class="col">
+<div class="sublabel">Что будет в разделе</div>
+<ol style="margin:0 0 6px;padding-left:24px;font-size:17px"><li><b>§ 8 Мы во Вселенной</b> — ты здесь</li><li>§ 9 Учимся с «Полярной звездой» (1)</li><li>§ 10 Движения Земли</li><li>§ 11 Солнечный свет на Земле</li></ol>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. В стихотворении Ломоносова один астроном говорит: «Земля, вертясь, круг Солнца ходит». Другой — что «Солнце все с собой планеты водит». Кто из них Коперник, а кто Птолемей?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Последний абзац первого раздела: кто поставил в центр Солнце, а кто — Землю?</div>
+<div class="rev ans" id="a1" hidden>Первый — Коперник: у него Земля и другие планеты вращаются вокруг Солнца (гелиоцентрическая система). Второй — Птолемей: он считал, что Земля неподвижна, а Солнце вращается вокруг неё (геоцентрическая система).</div>
+</div>
+<div class="think">
+<p class="qt">2. Северянин пишет, что мы живём «на одной из удобных планет». Чем Земля «удобна»? Найди ответ в параграфе.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Второй раздел, абзац про оболочки Земли.</div>
+<div class="rev ans" id="a2" hidden>У Земли есть твёрдая суша (литосфера), вода (гидросфера) и воздух (атмосфера). И это единственная известная планета, где существует жизнь, — биосфера.</div>
+</div>
+<div class="think">
+<p class="qt">3. Найди Землю на шкале справа. Какая она по счёту от Солнца?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Считай сверху, от Солнца: Меркурий, Венера…</div>
+<div class="rev ans" id="a3" hidden>Третья: Меркурий, Венера, Земля. Это пригодится в вопросе 3 в конце параграфа.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s0" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Как устроена Солнечная система?</h2></div>
+<div class="easy">
+<p>Солнечная система — лишь очень малая часть <span class="term" role="button" tabindex="0" data-t="vsel"><b><span class="tl">Вселенной</span></b></span>. Вселенная вмещает множество звёздных скоплений — <span class="term" role="button" tabindex="0" data-t="galakt"><span class="tl">галактик</span></span>.</p>
+<p>Одна из галактик — наша. Её так и назвали: <b>Галактика</b>, или <span class="term" role="button" tabindex="0" data-t="mlech"><b>Млечный <span class="tl">Путь</span></b></span>. «Галактос» по-гречески — «молочный».</p>
+<p>Ночью на звёздном небе видна белёсая полоса — как дорожка из разлитого молока. Это и есть Млечный Путь. Галактика — гигантский вращающийся диск, а полоса на небе — его ребро.</p>
+<p><span class="big">В нашей Галактике больше 100 миллиардов звёзд.</span> <span class="term" role="button" tabindex="0" data-t="solnce"><span class="tl">Солнце</span></span> — одна из них. Это раскалённая вращающаяся звезда. Она даёт нам свет и тепло.</p>
+<p>Вокруг Солнца обращаются 8 <span class="term" role="button" tabindex="0" data-t="planeta"><span class="tl">планет</span></span>, и среди них наша Земля. Каждая идёт по своей <span class="term" role="button" tabindex="0" data-t="orbita"><i><span class="tl">орбите</span></i></span> — так называют путь небесного тела. Орбиты почти круглые.</p>
+<p>Все планеты вращаются в одну сторону и почти в одной плоскости. Но скорость у них разная, и от Солнца они на разном расстоянии.</p>
+<p>Солнце, планеты со своими <span class="term" role="button" tabindex="0" data-t="sputnik"><span class="tl">спутниками</span></span> и другие космические тела — <span class="term" role="button" tabindex="0" data-t="asteroid"><span class="tl">астероиды</span></span>, <span class="term" role="button" tabindex="0" data-t="kometa"><span class="tl">кометы</span></span> — вместе образуют <span class="term" role="button" tabindex="0" data-t="solsys"><b>Солнечную <span class="tl">систему</span></b></span>.</p>
+<p><span class="big">До Солнца — около 150 млн км, до Луны — 384 тыс. км.</span> Солнце дальше Луны примерно в 390 раз.</p>
+<p>Все космические тела притягивают друг друга. <span class="term" role="button" tabindex="0" data-t="prityazh"><span class="tl">Притяжение</span></span> между Землёй и Луной — вот почему в океанах и морях бывают <span class="term" role="button" tabindex="0" data-t="priliv">приливы и <span class="tl">отливы</span></span>.</p>
+<p>Всё, что происходит на Солнце, на Земле и на других планетах, связано между собой и подчиняется сложным космическим законам.</p>
+<p><span class="big">Кто в центре — Земля или Солнце?</span> Раньше верили <span class="term" role="button" tabindex="0" data-t="ptolemey"><span class="tl">Птолемею</span></span>: Земля — неподвижный шар, а Солнце вращается вокруг неё. Это <span class="term" role="button" tabindex="0" data-t="geocentr"><i>геоцентрическая</i> <span class="tl">система</span></span>. Птолемей ошибался.</p>
+<p>В XVI веке польский астроном <span class="term" role="button" tabindex="0" data-t="kopernik"><b>Николай <span class="tl">Коперник</span></b></span> предложил другую модель: Земля и другие планеты вращаются вокруг Солнца. Её назвали <span class="term" role="button" tabindex="0" data-t="gelio"><i><span class="tl">гелиоцентрической</span></i></span> — от греческого «гелиос», Солнце.</p>
+</div>
+<div class="book" hidden>
+<p>Солнечная система составляет лишь очень малую часть <span class="term" role="button" tabindex="0" data-t="vsel"><b><span class="tl">Вселенной</span></b></span>, вмещающей множество звёздных скоплений — <span class="term" role="button" tabindex="0" data-t="galakt"><span class="tl">галактик</span></span>. Одна из них — наша. Её так и назвали — <b>Галактика</b> или <span class="term" role="button" tabindex="0" data-t="mlech"><b>Млечный <span class="tl">Путь</span></b></span> (от греческого слова <i>галактос</i> — молочный). Ночью на звёздном небе мы видим белёсую полосу, похожую на дорожку из разлитого молока. Это и есть Млечный Путь — ребро гигантского вращающегося диска — Галактики.</p>
+<p>В нашей Галактике сосредоточено более 100 миллиардов звёзд. <span class="term" role="button" tabindex="0" data-t="solnce"><span class="tl">Солнце</span></span> — одна из них. Эта раскалённая вращающаяся звезда даёт нам свет и тепло. Вокруг Солнца по <span class="term" role="button" tabindex="0" data-t="orbita"><i><span class="tl">орбитам</span></i></span>, близким к окружности, обращаются 8 <span class="term" role="button" tabindex="0" data-t="planeta"><span class="tl">планет</span></span>, в том числе наша Земля. Орбита — это путь движения небесного тела. Планеты вращаются в одном направлении и практически в одной плоскости, но с разной скоростью и на разном расстоянии от Солнца. Солнце, планеты со своими <span class="term" role="button" tabindex="0" data-t="sputnik"><span class="tl">спутниками</span></span> и другие космические тела (<span class="term" role="button" tabindex="0" data-t="asteroid"><span class="tl">астероиды</span></span>, <span class="term" role="button" tabindex="0" data-t="kometa"><span class="tl">кометы</span></span> и т. д.) образуют <span class="term" role="button" tabindex="0" data-t="solsys"><b>Солнечную <span class="tl">систему</span></b></span>. Среднее расстояние от Земли до Солнца — около 150 млн км, от Земли до Луны — 384 тыс. км.</p>
+<p>Между Землёй и Луной, как и между всеми космическими телами, существует <span class="term" role="button" tabindex="0" data-t="prityazh"><span class="tl">притяжение</span></span>, благодаря чему бывают <span class="term" role="button" tabindex="0" data-t="priliv">приливы и <span class="tl">отливы</span></span> в океанах и морях. Всё, что происходит на Солнце, на Земле и на других планетах, взаимосвязано и подчиняется сложным космическим законам.</p>
+<p>Модель устройства мира, в которой Земля и другие планеты вращаются вокруг Солнца, предложил в XVI в. польский астроном <span class="term" role="button" tabindex="0" data-t="kopernik"><span class="tl"><b><i>Николай Коперник</i></b></span></span>. Эту систему назвали <span class="term" role="button" tabindex="0" data-t="gelio"><i><span class="tl">гелиоцентрической</span></i></span> (от греческого слова <i>гелиос</i> — Солнце). До этого была принята <span class="term" role="button" tabindex="0" data-t="geocentr"><i>геоцентрическая</i> <span class="tl">система</span></span> <span class="term" role="button" tabindex="0" data-t="ptolemey"><span class="tl">Птолемея</span></span>, который ошибочно полагал, что шарообразная Земля неподвижна, а Солнце вращается вокруг неё.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 304" role="img" aria-label="Схема: наша Галактика сверху — спиральный диск, Солнце на краю, примерно на двух третях от центра. Сбоку — тонкий диск. Если смотреть вдоль диска, звёзд очень много: на небе видна белёсая полоса — Млечный Путь. Если смотреть вверх — звёзд мало"><use href="#g8-milk"/></svg><figcaption>Почему Млечный Путь на небе — полоса: мы живём внутри диска и смотрим на него с ребра.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 238" role="img" aria-label="Схема Солнечной системы: Солнце и восемь планет по порядку — Меркурий, Венера, Земля (рядом Луна, спутник Земли), Марс, пояс астероидов, Юпитер, Сатурн, Уран, Нептун; вверху комета. Размеры и расстояния не в масштабе"><use href="#g8-sys"/></svg><figcaption>Земля — третья от Солнца. Порядок настоящий, а размеры и расстояния здесь не в масштабе.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 200" role="img" aria-label="Шкала в одном масштабе: расстояние от Солнца в миллионах километров. Меркурий 58, Венера 108, Земля 150, Марс 228 — все тесно у Солнца. Юпитер 778, Сатурн 1430, Уран 2870, Нептун 4500 — в 30 раз дальше Земли"><use href="#g8-dist"/></svg><figcaption>А вот настоящие расстояния — все в одном масштабе.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Про шкалу на с. 29.</b> На первой странице раздела справа нарисована шкала расстояний от Солнца. Деления на ней неравные: от 0 до 500 — длинный отрезок, от 2000 до 3000 — короче, а от 4500 до 5000 — совсем маленький. Так сделали, чтобы все планеты поместились на странице. Порядок планет там правильный. А какие расстояния на самом деле — на схеме выше: Меркурий, Венера, Земля и Марс жмутся к Солнцу, а Нептун в 30 раз дальше Земли.</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 334" role="img" aria-label="Если бы в космос вела дорога. Тольятти — Москва: около 1000 километров, 14 часов на машине. До Луны 384 тысячи километров — 384 таких дороги, без остановок больше 7 месяцев. До Солнца 150 миллионов километров — 390 расстояний до Луны, на машине около 240 лет"><use href="#g8-road"/></svg><figcaption>Твоя дорога из Тольятти в Москву — мерка для космоса.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 222" role="img" aria-label="Две модели мира. Птолемей, I—II века: в центре Земля, вокруг неё Солнце и планеты — геоцентрическая система, «гео» — Земля, это ошибка. Коперник, XVI век: в центре Солнце, вокруг Земля и другие планеты — гелиоцентрическая система, «гелиос» — Солнце, так и есть"><use href="#g8-models"/></svg><figcaption>Спор из стихотворения Ломоносова: кто в центре?</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 372" role="img" aria-label="Твой космический адрес: Вселенная, Галактика Млечный Путь, Солнечная система, планета Земля, материк Евразия и часть света Европа, Россия, Москва, Новогиреево. Как адрес на конверте: от самого большого к самому маленькому"><use href="#g8-adres"/></svg><figcaption>Вывод раздела — как адрес на конверте.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">Запомни</span><p>Солнечная система: Солнце, 8 планет со спутниками, астероиды, кометы. От Земли до Солнца — около 150 млн км, до Луны — 384 тыс. км. В XVI в. Николай Коперник: в центре — Солнце.</p></div>
+<div class="side green"><span class="slab">Подсказка учебника</span><p>Изучите начало темы на с. 29. Вспомните, что вам известно о звёздах и планетах из курса «Окружающий мир».</p></div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Наша Галактика — часть Вселенной. Солнечная система — часть Галактики. Земля — планета Солнечной системы.</p></div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Геоцентрическая</b><p>Птолемей: в центре — неподвижная Земля, Солнце вращается вокруг неё. Ошибка</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Гелиоцентрическая</b><p>Коперник, XVI в.: в центре — Солнце, Земля и другие планеты вращаются вокруг него</p></div></div><p class="pairkey"><b>Гео</b> — Земля, <b>гелиос</b> — Солнце. Что в центре — то и в названии.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твой космический адрес</span></div><div class="lifebody"><p>Ты знаешь свой адрес: страна, город, улица, дом, квартира. Напиши его на конверте — и почтальон найдёт тебя среди миллионов людей.</p><p>А теперь допиши адрес «вверх», как на схеме: <b>Вселенная → Галактика Млечный Путь → Солнечная система → планета Земля → материк Евразия → Россия → Москва → Новогиреево</b>.</p><p>Каждая строчка — внутри предыдущей. Это и есть вывод раздела: Галактика — часть Вселенной, Солнечная система — часть Галактики, Земля — планета Солнечной системы.</p></div><p class="lifebook">В учебнике это называется: <b>наша Галактика — часть Вселенной, Солнечная система — часть Галактики</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">14 часов — и дорога до Луны</span></div><div class="lifebody"><p>Твоя самая долгая дорога — из Тольятти в Москву на машине: 14 часов, по шоссе около 1000 км.</p><p>До Луны — 384 тыс. км. Это 384 такие дороги. Если ехать без остановок, днём и ночью, — больше 7 месяцев. До Солнца — 150 млн км: в 390 раз дальше Луны. На машине это около 240 лет.</p><p>Проверь на калькуляторе: <b>384 × 14</b> — столько часов ехать до Луны. Раздели ответ на 24 — получишь, сколько это суток.</p></div><p class="lifebook">В учебнике это называется: <b>среднее расстояние от Земли до Солнца — около 150 млн км, от Земли до Луны — 384 тыс. км</b></p></aside>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Ответ к калькулятору</button></div>
+<div class="rev ans" id="r1" hidden>384 × 14 = 5 376 часов. 5 376 : 24 = 224 суток — это больше 7 месяцев без единой остановки.</div></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Почему Млечный Путь виден на небе полосой, а не кругом и не пятном?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>В учебнике: Млечный Путь — «ребро гигантского вращающегося диска». Посмотри схему «Галактика сбоку».</div>
+<div class="rev ans" id="a4" hidden>Наша Галактика — огромный диск, а Солнце с Землёй — внутри него. Когда мы смотрим вдоль диска, видим очень много звёзд сразу — они сливаются в белёсую полосу. Это ребро диска.</div>
+</div>
+<div class="think">
+<p class="qt">5. Древние греки спрашивали: почему море то наступает, то отступает (§ 2)? Что ответил бы им этот параграф?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Абзац про притяжение между космическими телами.</div>
+<div class="rev ans" id="a5" hidden>Между Землёй и Луной существует притяжение. Из-за него в океанах и морях бывают приливы и отливы: вода то наступает на берег, то отступает.</div>
+</div>
+<div class="think">
+<p class="qt">6. Птолемей составил карту мира с сеткой (§ 2) — одну из лучших в древности. А в чём он ошибался?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Последний абзац раздела: какую систему мира предложил Птолемей?</div>
+<div class="rev ans" id="a6" hidden>Птолемей ошибочно полагал, что шарообразная Земля неподвижна, а Солнце вращается вокруг неё, — это геоцентрическая система. В XVI в. Николай Коперник показал: Земля и другие планеты вращаются вокруг Солнца.</div>
+</div>
+<div class="think">
+<p class="qt">7. Чем Солнце отличается от Земли и Луны? Найди в тексте три разных слова для этих трёх тел.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Солнце — «раскалённая вращающаяся…», Земля — одна из восьми…, Луна — …</div>
+<div class="rev ans" id="a7" hidden>Солнце — звезда: раскалённая, даёт свет и тепло. Земля — планета: обращается вокруг Солнца по орбите. Луна — спутник Земли: обращается вокруг Земли.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Как устроена наша планета?</h2></div>
+<div class="easy">
+<p>Земля — шар, но не совсем ровный. Поверхность у неё неровная, а у полюсов Земля слегка сплюснута. Такую форму учёные назвали <span class="term" role="button" tabindex="0" data-t="geoid"><i><span class="tl">геоидом</span></i></span>.</p>
+<p><span class="big">Площадь поверхности Земли — 510 млн км².</span> Большая её часть покрыта водой. Над водой выступает суша — <span class="term" role="button" tabindex="0" data-t="materik"><b><span class="tl">материки</span></b></span> и <span class="term" role="button" tabindex="0" data-t="ostrov"><span class="tl">острова</span></span>.</p>
+<p>Материков шесть: Евразия, Африка, Северная Америка, Южная Америка, Австралия и Антарктида.</p>
+<p>С давних времён сушу делят ещё и на <span class="term" role="button" tabindex="0" data-t="chast"><b>части <span class="tl">света</span></b></span>. Так сложилось исторически. Частей света тоже шесть (рис. 20).</p>
+<p>Но совпадают они не во всём. Два материка — Северная и Южная Америка — это одна часть света, Америка. А на одном материке Евразия — две части света: Европа и Азия. Здесь находится наша Родина — Россия.</p>
+<p><span class="big">У Земли есть природные <span class="term" role="button" tabindex="0" data-t="obol"><b><span class="tl">оболочки</span></b></span>.</span> Их четыре: <span class="term" role="button" tabindex="0" data-t="lito"><i><span class="tl">литосфера</span></i></span> — твёрдая, <span class="term" role="button" tabindex="0" data-t="gidro"><i><span class="tl">гидросфера</span></i></span> — водная, <span class="term" role="button" tabindex="0" data-t="atmo"><i><span class="tl">атмосфера</span></i></span> — воздушная и <span class="term" role="button" tabindex="0" data-t="bio"><i><span class="tl">биосфера</span></i></span> — сфера жизни.</p>
+<p>Земля — единственная известная планета, где есть жизнь.</p>
+<p>Оболочки взаимодействуют — влияют друг на друга. Все вместе они образуют <span class="term" role="button" tabindex="0" data-t="geoobol"><i>географическую <span class="tl">оболочку</span></i></span>. Дальше ты будешь изучать каждую оболочку — и то, как они влияют друг на друга и на человека.</p>
+</div>
+<div class="book" hidden>
+<p>Земля имеет неровную поверхность и шарообразную форму — она слегка сплюснута с полюсов. Подобную форму Земли учёные назвали <span class="term" role="button" tabindex="0" data-t="geoid"><i><span class="tl">геоидом</span></i></span>. Площадь поверхности Земли 510 млн км², и большая её часть покрыта водой. Над водой выступает суша — <span class="term" role="button" tabindex="0" data-t="materik"><b><span class="tl">материки</span></b></span> и <span class="term" role="button" tabindex="0" data-t="ostrov"><span class="tl">острова</span></span>. Материков шесть: Евразия, Африка, Северная Америка, Южная Америка, Австралия и Антарктида. Сушу земного шара с давних времён делят не только на материки, но и на исторически сложившиеся <span class="term" role="button" tabindex="0" data-t="chast"><b>части <span class="tl">света</span></b></span> (рис. 20). Частей света тоже шесть. Материки Северная Америка и Южная Америка образуют часть света Америку, а на одном материке Евразия находятся две части света — Европа и Азия. Здесь находится наша Родина — Россия.</p>
+<p>У Земли есть природные <span class="term" role="button" tabindex="0" data-t="obol"><b><span class="tl">оболочки</span></b></span>: твёрдая — <span class="term" role="button" tabindex="0" data-t="lito"><i><span class="tl">литосфера</span></i></span>, водная — <span class="term" role="button" tabindex="0" data-t="gidro"><i><span class="tl">гидросфера</span></i></span>, воздушная — <span class="term" role="button" tabindex="0" data-t="atmo"><i><span class="tl">атмосфера</span></i></span> и сфера жизни — <span class="term" role="button" tabindex="0" data-t="bio"><i><span class="tl">биосфера</span></i></span>. Земля — единственная известная планета, где существует жизнь. Взаимодействуя между собой, все оболочки вместе образуют <span class="term" role="button" tabindex="0" data-t="geoobol"><i>географическую <span class="tl">оболочку</span></i></span>. Мы будем изучать каждую оболочку в отдельности и их взаимное влияние друг на друга и на человека.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 286" role="img" aria-label="Слева — геоид: Земля почти шар, слегка сплюснутый у полюсов; пунктир — ровный шар, сплюснутость на рисунке преувеличена. Справа — поверхность Земли 510 миллионов квадратных километров: из 10 частей примерно 7 — вода, 3 — суша; суша — это материки и острова"><use href="#g8-geoid"/></svg><figcaption>Форма Земли и сколько на ней воды.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-g8_r20" src="img/1a4b1ddff239.jpg" alt="Две карты мира. Слева материки: Северная Америка, Южная Америка, Евразия, Африка, Австралия, Антарктида. Справа части света: Америка, Европа, Азия, Африка, Австралия, Антарктида"><figcaption><span class="src">из учебника</span><b>Рис. 20.</b> Материки и части света</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 340" role="img" aria-label="Шесть материков и шесть частей света. Евразия — это Европа и Азия. Африка — Африка. Северная и Южная Америка — одна часть света Америка. Австралия — Австралия. Антарктида — Антарктида. Россия — на материке Евразия, в двух частях света: Москва и Тольятти в Европе, Сибирь в Азии"><use href="#g8-mat"/></svg><figcaption>Как материки соответствуют частям света. Совпадают четыре из шести.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 308" role="img" aria-label="Оболочки Земли в разрезе: литосфера — твёрдая, горы и камни; гидросфера — водная, океан; атмосфера — воздушная, облака; биосфера — сфера жизни, там, где встречаются суша, вода и воздух. Все четыре вместе образуют географическую оболочку"><use href="#g8-obol"/></svg><figcaption>Четыре оболочки — и географическая оболочка, где они встречаются.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">Запомни</span><p>Материков шесть: Евразия, Африка, Северная Америка, Южная Америка, Австралия, Антарктида. Частей света тоже шесть: Европа, Азия, Африка, Америка, Австралия, Антарктида.</p></div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Земля имеет шарообразную форму, названную геоидом. Земная суша делится на материки и части света. Оболочки Земли — литосфера, гидросфера, атмосфера, биосфера.</p></div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Материк</b><p>большой участок суши среди воды. Евразия — один материк</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Часть света</b><p>деление суши, сложившееся исторически. На Евразии — две: Европа и Азия</p></div></div><p class="pairkey">Материки разделяет вода. Части света придумали люди — поэтому Европа и Азия могут быть на одном материке.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Четыре оболочки у тебя дома</span></div><div class="lifebody"><p><b>Литосфера</b> — у мамы-геолога дома кварцы и минералы. Каждый камень — кусочек твёрдой оболочки Земли.</p><p><b>Гидросфера</b> — Волга у Ягодного, где ты купаешься летом, Кошачий пруд у дома, вода в поилке Люси и Юкси.</p><p><b>Атмосфера</b> — воздух, которым дышишь ты, и Люся с Юкси тоже.</p><p><b>Биосфера</b> — сами Люся и Юкси, муравьи на ферме, старые дубы Терлецкой дубравы. И ты.</p><p>А на Волге все оболочки встречаются сразу: вода течёт по земле, над ней — воздух, в ней и на берегу — жизнь. Это и есть географическая оболочка.</p></div><p class="lifebook">В учебнике это называется: <b>оболочки Земли — литосфера, гидросфера, атмосфера, биосфера</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Глобус дома</span></div><div class="lifebody"><p>Найди на глобусе все шесть материков. Начни с того, где живёшь ты: Москва — на материке Евразия.</p><p>Евразия — самый большой материк. На нём две части света — Европа и Азия. Москва, Тольятти и Ягодное — в Европе. А за Уральскими горами начинается Азия: туда, в Сибирь, ушёл Ермак (§ 6).</p><p>Покрути глобус: какого цвета на нём больше — синего или остальных? Так ты сама увидишь, что большая часть поверхности Земли покрыта водой.</p></div><p class="lifebook">В учебнике это называется: <b>материки и части света; большая часть поверхности покрыта водой</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Материков шесть и частей света шесть. Почему же они совпадают не во всём?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Сравни две карты на рис. 20: где на левой один цвет, а на правой — два? И наоборот.</div>
+<div class="rev ans" id="a8" hidden>Евразия — один материк, но две части света: Европа и Азия. А Северная и Южная Америка — два материка, но одна часть света — Америка. Африка, Австралия и Антарктида — и материки, и части света.</div>
+</div>
+<div class="think">
+<p class="qt">9. В каких оболочках Земли живёшь ты — в одной или сразу в нескольких?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Вспомни, что значит каждая оболочка, и посмотри на схему оболочек: где живут люди?</div>
+<div class="rev ans" id="a9" hidden>Сразу во всех: я хожу по литосфере, дышу атмосферой, пью воду из гидросферы и сама — часть биосферы. Там, где оболочки встречаются, и находится географическая оболочка.</div>
+</div>
+<div class="think">
+<p class="qt">10. Ермак перешёл Уральские горы (§ 6). Из какой части света в какую он попал? А материк сменился?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Схема «6 материков — 6 частей света», подпись внизу.</div>
+<div class="rev ans" id="a10" hidden>Ермак пошёл из Европы в Азию — в Сибирь. А материк не сменился: и Европа, и Азия — на одном материке Евразия.</div>
+</div>
+<div class="think">
+<p class="qt">11. «Большая часть поверхности покрыта водой». Почему тогда планету называют Земля, а не Вода?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Это вопрос на подумать. Где живут люди, которые дали планете имя?</div>
+<div class="rev ans" id="a11" hidden>Люди живут на суше — на материках и островах — и называли планету по земле под ногами. Хотя воды на ней больше: примерно 7 частей из 10.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги параграфа</h2></div>
+<div class="rubric">Запомните</div>
+<div class="remember"><span>Вселенная</span><span>Галактика</span><span>Млечный Путь</span><span>Солнечная система</span><span>Николай Коперник</span><span>Геоид</span><span>Материки и части света</span><span>Земные оболочки</span></div>
+<div class="rubric">Это я знаю</div>
+<div class="ask"><b>Вопросы учебника</b>
+<ol><li>Какие космические тела образуют Солнечную систему?</li><li>Путь Земли вокруг Солнца называется: а) орбитой; б) эллипсом; в) осью.</li><li>Выберите верные утверждения: 1) Солнце по размерам равно Земле; 2) Земля — третья по счёту от Солнца планета; 3) Солнечную систему образуют Земля и Солнце; 4) Солнце — раскалённая звезда, которая даёт нам свет и тепло.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка к вопросу 3</button></div>
+<div class="rev hint" id="r2" hidden>Проверяй каждое утверждение. <b>1)</b> Посмотри на шкалу на с. 29: какое там Солнце и какая Земля? <b>2)</b> Посчитай планеты от Солнца на схеме «Солнечная система». <b>3)</b> Перечитай, что образует Солнечную систему: только ли Земля и Солнце? <b>4)</b> Найди в тексте, какое Солнце и что оно нам даёт.</div></div>
+<div class="rubric">Это я могу</div>
+<div class="ask"><b>Задание учебника</b><ol start="4"><li>Прочитайте фрагмент параграфа «Как устроена наша планета?». Выпишите в три колонки: материки; части света; земные оболочки.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к заданию 4</button></div>
+<div class="rev hint" id="r3" hidden>Расчерти страницу тетради на три колонки. В первую — шесть материков, во вторую — шесть частей света, в третью — четыре оболочки. Названия ищи во втором разделе, проверь себя по схеме «6 материков — 6 частей света». В атласах часть света Австралию часто называют «Австралия и Океания»: к ней относят и острова Тихого океана (Океания — из § 5).</div></div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Космический адрес — расставь от самого большого к самому маленькому</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди: сначала то, внутри чего находится всё остальное. Подсказка — схема «Твой космический адрес».</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Солнечная система</button>
+<button class="chip" data-ord="7"><span class="ord"></span>Москва</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Вселенная</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Планета Земля</button>
+<button class="chip" data-ord="6"><span class="ord"></span>Россия</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Галактика Млечный Путь</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Материк Евразия</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sortgame" id="srt4" data-n="8">
+<div class="sortlab">Материк, часть света — или то и другое?</div>
+<p class="sortnote">Проверь себя по рис. 20 и схеме «6 материков — 6 частей света».</p>
+<div class="sitem" data-r="0"><p class="stext">Евразия</p><div class="sbtns"><button class="sbtn" data-b="0">только материк</button><button class="sbtn" data-b="1">только часть света</button><button class="sbtn" data-b="2">и материк, и часть света</button></div><p class="swhy" hidden>Евразия — материк. На нём две части света: Европа и Азия.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Европа</p><div class="sbtns"><button class="sbtn" data-b="0">только материк</button><button class="sbtn" data-b="1">только часть света</button><button class="sbtn" data-b="2">и материк, и часть света</button></div><p class="swhy" hidden>Европа — часть света на материке Евразия.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Азия</p><div class="sbtns"><button class="sbtn" data-b="0">только материк</button><button class="sbtn" data-b="1">только часть света</button><button class="sbtn" data-b="2">и материк, и часть света</button></div><p class="swhy" hidden>Азия — часть света на материке Евразия.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Северная Америка</p><div class="sbtns"><button class="sbtn" data-b="0">только материк</button><button class="sbtn" data-b="1">только часть света</button><button class="sbtn" data-b="2">и материк, и часть света</button></div><p class="swhy" hidden>Это материк. Вместе с Южной Америкой он образует часть света Америку.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Америка</p><div class="sbtns"><button class="sbtn" data-b="0">только материк</button><button class="sbtn" data-b="1">только часть света</button><button class="sbtn" data-b="2">и материк, и часть света</button></div><p class="swhy" hidden>Часть света Америку образуют два материка: Северная и Южная Америка.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Африка</p><div class="sbtns"><button class="sbtn" data-b="0">только материк</button><button class="sbtn" data-b="1">только часть света</button><button class="sbtn" data-b="2">и материк, и часть света</button></div><p class="swhy" hidden>Африка — и материк, и часть света.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Австралия</p><div class="sbtns"><button class="sbtn" data-b="0">только материк</button><button class="sbtn" data-b="1">только часть света</button><button class="sbtn" data-b="2">и материк, и часть света</button></div><p class="swhy" hidden>Австралия — и материк, и часть света.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Антарктида</p><div class="sbtns"><button class="sbtn" data-b="0">только материк</button><button class="sbtn" data-b="1">только часть света</button><button class="sbtn" data-b="2">и материк, и часть света</button></div><p class="swhy" hidden>Антарктида — и материк, и часть света.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt5" data-n="8">
+<div class="sortlab">Какая это оболочка Земли?</div>
+<div class="sitem" data-r="0"><p class="stext">Мамины кварцы и минералы</p><div class="sbtns"><button class="sbtn" data-b="0">литосфера</button><button class="sbtn" data-b="1">гидросфера</button><button class="sbtn" data-b="2">атмосфера</button><button class="sbtn" data-b="3">биосфера</button></div><p class="swhy" hidden>Камни — твёрдая оболочка Земли, литосфера.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Горы в Турции</p><div class="sbtns"><button class="sbtn" data-b="0">литосфера</button><button class="sbtn" data-b="1">гидросфера</button><button class="sbtn" data-b="2">атмосфера</button><button class="sbtn" data-b="3">биосфера</button></div><p class="swhy" hidden>Горы — тоже твёрдая оболочка.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Волга у Ягодного</p><div class="sbtns"><button class="sbtn" data-b="0">литосфера</button><button class="sbtn" data-b="1">гидросфера</button><button class="sbtn" data-b="2">атмосфера</button><button class="sbtn" data-b="3">биосфера</button></div><p class="swhy" hidden>Реки — водная оболочка.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Океаны и моря</p><div class="sbtns"><button class="sbtn" data-b="0">литосфера</button><button class="sbtn" data-b="1">гидросфера</button><button class="sbtn" data-b="2">атмосфера</button><button class="sbtn" data-b="3">биосфера</button></div><p class="swhy" hidden>Большая часть поверхности Земли покрыта водой — это гидросфера.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Воздух, которым ты дышишь</p><div class="sbtns"><button class="sbtn" data-b="0">литосфера</button><button class="sbtn" data-b="1">гидросфера</button><button class="sbtn" data-b="2">атмосфера</button><button class="sbtn" data-b="3">биосфера</button></div><p class="swhy" hidden>Атмосфера — воздушная оболочка.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Ветер</p><div class="sbtns"><button class="sbtn" data-b="0">литосфера</button><button class="sbtn" data-b="1">гидросфера</button><button class="sbtn" data-b="2">атмосфера</button><button class="sbtn" data-b="3">биосфера</button></div><p class="swhy" hidden>Ветер — это движущийся воздух, атмосфера.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Люся и Юкси</p><div class="sbtns"><button class="sbtn" data-b="0">литосфера</button><button class="sbtn" data-b="1">гидросфера</button><button class="sbtn" data-b="2">атмосфера</button><button class="sbtn" data-b="3">биосфера</button></div><p class="swhy" hidden>Всё живое — сфера жизни, биосфера.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Дубы Терлецкой дубравы</p><div class="sbtns"><button class="sbtn" data-b="0">литосфера</button><button class="sbtn" data-b="1">гидросфера</button><button class="sbtn" data-b="2">атмосфера</button><button class="sbtn" data-b="3">биосфера</button></div><p class="swhy" hidden>Растения — тоже биосфера.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Вселенная</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 372" aria-hidden="true"><use href="#g8-adres"/></svg><span class="ftext">Вмещает множество звёздных скоплений — галактик. «Космос» по-гречески.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Млечный Путь</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 304" aria-hidden="true"><use href="#g8-milk"/></svg><span class="ftext">Наша Галактика: более 100 млрд звёзд. На небе — белёсая полоса, ребро диска.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Солнечная система</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 238" aria-hidden="true"><use href="#g8-sys"/></svg><span class="ftext">Солнце, 8 планет со спутниками, астероиды, кометы.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Орбита</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 238" aria-hidden="true"><use href="#g8-sys"/></svg><span class="ftext">Путь движения небесного тела. Орбиты планет близки к окружности.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Николай Коперник</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 222" aria-hidden="true"><use href="#g8-models"/></svg><span class="ftext">XVI в. Гелиоцентрическая система: в центре — Солнце.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Геоид</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 286" aria-hidden="true"><use href="#g8-geoid"/></svg><span class="ftext">Форма Земли: шар, слегка сплюснутый у полюсов.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Материки и части света</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 340" aria-hidden="true"><use href="#g8-mat"/></svg><span class="ftext">6 и 6. Евразия — Европа и Азия; две Америки — одна Америка.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Земные оболочки</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 308" aria-hidden="true"><use href="#g8-obol"/></svg><span class="ftext">Литосфера, гидросфера, атмосфера, биосфера — вместе географическая оболочка.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Какая звезда даёт нам свет и тепло?</h3><div class="opts">
+<button class="opt" data-ok="1">Солнце</button>
+<button class="opt">Полярная звезда</button>
+<button class="opt">Луна</button>
+<button class="opt">Млечный Путь</button></div>
+<div class="fb">Солнце — раскалённая вращающаяся звезда, одна из более 100 миллиардов звёзд Галактики. А Луна — спутник Земли.</div></div>
+<div class="q"><h3>2. Путь Земли вокруг Солнца называется…</h3><div class="opts">
+<button class="opt" data-ok="1">орбитой</button>
+<button class="opt">эллипсом</button>
+<button class="opt">осью</button>
+<button class="opt">экватором</button></div>
+<div class="fb">Орбита — путь движения небесного тела.</div></div>
+<div class="q"><h3>3. Какая по счёту от Солнца планета Земля?</h3><div class="opts">
+<button class="opt">Первая</button>
+<button class="opt">Вторая</button>
+<button class="opt" data-ok="1">Третья</button>
+<button class="opt">Восьмая</button></div>
+<div class="fb">Меркурий, Венера, Земля — третья.</div></div>
+<div class="q"><h3>4. Что предложил Николай Коперник в XVI в.?</h3><div class="opts">
+<button class="opt" data-ok="1">Модель мира, где Земля и планеты вращаются вокруг Солнца</button>
+<button class="opt">Модель мира, где Солнце вращается вокруг неподвижной Земли</button>
+<button class="opt">Первую карту мира с сеткой</button>
+<button class="opt">Считать Землю плоской</button></div>
+<div class="fb">Это гелиоцентрическая система. А Землю в центр ставил Птолемей — геоцентрическая система.</div></div>
+<div class="q"><h3>5. Почему в океанах и морях бывают приливы и отливы?</h3><div class="opts">
+<button class="opt">Из-за ветра</button>
+<button class="opt" data-ok="1">Из-за притяжения между Землёй и Луной</button>
+<button class="opt">Из-за дождей</button>
+<button class="opt">Из-за рек</button></div>
+<div class="fb">Между Землёй и Луной, как и между всеми космическими телами, существует притяжение.</div></div>
+<div class="q"><h3>6. Какая часть света находится на одном материке с Европой?</h3><div class="opts">
+<button class="opt">Африка</button>
+<button class="opt">Америка</button>
+<button class="opt" data-ok="1">Азия</button>
+<button class="opt">Австралия</button></div>
+<div class="fb">На материке Евразия две части света — Европа и Азия. Здесь и наша Родина — Россия.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Космический адрес Земли</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Вселенная вмещает множество звёздных скоплений — галактик.</li><li>Наша Галактика — Млечный Путь: более 100 млрд звёзд, на небе — белёсая полоса, ребро диска.</li><li>Солнечная система — часть Галактики, Земля — планета Солнечной системы.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как устроена Солнечная система</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Солнце — раскалённая вращающаяся звезда, даёт свет и тепло.</li><li>8 планет обращаются вокруг Солнца по орбитам, близким к окружности; ещё спутники, астероиды, кометы.</li><li>До Солнца около 150 млн км, до Луны 384 тыс. км; притяжение Луны — приливы и отливы.</li></ol></div>
+</div>
+<div class="think">
+<h3>Птолемей и Коперник</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Птолемей: в центре неподвижная Земля, Солнце вращается вокруг неё — геоцентрическая система.</li><li>Коперник, XVI в.: Земля и другие планеты вращаются вокруг Солнца — гелиоцентрическая система.</li><li>Об этом споре — стихотворение Ломоносова на с. 29.</li></ol></div>
+</div>
+<div class="think">
+<h3>Форма и поверхность Земли</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Геоид: шар, слегка сплюснутый у полюсов.</li><li>Поверхность 510 млн км², большая часть покрыта водой; суша — материки и острова.</li><li>6 материков и 6 частей света: Евразия — Европа и Азия, две Америки — одна Америка.</li></ol></div>
+</div>
+<div class="think">
+<h3>Оболочки Земли</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Литосфера — твёрдая, гидросфера — водная, атмосфера — воздушная, биосфера — сфера жизни.</li><li>Земля — единственная известная планета, где существует жизнь.</li><li>Вместе, взаимодействуя, оболочки образуют географическую оболочку.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g7.html">‹ §7 География сегодня</a>
+  <span class="pn cur">§8 Мы во Вселенной</span>
+ </div>
+</div>
+
+<footer><div class="wrap">География, 5—6 классы. А. И. Алексеев и др., «Полярная звезда», 2023. § 8, с. 29—31. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'g8-adres':'0 0 360 372','g8-milk':'0 0 360 304','g8-sys':'0 0 360 238','g8-dist':'0 0 360 200','g8-road':'0 0 360 334','g8-models':'0 0 360 222','g8-geoid':'0 0 360 286','g8-mat':'0 0 360 340','g8-obol':'0 0 360 308'};
+
+var T={
+vsel:{w:"Вселенная",k:"что это",s:"g8-adres",t:"Всё, что существует в космосе. Вселенная вмещает множество звёздных скоплений — галактик. Солнечная система — лишь очень малая её часть.",r:"«Космос» (kosmos) по-гречески — Вселенная (с. 29)",e:""},
+galakt:{w:"Галактика",k:"звёздное скопление",s:"g8-milk",t:"Огромное скопление звёзд. Наша Галактика — Млечный Путь: в ней более 100 миллиардов звёзд, и Солнце — одна из них.",r:"<b>галактос</b> (греч.) — молочный",e:""},
+mlech:{w:"Млечный Путь",k:"наша Галактика",s:"g8-milk",t:"Так назвали нашу Галактику. Ночью на звёздном небе видна белёсая полоса, похожая на дорожку из разлитого молока. Это ребро гигантского вращающегося диска — Галактики.",r:"",e:""},
+solnce:{w:"Солнце",k:"звезда",s:"g8-sys",t:"Раскалённая вращающаяся звезда, одна из более 100 миллиардов звёзд нашей Галактики. Даёт нам свет и тепло. До него от Земли — около 150 млн км.",r:"",e:""},
+orbita:{w:"Орбита",k:"что это",s:"g8-sys",t:"Путь движения небесного тела. Планеты обращаются вокруг Солнца по орбитам, близким к окружности.",r:"<b>orbita</b> (лат.) — колея, след колеса",e:""},
+planeta:{w:"Планета",k:"что это",s:"g8-sys",t:"Большое небесное тело, которое обращается вокруг Солнца по своей орбите. Планет восемь, Земля — третья от Солнца.",r:"<b>планетес</b> (греч.) — блуждающий: планеты «бродят» по небу среди звёзд",e:""},
+sputnik:{w:"Спутник планеты",k:"что это",s:"g8-sys",t:"Небесное тело, которое обращается вокруг планеты. Луна — спутник Земли, до неё 384 тыс. км. А в § 7 были искусственные спутники — их запускают люди.",r:"",e:""},
+asteroid:{w:"Астероиды",k:"что это",s:"g8-sys",t:"Небольшие каменные космические тела. Тоже обращаются вокруг Солнца и входят в Солнечную систему.",r:"<b>астероидес</b> (греч.) — похожий на звезду",e:""},
+kometa:{w:"Кометы",k:"что это",s:"g8-sys",t:"Космические тела со светящимся хвостом. Тоже входят в Солнечную систему.",r:"<b>кометес</b> (греч.) — длинноволосая: светящийся хвост похож на распущенные волосы",e:""},
+solsys:{w:"Солнечная система",k:"что это",s:"g8-sys",t:"Солнце, планеты со своими спутниками и другие космические тела (астероиды, кометы и т. д.). Она — часть нашей Галактики.",r:"",e:""},
+prityazh:{w:"Притяжение",k:"что это",s:"g8-road",t:"Все космические тела притягивают друг друга. Притяжение между Землёй и Луной — причина приливов и отливов в океанах и морях.",r:"",e:""},
+priliv:{w:"Приливы и отливы",k:"что это",s:"g8-road",t:"Вода в океанах и морях то поднимается и наступает на берег (прилив), то опускается и отступает (отлив). Это из-за притяжения между Землёй и Луной.",r:"",e:""},
+kopernik:{w:"Николай Коперник",k:"кто это",s:"g8-models",t:"Польский астроном XVI века. Предложил модель мира, в которой Земля и другие планеты вращаются вокруг Солнца.",r:"",e:""},
+gelio:{w:"Гелиоцентрическая система",k:"модель мира",s:"g8-models",t:"Модель мира Коперника: в центре — Солнце, вокруг него вращаются Земля и другие планеты. Так и есть.",r:"<b>гелиос</b> (греч.) — Солнце",e:""},
+geocentr:{w:"Геоцентрическая система",k:"модель мира",s:"g8-models",t:"Модель мира Птолемея: в центре — неподвижная шарообразная Земля, а Солнце вращается вокруг неё. Это ошибка.",r:"<b>гео</b> (греч.) — Земля",e:""},
+ptolemey:{w:"Птолемей",k:"кто это",s:"g8-models",t:"Учёный I—II вв. Составил карту мира с сеткой (§ 2). Ошибочно полагал, что шарообразная Земля неподвижна, а Солнце вращается вокруг неё.",r:"",e:""},
+geoid:{w:"Геоид",k:"форма Земли",s:"g8-geoid",t:"Так учёные назвали форму Земли: почти шар, слегка сплюснутый у полюсов.",r:"<b>гео</b> — Земля, <b>эйдос</b> — вид: «похожий на Землю»",e:""},
+materik:{w:"Материк (континент)",k:"что это",s:"g8-mat",t:"Большой участок суши, который выступает над водой. Материков шесть: Евразия, Африка, Северная Америка, Южная Америка, Австралия и Антарктида.",r:"<b>материк</b> — от «матёрая земля», большая и крепкая; <b>континент</b> (лат.) — сплошная земля",e:""},
+ostrov:{w:"Остров",k:"что это",s:"g8-geoid",t:"Участок суши, со всех сторон окружённый водой, — гораздо меньше материка.",r:"",e:""},
+chast:{w:"Части света",k:"что это",s:"g8-mat",t:"Деление суши, которое сложилось исторически, с давних времён. Частей света шесть: Европа, Азия, Африка, Америка, Австралия, Антарктида.",r:"",e:""},
+obol:{w:"Оболочки Земли",k:"что это",s:"g8-obol",t:"Природные оболочки Земли: твёрдая — литосфера, водная — гидросфера, воздушная — атмосфера и сфера жизни — биосфера.",r:"<b>сфера</b> (греч.) — шар: каждая оболочка окружает всю Землю",e:""},
+lito:{w:"Литосфера",k:"твёрдая оболочка",s:"g8-obol",t:"Твёрдая оболочка Земли: горы, равнины, камни под ногами.",r:"<b>литос</b> (греч.) — камень",e:"Кварцы и минералы, которые мама-геолог привозит с карьеров, — кусочки литосферы."},
+gidro:{w:"Гидросфера",k:"водная оболочка",s:"g8-obol",t:"Водная оболочка Земли: океаны, моря, реки, озёра. Большая часть поверхности Земли покрыта водой.",r:"<b>гидор</b> (греч.) — вода",e:"Волга у Ягодного, в которой ты купаешься летом, — часть гидросферы."},
+atmo:{w:"Атмосфера",k:"воздушная оболочка",s:"g8-obol",t:"Воздушная оболочка Земли.",r:"<b>атмос</b> (греч.) — пар",e:"Воздух, которым дышишь ты и дышат Люся и Юкси, — это атмосфера."},
+bio:{w:"Биосфера",k:"сфера жизни",s:"g8-obol",t:"Сфера жизни: всё живое на Земле. Земля — единственная известная планета, где существует жизнь.",r:"<b>био</b> (греч.) — жизнь",e:"Люся и Юкси и муравьи на твоей ферме — часть биосферы."},
+geoobol:{w:"Географическая оболочка",k:"что это",s:"g8-obol",t:"Все оболочки Земли вместе. Они взаимодействуют — влияют друг на друга и на человека.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('geography:g8:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('geography:g8:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>7){fb.textContent="Верно! Вселенная → Галактика Млечный Путь → Солнечная система → планета Земля → материк Евразия → Россия → Москва.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Не этот. Что больше — и внутри чего находится остальное?";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('geography:g8:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('geography:g8:read_'+id,on?'1':'0')});
+  });
+});
+
+/* --- увеличение карт, схем и картинок по нажатию (на телефоне мелкие подписи) --- */
+var zoom=document.createElement('div');zoom.className='zoom';zoom.hidden=true;
+zoom.setAttribute('role','dialog');zoom.setAttribute('aria-modal','true');zoom.setAttribute('aria-label','Увеличенная картинка');
+zoom.innerHTML='<div class="zoombar"><span>Двигай пальцем, чтобы рассмотреть</span><button class="zoomclose">Закрыть ✕</button></div><div class="zoomin"></div>';
+document.body.appendChild(zoom);
+function openZoom(el){
+  var box=zoom.querySelector('.zoomin');box.innerHTML='';
+  var c=el.cloneNode(true);c.removeAttribute('id');
+  if(c.tagName.toLowerCase()==='svg'){
+    var v=(c.getAttribute('viewBox')||'0 0 400 300').split(/\s+/);
+    c.style.width=Math.round(Math.max(parseFloat(v[2])*2.3,window.innerWidth-24))+'px';
+  }else{
+    c.style.width=Math.round(Math.max((el.naturalWidth||600)*1.1,window.innerWidth*1.5))+'px';
+  }
+  c.style.maxWidth='none';c.style.height='auto';
+  box.appendChild(c);zoom.hidden=false;document.documentElement.style.overflow='hidden';
+  zoom.querySelector('.zoomclose').focus();
+}
+function closeZoom(){zoom.hidden=true;document.documentElement.style.overflow='';}
+document.addEventListener('click',function(e){
+  if(e.target.closest('.zoomclose')){closeZoom();return}
+  var s=e.target.closest('.fig svg, .photo img, .banner img');
+  if(s&&!zoom.contains(s)){openZoom(s);}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!zoom.hidden)closeZoom()});
+
+</script>
+</body>
+</html>
