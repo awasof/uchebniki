@@ -1,0 +1,1201 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Как Земля вертится вокруг своей оси и летит вокруг Солнца — откуда берутся сутки, год и 29 февраля.">
+<title>§10 Движения Земли</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term .tl{white-space:nowrap}
+.term .tl::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover .tl::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== География: морская гамма (синий вместо красного), блоки учебника «Полярная звезда» ===== */
+:root{
+  --red:#1B6A8C; --ochre:#E2A31F; --leaf:#1B6A8C; --life:#8A4CB0; --lifebg:#F2E9F8;
+  --pa:#C9672C; --pb:#1B6A8C; --pink:#C23C86; --pinkbg:#FBE4F0; --yel:#FFF3C4; --yelb:#D9A21A;
+  --grn:#E3F2E1; --grnb:#3E8E4A; --sea:#BFE0EE; --land:#F3E6C4; --landb:#B9A57A;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--pink);color:#FFF6FB;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+:root[data-theme="dark"] .rubric{color:#20101A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rubric{color:#20101A}}
+
+/* --- вывод (розовая плашка учебника) --- */
+.vyvod{margin:24px 0;background:var(--pinkbg);border-left:8px solid var(--pink);border-radius:0 16px 16px 0;
+  padding:13px 16px 14px;box-shadow:var(--sh)}
+.vyvod .vlab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:4px}
+.vyvod p{margin:0;font-size:18px;font-weight:600;line-height:1.5}
+
+/* --- заметки на полях учебника --- */
+.side{margin:22px 0;border-radius:14px;padding:12px 15px;font-size:17px;line-height:1.5;border:2.5px solid}
+.side .slab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.side.yellow{background:var(--yel);border-color:var(--yelb)} .side.yellow .slab{color:var(--yelb)}
+.side.green{background:var(--grn);border-color:var(--grnb)} .side.green .slab{color:var(--grnb)}
+.side p{margin:0}
+
+/* --- запомните --- */
+.remember{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.remember span{background:var(--card);border:2.5px solid var(--pink);border-radius:999px;padding:6px 13px;
+  font-weight:600;font-size:16px;box-shadow:var(--sh)}
+
+/* --- заставка параграфа --- */
+.banner{margin:0;background:var(--paper2);border-bottom:3px solid var(--line)}
+.banner .wrap{padding-block:14px}
+.banner img{display:block;width:100%;max-width:860px;height:auto;max-height:220px;object-fit:cover;margin:0 auto;border-radius:16px;border:3px solid var(--line)}
+.banner figcaption{text-align:center;margin-top:6px}
+
+/* --- таблица учебника для заполнения --- */
+.ttab{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:var(--card)}
+.ttab th,.ttab td{border:2px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.ttab th{background:var(--paper2);font-weight:600}
+.tscroll{overflow-x:auto}
+
+/* маленькие картинки учебника (портреты) не растягиваем на всю ширину */
+.photo img.small{max-width:320px}
+
+/* --- увеличение по нажатию --- */
+.fig{position:relative}
+.fig svg,.photo img{cursor:zoom-in}
+.fig:has(> svg)::after{content:"⤢ нажми на картинку — увеличится";display:block;margin-top:6px;text-align:right;
+  font-size:12px;font-weight:600;color:var(--soft);pointer-events:none}
+.zoom{position:fixed;inset:0;z-index:120;background:var(--paper);overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom[hidden]{display:none!important}
+.zoombar{position:sticky;top:0;left:0;z-index:2;display:flex;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--paper2);border-bottom:2px solid var(--line);font-size:14px;color:var(--soft)}
+.zoomclose{white-space:nowrap;font:inherit;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.zoomin{padding:14px}
+.zoomin svg,.zoomin img{display:block;background:var(--card);border-radius:12px}
+
+/* жирное слово внутри задания учебника — обычное, а не заголовок блока */
+.ask li b,.ask p b,.ask ol b{display:inline;font-size:inherit;letter-spacing:normal;text-transform:none;color:inherit;margin:0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2F6F8F" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">География</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<defs><marker id="ar10-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--illink,#2B2620)"/></marker><marker id="ar10-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--red,#1B6A8C)"/></marker><marker id="ar10-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pink,#C23C86)"/></marker><marker id="ar10-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--moss,#5E7A3A)"/></marker><marker id="ar10-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pa,#C9672C)"/></marker><marker id="ar10-l" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--life,#8A4CB0)"/></marker><marker id="ar10-s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--soft,#5F5648)"/></marker><marker id="ar10-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--no,#B03A2E)"/></marker></defs>
+<symbol id="g10-os" viewBox="0 0 360 296">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Земная ось: наклон и вращение</text>
+<path d="M4.0 168.0 L244.0 168.0" stroke="var(--soft,#5F5648)" stroke-width="1.2" fill="none" stroke-dasharray="5 4"/>
+<circle cx="118.0" cy="168.0" r="72" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="2"/>
+<ellipse cx="118" cy="168" rx="72" ry="12" fill="none" stroke="var(--no,#B03A2E)" stroke-width="2.2" transform="rotate(23.5 118 168)"/>
+<path d="M82.1 250.5 L174.6 37.8" stroke="var(--illink,#2B2620)" stroke-width="1.6" fill="none" stroke-dasharray="5 4"/>
+<circle cx="146.7" cy="102.0" r="4" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<circle cx="89.3" cy="234.0" r="4" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<path d="M178.6 20.6 L180.7 25.7 L186.2 26.1 L182.0 29.7 L183.3 35.1 L178.6 32.2 L173.9 35.1 L175.2 29.7 L171.0 26.1 L176.5 25.7 Z" fill="var(--red,#1B6A8C)"/>
+<text x="190.6" y="32.6" text-anchor="start" font-size="12" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Полярная звезда</text>
+<path d="M142.7 99.0 L104.0 84.0" stroke="var(--pink,#C23C86)" stroke-width="1" fill="none"/>
+<text x="14.0" y="80.0" text-anchor="start" font-size="11.5" font-weight="700" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный полюс</text>
+<text x="99.3" y="246.0" text-anchor="start" font-size="11.5" font-weight="700" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Южный полюс</text>
+<text x="126.0" y="198.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">экватор</text>
+<path d="M164.0 168.0 A46 46 0 0 0 136.3 125.8" stroke="var(--pa,#C9672C)" stroke-width="1.6" fill="none"/>
+<text x="170.0" y="142.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">66,5°</text>
+<path d="M131.8 89.0 L132.9 90.6 L134.5 92.3 L136.7 94.1 L139.4 95.9 L142.3 97.6 L145.6 99.3 L149.0 100.8 L152.4 102.1 L155.8 103.1 L158.9 103.8 L161.8 104.2 L164.2 104.3 L166.1 104.1 L167.5 103.5 L168.2 102.6 L168.4 101.5 L167.9 100.1 L166.7 98.5 L165.0 96.8 L162.8 95.0 L160.1 93.2 L157.1 91.4 L153.8 89.8 L150.4 88.3 L146.9 87.1 L143.6 86.1 L140.5 85.4 L137.7 85.0 L135.3 85.0 L133.5 85.3" stroke="var(--illink,#2B2620)" stroke-width="1.8" fill="none" marker-end="url(#ar10-k)"/>
+<text x="296.0" y="46.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--illink,#2B2620)" >вид со стороны</text>
+<text x="296.0" y="60.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--illink,#2B2620)" >Полярной звезды:</text>
+<circle cx="296.0" cy="96.0" r="26" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.8"/>
+<circle cx="296.0" cy="96.0" r="3.5" fill="var(--pink,#C23C86)" stroke="none" stroke-width="0"/>
+<path d="M304.5 110.7 L306.9 109.1 L308.9 107.1 L310.6 104.8 L311.8 102.2 L312.6 99.4 L313.0 96.6 L312.8 93.7 L312.2 90.9 L311.1 88.3 L309.6 85.8 L307.7 83.7 L305.5 81.9 L303.0 80.5 L300.3 79.6 L297.5 79.1 L294.6 79.1 L291.8 79.5 L289.1 80.5 L286.6 81.9 L284.3 83.6 L282.4 85.8 L280.9 88.2 L279.8 90.8 L279.2 93.6 L279.0 96.5 L279.3 99.3 L280.1 102.1 L281.4 104.7 L283.0 107.0 L285.1 109.0" stroke="var(--no,#B03A2E)" stroke-width="2.2" fill="none" marker-end="url(#ar10-n)"/>
+<text x="296.0" y="140.0" text-anchor="middle" font-size="11" font-weight="700" fill="var(--no,#B03A2E)" >против часовой</text>
+<text x="296.0" y="154.0" text-anchor="middle" font-size="11" font-weight="700" fill="var(--no,#B03A2E)" >стрелки —</text>
+<text x="296.0" y="168.0" text-anchor="middle" font-size="11" font-weight="700" fill="var(--no,#B03A2E)" >с запада на восток</text>
+<text x="244.0" y="186.0" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">плоскость орбиты</text>
+<text x="180.0" y="272.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Ось — воображаемая линия через центр Земли.</text>
+<text x="180.0" y="288.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Северным концом она смотрит на Полярную звезду.</text>
+</g>
+</symbol>
+<symbol id="g10-den" viewBox="0 0 360 318">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Сутки: Москва то на свету, то в тени</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >вид сверху, со стороны Северного полюса</text>
+<path d="M43.0 150.0 L49.0 150.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M38.0 162.0 L42.3 166.3" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M26.0 167.0 L26.0 173.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M14.0 162.0 L9.7 166.3" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M9.0 150.0 L3.0 150.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M14.0 138.0 L9.7 133.7" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M26.0 133.0 L26.0 127.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M38.0 138.0 L42.3 133.7" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><circle cx="26.0" cy="150.0" r="14" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<path d="M52.0 90.0 L104.0 96.0" stroke="var(--ochre,#E2A31F)" stroke-width="1.4" fill="none" marker-end="url(#ar10-o)"/>
+<path d="M52.0 120.0 L104.0 123.0" stroke="var(--ochre,#E2A31F)" stroke-width="1.4" fill="none" marker-end="url(#ar10-o)"/>
+<path d="M52.0 150.0 L104.0 150.0" stroke="var(--ochre,#E2A31F)" stroke-width="1.4" fill="none" marker-end="url(#ar10-o)"/>
+<path d="M52.0 180.0 L104.0 177.0" stroke="var(--ochre,#E2A31F)" stroke-width="1.4" fill="none" marker-end="url(#ar10-o)"/>
+<path d="M52.0 210.0 L104.0 204.0" stroke="var(--ochre,#E2A31F)" stroke-width="1.4" fill="none" marker-end="url(#ar10-o)"/>
+<text x="26.0" y="186.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Солнце</text>
+<circle cx="214.0" cy="150.0" r="96" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="2"/>
+<path d="M214 54 A96 96 0 0 1 214 246 Z" fill="#14100A" fill-opacity=".55"/>
+<circle cx="214.0" cy="150.0" r="64" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="214.0" cy="150.0" r="4" fill="var(--pink,#C23C86)" stroke="none" stroke-width="0"/>
+<path d="M242.2 160.3 L243.4 155.7 L244.0 151.0 L243.8 146.3 L242.8 141.7 L241.2 137.3 L238.9 133.2 L235.9 129.5 L232.5 126.4 L228.5 123.8 L224.3 121.8 L219.7 120.6 L215.0 120.0 L210.3 120.2 L205.7 121.2 L201.3 122.8 L197.2 125.1 L193.5 128.1 L190.4 131.5 L187.8 135.5 L185.8 139.7 L184.6 144.3 L184.0 149.0 L184.2 153.7 L185.2 158.3 L186.8 162.7 L189.1 166.8 L192.1 170.5 L195.5 173.6 L199.5 176.2 L203.7 178.2" stroke="var(--no,#B03A2E)" stroke-width="2" fill="none" marker-end="url(#ar10-n)"/>
+<circle cx="150.0" cy="150.0" r="5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="140.0" y="154.0" text-anchor="end" font-size="12" font-weight="700" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">полдень</text>
+<circle cx="214.0" cy="86.0" r="5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="214.0" y="74.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">утро</text>
+<circle cx="214.0" cy="214.0" r="5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="214.0" y="236.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">вечер</text>
+<circle cx="278.0" cy="150.0" r="5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="274.0" y="174.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--card,#FFFBF2)" >полночь</text>
+<text x="166.0" y="268.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--pa,#C9672C)" >день</text>
+<text x="262.0" y="268.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--soft,#5F5648)" >ночь</text>
+<text x="180.0" y="294.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Фиолетовая точка — Москва. Один оборот вокруг оси —</text>
+<text x="180.0" y="310.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >примерно 24 часа: это и есть сутки.</text>
+</g>
+</symbol>
+<symbol id="g10-polus" viewBox="0 0 360 264">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >На Северном полюсе — куда ни посмотри, юг</text>
+<circle cx="104.0" cy="140.0" r="90" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/>
+<path d="M115.1 144.6 L168.7 166.8" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar10-n)"/>
+<text x="179.8" y="175.4" text-anchor="middle" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юг</text>
+<path d="M108.6 151.1 L130.8 204.7" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar10-n)"/>
+<text x="135.4" y="219.8" text-anchor="middle" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юг</text>
+<path d="M99.4 151.1 L77.2 204.7" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar10-n)"/>
+<text x="72.6" y="219.8" text-anchor="middle" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юг</text>
+<path d="M92.9 144.6 L39.3 166.8" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar10-n)"/>
+<text x="28.2" y="175.4" text-anchor="middle" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юг</text>
+<path d="M92.9 135.4 L39.3 113.2" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar10-n)"/>
+<text x="28.2" y="112.6" text-anchor="middle" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юг</text>
+<path d="M99.4 128.9 L77.2 75.3" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar10-n)"/>
+<text x="72.6" y="68.2" text-anchor="middle" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юг</text>
+<path d="M108.6 128.9 L130.8 75.3" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar10-n)"/>
+<text x="135.4" y="68.2" text-anchor="middle" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юг</text>
+<path d="M115.1 135.4 L168.7 113.2" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar10-n)"/>
+<text x="179.8" y="112.6" text-anchor="middle" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юг</text>
+<circle cx="104.0" cy="140.0" r="5" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="212.0" y="64.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >Ты стоишь на</text>
+<text x="212.0" y="80.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--pink,#C23C86)" >Северном полюсе:</text>
+<text x="212.0" y="96.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >севернее уже некуда.</text>
+<path d="M220.0 122.0 L222.1 127.1 L227.6 127.5 L223.4 131.1 L224.7 136.5 L220.0 133.6 L215.3 136.5 L216.6 131.1 L212.4 127.5 L217.9 127.1 Z" fill="var(--red,#1B6A8C)"/>
+<text x="234.0" y="135.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >над головой —</text>
+<text x="212.0" y="151.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--red,#1B6A8C)" >Полярная звезда.</text>
+<text x="212.0" y="188.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >На Южном полюсе —</text>
+<text x="212.0" y="204.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >наоборот: куда ни</text>
+<text x="212.0" y="220.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" >посмотри, север.</text>
+<text x="180.0" y="256.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Полюсы не перемещаются, когда Земля вращается.</text>
+</g>
+</symbol>
+<symbol id="g10-time" viewBox="0 0 360 290">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Почему у Насти в Тольятти на час позже</text>
+<path d="M30.0 46.0 L330.0 46.0" stroke="var(--no,#B03A2E)" stroke-width="2.4" fill="none" marker-end="url(#ar10-n)"/>
+<text x="180.0" y="40.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Земля вращается с запада на восток</text>
+<text x="24.0" y="66.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >запад</text>
+<text x="336.0" y="66.0" text-anchor="end" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >восток</text>
+<path d="M20.0 104.0 L340.0 104.0" stroke="var(--landb,#B9A57A)" stroke-width="2" fill="none"/>
+<circle cx="90.0" cy="104.0" r="6" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<circle cx="270.0" cy="104.0" r="6" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="90.0" y="92.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Москва</text>
+<text x="270.0" y="92.0" text-anchor="middle" font-size="13" font-weight="700" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Тольятти</text>
+<text x="90.0" y="122.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">ты</text>
+<text x="270.0" y="122.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Настя</text>
+<circle cx="90.0" cy="170.0" r="30" fill="var(--card,#FFFBF2)" stroke="var(--illink,#2B2620)" stroke-width="2"/><path d="M90.0 144.0 L90.0 141.5" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M103.0 147.5 L104.2 145.3" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M112.5 157.0 L114.7 155.8" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M116.0 170.0 L118.5 170.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M112.5 183.0 L114.7 184.2" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M103.0 192.5 L104.2 194.7" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M90.0 196.0 L90.0 198.5" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M77.0 192.5 L75.8 194.7" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M67.5 183.0 L65.3 184.2" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M64.0 170.0 L61.5 170.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M67.5 157.0 L65.3 155.8" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M77.0 147.5 L75.7 145.3" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/><path d="M90.0 170.0 L75.0 170.0" stroke="var(--illink,#2B2620)" stroke-width="3" fill="none"/><path d="M90.0 170.0 L90.0 146.6" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none"/><circle cx="90.0" cy="170.0" r="2.2" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<circle cx="270.0" cy="170.0" r="30" fill="var(--card,#FFFBF2)" stroke="var(--life,#8A4CB0)" stroke-width="2"/><path d="M270.0 144.0 L270.0 141.5" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M283.0 147.5 L284.2 145.3" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M292.5 157.0 L294.7 155.8" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M296.0 170.0 L298.5 170.0" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M292.5 183.0 L294.7 184.2" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M283.0 192.5 L284.2 194.7" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M270.0 196.0 L270.0 198.5" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M257.0 192.5 L255.8 194.7" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M247.5 183.0 L245.3 184.2" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M244.0 170.0 L241.5 170.0" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M247.5 157.0 L245.3 155.8" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M257.0 147.5 L255.8 145.3" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none"/><path d="M270.0 170.0 L257.0 162.5" stroke="var(--life,#8A4CB0)" stroke-width="3" fill="none"/><path d="M270.0 170.0 L270.0 146.6" stroke="var(--life,#8A4CB0)" stroke-width="2" fill="none"/><circle cx="270.0" cy="170.0" r="2.2" fill="var(--life,#8A4CB0)" stroke="none" stroke-width="0"/>
+<text x="90.0" y="220.0" text-anchor="middle" font-size="14" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">21:00</text>
+<text x="270.0" y="220.0" text-anchor="middle" font-size="14" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">22:00</text>
+<text x="270.0" y="236.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >уже поздно звонить</text>
+<text x="180.0" y="266.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >Тольятти восточнее — Солнце встаёт там раньше,</text>
+<text x="180.0" y="282.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >минут на 45—50. Часы там идут на целый час вперёд.</text>
+</g>
+</symbol>
+<symbol id="g10-orbit" viewBox="0 0 360 336">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Орбита Земли сверху — почти круг</text>
+<circle cx="180.0" cy="160.0" r="78" fill="none" stroke="var(--no,#B03A2E)" stroke-width="2"/>
+<path d="M195.3 160.0 L201.3 160.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M191.2 169.9 L195.4 174.1" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M181.3 174.0 L181.3 180.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M171.4 169.9 L167.2 174.1" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M167.3 160.0 L161.3 160.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M171.4 150.1 L167.2 145.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M181.3 146.0 L181.3 140.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M191.2 150.1 L195.4 145.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><circle cx="181.3" cy="160.0" r="11" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<circle cx="258.0" cy="160.0" r="7" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/>
+<text x="268.0" y="164.0" text-anchor="start" font-size="11" font-weight="700" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">21—22 декабря</text>
+<text x="268.0" y="181.0" text-anchor="start" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">в Москве зима</text>
+<circle cx="180.0" cy="82.0" r="7" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/>
+<text x="180.0" y="52.0" text-anchor="middle" font-size="11" font-weight="700" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">20—21 марта</text>
+<text x="180.0" y="66.0" text-anchor="middle" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">в Москве весна</text>
+<circle cx="102.0" cy="160.0" r="7" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/>
+<text x="92.0" y="164.0" text-anchor="end" font-size="11" font-weight="700" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">20—21 июня</text>
+<text x="92.0" y="181.0" text-anchor="end" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">в Москве лето</text>
+<circle cx="180.0" cy="238.0" r="7" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/>
+<text x="180.0" y="262.0" text-anchor="middle" font-size="11" font-weight="700" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">22—23 сентября</text>
+<text x="180.0" y="276.0" text-anchor="middle" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">в Москве осень</text>
+<path d="M258.8 114.5 L257.9 113.0 L257.1 111.6 L256.1 110.2 L255.2 108.8 L254.2 107.4 L253.2 106.0 L252.2 104.6 L251.2 103.3 L250.1 102.0 L249.0 100.7 L247.9 99.4 L246.8 98.2 L245.6 96.9 L244.4 95.7 L243.2 94.5 L242.0 93.4 L240.7 92.2 L239.5 91.1 L238.2 90.0 L236.9 88.9 L235.5 87.9 L234.2 86.9 L232.8 85.9 L231.4 84.9 L230.0 84.0 L228.6 83.1 L227.1 82.2 L225.7 81.3 L224.2 80.5 L222.7 79.7" stroke="var(--no,#B03A2E)" stroke-width="2" fill="none" marker-end="url(#ar10-n)"/>
+<path d="M101.2 205.5 L102.1 207.0 L102.9 208.4 L103.9 209.8 L104.8 211.2 L105.8 212.6 L106.8 214.0 L107.8 215.4 L108.8 216.7 L109.9 218.0 L111.0 219.3 L112.1 220.6 L113.2 221.8 L114.4 223.1 L115.6 224.3 L116.8 225.5 L118.0 226.6 L119.3 227.8 L120.5 228.9 L121.8 230.0 L123.1 231.1 L124.5 232.1 L125.8 233.1 L127.2 234.1 L128.6 235.1 L130.0 236.0 L131.4 236.9 L132.9 237.8 L134.3 238.7 L135.8 239.5 L137.3 240.3" stroke="var(--no,#B03A2E)" stroke-width="2" fill="none" marker-end="url(#ar10-n)"/>
+<circle cx="256.3" cy="143.8" r="4" fill="var(--pa,#C9672C)" stroke="none" stroke-width="0"/>
+<text x="246.0" y="116.0" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">начало января:</text>
+<text x="246.0" y="130.0" text-anchor="end" font-size="11.5" font-weight="600" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">147 млн км — ближе всего</text>
+<circle cx="104.0" cy="177.5" r="4" fill="var(--red,#1B6A8C)" stroke="none" stroke-width="0"/>
+<text x="114.0" y="196.0" text-anchor="start" font-size="11.5" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">начало июля:</text>
+<text x="114.0" y="210.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">152 млн км — дальше всего</text>
+<text x="180.0" y="296.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Солнце смещено от центра всего на 1/60 радиуса —</text>
+<text x="180.0" y="312.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >на рисунке меньше двух пикселей. В январе Земля</text>
+<text x="180.0" y="328.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--pa,#C9672C)" >ближе всего к Солнцу — а в Москве зима.</text>
+</g>
+</symbol>
+<symbol id="g10-god" viewBox="0 0 360 316">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Откуда берётся 29 февраля</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >один виток вокруг Солнца — 365 суток и 6 часов</text>
+<rect x="60" y="52" width="190" height="26" rx="5" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/>
+<text x="155.0" y="70.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >365 дней</text>
+<text x="52.0" y="70.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >2025</text>
+<rect x="258" y="52" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<text x="284.0" y="70.0" text-anchor="start" font-size="11" font-weight="700" fill="var(--pa,#C9672C)" >6 ч</text>
+<rect x="60" y="98" width="190" height="26" rx="5" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/>
+<text x="155.0" y="116.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >365 дней</text>
+<text x="52.0" y="116.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >2026</text>
+<rect x="258" y="98" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<rect x="282" y="98" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<text x="308.0" y="116.0" text-anchor="start" font-size="11" font-weight="700" fill="var(--pa,#C9672C)" >12 ч</text>
+<rect x="60" y="144" width="190" height="26" rx="5" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/>
+<text x="155.0" y="162.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >365 дней</text>
+<text x="52.0" y="162.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >2027</text>
+<rect x="258" y="144" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<rect x="282" y="144" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<rect x="306" y="144" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<text x="332.0" y="162.0" text-anchor="start" font-size="11" font-weight="700" fill="var(--pa,#C9672C)" >18 ч</text>
+<rect x="60" y="190" width="190" height="26" rx="5" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/>
+<text x="155.0" y="208.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--pink,#C23C86)" >366 дней</text>
+<text x="52.0" y="208.0" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--illink,#2B2620)" >2028</text>
+<rect x="258" y="190" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<rect x="282" y="190" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<rect x="306" y="190" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<rect x="330" y="190" width="22" height="26" rx="4" fill="var(--ochre,#E2A31F)" fill-opacity=".8"/>
+<text x="306.0" y="234.0" text-anchor="middle" font-size="12" font-weight="800" fill="var(--pink,#C23C86)" >24 ч = сутки</text>
+<text x="180.0" y="256.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Каждый год остаётся 6 часов — жёлтый квадратик.</text>
+<text x="180.0" y="272.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >За четыре года набираются сутки:</text>
+<text x="180.0" y="288.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >их добавляют в февраль — получается 29 февраля.</text>
+<text x="180.0" y="308.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--pink,#C23C86)" >Следующее 29 февраля — в 2028 году.</text>
+</g>
+</symbol>
+<symbol id="g10-shema" viewBox="0 0 360 320">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Нарисуй в тетради: пять линий и два полюса</text>
+<circle cx="126.0" cy="160.0" r="92" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="2"/>
+<path d="M126.0 68.0 L193.3 97.3" stroke="var(--red,#1B6A8C)" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+<text x="199.3" y="101.3" text-anchor="start" font-size="11" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный полярный круг</text>
+<path d="M63.3 92.7 L218.0 160.0" stroke="var(--moss,#5E7A3A)" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+<text x="224.0" y="164.0" text-anchor="start" font-size="11" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный тропик</text>
+<path d="M41.6 123.3 L210.4 196.7" stroke="var(--no,#B03A2E)" stroke-width="2.6" fill="none"/>
+<text x="216.4" y="200.7" text-anchor="start" font-size="11" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">экватор</text>
+<path d="M34.0 160.0 L188.7 227.3" stroke="var(--moss,#5E7A3A)" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+<text x="194.7" y="231.3" text-anchor="start" font-size="11" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Южный тропик</text>
+<path d="M58.7 222.7 L126.0 252.0" stroke="var(--red,#1B6A8C)" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+<text x="132.0" y="256.0" text-anchor="start" font-size="11" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Южный полярный круг</text>
+<path d="M80.5 264.5 L171.5 55.5" stroke="var(--illink,#2B2620)" stroke-width="1.6" fill="none" stroke-dasharray="5 4"/>
+<circle cx="162.7" cy="75.6" r="4" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<circle cx="89.3" cy="244.4" r="4" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="152.7" y="69.6" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный полюс</text>
+<text x="89.3" y="272.4" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Южный полюс</text>
+<text x="16.0" y="120.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северное</text>
+<text x="16.0" y="134.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">полушарие</text>
+<text x="16.0" y="214.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Южное</text>
+<text x="16.0" y="228.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">полушарие</text>
+<text x="180.0" y="296.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Пунктир — земная ось. Все пять линий идут поперёк оси,</text>
+<text x="180.0" y="312.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >параллельно экватору.</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">География · § 10</span>
+    <h1>Движения Земли</h1>
+    <p class="lede">Как Земля вертится вокруг своей оси и летит вокруг Солнца — откуда берутся сутки, год и 29 февраля.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>О чём параграф:</b><br>Как движется Земля вокруг своей оси и вокруг Солнца.</div></div>
+  </div>
+</header>
+
+<figure class="banner"><div class="wrap"><img id="ph-g10_banner" src="img/6acf670ae107.jpg" alt="Спиральная галактика и купол обсерватории под ночным небом со следами звёзд"><figcaption><span class="src">из учебника</span>Заставка параграфа</figcaption></div></figure>
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g9.html">‹ §9 Учимся с «Полярной звездой»</a>
+  <span class="pn cur">§10 Движения Земли</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Как движется Земля вокруг своей оси?">1</a><a href="#s2" data-j="s2" title="Как движется Земля вокруг Солнца?">2</a><a href="#s3" data-j="s3" title="Шаг за шагом. Работаем с рисунком">3</a><a href="#s4" data-j="s4" title="Итоги параграфа">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Как движется Земля вокруг своей оси?</h2></div>
+<div class="easy">
+<p>Земля, как и другие планеты, вращается вокруг своей оси. <span class="term" role="button" tabindex="0" data-t="zemos">Земная <span class="tl">ось</span></span> — это воображаемая линия через центр земного шара.</p>
+<p>Ось наклонена к <span class="term" role="button" tabindex="0" data-t="ploskost">плоскости <span class="tl">орбиты</span></span> — так называют плоскость, в которой Земля обращается вокруг Солнца. Угол наклона — 66,5°. Северным концом ось смотрит на <span class="term" role="button" tabindex="0" data-t="polar">Полярную <span class="tl">звезду</span></span>.</p>
+<p>Там, где ось выходит на поверхность Земли, находятся <span class="term" role="button" tabindex="0" data-t="npolus"><b>Северный <span class="tl">полюс</span></b></span> и <span class="term" role="button" tabindex="0" data-t="spolus"><b>Южный <span class="tl">полюс</span></b></span> (рис. 25).</p>
+<p><span class="big">В какую сторону вращается Земля?</span> Если смотреть на неё из космоса со стороны Полярной звезды — против часовой стрелки, то есть с запада на восток.</p>
+<p><span class="big">День и ночь.</span> Вращаясь, Земля поворачивается к Солнцу разными сторонами. В том <span class="term" role="button" tabindex="0" data-t="polushar"><span class="tl">полушарии</span></span>, которое обращено к Солнцу, — день, а в том, что в тени, — ночь.</p>
+<p>Один оборот вокруг оси Земля делает примерно за 24 часа. Это <span class="term" role="button" tabindex="0" data-t="sutki"><span class="tl">сутки</span></span>: за них день и ночь сменяют друг друга.</p>
+<p><span class="big">Полюсы — особые точки.</span> Когда Земля вращается, они не перемещаются. На Северном полюсе, куда ни посмотри, везде юг, а на Южном — везде север.</p>
+</div>
+<div class="book" hidden>
+<p>Земля, как и другие планеты, вращается вокруг своей оси. <span class="term" role="button" tabindex="0" data-t="zemos">Земная <span class="tl">ось</span></span> наклонена под углом к <span class="term" role="button" tabindex="0" data-t="ploskost">плоскости <span class="tl">орбиты</span></span>, по которой наша планета обращается вокруг Солнца. Этот угол составляет 66,5°. Северным концом земная ось направлена на <span class="term" role="button" tabindex="0" data-t="polar">Полярную <span class="tl">звезду</span></span>. Земная ось — это воображаемая линия, которая проходит через центр земного шара. В точках, где ось пересекается с поверхностью Земли, располагаются <span class="term" role="button" tabindex="0" data-t="npolus"><b>Северный <span class="tl">полюс</span></b></span> и <span class="term" role="button" tabindex="0" data-t="spolus"><b>Южный <span class="tl">полюс</span></b></span> (рис. 25).</p>
+<p>Представьте, что вы смотрите на нашу планету из космоса со стороны Полярной звезды. Вы увидите вращающийся вокруг себя (своей оси) против часовой стрелки (с запада на восток) земной шар.</p>
+<p>Вращающаяся Земля поворачивается к Солнцу разными сторонами. В том <span class="term" role="button" tabindex="0" data-t="polushar"><span class="tl">полушарии</span></span>, которое обращено к Солнцу, — день, а в том, которое в тени, — ночь. Один оборот вокруг своей оси Земля совершает примерно за 24 ч. За этот отрезок времени (мы называем его <span class="term" role="button" tabindex="0" data-t="sutki"><span class="tl">сутками</span></span>) на Земле день и ночь сменяют друг друга.</p>
+<p>Северный и Южный полюсы — уникальные точки нашей планеты. Они не перемещаются при осевом вращении Земли. На Северном полюсе, куда ни посмотри, повсюду будет юг, а на Южном полюсе — север.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 296" role="img" aria-label="Земной шар с наклонной осью: ось проходит через центр, северным концом смотрит на Полярную звезду, к плоскости орбиты наклонена под углом 66,5 градуса. Отмечены Северный и Южный полюсы и экватор. Справа — вид со стороны Полярной звезды: Земля вращается против часовой стрелки, с запада на восток"><use href="#g10-os"/></svg><figcaption>Ось, наклон и направление вращения — всё на одной схеме.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 318" role="img" aria-label="Вид сверху на Землю со стороны Северного полюса. Слева Солнце: левая половина Земли освещена — день, правая в тени — ночь. Москва за сутки проходит четыре точки: утро, полдень, вечер, полночь"><use href="#g10-den"/></svg><figcaption>Москва за одни сутки: Земля повернулась один раз — и день сменился ночью.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 264" role="img" aria-label="На Северном полюсе стрелки во все стороны подписаны «юг»; над головой Полярная звезда. На Южном полюсе наоборот: везде север"><use href="#g10-polus"/></svg><figcaption>Странное место: все дороги ведут на юг.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 290" role="img" aria-label="Земля вращается с запада на восток. Москва — западнее, Тольятти — восточнее. Когда в Москве 21:00, у Насти в Тольятти уже 22:00 — поздно звонить. Солнце в Тольятти встаёт минут на 45—50 раньше, а часы там идут на час вперёд"><use href="#g10-time"/></svg><figcaption>Почему в Тольятти на час позже.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Почему у Насти на час позже</span></div><div class="lifebody"><p>Ты звонишь двоюродной сестре Насте в Тольятти и знаешь: там на час позже, чем в Москве. Поэтому совсем поздно звонить нельзя.</p><p>Теперь понятно почему. Земля вращается с запада на восток, а Тольятти восточнее Москвы. Утро приходит туда раньше — Солнце встаёт там минут на 45—50 раньше, чем у тебя. И вечер наступает раньше. Поэтому часы в Тольятти идут на целый час вперёд.</p><p>Когда у тебя 21:00, у Насти уже 22:00.</p></div><p class="lifebook">В учебнике это называется: <b>Земля вращается с запада на восток</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твой глобус наклонён</span></div><div class="lifebody"><p>Посмотри на свой глобус: шар стоит не прямо, а наклонно. Так показан наклон земной оси.</p><p>Найди верхний конец оси — это Северный полюс, нижний — Южный. Медленно покрути глобус с запада на восток — так вращается Земля. Москва то «уезжает в ночь», то возвращается «в день».</p></div><p class="lifebook">В учебнике это называется: <b>земная ось наклонена под углом к плоскости орбиты</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Когда в Москве день, где-то на Земле обязательно ночь. Почему?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Абзац «Вращающаяся Земля поворачивается к Солнцу…» и схема «Сутки».</div>
+<div class="rev ans" id="a1" hidden>Солнце освещает только ту половину Земли, которая к нему обращена, — там день. Другое полушарие в тени — там ночь. Земля вращается, и день с ночью «бегут» по ней друг за другом.</div>
+</div>
+<div class="think">
+<p class="qt">2. Летним вечером в Москве ещё светло, а у Насти в Тольятти уже темнеет. Почему у неё раньше?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>В какую сторону вращается Земля? Где Тольятти — восточнее или западнее Москвы?</div>
+<div class="rev ans" id="a2" hidden>Земля вращается с запада на восток. Тольятти восточнее Москвы, поэтому раньше поворачивается от Солнца — вечер и ночь приходят туда раньше.</div>
+</div>
+<div class="think">
+<p class="qt">3. Почему учебник называет полюсы «уникальными точками»?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a3" hidden>Они не перемещаются, когда Земля вращается вокруг своей оси. И только там «куда ни посмотри» одно направление: на Северном полюсе — везде юг, на Южном — везде север.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Как движется Земля вокруг Солнца?</h2></div>
+<div class="easy">
+<p>Одновременно Земля обращается вокруг Солнца (рис. 25).</p>
+<p>Её орбита — <span class="term" role="button" tabindex="0" data-t="ellips"><span class="tl">эллипс</span></span>, то есть овал. Солнце стоит не точно в центре, а немного сбоку. Поэтому Земля то приближается к Солнцу, то удаляется от него.</p>
+<p><span class="big">Ближе всего — в начале января,</span> вскоре после Нового года: около 147 млн км. А дальше всего — в начале июля: до 152 млн км.</p>
+<p>Выходит, в январе, когда у нас зима, Земля ближе всего к Солнцу. Значит, зима бывает не из-за расстояния. Почему — узнаешь в § 11.</p>
+<p>Один <span class="term" role="button" tabindex="0" data-t="vitok"><span class="tl">виток</span></span> по орбите Земля делает примерно за 365 суток и 6 часов. За это время сменяются <span class="term" role="button" tabindex="0" data-t="vremena">времена <span class="tl">года</span></span>.</p>
+<p><span class="big">Откуда 29 февраля?</span> Люди договорились считать <span class="term" role="button" tabindex="0" data-t="god"><span class="tl">год</span></span> равным 365 дням. А лишние 6 часов копятся: за четыре года набираются целые сутки. Так получается <span class="term" role="button" tabindex="0" data-t="visokos"><b>високосный <span class="tl">год</span></b></span> — в нём 366 дней, а в феврале 29 дней.</p>
+<p><span class="big">Два движения сразу.</span> Вращение вокруг своей оси называют <span class="term" role="button" tabindex="0" data-t="osevoe"><b><span class="tl">осевым</span></b></span>, а вокруг Солнца — <span class="term" role="button" tabindex="0" data-t="orbital"><b><span class="tl">орбитальным</span></b></span>. Земля делает их одновременно.</p>
+</div>
+<div class="book" hidden>
+<p>Одновременно Земля обращается вокруг Солнца (см. рис. 25). Земная орбита имеет форму <span class="term" role="button" tabindex="0" data-t="ellips">овала <span class="tl">(эллипса)</span></span>, причём Солнце немного смещено по отношению к его центру. Из-за этого Земля то приближается к Солнцу, то удаляется от него. Причём ближе всего к нему (примерно 147 млн км) Земля оказывается в начале января, вскоре после Нового года. Напротив, в середине нашего лета — в начале июля — Земля наиболее удалена от Солнца — до 152 млн км.</p>
+<p>Земля совершает один <span class="term" role="button" tabindex="0" data-t="vitok"><span class="tl">виток</span></span> по орбите примерно за 365 суток и 6 ч. За этот отрезок времени на нашей планете сменяются <span class="term" role="button" tabindex="0" data-t="vremena">времена <span class="tl">года</span></span> (см. рис. 25). Люди договорились считать <span class="term" role="button" tabindex="0" data-t="god"><span class="tl">год</span></span> равным 365 дням.</p>
+<p>Раз в четыре года, когда из оставшихся шести часов набираются дополнительные сутки, наступает <span class="term" role="button" tabindex="0" data-t="visokos"><b>високосный <span class="tl">год</span></b></span>. В високосном году 366 дней, а в феврале этого года 29 дней.</p>
+<p>На полях учебника: «Движение Земли вокруг своей оси — <span class="term" role="button" tabindex="0" data-t="osevoe"><b><span class="tl">осевое</span></b></span>, вокруг Солнца — <span class="term" role="button" tabindex="0" data-t="orbital"><b><span class="tl">орбитальное</span></b></span>». «Земля одновременно вращается вокруг Солнца и вокруг своей оси».</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g10_r25" src="img/c2df7404ff9b.jpg" alt="В центре Солнце, вокруг — орбита Земли и четыре положения Земли. 20—21 марта: в Северном полушарии весна, в Южном осень, день равен ночи. 20—21 июня: в Северном полушарии лето, самый длинный день и самая короткая ночь, в Южном зима. 22—23 сентября: в Северном осень, в Южном весна, день равен ночи. 21—22 декабря: в Северном зима, самый короткий день, в Южном лето. У орбиты стрелка «30 км/с»"><figcaption><span class="src">из учебника</span><b>Рис. 25.</b> Обращение Земли вокруг Солнца и вокруг своей оси</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 336" role="img" aria-label="Орбита Земли сверху — почти круг, Солнце в центре. 21—22 декабря — в Москве зима, 20—21 марта — весна, 20—21 июня — лето, 22—23 сентября — осень. В начале января Земля ближе всего к Солнцу, 147 миллионов километров, в начале июля дальше всего, 152 миллиона километров"><use href="#g10-orbit"/></svg><figcaption>Так орбита выглядит на самом деле — сверху и без перспективы.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Овал или почти круг?</b> В § 8 написано, что планеты обращаются «по орбитам, близким к окружности», а здесь — что орбита Земли «имеет форму овала (эллипса)». Верно и то и другое: эллипс у Земли вытянут совсем чуть-чуть. Ближе всего к Солнцу — 147 млн км, дальше всего — 152 млн км: разница всего 5 миллионов из 150. Если нарисовать орбиту Земли, Солнце окажется сдвинуто от центра всего на 1/60 радиуса — на глаз не заметно (схема выше). А на рис. 25 орбита сильно вытянута потому, что нарисована сбоку, «в перспективе».</div>
+<div class="blocknote"><b>«В середине нашего лета — в начале июля».</b> Лето — это июнь, июль и август, так что середина лета — скорее середина июля. А дальше всего от Солнца Земля бывает около 4 июля — это и правда начало июля. Запомни так: дальше всего от Солнца — в начале июля.</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 316" role="img" aria-label="Четыре года подряд: 2025, 2026, 2027 — по 365 дней, и каждый год остаётся 6 часов: 6, 12, 18. В 2028 году набирается 24 часа — сутки, и в году 366 дней. Так появляется 29 февраля"><use href="#g10-god"/></svg><figcaption>Шесть часов в год — и раз в четыре года лишний день.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">На полях учебника</span><p>Движение Земли вокруг своей оси — осевое, вокруг Солнца — орбитальное. Земля одновременно вращается вокруг Солнца и вокруг своей оси.</p></div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Земля вращается вокруг своей оси с запада на восток. Одновременно Земля обращается вокруг Солнца по орбите в том же направлении.</p></div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Осевое движение</b><p>вокруг своей оси · примерно 24 ч — сутки · день сменяется ночью</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Орбитальное движение</b><p>вокруг Солнца · 365 суток и 6 ч — год · сменяются времена года</p></div></div><p class="pairkey">Сутки — от вращения вокруг оси, год — от витка вокруг Солнца.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Новый год — ближе всего к Солнцу</span></div><div class="lifebody"><p>В новогодние каникулы Земля проходит самое близкое к Солнцу место орбиты — около 147 млн км. А в Москве в это время мороз и снег.</p><p>А летом, когда ты гуляешь во дворе до 10—11 вечера, Земля, наоборот, дальше всего от Солнца — 152 млн км.</p><p>Вот загадка для § 11: почему ближе к Солнцу — зима, а дальше — лето? Подсказка — вспомни опыт с глобусом и лампой: ось всё время наклонена одинаково.</p></div><p class="lifebook">В учебнике это называется: <b>ближе всего к Солнцу Земля в начале января, дальше всего — в начале июля</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">29 февраля</span></div><div class="lifebody"><p>Ты, может быть, и не замечала, что в календаре бывает 29 февраля. Последний раз оно было в 2024 году, а следующее будет в 2028-м — когда ты будешь в 6 классе.</p><p>Ни у кого из ваших знакомых нет дня рождения 29 февраля. А если бы был — настоящий день рождения бывал бы только раз в четыре года!</p><p>Твой день рождения, 3 апреля, бывает каждый год. Загляни в календарь: сколько дней в феврале в этом году?</p></div><p class="lifebook">В учебнике это называется: <b>в високосном году 366 дней, а в феврале этого года 29 дней</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. В § 8 было: от Земли до Солнца в среднем около 150 млн км. А здесь — 147 и 152. Это не противоречие?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Слово «среднее» и первый абзац раздела.</div>
+<div class="rev ans" id="a4" hidden>Нет. Земля то ближе к Солнцу (147 млн км в начале января), то дальше (152 млн км в начале июля). А 150 млн км — среднее расстояние, как раз между ними.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему високосный год бывает именно раз в четыре года, а не раз в два или в пять?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Сколько часов «лишних» каждый год? Сколько часов в сутках?</div>
+<div class="rev ans" id="a5" hidden>Каждый год остаётся 6 часов. 6 × 4 = 24 часа — целые сутки. Они набираются как раз за четыре года.</div>
+</div>
+<div class="think">
+<p class="qt">6. Сколько раз Земля повернётся вокруг своей оси, пока сделает один виток вокруг Солнца?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Один оборот вокруг оси — сутки. Сколько суток длится виток?</div>
+<div class="rev ans" id="a6" hidden>Примерно 365 раз (и ещё четверть оборота) — ведь один виток длится 365 суток и 6 часов, а каждые сутки — это один оборот вокруг оси.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Шаг за шагом. Работаем с рисунком</h2></div>
+<div class="rubric">Шаг за шагом</div>
+<div class="easy">
+<p>В географии и других естественных науках без <span class="term" role="button" tabindex="0" data-t="grafiz">графических <span class="tl">изображений</span></span> не обойтись: рисунков, чертежей, фото. С рисунком легче разобраться в тексте, проверить себя и узнать что-то новое.</p>
+<p>Разбери рисунок 26 — на нём схема земного шара.</p>
+<p><b>1.</b> Найди земную ось. Она показана пунктиром.</p>
+<p><b>2.</b> Найди Северный и Южный полюсы. Где на Земле они находятся?</p>
+<p><b>3.</b> Найди, где и как показана плоскость земной орбиты. Как к ней расположена земная ось?</p>
+<p><b>4.</b> Убедись: северным концом ось направлена на Полярную звезду.</p>
+<p><b>5.</b> Найди, где показано, в какую сторону вращается Земля вокруг оси.</p>
+<p>На рисунке есть и другие линии. Они тоже воображаемые и отличаются тем, что лежат на разном расстоянии от полюсов.</p>
+<p><b>6.</b> Красная линия — <span class="term" role="button" tabindex="0" data-t="ekvator"><b><span class="tl">экватор</span></b></span>. Он проходит посередине, на равном расстоянии от обоих полюсов, и делит земной шар на Северное и Южное полушария.</p>
+<p><b>7.</b> Зелёные и синие пунктиры — <span class="term" role="button" tabindex="0" data-t="tropiki"><b><span class="tl">тропики</span></b></span> и <span class="term" role="button" tabindex="0" data-t="polkrug"><b>полярные <span class="tl">круги</span></b></span>. Они идут параллельно экватору. Запомни их — дальше они очень понадобятся.</p>
+</div>
+<div class="book" hidden>
+<p>В изучении географии и естественных наук незаменимы <span class="term" role="button" tabindex="0" data-t="grafiz">графические <span class="tl">изображения</span></span> (рисунки, чертежи, фото и т. д.). С помощью рисунка можно лучше и быстрее разобраться в тексте, проверить себя, получить дополнительные сведения, т. е. хорошо усвоить новый материал.</p>
+<p>Разберём рисунок 26, на котором вы видите схематически изображённый земной шар.</p>
+<p>1. Найдите на рисунке земную ось. Она показана пунктиром.</p>
+<p>2. Найдите Северный и Южный полюсы. В каких местах Земли они находятся?</p>
+<p>3. Найдите, где и как показана плоскость земной орбиты. Как расположена по отношению к ней земная ось?</p>
+<p>4. Убедитесь, что земная ось направлена на Полярную звезду северным концом.</p>
+<p>5. Найдите, где показано направление осевого вращения Земли. Каково оно?</p>
+<p>Вы видите на рисунке и другие линии. Они тоже воображаемые и отличаются друг от друга тем, что находятся на разном удалении от полюсов.</p>
+<p>6. Красная линия — <span class="term" role="button" tabindex="0" data-t="ekvator"><b><span class="tl">экватор</span></b></span>, он проходит посередине на равном расстоянии от обоих полюсов и разделяет земной шар на Северное и Южное полушария.</p>
+<p>7. Зелёные и синие пунктирные линии — это <span class="term" role="button" tabindex="0" data-t="tropiki"><b><span class="tl">тропики</span></b></span> и <span class="term" role="button" tabindex="0" data-t="polkrug"><b>полярные <span class="tl">круги</span></b></span>, проходящие параллельно экватору. Запомните их. Впоследствии они нам очень понадобятся.</p>
+<p><i>Полезный совет:</i> вы можете проверить себя, если воспроизведёте рисунок на отдельном листке, не заглядывая в учебник.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g10_r26" src="img/5d3118ff78a6.jpg" alt="Земной шар с наклонной осью, направленной на Полярную звезду. Отмечены Северный и Южный полюсы, Северный и Южный полярные круги, Северный и Южный тропики, экватор, Северное и Южное полушария, плоскость земной орбиты и угол наклона земной оси — 66,5°" style="max-width:420px"><figcaption><span class="src">из учебника</span><b>Рис. 26.</b> Схематическое изображение земного шара</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 320" role="img" aria-label="Схема земного шара для тетради: круг, наклонная земная ось пунктиром, Северный и Южный полюсы. Поперёк оси — пять линий: Северный полярный круг, Северный тропик, экватор, Южный тропик, Южный полярный круг. Выше экватора — Северное полушарие, ниже — Южное"><use href="#g10-shema"/></svg><figcaption>Тот же рисунок попроще — его легко повторить в тетради.</figcaption></div></figure>
+<div class="col">
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Проверь себя: ответы к шагам 2, 3 и 5</button></div>
+<div class="rev ans" id="r1" hidden><b>2.</b> Полюсы — там, где ось выходит на поверхность: Северный — посреди Северного Ледовитого океана, на льду (туда шёл Пири, § 5), Южный — в Антарктиде (туда дошёл Амундсен, § 5). <b>3.</b> Плоскость орбиты показана штриховкой — серой полосой через середину шара. Ось наклонена к ней под углом 66,5°. <b>5.</b> Стрелка-завиток у Южного полюса. Земля вращается с запада на восток — против часовой стрелки, если смотреть со стороны Полярной звезды.</div></div>
+<div class="side green"><span class="slab">Подсказка учебника</span><p>Полезный совет учебника: проверь себя — нарисуй рисунок на отдельном листке, не заглядывая в учебник. Начни со схемы попроще — она выше.</p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Чем экватор отличается от тропиков и полярных кругов? А что у них общего?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Шаги 6 и 7 и слова «на разном удалении от полюсов».</div>
+<div class="rev ans" id="a7" hidden>Общее: все эти линии воображаемые и идут параллельно друг другу. Отличие: экватор — посередине, на равном расстоянии от обоих полюсов, и делит Землю на два полушария. Тропики и полярные круги — по два: в Северном и в Южном полушарии, полярные круги ближе к полюсам, тропики — ближе к экватору.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги параграфа</h2></div>
+<div class="rubric">Запомните</div>
+<div class="remember"><span>Осевое и орбитальное движения Земли</span><span>Северный полюс</span><span>Южный полюс</span><span>Экватор</span><span>Високосный год</span></div>
+<div class="rubric">Откройте атлас</div>
+<div class="ask"><b>Задание учебника</b>
+<ol><li>На карте полушарий найдите: Северный и Южный полюсы, экватор, тропики, полярные круги.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка к заданию 1</button></div>
+<div class="rev hint" id="r2" hidden>Атласа нет под рукой — найди всё это на глобусе. Экватор — самая длинная линия посередине. Тропики и полярные круги на глобусе часто нарисованы пунктиром и подписаны.</div></div>
+<div class="rubric">Это я знаю</div>
+<div class="ask"><b>Вопросы учебника</b><ol start="2"><li>Воображаемая прямая, проходящая через центр Земли, вокруг которой вращается Земля, называется: а) полюсом; б) экватором; в) земной осью.</li><li>Один оборот вокруг Солнца Земля совершает: а) за 365 суток и 6 ч; б) за 24 ч; в) за 29 суток.</li><li>В каком направлении вращается Земля вокруг своей оси; по орбите?</li><li>С какой скоростью Земля обращается по орбите? Где в параграфе вы нашли эту информацию?</li><li>Представьте, что вы с друзьями оказались на Северном полюсе. Часы показывают 22 ч. Над головой у вас Полярная звезда. Где будет эта звезда через 6 ч?</li><li>Сформулируйте и запишите определение, заполнив пропуск: Экватор — … на одинаковом расстоянии от полюсов.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к вопросу 5</button></div>
+<div class="rev hint" id="r3" hidden>В тексте параграфа скорости нет. Ищи на рисунке 25 — у орбиты есть стрелка с подписью. Иногда ответ прячется в рисунке: это и значит «работать с рисунком».</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Подсказка к вопросу 6</button></div>
+<div class="rev hint" id="r4" hidden>Полярная звезда — там, куда смотрит северный конец земной оси. Земля вращается вокруг этой самой оси. Что станет со звездой над головой, если ты стоишь прямо на оси?</div></div>
+<div class="rubric">Это я могу</div>
+<div class="ask"><b>Задание учебника</b><ol start="8"><li>В тетради схематически изобразите земной шар. Нарисуйте и подпишите экватор, тропики, полярные круги. Покажите Северный и Южный полюсы.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r5" aria-expanded="false">Подсказка к заданию 8</button></div>
+<div class="rev hint" id="r5" hidden>Образец — схема «Нарисуй в тетради» в третьем разделе: круг, наклонный пунктир оси, полюсы на её концах. Экватор — посередине, поперёк оси. По обе стороны от него — тропики, ближе к полюсам — полярные круги. Все линии параллельны экватору.</div></div>
+<div class="rubric">Это мне интересно</div>
+<div class="ask"><b>Вопрос учебника</b><ol start="9"><li>Как отражается движение Земли вокруг Солнца на изменении вашего режима дня в течение года?</li></ol></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твой режим дня — к вопросу 9</span></div><div class="lifebody"><p>Летом ты гуляешь во дворе до 10—11 вечера — ещё светло. Осенью родители зовут тебя домой раньше: темнеет, а в темноте одну не оставляют. И в школу осенью и зимой идёшь в темноте.</p><p>Это и есть ответ на вопрос 9. Земля движется вокруг Солнца, сменяются времена года — и меняется, сколько часов в сутках светло. А вслед за этим меняется и твой режим дня.</p></div><p class="lifebook">В учебнике это называется: <b>как движение Земли вокруг Солнца отражается на режиме дня</b></p></aside>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Путь Земли за год — расставь по порядку, начиная с Нового года</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от января к декабрю. Подсказки — рис. 25 и схема «Орбита Земли сверху».</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="4"><span class="ord"></span>Самый длинный день в году</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Земля ближе всего к Солнцу</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Твой день рождения</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Весной день равен ночи</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Земля дальше всего от Солнца</button>
+<button class="chip" data-ord="6"><span class="ord"></span>Осенью день равен ночи</button>
+<button class="chip" data-ord="7"><span class="ord"></span>Самый короткий день в году</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sortgame" id="srt6" data-n="7">
+<div class="sortlab">Это из-за какого движения Земли?</div>
+<div class="sitem" data-r="0"><p class="stext">День сменяется ночью</p><div class="sbtns"><button class="sbtn" data-b="0">вокруг своей оси</button><button class="sbtn" data-b="1">вокруг Солнца</button></div><p class="swhy" hidden>Земля поворачивается к Солнцу разными сторонами.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Сутки — примерно 24 часа</p><div class="sbtns"><button class="sbtn" data-b="0">вокруг своей оси</button><button class="sbtn" data-b="1">вокруг Солнца</button></div><p class="swhy" hidden>Один оборот вокруг своей оси — сутки.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Год — 365 суток и 6 часов</p><div class="sbtns"><button class="sbtn" data-b="0">вокруг своей оси</button><button class="sbtn" data-b="1">вокруг Солнца</button></div><p class="swhy" hidden>Один виток по орбите.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Сменяются времена года</p><div class="sbtns"><button class="sbtn" data-b="0">вокруг своей оси</button><button class="sbtn" data-b="1">вокруг Солнца</button></div><p class="swhy" hidden>За один виток вокруг Солнца сменяются времена года.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Бывает 29 февраля</p><div class="sbtns"><button class="sbtn" data-b="0">вокруг своей оси</button><button class="sbtn" data-b="1">вокруг Солнца</button></div><p class="swhy" hidden>Лишние 6 часов от витка вокруг Солнца копятся за четыре года.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Земля то ближе к Солнцу, то дальше</p><div class="sbtns"><button class="sbtn" data-b="0">вокруг своей оси</button><button class="sbtn" data-b="1">вокруг Солнца</button></div><p class="swhy" hidden>Орбита — эллипс, Солнце немного смещено от центра.</p></div>
+<div class="sitem" data-r="0"><p class="stext">У Насти в Тольятти утро наступает раньше</p><div class="sbtns"><button class="sbtn" data-b="0">вокруг своей оси</button><button class="sbtn" data-b="1">вокруг Солнца</button></div><p class="swhy" hidden>Земля вращается вокруг оси с запада на восток — восточнее утро раньше.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt7" data-n="6">
+<div class="sortlab">Где это на Земле?</div>
+<div class="sitem" data-r="0"><p class="stext">Куда ни посмотри — везде юг</p><div class="sbtns"><button class="sbtn" data-b="0">Северный полюс</button><button class="sbtn" data-b="1">экватор</button><button class="sbtn" data-b="2">Южный полюс</button></div><p class="swhy" hidden>Севернее уже некуда.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Куда ни посмотри — везде север</p><div class="sbtns"><button class="sbtn" data-b="0">Северный полюс</button><button class="sbtn" data-b="1">экватор</button><button class="sbtn" data-b="2">Южный полюс</button></div><p class="swhy" hidden>Южнее уже некуда.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Над головой — Полярная звезда</p><div class="sbtns"><button class="sbtn" data-b="0">Северный полюс</button><button class="sbtn" data-b="1">экватор</button><button class="sbtn" data-b="2">Южный полюс</button></div><p class="swhy" hidden>Туда направлен северный конец земной оси.</p></div>
+<div class="sitem" data-r="1"><p class="stext">На равном расстоянии от обоих полюсов</p><div class="sbtns"><button class="sbtn" data-b="0">Северный полюс</button><button class="sbtn" data-b="1">экватор</button><button class="sbtn" data-b="2">Южный полюс</button></div><p class="swhy" hidden>Экватор проходит посередине.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Делит Землю на Северное и Южное полушария</p><div class="sbtns"><button class="sbtn" data-b="0">Северный полюс</button><button class="sbtn" data-b="1">экватор</button><button class="sbtn" data-b="2">Южный полюс</button></div><p class="swhy" hidden>Экватор — граница полушарий.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Антарктида</p><div class="sbtns"><button class="sbtn" data-b="0">Северный полюс</button><button class="sbtn" data-b="1">экватор</button><button class="sbtn" data-b="2">Южный полюс</button></div><p class="swhy" hidden>Южный полюс — в Антарктиде (§ 5).</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Земная ось</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 296" aria-hidden="true"><use href="#g10-os"/></svg><span class="ftext">Воображаемая линия через центр Земли. Наклон к плоскости орбиты — 66,5°.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Северный полюс</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 264" aria-hidden="true"><use href="#g10-polus"/></svg><span class="ftext">Ось выходит на поверхность. Не перемещается. Отсюда везде юг.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Осевое движение</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 318" aria-hidden="true"><use href="#g10-den"/></svg><span class="ftext">Вокруг своей оси, с запада на восток, за 24 ч — сутки.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Орбитальное движение</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 336" aria-hidden="true"><use href="#g10-orbit"/></svg><span class="ftext">Вокруг Солнца, виток за 365 суток и 6 ч.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Эллипс</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 336" aria-hidden="true"><use href="#g10-orbit"/></svg><span class="ftext">Овал. Орбита Земли — почти круг: 147 и 152 млн км.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Високосный год</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 316" aria-hidden="true"><use href="#g10-god"/></svg><span class="ftext">366 дней, в феврале 29. Раз в четыре года. Следующий — 2028.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Экватор</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 320" aria-hidden="true"><use href="#g10-shema"/></svg><span class="ftext">Посередине между полюсами; делит Землю на Северное и Южное полушария.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Тропики и полярные круги</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 320" aria-hidden="true"><use href="#g10-shema"/></svg><span class="ftext">Воображаемые линии параллельно экватору.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. В какую сторону вращается Земля вокруг своей оси?</h3><div class="opts">
+<button class="opt">С востока на запад</button>
+<button class="opt" data-ok="1">С запада на восток</button>
+<button class="opt">С севера на юг</button>
+<button class="opt">С юга на север</button></div>
+<div class="fb">С запада на восток — против часовой стрелки, если смотреть со стороны Полярной звезды.</div></div>
+<div class="q"><h3>2. За сколько Земля делает один оборот вокруг своей оси?</h3><div class="opts">
+<button class="opt" data-ok="1">Примерно за 24 ч</button>
+<button class="opt">За 365 суток</button>
+<button class="opt">За 29 суток</button>
+<button class="opt">За 6 ч</button></div>
+<div class="fb">Это сутки: за них день и ночь сменяют друг друга.</div></div>
+<div class="q"><h3>3. Когда Земля ближе всего к Солнцу?</h3><div class="opts">
+<button class="opt">В начале июля</button>
+<button class="opt" data-ok="1">В начале января</button>
+<button class="opt">20—21 марта</button>
+<button class="opt">Всегда на одном расстоянии</button></div>
+<div class="fb">Около 147 млн км — вскоре после Нового года. А в начале июля — 152 млн км.</div></div>
+<div class="q"><h3>4. Сколько дней в високосном году?</h3><div class="opts">
+<button class="opt">364</button>
+<button class="opt">365</button>
+<button class="opt" data-ok="1">366</button>
+<button class="opt">367</button></div>
+<div class="fb">366: в феврале 29 дней. Бывает раз в четыре года.</div></div>
+<div class="q"><h3>5. Под каким углом земная ось наклонена к плоскости орбиты?</h3><div class="opts">
+<button class="opt">90°</button>
+<button class="opt" data-ok="1">66,5°</button>
+<button class="opt">45°</button>
+<button class="opt">30°</button></div>
+<div class="fb">66,5° — это видно на рис. 26.</div></div>
+<div class="q"><h3>6. Что делит земной шар на Северное и Южное полушария?</h3><div class="opts">
+<button class="opt">Тропик</button>
+<button class="opt">Полярный круг</button>
+<button class="opt" data-ok="1">Экватор</button>
+<button class="opt">Земная ось</button></div>
+<div class="fb">Экватор проходит посередине, на равном расстоянии от обоих полюсов.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Как Земля вращается вокруг своей оси</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Земная ось — воображаемая линия через центр Земли; наклон к плоскости орбиты 66,5°, северный конец — на Полярную звезду.</li><li>Вращение с запада на восток (против часовой стрелки со стороны Полярной звезды), оборот за 24 ч — сутки.</li><li>Полушарие, обращённое к Солнцу, — день, в тени — ночь; полюсы не перемещаются.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как Земля движется вокруг Солнца</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Орбита — эллипс, Солнце немного смещено от центра.</li><li>Ближе всего (147 млн км) — в начале января, дальше всего (152 млн км) — в начале июля.</li><li>Один виток — 365 суток и 6 ч; за это время сменяются времена года.</li></ol></div>
+</div>
+<div class="think">
+<h3>Год и високосный год</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Люди договорились считать год равным 365 дням.</li><li>Оставшиеся 6 часов за четыре года складываются в сутки.</li><li>Високосный год — 366 дней, в феврале 29 дней; следующий — 2028.</li></ol></div>
+</div>
+<div class="think">
+<h3>Линии на глобусе</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl11" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl11" hidden><ol><li>Экватор — посередине между полюсами, делит Землю на Северное и Южное полушария.</li><li>Тропики и полярные круги — воображаемые линии параллельно экватору.</li><li>Они на разном удалении от полюсов: полярные круги ближе к полюсам.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g9.html">‹ §9 Учимся с «Полярной звездой»</a>
+  <span class="pn cur">§10 Движения Земли</span>
+ </div>
+</div>
+
+<footer><div class="wrap">География, 5—6 классы. А. И. Алексеев и др., «Полярная звезда», 2023. § 10, с. 36—38. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'g10-os':'0 0 360 296','g10-den':'0 0 360 318','g10-polus':'0 0 360 264','g10-time':'0 0 360 290','g10-orbit':'0 0 360 336','g10-god':'0 0 360 316','g10-shema':'0 0 360 320'};
+
+var T={
+zemos:{w:"Земная ось",k:"что это",s:"g10-os",t:"Воображаемая линия, которая проходит через центр земного шара. Вокруг неё вращается Земля. Ось наклонена к плоскости орбиты под углом 66,5° и северным концом направлена на Полярную звезду.",r:"",e:""},
+ploskost:{w:"Плоскость орбиты",k:"что это",s:"g10-os",t:"Ровная «поверхность», в которой лежит орбита Земли. В опыте § 9 её изображал стол. Земная ось наклонена к ней под углом 66,5°.",r:"",e:""},
+polar:{w:"Полярная звезда",k:"ориентир",s:"g10-polus",t:"Звезда, на которую направлен северный конец земной оси. Поэтому на Северном полюсе она прямо над головой.",r:"",e:""},
+npolus:{w:"Северный полюс",k:"точка на Земле",s:"g10-polus",t:"Точка, где земная ось выходит на поверхность Земли на севере. Не перемещается, когда Земля вращается. Отсюда, куда ни посмотри, — юг.",r:"",e:""},
+spolus:{w:"Южный полюс",k:"точка на Земле",s:"g10-polus",t:"Точка, где земная ось выходит на поверхность Земли на юге, — в Антарктиде (§ 5). Отсюда, куда ни посмотри, — север.",r:"",e:""},
+polushar:{w:"Полушарие",k:"что это",s:"g10-den",t:"Половина земного шара. В том полушарии, которое обращено к Солнцу, — день, а в том, которое в тени, — ночь.",r:"",e:""},
+sutki:{w:"Сутки",k:"время",s:"g10-den",t:"Время одного оборота Земли вокруг своей оси — примерно 24 часа. За сутки день и ночь сменяют друг друга.",r:"",e:""},
+osevoe:{w:"Осевое движение",k:"движение Земли",s:"g10-den",t:"Движение Земли вокруг своей оси: оборот примерно за 24 часа. Из-за него день сменяется ночью.",r:"",e:""},
+orbital:{w:"Орбитальное движение",k:"движение Земли",s:"g10-orbit",t:"Движение Земли вокруг Солнца по орбите: один виток примерно за 365 суток и 6 часов. За это время сменяются времена года.",r:"",e:""},
+ellips:{w:"Эллипс",k:"форма",s:"g10-orbit",t:"Овал, вытянутый круг. Орбита Земли — эллипс, но вытянута совсем чуть-чуть: почти круг.",r:"<b>эллипсис</b> (греч.) — нехватка: «не дотянул» до круга",e:""},
+vitok:{w:"Виток",k:"что это",s:"g10-orbit",t:"Один полный оборот по орбите. Виток вокруг Солнца Земля делает примерно за 365 суток и 6 часов.",r:"",e:""},
+vremena:{w:"Времена года",k:"что это",s:"g10-orbit",t:"Весна, лето, осень, зима. Сменяются за один виток Земли вокруг Солнца. Почему так — в § 11.",r:"",e:""},
+god:{w:"Год",k:"время",s:"g10-god",t:"Люди договорились считать год равным 365 дням, хотя виток Земли по орбите длится 365 суток и 6 часов.",r:"",e:""},
+visokos:{w:"Високосный год",k:"что это",s:"g10-god",t:"Год, в котором 366 дней, а в феврале 29 дней. Бывает раз в четыре года — когда из оставшихся шести часов набираются сутки. Следующий — 2028-й.",r:"<b>bissextus</b> (лат.) — «дважды шестой»: так древние римляне называли добавочный день",e:""},
+grafiz:{w:"Графические изображения",k:"что это",s:"g10-shema",t:"Рисунки, чертежи, фото и т. д. С ними легче разобраться в тексте, проверить себя и получить дополнительные сведения.",r:"",e:""},
+ekvator:{w:"Экватор",k:"линия на Земле",s:"g10-shema",t:"Воображаемая линия посередине между полюсами, на равном расстоянии от обоих. Делит земной шар на Северное и Южное полушария.",r:"<b>aequator</b> (лат.) — уравнитель: делит Землю на две равные половины",e:""},
+tropiki:{w:"Тропики",k:"линии на Земле",s:"g10-shema",t:"Две воображаемые линии параллельно экватору — Северный и Южный тропики. На рис. 26 — зелёные пунктиры. Зачем они нужны — в § 11.",r:"<b>тропикос</b> (греч.) — поворотный",e:""},
+polkrug:{w:"Полярные круги",k:"линии на Земле",s:"g10-shema",t:"Две воображаемые линии параллельно экватору, ближе к полюсам, — Северный и Южный полярные круги. На рис. 26 — синие пунктиры. Подробно — в § 11.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('geography:g10:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('geography:g10:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>7){fb.textContent="Верно! Начало января — ближе всего к Солнцу, 20—21 марта — день равен ночи, 3 апреля — твой день рождения, 20—21 июня — самый длинный день, начало июля — дальше всего, 22—23 сентября — день равен ночи, 21—22 декабря — самый короткий день.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Не этот. Что бывает раньше в году?";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('geography:g10:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('geography:g10:read_'+id,on?'1':'0')});
+  });
+});
+
+/* --- увеличение карт, схем и картинок по нажатию (на телефоне мелкие подписи) --- */
+var zoom=document.createElement('div');zoom.className='zoom';zoom.hidden=true;
+zoom.setAttribute('role','dialog');zoom.setAttribute('aria-modal','true');zoom.setAttribute('aria-label','Увеличенная картинка');
+zoom.innerHTML='<div class="zoombar"><span>Двигай пальцем, чтобы рассмотреть</span><button class="zoomclose">Закрыть ✕</button></div><div class="zoomin"></div>';
+document.body.appendChild(zoom);
+function openZoom(el){
+  var box=zoom.querySelector('.zoomin');box.innerHTML='';
+  var c=el.cloneNode(true);c.removeAttribute('id');
+  if(c.tagName.toLowerCase()==='svg'){
+    var v=(c.getAttribute('viewBox')||'0 0 400 300').split(/\s+/);
+    c.style.width=Math.round(Math.max(parseFloat(v[2])*2.3,window.innerWidth-24))+'px';
+  }else{
+    c.style.width=Math.round(Math.max((el.naturalWidth||600)*1.1,window.innerWidth*1.5))+'px';
+  }
+  c.style.maxWidth='none';c.style.height='auto';
+  box.appendChild(c);zoom.hidden=false;document.documentElement.style.overflow='hidden';
+  zoom.querySelector('.zoomclose').focus();
+}
+function closeZoom(){zoom.hidden=true;document.documentElement.style.overflow='';}
+document.addEventListener('click',function(e){
+  if(e.target.closest('.zoomclose')){closeZoom();return}
+  var s=e.target.closest('.fig svg, .photo img, .banner img');
+  if(s&&!zoom.contains(s)){openZoom(s);}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!zoom.hidden)closeZoom()});
+
+</script>
+</body>
+</html>
