@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Практикум: гномон из картона и карандаша, полуденная линия, Эратосфен — и три опыта о том, как движется Земля.">
+<title>§9 Учимся с «Полярной звездой» (1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term .tl{white-space:nowrap}
+.term .tl::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover .tl::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== География: морская гамма (синий вместо красного), блоки учебника «Полярная звезда» ===== */
+:root{
+  --red:#1B6A8C; --ochre:#E2A31F; --leaf:#1B6A8C; --life:#8A4CB0; --lifebg:#F2E9F8;
+  --pa:#C9672C; --pb:#1B6A8C; --pink:#C23C86; --pinkbg:#FBE4F0; --yel:#FFF3C4; --yelb:#D9A21A;
+  --grn:#E3F2E1; --grnb:#3E8E4A; --sea:#BFE0EE; --land:#F3E6C4; --landb:#B9A57A;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--pink);color:#FFF6FB;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+:root[data-theme="dark"] .rubric{color:#20101A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rubric{color:#20101A}}
+
+/* --- вывод (розовая плашка учебника) --- */
+.vyvod{margin:24px 0;background:var(--pinkbg);border-left:8px solid var(--pink);border-radius:0 16px 16px 0;
+  padding:13px 16px 14px;box-shadow:var(--sh)}
+.vyvod .vlab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:4px}
+.vyvod p{margin:0;font-size:18px;font-weight:600;line-height:1.5}
+
+/* --- заметки на полях учебника --- */
+.side{margin:22px 0;border-radius:14px;padding:12px 15px;font-size:17px;line-height:1.5;border:2.5px solid}
+.side .slab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.side.yellow{background:var(--yel);border-color:var(--yelb)} .side.yellow .slab{color:var(--yelb)}
+.side.green{background:var(--grn);border-color:var(--grnb)} .side.green .slab{color:var(--grnb)}
+.side p{margin:0}
+
+/* --- запомните --- */
+.remember{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.remember span{background:var(--card);border:2.5px solid var(--pink);border-radius:999px;padding:6px 13px;
+  font-weight:600;font-size:16px;box-shadow:var(--sh)}
+
+/* --- заставка параграфа --- */
+.banner{margin:0;background:var(--paper2);border-bottom:3px solid var(--line)}
+.banner .wrap{padding-block:14px}
+.banner img{display:block;width:100%;max-width:860px;height:auto;max-height:220px;object-fit:cover;margin:0 auto;border-radius:16px;border:3px solid var(--line)}
+.banner figcaption{text-align:center;margin-top:6px}
+
+/* --- таблица учебника для заполнения --- */
+.ttab{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:var(--card)}
+.ttab th,.ttab td{border:2px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.ttab th{background:var(--paper2);font-weight:600}
+.tscroll{overflow-x:auto}
+
+/* маленькие картинки учебника (портреты) не растягиваем на всю ширину */
+.photo img.small{max-width:320px}
+
+/* --- увеличение по нажатию --- */
+.fig{position:relative}
+.fig svg,.photo img{cursor:zoom-in}
+.fig:has(> svg)::after{content:"⤢ нажми на картинку — увеличится";display:block;margin-top:6px;text-align:right;
+  font-size:12px;font-weight:600;color:var(--soft);pointer-events:none}
+.zoom{position:fixed;inset:0;z-index:120;background:var(--paper);overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom[hidden]{display:none!important}
+.zoombar{position:sticky;top:0;left:0;z-index:2;display:flex;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--paper2);border-bottom:2px solid var(--line);font-size:14px;color:var(--soft)}
+.zoomclose{white-space:nowrap;font:inherit;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.zoomin{padding:14px}
+.zoomin svg,.zoomin img{display:block;background:var(--card);border-radius:12px}
+
+/* жирное слово внутри задания учебника — обычное, а не заголовок блока */
+.ask li b,.ask p b,.ask ol b{display:inline;font-size:inherit;letter-spacing:normal;text-transform:none;color:inherit;margin:0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2F6F8F" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">География</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<defs><marker id="ar9-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--illink,#2B2620)"/></marker><marker id="ar9-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--red,#1B6A8C)"/></marker><marker id="ar9-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pink,#C23C86)"/></marker><marker id="ar9-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--moss,#5E7A3A)"/></marker><marker id="ar9-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pa,#C9672C)"/></marker><marker id="ar9-l" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--life,#8A4CB0)"/></marker><marker id="ar9-s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--soft,#5F5648)"/></marker></defs>
+<symbol id="g9-metody" viewBox="0 0 360 268">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Три способа изучать природу</text>
+<rect x="6" y="34" width="348" height="68" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="2.4"/>
+<path d="M18 68 Q40 50 62 68 Q40 86 18 68 Z" fill="var(--card,#FFFBF2)" stroke="var(--red,#1B6A8C)" stroke-width="2"/>
+<circle cx="40.0" cy="68.0" r="8" fill="var(--red,#1B6A8C)" stroke="none" stroke-width="0"/>
+<circle cx="42.0" cy="66.0" r="2.4" fill="var(--card,#FFFBF2)" stroke="none" stroke-width="0"/>
+<text x="76.0" y="56.0" text-anchor="start" font-size="13.5" font-weight="700" fill="var(--red,#1B6A8C)" >Наблюдение</text>
+<text x="76.0" y="73.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >замечаем и запоминаем</text>
+<text x="76.0" y="90.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Пример: как за день меняется высота Солнца</text>
+<rect x="6" y="112" width="348" height="68" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--pa,#C9672C)" stroke-width="2.4"/>
+<path d="M39.0 146.0 L44.0 146.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M36.4 152.4 L39.9 155.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M30.0 155.0 L30.0 160.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M23.6 152.4 L20.1 155.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M21.0 146.0 L16.0 146.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M23.6 139.6 L20.1 136.1" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M30.0 137.0 L30.0 132.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M36.4 139.6 L39.9 136.1" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><circle cx="30.0" cy="146.0" r="6" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<circle cx="54.0" cy="150.0" r="8" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.4"/>
+<text x="76.0" y="134.0" text-anchor="start" font-size="13.5" font-weight="700" fill="var(--pa,#C9672C)" >Опыт (эксперимент)</text>
+<text x="76.0" y="151.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >строим модель, чтобы понять причину</text>
+<text x="76.0" y="168.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Пример: глобус и лампа — Земля и Солнце</text>
+<rect x="6" y="190" width="348" height="68" rx="12" fill="var(--card,#FFFBF2)" stroke="var(--moss,#5E7A3A)" stroke-width="2.4"/>
+<rect x="17" y="217" width="46" height="14" rx="2" fill="var(--land,#F3E6C4)" stroke="var(--moss,#5E7A3A)" stroke-width="1.6"/>
+<path d="M21.0 217.0 L21.0 226.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M25.8 217.0 L25.8 223.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M30.5 217.0 L30.5 226.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M35.2 217.0 L35.2 223.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M40.0 217.0 L40.0 226.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M44.8 217.0 L44.8 223.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M49.5 217.0 L49.5 226.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M54.2 217.0 L54.2 223.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M59.0 217.0 L59.0 226.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<text x="76.0" y="212.0" text-anchor="start" font-size="13.5" font-weight="700" fill="var(--moss,#5E7A3A)" >Измерение</text>
+<text x="76.0" y="229.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >получаем числа</text>
+<text x="76.0" y="246.0" text-anchor="start" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Пример: длина тени — в сантиметрах</text>
+</g>
+</symbol>
+<symbol id="g9-ten" viewBox="0 0 360 364">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Чем выше Солнце — тем короче тень</text>
+<path d="M18.0 98.0 L342.0 98.0" stroke="var(--landb,#B9A57A)" stroke-width="2" fill="none"/>
+<path d="M110.0 37.9 L319.5 98.0" stroke="var(--ochre,#E2A31F)" stroke-width="1.3" fill="none" stroke-dasharray="4 3"/>
+<path d="M180.0 98.0 L319.5 98.0" stroke="var(--soft,#5F5648)" stroke-width="6" stroke-linecap="round" stroke-opacity=".55"/>
+<path d="M180.0 98.0 L180.0 58.0" stroke="var(--no,#B03A2E)" stroke-width="4" fill="none"/>
+<path d="M120.0 37.9 L125.0 37.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M117.1 45.0 L120.6 48.5" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M110.0 47.9 L110.0 52.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M102.9 45.0 L99.4 48.5" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M100.0 37.9 L95.0 37.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M102.9 30.9 L99.4 27.3" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M110.0 27.9 L110.0 22.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M117.1 30.9 L120.6 27.3" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><circle cx="110.0" cy="37.9" r="7" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<text x="24.0" y="40.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--pa,#C9672C)" >утро</text>
+<text x="180.0" y="118.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--soft,#5F5648)" >Солнце низко — тень длинная</text>
+<path d="M18.0 206.0 L342.0 206.0" stroke="var(--landb,#B9A57A)" stroke-width="2" fill="none"/>
+<path d="M146.0 137.5 L227.7 206.0" stroke="var(--ochre,#E2A31F)" stroke-width="1.3" fill="none" stroke-dasharray="4 3"/>
+<path d="M180.0 206.0 L227.7 206.0" stroke="var(--soft,#5F5648)" stroke-width="6" stroke-linecap="round" stroke-opacity=".55"/>
+<path d="M180.0 206.0 L180.0 166.0" stroke="var(--no,#B03A2E)" stroke-width="4" fill="none"/>
+<path d="M156.0 137.5 L161.0 137.5" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M153.1 144.5 L156.6 148.1" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M146.0 147.5 L146.0 152.5" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M138.9 144.5 L135.4 148.1" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M136.0 137.5 L131.0 137.5" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M138.9 130.4 L135.4 126.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M146.0 127.5 L146.0 122.5" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M153.1 130.4 L156.6 126.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><circle cx="146.0" cy="137.5" r="7" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<text x="24.0" y="148.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--pa,#C9672C)" >полдень</text>
+<text x="180.0" y="226.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--soft,#5F5648)" >Солнце выше всего — тень самая короткая</text>
+<path d="M18.0 314.0 L342.0 314.0" stroke="var(--landb,#B9A57A)" stroke-width="2" fill="none"/>
+<path d="M250.0 253.9 L40.5 314.0" stroke="var(--ochre,#E2A31F)" stroke-width="1.3" fill="none" stroke-dasharray="4 3"/>
+<path d="M180.0 314.0 L40.5 314.0" stroke="var(--soft,#5F5648)" stroke-width="6" stroke-linecap="round" stroke-opacity=".55"/>
+<path d="M180.0 314.0 L180.0 274.0" stroke="var(--no,#B03A2E)" stroke-width="4" fill="none"/>
+<path d="M260.0 253.9 L265.0 253.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M257.1 261.0 L260.6 264.5" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M250.0 263.9 L250.0 268.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M242.9 261.0 L239.4 264.5" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M240.0 253.9 L235.0 253.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M242.9 246.9 L239.4 243.3" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M250.0 243.9 L250.0 238.9" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M257.1 246.9 L260.6 243.3" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><circle cx="250.0" cy="253.9" r="7" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<text x="336.0" y="256.0" text-anchor="end" font-size="13" font-weight="700" fill="var(--pa,#C9672C)" >вечер</text>
+<text x="180.0" y="334.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--soft,#5F5648)" >Солнце низко — тень снова длинная</text>
+<text x="180.0" y="356.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Красный столбик — гномон, серая полоса — его тень.</text>
+</g>
+</symbol>
+<symbol id="g9-top" viewBox="0 0 360 324">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Как найти направление север — юг</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >вид сверху на картонный круг, 3 апреля, Москва</text>
+<path d="M91.1 128.5 L101.2 127.4 L110.1 126.5 L118.1 125.7 L125.4 125.1 L132.1 124.5 L138.3 124.1 L144.1 123.7 L149.6 123.4 L154.9 123.1 L159.9 122.9 L164.8 122.8 L169.6 122.6 L174.3 122.6 L179.0 122.5 L183.7 122.6 L188.3 122.6 L193.1 122.7 L197.9 122.8 L202.9 123.0 L208.1 123.3 L213.5 123.5 L219.1 123.9 L225.2 124.3 L231.6 124.8 L238.6 125.4 L246.3 126.1 L254.8 127.0 L264.4 128.0" stroke="var(--soft,#5F5648)" stroke-width="1.2" stroke-dasharray="2 3" fill="none"/>
+<circle cx="180" cy="178" r="76.0" fill="none" stroke="var(--illink,#2B2620)" stroke-width="1.6"/>
+<path d="M180.0 178.0 L125.4 125.1" stroke="var(--soft,#5F5648)" stroke-width="4" fill="none"/>
+<circle cx="125.4" cy="125.1" r="3.2" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<path d="M180.0 178.0 L149.6 123.4" stroke="var(--soft,#5F5648)" stroke-width="4" fill="none"/>
+<circle cx="149.6" cy="123.4" r="3.2" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<path d="M180.0 178.0 L179.9 122.5" stroke="var(--soft,#5F5648)" stroke-width="4" fill="none"/>
+<circle cx="179.9" cy="122.5" r="3.2" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<path d="M180.0 178.0 L208.1 123.3" stroke="var(--soft,#5F5648)" stroke-width="4" fill="none"/>
+<circle cx="208.1" cy="123.3" r="3.2" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<path d="M125.4 125.1 L234.6 125.1" stroke="var(--red,#1B6A8C)" stroke-width="1.6" fill="none"/>
+<path d="M180.0 191.2 L180.1 52.0" stroke="var(--no,#B03A2E)" stroke-width="2.6" fill="none" marker-end="url(#ar9-k)"/>
+<circle cx="125.4" cy="125.1" r="4.2" fill="var(--pa,#C9672C)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<circle cx="234.6" cy="125.1" r="4.2" fill="var(--pa,#C9672C)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<circle cx="180.0" cy="125.1" r="4.2" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<circle cx="180.0" cy="178.0" r="5" fill="var(--no,#B03A2E)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="117.4" y="129.1" text-anchor="end" font-size="13" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">A</text>
+<text x="117.4" y="143.1" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">10:00</text>
+<text x="242.6" y="129.1" text-anchor="start" font-size="12" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">вторая точка</text>
+<text x="242.6" y="143.1" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">≈ 15:07</text>
+<text x="170.0" y="117.1" text-anchor="end" font-size="13" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">E</text>
+<text x="190.0" y="184.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">O — карандаш</text>
+<text x="192.0" y="56.0" text-anchor="start" font-size="13" font-weight="700" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">С — север</text>
+<text x="192.0" y="204.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--no,#B03A2E)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Ю — юг, окно</text>
+<text x="12.0" y="268.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >1) A — конец тени утром; круг через A.</text>
+<text x="12.0" y="284.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >2) После полудня тень снова касается круга.</text>
+<text x="12.0" y="300.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >3) E — середина между точками; прямая E—O —</text>
+<text x="12.0" y="316.0" text-anchor="start" font-size="11.5" font-weight="700" fill="var(--no,#B03A2E)" >полуденная линия: направление север — юг.</text>
+</g>
+</symbol>
+<symbol id="g9-erat" viewBox="0 0 360 262">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Сетка Эратосфена</text>
+<circle cx="92.0" cy="124.0" r="80" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="2"/>
+<ellipse cx="92" cy="193.3" rx="40.0" ry="6.4" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="1.6"/>
+<ellipse cx="92" cy="164.0" rx="69.3" ry="11.1" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="1.6"/>
+<ellipse cx="92" cy="84.0" rx="69.3" ry="11.1" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="1.6"/>
+<ellipse cx="92" cy="54.7" rx="40.0" ry="6.4" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="1.6"/>
+<ellipse cx="92" cy="124" rx="80" ry="12.8" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="2.2"/>
+<ellipse cx="92" cy="124" rx="69.3" ry="80" fill="none" stroke="var(--no,#B03A2E)" stroke-width="1.4"/>
+<ellipse cx="92" cy="124" rx="40.0" ry="80" fill="none" stroke="var(--no,#B03A2E)" stroke-width="1.4"/>
+<path d="M92.0 44.0 L92.0 204.0" stroke="var(--no,#B03A2E)" stroke-width="2" fill="none"/>
+<ellipse cx="92" cy="124" rx="40.0" ry="80" fill="none" stroke="var(--no,#B03A2E)" stroke-width="1.4"/>
+<ellipse cx="92" cy="124" rx="69.3" ry="80" fill="none" stroke="var(--no,#B03A2E)" stroke-width="1.4"/>
+<circle cx="92.0" cy="44.0" r="3.6" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<text x="92.0" y="36.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный полюс</text>
+<circle cx="92.0" cy="204.0" r="3.6" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<text x="92.0" y="222.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Южный полюс</text>
+<text x="186.0" y="64.0" text-anchor="start" font-size="12.5" font-weight="700" fill="var(--no,#B03A2E)" >«Полуденные линии»</text>
+<text x="186.0" y="80.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >идут с севера на юг —</text>
+<text x="186.0" y="96.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--no,#B03A2E)" >это меридианы</text>
+<path d="M182.0 74.0 L122.0 74.0" stroke="var(--no,#B03A2E)" stroke-width="1.4" fill="none" marker-end="url(#ar9-k)"/>
+<text x="186.0" y="160.0" text-anchor="start" font-size="12.5" font-weight="700" fill="var(--moss,#5E7A3A)" >«Линии, идущие рядом»</text>
+<text x="186.0" y="176.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >идут с запада на восток —</text>
+<text x="186.0" y="192.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--moss,#5E7A3A)" >это параллели</text>
+<path d="M182.0 170.0 L154.0 170.0" stroke="var(--moss,#5E7A3A)" stroke-width="1.4" fill="none" marker-end="url(#ar9-g)"/>
+<text x="180.0" y="252.0" text-anchor="middle" font-size="12" font-weight="600" fill="var(--soft,#5F5648)" >Полуденная линия гномона лежит вдоль меридиана.</text>
+</g>
+</symbol>
+<symbol id="g9-osi" viewBox="0 0 360 268">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Три оборота вокруг своей оси</text>
+<path d="M62.0 34.0 L62.0 162.0" stroke="var(--no,#B03A2E)" stroke-width="1.6" fill="none" stroke-dasharray="4 3"/>
+<circle cx="62.0" cy="130.0" r="22" fill="var(--ochre,#E2A31F)" stroke="var(--pa,#C9672C)" stroke-width="1.6"/>
+<rect x="49" y="122" width="10" height="9" fill="var(--card,#FFFBF2)" stroke="var(--illink,#2B2620)" stroke-width="1"/>
+<path d="M43.2 75.9 L44.7 75.0 L46.7 74.1 L49.1 73.4 L52.0 72.8 L55.2 72.4 L58.5 72.1 L62.0 72.0 L65.5 72.1 L68.8 72.4 L72.0 72.8 L74.9 73.4 L77.3 74.1 L79.3 75.0 L80.8 75.9 L81.7 77.0 L82.0 78.0 L81.7 79.0 L80.8 80.1 L79.3 81.0 L77.3 81.9 L74.9 82.6 L72.0 83.2 L68.8 83.6 L65.5 83.9 L62.0 84.0 L58.5 83.9 L55.2 83.6 L52.0 83.2 L49.1 82.6 L46.7 81.9" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none" marker-end="url(#ar9-k)"/>
+<text x="62.0" y="186.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink,#2B2620)" >шар на нитке:</text>
+<text x="62.0" y="201.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--illink,#2B2620)" >метка исчезла</text>
+<text x="62.0" y="215.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--illink,#2B2620)" >и вернулась</text>
+<rect x="156" y="40" width="48" height="10" rx="2" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.4"/>
+<text x="180.0" y="66.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">окно</text>
+<circle cx="180.0" cy="122.0" r="9" fill="var(--life,#8A4CB0)" stroke="none" stroke-width="0"/>
+<path d="M180.0 112.0 L180.0 86.0" stroke="var(--life,#8A4CB0)" stroke-width="1.6" fill="none" stroke-dasharray="3 3" marker-end="url(#ar9-l)"/>
+<path d="M151.8 111.7 L154.0 107.0 L157.0 102.7 L160.7 99.0 L165.0 96.0 L169.7 93.8 L174.8 92.5 L180.0 92.0 L185.2 92.5 L190.3 93.8 L195.0 96.0 L199.3 99.0 L203.0 102.7 L206.0 107.0 L208.2 111.7 L209.5 116.8 L210.0 122.0 L209.5 127.2 L208.2 132.3 L206.0 137.0 L203.0 141.3 L199.3 145.0 L195.0 148.0 L190.3 150.2 L185.2 151.5 L180.0 152.0 L174.8 151.5 L169.7 150.2 L165.0 148.0 L160.7 145.0 L157.0 141.3" stroke="var(--life,#8A4CB0)" stroke-width="2" fill="none" marker-end="url(#ar9-l)"/>
+<text x="180.0" y="172.0" text-anchor="middle" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" >вид сверху</text>
+<text x="180.0" y="186.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--life,#8A4CB0)" >ты кружишься:</text>
+<text x="180.0" y="201.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--illink,#2B2620)" >снова видишь</text>
+<text x="180.0" y="215.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--illink,#2B2620)" >окно</text>
+<path d="M298.0 46.0 L298.0 162.0" stroke="var(--no,#B03A2E)" stroke-width="1.6" fill="none" stroke-dasharray="4 3"/>
+<path d="M268 96 L328 96 L298 150 Z" fill="var(--pink,#C23C86)" stroke="var(--illink,#2B2620)" stroke-width="1.6"/>
+<ellipse cx="298" cy="96" rx="30" ry="8" fill="var(--ochre,#E2A31F)" stroke="var(--illink,#2B2620)" stroke-width="1.6"/>
+<rect x="295" y="70" width="6" height="22" rx="2" fill="var(--illink,#2B2620)"/>
+<path d="M281.1 62.3 L282.4 61.5 L284.2 60.8 L286.4 60.2 L289.0 59.7 L291.8 59.3 L294.9 59.1 L298.0 59.0 L301.1 59.1 L304.2 59.3 L307.0 59.7 L309.6 60.2 L311.8 60.8 L313.6 61.5 L314.9 62.3 L315.7 63.1 L316.0 64.0 L315.7 64.9 L314.9 65.7 L313.6 66.5 L311.8 67.2 L309.6 67.8 L307.0 68.3 L304.2 68.7 L301.1 68.9 L298.0 69.0 L294.9 68.9 L291.8 68.7 L289.0 68.3 L286.4 67.8 L284.2 67.2" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none" marker-end="url(#ar9-k)"/>
+<text x="298.0" y="186.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink,#2B2620)" >волчок (юла):</text>
+<text x="298.0" y="201.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--illink,#2B2620)" >вертится вокруг</text>
+<text x="298.0" y="215.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--illink,#2B2620)" >своей оси</text>
+<text x="180.0" y="244.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Пунктир — ось: воображаемая линия, вокруг которой</text>
+<text x="180.0" y="260.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >вращается тело. Так же вращается наша планета.</text>
+</g>
+</symbol>
+<symbol id="g9-globus" viewBox="0 0 360 282">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--illink,#2B2620)" >Опыт с глобусом: наклон оси не меняется</text>
+<ellipse cx="180" cy="138" rx="128" ry="34" fill="none" stroke="var(--no,#B03A2E)" stroke-width="1.8"/>
+<path d="M150.0 172.0 L210.0 172.0" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar9-k)"/>
+<path d="M210.0 104.0 L150.0 104.0" stroke="var(--no,#B03A2E)" stroke-width="1.8" fill="none" marker-end="url(#ar9-k)"/>
+<path d="M194.0 126.0 L199.0 126.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M189.9 135.9 L193.4 139.4" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M180.0 140.0 L180.0 145.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M170.1 135.9 L166.6 139.4" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M166.0 126.0 L161.0 126.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M170.1 116.1 L166.6 112.6" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M180.0 112.0 L180.0 107.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M189.9 116.1 L193.4 112.6" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><circle cx="180.0" cy="126.0" r="11" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<text x="180.0" y="154.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">лампа — «Солнце»</text>
+<circle cx="52.0" cy="128.0" r="30" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><path d="M37.0 119.0 C46.0 107.0 61.0 113.0 58.0 125.0 C55.0 137.0 40.0 137.0 37.0 119.0 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/><path d="M52.0 98.0 A30 30 0 0 0 52.0 158.0 Z" fill="#14100A" fill-opacity=".45"/><path d="M36.8 163.9 L67.2 92.1" stroke="var(--illink,#2B2620)" stroke-width="1.6" fill="none" stroke-dasharray="4 3"/><circle cx="63.7" cy="100.4" r="3.4" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<circle cx="308.0" cy="128.0" r="30" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.6"/><path d="M293.0 119.0 C302.0 107.0 317.0 113.0 314.0 125.0 C311.0 137.0 296.0 137.0 293.0 119.0 Z" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width=".8"/><path d="M308.0 98.0 A30 30 0 0 1 308.0 158.0 Z" fill="#14100A" fill-opacity=".45"/><path d="M292.8 163.9 L323.2 92.1" stroke="var(--illink,#2B2620)" stroke-width="1.6" fill="none" stroke-dasharray="4 3"/><circle cx="319.7" cy="100.4" r="3.4" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<text x="52.0" y="70.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">А</text>
+<text x="308.0" y="70.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Б</text>
+<text x="8.0" y="196.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--pink,#C23C86)" >Северный полюс</text>
+<text x="8.0" y="212.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >освещён, Южный —</text>
+<text x="8.0" y="228.0" text-anchor="start" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >в тени</text>
+<text x="352.0" y="196.0" text-anchor="end" font-size="12" font-weight="700" fill="var(--pink,#C23C86)" >Северный полюс</text>
+<text x="352.0" y="212.0" text-anchor="end" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >в тени, Южный —</text>
+<text x="352.0" y="228.0" text-anchor="end" font-size="12" font-weight="600" fill="var(--illink,#2B2620)" >освещён</text>
+<text x="180.0" y="258.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Пунктир — ось глобуса: в А и в Б она наклонена</text>
+<text x="180.0" y="274.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >одинаково. Розовая точка — Северный полюс.</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">География · § 9</span>
+    <h1>Учимся с «Полярной звездой» (1)</h1>
+    <p class="lede">Практикум: гномон из картона и карандаша, полуденная линия, Эратосфен — и три опыта о том, как движется Земля.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>О чём параграф:</b><br>Проводим наблюдения и опыты: 1. Наблюдаем за тенью. 2. Определяем направление. 3. Опыты: как движется Земля.</div></div>
+  </div>
+</header>
+
+<figure class="banner"><div class="wrap"><img id="ph-g9_banner" src="img/1ef88da4d763.jpg" alt="Компас на дорожной карте и глобус"><figcaption><span class="src">из учебника</span>Заставка параграфа</figcaption></div></figure>
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g8.html">‹ §8 Мы во Вселенной</a>
+  <span class="pn cur">§9 Учимся с «Полярной звездой»</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Проводим наблюдения и опыты">1</a><a href="#s2" data-j="s2" title="Шаг за шагом. Наблюдаем за тенью">2</a><a href="#s3" data-j="s3" title="Шаг за шагом. Определяем направление">3</a><a href="#s4" data-j="s4" title="Обелиски и Эратосфен">4</a><a href="#s5" data-j="s5" title="Опыты: как движется Земля">5</a><a href="#s6" data-j="s6" title="Итоги: опыты дома">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Проводим наблюдения и опыты</h2></div>
+<div class="easy">
+<p>Как люди изучают природу? Тремя способами: <span class="term" role="button" tabindex="0" data-t="nabl"><span class="tl">наблюдают</span></span>, <span class="term" role="button" tabindex="0" data-t="opyt">ставят опыты <span class="tl">(эксперименты)</span></span> и <span class="term" role="button" tabindex="0" data-t="izmer"><span class="tl">измеряют</span></span>.</p>
+<p>Наблюдая, человек замечает, что происходит в природе, и копит знания. Опыт помогает построить <span class="term" role="button" tabindex="0" data-t="model"><span class="tl">модель</span></span> природного явления — и понять, почему оно происходит. А измерения дают числа. Все эти способы очень древние.</p>
+<p><span class="big">Как высоко Солнце?</span> Люди давно заметили: за день Солнце то поднимается над <span class="term" role="button" tabindex="0" data-t="gorizont"><span class="tl">горизонтом</span></span>, то опускается. Чтобы определять <span class="term" role="button" tabindex="0" data-t="vysota">высоту <span class="tl">Солнца</span></span>, ещё в древности придумали простой астрономический инструмент — <span class="term" role="button" tabindex="0" data-t="gnomon"><i><span class="tl">гномон</span></i></span> (рис. 21).</p>
+<p>Гномон — это вертикальный шест (или простой стержень) на ровной горизонтальной площадке.</p>
+<p>В солнечный день шест отбрасывает тень. С восхода до <span class="term" role="button" tabindex="0" data-t="polden"><span class="tl">полудня</span></span> тень всё короче, а после полудня до заката — всё длиннее. И ещё тень «движется» — меняет направление.</p>
+<p>В полдень линия тени совпадает с линией <span class="term" role="button" tabindex="0" data-t="meridian"><span class="tl">меридиана</span></span> — с направлением север—юг. Проверить это можно самой: сделать гномон из картона и карандаша.</p>
+</div>
+<div class="book" hidden>
+<p>Человек изучает природу с помощью <span class="term" role="button" tabindex="0" data-t="nabl"><span class="tl">наблюдений</span></span>, <span class="term" role="button" tabindex="0" data-t="opyt">опытов <span class="tl">(экспериментов)</span></span>, <span class="term" role="button" tabindex="0" data-t="izmer"><span class="tl">измерений</span></span>. Наблюдая за природными явлениями, человек накапливает знания о них. Опыт позволяет создать <span class="term" role="button" tabindex="0" data-t="model"><span class="tl">модель</span></span> природного явления, чтобы понять его причины. Измерения позволяют получить количественные характеристики природных объектов и явлений. Все эти методы изучения природы уходят глубоко в древность.</p>
+<p>Наблюдая за небесным светилом, человек видел, как изменяется <span class="term" role="button" tabindex="0" data-t="vysota">высота <span class="tl">Солнца</span></span> над <span class="term" role="button" tabindex="0" data-t="gorizont"><span class="tl">горизонтом</span></span> в течение дня. Для определения высоты Солнца ещё в древности использовали простой астрономический инструмент — <span class="term" role="button" tabindex="0" data-t="gnomon"><i><span class="tl">гномон</span></i></span> (рис. 21). Гномон состоит из вертикального шеста (или простого стержня), укреплённого на горизонтальной плоскости. В солнечный день шест отбрасывает тень, длина которой от восхода Солнца до <span class="term" role="button" tabindex="0" data-t="polden"><span class="tl">полудня</span></span> непрерывно уменьшается, а от полудня до заката увеличивается. При этом тень меняет направление — «движется». В полдень, как вы знаете, линия тени совпадает с линией <span class="term" role="button" tabindex="0" data-t="meridian"><span class="tl">меридиана</span></span>, т. е. с направлением север—юг. Проверить это можно на опыте, изготовив самостоятельно простейший гномон.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g9_r21" src="img/5e9e664046b9.jpg" alt="Карандаш стоит в точке O на картонном круге. Его тень в разное время дня кончается в точках A, B, C, D; точки A и D лежат на одной окружности, E — середина отрезка AD, красная стрелка из O через E — полуденная линия" style="max-width:420px"><figcaption><span class="src">из учебника</span><b>Рис. 21.</b> Гномон — простейший астрономический инструмент для определения высоты Солнца</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 268" role="img" aria-label="Три способа изучать природу. Наблюдение: замечаем и запоминаем, например как за день меняется высота Солнца. Опыт, или эксперимент: строим модель, чтобы понять причину, например глобус и лампа. Измерение: получаем числа, например длину тени в сантиметрах"><use href="#g9-metody"/></svg><figcaption>Все три способа встретятся в этом параграфе.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 364" role="img" aria-label="Утром Солнце низко — тень гномона длинная. В полдень Солнце выше всего — тень самая короткая. Вечером Солнце снова низко — тень снова длинная"><use href="#g9-ten"/></svg><figcaption>Главное правило гномона.</figcaption></div></figure>
+<div class="col">
+<div class="side green"><span class="slab">Что такое меридиан</span><p><b>Меридиан</b> — линия на глобусе и на карте, которая идёт от Северного полюса к Южному. Все меридианы сходятся на полюсах, и каждый показывает направление север—юг. Учебник пишет «как вы знаете», но подробно меридианы будут позже, в разделе «План и карта». <b>Найди на своём глобусе</b> линии, которые бегут от полюса к полюсу, — это меридианы. Найди Москву и веди пальцем по ближайшему меридиану вверх: придёшь к Северному полюсу. А вниз — к Южному.</p></div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Наблюдение</b><p>замечаем, что происходит: за день Солнце то выше, то ниже</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Опыт</b><p>строим модель, чтобы понять причину: глобус и лампа</p></div></div><p class="pairkey">Наблюдение отвечает на вопрос «что происходит?», опыт — «почему?».</p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Почему в полдень тень самая короткая?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Сравни высоту Солнца и длину тени на схеме «Чем выше Солнце — тем короче тень».</div>
+<div class="rev ans" id="a1" hidden>В полдень Солнце выше всего над горизонтом. Чем выше Солнце, тем короче тень. Утром и вечером Солнце низко — тени длинные.</div>
+</div>
+<div class="think">
+<p class="qt">2. Гномон показывает только тень. Как же по нему узнают высоту Солнца?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Первый абзац о гномоне и схема с тенями.</div>
+<div class="rev ans" id="a2" hidden>По длине тени: чем короче тень, тем выше Солнце. Поэтому ещё в древности высоту Солнца определяли гномоном.</div>
+</div>
+<div class="think">
+<p class="qt">3. Летом ты гуляешь во дворе до 10—11 вечера, а осенью темнеет рано. Это наблюдение, опыт или измерение?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Первый абзац раздела: что делает человек, когда наблюдает?</div>
+<div class="rev ans" id="a3" hidden>Это наблюдение: ты заметила, как меняется природа, и запомнила. А если записывать по часам, когда темнеет, — получится ещё и измерение.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Шаг за шагом. Наблюдаем за тенью</h2></div>
+<div class="rubric">Шаг за шагом</div>
+<div class="easy">
+<p><b>1-й шаг.</b> Вырежи из плотного картона круг диаметром 25—30 см. Центр круга — точка O. Аккуратно проделай в нём отверстие и вставь карандаш прямо, вертикально. Это твой <span class="term" role="button" tabindex="0" data-t="gnomon"><span class="tl">гномон</span></span>.</p>
+<p><b>2-й шаг.</b> Поставь гномон туда, где много солнца и ничто не загораживает лучи, — например, на широкий подоконник.</p>
+<p><b>3-й шаг.</b> Начни утром в солнечный день. Отметь карандашом или фломастером, где тень.</p>
+<p><b>4-й шаг.</b> Конец тени обозначь точкой A. Измерь длину тени — отрезок AO. Проведи через точку A окружность.</p>
+<p><b>5-й шаг.</b> Запиши: дату, время и длину тени.</p>
+<p><b>6-й шаг.</b> Сделай ещё 5—7 отметок — через 15 минут, через час, два, три. Каждый раз записывай данные и отмечай: Солнце выше или ниже, чем в прошлый раз? Закончи после <span class="term" role="button" tabindex="0" data-t="polden"><span class="tl">полудня</span></span>, ближе к закату.</p>
+<p><b>7-й шаг.</b> Оформи данные таблицей в тетради — и сделай вывод.</p>
+</div>
+<div class="book" hidden>
+<p><b>1. Наблюдаем за тенью</b></p>
+<p><i>1-й шаг.</i> Из плотного картона вырежьте круг диаметром 25—30 см. В центре круга, обозначенном точкой <i>O</i>, аккуратно проделайте отверстие и вертикально вставьте в него карандаш.</p>
+<p><i>2-й шаг.</i> Разместите <span class="term" role="button" tabindex="0" data-t="gnomon"><span class="tl">гномон</span></span> на хорошо освещённом месте, где ничто не препятствует солнечным лучам (например, на широком подоконнике).</p>
+<p><i>3-й шаг.</i> Начинайте наблюдение утром в солнечный день. Карандашом или фломастером отметьте положение тени от карандаша.</p>
+<p><i>4-й шаг.</i> Обозначьте конец тени точкой <i>A</i> и измерьте длину тени — отрезка <i>AO</i>. Проведите через точку <i>A</i> окружность.</p>
+<p><i>5-й шаг.</i> Запишите данные своих наблюдений (дату, время и длину тени).</p>
+<p><i>6-й шаг.</i> Сделайте ещё 5—7 отметок через разные промежутки времени (15 минут, один час, два часа, три часа). Записывайте данные. Отмечайте положение Солнца: выше на небе или ниже по сравнению с предыдущим замером. Закончите наблюдения после <span class="term" role="button" tabindex="0" data-t="polden"><span class="tl">полудня</span></span>, ближе к заходу Солнца.</p>
+<p><i>7-й шаг.</i> Оформите полученные данные в виде таблицы в тетради. Сделайте вывод.</p>
+</div>
+<div class="sublabel">Показания гномона (дата) — таблица из учебника</div>
+<div class="tscroll"><table class="ttab"><tr><th>Отрезок</th><th>Время</th><th>Длина тени</th><th>Положение Солнца</th></tr><tr><td>OA</td><td></td><td></td><td></td></tr><tr><td>OB</td><td></td><td></td><td></td></tr><tr><td>OC</td><td></td><td></td><td></td></tr><tr><td>OD</td><td></td><td></td><td></td></tr><tr><td>…</td><td></td><td></td><td></td></tr></table></div>
+<style>.gn9{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:14px 16px 16px;margin:22px 0;box-shadow:var(--sh)}.gn9 .gt{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:0 0 4px}.gn9 .gn{color:var(--soft);font-size:15px;margin:0 0 10px;line-height:1.45}.gn9 .gb{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}.gn9 button{font:inherit;font-size:14px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}.gn9 button.on{background:var(--moss);border-color:var(--moss);color:var(--card)}.gn9 svg{display:block;width:100%;max-width:420px;margin:4px auto 8px}.gn9 input[type=range]{width:100%;accent-color:var(--ochre);margin:6px 0}.gn9 .gr{font-size:16px;line-height:1.5;margin:4px 0 6px;min-height:3em}.gn9 .gm{font-size:14px;color:var(--soft);margin:0 0 8px}.gn9 table{border-collapse:collapse;font-size:14px;width:100%;margin:8px 0 0}.gn9 td,.gn9 th{border:1.5px solid var(--line);padding:4px 7px;text-align:left}.gn9 table[hidden]{display:none}</style><div class="gn9" id="gn9"><p class="gt">Тренажёр: гномон на подоконнике в зале</p><p class="gn">Москва, окно на юг, вид сверху. Выбери день, передвигай время — и смотри, как бежит тень. Нажимай «Отметить» — получится таблица, как в учебнике.</p><div class="gb" data-g="day"><button type="button" data-n="today">Сегодня</button><button type="button" data-n="305" class="on">1 ноября</button><button type="button" data-n="93">3 апреля — твой день рождения</button><button type="button" data-n="173">22 июня</button><button type="button" data-n="356">22 декабря</button></div><div class="gb" data-g="h"><button type="button" data-h="15">Карандаш торчит на 15 см</button><button type="button" data-h="3" class="on">на 3 см</button><button type="button" data-h="2">на 2 см</button></div><svg viewBox="0 0 320 316" role="img" aria-label="Вид сверху на подоконник: картонный круг, карандаш в центре и его тень"><rect x="0" y="0" width="320" height="316" rx="10" fill="var(--paper2,#E8DFCC)"/><circle cx="160" cy="236" r="75" fill="var(--card,#FFFBF2)" stroke="var(--landb,#B9A57A)" stroke-width="2"/><text x="160" y="18" text-anchor="middle" font-size="13" font-weight="700" fill="var(--no,#B03A2E)">С — север, в комнату</text><text x="10" y="232" font-size="13" font-weight="700" fill="var(--soft,#5F5648)">З</text><text x="310" y="232" text-anchor="end" font-size="13" font-weight="700" fill="var(--soft,#5F5648)">В</text><rect x="40" y="306" width="240" height="8" rx="2" fill="var(--sea,#BFE0EE)" stroke="var(--red,#1B6A8C)" stroke-width="1.2"/><text x="160" y="300" text-anchor="middle" font-size="12" font-weight="600" fill="var(--red,#1B6A8C)">окно — юг</text><text x="160" y="268" text-anchor="middle" font-size="11" fill="var(--soft,#5F5648)">картон 30 см</text><path class="gsh" d="" stroke="var(--soft,#5F5648)" stroke-width="6" stroke-linecap="round" stroke-opacity=".75" fill="none"/><g class="gmk"></g><circle class="gtip" cx="160" cy="236" r="0" fill="var(--pa,#C9672C)"/><circle cx="160" cy="236" r="5" fill="var(--no,#B03A2E)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/></svg><input type="range" min="360" max="1260" step="5" value="660" aria-label="Время дня"><p class="gr" aria-live="polite"></p><p class="gm"></p><div class="gb"><button type="button" data-a="mark">Отметить конец тени</button><button type="button" data-a="clear">Стереть отметки</button></div><table hidden><thead><tr><th>Отрезок</th><th>Время</th><th>Длина тени</th><th>Положение Солнца</th></tr></thead><tbody></tbody></table></div><script>(function(){
+var box=document.getElementById('gn9');if(!box)return;
+var D=Math.PI/180,LAT=55.75*D,LON=37.62,OX=160,OY=236,SC=5,NS='http://www.w3.org/2000/svg';
+var day=305,H=3,marks=[],LET=['A','B','C','D','F','G','H','I'];
+var rng=box.querySelector('input[type=range]'),out=box.querySelector('.gr'),info=box.querySelector('.gm'),
+    sh=box.querySelector('.gsh'),tip=box.querySelector('.gtip'),mk=box.querySelector('.gmk'),
+    tab=box.querySelector('table'),tb=box.querySelector('tbody');
+var TO=['на север','на северо-восток','на восток','на юго-восток','на юг','на юго-запад','на запад','на северо-запад'];
+var AT=['на севере','на северо-востоке','на востоке','на юго-востоке','на юге','на юго-западе','на западе','на северо-западе'];
+function doy(){var d=new Date(),s=new Date(d.getFullYear(),0,0);return Math.floor((d-s)/864e5);}
+function pos(n,m){var B=2*Math.PI/365*(n-81),E=9.87*Math.sin(2*B)-7.53*Math.cos(B)-1.5*Math.sin(B),dec=23.44*D*Math.sin(B),
+  lst=m/60+(4*(LON-45)+E)/60,ha=15*D*(lst-12),
+  h=Math.asin(Math.sin(LAT)*Math.sin(dec)+Math.cos(LAT)*Math.cos(dec)*Math.cos(ha)),
+  az=Math.atan2(Math.sin(ha),Math.cos(ha)*Math.sin(LAT)-Math.tan(dec)*Math.cos(LAT))+Math.PI;
+  return {h:h,az:az,noon:720-(4*(LON-45)+E),m:m};}
+function hm(m){m=Math.round(m);var h=Math.floor(m/60),x=m%60;return h+':'+(x<10?'0':'')+x;}
+function k8(a){var d=((a/D)%360+360)%360;return Math.round(d/45)%8;}
+function cm(x){return (Math.round(x*10)/10).toString().replace('.',',');}
+function cur(){var p=pos(day,+rng.value);p.ok=p.h>0&&p.az>90*D&&p.az<270*D;
+  if(p.ok){p.len=H/Math.tan(p.h);var L=p.len*SC,sa=p.az+Math.PI;p.x=OX+L*Math.sin(sa);p.y=OY-L*Math.cos(sa);}return p;}
+function rise(){var m;for(m=0;m<1440;m+=2){if(pos(day,m).h>0)break;}var s;for(s=1438;s>0;s-=2){if(pos(day,s).h>0)break;}return [m,s];}
+function draw(){
+  var p=cur(),t;
+  if(p.h<=0){t=hm(p.m)+' — Солнце '+(p.m<p.noon?'ещё не взошло':'уже зашло')+'. Тени нет.';}
+  else if(!p.ok){t=hm(p.m)+' — Солнце уже над горизонтом, но '+AT[k8(p.az)]+': в окно на юг оно ещё не светит. Тени на подоконнике нет.';}
+  else{t=hm(p.m)+' · Солнце на высоте '+Math.round(p.h/D)+'° · тень '+cm(p.len)+' см, смотрит '+TO[k8(p.az+Math.PI)];
+    if(Math.abs(p.m-p.noon)<=5)t+='. Полдень: тень самая короткая и смотрит точно на север';
+    if(p.len>15)t+='. Тень вылезает за край круга — на картоне не помещается!';else t+='.';}
+  out.textContent=t;
+  if(p.ok){sh.setAttribute('d','M'+OX+' '+OY+' L'+p.x.toFixed(1)+' '+p.y.toFixed(1));
+    var inside=p.x>0&&p.x<320&&p.y>0&&p.y<316;tip.setAttribute('cx',p.x.toFixed(1));tip.setAttribute('cy',p.y.toFixed(1));tip.setAttribute('r',inside?4.5:0);}
+  else{sh.setAttribute('d','');tip.setAttribute('r',0);}
+  var r=rise();info.textContent='Восход — '+hm(r[0])+', полдень — '+hm(p.noon)+', заход — '+hm(r[1])+' (московское время).';
+}
+function drawMarks(){
+  while(mk.firstChild)mk.removeChild(mk.firstChild);tb.innerHTML='';
+  marks.forEach(function(q,i){
+    if(q.x>0&&q.x<320&&q.y>0&&q.y<316){
+      var c=document.createElementNS(NS,'circle');c.setAttribute('cx',q.x.toFixed(1));c.setAttribute('cy',q.y.toFixed(1));c.setAttribute('r','3.6');c.setAttribute('fill','var(--illink,#2B2620)');mk.appendChild(c);
+      var s=document.createElementNS(NS,'text');s.setAttribute('x',(q.x+6).toFixed(1));s.setAttribute('y',(q.y-5).toFixed(1));s.setAttribute('font-size','12');s.setAttribute('font-weight','700');s.setAttribute('fill','var(--pa,#C9672C)');s.textContent=LET[i];mk.appendChild(s);}
+    var pr=i?(q.h>marks[i-1].h?'выше':'ниже'):'—';
+    var tr=document.createElement('tr');tr.innerHTML='<td>O'+LET[i]+'</td><td>'+hm(q.m)+'</td><td>'+cm(q.len)+' см</td><td>'+pr+'</td>';tb.appendChild(tr);});
+  tab.hidden=!marks.length;
+}
+function pick(g,b){box.querySelectorAll('[data-g="'+g+'"] button').forEach(function(x){x.classList.toggle('on',x===b);});}
+box.querySelectorAll('[data-g="day"] button').forEach(function(b){b.addEventListener('click',function(){
+  day=b.dataset.n==='today'?doy():+b.dataset.n;pick('day',b);marks=[];drawMarks();draw();});});
+box.querySelectorAll('[data-g="h"] button').forEach(function(b){b.addEventListener('click',function(){
+  H=+b.dataset.h;pick('h',b);marks=[];drawMarks();draw();});});
+box.querySelector('[data-a="mark"]').addEventListener('click',function(){var p=cur();
+  if(!p.ok){out.textContent='Сейчас тени на подоконнике нет — отмечать нечего. Передвинь время.';return;}
+  if(marks.length>=LET.length){out.textContent='Отметок уже '+LET.length+' — хватит. Сотри их, чтобы начать заново.';return;}
+  if(marks.length&&p.m<=marks[marks.length-1].m){out.textContent='Отмечай по порядку: передвинь время вперёд.';return;}
+  marks.push(p);drawMarks();});
+box.querySelector('[data-a="clear"]').addEventListener('click',function(){marks=[];drawMarks();draw();});
+rng.addEventListener('input',draw);draw();
+})();</script>
+<div class="blocknote"><b>Про размер круга.</b> Учебник советует круг 25—30 см и вставить карандаш. Но в Москве осенью и зимой Солнце стоит низко. 1 ноября в полдень оно поднимается всего на 19°, и тень карандаша, который торчит над картоном на 15 см, вырастет до 44 см — а утром и вечером ещё длиннее. В декабре Солнце ещё ниже: в полдень всего 11°. На круге такая тень не поместится. Что делать: вставь карандаш так, чтобы над картоном торчало совсем немного — в ноябре 3 см, в декабре 2 см, — или возьми лист побольше. Зимой и с коротким карандашом отметки получатся только в середине дня, примерно с 11 до 14 часов. Весной и летом Солнце выше, тени короче. Перед опытом выбери в тренажёре свой день и посмотри, какой длины будет тень.</div>
+<div class="blocknote"><b>Про таблицу.</b> В таблице учебника четыре строчки — OA, OB, OC, OD, а отметок нужно больше: первая и ещё 5—7. Добавь строчки сама. И не называй отметку буквой E — она понадобится во втором опыте для середины отрезка. Пиши A, B, C, D, F, G… — так и в тренажёре.</div>
+<div class="side green"><span class="slab">Полезно знать</span><p>В Москве полдень — когда тень самая короткая — наступает не в 12:00 по часам, а позже: в начале ноября около 12:15, весной и летом около 12:30. Часы показывают одно время на большую территорию, а Солнце доходит до самой высокой точки над Москвой чуть позже. Тренажёр показывает полдень для каждого дня.</p></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Какой вывод может получиться</button></div>
+<div class="rev ans" id="r1" hidden>Утром тень длинная, к полудню становится всё короче, после полудня — снова длиннее. Значит, Солнце сначала поднимается, а после полудня опускается. Тень поворачивает: утром смотрит на северо-запад, в полдень — на север, вечером — на северо-восток.</div></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Гномон в зале</span></div><div class="lifebody"><p>У вас окна выходят на юг и на север. Солнце заглядывает в зал и в спальню, а в твою комнату — только отражённое. Значит, гномон — на подоконник в зале, на южное окно.</p><p>В будни днём ты в школе, поэтому опыт — на выходных, в солнечный день. Позови папу или маму: картон толстый, отверстие лучше делать вместе.</p><p>Начни утром, закончи после обеда. Если тень убегает за край круга — пусть карандаш торчит всего на 2—3 см. В полдень тень от южного окна смотрит прямо в комнату — на север.</p><p>Солнечных выходных поздней осенью мало. Не повезёт — потренируйся в тренажёре, а опыт сделай весной: 3 апреля, в твой день рождения, Солнце уже высоко.</p></div><p class="lifebook">В учебнике это называется: <b>разместите гномон на хорошо освещённом месте (например, на широком подоконнике)</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Почему наблюдение начинают утром и заканчивают ближе к закату, а не делают одну отметку в полдень?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>6-й шаг и второй опыт: что нужно, чтобы найти направление?</div>
+<div class="rev ans" id="a4" hidden>Чтобы увидеть, как тень меняется весь день: утром длинная, к полудню короче, потом снова длиннее. А ещё во втором опыте нужны две точки на одной окружности — утренняя и послеполуденная.</div>
+</div>
+<div class="think">
+<p class="qt">5. Твоя первая отметка A — в 10:00, а полдень в этот день — в 12:30. Около какого времени тень снова коснётся круга?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>До полудня и после полудня тень меняется одинаково. Посмотри схему «Как найти направление север — юг».</div>
+<div class="rev ans" id="a5" hidden>От 10:00 до 12:30 — два с половиной часа. Столько же после полудня: 12:30 + 2,5 часа = 15:00. Примерно в три часа дня тень снова коснётся круга.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Шаг за шагом. Определяем направление</h2></div>
+<div class="rubric">Шаг за шагом</div>
+<div class="easy">
+<p><b>1-й шаг.</b> Возьми гномон с отметками. Найди две точки, где тень касалась окружности. Одна из них — точка A, утренняя.</p>
+<p><b>2-й шаг.</b> Соедини эти две точки. Середину отрезка обозначь точкой E.</p>
+<p><b>3-й шаг.</b> Проведи прямую через точки E и O — центр гномона. Это <span class="term" role="button" tabindex="0" data-t="polline">полуденная <span class="tl">линия</span></span>. Она показывает направление север—юг.</p>
+<p>Повтори опыт в другой солнечный день. Ты увидишь: тень на полуденной линии — самая короткая, а Солнце в этот момент выше всего.</p>
+<p><span class="big">Гномон — это ещё и часы.</span> Если разметить площадку как <span class="term" role="button" tabindex="0" data-t="ciferblat"><span class="tl">циферблат</span></span>, тень будет переходить от деления к делению и показывать время. Получатся <span class="term" role="button" tabindex="0" data-t="solchasy">солнечные <span class="tl">часы</span></span>. Только стержень надо наклонить к площадке и направить на Полярную звезду.</p>
+</div>
+<div class="book" hidden>
+<p><b>2. Определяем направление</b></p>
+<p><i>1-й шаг.</i> Используйте результат выполненного опыта. На площадке гномона найдите две точки, в которых тень касается проведённой окружности (одна из них — точка <i>A</i>).</p>
+<p><i>2-й шаг.</i> Соедините две точки и отметьте середину полученного отрезка точкой <i>E</i>.</p>
+<p><i>3-й шаг.</i> Проведите прямую через точки <i>E</i> и <i>O</i> (центр гномона). Эта прямая определяет <span class="term" role="button" tabindex="0" data-t="polline">полуденную <span class="tl">линию</span></span> и указывает направление север—юг.</p>
+<p>Опыт можно повторить в другой солнечный день, чтобы убедиться, что тень, совпавшая с полуденной линией, окажется самой короткой, а высота Солнца наибольшей.</p>
+<p>Гномон можно использовать как часть <span class="term" role="button" tabindex="0" data-t="solchasy">солнечных <span class="tl">часов</span></span>, разметив площадку как <span class="term" role="button" tabindex="0" data-t="ciferblat"><span class="tl">циферблат</span></span>. Тень будет переходить от одного деления к другому, показывая время. Стержень нужно направить на Полярную звезду, наклонив его к площадке.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 324" role="img" aria-label="Вид сверху на картонный круг 3 апреля в Москве. Точка O — карандаш. Утром в 10:00 конец тени — точка A, через неё проведён круг. Около 15:07 тень снова касается круга — вторая точка. E — середина между точками. Прямая через E и O — полуденная линия, направление север — юг"><use href="#g9-top"/></svg><figcaption>Те же шаги, что на рис. 21, только сверху и с настоящими тенями для Москвы.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">Главное</span><p>Полуденная линия указывает направление север—юг. Тень на полуденной линии — самая короткая, а высота Солнца — наибольшая.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Проверь папиным компасом</span></div><div class="lifebody"><p>Начертила полуденную линию? Проверь её! У папы есть обычный компас, а ещё компас есть в телефоне.</p><p>Положи компас рядом с гномоном. Стрелка покажет на север — туда же, куда «смотрит» полуденная линия от окна в комнату. Только держи компас подальше от батареи и железа — они сбивают стрелку.</p></div><p class="lifebook">В учебнике это называется: <b>полуденная линия указывает направление север—юг</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Зачем повторять опыт в другой солнечный день?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Предложение после 3-го шага.</div>
+<div class="rev ans" id="a6" hidden>Чтобы убедиться: тень, совпавшая с полуденной линией, — самая короткая, а высота Солнца в этот момент наибольшая. Одно наблюдение может оказаться случайным, а повторение его проверяет.</div>
+</div>
+<div class="think">
+<p class="qt">7. Почему точка E лежит ровно посередине между утренней и послеполуденной точками?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Схема сверху: тень до полудня и после полудня меняется одинаково, как в зеркале.</div>
+<div class="rev ans" id="a7" hidden>До полудня и после полудня Солнце проходит одинаковый путь, только в разные стороны. Поэтому утренняя и послеполуденная тени одинаковой длины расходятся от полуденной линии одинаково, а середина между ними попадает на полуденную линию.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">4</span><h2>Обелиски и Эратосфен</h2></div>
+<div class="easy">
+<p>В Древнем Египте гномонами служили <span class="term" role="button" tabindex="0" data-t="obelisk"><span class="tl">обелиски</span></span> — высокие каменные столбы. Их ставили, чтобы поклоняться высшим силам (рис. 22).</p>
+<p><span class="big">Как Эратосфен узнал размеры Земли?</span> Тень от обелисков и колонн помогла и учёному <span class="term" role="button" tabindex="0" data-t="eratos"><b><span class="tl">Эратосфену</span></b></span>. Сложных приборов, как сегодня, у него не было. Он ориентировался на высоту Солнца над горизонтом.</p>
+<p>Эратосфен работал в <span class="term" role="button" tabindex="0" data-t="alexlib">Александрийской <span class="tl">библиотеке</span></span>. Там накопилось множество сведений: где находятся разные места и какие между ними расстояния. Свои записи оставили воины <span class="term" role="button" tabindex="0" data-t="makedon">Александра <span class="tl">Македонского</span></span>, греческие моряки и торговцы. Хранились там и наблюдения астрономов — прежде всего за углами падения солнечных лучей.</p>
+<p>Эратосфен был уверен, что Земля — шар. Он умел измерять и делать выводы. И высчитал окружность Земли с очень небольшой <span class="term" role="button" tabindex="0" data-t="pogresh"><span class="tl">погрешностью</span></span>.</p>
+<p>А ещё он «накрыл» мир сеткой: расчертил его «линиями, идущими рядом», и «полуденными линиями». Сегодня мы называем их <span class="term" role="button" tabindex="0" data-t="parallel"><span class="tl">параллелями</span></span> и <span class="term" role="button" tabindex="0" data-t="meridian"><span class="tl">меридианами</span></span>.</p>
+</div>
+<div class="book" hidden>
+<p>Гномонами в Древнем Египте служили <span class="term" role="button" tabindex="0" data-t="obelisk"><span class="tl">обелиски</span></span>, воздвигаемые как дань поклонения высшим силам (рис. 22). Позже, рассчитывая размеры Земли, <span class="term" role="button" tabindex="0" data-t="eratos"><span class="tl">Эратосфен</span></span> использовал результаты наблюдений за тенью от обелисков и колонн. Когда Эратосфен вычислял размеры земного шара, он не имел в своём распоряжении таких сложных приборов, какие существуют сегодня. Учёный ориентировался на высоту Солнца над горизонтом. В <span class="term" role="button" tabindex="0" data-t="alexlib">Александрийской <span class="tl">библиотеке</span></span>, где он работал, накопилось множество материалов о расположении различных пунктов и расстояниях между ними. Сведения о своих походах оставляли и воины <span class="term" role="button" tabindex="0" data-t="makedon">Александра <span class="tl">Македонского</span></span>, и греческие моряки, и многочисленные торговцы. Хранились в библиотеке и результаты измерений и наблюдений астрономов, прежде всего за углами падения солнечных лучей.</p>
+<p>Эратосфен и сам был гением измерений и логических заключений. Уверенный в том, что Земля — шар, он с очень небольшой <span class="term" role="button" tabindex="0" data-t="pogresh"><span class="tl">погрешностью</span></span> высчитал окружность Земли. Кроме того, он решил «накрыть» мир сеткой, расчертить его «линиями, идущими рядом», и «полуденными линиями». Мы их знаем, как <span class="term" role="button" tabindex="0" data-t="parallel"><span class="tl">параллели</span></span> и <span class="term" role="button" tabindex="0" data-t="meridian"><span class="tl">меридианы</span></span>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g9_r22" src="img/751a612f72fc.jpg" alt="Древнеегипетский храм с огромными каменными стенами, перед входом — высокий заострённый столб-обелиск и статуи"><figcaption><span class="src">из учебника</span><b>Рис. 22.</b> Обелиск — заострённый четырёхгранный столб, напоминающий по форме солнечный луч</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 262" role="img" aria-label="Глобус с сеткой. «Полуденные линии» идут с севера на юг — это меридианы. «Линии, идущие рядом» идут с запада на восток — это параллели. Полуденная линия гномона лежит вдоль меридиана"><use href="#g9-erat"/></svg><figcaption>Сетка Эратосфена — та, что на твоём глобусе.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Обелиск в Москве</span></div><div class="lifebody"><p>Обелиск — как огромный гномон: его тень за день тоже бегает по площади.</p><p>В Москве есть высокие обелиски: обелиск-стела на Поклонной горе и старый обелиск в Александровском саду у Кремля. Ты там ещё не была — можно съездить вместе в солнечный день и посмотреть, куда и какой длины падает тень утром и после полудня.</p></div><p class="lifebook">В учебнике это называется: <b>гномонами в Древнем Египте служили обелиски</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">8. Сложных приборов у Эратосфена не было. Как же он высчитал окружность Земли?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Весь второй абзац раздела: на что он ориентировался и откуда брал сведения?</div>
+<div class="rev ans" id="a8" hidden>Он ориентировался на высоту Солнца над горизонтом — по тени от обелисков и колонн. И пользовался сведениями из Александрийской библиотеки: о расстояниях между пунктами, о походах воинов Александра Македонского, моряков и торговцев, наблюдениями астрономов за углами падения солнечных лучей.</div>
+</div>
+<div class="think">
+<p class="qt">9. В § 2 учебник писал, что Эратосфен «довольно точно» высчитал размеры Земли. А как сказано здесь? Это одно и то же?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h9" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a9" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h9" hidden>Ищи слово «погрешность».</div>
+<div class="rev ans" id="a9" hidden>Здесь: «с очень небольшой погрешностью высчитал окружность Земли». Погрешность — небольшая ошибка. Значит, да, это одно и то же: почти точно.</div>
+</div>
+<div class="think">
+<p class="qt">10. Что общего у полуденной линии на твоём гномоне и «полуденных линиях» Эратосфена?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h10" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a10" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h10" hidden>Сравни второй опыт и последний абзац раздела.</div>
+<div class="rev ans" id="a10" hidden>И то и другое — линии направления север—юг. «Полуденными линиями» Эратосфен расчертил весь мир — сегодня их называют меридианами. А полуденная линия гномона лежит вдоль меридиана.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s5">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">5</span><h2>Опыты: как движется Земля</h2></div>
+<div class="easy">
+<p>Дальше ты будешь изучать, как движется Земля. Представить это помогут три опыта.</p>
+<p><span class="big">Опыт 1. Шар на нитке.</span> Возьми шар на прочной нитке. Подойдёт и круглый фрукт — яблоко или апельсин, — даже ёлочная игрушка. Сделай на шаре маленькую метку: гуашью, фломастером или наклейкой (рис. 23). Держи нитку двумя пальцами так, чтобы метку было видно.</p>
+<p>Медленно крути нитку между пальцами в одну сторону. Шар вращается вокруг своей воображаемой <span class="term" role="button" tabindex="0" data-t="os"><span class="tl">оси</span></span> и не отклоняется в сторону. Метка исчезает, потом появляется и возвращается на место. Это <span class="term" role="button" tabindex="0" data-t="oborot">полный <span class="tl">оборот</span></span> вокруг своей оси.</p>
+<p><span class="big">Опыт 2. Покружись.</span> Встань напротив окна (или двери, или картины). Медленно кружись, не сходя с места, пока снова не увидишь окно. Ты сделала полный оборот вокруг себя.</p>
+<p>Так вокруг своей оси кружится балерина, когда делает <span class="term" role="button" tabindex="0" data-t="fuete"><span class="tl">фуэте</span></span>. Так вертится <span class="term" role="button" tabindex="0" data-t="volchok">детский волчок <span class="tl">(юла)</span></span>. И так же вращается наша планета.</p>
+<p><span class="big">Опыт 3. Глобус и лампа.</span> Нужны небольшой глобус и настольная лампа без плафона. На столе обозначь круг — это земная <span class="term" role="button" tabindex="0" data-t="orbita"><span class="tl">орбита</span></span>. Можно нарисовать круг на большом листе или выложить длинной тонкой верёвочкой. В середину поставь лампу — это «Солнце» (рис. 24). Верхний свет не включай: пусть будет полумрак.</p>
+<p><b>1-й шаг.</b> Поставь глобус в точку А. Ось глобуса наклонена к <span class="term" role="button" tabindex="0" data-t="ploskost">плоскости <span class="tl">орбиты</span></span> — к столу — и «смотрит» в сторону лампы. Половина глобуса, обращённая к лампе, освещена. Туда попадает и Северный полюс. Другая половина в тени, и в ней Южный полюс.</p>
+<p><b>2-й шаг.</b> Вращай глобус вокруг оси, придерживая за подставку. Материки и океаны по очереди уходят в тень и возвращаются на свет. А Северный полюс всё время освещён, Южный — всё время в тени.</p>
+<p><b>3-й шаг.</b> Медленно веди глобус по орбите против часовой стрелки, не отрывая от стола. <span class="term" role="button" tabindex="0" data-t="naklon">Угол наклона <span class="tl">оси</span></span> не меняется! Доведи глобус до точки Б — это половина пути. Теперь ось «смотрит» от лампы. Покрути глобус: теперь в тени всё время Северный полюс, а Южный освещён.</p>
+<p><b>4-й шаг.</b> Веди глобус дальше, пока не вернёшься в точку А. Ты прошла путь Земли вокруг Солнца.</p>
+<p>Повтори путь несколько раз — и убедись: земная ось всегда наклонена одинаково, а <span class="term" role="button" tabindex="0" data-t="polushar">Северное и Южное <span class="tl">полушария</span></span> в разных точках орбиты освещены Солнцем по-разному.</p>
+</div>
+<div class="book" hidden>
+<p>На следующих уроках вы будете изучать движения Земли и их следствия. Наглядно представить движения планеты помогут несколько опытов.</p>
+<p><b>1.</b> Возьмите шар и прикрепите его к прочной нити. (Если трудно найти подходящий шар, то можно использовать, например, фрукт округлой формы — яблоко или апельсин, или даже использовать ёлочное украшение.) На поверхности шара сделайте небольшую метку гуашью или фломастером либо маленькой наклейкой (рис. 23). Держите шар за нитку двумя пальцами так, чтобы метка была видна.</p>
+<p>Начните аккуратно крутить в одну сторону нитку между пальцами. Шар начнёт двигаться вокруг своей воображаемой <span class="term" role="button" tabindex="0" data-t="os"><span class="tl">оси</span></span>, не отклоняясь в сторону. Продолжайте медленно крутить шар. Метка вначале исчезнет из поля зрения, а потом появится вновь и вернётся на прежнее место. Так шар сделал <span class="term" role="button" tabindex="0" data-t="oborot">полный <span class="tl">оборот</span></span> вокруг своей оси.</p>
+<p><b>2.</b> Встаньте напротив окна (или двери, или картины на стене). Начинайте медленно кружиться, не сходя с места, пока снова не увидите окно (или дверь, или картину). Вы сделали полный оборот вокруг себя. Так вокруг своей оси кружится балерина, когда исполняет движение <span class="term" role="button" tabindex="0" data-t="fuete"><span class="tl">фуэте</span></span>. Так же вертится <span class="term" role="button" tabindex="0" data-t="volchok">детский волчок <span class="tl">(юла)</span></span>, так же вращается наша планета.</p>
+<p><b>3.</b> Приготовьте небольшой глобус и настольную лампу без плафона. На ровной поверхности стола обозначьте круг, изображающий земную <span class="term" role="button" tabindex="0" data-t="orbita"><span class="tl">орбиту</span></span>. (Можно нарисовать круг на большом листе, а можно использовать длинную тонкую верёвочку.) В середине круга установите лампу — она будет служить «Солнцем» (рис. 24). Не включайте верхний свет — желательно, чтобы вокруг был полумрак.</p>
+<p><i>1-й шаг.</i> Поставьте глобус в точку А. Обратите внимание, что ось глобуса наклонена под углом к <span class="term" role="button" tabindex="0" data-t="ploskost">плоскости <span class="tl">орбиты</span></span> (в нашем опыте — плоскости стола) и «смотрит» в сторону лампы. Внимательно рассмотрите, как падает свет от лампы на глобус. Обращённая к источнику света половина глобуса освещена. В освещённую зону входит и Северный полюс. Противоположная половина глобуса находится в тени. В тени остался и Южный полюс.</p>
+<p><i>2-й шаг.</i> Вращайте сам глобус вокруг оси, придерживая его за подставку. Наблюдайте за Северным полюсом. Вы видите, что материки и океаны последовательно пропадают в тени и вновь возвращаются в освещённую зону. А Северный полюс и прилегающие территории всё время остаются освещёнными. Южный же полюс, напротив, всё время остаётся в тени.</p>
+<p><i>3-й шаг.</i> Начинайте медленно двигать глобус по орбите в направлении против часовой стрелки. Не отрывайте глобус от поверхности стола — вы видите, что <i><span class="term" role="button" tabindex="0" data-t="naklon">угол наклона земной <span class="tl">оси</span></span> остаётся неизменным</i>. Доведите глобус до точки Б (это половина пути). В этом положении ось глобуса «смотрит» в противоположную от лампы сторону. Наклон оси всё тот же! Вновь рассмотрите, как падает свет от лампы на глобус, и вращайте глобус вокруг оси. В тени теперь всё время остаётся Северный полюс, а Южный полюс освещён.</p>
+<p><i>4-й шаг.</i> Продолжайте вести глобус по линии орбиты, пока не совершите полный оборот, т. е. пока не вернётесь в точку А — в исходное положение.</p>
+<p>Таким образом вы проследили путь Земли вокруг Солнца по своей орбите. Повторите этот путь несколько раз, чтобы убедиться, что: земная ось всегда одинаково наклонена к плоскости орбиты; <span class="term" role="button" tabindex="0" data-t="polushar">Северное и Южное <span class="tl">полушария</span></span> Земли в разных положениях на орбите освещены Солнцем по-разному.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g9_r23" src="img/b8f37eb88b74.jpg" alt="Рука держит за нитку шар с жёлтой меткой; стрелка показывает, что нитку крутят" style="max-width:160px"><figcaption><span class="src">из учебника</span><b>Рис. 23.</b> Опыт с шаром</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 268" role="img" aria-label="Три оборота вокруг своей оси: шар на нитке — метка исчезла и вернулась; ты кружишься на месте, вид сверху, — снова видишь окно; волчок вертится вокруг своей оси. Пунктир — ось, воображаемая линия"><use href="#g9-osi"/></svg><figcaption>Опыты 1 и 2: так Земля вращается вокруг своей оси.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-g9_r24" src="img/dd808512735a.jpg" alt="На столе нарисован красный круг — орбита. В середине — лампочка, в точках А и Б — глобусы с наклонённой осью; стрелки показывают движение против часовой стрелки" style="max-width:420px"><figcaption><span class="src">из учебника</span><b>Рис. 24.</b> Опыт с глобусом</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 282" role="img" aria-label="Опыт с глобусом. Лампа — Солнце в середине круга-орбиты, глобус идёт против часовой стрелки. В точке А ось наклонена к лампе: Северный полюс освещён, Южный в тени. В точке Б ось наклонена так же, но уже от лампы: Северный полюс в тени, Южный освещён"><use href="#g9-globus"/></svg><figcaption>Опыт 3: ось не поворачивали — а освещение полюсов поменялось.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">Вывод опыта</span><p>Земная ось всегда одинаково наклонена к плоскости орбиты. Северное и Южное полушария Земли в разных положениях на орбите освещены Солнцем по-разному.</p></div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Вращение вокруг оси</b><p>как волчок: материки по очереди уходят в тень и возвращаются</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Движение по орбите</b><p>как глобус вокруг лампы: от точки А до Б — половина пути</p></div></div><p class="pairkey">Земля делает и то и другое одновременно — об этом § 10.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Волчки и спиннеры</span></div><div class="lifebody"><p>Дома у тебя есть волчки и спиннеры. Запусти волчок и посмотри сверху: он вертится вокруг своей оси, не сходя с места, — как Земля.</p><p>Приклей на волчок маленькую наклейку — как метку на шаре в опыте 1. Когда он кружится медленно, видно, как метка уходит и возвращается.</p></div><p class="lifebook">В учебнике это называется: <b>так же вертится детский волчок (юла), так же вращается наша планета</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Глобус и лампа дома</span></div><div class="lifebody"><p>Глобус у тебя есть. Для «Солнца» подойдёт настольная лампа без абажура. Если такой нет — фонарик: встань в центр круга и свети на глобус, поворачиваясь за ним.</p><p>Самое важное в опыте — не поворачивать ось. Пусть северный конец оси всё время «смотрит» в одну сторону комнаты, например на окно.</p></div><p class="lifebook">В учебнике это называется: <b>угол наклона земной оси остаётся неизменным</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">11. В опыте с шаром метка исчезает и снова появляется. Что на Земле похоже на эту метку?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h11" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a11" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h11" hidden>Сравни с 2-м шагом опыта с глобусом: что «пропадает в тени и возвращается»?</div>
+<div class="rev ans" id="a11" hidden>Любое место на Земле — например, Москва. Земля вращается, и Москва то на освещённой стороне, то уходит в тень. В опыте с глобусом так же по очереди уходят в тень и возвращаются материки и океаны.</div>
+</div>
+<div class="think">
+<p class="qt">12. Почему в точке А Северный полюс всё время освещён, а в точке Б — всё время в тени, хотя ось не поворачивали?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h12" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a12" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h12" hidden>Куда «смотрит» ось в точке А и в точке Б? Посмотри схему опыта.</div>
+<div class="rev ans" id="a12" hidden>Ось наклонена всё время одинаково. Но в точке А её северный конец «смотрит» в сторону лампы, а в точке Б глобус уже по другую сторону «Солнца» — и северный конец «смотрит» от лампы. Поэтому полушария в разных точках орбиты освещены по-разному.</div>
+</div>
+<div class="think">
+<p class="qt">13. Балерина делает фуэте, волчок вертится, ты кружишься. Что общего у этих трёх движений?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h13" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a13" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h13" hidden>Опыт 2 и схема «Три оборота вокруг своей оси».</div>
+<div class="rev ans" id="a13" hidden>Все трое вращаются вокруг своей оси — воображаемой линии — и не сходят с места. Так вращается и Земля.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s5" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s6">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги: опыты дома</h2></div>
+<div class="easy">
+<p>В этом параграфе нет вопросов и «Запомните» — он весь из опытов. Их надо не прочитать, а сделать.</p>
+<p>Ниже — чек-лист. Отмечай, что уже получилось. Галочки запоминаются на этом устройстве.</p>
+</div>
+<div class="book" hidden>
+<p>В учебнике у этого параграфа нет вопросов и рубрики «Запомните»: весь параграф — практическая работа «Проводим наблюдения и опыты».</p>
+</div>
+<style>.chk9{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:14px 16px 16px;margin:22px 0;box-shadow:var(--sh)}.chk9 .ct1{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:0 0 4px}.chk9 .cn{color:var(--soft);font-size:15px;margin:0 0 6px;line-height:1.45}.chk9 label{display:flex;gap:11px;align-items:flex-start;padding:8px 2px;border-top:2px dashed var(--line);font-size:17px;line-height:1.45;cursor:pointer}.chk9 input{flex:0 0 auto;width:22px;height:22px;margin:2px 0 0;accent-color:var(--moss)}.chk9 input:checked+span{color:var(--soft)}.chk9 input:checked+span .ct{text-decoration:line-through;text-decoration-color:var(--moss);text-decoration-thickness:2px}.chk9 small{display:block;color:var(--soft);font-size:13px}.chk9 .cf{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px}.chk9 .cs{font-weight:600;color:var(--ok);margin:0}.chk9 .cs:empty{display:none}.chk9 .cr{font:inherit;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;cursor:pointer;border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}</style>
+<div class="chk9" id="chk9">
+<p class="ct1">Чек-лист: опыты дома</p>
+<p class="cn">Отмечай, что уже сделала. Не всё сразу: гномону нужен солнечный выходной, а глобусу — вечер с полумраком.</p>
+<label><input type="checkbox" data-i="0"><span><span class="ct">Сделать гномон: круг из картона, карандаш в центре (пусть торчит на 2—3 см)</span><small>опыт 1, 1-й шаг</small></span></label>
+<label><input type="checkbox" data-i="1"><span><span class="ct">В солнечный выходной — отметки конца тени с утра до вечера: A, B, C, D, F…</span><small>опыт 1, шаги 2—6</small></span></label>
+<label><input type="checkbox" data-i="2"><span><span class="ct">Таблица в тетради и вывод</span><small>опыт 1, 7-й шаг</small></span></label>
+<label><input type="checkbox" data-i="3"><span><span class="ct">Найти полуденную линию: две точки на круге, середина E, прямая E—O</span><small>опыт 2</small></span></label>
+<label><input type="checkbox" data-i="4"><span><span class="ct">Проверить полуденную линию папиным компасом или компасом в телефоне</span><small>из жизни</small></span></label>
+<label><input type="checkbox" data-i="5"><span><span class="ct">Шар (или яблоко) на нитке с меткой — полный оборот вокруг оси</span><small>опыт с шаром</small></span></label>
+<label><input type="checkbox" data-i="6"><span><span class="ct">Медленно покружиться на месте, пока снова не увидишь окно</span><small>опыт 2 про движения</small></span></label>
+<label><input type="checkbox" data-i="7"><span><span class="ct">Глобус и лампа: точки А и Б, Северный полюс то освещён, то в тени</span><small>опыт с глобусом</small></span></label>
+<div class="cf"><button class="cr" type="button">Начать заново</button><p class="cs"></p></div></div>
+<script>(function(){var box=document.getElementById("chk9");if(!box)return;var cb=box.querySelectorAll("input[type=checkbox]"),sc=box.querySelector(".cs");function ls(f){try{return f()}catch(e){return null}}function upd(){var n=0;cb.forEach(function(c){if(c.checked)n++});sc.textContent=n?(n===cb.length?"Все опыты сделаны! Ты молодец.":"Сделано: "+n+" из "+cb.length):"";}cb.forEach(function(c){var k="geography:g9:chk_"+c.dataset.i;if(ls(function(){return localStorage.getItem(k)})==="1")c.checked=true;c.addEventListener("change",function(){ls(function(){localStorage.setItem(k,c.checked?"1":"0")});upd();});});box.querySelector(".cr").addEventListener("click",function(){cb.forEach(function(c){c.checked=false;ls(function(){localStorage.removeItem("geography:g9:chk_"+c.dataset.i)})});upd();});upd();})();</script>
+<div class="side green"><span class="slab">Что дальше</span><p>Опыт с глобусом понадобится сразу в § 10 «Движения Земли»: там ты узнаешь, что из этих движений получается — смена дня и ночи и времена года.</p></div>
+<div class="done"><button class="donebtn" data-s="s6" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Опыт «Наблюдаем за тенью» — расставь шаги по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — с 1-го шага до 7-го. Подсмотреть можно в разделе «Шаг за шагом. Наблюдаем за тенью».</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Отметить, где тень утром</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Вырезать круг из картона и вставить карандаш</button>
+<button class="chip" data-ord="6"><span class="ord"></span>Сделать ещё 5—7 отметок до вечера</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Поставить гномон на солнечный подоконник</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Записать дату, время и длину тени</button>
+<button class="chip" data-ord="7"><span class="ord"></span>Оформить таблицу в тетради</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Конец тени — точка A, измерить AO, провести окружность</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sortgame" id="srt2" data-n="7">
+<div class="sortlab">Наблюдение, опыт или измерение?</div>
+<p class="sortnote">Иногда в одном деле есть и то и другое. Выбирай главное.</p>
+<div class="sitem" data-r="0"><p class="stext">Заметить, что за день Солнце то выше, то ниже</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">опыт</button><button class="sbtn" data-b="2">измерение</button></div><p class="swhy" hidden>Человек наблюдает за природным явлением и запоминает.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Измерить линейкой длину тени AO</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">опыт</button><button class="sbtn" data-b="2">измерение</button></div><p class="swhy" hidden>Измерение даёт число — сантиметры.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Глобус и лампа показывают, как Земля идёт вокруг Солнца</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">опыт</button><button class="sbtn" data-b="2">измерение</button></div><p class="swhy" hidden>Это модель природного явления — опыт.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Крутить шар на нитке и следить за меткой</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">опыт</button><button class="sbtn" data-b="2">измерение</button></div><p class="swhy" hidden>Шар — модель Земли, которая вращается вокруг оси.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Записать время каждой отметки</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">опыт</button><button class="sbtn" data-b="2">измерение</button></div><p class="swhy" hidden>Время по часам — тоже измерение.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Летом во дворе светло до 10 вечера, а осенью темнеет рано</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">опыт</button><button class="sbtn" data-b="2">измерение</button></div><p class="swhy" hidden>Ты это заметила сама — наблюдение.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Эратосфен высчитал окружность Земли</p><div class="sbtns"><button class="sbtn" data-b="0">наблюдение</button><button class="sbtn" data-b="1">опыт</button><button class="sbtn" data-b="2">измерение</button></div><p class="swhy" hidden>Он был «гением измерений»: получил число.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt3" data-n="6">
+<div class="sortlab">Опыт с глобусом: где это бывает?</div>
+<div class="sitem" data-r="0"><p class="stext">Ось «смотрит» в сторону лампы</p><div class="sbtns"><button class="sbtn" data-b="0">в точке А</button><button class="sbtn" data-b="1">в точке Б</button><button class="sbtn" data-b="2">везде</button></div><p class="swhy" hidden>В точке А северный конец оси наклонён к «Солнцу».</p></div>
+<div class="sitem" data-r="0"><p class="stext">Северный полюс всё время освещён</p><div class="sbtns"><button class="sbtn" data-b="0">в точке А</button><button class="sbtn" data-b="1">в точке Б</button><button class="sbtn" data-b="2">везде</button></div><p class="swhy" hidden>В точке А освещённая половина глобуса захватывает Северный полюс.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Ось «смотрит» от лампы</p><div class="sbtns"><button class="sbtn" data-b="0">в точке А</button><button class="sbtn" data-b="1">в точке Б</button><button class="sbtn" data-b="2">везде</button></div><p class="swhy" hidden>В точке Б глобус по другую сторону «Солнца».</p></div>
+<div class="sitem" data-r="1"><p class="stext">Северный полюс всё время в тени</p><div class="sbtns"><button class="sbtn" data-b="0">в точке А</button><button class="sbtn" data-b="1">в точке Б</button><button class="sbtn" data-b="2">везде</button></div><p class="swhy" hidden>В точке Б в тени остаётся Северный полюс, а Южный освещён.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Угол наклона оси</p><div class="sbtns"><button class="sbtn" data-b="0">в точке А</button><button class="sbtn" data-b="1">в точке Б</button><button class="sbtn" data-b="2">везде</button></div><p class="swhy" hidden>Угол наклона земной оси остаётся неизменным.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Материки по очереди уходят в тень и возвращаются</p><div class="sbtns"><button class="sbtn" data-b="0">в точке А</button><button class="sbtn" data-b="1">в точке Б</button><button class="sbtn" data-b="2">везде</button></div><p class="swhy" hidden>Так бывает всегда, когда глобус вращается вокруг оси.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Гномон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="g9_r21" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Вертикальный шест на горизонтальной площадке. По тени — высота Солнца.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Высота Солнца</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 364" aria-hidden="true"><use href="#g9-ten"/></svg><span class="ftext">Чем выше Солнце над горизонтом, тем короче тень.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Полдень</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 364" aria-hidden="true"><use href="#g9-ten"/></svg><span class="ftext">Солнце выше всего, тень самая короткая. В Москве — около 12:15—12:45.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Полуденная линия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 324" aria-hidden="true"><use href="#g9-top"/></svg><span class="ftext">Прямая E—O. Указывает направление север—юг.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Обелиск</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="g9_r22" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Заострённый четырёхгранный столб. В Египте — гномон.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Эратосфен</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 262" aria-hidden="true"><use href="#g9-erat"/></svg><span class="ftext">По высоте Солнца высчитал окружность Земли; «полуденные линии» и «линии, идущие рядом».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ось вращения</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 268" aria-hidden="true"><use href="#g9-osi"/></svg><span class="ftext">Воображаемая линия, вокруг которой вращается тело.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Наклон земной оси</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 282" aria-hidden="true"><use href="#g9-globus"/></svg><span class="ftext">Не меняется, пока Земля идёт по орбите. Поэтому полушария освещены по-разному.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Когда тень от гномона самая короткая?</h3><div class="opts">
+<button class="opt">Утром</button>
+<button class="opt" data-ok="1">В полдень</button>
+<button class="opt">Вечером</button>
+<button class="opt">Всегда одинаковая</button></div>
+<div class="fb">В полдень Солнце выше всего над горизонтом — и тень самая короткая.</div></div>
+<div class="q"><h3>2. Что указывает полуденная линия?</h3><div class="opts">
+<button class="opt">Направление запад—восток</button>
+<button class="opt" data-ok="1">Направление север—юг</button>
+<button class="opt">Где восходит Солнце</button>
+<button class="opt">Время по часам</button></div>
+<div class="fb">Прямая через точки E и O — полуденная линия: направление север—юг.</div></div>
+<div class="q"><h3>3. Что служило гномонами в Древнем Египте?</h3><div class="opts">
+<button class="opt">Пирамиды</button>
+<button class="opt" data-ok="1">Обелиски</button>
+<button class="opt">Колодцы</button>
+<button class="opt">Статуи фараонов</button></div>
+<div class="fb">Обелиски — заострённые четырёхгранные столбы, похожие на солнечный луч.</div></div>
+<div class="q"><h3>4. Что высчитал Эратосфен с очень небольшой погрешностью?</h3><div class="opts">
+<button class="opt">Расстояние до Солнца</button>
+<button class="opt" data-ok="1">Окружность Земли</button>
+<button class="opt">Высоту обелиска</button>
+<button class="opt">Число звёзд</button></div>
+<div class="fb">Он ориентировался на высоту Солнца над горизонтом и сведения из Александрийской библиотеки.</div></div>
+<div class="q"><h3>5. Как сегодня называют «полуденные линии» Эратосфена?</h3><div class="opts">
+<button class="opt">Параллели</button>
+<button class="opt" data-ok="1">Меридианы</button>
+<button class="opt">Орбиты</button>
+<button class="opt">Экваторы</button></div>
+<div class="fb">«Полуденные линии» — меридианы, а «линии, идущие рядом», — параллели.</div></div>
+<div class="q"><h3>6. Что не меняется, когда глобус идёт по орбите вокруг лампы?</h3><div class="opts">
+<button class="opt">Какой полюс освещён</button>
+<button class="opt" data-ok="1">Угол наклона оси</button>
+<button class="opt">Какие материки в тени</button>
+<button class="opt">Место глобуса</button></div>
+<div class="fb">Угол наклона земной оси остаётся неизменным — а освещение полушарий меняется.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Как изучают природу</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Наблюдения: человек замечает природные явления и накапливает знания.</li><li>Опыты (эксперименты): модель природного явления, чтобы понять его причины.</li><li>Измерения: количественные характеристики. Все эти методы уходят в древность.</li></ol></div>
+</div>
+<div class="think">
+<h3>Гномон и тень</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Гномон — вертикальный шест на горизонтальной площадке; по тени определяют высоту Солнца.</li><li>С утра до полудня тень укорачивается, после полудня удлиняется и поворачивает.</li><li>В полдень тень самая короткая и лежит по линии север—юг.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как найти направление север—юг</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Отметить утром конец тени A и провести через него окружность.</li><li>После полудня найти вторую точку на окружности, середину отрезка — E.</li><li>Прямая E—O — полуденная линия: направление север—юг.</li></ol></div>
+</div>
+<div class="think">
+<h3>Эратосфен и обелиски</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>В Древнем Египте гномонами служили обелиски.</li><li>Эратосфен по высоте Солнца и сведениям Александрийской библиотеки высчитал окружность Земли.</li><li>Он расчертил мир «линиями, идущими рядом», и «полуденными линиями» — параллелями и меридианами.</li></ol></div>
+</div>
+<div class="think">
+<h3>Опыты: как движется Земля</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Шар на нитке, кружение на месте, волчок — оборот вокруг своей оси.</li><li>Глобус вокруг лампы: в точке А Северный полюс освещён, в точке Б — в тени.</li><li>Земная ось всегда наклонена одинаково, полушария освещены по-разному.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g8.html">‹ §8 Мы во Вселенной</a>
+  <span class="pn cur">§9 Учимся с «Полярной звездой»</span>
+ </div>
+</div>
+
+<footer><div class="wrap">География, 5—6 классы. А. И. Алексеев и др., «Полярная звезда», 2023. § 9, с. 32—35. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'g9-metody':'0 0 360 268','g9-ten':'0 0 360 364','g9-top':'0 0 360 324','g9-erat':'0 0 360 262','g9-osi':'0 0 360 268','g9-globus':'0 0 360 282'};
+
+var T={
+nabl:{w:"Наблюдение",k:"способ изучать природу",s:"g9-metody",t:"Человек наблюдает за природными явлениями — замечает и запоминает — и так накапливает знания о них.",r:"",e:"Летом ты гуляешь во дворе до 10—11 вечера, а осенью темнеет рано, — это ты заметила сама. Это наблюдение."},
+opyt:{w:"Опыт (эксперимент)",k:"способ изучать природу",s:"g9-metody",t:"Опыт позволяет создать модель природного явления, чтобы понять его причины.",r:"<b>experimentum</b> (лат.) — проба, опыт",e:""},
+model:{w:"Модель",k:"что это",s:"g9-globus",t:"Упрощённое подобие настоящего. Глобус и лампа в опыте — модель Земли и Солнца.",r:"",e:""},
+izmer:{w:"Измерение",k:"способ изучать природу",s:"g9-metody",t:"Измерения дают количественные характеристики — числа: сколько сантиметров, градусов, минут.",r:"",e:""},
+gorizont:{w:"Горизонт",k:"что это",s:"g9-ten",t:"Линия, где небо как будто сходится с землёй. «Высота Солнца над горизонтом» — насколько высоко Солнце на небе.",r:"",e:""},
+vysota:{w:"Высота Солнца",k:"над горизонтом",s:"g9-ten",t:"Насколько высоко Солнце над горизонтом. За день она меняется: утром Солнце низко, в полдень выше всего, к вечеру опять низко. Чем выше Солнце, тем короче тень.",r:"",e:""},
+gnomon:{w:"Гномон",k:"астрономический инструмент",s:"g9-ten",t:"Простейший астрономический инструмент: вертикальный шест (или стержень) на горизонтальной площадке. По его тени ещё в древности определяли высоту Солнца.",r:"<b>гномон</b> (греч.) — указатель",e:""},
+polden:{w:"Полдень",k:"время дня",s:"g9-ten",t:"Момент, когда Солнце выше всего за день, а тень самая короткая. В Москве он бывает не ровно в 12:00 по часам, а позже — примерно в 12:15—12:45.",r:"",e:""},
+meridian:{w:"Меридиан",k:"линия север — юг",s:"g9-erat",t:"Линия на глобусе и на карте от Северного полюса к Южному. Все меридианы сходятся на полюсах и показывают направление север—юг. В полдень тень гномона ложится вдоль меридиана. Подробно — в разделе «План и карта».",r:"<b>meridianus</b> (лат.) — полуденный",e:"Найди меридианы на своём глобусе: это линии от полюса к полюсу. Веди пальцем по меридиану от Москвы вверх — придёшь к Северному полюсу."},
+polline:{w:"Полуденная линия",k:"что это",s:"g9-top",t:"Линия тени гномона в полдень. Указывает направление север—юг. Тень на ней самая короткая, а высота Солнца наибольшая.",r:"",e:""},
+solchasy:{w:"Солнечные часы",k:"что это",s:"g9-ten",t:"Гномон с площадкой, размеченной как циферблат: тень переходит от деления к делению и показывает время. Стержень солнечных часов направляют на Полярную звезду.",r:"",e:""},
+ciferblat:{w:"Циферблат",k:"что это",s:"g9-ten",t:"Площадка с делениями, по которым часы показывают время.",r:"",e:""},
+obelisk:{w:"Обелиск",k:"что это",p:"g9_r22",t:"Заострённый четырёхгранный столб, похожий по форме на солнечный луч. В Древнем Египте обелиски служили гномонами.",r:"<b>обелискос</b> (греч.) — вертел",e:""},
+eratos:{w:"Эратосфен",k:"кто это",s:"g9-erat",t:"Древнегреческий учёный (III—II вв. до н. э., § 2). Работал в Александрийской библиотеке. По высоте Солнца над горизонтом с очень небольшой погрешностью высчитал окружность Земли и «накрыл» мир сеткой.",r:"",e:""},
+alexlib:{w:"Александрийская библиотека",k:"что это",s:"g9-erat",t:"Знаменитая библиотека в египетском городе Александрии. В ней хранились сведения о расстояниях между пунктами, о походах воинов, моряков и торговцев, наблюдения астрономов.",r:"",e:""},
+makedon:{w:"Александр Македонский",k:"кто это",s:"g9-erat",t:"Царь и полководец IV в. до н. э., его походы — в учебнике истории. Его воины оставили сведения о своих походах — они хранились в Александрийской библиотеке.",r:"",e:""},
+pogresh:{w:"Погрешность",k:"что это",s:"g9-metody",t:"Небольшая ошибка при измерении. «С очень небольшой погрешностью» — почти точно.",r:"",e:""},
+parallel:{w:"Параллели",k:"линии на глобусе",s:"g9-erat",t:"«Линии, идущие рядом» — так Эратосфен расчертил мир. Идут с запада на восток. Подробно — в разделе «План и карта».",r:"<b>параллелос</b> (греч.) — идущий рядом",e:""},
+os:{w:"Ось вращения",k:"что это",s:"g9-osi",t:"Воображаемая линия, вокруг которой вращается тело. У шара на нитке — нитка, у волчка — его стержень, у Земли — земная ось.",r:"",e:""},
+oborot:{w:"Полный оборот",k:"что это",s:"g9-osi",t:"Поворот вокруг своей оси до прежнего положения: метка на шаре исчезла и вернулась на место, ты снова видишь окно.",r:"",e:""},
+fuete:{w:"Фуэте",k:"движение в балете",s:"g9-osi",t:"Балерина быстро кружится на одной ноге вокруг своей оси.",r:"<b>fouetté</b> (франц.) — хлёсткий",e:""},
+volchok:{w:"Волчок (юла)",k:"игрушка",s:"g9-osi",t:"Детская игрушка, которая вертится вокруг своей оси. Так же вращается наша планета.",r:"",e:"Волчки и спиннеры у тебя дома есть — запусти и посмотри."},
+orbita:{w:"Орбита",k:"что это",s:"g9-globus",t:"Путь движения небесного тела (§ 8). В опыте земную орбиту изображает круг на столе, а Солнце — лампа в середине.",r:"",e:""},
+ploskost:{w:"Плоскость орбиты",k:"что это",s:"g9-globus",t:"Ровная «поверхность», в которой лежит орбита. В опыте — поверхность стола.",r:"",e:""},
+naklon:{w:"Наклон земной оси",k:"что это",s:"g9-globus",t:"Земная ось наклонена к плоскости орбиты, и угол наклона не меняется, пока Земля идёт вокруг Солнца.",r:"",e:""},
+polushar:{w:"Северное и Южное полушария",k:"что это",s:"g9-globus",t:"Две половины Земли — северная (с Северным полюсом) и южная (с Южным). В разных точках орбиты Солнце освещает их по-разному.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('geography:g9:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('geography:g9:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>7){fb.textContent="Верно! Круг и карандаш → подоконник → утренняя тень → точка A и окружность → запись → ещё 5—7 отметок → таблица.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Не этот шаг. Что нужно сделать раньше?";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('geography:g9:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('geography:g9:read_'+id,on?'1':'0')});
+  });
+});
+
+/* --- увеличение карт, схем и картинок по нажатию (на телефоне мелкие подписи) --- */
+var zoom=document.createElement('div');zoom.className='zoom';zoom.hidden=true;
+zoom.setAttribute('role','dialog');zoom.setAttribute('aria-modal','true');zoom.setAttribute('aria-label','Увеличенная картинка');
+zoom.innerHTML='<div class="zoombar"><span>Двигай пальцем, чтобы рассмотреть</span><button class="zoomclose">Закрыть ✕</button></div><div class="zoomin"></div>';
+document.body.appendChild(zoom);
+function openZoom(el){
+  var box=zoom.querySelector('.zoomin');box.innerHTML='';
+  var c=el.cloneNode(true);c.removeAttribute('id');
+  if(c.tagName.toLowerCase()==='svg'){
+    var v=(c.getAttribute('viewBox')||'0 0 400 300').split(/\s+/);
+    c.style.width=Math.round(Math.max(parseFloat(v[2])*2.3,window.innerWidth-24))+'px';
+  }else{
+    c.style.width=Math.round(Math.max((el.naturalWidth||600)*1.1,window.innerWidth*1.5))+'px';
+  }
+  c.style.maxWidth='none';c.style.height='auto';
+  box.appendChild(c);zoom.hidden=false;document.documentElement.style.overflow='hidden';
+  zoom.querySelector('.zoomclose').focus();
+}
+function closeZoom(){zoom.hidden=true;document.documentElement.style.overflow='';}
+document.addEventListener('click',function(e){
+  if(e.target.closest('.zoomclose')){closeZoom();return}
+  var s=e.target.closest('.fig svg, .photo img, .banner img');
+  if(s&&!zoom.contains(s)){openZoom(s);}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!zoom.hidden)closeZoom()});
+
+</script>
+</body>
+</html>
