@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Географический «адрес» из двух частей — широта и долгота. Как найти широту любой точки по карте: Санкт-Петербург, Москва — и твои места.">
+<title>§18 Географические координаты (1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term .tl{white-space:nowrap}
+.term .tl::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover .tl::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== География: морская гамма (синий вместо красного), блоки учебника «Полярная звезда» ===== */
+:root{
+  --red:#1B6A8C; --ochre:#E2A31F; --leaf:#1B6A8C; --life:#8A4CB0; --lifebg:#F2E9F8;
+  --pa:#C9672C; --pb:#1B6A8C; --pink:#C23C86; --pinkbg:#FBE4F0; --yel:#FFF3C4; --yelb:#D9A21A;
+  --grn:#E3F2E1; --grnb:#3E8E4A; --sea:#BFE0EE; --land:#F3E6C4; --landb:#B9A57A;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--pink);color:#FFF6FB;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+:root[data-theme="dark"] .rubric{color:#20101A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rubric{color:#20101A}}
+
+/* --- вывод (розовая плашка учебника) --- */
+.vyvod{margin:24px 0;background:var(--pinkbg);border-left:8px solid var(--pink);border-radius:0 16px 16px 0;
+  padding:13px 16px 14px;box-shadow:var(--sh)}
+.vyvod .vlab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:4px}
+.vyvod p{margin:0;font-size:18px;font-weight:600;line-height:1.5}
+
+/* --- заметки на полях учебника --- */
+.side{margin:22px 0;border-radius:14px;padding:12px 15px;font-size:17px;line-height:1.5;border:2.5px solid}
+.side .slab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.side.yellow{background:var(--yel);border-color:var(--yelb)} .side.yellow .slab{color:var(--yelb)}
+.side.green{background:var(--grn);border-color:var(--grnb)} .side.green .slab{color:var(--grnb)}
+.side p{margin:0}
+
+/* --- запомните --- */
+.remember{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.remember span{background:var(--card);border:2.5px solid var(--pink);border-radius:999px;padding:6px 13px;
+  font-weight:600;font-size:16px;box-shadow:var(--sh)}
+
+/* --- заставка параграфа --- */
+.banner{margin:0;background:var(--paper2);border-bottom:3px solid var(--line)}
+.banner .wrap{padding-block:14px}
+.banner img{display:block;width:100%;max-width:860px;height:auto;max-height:220px;object-fit:cover;margin:0 auto;border-radius:16px;border:3px solid var(--line)}
+.banner figcaption{text-align:center;margin-top:6px}
+
+/* --- таблица учебника для заполнения --- */
+.ttab{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:var(--card)}
+.ttab th,.ttab td{border:2px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.ttab th{background:var(--paper2);font-weight:600}
+.tscroll{overflow-x:auto}
+
+/* маленькие картинки учебника (портреты) не растягиваем на всю ширину */
+.photo img.small{max-width:320px}
+
+/* --- увеличение по нажатию --- */
+.fig{position:relative}
+.fig svg,.photo img{cursor:zoom-in}
+.fig:has(> svg)::after{content:"⤢ нажми на картинку — увеличится";display:block;margin-top:6px;text-align:right;
+  font-size:12px;font-weight:600;color:var(--soft);pointer-events:none}
+.zoom{position:fixed;inset:0;z-index:120;background:var(--paper);overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom[hidden]{display:none!important}
+.zoombar{position:sticky;top:0;left:0;z-index:2;display:flex;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--paper2);border-bottom:2px solid var(--line);font-size:14px;color:var(--soft)}
+.zoomclose{white-space:nowrap;font:inherit;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.zoomin{padding:14px}
+.zoomin svg,.zoomin img{display:block;background:var(--card);border-radius:12px}
+
+/* жирное слово внутри задания учебника — обычное, а не заголовок блока */
+.ask li b,.ask p b,.ask ol b{display:inline;font-size:inherit;letter-spacing:normal;text-transform:none;color:inherit;margin:0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2F6F8F" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">География</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<defs><marker id="ar18-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--illink,#2B2620)"/></marker><marker id="ar18-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pink,#C23C86)"/></marker><marker id="ar18-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--red,#1B6A8C)"/></marker><marker id="ar18-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pa,#C9672C)"/></marker><marker id="ar18-l" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--life,#8A4CB0)"/></marker></defs>
+<symbol id="g18-boy" viewBox="0 0 360 298">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Адрес из двух частей</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >в морском бое и на Земле</text>
+<rect x="94.0" y="66.0" width="20.0" height="120.0" fill="var(--ochre,#E2A31F)" fill-opacity=".22"/>
+<rect x="34.0" y="126.0" width="120.0" height="20.0" fill="var(--red,#1B6A8C)" fill-opacity=".16"/>
+<path d="M34.0 66.0 L34.0 186.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M34.0 66.0 L154.0 66.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M54.0 66.0 L54.0 186.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M34.0 86.0 L154.0 86.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M74.0 66.0 L74.0 186.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M34.0 106.0 L154.0 106.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M94.0 66.0 L94.0 186.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M34.0 126.0 L154.0 126.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M114.0 66.0 L114.0 186.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M34.0 146.0 L154.0 146.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M134.0 66.0 L134.0 186.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M34.0 166.0 L154.0 166.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M154.0 66.0 L154.0 186.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<path d="M34.0 186.0 L154.0 186.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none"/>
+<text x="44.0" y="60.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >А</text>
+<text x="27.0" y="80.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >1</text>
+<text x="64.0" y="60.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Б</text>
+<text x="27.0" y="100.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >2</text>
+<text x="84.0" y="60.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >В</text>
+<text x="27.0" y="120.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >3</text>
+<text x="104.0" y="60.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--pa,#C9672C)" >Г</text>
+<text x="27.0" y="140.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" >4</text>
+<text x="124.0" y="60.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Д</text>
+<text x="27.0" y="160.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >5</text>
+<text x="144.0" y="60.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Е</text>
+<text x="27.0" y="180.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >6</text>
+<rect x="96.0" y="128.0" width="16.0" height="16.0" fill="var(--pink,#C23C86)" rx="3"/>
+<text x="104.0" y="140.5" text-anchor="middle" font-size="14" font-weight="800" fill="var(--card,#FFFBF2)" >×</text>
+<text x="94.0" y="206.0" text-anchor="middle" font-size="12" font-weight="800" fill="var(--pink,#C23C86)" >«Г4» — буква + цифра</text>
+<text x="94.0" y="221.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >одной «Г» мало: это</text>
+<text x="94.0" y="235.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >целый столбец</text>
+<rect x="206.0" y="66.0" width="130.0" height="120.0" fill="var(--sea,#BFE0EE)" fill-opacity=".55" rx="4"/>
+<path d="M206.0 96.0 L336.0 96.0" stroke="var(--red,#1B6A8C)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+<path d="M238.5 66.0 L238.5 186.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+<path d="M206.0 126.0 L336.0 126.0" stroke="var(--red,#1B6A8C)" stroke-width="3" fill="none"/>
+<path d="M271.0 66.0 L271.0 186.0" stroke="var(--moss,#5E7A3A)" stroke-width="3" fill="none"/>
+<path d="M206.0 156.0 L336.0 156.0" stroke="var(--red,#1B6A8C)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+<path d="M303.5 66.0 L303.5 186.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+<circle cx="271.0" cy="126.0" r="6" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="2"/>
+<text x="281.0" y="118.0" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">точка</text>
+<text x="271.0" y="206.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" >широта — на какой</text>
+<text x="271.0" y="220.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" >параллели</text>
+<text x="271.0" y="235.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--moss,#5E7A3A)" >долгота — на каком</text>
+<text x="271.0" y="249.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--moss,#5E7A3A)" >меридиане</text>
+<text x="180.0" y="274.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink,#2B2620)" >Где линии пересекаются — там точка.</text>
+<text x="180.0" y="290.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Широта + долгота = географические координаты</text>
+</g>
+</symbol>
+<symbol id="g18-shirota" viewBox="0 0 360 308">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Широта — градусы от экватора</text>
+<path d="M46.0 162.0 A104 104 0 0 1 254.0 162.0 Z" fill="var(--red,#1B6A8C)" fill-opacity=".16"/>
+<path d="M46.0 162.0 A104 104 0 0 0 254.0 162.0 Z" fill="var(--pa,#C9672C)" fill-opacity=".16"/>
+<circle cx="150.0" cy="162.0" r="104" fill="none" stroke="var(--red,#1B6A8C)" stroke-width="2"/>
+<path d="M150.0 52.0 L150.0 272.0" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none" stroke-dasharray="4 3"/>
+<path d="M108.5 66.6 L191.5 66.6" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none" stroke-dasharray="2 3"/>
+<path d="M54.6 120.5 L245.4 120.5" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none" stroke-dasharray="2 3"/>
+<path d="M54.6 203.5 L245.4 203.5" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none" stroke-dasharray="2 3"/>
+<path d="M108.5 257.4 L191.5 257.4" stroke="var(--soft,#5F5648)" stroke-width="1" fill="none" stroke-dasharray="2 3"/>
+<path d="M46.0 162.0 L254.0 162.0" stroke="var(--pa,#C9672C)" stroke-width="2.6" fill="none"/>
+<text x="52.0" y="156.0" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">экватор 0°</text>
+<path d="M254.0 162.0 A104 104 0 0 0 210.5 79.0" fill="none" stroke="var(--life,#8A4CB0)" stroke-width="5" stroke-linecap="round" marker-end="url(#ar18-l)"/>
+<path d="M150.0 162.0 L254.0 162.0" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none" stroke-dasharray="3 3"/>
+<path d="M150.0 162.0 L208.5 76.0" stroke="var(--life,#8A4CB0)" stroke-width="1.2" fill="none" stroke-dasharray="3 3"/>
+<path d="M178.0 162.0 A28 28 0 0 0 165.8 138.9" fill="none" stroke="var(--life,#8A4CB0)" stroke-width="1.6"/>
+<text x="184.0" y="148.0" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">56°</text>
+<path d="M91.5 76.0 L208.5 76.0" stroke="var(--life,#8A4CB0)" stroke-width="1.6" fill="none" stroke-dasharray="5 3"/>
+<circle cx="208.5" cy="76.0" r="5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="230.5" y="72.0" text-anchor="start" font-size="12" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Москва</text>
+<text x="230.5" y="86.0" text-anchor="start" font-size="11.5" font-weight="700" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">56° с. ш.</text>
+<text x="120.0" y="90.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">её параллель</text>
+<circle cx="150.0" cy="58.0" r="4" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<text x="150.0" y="48.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный полюс — 90° с. ш.</text>
+<circle cx="150.0" cy="266.0" r="4" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<text x="150.0" y="284.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Южный полюс — 90° ю. ш.</text>
+<text x="120.0" y="132.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">северная широта</text>
+<text x="120.0" y="194.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">южная широта</text>
+<text x="260.0" y="166.0" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">на экваторе</text>
+<text x="260.0" y="180.0" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">отсчёт с 0°</text>
+<text x="180.0" y="300.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >Отсчёт — от экватора вдоль меридиана, на север или на юг.</text>
+</g>
+</symbol>
+<symbol id="g18-lestnica" viewBox="0 0 360 372">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Лестница широт</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >от экватора до Северного полюса</text>
+<rect x="14.0" y="60.0" width="332.0" height="70.5" fill="var(--red,#1B6A8C)" fill-opacity=".10"/>
+<rect x="14.0" y="259.5" width="332.0" height="70.5" fill="var(--pa,#C9672C)" fill-opacity=".12"/>
+<text x="340.0" y="75.0" text-anchor="end" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">высокие широты</text>
+<text x="340.0" y="322.0" text-anchor="end" font-size="11.5" font-weight="800" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">низкие широты</text>
+<path d="M14.0 330.0 L346.0 330.0" stroke="var(--pa,#C9672C)" stroke-width="2" fill="none"/>
+<text x="16.0" y="326.0" text-anchor="start" font-size="11" font-weight="800" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">экватор 0°</text>
+<path d="M14.0 259.5 L346.0 259.5" stroke="var(--ochre,#E2A31F)" stroke-width="1.6" fill="none" stroke-dasharray="6 4"/>
+<text x="16.0" y="255.5" text-anchor="start" font-size="11" font-weight="800" fill="var(--ochre,#E2A31F)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный тропик 23,5°</text>
+<path d="M14.0 130.5 L346.0 130.5" stroke="var(--red,#1B6A8C)" stroke-width="1.6" fill="none" stroke-dasharray="6 4"/>
+<text x="16.0" y="126.5" text-anchor="start" font-size="11" font-weight="800" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный полярный круг 66,5°</text>
+<path d="M14.0 60.0 L346.0 60.0" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none"/>
+<text x="16.0" y="56.0" text-anchor="start" font-size="11" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный полюс 90°</text>
+<path d="M200.0 330.0 L200.0 60.0" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none"/>
+<path d="M195.0 300.0 L205.0 300.0" stroke="var(--illink,#2B2620)" stroke-width="1.4" fill="none"/>
+<text x="191.0" y="304.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >10°</text>
+<path d="M195.0 270.0 L205.0 270.0" stroke="var(--illink,#2B2620)" stroke-width="1.4" fill="none"/>
+<path d="M195.0 240.0 L205.0 240.0" stroke="var(--illink,#2B2620)" stroke-width="1.4" fill="none"/>
+<text x="191.0" y="244.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >30°</text>
+<path d="M195.0 210.0 L205.0 210.0" stroke="var(--illink,#2B2620)" stroke-width="1.4" fill="none"/>
+<text x="191.0" y="214.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >40°</text>
+<path d="M195.0 180.0 L205.0 180.0" stroke="var(--illink,#2B2620)" stroke-width="1.4" fill="none"/>
+<text x="191.0" y="184.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >50°</text>
+<path d="M195.0 150.0 L205.0 150.0" stroke="var(--illink,#2B2620)" stroke-width="1.4" fill="none"/>
+<text x="191.0" y="154.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >60°</text>
+<path d="M195.0 120.0 L205.0 120.0" stroke="var(--illink,#2B2620)" stroke-width="1.4" fill="none"/>
+<path d="M195.0 90.0 L205.0 90.0" stroke="var(--illink,#2B2620)" stroke-width="1.4" fill="none"/>
+<text x="191.0" y="94.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >80°</text>
+<path d="M200.0 150.3 L214.0 142.0" stroke="var(--illink,#2B2620)" stroke-width="1" fill="none"/>
+<circle cx="200.0" cy="150.3" r="3.6" fill="var(--illink,#2B2620)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<text x="217.0" y="146.0" text-anchor="start" font-size="11" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Санкт-Петербург, 60°</text>
+<path d="M200.0 162.8 L214.0 157.0" stroke="var(--life,#8A4CB0)" stroke-width="1" fill="none"/>
+<circle cx="200.0" cy="162.8" r="3.6" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<text x="217.0" y="161.0" text-anchor="start" font-size="11" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Москва, ≈ 56°</text>
+<path d="M200.0 169.5 L214.0 172.0" stroke="var(--life,#8A4CB0)" stroke-width="1" fill="none"/>
+<circle cx="200.0" cy="169.5" r="3.6" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<text x="217.0" y="176.0" text-anchor="start" font-size="11" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Тольятти, Ягодное</text>
+<path d="M200.0 219.3 L214.0 219.3" stroke="var(--life,#8A4CB0)" stroke-width="1" fill="none"/>
+<circle cx="200.0" cy="219.3" r="3.6" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<text x="217.0" y="223.3" text-anchor="start" font-size="11" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Анталия, ≈ 37°</text>
+<text x="217.0" y="190.0" text-anchor="start" font-size="11" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">≈ 53,5°</text>
+<text x="180.0" y="350.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >К югу от экватора — такие же ступеньки, только</text>
+<text x="180.0" y="364.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >широта южная: до 90° ю. ш. у Южного полюса.</text>
+</g>
+</symbol>
+<symbol id="g18-shag" viewBox="0 0 360 316">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Шаг за шагом: широта Москвы</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >между параллелями 10° — десять делений по 1°</text>
+<rect x="60.0" y="56.0" width="290.0" height="196.0" fill="var(--sea,#BFE0EE)" fill-opacity=".35" rx="4"/>
+<path d="M131.0 56.0 L131.0 252.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+<path d="M217.0 56.0 L217.0 252.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+<path d="M303.0 56.0 L303.0 252.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+<path d="M60.0 74.0 L350.0 74.0" stroke="var(--red,#1B6A8C)" stroke-width="2.4" fill="none"/>
+<text x="346.0" y="69.0" text-anchor="end" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">60° с. ш.</text>
+<path d="M60.0 234.0 L350.0 234.0" stroke="var(--red,#1B6A8C)" stroke-width="2.4" fill="none"/>
+<text x="346.0" y="229.0" text-anchor="end" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">50° с. ш.</text>
+<path d="M40.0 234.0 L40.0 74.0" stroke="var(--illink,#2B2620)" stroke-width="1.6" fill="none"/>
+<path d="M34.0 234.0 L46.0 234.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M36.0 218.0 L44.0 218.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M36.0 202.0 L44.0 202.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<text x="30.0" y="206.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >52</text>
+<path d="M36.0 186.0 L44.0 186.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M36.0 170.0 L44.0 170.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<text x="30.0" y="174.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >54</text>
+<path d="M34.0 154.0 L46.0 154.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M36.0 138.0 L44.0 138.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<text x="30.0" y="142.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >56</text>
+<path d="M36.0 122.0 L44.0 122.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M36.0 106.0 L44.0 106.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<text x="30.0" y="110.0" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >58</text>
+<path d="M36.0 90.0 L44.0 90.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M34.0 74.0 L46.0 74.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<text x="30.0" y="238.0" text-anchor="end" font-size="11" font-weight="800" fill="var(--red,#1B6A8C)" >50</text>
+<text x="30.0" y="78.0" text-anchor="end" font-size="11" font-weight="800" fill="var(--red,#1B6A8C)" >60</text>
+<path d="M52.0 234.0 L52.0 141.0" stroke="var(--pink,#C23C86)" stroke-width="2.4" fill="none" marker-end="url(#ar18-p)"/>
+<text x="56.0" y="190.0" text-anchor="start" font-size="12" font-weight="800" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">+6°</text>
+<path d="M46.0 142.0 L190.4 142.0" stroke="var(--life,#8A4CB0)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<circle cx="196.4" cy="142.0" r="5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="205.4" y="146.0" text-anchor="start" font-size="12" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Москва</text>
+<circle cx="133.6" cy="75.6" r="4.5" fill="var(--illink,#2B2620)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="137.6" y="92.6" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Санкт-Петербург</text>
+<circle cx="297.8" cy="178.0" r="4.5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="289.8" y="182.0" text-anchor="end" font-size="11.5" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Тольятти</text>
+<path d="M200.0 240.0 L200.0 264.0" stroke="var(--soft,#5F5648)" stroke-width="1.8" fill="none" marker-end="url(#ar18-k)"/>
+<text x="206.0" y="260.0" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">к экватору</text>
+<text x="180.0" y="286.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Ближайшая параллель со стороны экватора — 50°.</text>
+<text x="180.0" y="306.0" text-anchor="middle" font-size="14" font-weight="800" fill="var(--pink,#C23C86)" >50° + 6° = 56° с. ш.</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">География · § 18</span>
+    <h1>Географические координаты (1)</h1>
+    <p class="lede">Географический «адрес» из двух частей — широта и долгота. Как найти широту любой точки по карте: Санкт-Петербург, Москва — и твои места.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>О чём параграф:</b><br>Для чего нужны географические координаты. Что значит определить географическую широту.</div></div>
+  </div>
+</header>
+
+<figure class="banner"><div class="wrap"><img id="ph-g18_banner" src="img/6c254888f3a4.jpg" alt="Слева — старинный морской прибор из латуни, справа — старинная морская карта с розами ветров и сеткой линий"><figcaption><span class="src">из учебника</span>Заставка параграфа</figcaption></div></figure>
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g17.html">‹ §17 Градусная сетка</a>
+  <span class="pn cur">§18 Координаты (1)</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Для чего нужны географические координаты?">1</a><a href="#s2" data-j="s2" title="Что значит определить географическую широту?">2</a><a href="#s3" data-j="s3" title="Шаг за шагом. Определяем географическую широту">3</a><a href="#s4" data-j="s4" title="Итоги параграфа">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Для чего нужны географические координаты?</h2></div>
+<div class="easy">
+<p>У каждой точки на Земле есть свой «адрес» из двух частей. В шахматах и морском бое клетку тоже называют двумя частями — буквой и цифрой: «Г4».</p>
+<p>На Земле две части адреса — <span class="term" role="button" tabindex="0" data-t="shir"><b><span class="tl">широта</span></b></span> и <span class="term" role="button" tabindex="0" data-t="dolg"><b><span class="tl">долгота</span></b></span>. Их находят по градусной сетке (§ 17). Широта говорит, на какой параллели точка, долгота — на каком меридиане. Где они пересекаются — там и точка. Это и есть <span class="term" role="button" tabindex="0" data-t="koord"><b>географические <span class="tl">координаты</span></b></span>.</p>
+<p>Зная координаты, можно найти любое место на карте и понять, где оно относительно других. И наоборот: первооткрыватели измеряли координаты приборами и так наносили на карту новые земли.</p>
+<p>Координаты особенно нужны <span class="term" role="button" tabindex="0" data-t="shturm"><span class="tl">штурманам</span></span> и военным. Штурман прокладывает путь корабля, самолёта, подводной лодки. По координатам ищут в океане тех, кто терпит кораблекрушение. Геологи, геодезисты и географы в экспедициях определяют координаты того, что изучают.</p>
+<p>Сейчас координаты определяет <span class="term" role="button" tabindex="0" data-t="gps">прибор спутникового позиционирования — <span class="tl">навигатор</span></span>. Он ловит сигналы нескольких спутников Земли, узнаёт, где находится, и рисует на экране пройденный путь. Такие программы есть в компьютерах и телефонах.</p>
+</div>
+<div class="book" hidden>
+<p>Любая точка на земном шаре имеет свой географический адрес. Этот адрес состоит из двух частей. Когда вы играете в шахматы или морской бой, то тоже используете «адрес» клеточки из двух частей — буквы и цифры. Две части географического адреса — <span class="term" role="button" tabindex="0" data-t="shir"><b><span class="tl">широта</span></b></span> и <span class="term" role="button" tabindex="0" data-t="dolg"><b><span class="tl">долгота</span></b></span>. Определить их нам позволяет градусная сетка. Широта показывает место точки на определённой параллели, а долгота — место этой же точки на конкретном меридиане. Место их пересечения и есть нужный нам адрес — <span class="term" role="button" tabindex="0" data-t="koord"><b>географические <span class="tl">координаты</span></b></span>.</p>
+<p>Зная географические координаты, можно найти любой объект на карте и определить его положение по отношению к другим объектам. И наоборот, можно нанести новый объект на карту, определив с помощью приборов его географические координаты, как это делали все первооткрыватели.</p>
+<p>Уметь определять координаты по карте должен каждый человек. Для некоторых профессий это особенно важно, например для <span class="term" role="button" tabindex="0" data-t="shturm"><span class="tl">штурманов</span></span> и военных. Штурманы прокладывают с помощью географических координат путь корабля, самолёта, подводной лодки. Иногда приходится искать в открытом океане терпящих кораблекрушение, а для этого необходимо знать место их нахождения. Геологи, геодезисты, географы, находясь в экспедиции, определяют координаты исследуемых ими объектов.</p>
+<p>В настоящее время координаты на местности определяют с помощью <span class="term" role="button" tabindex="0" data-t="gps">прибора спутникового <span class="tl">позиционирования</span></span>. Этот прибор определяет своё местоположение, получая информацию с нескольких искусственных спутников Земли. При перемещении объекта по местности на мониторе такого навигатора вычерчивается траектория движения. Компьютерные программы для определения местонахождения любого объекта постоянно обновляют и совершенствуют. В повседневной жизни их разные версии закачивают на персональные компьютеры, мобильные телефоны и другие устройства.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 298" role="img" aria-label="Слева — поле морского боя: столбцы А—Е, строки 1—6; столбец Г и строка 4 подсвечены, на их пересечении — попадание «Г4». Справа — кусок градусной сетки: выделены одна параллель и один меридиан, на пересечении — точка. Широта — на какой параллели, долгота — на каком меридиане"><use href="#g18-boy"/></svg><figcaption>Одной буквы в морском бое мало — нужна и цифра. Так и на Земле.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">На полях учебника</span><p><b>Географические координаты</b> любой точки на земном шаре — её широта и долгота.</p></div>
+<div class="blocknote"><b>«Широта показывает место точки на определённой параллели».</b> Читать так: широта говорит, <i>на какой</i> параллели лежит точка, а долгота — <i>на каком</i> меридиане. Через полстраницы учебник сам так и пишет: «определить широту — это значит найти параллель, на которой она расположена». А где точка <i>вдоль</i> своей параллели — восточнее или западнее, — как раз и показывает долгота (§ 19).</div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Географические координаты необходимы для точного определения положения любого объекта на земном шаре.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Морской бой</span></div><div class="lifebody"><p>Сыграй с папой или мамой в морской бой. Чтобы выстрелить, ты называешь клетку двумя частями: букву столбца и цифру строки — «Г4». Скажешь только «Г» — непонятно, какая из клеток столбца.</p><p>С координатами так же: одна широта — это целая параллель вокруг всей Земли. Нужна ещё долгота — о ней § 19.</p></div><p class="lifebook">В учебнике это называется: <b>когда вы играете в шахматы или морской бой, то тоже используете «адрес» клеточки из двух частей</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Навигатор в машине</span></div><div class="lifebody"><p>По дороге из Тольятти в Москву в машине работает Яндекс Навигатор. Это и есть «прибор спутникового позиционирования» из учебника: телефон ловит сигналы нескольких спутников и сам узнаёт свои координаты, а на экране рисуется путь.</p><p>Открой карту в телефоне: значок «я здесь» стоит там, где телефон нашёл свои координаты.</p></div><p class="lifebook">В учебнике это называется: <b>при перемещении объекта по местности на мониторе такого навигатора вычерчивается траектория движения</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Спроси маму-геолога</span></div><div class="lifebody"><p>Учебник пишет: геологи в экспедициях определяют координаты того, что изучают. Спроси маму: как она записывает место, где нашла интересный камень или делала «закопушку»? Есть ли у неё координаты в телефоне?</p></div><p class="lifebook">В учебнике это называется: <b>геологи, геодезисты, географы, находясь в экспедиции, определяют координаты</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Почему в географическом адресе две части? Не хватит ли одной широты?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Схема «Адрес из двух частей»: что даёт одна буква в морском бое?</div>
+<div class="rev ans" id="a1" hidden>Одна широта — это целая параллель, а на ней много мест: у всех точек одной параллели широта одинаковая. Как одна буква в морском бое — целый столбец. Нужна вторая часть — долгота: где широта и долгота пересекаются, там одна точка.</div>
+</div>
+<div class="think">
+<p class="qt">2. Что общего у навигатора в машине и у первооткрывателей?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Второй и последний абзацы.</div>
+<div class="rev ans" id="a2" hidden>И те и другие определяют координаты места. Первооткрыватели — приборами, сами, а потом наносили новые земли на карту. Навигатор делает это сам по сигналам спутников и рисует путь на экране.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Что значит определить географическую широту?</h2></div>
+<div class="easy">
+<p><span class="term" role="button" tabindex="0" data-t="shir"><b>Географическая <span class="tl">широта</span></b></span> — это сколько градусов от экватора до параллели, на которой стоит точка. У всех точек одной параллели широта одинаковая.</p>
+<p>Считают от экватора. К северу от него — <span class="term" role="button" tabindex="0" data-t="sssh"><i>северная <span class="tl">широта</span></i></span> (с. ш.), к югу — <i>южная</i> (ю. ш.). Россия вся в Северном полушарии, поэтому у всех мест в России широта северная. Австралия — в Южном, там широта везде южная.</p>
+<p>Чтобы узнать широту, ищем параллель точки и считаем от экватора строго вдоль меридиана — на север или на юг (рис. 46). На экваторе широта 0°, на полюсе — 90°. Чем дальше от экватора, тем широта больше. Поэтому у полюсов широты называют <span class="term" role="button" tabindex="0" data-t="vysnizk"><i><span class="tl">высокими</span></i></span>, а у экватора — <i>низкими</i>.</p>
+<p>Некоторые параллели на картах подписывают особо — это <span class="term" role="button" tabindex="0" data-t="tropik"><i><span class="tl">тропики</span></i></span> и <span class="term" role="button" tabindex="0" data-t="polkrug"><i>полярные <span class="tl">круги</span></i></span>. Ты знаешь их по § 10—11.</p>
+</div>
+<div class="book" hidden>
+<p>Для всех точек, лежащих на одной и той же параллели, широта одинакова. Широта отсчитывается от экватора. Все точки, располагающиеся к северу от экватора, имеют <span class="term" role="button" tabindex="0" data-t="sssh"><i>северную <span class="tl">широту</span></i></span> (с. ш.), а располагающиеся к югу от экватора — <i>южную широту</i> (ю. ш.).</p>
+<p>Россия, например, целиком лежит в Северном полушарии. Поэтому все географические объекты в нашей стране имеют северную широту. Наоборот, в Австралии, лежащей в Южном полушарии, широта везде южная.</p>
+<p>Для того чтобы узнать широту заданной точки, нужно найти параллель, на которой она расположена. Отсчёт начинаем от экватора, следуя строго вдоль меридиана на север или на юг (рис. 46). Все точки экватора имеют нулевую широту. Расстояние от экватора до полюса 90°. Чем больше мы будем удаляться от экватора, тем больше будет градусное расстояние до нужной нам параллели, тем больше будет её широта. Поэтому широты в полярных областях так и называются — <span class="term" role="button" tabindex="0" data-t="vysnizk"><i><span class="tl">высокие</span></i></span>, а вблизи экватора — <i>низкие</i>.</p>
+<p>Некоторые параллели специально подписывают и отмечают на картах. Это <span class="term" role="button" tabindex="0" data-t="tropik"><i><span class="tl">тропики</span></i></span> и <span class="term" role="button" tabindex="0" data-t="polkrug"><i>полярные <span class="tl">круги</span></i></span>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g18_r46" src="img/602c56ce39ea.jpg" alt="Глобус с параллелями: у экватора 0°, к северу и к югу подписаны 10°, 20° … 80°, у Северного полюса 90°. Северное полушарие голубое, Южное — оранжевое. Синие стрелки идут от экватора по меридиану на север к Санкт-Петербургу (60° с. ш.) и Москве (56° с. ш.). Синяя стрелка «северная широта» — от экватора к Северному полюсу, красная «южная широта» — от экватора на юг" style="max-width:420px"><figcaption><span class="src">из учебника</span><b>Рис. 46.</b> Определение географической широты<br><span style="color:var(--soft)">▲ Найди на рисунке: от какой линии начинаются все стрелки? Какая из двух синих стрелок длиннее и почему?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 308" role="img" aria-label="Земля сбоку: круг, посередине экватор 0°, сверху Северный полюс 90° с. ш., снизу Южный полюс 90° ю. ш. Верхняя половина — северная широта, нижняя — южная. Москва на круге; от экватора к ней по меридиану идёт фиолетовая дуга, угол — 56°. Пунктиром — параллели 23,5° и 66,5° и параллель Москвы"><use href="#g18-shirota"/></svg><figcaption>Широта — это дуга меридиана от экватора до точки, в градусах.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 372" role="img" aria-label="Шкала широт от экватора 0° до Северного полюса 90°. Отмечены Северный тропик 23,5° и Северный полярный круг 66,5°. Ниже тропика — низкие широты, выше полярного круга — высокие. Точки: Анталия около 37°, Тольятти и Ягодное около 53,5°, Москва около 56°, Санкт-Петербург 60°"><use href="#g18-lestnica"/></svg><figcaption>Твои места на лестнице широт.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">На полях учебника</span><p><b>Географическая широта</b> — это расстояние в градусах от экватора до параллели, проведённой через заданную точку.</p></div>
+<div class="side yellow"><span class="slab">На полях учебника</span><p>Северный тропик — это <b>параллель 23,5° с. ш.</b><br>Южный тропик — это <b>параллель 23,5° ю. ш.</b></p></div>
+<div class="side yellow"><span class="slab">На полях учебника</span><p>Северный полярный круг — это <b>параллель 66,5° с. ш.</b><br>Южный полярный круг — это <b>параллель 66,5° ю. ш.</b></p></div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Определить географическую широту точки — это значит найти параллель, на которой она расположена.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Москва, Петербург, Тольятти</span></div><div class="lifebody"><p>Москва — около 56° с. ш., Санкт-Петербург — 60° с. ш.: он на 4° ближе к Северному полюсу. 1° вдоль меридиана — около 111 км (§ 17), значит, по меридиану между ними около 440 км.</p><p>Тольятти и Ягодное — около 53,5° с. ш., на 2,5° южнее Москвы: по меридиану это меньше 300 км. А ехать 14 часов — потому что Тольятти ещё и далеко на востоке. Насколько — покажет долгота в § 19.</p></div><p class="lifebook">В учебнике это называется: <b>Москва — 56° с. ш., Санкт-Петербург — 60° с. ш. (рис. 46)</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Анталия — ниже по лестнице</span></div><div class="lifebody"><p>В Анталии, где ты гуляла по древнему Фаселису, широта около 37° с. ш. — на 19° ближе к экватору, чем Москва. Поэтому там Солнце в полдень выше (§ 11).</p><p>Но это всё равно северная широта: Турция, как и Россия, — в Северном полушарии.</p></div><p class="lifebook">В учебнике это называется: <b>чем больше мы будем удаляться от экватора, тем больше будет её широта</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Насколько Санкт-Петербург ближе к Северному полюсу, чем Москва, — в градусах и в километрах?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Рис. 46 и § 17: 1° вдоль меридиана — около 111 км.</div>
+<div class="rev ans" id="a3" hidden>Петербург — 60° с. ш., Москва — 56° с. ш. Разница 4°. Вдоль меридиана 4 × 111 ≈ 440 км.</div>
+</div>
+<div class="think">
+<p class="qt">4. Почему широты у полюсов называют высокими?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Как меняется широта, когда удаляешься от экватора?</div>
+<div class="rev ans" id="a4" hidden>Широту считают от экватора: на нём 0°, и чем дальше, тем больше. У полюсов она самая большая — 90°, поэтому широты «высокие». У экватора числа маленькие — широты «низкие».</div>
+</div>
+<div class="think">
+<p class="qt">5. У Северного и у Южного полюса широта 90°. Как их не перепутать?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Северная и южная широта.</div>
+<div class="rev ans" id="a5" hidden>По буквам: у Северного полюса 90° с. ш., у Южного — 90° ю. ш. Одно число без «с. ш.» или «ю. ш.» не говорит, в каком полушарии точка.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Шаг за шагом. Определяем географическую широту</h2></div>
+<div class="rubric">Шаг за шагом</div>
+<div class="easy">
+<p>Найдём широту Санкт-Петербурга и Москвы.</p>
+<p><b>Если точка на параллели.</b> 1) Находим её на карте. 2) Смотрим, в каком полушарии — Северном или Южном. 3) Читаем подпись параллели. Санкт-Петербург стоит на параллели 60° к северу от экватора: его широта 60° с. ш. (рис. 46).</p>
+<p><b>Если точка между параллелями.</b> 1) Берём ближайшую параллель <i>со стороны экватора</i>. 2) Считаем градусы от неё до точки: между параллелями на карте 10°, значит, 1° — десятая часть промежутка. 3) Прибавляем.</p>
+<p>Москва: ближайшая параллель со стороны экватора — 50° с. ш., до Москвы около 6°. Москва севернее 50°, поэтому 50° + 6° = <b>56° с. ш.</b></p>
+</div>
+<div class="book" hidden>
+<p>Определим широту Санкт-Петербурга и Москвы. Чтобы определить широту объекта, необходимо:</p>
+<p>1. Найти объект на карте.<br>2. Определить, в каком полушарии, Северном или Южном, он находится.<br>3. Определить широту параллели, на которой расположен объект. (Так, Санкт-Петербург находится на параллели, отстоящей на 60° к северу от экватора, его широта 60° с. ш., см. рис. 46.)</p>
+<p>Если объект расположен между параллелями, следует:</p>
+<p>1. Определить широту ближайшей к объекту параллели со стороны экватора (см. шаги 1—3).<br>2. Определить число градусов от этой параллели до объекта. (Расстояние между параллелями на карте 10°, значит, 1° соответствует одна десятая часть этого расстояния.)<br>3. Прибавить получившееся число к широте найденной ближайшей параллели. (Так, ближайшая к Москве параллель со стороны экватора — 50° с. ш. Расстояние от этой параллели до Москвы около 6°. Мы уже знаем, что Москва расположена севернее параллели 50° с. ш., значит, её широта 50° + 6° = 56° с. ш.)</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 316" role="img" aria-label="Кусок карты между параллелями 50° с. ш. и 60° с. ш. Слева линейка: десять делений по 1°. Санкт-Петербург — на параллели 60°. Москва — на шестом делении выше 50°: стрелка «+6°». Ещё ниже Москвы — Тольятти. Стрелка вниз — к экватору. Внизу: 50° + 6° = 56° с. ш."><use href="#g18-shag"/></svg><figcaption>Промежуток в 10° делим на десять частей — и считаем от параллели со стороны экватора.</figcaption></div></figure>
+<div class="col">
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Глобус дома</span></div><div class="lifebody"><p>В § 17 ты искала на глобусе, между какими параллелями стоит Москва. Повтори «Шаг за шагом»: найди параллели 50° и 60° и на глаз раздели промежуток на 10 частей. На какой части Москва? А Тольятти?</p><p>Потом найди Австралию: проверь, что её широта южная.</p></div><p class="lifebook">В учебнике это называется: <b>расстояние между параллелями на карте 10°, значит, 1° соответствует одна десятая часть этого расстояния</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Найди по схеме «Шаг за шагом» широту Тольятти.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Ближайшая параллель со стороны экватора — 50°. Сколько делений до точки?</div>
+<div class="rev ans" id="a6" hidden>Тольятти между 50° и 60°, на три с половиной деления выше 50°: 50° + 3,5° ≈ 53,5° с. ш. Это немного южнее Москвы.</div>
+</div>
+<div class="think">
+<p class="qt">7. Почему от параллели «со стороны экватора» градусы прибавляют?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Откуда считают широту и как она растёт?</div>
+<div class="rev ans" id="a7" hidden>Широта растёт от экватора к полюсу. Параллель со стороны экватора — с меньшим числом, а точка дальше от экватора, значит, её широта больше. В Южном полушарии так же, только широта южная: от 30° ю. ш. ещё на 4° к Южному полюсу — 34° ю. ш.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги параграфа</h2></div>
+<div class="rubric">Запомните</div>
+<div class="remember"><span>Географические координаты</span><span>Географическая широта</span></div>
+<div class="rubric">Это я знаю</div>
+<div class="ask"><b>Вопросы учебника</b><ol><li>Что называется географическими координатами?</li><li>Географическую широту отсчитывают от: а) Северного полюса; б) Южного полюса; в) экватора.</li><li>Установите соответствие:<br>1) Экватор; 2) Северный полярный круг; 3) Южный полюс; 4) Северный тропик; 5) Южный тропик.<br>А) 90° ю. ш.; Б) 23,5° с. ш.; В) 0°; Г) 66,5° с. ш.; Д) 23,5° ю. ш.</li><li>Какие утверждения верны?<br>А. Северный тропик расположен дальше от Северного полюса, чем Северный полярный круг.<br>Б. Северный тропик расположен ближе к экватору, чем Южный полярный круг.<br>1) Верно только А; 2) Верно только Б; 3) Оба верны; 4) Оба неверны.</li><li>Вспомните, какие области нашей планеты ограничивают тропики и полярные круги.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к вопросам 4 и 5</button></div>
+<div class="rev hint" id="r1" hidden><b>4.</b> Посмотри на «Лестницу широт»: тропик — 23,5°, полярный круг — 66,5°. Чем больше число, тем ближе к полюсу. <b>5.</b> Вспомни пояса освещённости из § 11.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Проверь себя: вопросы 1—5</button></div>
+<div class="rev ans" id="r2" hidden><b>1.</b> Широта и долгота точки на земном шаре — её «адрес». <b>2.</b> в) от экватора. <b>3.</b> 1 — В, 2 — Г, 3 — А, 4 — Б, 5 — Д. <b>4.</b> 3) оба верны: тропик (23,5°) дальше от полюса, чем полярный круг (66,5°), и ближе к экватору, чем Южный полярный круг (66,5° ю. ш.). <b>5.</b> Между тропиками — тропический пояс, там Солнце бывает в зените. Между тропиками и полярными кругами — два умеренных пояса. За полярными кругами — полярные пояса с полярным днём и полярной ночью.</div></div>
+<div class="rubric">Это я могу</div>
+<div class="ask"><b>Задание учебника</b><ol start="6"><li>По политической карте полушарий в <i>атласе</i> определите, через какие страны проходят параллели: а) 10° с. ш.; б) 10° ю. ш. Результаты оформите в таблице.</li></ol></div>
+<div class="tscroll"><table class="ttab"><tr><th>Широта</th><th>Страна</th></tr><tr><td>10° с. ш.</td><td>…</td></tr><tr><td>10° ю. ш.</td><td>…</td></tr></table></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к заданию 6</button></div>
+<div class="rev hint" id="r3" hidden>Таблицу — в рабочую тетрадь. Найди на карте подпись «10°» у боковой рамки и веди пальцем вдоль параллели. Северная — выше экватора, южная — ниже. Мелкие острова можно пропустить.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Проверь себя: задание 6</button></div>
+<div class="rev ans" id="r4" hidden><b>10° с. ш.:</b> в Америке — Коста-Рика, Колумбия, Венесуэла; в Африке — Гвинея, Гана, Того, Бенин, Нигерия, Камерун, Чад, ЦАР, Южный Судан, Эфиопия, Сомали; в Азии — Индия (юг), Таиланд, Вьетнам, Филиппины.<br><b>10° ю. ш.:</b> в Америке — Перу, Бразилия, Боливия (самый север); в Африке — Ангола, ДР Конго, Замбия, Танзания, Малави; в Азии и Океании — Индонезия, Папуа — Новая Гвинея. На карте атласа могут быть видны не все.</div></div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt5" data-n="8">
+<div class="sortlab">Северная или южная широта?</div>
+<div class="sitem" data-r="0"><p class="stext">Москва</p><div class="sbtns"><button class="sbtn" data-b="0">с. ш.</button><button class="sbtn" data-b="1">ю. ш.</button></div><p class="swhy" hidden>Вся Россия — в Северном полушарии.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Австралия</p><div class="sbtns"><button class="sbtn" data-b="0">с. ш.</button><button class="sbtn" data-b="1">ю. ш.</button></div><p class="swhy" hidden>Лежит в Южном полушарии — широта везде южная.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Санкт-Петербург</p><div class="sbtns"><button class="sbtn" data-b="0">с. ш.</button><button class="sbtn" data-b="1">ю. ш.</button></div><p class="swhy" hidden>60° с. ш.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Южный полюс</p><div class="sbtns"><button class="sbtn" data-b="0">с. ш.</button><button class="sbtn" data-b="1">ю. ш.</button></div><p class="swhy" hidden>90° ю. ш.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Анталия</p><div class="sbtns"><button class="sbtn" data-b="0">с. ш.</button><button class="sbtn" data-b="1">ю. ш.</button></div><p class="swhy" hidden>Около 37° с. ш. — Турция в Северном полушарии.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Южный тропик</p><div class="sbtns"><button class="sbtn" data-b="0">с. ш.</button><button class="sbtn" data-b="1">ю. ш.</button></div><p class="swhy" hidden>23,5° ю. ш.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Тольятти</p><div class="sbtns"><button class="sbtn" data-b="0">с. ш.</button><button class="sbtn" data-b="1">ю. ш.</button></div><p class="swhy" hidden>Около 53,5° с. ш.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Северный полярный круг</p><div class="sbtns"><button class="sbtn" data-b="0">с. ш.</button><button class="sbtn" data-b="1">ю. ш.</button></div><p class="swhy" hidden>66,5° с. ш.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt6" data-n="7">
+<div class="sortlab">Какая это широта?</div>
+<div class="sitem" data-r="0"><p class="stext">Экватор</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">23,5°</button><button class="sbtn" data-b="2">66,5°</button><button class="sbtn" data-b="3">90°</button></div><p class="swhy" hidden>От него ведут отсчёт.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Северный тропик</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">23,5°</button><button class="sbtn" data-b="2">66,5°</button><button class="sbtn" data-b="3">90°</button></div><p class="swhy" hidden>23,5° с. ш.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Южный полярный круг</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">23,5°</button><button class="sbtn" data-b="2">66,5°</button><button class="sbtn" data-b="3">90°</button></div><p class="swhy" hidden>66,5° ю. ш.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Северный полюс</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">23,5°</button><button class="sbtn" data-b="2">66,5°</button><button class="sbtn" data-b="3">90°</button></div><p class="swhy" hidden>90° с. ш. — дальше некуда.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Южный тропик</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">23,5°</button><button class="sbtn" data-b="2">66,5°</button><button class="sbtn" data-b="3">90°</button></div><p class="swhy" hidden>23,5° ю. ш.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Северный полярный круг</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">23,5°</button><button class="sbtn" data-b="2">66,5°</button><button class="sbtn" data-b="3">90°</button></div><p class="swhy" hidden>66,5° с. ш.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Южный полюс</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">23,5°</button><button class="sbtn" data-b="2">66,5°</button><button class="sbtn" data-b="3">90°</button></div><p class="swhy" hidden>90° ю. ш.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Географические координаты</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 298" aria-hidden="true"><use href="#g18-boy"/></svg><span class="ftext">Широта и долгота — «адрес» точки из двух частей.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Географическая широта</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 308" aria-hidden="true"><use href="#g18-shirota"/></svg><span class="ftext">Градусы от экватора до параллели точки. От 0° до 90°.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Долгота</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 298" aria-hidden="true"><use href="#g18-boy"/></svg><span class="ftext">На каком меридиане точка. Подробно — в § 19.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">С. ш. и ю. ш.</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 308" aria-hidden="true"><use href="#g18-shirota"/></svg><span class="ftext">Северная — к северу от экватора, южная — к югу. Россия — с. ш., Австралия — ю. ш.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Высокие и низкие широты</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 372" aria-hidden="true"><use href="#g18-lestnica"/></svg><span class="ftext">Высокие — у полюсов, низкие — у экватора.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Тропики и полярные круги</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 372" aria-hidden="true"><use href="#g18-lestnica"/></svg><span class="ftext">23,5° и 66,5° — к северу и к югу от экватора.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Широта Москвы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 316" aria-hidden="true"><use href="#g18-shag"/></svg><span class="ftext">50° + 6° = 56° с. ш. Петербург — 60° с. ш.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Навигатор</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 298" aria-hidden="true"><use href="#g18-boy"/></svg><span class="ftext">Узнаёт свои координаты по сигналам нескольких спутников.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Из чего состоят географические координаты?</h3><div class="opts">
+<button class="opt" data-ok="1">Широта и долгота</button>
+<button class="opt">Параллель и экватор</button>
+<button class="opt">Север и юг</button>
+<button class="opt">Масштаб и азимут</button></div>
+<div class="fb">Две части «адреса»: широта и долгота.</div></div>
+<div class="q"><h3>2. От чего отсчитывают географическую широту?</h3><div class="opts">
+<button class="opt" data-ok="1">От экватора</button>
+<button class="opt">От Северного полюса</button>
+<button class="opt">От Гринвичского меридиана</button>
+<button class="opt">От Москвы</button></div>
+<div class="fb">На экваторе широта 0°, к полюсам — до 90°.</div></div>
+<div class="q"><h3>3. Какая широта у всех мест России?</h3><div class="opts">
+<button class="opt" data-ok="1">Северная</button>
+<button class="opt">Южная</button>
+<button class="opt">Нулевая</button>
+<button class="opt">И северная, и южная</button></div>
+<div class="fb">Россия целиком лежит в Северном полушарии.</div></div>
+<div class="q"><h3>4. Какая широта у Москвы?</h3><div class="opts">
+<button class="opt" data-ok="1">Около 56° с. ш.</button>
+<button class="opt">60° с. ш.</button>
+<button class="opt">Около 56° ю. ш.</button>
+<button class="opt">90° с. ш.</button></div>
+<div class="fb">50° + 6° = 56° с. ш. А 60° с. ш. — у Санкт-Петербурга.</div></div>
+<div class="q"><h3>5. Северный полярный круг — это параллель…</h3><div class="opts">
+<button class="opt" data-ok="1">66,5° с. ш.</button>
+<button class="opt">23,5° с. ш.</button>
+<button class="opt">90° с. ш.</button>
+<button class="opt">66,5° ю. ш.</button></div>
+<div class="fb">23,5° с. ш. — Северный тропик, 90° с. ш. — Северный полюс.</div></div>
+<div class="q"><h3>6. Как называют широты у полюсов?</h3><div class="opts">
+<button class="opt" data-ok="1">Высокие</button>
+<button class="opt">Низкие</button>
+<button class="opt">Нулевые</button>
+<button class="opt">Южные</button></div>
+<div class="fb">Чем дальше от экватора, тем больше широта: у полюсов — до 90°.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Зачем нужны координаты</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>У каждой точки — «адрес» из двух частей, как клетка в морском бое: широта и долгота.</li><li>По координатам находят место на карте; первооткрыватели так наносили новые земли.</li><li>Штурманы, спасатели, геологи; сейчас — навигатор по сигналам спутников.</li></ol></div>
+</div>
+<div class="think">
+<h3>Что такое широта</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Расстояние в градусах от экватора до параллели точки.</li><li>К северу — с. ш., к югу — ю. ш.; Россия — северная, Австралия — южная.</li><li>От 0° на экваторе до 90° у полюсов: высокие и низкие широты.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как найти широту по карте</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Найти точку, определить полушарие.</li><li>На параллели — прочитать подпись: Санкт-Петербург 60° с. ш.</li><li>Между параллелями — от ближайшей со стороны экватора прибавить градусы: Москва 50° + 6° = 56° с. ш.</li></ol></div>
+</div>
+<div class="think">
+<h3>Особые параллели</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Тропики — 23,5° с. ш. и 23,5° ю. ш.</li><li>Полярные круги — 66,5° с. ш. и 66,5° ю. ш.</li><li>Они ограничивают пояса освещённости (§ 11).</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g17.html">‹ §17 Градусная сетка</a>
+  <span class="pn cur">§18 Координаты (1)</span>
+ </div>
+</div>
+
+<footer><div class="wrap">География, 5—6 классы. А. И. Алексеев и др., «Полярная звезда», 2023. § 18, с. 62—64. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'g18-boy':'0 0 360 298','g18-shirota':'0 0 360 308','g18-lestnica':'0 0 360 372','g18-shag':'0 0 360 316'};
+
+var T={
+koord:{w:"Географические координаты",k:"адрес точки",s:"g18-boy",t:"Широта и долгота любой точки на земном шаре. Как «адрес» клетки в морском бое из двух частей — буквы и цифры.",r:"",e:""},
+shir:{w:"Географическая широта",k:"первая часть адреса",s:"g18-shirota",t:"Расстояние в градусах от экватора до параллели, проведённой через заданную точку. Бывает от 0° (экватор) до 90° (полюс).",r:"",e:"Москва — около 56° с. ш., Тольятти и Ягодное — около 53,5° с. ш., Анталия — около 37° с. ш."},
+dolg:{w:"Географическая долгота",k:"вторая часть адреса",s:"g18-boy",t:"Показывает, на каком меридиане лежит точка. Подробно — в § 19.",r:"",e:""},
+sssh:{w:"Северная и южная широта",k:"с. ш. и ю. ш.",s:"g18-shirota",t:"К северу от экватора широта северная (с. ш.), к югу — южная (ю. ш.). Вся Россия — в северных широтах, вся Австралия — в южных.",r:"",e:""},
+vysnizk:{w:"Высокие и низкие широты",k:"как называют",s:"g18-lestnica",t:"Высокие — в полярных областях, у полюсов: там широта самая большая, до 90°. Низкие — вблизи экватора.",r:"",e:""},
+tropik:{w:"Тропики",k:"особые параллели",s:"g18-lestnica",t:"Северный тропик — параллель 23,5° с. ш., Южный — 23,5° ю. ш. Между ними Солнце бывает в зените (§ 11).",r:"",e:""},
+polkrug:{w:"Полярные круги",k:"особые параллели",s:"g18-lestnica",t:"Северный полярный круг — параллель 66,5° с. ш., Южный — 66,5° ю. ш. За ними бывают полярный день и полярная ночь (§ 11).",r:"",e:""},
+shturm:{w:"Штурман",k:"профессия",s:"g18-boy",t:"Специалист, который прокладывает путь корабля, самолёта или подводной лодки — по географическим координатам.",r:"<b>stuurman</b> (нидерл.) — рулевой",e:""},
+gps:{w:"Прибор спутникового позиционирования",k:"навигатор",s:"g18-boy",t:"Прибор, который узнаёт своё место по сигналам нескольких искусственных спутников Земли и рисует на экране пройденный путь. Такие программы есть в телефонах.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('geography:g18:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('geography:g18:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('geography:g18:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('geography:g18:read_'+id,on?'1':'0')});
+  });
+});
+
+/* --- увеличение карт, схем и картинок по нажатию (на телефоне мелкие подписи) --- */
+var zoom=document.createElement('div');zoom.className='zoom';zoom.hidden=true;
+zoom.setAttribute('role','dialog');zoom.setAttribute('aria-modal','true');zoom.setAttribute('aria-label','Увеличенная картинка');
+zoom.innerHTML='<div class="zoombar"><span>Двигай пальцем, чтобы рассмотреть</span><button class="zoomclose">Закрыть ✕</button></div><div class="zoomin"></div>';
+document.body.appendChild(zoom);
+function openZoom(el){
+  var box=zoom.querySelector('.zoomin');box.innerHTML='';
+  var c=el.cloneNode(true);c.removeAttribute('id');
+  if(c.tagName.toLowerCase()==='svg'){
+    var v=(c.getAttribute('viewBox')||'0 0 400 300').split(/\s+/);
+    c.style.width=Math.round(Math.max(parseFloat(v[2])*2.3,window.innerWidth-24))+'px';
+  }else{
+    c.style.width=Math.round(Math.max((el.naturalWidth||600)*1.1,window.innerWidth*1.5))+'px';
+  }
+  c.style.maxWidth='none';c.style.height='auto';
+  box.appendChild(c);zoom.hidden=false;document.documentElement.style.overflow='hidden';
+  zoom.querySelector('.zoomclose').focus();
+}
+function closeZoom(){zoom.hidden=true;document.documentElement.style.overflow='';}
+document.addEventListener('click',function(e){
+  if(e.target.closest('.zoomclose')){closeZoom();return}
+  var s=e.target.closest('.fig svg, .photo img, .banner img');
+  if(s&&!zoom.contains(s)){openZoom(s);}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!zoom.hidden)closeZoom()});
+
+</script>
+</body>
+</html>
