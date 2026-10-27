@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Двадцать семь лет войны Афин и Спарты, фаланга с копьями в два этажа, оратор с камешками во рту и мраморный лев при Херонее. Трудные слова можно нажимать.">
+<title>Ослабление Эллады. Возвышение Македонии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="q-lenta" viewBox="0 0 540 314">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ЭЛЛАДА СЛАБЕЕТ, МАКЕДОНИЯ РАСТЁТ (ГОДЫ ДО Н. Э.)</text>
+  <g text-anchor="middle">
+  <text x="61" y="42" font-size="13" font-weight="700" fill="var(--red)">431</text>
+  <text x="61" y="57" font-size="10" fill="var(--soft)">начало войны</text>
+  <text x="184" y="42" font-size="13" font-weight="700" fill="var(--red)">404</text>
+  <text x="184" y="57" font-size="10" fill="var(--soft)">Афины проиграли</text>
+  <text x="440" y="42" font-size="13" font-weight="700" fill="var(--ochre)">338—337</text>
+  <text x="440" y="57" font-size="10" fill="var(--soft)">Херонея, Коринфский союз</text>
+  </g>
+  <rect x="61" y="88" width="123" height="16" rx="4" fill="var(--red)" opacity="0.85"/>
+  <text x="122" y="160" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">Пелопоннесская война, 27 лет</text>
+  <line x1="186" y1="96" x2="372" y2="96" stroke="var(--stone)" stroke-width="3" stroke-dasharray="6 5"/>
+  <text x="280" y="120" text-anchor="middle" font-size="10" fill="var(--soft)">власть Спарты, войны полисов</text>
+  <rect x="380" y="88" width="104" height="16" rx="4" fill="var(--ochre)"/>
+  <text x="432" y="160" text-anchor="middle" font-size="10" font-weight="700" fill="var(--illink)">Македония набирает силу</text>
+  <g stroke="var(--illink)" stroke-width="1.5">
+  <line x1="61" y1="62" x2="61" y2="140"/><line x1="184" y1="62" x2="184" y2="140"/><line x1="484" y1="62" x2="484" y2="140"/>
+  </g>
+  <line x1="20" y1="140" x2="520" y2="140" stroke="var(--illink)" stroke-width="2"/>
+  <circle cx="61" cy="140" r="5" fill="var(--red)"/><circle cx="184" cy="140" r="5" fill="var(--red)"/>
+  <circle cx="484" cy="140" r="5" fill="var(--ochre)"/>
+  <text x="432" y="175" text-anchor="middle" font-size="10" fill="var(--soft)">середина IV века</text>
+  <rect x="8" y="188" width="524" height="68" rx="10" fill="var(--paper2)"/>
+  <text x="20" y="208" font-size="11.5" font-weight="700" fill="var(--illink)">Посчитаем: 431 − 27 = 404. Война кончилась в 404 году до н. э.</text>
+  <text x="20" y="227" font-size="10.5" fill="var(--illink)">В тексте и на ленте времени учебника война начинается в 431 году,</text>
+  <text x="20" y="243" font-size="10.5" fill="var(--illink)">а в «Подведём итоги» — «в 432 году». Верно — 431.</text>
+  <text x="8" y="280" font-size="10.5" fill="var(--soft)">Пелопоннесская война началась почти через 50 лет после Саламина (480, §28).</text>
+  <text x="8" y="304" font-size="12" font-weight="700" fill="var(--moss)">Пока полисы воевали между собой, на севере выросла Македония.</text>
+</symbol>
+
+<symbol id="q-falanga" viewBox="0 0 540 300">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">МАКЕДОНСКАЯ ФАЛАНГА (ВИД СВЕРХУ) И ДЛИНА КОПЬЯ</text>
+  <g fill="var(--flame)"><circle cx="70" cy="36" r="3"/><circle cx="120" cy="38" r="3"/><circle cx="170" cy="35" r="3"/>
+  <circle cx="220" cy="37" r="3"/><circle cx="270" cy="36" r="3"/></g>
+  <text x="290" y="40" font-size="10" fill="var(--soft)">лучники и пращники</text>
+  <g stroke="var(--brown)" stroke-width="1.4">
+  <line x1="56" y1="96" x2="56" y2="52"/><line x1="68" y1="96" x2="68" y2="56"/><line x1="80" y1="96" x2="80" y2="52"/>
+  <line x1="92" y1="96" x2="92" y2="56"/><line x1="104" y1="96" x2="104" y2="52"/><line x1="116" y1="96" x2="116" y2="56"/>
+  <line x1="128" y1="96" x2="128" y2="52"/><line x1="140" y1="96" x2="140" y2="56"/><line x1="152" y1="96" x2="152" y2="52"/>
+  <line x1="164" y1="96" x2="164" y2="56"/><line x1="176" y1="96" x2="176" y2="52"/><line x1="188" y1="96" x2="188" y2="56"/>
+  <line x1="200" y1="96" x2="200" y2="52"/><line x1="212" y1="96" x2="212" y2="56"/><line x1="224" y1="96" x2="224" y2="52"/>
+  <line x1="236" y1="96" x2="236" y2="56"/><line x1="248" y1="96" x2="248" y2="52"/><line x1="260" y1="96" x2="260" y2="56"/>
+  <line x1="272" y1="96" x2="272" y2="52"/>
+  </g>
+  <rect x="48" y="96" width="232" height="120" rx="4" fill="var(--red)" opacity="0.8"/>
+  <g stroke="#FFF6E9" stroke-width="1" opacity="0.6">
+  <line x1="48" y1="111" x2="280" y2="111"/><line x1="48" y1="126" x2="280" y2="126"/><line x1="48" y1="141" x2="280" y2="141"/>
+  <line x1="48" y1="156" x2="280" y2="156"/><line x1="48" y1="171" x2="280" y2="171"/><line x1="48" y1="186" x2="280" y2="186"/>
+  <line x1="48" y1="201" x2="280" y2="201"/>
+  </g>
+  <text x="164" y="160" text-anchor="middle" font-size="12" font-weight="700" fill="#FFF6E9">16 рядов в глубину</text>
+  <text x="164" y="176" text-anchor="middle" font-size="10" fill="#FFF6E9">до тысячи воинов в каждом ряду</text>
+  <path d="M164 236 V220" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="164" y="252" text-anchor="middle" font-size="10" fill="var(--soft)">враг сзади — задние ряды</text>
+  <text x="164" y="266" text-anchor="middle" font-size="10" fill="var(--soft)">разворачиваются копьями к нему</text>
+  <text x="330" y="70" font-size="11.5" font-weight="700" fill="var(--illink)">ДЛИНА КОПЬЯ</text>
+  <rect x="338" y="84" width="16" height="150" rx="3" fill="var(--brown)"/>
+  <text x="346" y="252" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--illink)">до 6 м</text>
+  <rect x="404" y="159" width="16" height="75" rx="3" fill="var(--ochre)"/>
+  <text x="412" y="252" text-anchor="middle" font-size="10.5" fill="var(--illink)">рулетка</text>
+  <text x="412" y="266" text-anchor="middle" font-size="10" fill="var(--soft)">3 м</text>
+  <rect x="466" y="159" width="44" height="75" rx="3" fill="var(--paper2)" stroke="var(--stone)" stroke-width="2"/>
+  <text x="488" y="200" text-anchor="middle" font-size="10" fill="var(--illink)">этаж</text>
+  <text x="488" y="252" text-anchor="middle" font-size="10" fill="var(--soft)">~3 м</text>
+  <line x1="330" y1="234" x2="530" y2="234" stroke="var(--illink)" stroke-width="1.5"/>
+  <text x="8" y="292" font-size="12" font-weight="700" fill="var(--moss)">Копьё — две рулетки или два этажа. И тысячи копий разом.</text>
+</symbol>
+
+<symbol id="q-spor" viewBox="0 0 540 288">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ДЕМОСФЕН ИЛИ ФИЛИПП: ЗА ЧТО СПОРИЛИ ГРЕКИ</text>
+  <rect x="8" y="28" width="258" height="120" rx="10" fill="var(--water)" opacity="0.9"/>
+  <text x="20" y="50" font-size="12.5" font-weight="700" fill="#14262F">ДЕМОСФЕН — СЛОВО</text>
+  <text x="20" y="70" font-size="10" fill="#14262F">свобода полисов и демократия;</text>
+  <text x="20" y="85" font-size="10" fill="#14262F">обличает предателей за золото;</text>
+  <text x="20" y="100" font-size="10" fill="#14262F">зовёт объединиться вокруг Афин;</text>
+  <text x="20" y="120" font-size="10" fill="#14262F">«что на войне железо,</text>
+  <text x="20" y="135" font-size="10" fill="#14262F">то в политике — слово»</text>
+  <rect x="274" y="28" width="258" height="120" rx="10" fill="var(--ochre)"/>
+  <text x="286" y="50" font-size="12.5" font-weight="700" fill="#22190A">ФИЛИПП II — ЗОЛОТО И ВОЙСКО</text>
+  <text x="286" y="70" font-size="10" fill="#22190A">угрозы, подкуп, хитрые интриги;</text>
+  <text x="286" y="85" font-size="10" fill="#22190A">щедро платит своим сторонникам;</text>
+  <text x="286" y="100" font-size="10" fill="#22190A">профессиональная армия;</text>
+  <text x="286" y="120" font-size="10" fill="#22190A">«любые ворота откроет осёл,</text>
+  <text x="286" y="135" font-size="10" fill="#22190A">гружённый золотом»</text>
+  <rect x="8" y="158" width="524" height="78" rx="10" fill="var(--paper2)" stroke="var(--red)" stroke-width="2"/>
+  <text x="20" y="178" font-size="12" font-weight="700" fill="var(--red)">ХЕРОНЕЯ, 338 год до н. э.</text>
+  <text x="20" y="196" font-size="10" fill="var(--illink)">Демосфен бьётся простым гоплитом в первых рядах; греки сначала теснят врага —</text>
+  <text x="20" y="211" font-size="10" fill="var(--illink)">но юный Александр с левого фланга обращает афинян в бегство.</text>
+  <text x="20" y="226" font-size="10" fill="var(--illink)">Потом Филипп не разрушает города, а объединяет полисы в Коринфский союз.</text>
+  <text x="8" y="256" font-size="10.5" fill="var(--soft)">Одни греки ненавидели Филиппа как врага свободы, другие хвалили: он прекратил войны.</text>
+  <text x="8" y="280" font-size="12" font-weight="700" fill="var(--moss)">Слово звало к свободе, но победило войско.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 35</span>
+    <h1>Ослабление Эллады. Возвышение Македонии</h1>
+    <p class="lede">Двадцать семь лет войны Афин и Спарты, фаланга с копьями в два этажа, оратор с камешками во рту и мраморный лев при Херонее. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Какую роль в истории Древней Греции сыграла Македония?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p34.html">‹ §34 Олимпийские игры</a>
+  <span class="pn cur">§35 Македония</span>
+  <a class="pn" href="p36.html">§36 Походы Александра ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Пелопоннесская война">1</a><a href="#s2" data-j="s2" title="Македония при Филиппе II">2</a><a href="#s3" data-j="s3" title="Греция под властью Македонии">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-falanga" src="img/415ad7543fad.jpg" alt="Рисунок: плотный строй пехотинцев в золотистых шлемах, над ними лес длинных копий, впереди всадники"><figcaption><span class="src">из учебника</span><b>Македонская фаланга.</b> Основу профессиональной македонской армии составляла фаланга. Она представляла собой тесно сомкнутое построение пехотинцев в 16 рядов в глубину и до тысячи человек в ряду.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Пелопоннесская война</h2></div>
+<div class="easy">
+<p>Афины и Спарта спорили, кто главный в Греции. В 431 году до н. э. спор перешёл в войну. Её назвали <button class="term" data-t="peloponnes">Пелопоннесской</button>, и она шла 27 лет. Посчитаем: 431 − 27 = 404 — война кончилась в 404 году до н. э.</p>
+<p>Воевала почти вся Греция: одни полисы — за Спарту, в Пелопоннесском союзе, другие — в Афинском морском союзе (§29).</p>
+<p>В самом начале войны в Афинах началась чума. Умерли сотни людей — и среди них Перикл.</p>
+<p>Афины требовали с союзников большую дань — и союзники от них отвернулись. А персы тайно давали деньги Спарте: она ведь воевала с их злейшим врагом. Гибли люди и корабли, рушились города, вытаптывались поля и виноградники.</p>
+<p>Измученные Афины проиграли. Корабли у них сожгли, Длинные стены срыли — те самые, что тянулись до порта Пирей (§29). Морской союз распустили, а Афины должны были платить Спарте огромную дань.</p>
+<p>Теперь Грецией командовала Спарта. Повсюду она свергала демократию и ставила у власти аристократов. Непокорные города облагала данью.</p>
+<p>Но полисы объединились и сбросили власть Спарты. А потом начали враждовать друг с другом — и войны разоряли Грецию.</p>
+<p>Победа не принесла Спарте счастья. В неё хлынуло золото и серебро — то, что раньше там было запрещено (§27). «Община равных» рухнула: одни разбогатели, другие нет, и граждан-воинов стало меньше. Позже ослабевшую Спарту разбили воины из Беотии.</p>
+<p>Крестьяне устали от войн и хотели мира. Одни греки стали искать помощи у Персии, другие — у Македонии, которая набирала силу.</p>
+</div>
+<div class="book" hidden>
+<p>Соперничество Афин и Спарты за господство в Греции в 431 году до н. э. переросло в войну. Она получила название Пелопоннесской и продолжалась 27 лет. В войну были вовлечены практически все греческие государства: одни — на стороне Спарты в составе Пелопоннесского союза, другие — на стороне Афинского морского союза.</p>
+<p>В начале войны в Афинах вспыхнула эпидемия чумы. Сотни людей умерли от болезни, в том числе и Перикл.</p>
+<p>Афины обложили союзников большой данью и этим оттолкнули их от себя. В то же время персы тайно помогали деньгами Спарте, воевавшей против их злейшего врага. Во время боевых действий гибли люди, уничтожались морские суда, разрушались города, вытаптывались поля и виноградники.</p>
+<p>Истощённые войной и покинутые союзниками Афины потерпели поражение. Они лишились флота (оставшиеся суда были сожжены) и укреплений — Длинные стены, которые служили надёжным укрытием афинянам, срыли. Афинский морской союз был распущен, а сам полис обязали выплачивать Спарте огромную дань.</p>
+<p>Эллада оказалась во власти Спарты и возглавляемого ею Пелопоннесского союза. Спартанцы повсюду свергали демократию и устанавливали власть аристократов. Города, которые противились их воле, облагали данью.</p>
+<p>Большинство полисов объединились и свергли власть спартанцев. Однако после получения независимости многие полисы начали враждовать. Войны между ними ослабляли Грецию, разоряли её хозяйство.</p>
+<p>Былые победы принесли Спарте одни несчастья. Огромное количество золота и серебра, наводнившее спартанский полис, разрушило «общину равных». Спарта лишилась своей главной опоры — равноправных граждан-воинов. Позднее ослабевшую Спарту разгромили воины из Беотии.</p>
+<p>Земледельцы, уставшие от разорительных войн, хотели мира. Одни греки начали искать поддержку у Персии, другие — у набиравшей силы Македонии.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 314" role="img" aria-label="Лента: 431 — начало войны, полоса Пелопоннесской войны 27 лет до 404, когда Афины проиграли; дальше пунктир — власть Спарты и войны полисов; в середине IV века Македония набирает силу; 338—337 — Херонея и Коринфский союз. Ниже расчёт: 431 − 27 = 404; в итогах учебника написано «в 432 году», а в тексте и на ленте времени — 431."><use href="#q-lenta"/></svg><figcaption><b>Сто лет на одной ленте.</b> Пока полисы воевали между собой, на севере выросла Македония.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Подумай, с чем было связано ослабление Эллады.</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Афины потеряли Длинные стены (§29). Почему это было так опасно для города?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>§29 — что соединяли стены; здесь — абзац о поражении Афин.</div>
+<div class="rev ans" id="a1" hidden>Стены соединяли Афины с портом Пирей и защищали дорогу к морю. Без стен и без флота город остался отрезан от моря и беззащитен.</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему золото погубило Спарту? Вспомни, что было запрещено в Спарте и что такое «община равных» (§27).</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>§27 — законы Ликурга о деньгах; здесь — абзац о бедах Спарты.</div>
+<div class="rev ans" id="a2" hidden>В Спарте запрещали золотые и серебряные деньги, чтобы никто не разбогател и все граждане были равны. Когда хлынуло золото, одни разбогатели, равенство кончилось — и граждан-воинов, главной опоры Спарты, стало меньше.</div>
+</div>
+<div class="think">
+<p class="qt">3. Почему персы тайно помогали Спарте? Вспомни, кто вёл войну с персами на море (§28—29).</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>§28—29 — кто возглавил флот и морской союз; здесь — третий абзац.</div>
+<div class="rev ans" id="a3" hidden>Злейшим врагом персов были Афины — их флот и морской союз. Помогая Спарте, персы ослабляли греков руками самих греков.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-filipp" src="img/9845130b2cc1.jpg" alt="Мраморная голова мужчины с короткой бородой и густыми волосами" style="max-width:286px"><figcaption><span class="src">из учебника</span><b>Филипп II (2). Древнегреческая скульптура.</b> Он укрепил царскую власть, начал чеканить золотую монету, названную «филиппики», основал новые города, установил тесные торговые связи с соседями. Македонцы заимствовали ряд достижений эллинов, в частности греческий алфавит.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Македония при Филиппе II</h2></div>
+<div class="easy">
+<p>В середине IV века до н. э., пока греческие полисы воевали между собой, на севере Балканского полуострова выросло Македонское государство. Его царь <button class="term" data-t="filipp">Филипп II</button> был дальновидным политиком, умелым дипломатом и талантливым полководцем.</p>
+<p>Он укрепил свою власть, основал новые города и стал чеканить золотые монеты — «филиппики». Позже «филиппиками» назовут и гневные речи — так назывались речи Демосфена против Филиппа (о нём в разделе 3). А ещё македонцы взяли у греков алфавит.</p>
+<p>Главное изобретение Филиппа — македонская <button class="term" data-t="falanga">фаланга</button>. Воины с длинными копьями и короткими мечами, в панцирях, стоят 16 рядами, до тысячи человек в ряду. Это до 16 тысяч воинов — больше, чем зрителей в «Live Арене» (§33).</p>
+<p>Копья у первых рядов разной длины — до 5—6 метров, это две ваши рулетки или два этажа дома. Копья кладут на плечи тем, кто стоит впереди, — и вперёд торчат тысячи копий разом. Если враг заходит сзади, задние ряды просто разворачиваются. А начинают бой лучники и пращники — издалека.</p>
+<p>С такой армией Филипп завоевал Фессалию, Эпир, Фракию и другие земли. Отсталая раньше Македония стала самым сильным государством Средиземноморья.</p>
+</div>
+<div class="book" hidden>
+<p>В середине IV (4) века до н. э., пока греческие полисы воевали между собой, на севере Балканского полуострова возникло Македонское государство. Его царь Филипп II (2) был дальновидным политиком, искусным дипломатом и талантливым полководцем.</p>
+<p>Достижением в военном деле стала македонская фаланга. Вооружённые длинными копьями и короткими мечами, фаланги были защищены панцирями. Первые ряды воинов имели разную длину копий (до 5—6 метров), которые клали на плечи впереди стоящих. Таким образом одновременно использовалось несколько тысяч копий. Последние ряды фаланги, в случае если противник заходил с тыла, разворачивались в его сторону, встречая тысячами копий. Отряды легковооружённых лучников и пращников начинали сражение, не приближаясь к неприятелю.</p>
+<p>Филипп II (2), используя свою армию, завоевал Фессалию, Эпир, Фракию и ряд других областей на Балканском полуострове. В середине IV (4) века до н. э. ранее отсталая Македония представляла собой самое сильное средиземноморское государство.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 300" role="img" aria-label="Схема фаланги сверху: впереди лучники и пращники, за ними лес копий, потом плотный строй — 16 рядов в глубину, до тысячи воинов в ряду; если враг сзади, задние ряды разворачиваются. Справа столбики в одном масштабе: копьё до 6 метров, рулетка 3 метра, этаж около 3 метров."><use href="#q-falanga"/></svg><figcaption><b>Почему фалангу не могли пробить.</b> Копьё — две рулетки или два этажа. И тысячи копий разом.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Почему возвышение Македонии связано с царём Филиппом II (2)?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Сравни фалангу гоплитов (§23) и македонскую фалангу. Что нового придумал Филипп?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>§23 — гоплитская фаланга; здесь — абзацы о фаланге.</div>
+<div class="rev ans" id="a4" hidden>Гоплиты тоже стояли плотным строем со щитами и копьями. Филипп сделал 16 рядов и копья до 5—6 метров, которые клали на плечи передним, — получалось тысячи копий сразу; задние ряды умели развернуться, а бой начинали лучники и пращники. И армия у него была профессиональной.</div>
+</div>
+<div class="think">
+<p class="qt">5. Македонцы взяли у греков алфавит. А откуда алфавит у самих греков? Вспомни §13 и §23.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Подпись к скульптуре Филиппа; §23 — схема об алфавите.</div>
+<div class="rev ans" id="a5" hidden>Греки взяли алфавит у финикийцев (§13) и добавили знаки гласных (§23). Так алфавит переходил от народа к народу: финикийцы → греки → македонцы.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-demosfen" src="img/814e285f9556.jpg" alt="Мраморная статуя: бородатый мужчина в плаще с нахмуренным лбом" style="max-width:285px"><figcaption><span class="src">из учебника</span><b>Демосфен. Древнегреческая статуя.</b> Демосфен рос невзрачным мальчиком со слабым голосом и неразборчивой речью. Уединяясь, он подолгу тренировал голос, отрабатывал чёткость речи, манеру держаться, выразительность жестов. На берегу моря он набивал рот камешками и пытался чётко и ясно произносить фразы, стараясь голосом перекрыть шум прибоя. Благодаря упорному труду Демосфен завоевал славу великого оратора.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Греция под властью Македонии</h2></div>
+<div class="easy">
+<p>Первыми Филиппу подчинились полисы Северной Греции. Он не стеснялся ничего: угрожал, подкупал, хитрил. И у него было немало сторонников среди самих греков.</p>
+<p>Против Македонии выступил афинский оратор <button class="term" data-t="demosfen">Демосфен</button>. Греки говорили: «Что на войне железо, то в политике — слово». Демосфен стоял за полную свободу полисов и за демократию в Афинах.</p>
+<p>А ведь в детстве он был невзрачным мальчиком со слабым голосом и неразборчивой речью. Он подолгу тренировался один: набирал в рот камешки и на берегу моря старался перекричать шум прибоя. Ты долго училась на пианино — и потом стало получаться классно. Долго тренировала «берёзку». Вот так и Демосфен: упорством стал великим оратором.</p>
+<p>Филипп щедро платил противникам Демосфена, и они уговаривали афинян покориться. Царь говорил: любые ворота откроет осёл, гружённый золотом. Одни греки ненавидели Филиппа как врага свободы. Другие хвалили: он объединил Грецию и прекратил войны между полисами.</p>
+<p>Демосфен обличал тех, кто продал родину за золото, и звал объединиться вокруг Афин. Его речи помогли: многие полисы объединились против Македонии.</p>
+<p>В 338 году до н. э. у города <button class="term" data-t="heroneya">Херонеи</button> греки сразились с македонцами. Демосфен стоял простым гоплитом в первых рядах. Греки уже теснили врага, но сын Филиппа, юный Александр, ударил с левого фланга и обратил афинян в бегство. Профессиональная армия оказалась сильнее.</p>
+<p>Там же погиб «Священный отряд» из Фив — 300 молодых воинов, как 300 спартанцев у Фермопил (§28). На месте их гибели поставили мраморного льва высотой 5 метров — почти два этажа твоего дома.</p>
+<p>Филипп не стал разрушать города и мстить. Он объявил полисы свободными и объединил их в <button class="term" data-t="korinf">Коринфский союз</button>. В 337 году до н. э. он позвал греков в поход на Персию — и греки с радостью согласились. Но Филиппа убил его собственный телохранитель.</p>
+</div>
+<div class="book" hidden>
+<p>Первыми под власть македонского царя попали полисы Северной Греции. Филипп II (2) для достижения своих целей использовал любые средства: угрозы, подкуп, интриги. У него было немало сторонников среди эллинов.</p>
+<p>Борьбу с Македонией возглавил афинский оратор Демосфен. В Древней Греции большую роль в политической жизни играло ораторское искусство. Эллины считали, что «тем могуществом, которым обладает на войне железо, в политической жизни обладает слово». Демосфен был сторонником полной свободы греческих полисов и демократии в Афинах.</p>
+<p>Противники афинского оратора, которых Филипп II (2) щедро одаривал деньгами, уговаривали афинян подчиниться Македонии. Её царь был убеждён, что двери любого города способен открыть осёл, гружённый золотом. Одни греки ненавидели Филиппа как врага свободы и демократии. Другие славили македонского царя за то, что он объединил Грецию и прекратил войны между полисами.</p>
+<p>Демосфен обличал людей, предавших родину за золото. Он призывал объединиться вокруг Афин и противостоять угрозе завоевания. Речи оратора имели большой успех, многие полисы объединились с целью борьбы против Македонии.</p>
+<p>В 338 году до н. э. у города Херонея произошло сражение объединённого греческого войска с македонской армией. Эллины сражались храбро. Демосфен как простой гоплит находился в первых рядах войска. В момент, когда эллины потеснили противника, сын Филиппа, юный Александр, который командовал левым флангом македонской армии, обрушился на афинян и обратил их в бегство. Профессиональная армия македонцев оказалась сильнее. Эллины потерпели поражение.</p>
+<p>Филипп II (2) не стал разрушать захваченные города и расправляться с побеждёнными. Он объявил греческие полисы свободными и объединил их в Коринфский союз.</p>
+<p>В 337 году до н. э. македонский царь объявил о походе на Персию и предложил грекам участвовать в нём. Идею похода против злейшего врага эллины поддержали с энтузиазмом. Однако планы по подготовке к военным действиям были сорваны, когда Филиппа II (2) убил собственный телохранитель.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-lev" src="img/ef981813e98a.jpg" alt="Фотография: мраморный лев сидит на высоком каменном постаменте среди деревьев" style="max-width:369px"><figcaption><span class="src">из учебника</span><b>Херонейский лев. Греция. 2013 г.</b> В битве при Херонее прославился «Священный отряд» из города Фив. Это были 300 отважных молодых воинов, которые все погибли в бою. На месте их гибели, чтобы почтить память героев, фиванцы установили памятник — огромного 5-метрового льва из мрамора. Со временем про этот памятник забыли. Только в XIX (19) веке археологи нашли его фрагменты, а под ними — останки 254 павших воинов. В начале XX (20) века памятник был восстановлен.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 288" role="img" aria-label="Две таблички. Демосфен — слово: свобода полисов и демократия, обличает предателей, зовёт объединиться вокруг Афин, «что на войне железо, то в политике слово». Филипп II — золото и войско: угрозы, подкуп, интриги, платит сторонникам, профессиональная армия, «любые ворота откроет осёл, гружённый золотом». Ниже — Херонея, 338 год: Демосфен в первых рядах, Александр с левого фланга обращает афинян в бегство; Филипп объединяет полисы в Коринфский союз."><use href="#q-spor"/></svg><figcaption><b>Слово против золота.</b> Слово звало к свободе, но победило войско.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Как ты думаешь, почему эллины смирились с ведущей ролью Македонии?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Демосфен говорил, что слово в политике сильнее всего. Почему же он проиграл? Найди две причины в разных абзацах.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Абзац про осла с золотом и абзац о битве при Херонее.</div>
+<div class="rev ans" id="a6" hidden>Первая — золото: Филипп подкупал сторонников, и они уговаривали греков покориться. Вторая — армия: при Херонее профессиональное войско македонцев оказалось сильнее.</div>
+</div>
+<div class="think">
+<p class="qt">7. Демосфен стал оратором упорной тренировкой. Где ещё в этой главе греки добивались своего упражнениями? Вспомни §31 и §34.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Подпись к статуе Демосфена; §31 — палестра, §34 — атлеты.</div>
+<div class="rev ans" id="a7" hidden>Мальчики с 12 лет тренировались в палестре, юноши-эфебы — два года, атлеты готовились к Олимпийским играм. Греки верили, что силу, ловкость и даже голос можно натренировать.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">В 432 году до н. э. началась война между греческими союзами полисов, которая привела к их упадку. Одновременно происходит усиление Македонского царства. Ослабленная Греция оказалась под властью Македонии.</div>
+<div class="blocknote"><b>Осторожно, тут в учебнике разные даты.</b> В итогах — «в 432 году», а в тексте параграфа и на ленте времени — в 431 году. Запоминай 431: эта дата стоит и в «Ленте времени» учебника. Смотри ленту в разделе 1.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Каковы были причины Пелопоннесской войны? Какие союзы принимали участие в ней?</li><li>Подумай, почему Филиппу II (2) удалось подчинить себе всю Грецию.</li><li>Какие идеалы отстаивал Демосфен? Почему он проиграл в противостоянии с Филиппом II (2)?</li><li>Какую политику проводил Филипп II (2) в отношении греческих полисов?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказки ко второму и четвёртому вопросам</button></div>
+<div class="rev hint" id="r1" hidden><b>Второй:</b> полисы ослабли от войн и враждовали, а у Филиппа была сильная армия с фалангой, золото для подкупа и сторонники среди греков. <b>Четвёртый:</b> угрозы, подкуп и интриги до войны; после Херонеи — не разрушал города, объявил полисы свободными, объединил в Коринфский союз и позвал в общий поход на Персию.</div></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Историк Плутарх привёл высказывания Филиппа II (2). Прочитай их и ответь на вопрос.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">1) Когда он победил эллинов, ему посоветовали поставить по эллинским городам сторожевые отряды, но он ответил: «Лучше мне долгое время слыть добрым, чем недолгое время — притеснителем».</p><p style="margin:0 0 10px">2) Ему посоветовали расправиться с афинянами — он ответил: «Не глупо ли советовать, чтобы человек, который всё делает и терпит во имя славы, сам себя лишил зрителей этой славы?»</p><p style="margin:0 0 10px">3) Когда он был в ссоре с женою своей Олимпиадой и с сыном, к нему пришёл коринфянин Демарат, и царь спросил, как ладят друг с другом эллины. Демарат ответил: «Не об эллинах бы тебе заботиться, когда у тебя нелады в собственном доме!» И царь, собравшись с духом, укротил свой нрав и помирился со своими.</p><p style="margin:0 0 10px">4) Одна нищая старушка часто докучала ему просьбами рассудить её, и он ей сказал: «У меня нет времени!» А она крикнула: «Тогда нечего быть царём!» И он, подивясь таким словам, с тех пор рассуживал на месте не только её, но и всех других.</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq2" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq2" hidden>Как эти высказывания характеризуют Филиппа II (2)?</div>
+<div class="rev ans" id="sa3" hidden>Филипп был умным и дальновидным: предпочитал славу доброго правителя силе притеснителя. Он очень хотел славы. Умел признать ошибку и сдержать свой нрав, прислушивался даже к простой бедной старушке и стал справедливо судить всех.</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — какую роль в истории Древней Греции сыграла Македония? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам. До н. э.: чем больше число, тем раньше. Середина IV века — это около 350 года.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="4"><span class="ord"></span>Битва при Херонее · 338 год до н. э.</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Начало Пелопоннесской войны · 431 год до н. э.</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Филипп II зовёт греков в поход на Персию · 337 год до н. э.</button>
+<button class="chip" data-ord="3"><span class="ord"></span>Македония — самое сильное государство · середина IV века до н. э.</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Афины проиграли войну · 404 год до н. э.</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пелопоннесская война</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 314" aria-hidden="true"><use href="#q-lenta"/></svg><span class="ftext">Афины против Спарты, 431—404 годы до н. э., 27 лет.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Филипп II</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="filipp" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Царь Македонии: фаланга, золото, подчинил Грецию.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Македонская фаланга</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 300" aria-hidden="true"><use href="#q-falanga"/></svg><span class="ftext">16 рядов, копья до 5—6 метров — тысячи копий разом.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Демосфен</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="demosfen" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Оратор, боролся за свободу полисов; тренировал речь с камешками во рту.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Херонея</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="lev" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">338 год до н. э.: македонцы разбили объединённое войско греков.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Коринфский союз</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 288" aria-hidden="true"><use href="#q-spor"/></svg><span class="ftext">Союз полисов, который создал Филипп после Херонеи.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">«Филиппики»</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="filipp" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Золотые монеты Филиппа. Так же потом назвали гневные речи.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Кто воевал в Пелопоннесской войне?</h3><div class="opts">
+<button class="opt">греки и персы</button>
+<button class="opt" data-ok="1">Афины и Спарта со своими союзами</button>
+<button class="opt">Македония и Египет</button></div>
+<div class="fb">Греки и персы — это §28.</div></div>
+<div class="q"><h3>2. Сколько лет шла Пелопоннесская война?</h3><div class="opts">
+<button class="opt" data-ok="1">27 лет</button>
+<button class="opt">10 лет</button>
+<button class="opt">100 лет</button></div>
+<div class="fb">С 431 по 404 год до н. э.</div></div>
+<div class="q"><h3>3. Чем была сильна македонская фаланга?</h3><div class="opts">
+<button class="opt">боевыми слонами</button>
+<button class="opt">колесницами с серпами</button>
+<button class="opt" data-ok="1">16 рядами и тысячами длинных копий разом</button></div>
+<div class="fb">Копья до 5—6 метров клали на плечи передним.</div></div>
+<div class="q"><h3>4. Как Демосфен тренировал речь?</h3><div class="opts">
+<button class="opt" data-ok="1">набирал в рот камешки и перекрикивал прибой</button>
+<button class="opt">пел в хоре</button>
+<button class="opt">учил наизусть Гомера</button></div>
+<div class="fb">В детстве у него был слабый голос и неразборчивая речь.</div></div>
+<div class="q"><h3>5. Где в 338 году до н. э. греки проиграли македонцам?</h3><div class="opts">
+<button class="opt">при Марафоне</button>
+<button class="opt" data-ok="1">при Херонее</button>
+<button class="opt">при Саламине</button></div>
+<div class="fb">Марафон и Саламин — победы над персами (§28).</div></div>
+<div class="q"><h3>6. Что Филипп II сделал с побеждёнными полисами?</h3><div class="opts">
+<button class="opt">разрушил их</button>
+<button class="opt">продал жителей в рабство</button>
+<button class="opt" data-ok="1">объявил свободными и объединил в Коринфский союз</button></div>
+<div class="fb">Он хотел «долгое время слыть добрым».</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Пелопоннесская война</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>431 год до н. э.: Афины и Спарта со своими союзами, война 27 лет; чума, умер Перикл.</li><li>Персы помогали Спарте; Афины проиграли: нет флота, Длинных стен и морского союза.</li><li>Власть Спарты, войны полисов; золото разрушило «общину равных».</li></ol></div>
+</div>
+<div class="think">
+<h3>Македония при Филиппе II</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Середина IV века: на севере выросла Македония; Филипп — политик, дипломат, полководец.</li><li>Фаланга: 16 рядов, копья до 5—6 метров, лучники и пращники.</li><li>Завоевал Фессалию, Эпир, Фракию; Македония — сильнейшее государство.</li></ol></div>
+</div>
+<div class="think">
+<h3>Демосфен и Херонея</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Филипп: угрозы, подкуп, «осёл, гружённый золотом».</li><li>Демосфен: упорный оратор, за свободу полисов; звал объединиться.</li><li>338 год до н. э., Херонея: греки проиграли; Коринфский союз; поход на Персию сорван — Филиппа убили.</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: роль Македонии</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Греция ослабла от войн между полисами.</li><li>Македония с сильной армией подчинила полисы и прекратила их войны.</li><li>Она объединила греков для похода на Персию — его продолжит Александр (§36).</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p34.html">‹ §34 Олимпийские игры</a>
+  <span class="pn cur">§35 Македония</span>
+  <a class="pn" href="p36.html">§36 Походы Александра ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 35 · История, 5 класс · страницы 196—200 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'q-lenta':'0 0 540 314','q-falanga':'0 0 540 300','q-spor':'0 0 540 288'};
+
+var T={
+peloponnes:{w:"Пелопоннесской",k:"война",s:"q-lenta",t:"Война Афин и Спарты со своими союзами, 431—404 годы до н. э., 27 лет. Афины проиграли."},
+filipp:{w:"Филипп II",k:"царь Македонии",p:"filipp",t:"Царь Македонии: дальновидный политик, дипломат и полководец. Создал непобедимую фалангу и подчинил Грецию."},
+falanga:{w:"фаланга",k:"строй",s:"q-falanga",t:"Македонская фаланга: 16 рядов в глубину, до тысячи воинов в ряду, копья до 5—6 метров — тысячи копий разом."},
+demosfen:{w:"Демосфен",k:"оратор",p:"demosfen",t:"Афинский оратор. В детстве говорил слабо и неразборчиво, но упорно тренировался. Боролся с Македонией за свободу полисов."},
+heroneya:{w:"Херонея",k:"город",p:"lev",t:"Город, у которого в 338 году до н. э. македонская армия разбила объединённое войско греков."},
+korinf:{w:"Коринфский союз",k:"союз полисов",s:"q-spor",t:"Союз, в который Филипп II объединил греческие полисы после Херонеи, объявив их свободными."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p35:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p35:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>5){fb.textContent="Верно! 431 → 404 → середина IV века → 338 → 337.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. До н. э.: чем больше число, тем раньше.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p35:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p35:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>

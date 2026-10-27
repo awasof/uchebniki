@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Маяк выше четырёх девятиэтажек, библиотека в 700 тысяч свитков, «дом Муз» и учёные, которые измерили Землю. Трудные слова можно нажимать.">
+<title>Культура царства Птолемеев</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+html{color-scheme:light dark}
+[hidden]{display:none!important}
+img{max-width:100%}
+@media print{
+  .bar,.done,.pnav,.flipbtn .fhint{display:none!important}
+  section{break-inside:auto;border-bottom:1px solid #ccc}
+  .fig,.q,.think,.pcard{box-shadow:none}
+  .rev{display:block!important}
+  body{background:#fff}
+}
+
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+</style>
+
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#BE4527" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">История</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="s-mayak" viewBox="0 0 540 316">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ФАРОССКИЙ МАЯК — 120 МЕТРОВ (В ОДНОМ МАСШТАБЕ)</text>
+  <line x1="12" y1="250" x2="528" y2="250" stroke="var(--illink)" stroke-width="2"/>
+  <rect x="30" y="203" width="48" height="47" fill="var(--paper2)" stroke="var(--stone)" stroke-width="2"/>
+  <rect x="30" y="234" width="48" height="6" fill="var(--flame)"/>
+  <text x="54" y="196" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--illink)">≈ 27 м</text>
+  <rect x="166" y="129" width="48" height="121" fill="var(--paper2)" stroke="var(--stone)" stroke-width="2"/>
+  <text x="190" y="122" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--illink)">≈ 69 м</text>
+  <rect x="248" y="75" width="48" height="175" fill="var(--water)" opacity="0.7"/>
+  <text x="272" y="68" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--illink)">≈ 100 м</text>
+  <path d="M338 250 L344 170 H382 L388 250 Z" fill="var(--stone)"/>
+  <path d="M346 170 L350 100 H376 L380 170 Z" fill="var(--paper2)" stroke="var(--stone)" stroke-width="2"/>
+  <path d="M352 100 L355 48 H371 L374 100 Z" fill="var(--stone)"/>
+  <path d="M363 26 C356 36 357 44 363 48 C369 44 370 36 363 26 Z" fill="var(--flame)"/>
+  <text x="400" y="132" font-size="13" font-weight="700" fill="var(--red)">120 м</text>
+  <g text-anchor="middle" font-size="10" fill="var(--illink)">
+  <text x="54" y="266">твой дом,</text><text x="54" y="279">9 этажей</text>
+  <text x="190" y="266">дом напротив,</text><text x="190" y="279">23 этажа</text>
+  <text x="272" y="266">30-й этаж</text><text x="272" y="279">небоскрёба</text>
+  <text x="363" y="266" font-weight="700">Фаросский</text><text x="363" y="279" font-weight="700">маяк</text>
+  </g>
+  <text x="84" y="241" font-size="9.5" fill="var(--soft)">← ты, 3-й этаж</text>
+  <text x="400" y="160" font-size="10" fill="var(--illink)">огонь видно</text>
+  <text x="400" y="174" font-size="10" fill="var(--illink)">за 60 км —</text>
+  <text x="400" y="188" font-size="10" fill="var(--illink)">это около</text>
+  <text x="400" y="202" font-size="10" fill="var(--illink)">300 стадий (§34)</text>
+  <text x="8" y="306" font-size="12" font-weight="700" fill="var(--moss)">Маяк — больше четырёх ваших девятиэтажек друг на друге.</text>
+</symbol>
+
+<symbol id="s-biblioteka" viewBox="0 0 540 268">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">ДВЕ БИБЛИОТЕКИ И ПЕРГАМЕНТ</text>
+  <text x="8" y="40" font-size="10.5" font-weight="700" fill="var(--illink)">Александрия</text>
+  <rect x="8" y="47" width="385" height="20" rx="4" fill="var(--ochre)"/>
+  <text x="401" y="62" font-size="11" font-weight="700" fill="var(--illink)">700 тысяч свитков</text>
+  <text x="8" y="92" font-size="10.5" font-weight="700" fill="var(--illink)">Пергам</text>
+  <rect x="8" y="99" width="110" height="20" rx="4" fill="var(--water)"/>
+  <text x="126" y="114" font-size="11" font-weight="700" fill="var(--illink)">200 тысяч</text>
+  <rect x="8" y="134" width="160" height="78" rx="10" fill="var(--paper2)"/>
+  <text x="20" y="154" font-size="10" fill="var(--illink)">Птолемеи боятся,</text>
+  <text x="20" y="169" font-size="10" fill="var(--illink)">что Пергам станет</text>
+  <text x="20" y="184" font-size="10" fill="var(--illink)">знаменитее, и запрещают</text>
+  <text x="20" y="199" font-size="10" fill="var(--illink)">вывозить папирус (§10)</text>
+  <path d="M170 173 H196" stroke="var(--illink)" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="200" y="134" width="160" height="78" rx="10" fill="var(--paper2)"/>
+  <text x="212" y="154" font-size="10" fill="var(--illink)">в Пергаме придумывают</text>
+  <text x="212" y="169" font-size="10" fill="var(--illink)">новый материал —</text>
+  <text x="212" y="184" font-size="10" font-weight="700" fill="var(--illink)">пергамент:</text>
+  <text x="212" y="199" font-size="10" fill="var(--illink)">тонкая бычья шкура</text>
+  <rect x="372" y="134" width="160" height="78" rx="10" fill="var(--ochre)"/>
+  <text x="384" y="154" font-size="10" font-weight="700" fill="#22190A">Правило гавани:</text>
+  <text x="384" y="169" font-size="10" fill="#22190A">каждый корабль отдаёт</text>
+  <text x="384" y="184" font-size="10" fill="#22190A">книгу в библиотеку —</text>
+  <text x="384" y="199" font-size="10" fill="#22190A">или копию за свой счёт</text>
+  <text x="8" y="236" font-size="10.5" fill="var(--soft)">Александрийская библиотека — в три с половиной раза больше пергамской.</text>
+  <text x="8" y="258" font-size="12" font-weight="700" fill="var(--moss)">Запрет не остановил книги — придумали новый материал.</text>
+</symbol>
+
+<symbol id="s-uchenye" viewBox="0 0 540 312">
+  <text x="8" y="16" font-size="12" font-weight="700" fill="var(--soft)">УЧЁНЫЕ МУСЕЙОНА: КТО ЧТО ОТКРЫЛ</text>
+  <g fill="var(--paper2)">
+  <rect x="8" y="26" width="524" height="30" rx="7"/><rect x="8" y="60" width="524" height="30" rx="7"/>
+  <rect x="8" y="94" width="524" height="30" rx="7"/><rect x="8" y="128" width="524" height="30" rx="7"/>
+  <rect x="8" y="162" width="524" height="30" rx="7"/><rect x="8" y="196" width="524" height="30" rx="7"/>
+  <rect x="8" y="230" width="524" height="30" rx="7"/>
+  </g>
+  <g font-size="11" font-weight="700" fill="var(--illink)">
+  <text x="18" y="46">Евклид</text><text x="18" y="80">Архимед</text><text x="18" y="114">Аристарх</text>
+  <text x="18" y="148">Эратосфен</text><text x="18" y="182">Феофраст</text><text x="18" y="216">Каллимах</text>
+  <text x="18" y="250">Медики</text>
+  </g>
+  <g font-size="10" fill="var(--illink)">
+  <text x="104" y="46">заложил основы геометрии</text>
+  <text x="104" y="80">точно измерял окружности и объёмы; винт для воды, зубчатые колёса</text>
+  <text x="104" y="114">Земля и планеты вращаются вокруг Солнца; звёзды — далёкие солнца</text>
+  <text x="104" y="148">Земля — шар, измерил её окружность; карта с параллелями и меридианами</text>
+  <text x="104" y="182">собрал знания о растениях — «отец ботаники»</text>
+  <text x="104" y="216">поэт и глава Мусейона; Гомера разделили на песни, придумали слово «лирика»</text>
+  <text x="104" y="250">открыли кровообращение и нервную систему</text>
+  </g>
+  <text x="8" y="282" font-size="10.5" fill="var(--soft)">Мусейон — «дом Муз». Отсюда наше слово «музей».</text>
+  <text x="8" y="304" font-size="12" font-weight="700" fill="var(--moss)">Знания Востока и Греции — в одном доме учёных.</text>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">История · § 37</span>
+    <h1>Культура царства Птолемеев</h1>
+    <p class="lede">Маяк выше четырёх девятиэтажек, библиотека в 700 тысяч свитков, «дом Муз» и учёные, которые измерили Землю. Трудные слова можно нажимать.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>Главный вопрос параграфа:</b><br>Что обеспечило расцвет культуры в царстве Птолемеев?</div></div>
+  </div>
+</header>
+
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p36.html">‹ §36 Походы Александра</a>
+  <span class="pn cur">§37 Царство Птолемеев</span>
+  <a class="pn" href="it3.html">Итоги главы III ›</a>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Царство Птолемеев">1</a><a href="#s2" data-j="s2" title="Александрия Египетская">2</a><a href="#s3" data-j="s3" title="Наука и искусство">3</a><a href="#sit" data-j="sit" title="Подведём итоги">≡</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-karta" src="img/064bfcda882a.jpg" alt="Карта: Греция, Малая Азия, Египет, Междуречье и Средняя Азия, разделённые на царства — Птолемеев вдоль Нила, большое царство Селевкидов, Греко-Бактрийское на востоке и малые царства у Чёрного моря"><figcaption><span class="src">из учебника</span><b>Распад державы Александра Македонского.</b> Жёлтым показаны греческие государства, тёмной полосой — границы эллинистических государств к началу III века до н. э. Самые большие — царство Птолемеев в Египте и царство Селевкидов, цифрами обозначены малые царства: 1 Пергамское, 2 Вифиния, 3 Пафлагонийское, 4 Понтийское, 5 Малая Армения, 6 Атропатена, 7 Боспорское.<br><span style="color:var(--soft)">▲ Рассмотри карту и перечисли, на какие государства распалась держава Александра Македонского.</span></figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Царство Птолемеев</h2></div>
+<div class="easy">
+<p>После смерти Александра его законных наследников — мать, брата и новорождённого сына — отстранили от власти, а потом убили. Полководцы стали делить наследство.</p>
+<p>Много лет они спорили и воевали. В конце концов держава распалась на царства — их называют <button class="term" data-t="ellinizm">эллинистическими</button>, потому что в них смешались эллинские, то есть греческие, и местные обычаи. Самые известные — Греко-Бактрийское, Сирийское, Египетское, Македонское и Пергамское. Военачальники объявили себя царями. А греческие полисы снова стали свободными.</p>
+<p>Учёные называют это время эпохой эллинизма.</p>
+<p>Египетское царство называли царством <button class="term" data-t="ptolemei">Птолемеев</button> — по имени царской семьи. Её основал Птолемей, полководец и близкий друг Александра. Потом Птолемеи захватили земли в Малой Азии, острова в Эгейском море и крепости на Балканах — и стали хозяевами на море.</p>
+<p>Главными людьми в птолемеевском Египте были греки и македонцы. У них были все права, свои полисные обычаи и даже Народное собрание. Из них набирали армию и главных чиновников. Царя египтяне почитали как бога, но он уважал греческие обычаи.</p>
+<p>Местная знать и жрецы подчинялись грекам. А крестьян объявили «царскими земледельцами» — по сути, рабами царя. Большую часть урожая они сдавали в царские хранилища.</p>
+</div>
+<div class="book" hidden>
+<p>После смерти Александра законные наследники царя, его мать, брат и новорождённый сын, были отстранены от власти, а позднее убиты. Его полководцы начали делить доставшееся наследство.</p>
+<p>В ходе многолетних распрей держава распалась на отдельные царства, которые называют эллинистическими, поскольку они сочетали в себе эллинские (то есть греческие) и местные традиции. Наиболее известными среди них были Греко-Бактрийское, Сирийское, Египетское, Македонское и Пергамское царства. Военачальники, утвердившиеся там, провозгласили себя царями. Греческие полисы смогли освободиться от македонского владычества и вновь стали свободными.</p>
+<p>Учёные называют этот период в истории Древнего мира эпохой эллинизма.</p>
+<p>Египетское царство по имени правившей там династии называли царством Птолемеев. Династия Птолемеев ведёт своё происхождение от близкого друга Александра Македонского — полководца Птолемея. Позднее Птолемеи захватили земли в Малой Азии, некоторые острова в Эгейском море и крепости на Балканах. Это позволило им господствовать на море и активно вмешиваться в дела государств Восточного Средиземноморья.</p>
+<p>В птолемеевском Египте самыми привилегированными группами общества были греки и македонцы. Они пользовались всеми правами, сохраняли некоторые черты полисного самоуправления и собирались на Народное собрание. Царь, которого в Египте обожествляли, считался с полисными традициями, принесёнными эллинами. Из греков и македонцев Птолемеи формировали армию и верхушку чиновничества. Местная знать и жрецы находились в подчинённом положении. Крестьян объявили «царскими земледельцами» и сделали рабами царя. Большую часть выращенного урожая они были обязаны сдавать в царские хранилища.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-ptolemey" src="img/3278f625218c.jpg" alt="Тёмный бронзовый бюст молодого мужчины с короткими волосами" style="max-width:256px"><figcaption><span class="src">из учебника</span><b>Птолемей II (2). Древнегреческая скульптура.</b></figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопросы учебника</b>
+<ol><li>Почему держава Александра Македонского распалась на несколько самостоятельных царств?</li><li>Как ты думаешь, почему эллины составили верхушку общества в птолемеевском Египте?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Почему эти царства называют эллинистическими? Найди на примере Египта, что в нём было греческого, а что египетского.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Второй абзац раздела и два последних.</div>
+<div class="rev ans" id="a1" hidden>Греческое: во главе греки и македонцы, полисные обычаи, Народное собрание. Египетское: царя почитали как бога — как фараонов (§6—7), а крестьяне работали на царя и сдавали урожай в его хранилища.</div>
+</div>
+<div class="think">
+<p class="qt">2. Сравни, как жили египетские земледельцы при фараонах (§6—7) и при Птолемеях.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>§6—7 — лестница общества Египта; здесь — последний абзац раздела.</div>
+<div class="rev ans" id="a2" hidden>И при фараонах земледельцы стояли внизу лестницы и отдавали часть урожая. При Птолемеях стало ещё тяжелее: их объявили «царскими земледельцами», по сути рабами царя, и забирали большую часть урожая.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-mayak" src="img/1c595b3735c1.jpg" alt="Рисунок: высокая белая башня в несколько ярусов, на вершине пылает огонь, внизу море с кораблями" style="max-width:325px"><figcaption><span class="src">из учебника</span><b>Фаросский маяк.</b> Маяк, построенный при династии Птолемеев, считали одним из семи чудес света. Он был разрушен мощным землетрясением, его руины до сих пор находятся на дне моря.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Александрия Египетская</h2></div>
+<div class="easy">
+<p>При Птолемеях Александрия — та, что начертил сам Александр (§36), — стала самым большим городом греческого мира. В её порт приплывали торговые корабли со всего света.</p>
+<p>Вход в гавань прикрывал остров Фарос. На нём построили <button class="term" data-t="faros">маяк</button> высотой 120 метров. Это больше четырёх ваших девятиэтажек друг на друге и выше 30-го этажа небоскрёба, где ты была у папы на работе. Ты не любишь высоту — а там наверху днём и ночью горел огонь.</p>
+<p>Зеркала делали огонь видным за 60 километров. Маяк показывал кораблям вход в гавань — там было много мелей и подводных скал.</p>
+<p>Кварталы города были прямоугольные, как в греческих городах (§30). В центре под прямым углом пересекались две главные улицы — такие широкие, что рядом могли ехать несколько повозок. Почти четверть города занимали царские дворцы: каждый новый царь строил себе свой.</p>
+<p>Как в любом греческом городе, в центре был гимнасий с портиками (§31) — одно из самых красивых зданий. Рядом — театр (§33), где на праздниках шли представления.</p>
+<p>Птолемеи любили науку и искусство и звали к себе учёных, философов и поэтов. Для них построили дворец с залами для занятий и уроков и с комнатами для жизни. Его назвали <button class="term" data-t="museyon">Мусейон</button> — «дом Муз», или просто Музей. Отсюда наше слово «музей». Рядом был парк с ботаническим садом и зоопарком — туда привозили диковинные растения и животных. Ты была в зоопарке и в тропических оранжереях — вот откуда это пошло.</p>
+<p>При Музее была Александрийская библиотека — около 700 тысяч свитков! Каждый корабль, который заходил в гавань, должен был отдать в библиотеку книгу или копию редкой книги. Твои книжки про Конни и кота Свинтуса тоже переписали бы для библиотеки.</p>
+<p>Вторая библиотека была в Пергаме — до 200 тысяч книг. Птолемеи боялись, что Пергам прославится, и запретили вывозить папирус, на котором тогда писали. Тогда в Пергаме придумали <button class="term" data-t="pergament">пергамент</button> — из тонко выделанной бычьей шкуры.</p>
+<p>В Музее и библиотеке встречались и спорили учёные, поэты и мудрецы со всего Средиземноморья.</p>
+</div>
+<div class="book" hidden>
+<p>При Птолемеях Александрия стала самым крупным городом греческого мира. В её порт прибывали торговые корабли со всех уголков света.</p>
+<p>Вход в гавань прикрывал остров Фарос, на котором был воздвигнут маяк высотой 120 метров. Огонь маяка, горевший непрерывно, с помощью зеркал делался видным на расстоянии до 60 километров. Он показывал вход в гавань, затруднённый многочисленными мелями и подводными скалами.</p>
+<p>Город отличала прямоугольная планировка кварталов. В центре под прямым углом пересекались две главные улицы, настолько широкие, что по ним могли ехать рядом несколько повозок, не мешая друг другу. Почти четверть всей территории города занимали царские дворцы. Каждый новый правитель воздвигал собственный дворец.</p>
+<p>В Александрии, как и в греческих городах, возводили сооружения для спортивных состязаний и развлечений. В центре города находился гимнасий. Украшенный портиками, он считался одним из красивейших зданий столицы. Рядом располагался театр, где устраивали представления во время празднеств.</p>
+<p>Птолемеи покровительствовали наукам и искусствам. Они приглашали к своему двору учёных, философов, поэтов. Для них был построен дворец с помещениями для научных занятий, залами для преподавания и апартаментами для проживания. Дворец назвали Мусейон, дом Муз, или просто Музей.</p>
+<p>При Музее находилась Александрийская библиотека, где было собрано около 700 тысяч свитков. Каждый корабль, прибывающий в александрийскую гавань, был обязан передать в библиотеку книгу или сделать копию редкой книги за свой счёт. Второй по значимости была библиотека, находившаяся в столице Пергамского царства. В Пергаме хранилось до 200 тысяч книг. Птолемеи опасались роста авторитета своего соперника и запретили вывоз папируса, на котором в то время писали. Тогда в Пергаме изобрели новый материал для письма — пергамент. Его изготавливали из тонко выделанной бычьей шкуры.</p>
+<p>В александрийском Музее и библиотеке встречались для бесед учёные, поэты и мудрецы из стран Средиземноморья.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 316" role="img" aria-label="Столбики в одном масштабе: твой дом, 9 этажей, — около 27 метров, ты живёшь на третьем этаже; дом напротив, 23 этажа, — около 69 метров; 30-й этаж небоскрёба — около 100 метров; Фаросский маяк — 120 метров, огонь видно за 60 километров, это около 300 стадий."><use href="#s-mayak"/></svg><figcaption><b>Насколько высок маяк.</b> Больше четырёх ваших девятиэтажек друг на друге.</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-museyon" src="img/4cde574b23bd.jpg" alt="Рисунок: строители в лесах ставят колонны, рядом повозки с камнем, вдали маяк" style="max-width:469px"><figcaption><span class="src">из учебника</span><b>Строительство Мусейона в Александрии.</b> Он стал научным и культурным центром не только Александрии, но и всего мира в ту эпоху. В раскинувшемся рядом парке устроили ботанический сад и зоопарк, сюда привозили из разных стран диковинные растения и животных. В парке возвели обсерваторию для наблюдения за звёздным небом.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 540 268" role="img" aria-label="Полосы: в Александрии 700 тысяч свитков, в Пергаме 200 тысяч. Ниже цепочка: Птолемеи боятся славы Пергама и запрещают вывозить папирус — в Пергаме придумывают пергамент из тонкой бычьей шкуры. Рядом правило гавани: каждый корабль отдаёт книгу в библиотеку или копию за свой счёт."><use href="#s-biblioteka"/></svg><figcaption><b>Две библиотеки-соперницы.</b> Запрет не остановил книги — придумали новый материал.</figcaption></div></figure>
+<div class="col">
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Чем была знаменита Александрия Египетская?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Александрию строили как греческий город. Найди три греческие черты — вспомни §30, §31 и §33.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Абзацы о планировке, гимнасии и театре.</div>
+<div class="rev ans" id="a3" hidden>Прямоугольные кварталы и прямые улицы — как в новых греческих городах (§30); гимнасий с портиками (§31); театр, где на праздниках шли представления (§33).</div>
+</div>
+<div class="think">
+<p class="qt">4. Почему Птолемеи запретили вывоз папируса — и что из этого вышло? Вспомни, где делали папирус (§10).</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Абзац о двух библиотеках; §10 — на чём писали египтяне.</div>
+<div class="rev ans" id="a4" hidden>Папирус делали в Египте, и Птолемеи не хотели, чтобы библиотека Пергама разрослась и прославилась. Но запрет не помог: в Пергаме придумали новый материал — пергамент.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<figure class="photo"><div class="fig"><img id="ph-arhimed" src="img/b2500eb190e2.jpg" alt="Мраморный бюст: пожилой мужчина с густыми кудрявыми волосами и бородой" style="max-width:286px"><figcaption><span class="src">из учебника</span><b>Архимед. Древнегреческий бюст.</b> Среди его многочисленных изобретений — система зубчатых колёс, «бесконечный» архимедов винт для перекачки воды. Придуманные им приспособления улучшили многие метательные и осадные машины.</figcaption></div></figure>
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Наука и искусство</h2></div>
+<div class="easy">
+<p>Учёные Александрии собрали знания Востока и Греции и сделали много открытий.</p>
+<p>Поэт Каллимах был главой Музея и учителем наследника престола. Он писал поэмы о царях и богах и положил начало филологии — науке о текстах. В Александрии изучали древние книги, проверяли, настоящие ли они, писали к ним пояснения. Здесь поэмы Гомера разделили на отдельные песни, а стихи назвали лирикой.</p>
+<p>Математик Евклид заложил основы геометрии. А <button class="term" data-t="arhimed">Архимед</button> — тот, что поджигал корабли зеркалами (§32), — научился точно измерять окружности и объёмы. Он придумал зубчатые колёса и «бесконечный» винт для подъёма воды и улучшил метательные и осадные машины.</p>
+<p>В обсерватории Музея <button class="term" data-t="aristarh">Аристарх</button> с острова Самос первым понял, что Земля и все планеты вращаются вокруг Солнца, а звёзды — такие же солнца, только очень далёкие. Он даже пытался вычислить расстояние до Луны и Солнца. На ВДНХ ты видела космические корабли — а догадываться об устройстве космоса начали больше двух тысяч лет назад.</p>
+<p><button class="term" data-t="eratosfen">Эратосфен</button> из Кирены считал, что Земля — шар, и очень точно измерил её окружность. Как? Он сравнил длину тени в Александрии и в городе Сиена, за 797 километров от неё. На его первой карте были параллели и меридианы — как на вашем глобусе дома. Он говорил, что на корабле можно обогнуть земной шар. Позже в это поверили мореплаватели Колумб и Магеллан.</p>
+<p>В ботаническом саду работал Феофраст с острова Лесбос. Он собрал всё, что знали о растениях, в книге «Происхождение растений». Его называют «отцом ботаники» — это та самая биология, которую ты проходишь.</p>
+<p>Медики Александрии продолжили дело Гиппократа (§32) и знания египтян, которые бальзамировали мумии (§9). Они открыли кровообращение и нервную систему и научились лучше лечить некоторые болезни.</p>
+<p>Греческие царства на Востоке простояли почти три века. Потом их завоевали римляне — об этом следующая глава.</p>
+</div>
+<div class="book" hidden>
+<p>Александрийские учёные освоили знания Востока и Древней Греции и сделали много открытий. Один из лучших александрийских поэтов, Каллимах, был главой Музея и воспитателем наследника престола. Он не только сочинял поэмы, прославлявшие царей и богов, но и заложил основы филологической науки. В Александрии изучали древние литературные тексты, определяли их подлинность, писали к ним комментарии. Здесь произведения Гомера разделили на отдельные песни и назвали лирикой стихотворные произведения.</p>
+<p>Математик Евклид заложил основы науки геометрии. Другой математик и механик — Архимед — добился точности измерения окружностей и объёмов.</p>
+<p>В обсерватории Музея Аристарх с острова Самос первым обнаружил, что Земля и все планеты вращаются вокруг Солнца, а звёзды подобны Солнцу, но находятся от Земли на огромном расстоянии. Он попытался вычислить расстояние от Земли до Луны и Солнца. Эратосфен из Кирены считал, что Земля имеет форму шара, и измерил с удивительной точностью её окружность, исходя из разницы в длине тени в Александрии и в отстоявшей от неё на 797 километров Сиене. На составленную Эратосфеном первую карту обитаемой земли были нанесены параллели и меридианы. Учёный утверждал, что на корабле можно обогнуть земной шар. Этими идеями позднее руководствовались мореплаватели Христофор Колумб и Фернан Магеллан.</p>
+<p>В ботаническом саду проводил наблюдения Феофраст с острова Лесбос. В своём труде «Происхождение растений» он систематизировал накопленные к этому времени знания по ботанике. За вклад в развитие этой науки его часто называют «отцом ботаники».</p>
+<p>Большие успехи были сделаны в медицине. Развивая учение Гиппократа и сведения, накопленные древними египтянами при мумификации умерших, александрийские медики открыли и исследовали систему кровообращения и нервную систему, разработали эффективные способы лечения некоторых болезней.</p>
+<p>Греческие царства на Востоке просуществовали почти три века. Позднее они были завоёваны римлянами и вошли в состав Римской империи.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 540 312" role="img" aria-label="Таблица учёных Мусейона: Евклид — основы геометрии; Архимед — измерял окружности и объёмы, винт для воды, зубчатые колёса; Аристарх — Земля и планеты вращаются вокруг Солнца, звёзды — далёкие солнца; Эратосфен — Земля шар, измерил её окружность, карта с параллелями и меридианами; Феофраст — «отец ботаники»; Каллимах — поэт и глава Мусейона, Гомера разделили на песни, слово «лирика»; медики — кровообращение и нервная система."><use href="#s-uchenye"/></svg><figcaption><b>Кто что открыл.</b> Мусейон — «дом Муз», отсюда наше слово «музей».</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Посмотри вживую: планетарий.</b> В Московском планетарии есть звёздный зал, где над головой показывают небо, — там видно, как планеты ходят вокруг Солнца, как догадался Аристарх. А в ясную погоду в обсерватории планетария можно посмотреть в телескоп. Перед походом проверьте расписание на сайте.</div>
+<div class="ask"><b>Вопрос учебника</b>
+<ol><li>Какие научные достижения были получены в Александрии Египетской?</li></ol></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Как Эратосфен мог измерить Землю, не обходя её вокруг? Найди подсказку в тексте.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Абзац об Эратосфене.</div>
+<div class="rev ans" id="a5" hidden>Он сравнил длину тени в Александрии и в Сиене, а расстояние между городами — 797 километров — было известно. Если Земля — шар, тени в разных местах разные, и по разнице можно посчитать всю окружность.</div>
+</div>
+<div class="think">
+<p class="qt">6. Александрийские медики опирались на знания двух народов. Каких? Вспомни §9 и §32.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Абзац о медиках; §9 — мумии, §32 — Гиппократ.</div>
+<div class="rev ans" id="a6" hidden>Греков — учение Гиппократа: смотреть на организм целиком и искать причину болезни. И египтян, которые, бальзамируя мумии, хорошо знали, как устроено тело внутри. Вместе это помогло открыть кровообращение и нервную систему.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sit">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">≡</span><h2>Подведём итоги</h2></div>
+<div class="blocknote">Одним из наиболее развитых государств, возникших после распада державы Александра Македонского, было Египетское царство Птолемеев. Его столица Александрия, расположенная северо-западнее дельты Нила, становится культурной и научной столицей греческого мира.</div>
+<div class="ask"><b>Вопросы и задания учебника</b>
+<ol><li>Рассмотри карту и перечисли, на какие государства распалась держава Александра Македонского.</li><li>Какую роль сыграла Александрийская библиотека в культуре и науке Птолемеевского Египта?</li><li>Подумай, что способствовало становлению Александрии Египетской как научного и культурного центра Древнего мира.</li><li>Как ты думаешь, почему в Птолемеевском Египте царей обожествляли?</li><li>Какие изобретения и открытия прославили Архимеда?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказки к первому и четвёртому вопросам</button></div>
+<div class="rev hint" id="r1" hidden><b>Первый:</b> по карте в разделе 1 — царство Птолемеев в Египте, царство Селевкидов, Греко-Бактрийское царство, Македония и греческие государства, малые царства: Пергамское, Вифиния, Пафлагонийское, Понтийское, Малая Армения, Атропатена, Боспорское. <b>Четвёртый:</b> египтяне издавна почитали фараона как бога (§6—7), а самого Александра объявили сыном бога Амона (§36). Птолемеи продолжили этот обычай, чтобы египтяне признали их власть.</div></div>
+<div class="sublabel">Работаем с источником</div>
+<div class="think">
+<p style="margin:0 0 10px;font-size:16px;color:var(--soft)">Прочитай отрывок из сочинения одного из античных историков и ответь на вопросы.</p>
+<div class="rev plan" style="margin-top:0"><p style="margin:0 0 10px">Гавань в Александрии даже в тихую погоду с трудом доступна, ибо въезд узок и проезжая дорога извивается в кривую линию между невидимыми подводными скалами. Левая сторона гавани прикрыта искусственными сооружениями; на правой находится островок… с очень высокой башней, освещающей мореплавателям дорогу на триста стадий, дабы они ночью, из-за трудностей въезда, могли остановиться в некотором отдалении.</p></div>
+<div class="revbtns" style="margin-top:12px"><button class="revbtn" data-rev="sq2" aria-expanded="false">Вопрос к тексту</button><button class="revbtn" data-rev="sa3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="sq2" hidden>1. О каком сооружении идёт речь в тексте? 2. Чем прославилось это сооружение?</div>
+<div class="rev ans" id="sa3" hidden>1. О Фаросском маяке на острове Фарос. 2. Его считали одним из семи чудес света: высота 120 метров, огонь видно издалека. Посчитаем: триста стадий по 190 метров (§34) — около 57 километров. А в учебнике — «до 60 километров». Числа почти совпали!</div></div>
+<div class="qbox" style="margin-top:22px"><span class="qm">?</span><div><b>И главное:</b><br>Сформулируй ответ на главный вопрос параграфа — что обеспечило расцвет культуры в царстве Птолемеев? Приведи два-три довода.</div></div>
+<div class="done"><button class="donebtn" data-s="sit" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sublabel" style="margin-top:6px">Расставь по порядку</div>
+<p style="color:var(--soft);font-size:17px;margin:0 0 4px">Нажимай по очереди — от самого древнего к самому близкому к нам.</p>
+<div class="chrono" id="chrono">
+<button class="chip" data-ord="3"><span class="ord"></span>Птолемеи строят Мусейон и маяк на Фаросе</button>
+<button class="chip" data-ord="5"><span class="ord"></span>Колумб и Магеллан плывут, веря, что Земля — шар</button>
+<button class="chip" data-ord="1"><span class="ord"></span>Александр основал Александрию · 332 год до н. э.</button>
+<button class="chip" data-ord="4"><span class="ord"></span>Римляне завоевали греческие царства — почти через три века</button>
+<button class="chip" data-ord="2"><span class="ord"></span>Смерть Александра, держава начинает распадаться · 323 год до н. э.</button>
+</div>
+<p class="chronofb" id="chronofb"></p>
+<p style="margin:6px 0 0"><button class="revbtn" id="chronoReset">Начать заново</button></p>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Эллинизм</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="karta" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Время после Александра: греческие и местные обычаи вместе.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Птолемеи</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="ptolemey" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">Цари Египта, потомки друга Александра — полководца Птолемея.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Фаросский маяк</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="mayak" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">120 метров, огонь видно за 60 км; одно из семи чудес света.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Мусейон</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><img data-ph="museyon" alt="" style="max-width:220px;border-radius:12px"><span class="ftext">«Дом Муз» для учёных; отсюда слово «музей».</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Александрийская библиотека</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 268" aria-hidden="true"><use href="#s-biblioteka"/></svg><span class="ftext">Около 700 тысяч свитков.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пергамент</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 268" aria-hidden="true"><use href="#s-biblioteka"/></svg><span class="ftext">Материал для письма из бычьей шкуры, придуман в Пергаме.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Евклид</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 312" aria-hidden="true"><use href="#s-uchenye"/></svg><span class="ftext">Заложил основы геометрии.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Аристарх</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 312" aria-hidden="true"><use href="#s-uchenye"/></svg><span class="ftext">Земля и планеты вращаются вокруг Солнца.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Эратосфен</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 540 312" aria-hidden="true"><use href="#s-uchenye"/></svg><span class="ftext">Измерил окружность Земли; параллели и меридианы.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Почему царства после Александра называют эллинистическими?</h3><div class="opts">
+<button class="opt" data-ok="1">в них смешались греческие и местные обычаи</button>
+<button class="opt">ими правили только египтяне</button>
+<button class="opt">они были в самой Элладе</button></div>
+<div class="fb">Эллины — это греки (§20).</div></div>
+<div class="q"><h3>2. Какой высоты был Фаросский маяк?</h3><div class="opts">
+<button class="opt">12 метров</button>
+<button class="opt" data-ok="1">120 метров</button>
+<button class="opt">1200 метров</button></div>
+<div class="fb">Больше четырёх девятиэтажек друг на друге.</div></div>
+<div class="q"><h3>3. Что должен был сделать каждый корабль в гавани Александрии?</h3><div class="opts">
+<button class="opt" data-ok="1">отдать в библиотеку книгу или копию</button>
+<button class="opt">заплатить золотом</button>
+<button class="opt">отдать папирус</button></div>
+<div class="fb">Так собрали около 700 тысяч свитков.</div></div>
+<div class="q"><h3>4. Откуда взялся пергамент?</h3><div class="opts">
+<button class="opt">его привезли из Индии</button>
+<button class="opt" data-ok="1">придумали в Пергаме, когда Птолемеи запретили вывоз папируса</button>
+<button class="opt">придумал Архимед</button></div>
+<div class="fb">Его делали из тонко выделанной бычьей шкуры.</div></div>
+<div class="q"><h3>5. Кто первым понял, что Земля вращается вокруг Солнца?</h3><div class="opts">
+<button class="opt">Евклид</button>
+<button class="opt">Феофраст</button>
+<button class="opt" data-ok="1">Аристарх</button></div>
+<div class="fb">Евклид — геометрия, Феофраст — ботаника.</div></div>
+<div class="q"><h3>6. Что измерил Эратосфен?</h3><div class="opts">
+<button class="opt" data-ok="1">окружность Земли</button>
+<button class="opt">высоту маяка</button>
+<button class="opt">расстояние до звёзд</button></div>
+<div class="fb">По разнице тени в Александрии и Сиене.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Распад державы и царство Птолемеев</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl4" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl4" hidden><ol><li>Наследников Александра убили, полководцы поделили державу на эллинистические царства.</li><li>Египет — царство Птолемеев, потомков друга Александра; сильный флот.</li><li>Наверху греки и македонцы с полисными обычаями; царя почитают как бога; крестьяне — «царские земледельцы».</li></ol></div>
+</div>
+<div class="think">
+<h3>Александрия</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl5" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl5" hidden><ol><li>Самый большой город греческого мира, гавань, Фаросский маяк — 120 метров, огонь за 60 км.</li><li>Прямоугольные кварталы, широкие улицы, дворцы, гимнасий, театр.</li><li>Мусейон: библиотека в 700 тысяч свитков, зоопарк, ботанический сад, обсерватория; пергамент из Пергама.</li></ol></div>
+</div>
+<div class="think">
+<h3>Учёные Александрии</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl6" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl6" hidden><ol><li>Евклид — геометрия, Архимед — окружности, объёмы, винт.</li><li>Аристарх — Земля вокруг Солнца, Эратосфен — окружность Земли и карта.</li><li>Феофраст — ботаника, медики — кровообращение; Каллимах — филология.</li></ol></div>
+</div>
+<div class="think">
+<h3>Главный вопрос: что обеспечило расцвет культуры</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Птолемеи покровительствовали наукам и звали учёных к себе.</li><li>Мусейон и огромная библиотека — всё для занятий и споров.</li><li>В Александрии встретились знания Востока и Греции.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="p36.html">‹ §36 Походы Александра</a>
+  <span class="pn cur">§37 Царство Птолемеев</span>
+  <a class="pn" href="it3.html">Итоги главы III ›</a>
+ </div>
+</div>
+
+<footer><div class="wrap">§ 37 · История, 5 класс · страницы 207—211 · глава III «Древняя Греция»</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p id="sheetText"></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'s-mayak':'0 0 540 316','s-biblioteka':'0 0 540 268','s-uchenye':'0 0 540 312'};
+
+var T={
+ellinizm:{w:"эллинистическими",k:"эпоха",p:"karta",t:"Эллинизм — время после Александра: в царствах на Востоке смешались греческие (эллинские) и местные обычаи."},
+ptolemei:{w:"Птолемеев",k:"царская семья",p:"ptolemey",t:"Цари Египта, потомки Птолемея — полководца и близкого друга Александра Македонского."},
+faros:{w:"маяк",k:"чудо света",p:"mayak",t:"Фаросский маяк высотой 120 метров у входа в гавань Александрии; огонь было видно за 60 километров."},
+museyon:{w:"Мусейон",k:"«дом Муз»",p:"museyon",t:"Дворец для учёных в Александрии: залы для занятий и уроков, библиотека, зоопарк, ботанический сад, обсерватория."},
+pergament:{w:"пергамент",k:"материал для письма",s:"s-biblioteka",t:"Тонко выделанная бычья шкура для письма. Его придумали в Пергаме, когда Птолемеи запретили вывоз папируса."},
+arhimed:{w:"Архимед",k:"учёный",p:"arhimed",t:"Математик и механик: точно измерял окружности и объёмы, придумал винт для воды и зубчатые колёса (§32)."},
+aristarh:{w:"Аристарх",k:"астроном",s:"s-uchenye",t:"Первым догадался, что Земля и планеты вращаются вокруг Солнца, а звёзды — далёкие солнца."},
+eratosfen:{w:"Эратосфен",k:"учёный",s:"s-uchenye",t:"Доказывал, что Земля — шар, и измерил её окружность; составил первую карту с параллелями и меридианами."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('history:p37:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('history:p37:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+var next=1,fb=document.getElementById('chronofb');
+function chronoReset(){
+  next=1;fb.textContent='';fb.classList.remove('win');
+  document.querySelectorAll('#chrono .chip').forEach(function(c){
+    c.classList.remove('picked','bad');c.disabled=false;c.querySelector('.ord').textContent='';
+  });
+}
+document.querySelectorAll('#chrono .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    if(c.classList.contains('picked'))return;
+    if(+c.dataset.ord===next){
+      c.classList.add('picked');c.classList.remove('bad');
+      c.querySelector('.ord').textContent=next;next++;
+      if(next>5){fb.textContent="Верно! 332 → 323 → Птолемеи → римляне → Колумб и Магеллан.";fb.classList.add('win');}
+      else fb.textContent='Так, дальше…';
+    }else{
+      c.classList.add('bad');fb.classList.remove('win');
+      fb.textContent="Это было позже. Подумай, что должно было случиться раньше.";
+      setTimeout(function(){c.classList.remove('bad')},900);
+    }
+  });
+});
+document.getElementById('chronoReset').addEventListener('click',chronoReset);
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('history:p37:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('history:p37:read_'+id,on?'1':'0')});
+  });
+});
+
+</script>
+</body>
+</html>
