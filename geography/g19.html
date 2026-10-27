@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Вторая часть адреса — долгота: как её найти по карте, почему Россия в двух полушариях и зачем Земле 24 часовых пояса.">
+<title>§19 Географические координаты (2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term .tl{white-space:nowrap}
+.term .tl::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover .tl::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== География: морская гамма (синий вместо красного), блоки учебника «Полярная звезда» ===== */
+:root{
+  --red:#1B6A8C; --ochre:#E2A31F; --leaf:#1B6A8C; --life:#8A4CB0; --lifebg:#F2E9F8;
+  --pa:#C9672C; --pb:#1B6A8C; --pink:#C23C86; --pinkbg:#FBE4F0; --yel:#FFF3C4; --yelb:#D9A21A;
+  --grn:#E3F2E1; --grnb:#3E8E4A; --sea:#BFE0EE; --land:#F3E6C4; --landb:#B9A57A;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--pink);color:#FFF6FB;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+:root[data-theme="dark"] .rubric{color:#20101A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rubric{color:#20101A}}
+
+/* --- вывод (розовая плашка учебника) --- */
+.vyvod{margin:24px 0;background:var(--pinkbg);border-left:8px solid var(--pink);border-radius:0 16px 16px 0;
+  padding:13px 16px 14px;box-shadow:var(--sh)}
+.vyvod .vlab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:4px}
+.vyvod p{margin:0;font-size:18px;font-weight:600;line-height:1.5}
+
+/* --- заметки на полях учебника --- */
+.side{margin:22px 0;border-radius:14px;padding:12px 15px;font-size:17px;line-height:1.5;border:2.5px solid}
+.side .slab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.side.yellow{background:var(--yel);border-color:var(--yelb)} .side.yellow .slab{color:var(--yelb)}
+.side.green{background:var(--grn);border-color:var(--grnb)} .side.green .slab{color:var(--grnb)}
+.side p{margin:0}
+
+/* --- запомните --- */
+.remember{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.remember span{background:var(--card);border:2.5px solid var(--pink);border-radius:999px;padding:6px 13px;
+  font-weight:600;font-size:16px;box-shadow:var(--sh)}
+
+/* --- заставка параграфа --- */
+.banner{margin:0;background:var(--paper2);border-bottom:3px solid var(--line)}
+.banner .wrap{padding-block:14px}
+.banner img{display:block;width:100%;max-width:860px;height:auto;max-height:220px;object-fit:cover;margin:0 auto;border-radius:16px;border:3px solid var(--line)}
+.banner figcaption{text-align:center;margin-top:6px}
+
+/* --- таблица учебника для заполнения --- */
+.ttab{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:var(--card)}
+.ttab th,.ttab td{border:2px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.ttab th{background:var(--paper2);font-weight:600}
+.tscroll{overflow-x:auto}
+
+/* маленькие картинки учебника (портреты) не растягиваем на всю ширину */
+.photo img.small{max-width:320px}
+
+/* --- увеличение по нажатию --- */
+.fig{position:relative}
+.fig svg,.photo img{cursor:zoom-in}
+.fig:has(> svg)::after{content:"⤢ нажми на картинку — увеличится";display:block;margin-top:6px;text-align:right;
+  font-size:12px;font-weight:600;color:var(--soft);pointer-events:none}
+.zoom{position:fixed;inset:0;z-index:120;background:var(--paper);overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom[hidden]{display:none!important}
+.zoombar{position:sticky;top:0;left:0;z-index:2;display:flex;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--paper2);border-bottom:2px solid var(--line);font-size:14px;color:var(--soft)}
+.zoomclose{white-space:nowrap;font:inherit;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.zoomin{padding:14px}
+.zoomin svg,.zoomin img{display:block;background:var(--card);border-radius:12px}
+
+/* жирное слово внутри задания учебника — обычное, а не заголовок блока */
+.ask li b,.ask p b,.ask ol b{display:inline;font-size:inherit;letter-spacing:normal;text-transform:none;color:inherit;margin:0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2F6F8F" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">География</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<defs><marker id="ar19-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--illink,#2B2620)"/></marker><marker id="ar19-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pink,#C23C86)"/></marker><marker id="ar19-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--red,#1B6A8C)"/></marker><marker id="ar19-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pa,#C9672C)"/></marker><marker id="ar19-l" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--life,#8A4CB0)"/></marker></defs>
+<symbol id="g19-dolgota" viewBox="0 0 360 338">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Долгота — градусы от Гринвича</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >Земля сверху, со стороны Северного полюса</text>
+<path d="M180.0 60.0 A118 118 0 0 1 180.0 296.0 Z" fill="var(--red,#1B6A8C)" fill-opacity=".14"/>
+<path d="M180.0 60.0 A118 118 0 0 0 180.0 296.0 Z" fill="var(--pink,#C23C86)" fill-opacity=".14"/>
+<circle cx="180.0" cy="178.0" r="118" fill="none" stroke="var(--red,#1B6A8C)" stroke-width="2"/>
+<circle cx="180.0" cy="178.0" r="78.6667" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-dasharray="2 3"/>
+<circle cx="180.0" cy="178.0" r="39.3333" fill="none" stroke="var(--soft,#5F5648)" stroke-width="1" stroke-dasharray="2 3"/>
+<path d="M180.0 178.0 L239.0 280.2" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L121.0 280.2" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L282.2 237.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L77.8 237.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L298.0 178.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L62.0 178.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L282.2 119.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L77.8 119.0" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L239.0 75.8" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L121.0 75.8" stroke="var(--moss,#5E7A3A)" stroke-width="1" fill="none"/>
+<path d="M180.0 178.0 L180.0 60.0" stroke="var(--illink,#2B2620)" stroke-width="2.2" fill="none"/>
+<path d="M180.0 178.0 L180.0 296.0" stroke="var(--pink,#C23C86)" stroke-width="3" fill="none"/>
+<circle cx="180.0" cy="178.0" r="4" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<text x="186.0" y="171.0" text-anchor="start" font-size="11" font-weight="700" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Северный полюс</text>
+<text x="180.0" y="54.0" text-anchor="middle" font-size="12" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">180°</text>
+<text x="8.0" y="56.0" text-anchor="start" font-size="11" font-weight="700" fill="var(--soft,#5F5648)" >180-й меридиан</text>
+<text x="8.0" y="70.0" text-anchor="start" font-size="11" font-weight="700" fill="var(--soft,#5F5648)" >пересекает Чукотку</text>
+<text x="303.0" y="182.0" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">90° в. д.</text>
+<text x="57.0" y="182.0" text-anchor="end" font-size="11.5" font-weight="800" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">90° з. д.</text>
+<text x="242.0" y="126.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">восточная</text>
+<text x="242.0" y="140.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">долгота</text>
+<text x="118.0" y="126.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">западная</text>
+<text x="118.0" y="140.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">долгота</text>
+<circle cx="180.0" cy="228.5" r="3.5" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<text x="174.0" y="232.5" text-anchor="end" font-size="11" font-weight="700" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Лондон</text>
+<path d="M180.0 178.0 L252.0 271.5" stroke="var(--life,#8A4CB0)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<path d="M180.0 296.0 A118 118 0 0 0 249.0 273.5" fill="none" stroke="var(--life,#8A4CB0)" stroke-width="4" stroke-linecap="round" marker-end="url(#ar19-l)"/>
+<circle cx="207.4" cy="213.6" r="4.5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="217.3" y="274.4" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">37°</text>
+<text x="215.4" y="217.6" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Москва,</text>
+<text x="215.4" y="231.6" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">37° в. д.</text>
+<text x="180.0" y="312.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">0° — Гринвичский меридиан</text>
+<text x="180.0" y="330.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >К востоку от Гринвича — в. д., к западу — з. д.: обе до 180°.</text>
+</g>
+</symbol>
+<symbol id="g19-shag" viewBox="0 0 360 328">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Шаг за шагом: долгота Москвы</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >между меридианами 10° — десять делений по 1°</text>
+<rect x="36.0" y="58.0" width="308.0" height="156.0" fill="var(--sea,#BFE0EE)" fill-opacity=".35" rx="4"/>
+<path d="M36.0 70.0 L344.0 70.0" stroke="var(--red,#1B6A8C)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+<text x="286.0" y="85.0" text-anchor="middle" font-size="11" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">60° с. ш.</text>
+<path d="M36.0 200.0 L344.0 200.0" stroke="var(--red,#1B6A8C)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+<text x="286.0" y="215.0" text-anchor="middle" font-size="11" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">50° с. ш.</text>
+<path d="M50.0 58.0 L50.0 214.0" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none"/>
+<text x="50.0" y="52.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--moss,#5E7A3A)" >30° в. д.</text>
+<path d="M190.0 58.0 L190.0 214.0" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none"/>
+<text x="190.0" y="52.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--moss,#5E7A3A)" >40° в. д.</text>
+<path d="M330.0 58.0 L330.0 214.0" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none"/>
+<text x="330.0" y="52.0" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--moss,#5E7A3A)" >50° в. д.</text>
+<path d="M50.0 238.0 L330.0 238.0" stroke="var(--illink,#2B2620)" stroke-width="1.6" fill="none"/>
+<path d="M50.0 232.0 L50.0 244.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M64.0 234.0 L64.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M78.0 234.0 L78.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M92.0 234.0 L92.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M106.0 234.0 L106.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M120.0 232.0 L120.0 244.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M134.0 234.0 L134.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M148.0 234.0 L148.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M162.0 234.0 L162.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M176.0 234.0 L176.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M190.0 232.0 L190.0 244.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M204.0 234.0 L204.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M218.0 234.0 L218.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M232.0 234.0 L232.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M246.0 234.0 L246.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M260.0 232.0 L260.0 244.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M274.0 234.0 L274.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M288.0 234.0 L288.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M302.0 234.0 L302.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M316.0 234.0 L316.0 242.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<path d="M330.0 232.0 L330.0 244.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<text x="50.0" y="258.0" text-anchor="middle" font-size="11" font-weight="800" fill="var(--moss,#5E7A3A)" >30</text>
+<text x="120.0" y="258.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >35</text>
+<text x="190.0" y="258.0" text-anchor="middle" font-size="11" font-weight="800" fill="var(--moss,#5E7A3A)" >40</text>
+<text x="260.0" y="258.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >45</text>
+<text x="330.0" y="258.0" text-anchor="middle" font-size="11" font-weight="800" fill="var(--moss,#5E7A3A)" >50</text>
+<path d="M50.0 225.0 L153.4 225.0" stroke="var(--pink,#C23C86)" stroke-width="2.4" fill="none" marker-end="url(#ar19-p)"/>
+<text x="103.2" y="219.0" text-anchor="middle" font-size="12" font-weight="800" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">+7°</text>
+<path d="M156.4 131.2 L156.4 232.0" stroke="var(--life,#8A4CB0)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<circle cx="156.4" cy="125.2" r="5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="165.4" y="129.2" text-anchor="start" font-size="12" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Москва</text>
+<circle cx="54.2" cy="71.3" r="4.5" fill="var(--illink,#2B2620)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="62.2" y="87.3" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Санкт-Петербург</text>
+<circle cx="321.6" cy="154.5" r="4.5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="313.6" y="158.5" text-anchor="end" font-size="11.5" font-weight="800" fill="var(--life,#8A4CB0)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Тольятти</text>
+<text x="180.0" y="282.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Ближайший меридиан со стороны нулевого — 30° в. д.</text>
+<text x="180.0" y="302.0" text-anchor="middle" font-size="14" font-weight="800" fill="var(--pink,#C23C86)" >30° + 7° = 37° в. д.</text>
+<text x="180.0" y="320.0" text-anchor="middle" font-size="12" font-weight="800" fill="var(--life,#8A4CB0)" >Москва: около 56° с. ш., 37° в. д.</text>
+</g>
+</symbol>
+<symbol id="g19-chasy" viewBox="0 0 360 338">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Когда в Москве полдень</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11" font-weight="400" fill="var(--soft,#5F5648)" >часовые пояса России: сверху вниз — с запада на восток</text>
+<rect x="34.0" y="48.0" width="312.0" height="23.0" fill="var(--ochre,#E2A31F)" fill-opacity=".20" rx="3"/>
+<text x="46.0" y="64.5" text-anchor="start" font-size="12.5" font-weight="800" fill="var(--life,#8A4CB0)" >12:00</text>
+<text x="104.0" y="64.5" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--life,#8A4CB0)" >Москва, Санкт-Петербург</text>
+<rect x="34.0" y="73.0" width="312.0" height="23.0" fill="var(--red,#1B6A8C)" fill-opacity=".13" rx="3"/>
+<text x="46.0" y="89.5" text-anchor="start" font-size="12.5" font-weight="800" fill="var(--life,#8A4CB0)" >13:00</text>
+<text x="104.0" y="89.5" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--life,#8A4CB0)" >Самара, Тольятти — у Насти</text>
+<rect x="34.0" y="98.0" width="312.0" height="23.0" fill="var(--ochre,#E2A31F)" fill-opacity=".20" rx="3"/>
+<text x="46.0" y="114.5" text-anchor="start" font-size="12.5" font-weight="800" fill="var(--illink,#2B2620)" >14:00</text>
+<text x="104.0" y="114.5" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >Екатеринбург</text>
+<rect x="34.0" y="123.0" width="312.0" height="23.0" fill="var(--red,#1B6A8C)" fill-opacity=".13" rx="3"/>
+<text x="46.0" y="139.5" text-anchor="start" font-size="12.5" font-weight="800" fill="var(--illink,#2B2620)" >15:00</text>
+<text x="104.0" y="139.5" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >Омск</text>
+<rect x="34.0" y="148.0" width="312.0" height="23.0" fill="var(--ochre,#E2A31F)" fill-opacity=".20" rx="3"/>
+<text x="46.0" y="164.5" text-anchor="start" font-size="12.5" font-weight="800" fill="var(--illink,#2B2620)" >16:00</text>
+<text x="104.0" y="164.5" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >Новосибирск</text>
+<rect x="34.0" y="173.0" width="312.0" height="23.0" fill="var(--red,#1B6A8C)" fill-opacity=".13" rx="3"/>
+<text x="46.0" y="189.5" text-anchor="start" font-size="12.5" font-weight="800" fill="var(--illink,#2B2620)" >17:00</text>
+<text x="104.0" y="189.5" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >Иркутск, у Байкала</text>
+<rect x="34.0" y="198.0" width="312.0" height="23.0" fill="var(--ochre,#E2A31F)" fill-opacity=".20" rx="3"/>
+<text x="46.0" y="214.5" text-anchor="start" font-size="12.5" font-weight="800" fill="var(--illink,#2B2620)" >18:00</text>
+<text x="104.0" y="214.5" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >Якутск</text>
+<rect x="34.0" y="223.0" width="312.0" height="23.0" fill="var(--red,#1B6A8C)" fill-opacity=".13" rx="3"/>
+<text x="46.0" y="239.5" text-anchor="start" font-size="12.5" font-weight="800" fill="var(--pink,#C23C86)" >19:00</text>
+<text x="104.0" y="239.5" text-anchor="start" font-size="11.5" font-weight="800" fill="var(--pink,#C23C86)" >Хабаровск — ужинают</text>
+<path d="M18.0 52.0 L18.0 242.0" stroke="var(--soft,#5F5648)" stroke-width="2" fill="none" marker-end="url(#ar19-k)"/>
+<text x="180.0" y="266.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >Каждый пояс на восток — на 1 час больше:</text>
+<text x="180.0" y="280.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >Земля вращается с запада на восток,</text>
+<text x="180.0" y="294.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >и на востоке день наступает раньше.</text>
+<text x="180.0" y="314.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >Ещё есть Калининград (11:00), Магадан (20:00)</text>
+<text x="180.0" y="328.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >и Камчатка (21:00) — всего в России 11 поясов.</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">География · § 19</span>
+    <h1>Географические координаты (2)</h1>
+    <p class="lede">Вторая часть адреса — долгота: как её найти по карте, почему Россия в двух полушариях и зачем Земле 24 часовых пояса.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>О чём параграф:</b><br>Что значит определить географическую долготу. Зачем нужны часовые пояса.</div></div>
+  </div>
+</header>
+
+<figure class="banner"><div class="wrap"><img id="ph-g18_banner" src="img/6c254888f3a4.jpg" alt="Слева — старинный морской прибор из латуни, справа — старинная морская карта с розами ветров и сеткой линий"><figcaption><span class="src">из учебника</span>Заставка параграфа</figcaption></div></figure>
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g18.html">‹ §18 Координаты (1)</a>
+  <span class="pn cur">§19 Координаты (2)</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s1" data-j="s1" title="Что значит определить географическую долготу?">1</a><a href="#s2" data-j="s2" title="Зачем нужны часовые пояса?">2</a><a href="#s3" data-j="s3" title="Шаг за шагом. Определяем географическую долготу">3</a><a href="#s4" data-j="s4" title="Итоги параграфа">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Что значит определить географическую долготу?</h2></div>
+<div class="easy">
+<p>Меридианы — это линии долготы. У всех точек одного меридиана долгота одинаковая. Чтобы узнать <span class="term" role="button" tabindex="0" data-t="dolg"><b><span class="tl">долготу</span></b></span> точки, ищем меридиан, на котором она стоит.</p>
+<p>Нулевой — Гринвичский меридиан, его долгота 0°. От него и считаем градусы — строго вдоль параллели, на запад или на восток (рис. 47).</p>
+<p>К западу от Гринвича долгота <span class="term" role="button" tabindex="0" data-t="zvd"><i><span class="tl">западная</span></i></span> (з. д.), к востоку — <i>восточная</i> (в. д.). И та и другая — от 0° до 180°.</p>
+<p>Россия — в обоих полушариях, Восточном и Западном: через Чукотку проходит <span class="term" role="button" tabindex="0" data-t="m180">180-й <span class="tl">меридиан</span></span>.</p>
+<p>Раньше страны считали долготу от <span class="term" role="button" tabindex="0" data-t="nacmer">своих <span class="tl">меридианов</span></span> — через свои главные обсерватории: Англия и США — от Гринвичского, Франция — от Парижского, Россия — от Пулковского. Выбрать начальный меридиан важно: от него зависит отсчёт времени. Вспомни § 17: с какого года считают от Гринвича?</p>
+<p>На глобусе и карте полушарий градусы долготы подписаны там, где меридианы пересекают экватор.</p>
+</div>
+<div class="book" hidden>
+<p>Меридианы называют линиями долготы. На меридиане все точки имеют одинаковую долготу. Для того чтобы узнать <span class="term" role="button" tabindex="0" data-t="dolg"><b><span class="tl">долготу</span></b></span> заданной точки, нужно найти меридиан, на котором она расположена.</p>
+<p>Вы уже знаете, что нулевым является Гринвичский меридиан. Его долгота 0°. От Гринвичского меридиана и начинаем отсчёт долготы в градусах, следуя строго вдоль параллели на запад или на восток (рис. 47).</p>
+<p>К западу от нулевого меридиана все точки имеют <span class="term" role="button" tabindex="0" data-t="zvd"><i>западную <span class="tl">долготу</span></i></span> (з. д.), к востоку — <i>восточную долготу</i> (в. д.). Западная и восточная долгота изменяется от 0° до 180°.</p>
+<p>Россия располагается в обоих полушариях — Восточном и Западном, поскольку территорию нашей страны пересекает <span class="term" role="button" tabindex="0" data-t="m180">180-й <span class="tl">меридиан</span></span>.</p>
+<p>Долготы считали в разное время от разных меридианов. В различных странах для этого использовали свои собственные <span class="term" role="button" tabindex="0" data-t="nacmer">национальные нулевые <span class="tl">меридианы</span></span>, проходящие, как правило, через центральные обсерватории этих стран. Так, в Англии и США нулевым считался Гринвичский меридиан, во Франции для этой цели использовался Парижский меридиан, в России — Пулковский меридиан и т. д. Выбор начального меридиана очень важен, так как с ним связан отсчёт времени. Вспомните, с какого года стали вести отсчёт от Гринвичского меридиана.</p>
+<p>Внимательно посмотрите на глобус и карту полушарий. Там цифры, обозначающие градусы долготы, указаны у точек пересечения меридианов с экватором (см. <i>Приложение</i>).</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g19_r47" src="img/0614d7370cb2.jpg" alt="Глобус с меридианами. Начальный меридиан 0° — у левого края; вдоль экватора подписаны 20°, 40° … 160°. Чёрная стрелка «восточная долгота» идёт вдоль экватора на восток, розовая «западная долгота» — на запад. Отмечены Санкт-Петербург (30° в. д.) и Москва (37° в. д.)" style="max-width:420px"><figcaption><span class="src">из учебника</span><b>Рис. 47.</b> Определение географической долготы<br><span style="color:var(--soft)">▲ Вдоль какой линии идут стрелки долготы — вдоль экватора или вдоль меридиана? Где у Москвы пунктир касается экватора?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 338" role="img" aria-label="Земля сверху, со стороны Северного полюса: в центре полюс, от него лучами меридианы. Внизу — Гринвичский меридиан 0° через Лондон, вверху — 180°. Справа — восточная долгота до 90° в. д. и дальше, слева — западная. Фиолетовая дуга по экватору от 0° до меридиана Москвы — 37° в. д. Подпись: 180-й меридиан пересекает Чукотку"><use href="#g19-dolgota"/></svg><figcaption>Долгота — это дуга вдоль экватора от Гринвичского меридиана, в градусах.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">На полях учебника</span><p><b>Географическая долгота</b> — это расстояние в градусах к западу или востоку от нулевого меридиана до меридиана, проведённого через заданную точку.</p></div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Определить географическую долготу точки — это значит найти меридиан, на котором она расположена.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Тольятти — на востоке</span></div><div class="lifebody"><p>В § 18 был вопрос: почему до Тольятти ехать 14 часов, если по широте он южнее Москвы меньше чем на 300 км? Ответ — долгота. Москва — около 37° в. д. (точнее 37,6°), Тольятти и Ягодное — около 49° в. д.: на 12° восточнее.</p><p>Вдоль параллели Тольятти 1° — около 65 км (§ 17). 12 × 65 — почти 800 км на восток. Поэтому по прямой от Москвы до Тольятти около 800 км, а по дорогам ещё больше.</p></div><p class="lifebook">В учебнике это называется: <b>отсчёт долготы в градусах, следуя строго вдоль параллели на запад или на восток</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Анталия и Петербург — на одном меридиане</span></div><div class="lifebody"><p>Анталия — около 31° в. д., Санкт-Петербург — 30° в. д. Они почти на одном меридиане: если из Анталии идти строго на север, через Чёрное море, придёшь почти в Петербург.</p><p>А широта у них разная: Анталия — около 37° с. ш., Петербург — 60° с. ш. (§ 18). Поэтому одной долготы для адреса мало.</p></div><p class="lifebook">В учебнике это называется: <b>на меридиане все точки имеют одинаковую долготу</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Мыс Дежнёва — в Западном полушарии</span></div><div class="lifebody"><p>В § 6 ты искала на глобусе мыс Дежнёва — край Евразии на Чукотке. Его долгота — около 170° з. д.: он уже за 180-м меридианом, в Западном полушарии!</p><p>Найди на глобусе 180-й меридиан и проведи по нему пальцем через Чукотку.</p></div><p class="lifebook">В учебнике это называется: <b>Россия располагается в обоих полушариях — Восточном и Западном</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Чем отсчёт долготы похож на отсчёт широты из § 18 и чем отличается?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Сравни: от какой линии считают, вдоль какой линии идут, до скольких градусов.</div>
+<div class="rev ans" id="a1" hidden>Похож: считают в градусах от нулевой линии и добавляют сторону — с. ш. или ю. ш., в. д. или з. д. Отличается: широту считают от экватора вдоль меридиана, до 90°, а долготу — от Гринвичского меридиана вдоль параллели, до 180°.</div>
+</div>
+<div class="think">
+<p class="qt">2. Почему Россия лежит и в Восточном, и в Западном полушарии, а из Северного и Южного — только в Северном?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>§ 18: где Россия относительно экватора? И какой меридиан проходит через неё на востоке?</div>
+<div class="rev ans" id="a2" hidden>Вся Россия севернее экватора — значит, она только в Северном полушарии. А 180-й меридиан проходит через Чукотку: её восточный край — уже за ним, в западной долготе (мыс Дежнёва — около 170° з. д.).</div>
+</div>
+<div class="think">
+<p class="qt">3. Почему выбор начального меридиана связан с отсчётом времени?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Последний абзац раздела и § 17: с какого года считают от Гринвича?</div>
+<div class="rev ans" id="a3" hidden>На каждом меридиане своё солнечное время. Пока каждая страна считала от своего меридиана, у всех были разные карты и разное время. В 1884 году договорились считать от Гринвичского — и долготу, и время по всему миру.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Зачем нужны часовые пояса?</h2></div>
+<div class="easy">
+<p>Земля вращается вокруг оси: одна её сторона постепенно уходит в тень, другая — выходит на Солнце. Поэтому, когда в Хабаровске или Токио ужинают, в Москве и Ростове рабочий день только начинается. И так по кругу.</p>
+<p>На каждом меридиане своё <span class="term" role="button" tabindex="0" data-t="solnvr"><i>солнечное <span class="tl">время</span></i></span> — одинаковое от Северного полюса до Южного. На небольших расстояниях разница почти незаметна.</p>
+<p>Поэтому земной шар поделили на 24 <span class="term" role="button" tabindex="0" data-t="chpoyas"><b>часовых <span class="tl">пояса</span></b></span>. Внутри пояса время одно, в соседнем — на час другое. Для удобства стран границы поясов меняли, и система стала сложнее. Но страны договорились — и в расписаниях самолётов и поездов нет путаницы.</p>
+</div>
+<div class="book" hidden>
+<p>Во время вращения Земли вокруг своей оси одно её полушарие постепенно уходит в тень, а другое так же постепенно начинает освещаться Солнцем. Поэтому, например, когда жители Хабаровска или Токио ужинают, у москвичей или ростовчан рабочий день только начинается. И так по кругу.</p>
+<p>Для каждого меридиана существует своё <span class="term" role="button" tabindex="0" data-t="solnvr"><i>солнечное</i> <span class="tl">время</span></span>. Оно одинаково для всех пунктов, которые находятся на одном меридиане — от Северного полюса до Южного. На небольших расстояниях разница почти незаметна. И люди договорились поделить наш земной шар на 24 <span class="term" role="button" tabindex="0" data-t="chpoyas"><b>часовых <span class="tl">пояса</span></b></span>. Внутри каждого пояса отсчёт времени одинаков, а в соседнем отличается на один час. Правда, для удобства каждой страны приходилось вносить изменения. Это усложнило систему отсчёта времени и проведение границ часовых поясов. Но страны всё согласовали, единую систему признали, и путаницы в расписаниях самолётов и поездов не возникает.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 338" role="img" aria-label="Часовые пояса России сверху вниз — с запада на восток, когда в Москве 12:00: Москва и Санкт-Петербург 12:00, Самара и Тольятти 13:00, Екатеринбург 14:00, Омск 15:00, Новосибирск 16:00, Иркутск 17:00, Якутск 18:00, Хабаровск 19:00 — ужинают. Ещё Калининград 11:00, Магадан 20:00, Камчатка 21:00 — всего 11 поясов"><use href="#g19-chasy"/></svg><figcaption>Каждый шаг на восток — плюс час.</figcaption></div></figure>
+<div class="col">
+<div class="side green"><span class="slab">На полях учебника</span><p>Вспомните, как единицы времени связаны с осевым и орбитальным движениями Земли (§ 10).</p></div>
+<div class="blocknote"><b>«Когда жители Хабаровска или Токио ужинают, у москвичей… рабочий день только начинается».</b> На деле разница меньше: с Хабаровском — 7 часов, с Токио — 6. Когда в Хабаровске ужинают (около 19:00), в Москве полдень — рабочий день в разгаре. А когда он в Москве начинается (9:00), в Хабаровске уже 16:00. Чтобы фраза была верной, нужен край ещё восточнее: на Камчатке разница с Москвой 9 часов.</div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Часовые пояса позволяют всем странам пользоваться единой системой отсчёта времени.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Настя в Тольятти</span></div><div class="lifebody"><p>Ты знаешь, что у Насти в Тольятти на час позже, чем в Москве, и совсем поздно ей звонить нельзя. Теперь понятно почему: Тольятти — в соседнем часовом поясе, восточнее.</p><p>По Солнцу разница меньше часа. Тольятти восточнее на 12°, а Земля поворачивается на 1° за 4 минуты: 12 × 4 = 48 минут. Но внутри пояса время одно, поэтому часы отличаются ровно на 1 час.</p></div><p class="lifebook">В учебнике это называется: <b>внутри каждого пояса отсчёт времени одинаков, а в соседнем отличается на один час</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Турция — по московскому времени</span></div><div class="lifebody"><p>Если полетишь в Анталию снова, часы переводить не придётся: в Турции время то же, что в Москве, хотя Анталия западнее на 7°. Это и есть «для удобства каждой страны приходилось вносить изменения»: Турция сама выбрала такое время.</p></div><p class="lifebook">В учебнике это называется: <b>для удобства каждой страны приходилось вносить изменения</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">4. Почему у Насти в Тольятти на час позже — а не на 48 минут?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Схема «Когда в Москве полдень» и «Из жизни»: 1° — 4 минуты.</div>
+<div class="rev ans" id="a4" hidden>По Солнцу Тольятти «впереди» на 48 минут: он восточнее на 12°, а 12 × 4 = 48. Но время считают по поясам: внутри пояса оно одно, а соседний отличается ровно на час. Тольятти — в соседнем поясе, поэтому +1 час.</div>
+</div>
+<div class="think">
+<p class="qt">5. Почему время «впереди» на востоке, а не на западе?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>§ 10: в какую сторону вращается Земля?</div>
+<div class="rev ans" id="a5" hidden>Земля вращается с запада на восток. Восточные места раньше поворачиваются к Солнцу — у них раньше утро, полдень и вечер. Поэтому в Хабаровске уже вечер, когда в Москве полдень.</div>
+</div>
+<div class="think">
+<p class="qt">6. Сколько градусов долготы приходится на один часовой пояс?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Полный круг — 360°, поясов — 24.</div>
+<div class="rev ans" id="a6" hidden>360° : 24 = 15°. За один час Земля поворачивается на 15°. Правда, на деле границы поясов идут по границам стран и областей, а не строго по меридианам.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Шаг за шагом. Определяем географическую долготу</h2></div>
+<div class="rubric">Шаг за шагом</div>
+<div class="easy">
+<p>Найдём долготу Санкт-Петербурга и Москвы.</p>
+<p><b>Если точка на меридиане.</b> 1) Находим её на карте. 2) Смотрим, в каком полушарии — Западном или Восточном. 3) Читаем подпись меридиана. Санкт-Петербург стоит на меридиане 30° к востоку от нулевого: его долгота 30° в. д. (рис. 47).</p>
+<p><b>Если точка между меридианами.</b> 1) Берём ближайший меридиан <i>со стороны нулевого</i>. 2) Считаем градусы от него до точки: между меридианами на карте, как и между параллелями, 10°. 3) Прибавляем.</p>
+<p>Москва: ближайший меридиан со стороны нулевого — 30° в. д., до Москвы около 7°. Москва восточнее, поэтому 30° + 7° = <b>37° в. д.</b></p>
+<p>Полные «адреса»: Санкт-Петербург — <b>60° с. ш., 30° в. д.</b>, Москва — <b>около 56° с. ш., 37° в. д.</b></p>
+</div>
+<div class="book" hidden>
+<p>Определим долготу Санкт-Петербурга и Москвы. Чтобы определить долготу объекта, необходимо:</p>
+<p>1. Найти объект на карте.<br>2. Определить, в каком полушарии, Западном или Восточном, он находится.<br>3. Определить долготу меридиана, на котором расположен объект. (Так, Санкт-Петербург находится на меридиане, удалённом на 30° к востоку от начального (нулевого) меридиана, его долгота 30° в. д. (см. рис. 47)).</p>
+<p>Если объект располагается между меридианами, следует:</p>
+<p>1. Определить долготу ближайшего к объекту меридиана со стороны нулевого (Гринвичского) меридиана (шаги 1—3).<br>2. Определить количество градусов от этого меридиана до объекта. (Учтите, что расстояние между меридианами на карте, как и между параллелями, 10°.)<br>3. Прибавить получившееся число к долготе найденного ближайшего меридиана. (Так, ближайший к Москве меридиан со стороны нулевого меридиана — 30° в. д. Расстояние от этого меридиана до Москвы около 7°. Москва находится к востоку от меридиана 30° в. д., значит, её долгота примерно 30° + 7° = 37° в. д.)</p>
+<p>Таким образом, мы установили географические координаты Санкт-Петербурга — 60° с. ш., 30° в. д. и Москвы — около 56° с. ш., 37° в. д.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 328" role="img" aria-label="Кусок карты: меридианы 30°, 40° и 50° в. д., параллели 50° и 60° с. ш. Внизу линейка: двадцать делений по 1°. Санкт-Петербург — на меридиане 30°. От 30° до Москвы — стрелка «+7°». Справа, у 49°, — Тольятти. Внизу: 30° + 7° = 37° в. д.; Москва — около 56° с. ш., 37° в. д."><use href="#g19-shag"/></svg><figcaption>Как в § 18, только считаем вдоль параллели — от меридиана со стороны нулевого.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>«Её долгота примерно 30° + 7° = 37° в. д.»</b> Точнее, центр Москвы — 55°45′ с. ш., 37°37′ в. д., то есть 55,75° и 37,6°. Широту учебник округлил вверх (до 56°), а долготу — вниз: по правилам округления 37,6° — это 38°. На карте атласа полградуса не разглядеть, так что «примерно 37°» — тоже честный ответ.</div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Полный адрес Ягодного</span></div><div class="lifebody"><p>Теперь у Москвы полный адрес: около 56° с. ш., 37° в. д. А у Ягодного и Тольятти — около 53,5° с. ш., 49° в. д. Запиши оба в тетрадь — пригодятся в задании 10.</p><p>В картах в телефоне можно посмотреть координаты любого места — попроси папу показать, и сравни с ответом по атласу.</p></div><p class="lifebook">В учебнике это называется: <b>мы установили географические координаты Санкт-Петербурга — 60° с. ш., 30° в. д. и Москвы — около 56° с. ш., 37° в. д.</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Найди по схеме «Шаг за шагом» долготу Тольятти.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Ближайший меридиан со стороны нулевого — 40° в. д. Сколько делений до точки?</div>
+<div class="rev ans" id="a7" hidden>Тольятти — на 9 делений восточнее 40°: 40° + 9° ≈ 49° в. д. Вместе с широтой из § 18 — около 53,5° с. ш., 49° в. д.</div>
+</div>
+<div class="think">
+<p class="qt">8. Как найти долготу места в Западном полушарии, например 75° з. д.?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>«Со стороны нулевого» — значит, ближе к Гринвичу.</div>
+<div class="rev ans" id="a8" hidden>Так же, только на запад: ближайший меридиан со стороны нулевого — 70° з. д., до точки ещё 5° на запад. 70° + 5° = 75° з. д. Пишем «з. д.», потому что точка к западу от Гринвича.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги параграфа</h2></div>
+<div class="rubric">Запомните</div>
+<div class="remember"><span>Географическая долгота</span><span>Часовые пояса</span></div>
+<div class="rubric">Это я знаю</div>
+<div class="ask"><b>Вопросы учебника</b><ol><li>Назовите материки, через которые проходит нулевой меридиан.</li><li>Назовите географические координаты самой северной и самой южной точек земного шара.</li><li>По физической карте определите географические координаты: а) города Нью-Дели; б) вулкана Везувий; в) города Владивостока.</li><li>Определите географические координаты столиц Мексики, Франции, Австралии.</li><li>Определите координаты вашего областного центра.</li><li>Этот один из красивейших городов мира находится в Европе. Его координаты 50° с. ш., 14° в. д. Как называется этот город?</li><li>На этом острове, центральная часть которого имеет координаты 19° ю. ш., 47° в. д., водятся полуобезьяны — лемуры. Как называется этот остров?</li><li>Эта точка Земли интересна тем, что её географические координаты равны нулю. Где находится эта точка? Найдите её на карте.</li><li>Какие географические объекты имеют координаты: а) 30° с. ш. и 30° в. д.; б) 10° с. ш. и 80° з. д.; в) 35° с. ш. и 140° в. д.?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказки к вопросам 2, 5 и 8</button></div>
+<div class="rev hint" id="r1" hidden><b>2.</b> Самые северная и южная точки — полюсы. Подумай, есть ли у полюса долгота: что происходит с меридианами на полюсе (§ 17)? <b>5.</b> Москва — сама город федерального значения: её координаты — в «Шаге за шагом». А у Тольятти областной центр — Самара. <b>8.</b> Где пересекаются экватор и Гринвичский меридиан?</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Проверь себя: вопросы 1—9</button></div>
+<div class="rev ans" id="r2" hidden><b>1.</b> Европа, Африка, Антарктида. <b>2.</b> Северный полюс — 90° с. ш., Южный — 90° ю. ш. Долготы у них нет: на полюсах сходятся все меридианы. <b>3.</b> а) Нью-Дели — около 29° с. ш., 77° в. д.; б) Везувий — около 41° с. ш., 14° в. д.; в) Владивосток — около 43° с. ш., 132° в. д. <b>4.</b> Мехико — около 19° с. ш., 99° з. д.; Париж — около 49° с. ш., 2° в. д.; Канберра — около 35° ю. ш., 149° в. д. <b>5.</b> Москва — около 56° с. ш., 37° в. д.; Самара — около 53° с. ш., 50° в. д. <b>6.</b> Прага. <b>7.</b> Мадагаскар. <b>8.</b> В Гвинейском заливе Атлантического океана, у берегов Африки. <b>9.</b> а) Египет, рядом с Каиром и дельтой Нила; б) Панамский перешеек — там, где Панамский канал; в) Япония, остров Хонсю, рядом с Токио.</div></div>
+<div class="rubric">Это я могу</div>
+<div class="ask"><b>Задание учебника</b><ol start="10"><li>Выполните работу «Географический адрес моего населённого пункта», заполнив в тетради таблицу.</li></ol></div>
+<div class="tscroll"><table class="ttab"><tr><th></th><th>Мой населённый пункт</th></tr><tr><td>1. На каком материке находится</td><td>…</td></tr><tr><td>2. Государство</td><td>…</td></tr><tr><td>3. Географические координаты населённого пункта</td><td>…</td></tr><tr><td>4. В каком направлении от Москвы находится</td><td>…</td></tr><tr><td>5. Какое расстояние от Москвы, в км</td><td>…</td></tr></table></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к заданию 10</button></div>
+<div class="rev hint" id="r3" hidden>Твой населённый пункт — Москва, и строки 4 и 5 для неё не нужны. Поэтому заполни таблицу ещё и для Ягодного: широта — из § 18, долгота — из «Шага за шагом», направление — по сетке (§ 17), расстояние — по масштабу карты (§ 13).</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Проверь себя: задание 10 для Ягодного</button></div>
+<div class="rev ans" id="r4" hidden>1. Евразия. 2. Россия. 3. Около 53,5° с. ш., 49° в. д. 4. На юго-востоке от Москвы. 5. Около 800 км по прямой.</div></div>
+<div class="rubric">Это мне интересно</div>
+<div class="ask"><b>Вопросы учебника</b><ol start="11"><li>Почему герои романа Ж. Верна «Дети капитана Гранта» в поисках потерпевших кораблекрушение вынуждены были посетить все материки, через которые проходила параллель 37° ю. ш.?</li><li>В одном из своих произведений В. В. Набоков пишет: «В кабинете… нашёлся в книжном шкафу великолепный атлас. Мир, сперва показываемый как плотный шар, туго обтянутый сеткой долгот и широт, развёртывался плоско, разрезался на две половины и затем подавался по частям». Балтийское море кажется ему похожим на коленопреклонённую женщину, Италия — на ботфорт, Цейлон — на каплю воды.<br>Найдите на карте Скандинавский полуостров, полуостров Камчатка, материки Африка и Австралия, озеро Байкал. Какие образы у вас складываются?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r5" aria-expanded="false">Подсказка к вопросу 11</button></div>
+<div class="rev hint" id="r5" hidden>Сколько частей у географического адреса? Какую из них знали герои, а какую — нет?</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r6" aria-expanded="false">Проверь себя: вопрос 11</button></div>
+<div class="rev ans" id="r6" hidden>В записке из бутылки морская вода размыла часть слов. Уцелела только широта — 37° ю. ш., а долготу прочитать было нельзя. Без долготы место не найти: известна лишь параллель вокруг всей Земли. Поэтому искали вдоль неё — в Южной Америке, в Австралии и на островах по пути.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r7" aria-expanded="false">Подсказка к вопросу 12</button></div>
+<div class="rev hint" id="r7" hidden>Тут нет правильного ответа — только твои образы. Ты любишь рисовать животных: на каких животных похожи эти очертания? Нарисуй Байкал, Камчатку или Скандинавию так, как ты их видишь.</div></div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt8" data-n="8">
+<div class="sortlab">Восточная или западная долгота?</div>
+<div class="sitem" data-r="0"><p class="stext">Москва</p><div class="sbtns"><button class="sbtn" data-b="0">в. д.</button><button class="sbtn" data-b="1">з. д.</button></div><p class="swhy" hidden>Около 37° в. д. — к востоку от Гринвича.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Мехико</p><div class="sbtns"><button class="sbtn" data-b="0">в. д.</button><button class="sbtn" data-b="1">з. д.</button></div><p class="swhy" hidden>Около 99° з. д. — Америка к западу от Гринвича.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Санкт-Петербург</p><div class="sbtns"><button class="sbtn" data-b="0">в. д.</button><button class="sbtn" data-b="1">з. д.</button></div><p class="swhy" hidden>30° в. д.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Мыс Дежнёва на Чукотке</p><div class="sbtns"><button class="sbtn" data-b="0">в. д.</button><button class="sbtn" data-b="1">з. д.</button></div><p class="swhy" hidden>Около 170° з. д. — за 180-м меридианом.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Тольятти</p><div class="sbtns"><button class="sbtn" data-b="0">в. д.</button><button class="sbtn" data-b="1">з. д.</button></div><p class="swhy" hidden>Около 49° в. д.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Панамский канал</p><div class="sbtns"><button class="sbtn" data-b="0">в. д.</button><button class="sbtn" data-b="1">з. д.</button></div><p class="swhy" hidden>Около 80° з. д.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Париж</p><div class="sbtns"><button class="sbtn" data-b="0">в. д.</button><button class="sbtn" data-b="1">з. д.</button></div><p class="swhy" hidden>Около 2° в. д. — чуть восточнее Гринвича.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Анталия</p><div class="sbtns"><button class="sbtn" data-b="0">в. д.</button><button class="sbtn" data-b="1">з. д.</button></div><p class="swhy" hidden>Около 31° в. д.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt9" data-n="8">
+<div class="sortlab">Широта или долгота?</div>
+<div class="sitem" data-r="0"><p class="stext">Считают от экватора</p><div class="sbtns"><button class="sbtn" data-b="0">широта</button><button class="sbtn" data-b="1">долгота</button></div><p class="swhy" hidden>Вдоль меридиана, на север или на юг.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Считают от Гринвичского меридиана</p><div class="sbtns"><button class="sbtn" data-b="0">широта</button><button class="sbtn" data-b="1">долгота</button></div><p class="swhy" hidden>Вдоль параллели, на запад или на восток.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Бывает до 90°</p><div class="sbtns"><button class="sbtn" data-b="0">широта</button><button class="sbtn" data-b="1">долгота</button></div><p class="swhy" hidden>До полюса — четверть окружности.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Бывает до 180°</p><div class="sbtns"><button class="sbtn" data-b="0">широта</button><button class="sbtn" data-b="1">долгота</button></div><p class="swhy" hidden>До 180-го меридиана — половина окружности.</p></div>
+<div class="sitem" data-r="0"><p class="stext">С. ш. и ю. ш.</p><div class="sbtns"><button class="sbtn" data-b="0">широта</button><button class="sbtn" data-b="1">долгота</button></div><p class="swhy" hidden>Северная и южная.</p></div>
+<div class="sitem" data-r="1"><p class="stext">В. д. и з. д.</p><div class="sbtns"><button class="sbtn" data-b="0">широта</button><button class="sbtn" data-b="1">долгота</button></div><p class="swhy" hidden>Восточная и западная.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Ищем свою параллель</p><div class="sbtns"><button class="sbtn" data-b="0">широта</button><button class="sbtn" data-b="1">долгота</button></div><p class="swhy" hidden>У всех точек параллели широта одна.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Ищем свой меридиан</p><div class="sbtns"><button class="sbtn" data-b="0">широта</button><button class="sbtn" data-b="1">долгота</button></div><p class="swhy" hidden>У всех точек меридиана долгота одна.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Географическая долгота</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 338" aria-hidden="true"><use href="#g19-dolgota"/></svg><span class="ftext">Градусы от Гринвичского меридиана до меридиана точки. От 0° до 180°.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">В. д. и з. д.</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 338" aria-hidden="true"><use href="#g19-dolgota"/></svg><span class="ftext">К востоку от Гринвича — восточная, к западу — западная.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">180-й меридиан</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 338" aria-hidden="true"><use href="#g19-dolgota"/></svg><span class="ftext">Проходит через Чукотку: Россия — в обоих полушариях.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Пулковский меридиан</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 338" aria-hidden="true"><use href="#g19-dolgota"/></svg><span class="ftext">Раньше от него считала долготу Россия. С 1884 года — от Гринвичского.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Солнечное время</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 338" aria-hidden="true"><use href="#g19-chasy"/></svg><span class="ftext">Своё на каждом меридиане, одно от полюса до полюса.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Часовые пояса</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 338" aria-hidden="true"><use href="#g19-chasy"/></svg><span class="ftext">24 пояса; в соседнем — на час другое время. В России — 11.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">1 час = 15°</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 338" aria-hidden="true"><use href="#g19-chasy"/></svg><span class="ftext">360° : 24 = 15°. 1° — 4 минуты.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Адрес Москвы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 328" aria-hidden="true"><use href="#g19-shag"/></svg><span class="ftext">Около 56° с. ш., 37° в. д. Петербург — 60° с. ш., 30° в. д.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. От чего отсчитывают географическую долготу?</h3><div class="opts">
+<button class="opt" data-ok="1">От Гринвичского меридиана</button>
+<button class="opt">От экватора</button>
+<button class="opt">От Северного полюса</button>
+<button class="opt">От Москвы</button></div>
+<div class="fb">Нулевой меридиан — Гринвичский, его долгота 0°.</div></div>
+<div class="q"><h3>2. Какая долгота у Москвы?</h3><div class="opts">
+<button class="opt" data-ok="1">Около 37° в. д.</button>
+<button class="opt">Около 56° в. д.</button>
+<button class="opt">Около 37° з. д.</button>
+<button class="opt">30° в. д.</button></div>
+<div class="fb">30° + 7° = 37° в. д. А 56° — это широта Москвы.</div></div>
+<div class="q"><h3>3. Почему Россия лежит и в Восточном, и в Западном полушарии?</h3><div class="opts">
+<button class="opt" data-ok="1">Её пересекает 180-й меридиан</button>
+<button class="opt">Её пересекает экватор</button>
+<button class="opt">Через неё проходит Гринвичский меридиан</button>
+<button class="opt">Она очень большая</button></div>
+<div class="fb">180-й меридиан проходит через Чукотку.</div></div>
+<div class="q"><h3>4. Какой бывает долгота?</h3><div class="opts">
+<button class="opt" data-ok="1">От 0° до 180°</button>
+<button class="opt">От 0° до 90°</button>
+<button class="opt">От 0° до 360°</button>
+<button class="opt">От 1 до 24</button></div>
+<div class="fb">На восток — до 180° в. д., на запад — до 180° з. д.</div></div>
+<div class="q"><h3>5. На сколько часовых поясов поделили земной шар?</h3><div class="opts">
+<button class="opt" data-ok="1">На 24</button>
+<button class="opt">На 12</button>
+<button class="opt">На 11</button>
+<button class="opt">На 360</button></div>
+<div class="fb">24 пояса. А в России — 11 из них.</div></div>
+<div class="q"><h3>6. В Москве 12:00. Сколько сейчас у Насти в Тольятти?</h3><div class="opts">
+<button class="opt" data-ok="1">13:00</button>
+<button class="opt">11:00</button>
+<button class="opt">12:00</button>
+<button class="opt">19:00</button></div>
+<div class="fb">Тольятти — в соседнем поясе, восточнее: на час больше.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Что такое долгота</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Расстояние в градусах от Гринвичского меридиана до меридиана точки, вдоль параллели.</li><li>К востоку — в. д., к западу — з. д., обе до 180°; Россию пересекает 180-й меридиан.</li><li>Раньше страны считали от своих меридианов — Парижского, Пулковского; с 1884 года — от Гринвичского.</li></ol></div>
+</div>
+<div class="think">
+<h3>Зачем нужны часовые пояса</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl11" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl11" hidden><ol><li>Земля вращается — на разных меридианах разное солнечное время.</li><li>Земной шар поделили на 24 пояса: внутри время одно, в соседнем — на час другое.</li><li>У Насти в Тольятти на час позже; в России 11 поясов.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как найти долготу по карте</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl12" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl12" hidden><ol><li>Найти точку, определить полушарие — Западное или Восточное.</li><li>На меридиане — прочитать подпись: Санкт-Петербург 30° в. д.</li><li>Между меридианами — от ближайшего со стороны нулевого прибавить градусы: Москва 30° + 7° = 37° в. д.</li></ol></div>
+</div>
+<div class="think">
+<h3>Загадки по координатам</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl13" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl13" hidden><ol><li>50° с. ш., 14° в. д. — Прага; 19° ю. ш., 47° в. д. — Мадагаскар с лемурами.</li><li>0° и 0° — Гвинейский залив.</li><li>«Дети капитана Гранта»: знали только широту — пришлось искать вдоль всей параллели.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g18.html">‹ §18 Координаты (1)</a>
+  <span class="pn cur">§19 Координаты (2)</span>
+ </div>
+</div>
+
+<footer><div class="wrap">География, 5—6 классы. А. И. Алексеев и др., «Полярная звезда», 2023. § 19, с. 65—67. Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'g19-dolgota':'0 0 360 338','g19-shag':'0 0 360 328','g19-chasy':'0 0 360 338'};
+
+var T={
+dolg:{w:"Географическая долгота",k:"вторая часть адреса",s:"g19-dolgota",t:"Расстояние в градусах к западу или востоку от нулевого (Гринвичского) меридиана до меридиана, проведённого через заданную точку. От 0° до 180°.",r:"",e:"Санкт-Петербург — 30° в. д., Москва — около 37° в. д., Тольятти и Ягодное — около 49° в. д."},
+zvd:{w:"Западная и восточная долгота",k:"з. д. и в. д.",s:"g19-dolgota",t:"К западу от Гринвичского меридиана — западная долгота (з. д.), к востоку — восточная (в. д.). Обе — от 0° до 180°.",r:"",e:""},
+m180:{w:"180-й меридиан",k:"граница полушарий",s:"g19-dolgota",t:"Меридиан напротив Гринвичского: на нём встречаются западная и восточная долгота. Проходит через Чукотку — поэтому Россия лежит и в Восточном, и в Западном полушарии.",r:"",e:""},
+nacmer:{w:"Национальные нулевые меридианы",k:"как было раньше",s:"g19-dolgota",t:"Раньше страны считали долготу от своих меридианов — через свои главные обсерватории: Франция — от Парижского, Россия — от Пулковского (обсерватория под Санкт-Петербургом). С 1884 года — от Гринвичского.",r:"",e:""},
+solnvr:{w:"Солнечное время",k:"время по Солнцу",s:"g19-chasy",t:"Своё на каждом меридиане: полдень — когда Солнце выше всего (§ 15). Одинаково для всех мест одного меридиана — от Северного полюса до Южного.",r:"",e:""},
+chpoyas:{w:"Часовые пояса",k:"24 пояса",s:"g19-chasy",t:"Земной шар поделили на 24 часовых пояса. Внутри пояса время одинаковое, в соседнем отличается на один час. В России 11 поясов.",r:"",e:"У Насти в Тольятти на час позже, чем в Москве: Тольятти — в соседнем часовом поясе."}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('geography:g19:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('geography:g19:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('geography:g19:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('geography:g19:read_'+id,on?'1':'0')});
+  });
+});
+
+/* --- увеличение карт, схем и картинок по нажатию (на телефоне мелкие подписи) --- */
+var zoom=document.createElement('div');zoom.className='zoom';zoom.hidden=true;
+zoom.setAttribute('role','dialog');zoom.setAttribute('aria-modal','true');zoom.setAttribute('aria-label','Увеличенная картинка');
+zoom.innerHTML='<div class="zoombar"><span>Двигай пальцем, чтобы рассмотреть</span><button class="zoomclose">Закрыть ✕</button></div><div class="zoomin"></div>';
+document.body.appendChild(zoom);
+function openZoom(el){
+  var box=zoom.querySelector('.zoomin');box.innerHTML='';
+  var c=el.cloneNode(true);c.removeAttribute('id');
+  if(c.tagName.toLowerCase()==='svg'){
+    var v=(c.getAttribute('viewBox')||'0 0 400 300').split(/\s+/);
+    c.style.width=Math.round(Math.max(parseFloat(v[2])*2.3,window.innerWidth-24))+'px';
+  }else{
+    c.style.width=Math.round(Math.max((el.naturalWidth||600)*1.1,window.innerWidth*1.5))+'px';
+  }
+  c.style.maxWidth='none';c.style.height='auto';
+  box.appendChild(c);zoom.hidden=false;document.documentElement.style.overflow='hidden';
+  zoom.querySelector('.zoomclose').focus();
+}
+function closeZoom(){zoom.hidden=true;document.documentElement.style.overflow='';}
+document.addEventListener('click',function(e){
+  if(e.target.closest('.zoomclose')){closeZoom();return}
+  var s=e.target.closest('.fig svg, .photo img, .banner img');
+  if(s&&!zoom.contains(s)){openZoom(s);}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!zoom.hidden)closeZoom()});
+
+</script>
+</body>
+</html>
