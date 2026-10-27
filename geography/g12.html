@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Как найти дорогу и не заблудиться: ориентиры, стороны горизонта, азимут и компас — и зачем людям план местности.">
+<title>§12 Ориентирование на местности</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term .tl{white-space:nowrap}
+.term .tl::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover .tl::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== География: морская гамма (синий вместо красного), блоки учебника «Полярная звезда» ===== */
+:root{
+  --red:#1B6A8C; --ochre:#E2A31F; --leaf:#1B6A8C; --life:#8A4CB0; --lifebg:#F2E9F8;
+  --pa:#C9672C; --pb:#1B6A8C; --pink:#C23C86; --pinkbg:#FBE4F0; --yel:#FFF3C4; --yelb:#D9A21A;
+  --grn:#E3F2E1; --grnb:#3E8E4A; --sea:#BFE0EE; --land:#F3E6C4; --landb:#B9A57A;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--pink);color:#FFF6FB;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+:root[data-theme="dark"] .rubric{color:#20101A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rubric{color:#20101A}}
+
+/* --- вывод (розовая плашка учебника) --- */
+.vyvod{margin:24px 0;background:var(--pinkbg);border-left:8px solid var(--pink);border-radius:0 16px 16px 0;
+  padding:13px 16px 14px;box-shadow:var(--sh)}
+.vyvod .vlab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:4px}
+.vyvod p{margin:0;font-size:18px;font-weight:600;line-height:1.5}
+
+/* --- заметки на полях учебника --- */
+.side{margin:22px 0;border-radius:14px;padding:12px 15px;font-size:17px;line-height:1.5;border:2.5px solid}
+.side .slab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.side.yellow{background:var(--yel);border-color:var(--yelb)} .side.yellow .slab{color:var(--yelb)}
+.side.green{background:var(--grn);border-color:var(--grnb)} .side.green .slab{color:var(--grnb)}
+.side p{margin:0}
+
+/* --- запомните --- */
+.remember{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.remember span{background:var(--card);border:2.5px solid var(--pink);border-radius:999px;padding:6px 13px;
+  font-weight:600;font-size:16px;box-shadow:var(--sh)}
+
+/* --- заставка параграфа --- */
+.banner{margin:0;background:var(--paper2);border-bottom:3px solid var(--line)}
+.banner .wrap{padding-block:14px}
+.banner img{display:block;width:100%;max-width:860px;height:auto;max-height:220px;object-fit:cover;margin:0 auto;border-radius:16px;border:3px solid var(--line)}
+.banner figcaption{text-align:center;margin-top:6px}
+
+/* --- таблица учебника для заполнения --- */
+.ttab{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:var(--card)}
+.ttab th,.ttab td{border:2px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.ttab th{background:var(--paper2);font-weight:600}
+.tscroll{overflow-x:auto}
+
+/* маленькие картинки учебника (портреты) не растягиваем на всю ширину */
+.photo img.small{max-width:320px}
+
+/* --- увеличение по нажатию --- */
+.fig{position:relative}
+.fig svg,.photo img{cursor:zoom-in}
+.fig:has(> svg)::after{content:"⤢ нажми на картинку — увеличится";display:block;margin-top:6px;text-align:right;
+  font-size:12px;font-weight:600;color:var(--soft);pointer-events:none}
+.zoom{position:fixed;inset:0;z-index:120;background:var(--paper);overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom[hidden]{display:none!important}
+.zoombar{position:sticky;top:0;left:0;z-index:2;display:flex;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--paper2);border-bottom:2px solid var(--line);font-size:14px;color:var(--soft)}
+.zoomclose{white-space:nowrap;font:inherit;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.zoomin{padding:14px}
+.zoomin svg,.zoomin img{display:block;background:var(--card);border-radius:12px}
+
+/* жирное слово внутри задания учебника — обычное, а не заголовок блока */
+.ask li b,.ask p b,.ask ol b{display:inline;font-size:inherit;letter-spacing:normal;text-transform:none;color:inherit;margin:0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2F6F8F" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">География</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<defs><marker id="ar12-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--illink,#2B2620)"/></marker><marker id="ar12-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--red,#1B6A8C)"/></marker><marker id="ar12-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pink,#C23C86)"/></marker><marker id="ar12-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--moss,#5E7A3A)"/></marker><marker id="ar12-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--pa,#C9672C)"/></marker><marker id="ar12-y" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="var(--ochre,#E2A31F)"/></marker></defs>
+<symbol id="g12-storony" viewBox="0 0 360 320">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Стороны горизонта</text>
+<circle cx="180.0" cy="176.0" r="100" fill="none" stroke="var(--landb,#B9A57A)" stroke-width="1.2" stroke-dasharray="3 4"/>
+<path d="M180.0 176.0 L230.9 125.1" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none"/>
+<circle cx="230.9" cy="125.1" r="3.5" fill="var(--moss,#5E7A3A)" stroke="none" stroke-width="0"/>
+<path d="M180.0 176.0 L230.9 226.9" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none"/>
+<circle cx="230.9" cy="226.9" r="3.5" fill="var(--moss,#5E7A3A)" stroke="none" stroke-width="0"/>
+<path d="M180.0 176.0 L129.1 226.9" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none"/>
+<circle cx="129.1" cy="226.9" r="3.5" fill="var(--moss,#5E7A3A)" stroke="none" stroke-width="0"/>
+<path d="M180.0 176.0 L129.1 125.1" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none"/>
+<circle cx="129.1" cy="125.1" r="3.5" fill="var(--moss,#5E7A3A)" stroke="none" stroke-width="0"/>
+<path d="M180.0 176.0 L180.0 76.0" stroke="var(--pink,#C23C86)" stroke-width="3" fill="none" marker-end="url(#ar12-p)"/>
+<path d="M180.0 176.0 L280.0 176.0" stroke="var(--red,#1B6A8C)" stroke-width="3" fill="none" marker-end="url(#ar12-b)"/>
+<path d="M180.0 176.0 L180.0 276.0" stroke="var(--red,#1B6A8C)" stroke-width="3" fill="none" marker-end="url(#ar12-b)"/>
+<path d="M180.0 176.0 L80.0 176.0" stroke="var(--red,#1B6A8C)" stroke-width="3" fill="none" marker-end="url(#ar12-b)"/>
+<circle cx="180.0" cy="176.0" r="6" fill="var(--card,#FFFBF2)" stroke="var(--illink,#2B2620)" stroke-width="2"/>
+<text x="180.0" y="50.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >норд · 0°</text>
+<text x="180.0" y="68.0" text-anchor="middle" font-size="17" font-weight="800" fill="var(--pink,#C23C86)" >С</text>
+<text x="180.0" y="296.0" text-anchor="middle" font-size="17" font-weight="800" fill="var(--red,#1B6A8C)" >Ю</text>
+<text x="180.0" y="312.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >зюйд · 180°</text>
+<text x="290.0" y="182.0" text-anchor="start" font-size="17" font-weight="800" fill="var(--red,#1B6A8C)" >В</text>
+<text x="290.0" y="198.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >ост · 90°</text>
+<text x="70.0" y="182.0" text-anchor="end" font-size="17" font-weight="800" fill="var(--red,#1B6A8C)" >З</text>
+<text x="70.0" y="198.0" text-anchor="end" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >вест · 270°</text>
+<text x="238.9" y="121.1" text-anchor="start" font-size="12" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">СВ · 45°</text>
+<text x="238.9" y="135.1" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">северо-восток</text>
+<text x="238.9" y="238.9" text-anchor="start" font-size="12" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">ЮВ · 135°</text>
+<text x="238.9" y="252.9" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юго-восток</text>
+<text x="121.1" y="238.9" text-anchor="end" font-size="12" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">ЮЗ · 225°</text>
+<text x="121.1" y="252.9" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">юго-запад</text>
+<text x="121.1" y="121.1" text-anchor="end" font-size="12" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">СЗ · 315°</text>
+<text x="121.1" y="135.1" text-anchor="end" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">северо-запад</text>
+</g>
+</symbol>
+<symbol id="g12-azimut" viewBox="0 0 360 244">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Как считать азимут</text>
+<path d="M92.0 130.0 L92.0 54.0" stroke="var(--pink,#C23C86)" stroke-width="2.6" fill="none" marker-end="url(#ar12-p)"/>
+<text x="92.0" y="48.0" text-anchor="middle" font-size="14" font-weight="800" fill="var(--pink,#C23C86)" >С</text>
+<path d="M92.0 130.0 L31.4 95.0" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none" stroke-dasharray="5 3"/>
+<circle cx="31.4" cy="95.0" r="5" fill="var(--pa,#C9672C)" stroke="none" stroke-width="0"/>
+<text x="29.4" y="85.0" text-anchor="middle" font-size="11" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">предмет</text>
+<path d="M93.2 96.0 L96.7 96.3 L100.2 97.0 L103.6 98.1 L106.9 99.4 L110.0 101.2 L112.9 103.2 L115.6 105.5 L118.0 108.1 L120.2 111.0 L122.0 114.0 L123.5 117.3 L124.7 120.6 L125.5 124.1 L125.9 127.6 L126.0 131.2 L125.7 134.7 L125.0 138.2 L123.9 141.6 L122.6 144.9 L120.8 148.0 L118.8 150.9 L116.5 153.6 L113.9 156.0 L111.0 158.2 L108.0 160.0 L104.7 161.5 L101.4 162.7 L97.9 163.5 L94.4 163.9 L90.8 164.0 L87.3 163.7 L83.8 163.0 L80.4 161.9 L77.1 160.6 L74.0 158.8 L71.1 156.8 L68.4 154.5 L66.0 151.9 L63.8 149.0 L62.0 146.0 L60.5 142.7 L59.3 139.4 L58.5 135.9 L58.1 132.4 L58.0 128.8 L58.3 125.3 L59.0 121.8 L60.1 118.4 L61.4 115.1" stroke="var(--ochre,#E2A31F)" stroke-width="2.4" fill="none" marker-end="url(#ar12-y)"/>
+<text x="122.0" y="174.0" text-anchor="middle" font-size="13" font-weight="800" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">300°</text>
+<circle cx="92.0" cy="130.0" r="3.5" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<text x="92.0" y="206.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink,#2B2620)" >Азимут 300°, а не 60°:</text>
+<text x="92.0" y="221.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >от севера только</text>
+<text x="92.0" y="235.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >по часовой стрелке</text>
+<path d="M214.0 172.0 L214.0 126.0" stroke="var(--pink,#C23C86)" stroke-width="2" fill="none" marker-end="url(#ar12-p)"/>
+<path d="M317.9 112.0 L317.9 66.0" stroke="var(--pink,#C23C86)" stroke-width="2" fill="none" marker-end="url(#ar12-p)"/>
+<text x="214.0" y="120.0" text-anchor="middle" font-size="12" font-weight="800" fill="var(--pink,#C23C86)" >С</text>
+<text x="317.9" y="60.0" text-anchor="middle" font-size="12" font-weight="800" fill="var(--pink,#C23C86)" >С</text>
+<path d="M220.9 168.0 L307.5 118.0" stroke="var(--moss,#5E7A3A)" stroke-width="2.4" fill="none" marker-end="url(#ar12-g)"/>
+<path d="M214.8 148.0 L217.3 148.2 L219.8 148.7 L222.2 149.4 L224.5 150.4 L226.7 151.6 L228.8 153.1 L230.7 154.7 L232.4 156.6 L233.9 158.6" stroke="var(--moss,#5E7A3A)" stroke-width="2" fill="none" marker-end="url(#ar12-g)"/>
+<text x="238.0" y="146.0" text-anchor="start" font-size="12" font-weight="800" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">60°</text>
+<path d="M315.9 127.4 L228.0 177.4" stroke="var(--red,#1B6A8C)" stroke-width="2.2" fill="none" stroke-dasharray="5 3" marker-end="url(#ar12-b)"/>
+<text x="281.0" y="172.0" text-anchor="middle" font-size="12" font-weight="800" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">обратно 240°</text>
+<circle cx="214.0" cy="172.0" r="5" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<circle cx="317.9" cy="112.0" r="5" fill="var(--illink,#2B2620)" stroke="none" stroke-width="0"/>
+<text x="206.0" y="176.0" text-anchor="end" font-size="13" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">А</text>
+<text x="326.9" y="117.0" text-anchor="start" font-size="13" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">Б</text>
+<text x="268.0" y="206.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--illink,#2B2620)" >туда 60° — обратно 240°:</text>
+<text x="268.0" y="221.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >обратный азимут</text>
+<text x="268.0" y="235.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >на 180° больше</text>
+</g>
+</symbol>
+<symbol id="g12-solnce" viewBox="0 0 360 346">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Где Солнце восходит и заходит</text>
+<text x="180.0" y="34.0" text-anchor="middle" font-size="11.5" font-weight="400" fill="var(--soft,#5F5648)" >в Москве; вид сверху, ты — в центре</text>
+<circle cx="180.0" cy="160.0" r="96" fill="var(--land,#F3E6C4)" stroke="var(--landb,#B9A57A)" stroke-width="1.6"/>
+<text x="180.0" y="58.0" text-anchor="middle" font-size="14" font-weight="800" fill="var(--pink,#C23C86)" >С</text>
+<text x="94.0" y="182.0" text-anchor="start" font-size="14" font-weight="800" fill="var(--red,#1B6A8C)" >З</text>
+<text x="266.0" y="182.0" text-anchor="end" font-size="14" font-weight="800" fill="var(--red,#1B6A8C)" >В</text>
+<path d="M180.0 164.0 L180.0 114.0" stroke="var(--illink,#2B2620)" stroke-width="3" fill="none" marker-end="url(#ar12-k)"/>
+<text x="180.0" y="108.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">тень в полдень</text>
+<path d="M180.0 160.0 L245.5 89.8" stroke="var(--pink,#C23C86)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<circle cx="245.5" cy="89.8" r="6" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="257.5" y="83.8" text-anchor="start" font-size="11.5" font-weight="700" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">21 июня</text>
+<path d="M180.0 160.0 L114.5 89.8" stroke="var(--pink,#C23C86)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<circle cx="114.5" cy="89.8" r="6" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="102.5" y="83.8" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--pink,#C23C86)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">21 июня</text>
+<path d="M180.0 160.0 L276.0 158.3" stroke="var(--moss,#5E7A3A)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<circle cx="276.0" cy="158.3" r="6" fill="var(--moss,#5E7A3A)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="288.0" y="146.3" text-anchor="start" font-size="11.5" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">март,</text>
+<text x="288.0" y="159.3" text-anchor="start" font-size="11.5" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">сентябрь</text>
+<path d="M180.0 160.0 L84.0 158.3" stroke="var(--moss,#5E7A3A)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<circle cx="84.0" cy="158.3" r="6" fill="var(--moss,#5E7A3A)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="72.0" y="146.3" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">март,</text>
+<text x="72.0" y="159.3" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--moss,#5E7A3A)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">сентябрь</text>
+<path d="M180.0 160.0 L250.2 225.5" stroke="var(--red,#1B6A8C)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<circle cx="250.2" cy="225.5" r="6" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="262.2" y="245.5" text-anchor="start" font-size="11.5" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">21 декабря</text>
+<path d="M180.0 160.0 L109.8 225.5" stroke="var(--red,#1B6A8C)" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+<circle cx="109.8" cy="225.5" r="6" fill="var(--red,#1B6A8C)" stroke="var(--card,#FFFBF2)" stroke-width="1.6"/>
+<text x="97.8" y="245.5" text-anchor="end" font-size="11.5" font-weight="700" fill="var(--red,#1B6A8C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">21 декабря</text>
+<text x="230.0" y="146.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--pa,#C9672C)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">восход</text>
+<text x="130.0" y="146.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--soft,#5F5648)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">закат</text>
+<path d="M192.0 274.0 L196.0 274.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M188.5 282.5 L191.3 285.3" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M180.0 286.0 L180.0 290.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M171.5 282.5 L168.7 285.3" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M168.0 274.0 L164.0 274.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M171.5 265.5 L168.7 262.7" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M180.0 262.0 L180.0 258.0" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><path d="M188.5 265.5 L191.3 262.7" stroke="var(--ochre,#E2A31F)" stroke-width="2" fill="none"/><circle cx="180.0" cy="274.0" r="9" fill="var(--ochre,#E2A31F)" stroke="none" stroke-width="0"/>
+<text x="204.0" y="278.0" text-anchor="start" font-size="12" font-weight="700" fill="var(--pa,#C9672C)" >полдень — юг</text>
+<circle cx="180.0" cy="160.0" r="5" fill="var(--life,#8A4CB0)" stroke="var(--card,#FFFBF2)" stroke-width="1.4"/>
+<text x="180.0" y="308.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >Точно на востоке Солнце восходит только в дни</text>
+<text x="180.0" y="323.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >равноденствия. Летом — на северо-востоке,</text>
+<text x="180.0" y="338.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--soft,#5F5648)" >зимой — на юго-востоке.</text>
+</g>
+</symbol>
+<symbol id="g12-plan" viewBox="0 0 360 226">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180.0" y="18.0" text-anchor="middle" font-size="14" font-weight="700" fill="var(--illink,#2B2620)" >Сбоку → сверху → план</text>
+<path d="M8.0 150.0 L112.0 150.0" stroke="var(--landb,#B9A57A)" stroke-width="2" fill="none"/>
+<rect x="22.0" y="108.0" width="40.0" height="42.0" fill="var(--land,#F3E6C4)" stroke="var(--illink,#2B2620)" stroke-width="1.6"/>
+<path d="M16 108 L42 84 L68 108 Z" fill="var(--pa,#C9672C)" stroke="var(--illink,#2B2620)" stroke-width="1.6"/>
+<rect x="37.0" y="128.0" width="10.0" height="22.0" fill="var(--card,#FFFBF2)" stroke="var(--illink,#2B2620)" stroke-width="1.2"/>
+<path d="M92.0 150.0 L92.0 126.0" stroke="var(--illink,#2B2620)" stroke-width="3" fill="none"/>
+<circle cx="92.0" cy="112.0" r="15" fill="var(--moss,#5E7A3A)" stroke="none" stroke-width="0"/>
+<text x="60.0" y="176.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink,#2B2620)" >сбоку —</text>
+<text x="60.0" y="191.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >как видят глаза</text>
+<rect x="124.0" y="52.0" width="108.0" height="104.0" fill="var(--land,#F3E6C4)" rx="4"/>
+<rect x="138.0" y="70.0" width="44.0" height="34.0" fill="var(--pa,#C9672C)"/>
+<path d="M138.0 87.0 L182.0 87.0" stroke="var(--illink,#2B2620)" stroke-width="1.2" fill="none"/>
+<rect x="155.0" y="104.0" width="10.0" height="52.0" fill="var(--card,#FFFBF2)" stroke="var(--landb,#B9A57A)" stroke-width="1"/>
+<circle cx="206.0" cy="74.0" r="15" fill="var(--moss,#5E7A3A)" stroke="none" stroke-width="0"/>
+<text x="178.0" y="176.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink,#2B2620)" >сверху —</text>
+<text x="178.0" y="191.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >как с самолёта</text>
+<rect x="244.0" y="52.0" width="108.0" height="104.0" fill="var(--card,#FFFBF2)" stroke="var(--soft,#5F5648)" stroke-width="1.4"/>
+<rect x="258.0" y="70.0" width="44.0" height="34.0" fill="var(--pink,#C23C86)" fill-opacity=".35" stroke="var(--pink,#C23C86)" stroke-width="1.6"/>
+<path d="M280.0 104.0 L280.0 156.0" stroke="var(--illink,#2B2620)" stroke-width="1.8" fill="none" stroke-dasharray="5 3"/>
+<circle cx="326.0" cy="74.0" r="5" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="2"/>
+<path d="M326.0 79.0 L326.0 88.0" stroke="var(--moss,#5E7A3A)" stroke-width="2" fill="none"/>
+<path d="M338.0 146.0 L338.0 112.0" stroke="var(--illink,#2B2620)" stroke-width="2" fill="none" marker-end="url(#ar12-k)"/>
+<text x="338.0" y="106.0" text-anchor="middle" font-size="11" font-weight="800" fill="var(--illink,#2B2620)" paint-order="stroke" stroke="var(--card,#FFFBF2)" stroke-width="3.2" stroke-linejoin="round">С</text>
+<text x="298.0" y="176.0" text-anchor="middle" font-size="12" font-weight="700" fill="var(--illink,#2B2620)" >план —</text>
+<text x="298.0" y="191.0" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)" >условными знаками</text>
+<rect x="14.0" y="207.0" width="16.0" height="10.0" fill="var(--pink,#C23C86)" fill-opacity=".35" stroke="var(--pink,#C23C86)" stroke-width="1.4"/>
+<text x="36.0" y="216.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >здание</text>
+<circle cx="120.0" cy="210.0" r="4" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="2"/>
+<path d="M120.0 214.0 L120.0 220.0" stroke="var(--moss,#5E7A3A)" stroke-width="2" fill="none"/>
+<text x="130.0" y="216.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >отдельное дерево</text>
+<path d="M250.0 212.0 L272.0 212.0" stroke="var(--illink,#2B2620)" stroke-width="1.8" fill="none" stroke-dasharray="5 3"/>
+<text x="278.0" y="216.0" text-anchor="start" font-size="11.5" font-weight="600" fill="var(--illink,#2B2620)" >тропинка</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">География · § 12</span>
+    <h1>Ориентирование на местности</h1>
+    <p class="lede">Как найти дорогу и не заблудиться: ориентиры, стороны горизонта, азимут и компас — и зачем людям план местности.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>О чём параграф:</b><br>Для чего необходимо уметь ориентироваться на местности. Для чего человеку необходим план местности.</div></div>
+  </div>
+</header>
+
+<figure class="banner"><div class="wrap"><img id="ph-g12_banner" src="img/2f230c2062ae.jpg" alt="Горы и раскидистое дерево, справа — город, снятый сверху"><figcaption><span class="src">из учебника</span>Заставка параграфа</figcaption></div></figure>
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g11.html">‹ §11 Солнечный свет на Земле</a>
+  <span class="pn cur">§12 Ориентирование на местности</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s0" data-j="s0" title="План и карта">◆</a><a href="#s1" data-j="s1" title="Для чего необходимо уметь ориентироваться на местности?">1</a><a href="#s2" data-j="s2" title="Для чего человеку необходим план местности?">2</a><a href="#s3" data-j="s3" title="Итоги параграфа">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s0">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">◆</span><h2>План и карта</h2></div>
+<div class="rubric">Новый раздел учебника</div>
+<div class="easy">
+<p>Этот параграф открывает новый раздел учебника — <b>«План и карта»</b>.</p>
+<p><span class="big">«План» (planum) в переводе с латинского — плоский.</span> На первой странице раздела — старинная карта, гравюра старинного города с высоты и Птолемей. Учебник называет его создателем одних из первых географических карт (ты помнишь его по § 2 и § 8).</p>
+<p>Ещё там фрагмент картины Виктора Михайловича Васнецова «Витязь на распутье» и подпись: «Уметь ориентироваться необходимо, чтобы правильно определять своё местоположение в пространстве».</p>
+<p>Справа сверху вниз — план сада, план города и два снимка города сверху. Одну и ту же местность можно показать по-разному — об этом весь раздел.</p>
+</div>
+<div class="book" hidden>
+<p>«План» (planum) в переводе с латинского — плоский.</p>
+<p>Птолемей (II в.) — создатель одних из первых географических карт.</p>
+<p>Уметь ориентироваться необходимо, чтобы правильно определять своё местоположение в пространстве.</p>
+<p>Фрагмент картины Виктора Михайловича Васнецова «Витязь на распутье».</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g12_open" src="img/63e1b90ed42b.jpg" alt="Первая страница раздела «План и карта»: старинная карта, гравюра старинного города с высоты, портрет Птолемея, герб, фрагмент картины Васнецова «Витязь на распутье» — витязь на коне у камня, Земля из космоса в круге знаков зодиака; справа сверху вниз — план сада, план города и два снимка города сверху" style="max-width:520px"><figcaption><span class="src">из учебника</span>Первая страница раздела «План и карта». «План» (planum) в переводе с латинского — плоский. <span style="color:var(--soft)">(с. 43 учебника, открывашка раздела)</span></figcaption></div></figure>
+<div class="col">
+<div class="sublabel">Что будет в разделе</div>
+<ol start="12" style="margin:0 0 6px;padding-left:34px;font-size:17px"><li><b>Ориентирование на местности</b> — ты здесь</li><li>Земная поверхность на плане и карте (1)</li><li>Земная поверхность на плане и карте (2)</li><li>Учимся с «Полярной звездой» (2)</li><li>Географическая карта</li><li>Градусная сетка</li><li>Географические координаты (1)</li><li>Географические координаты (2)</li><li>Учимся с «Полярной звездой» (3)</li></ol>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Почему на первой странице раздела — «Витязь на распутье»? Как картина связана с ориентированием?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Что делает витязь на картине? Что стоит перед ним?</div>
+<div class="rev ans" id="a1" hidden>Витязь стоит на развилке дорог и выбирает, куда ехать. Перед ним камень с надписью, куда ведёт каждая дорога, — это ориентир, как дорожный знак. Выбрать правильное направление — это и есть ориентироваться.</div>
+</div>
+<div class="think">
+<p class="qt">2. Справа на странице — план сада, план города и два снимка сверху. Что у них общего?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Откуда смотрит тот, кто рисует план или делает снимок?</div>
+<div class="rev ans" id="a2" hidden>Всё показано сверху и на плоскости. План рисуют условными знаками, а снимок — это фотография. Но и то и другое помогает понять, что где находится.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s0" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Для чего необходимо уметь ориентироваться на местности?</h2></div>
+<div class="easy">
+<p>Часто нужно понять, где ты и куда идти. Как найти улицу в незнакомом районе? Как в походе выйти к станции? Как не заблудиться в лесу и найти обратную дорогу?</p>
+<p>Иногда помогают <span class="term" role="button" tabindex="0" data-t="orientir"><b><span class="tl">ориентиры</span></b></span> — заметные предметы: необычный дом, вывеска, дорожный знак, колодец, мост. Или природные: овраг, озеро, раскидистое дерево.</p>
+<p>А иногда, как древним мореходам и путешественникам, помогают <span class="term" role="button" tabindex="0" data-t="storony">стороны <span class="tl">горизонта</span></span> и то, где на небе Солнце и звёзды.</p>
+<p><span class="big">Сначала был восток.</span> Его знали с древности: на востоке восходит Солнце. Позже главными стали направления <i>север — юг</i> и <i>запад — восток</i>. Без них не проложить дорогу, не построить мост, не повести корабль и самолёт.</p>
+<p><span class="big">Азимут.</span> <span class="term" role="button" tabindex="0" data-t="azimut"><b><span class="tl">Азимут</span></b></span> показывает направление на предмет относительно севера. Его отсчитывают от севера по часовой стрелке, в градусах — от 0° до 360°. Север — 0°, восток — 90°, юг — 180°, запад — 270° (рис. 31).</p>
+<p><span class="big">Компас.</span> Примерно измерить азимут можно <span class="term" role="button" tabindex="0" data-t="kompas"><b><span class="tl">компасом</span></b></span>. Его намагниченная стрелка синим концом всегда показывает на <b><i>север</i></b>. Встань лицом к северу: сзади — юг, справа — восток, слева — запад.</p>
+<p>Компасом пользуются военные, геодезисты, геологи, моряки. Моряки до сих пор называют стороны горизонта по-нидерландски: норд, зюйд, ост, вест — север, юг, восток, запад.</p>
+<p><span class="term" role="button" tabindex="0" data-t="orient"><b><span class="tl">Ориентирование</span></b></span> — это умение определить, где ты находишься, по сторонам горизонта и по разным предметам.</p>
+</div>
+<div class="book" hidden>
+<p>В нашей повседневной жизни очень часто бывает необходимо определить своё местоположение и правильное направление движения. Как найти нужную улицу в незнакомом районе? Как выйти к железнодорожной станции во время похода? Как не заблудиться в лесу и найти обратную дорогу? Иногда нам на помощь приходят хорошо запоминающиеся предметы-<span class="term" role="button" tabindex="0" data-t="orientir"><span class="tl">ориентиры</span></span> — отличающийся от других дом, вывеска, дорожный знак, колодец, мост или природный объект — овраг, озеро, раскидистое дерево и т. д. В других случаях нам, как и древним мореходам и путешественникам, поможет знание <span class="term" role="button" tabindex="0" data-t="storony">сторон <span class="tl">горизонта</span></span> и положение Солнца и звёзд на небе.</p>
+<p>Ориентир на восток известен с древности. На востоке восходит Солнце. Позднее главными ориентирами стали направления <i>север—юг и запад—восток</i>. Без знания сторон горизонта человек не смог бы освоить окружающую территорию, проложить дороги, построить мосты, управлять кораблями и самолётами.</p>
+<p>Для ориентирования на местности полезно знать, что такое <span class="term" role="button" tabindex="0" data-t="azimut"><b><span class="tl">азимут</span></b></span>. Азимут позволяет определить направление на объект по отношению к северу. Его отсчитывают по ходу часовой стрелки от направления на север. Азимут измеряют в градусах — от 0° до 360°. Азимут на север соответствует 0°, на восток — 90°, на юг — 180°, на запад — 270° (рис. 31).</p>
+<p>Приблизительно азимут можно измерить с помощью <span class="term" role="button" tabindex="0" data-t="kompas"><b><span class="tl">компаса</span></b></span>. Намагниченная стрелка компаса окрашенным (синим) концом всегда направлена в сторону <b><i>севера</i></b>. Если встать лицом к северу, сзади будет юг, справа — восток, а слева — запад.</p>
+<p>Компас используют военные, геодезисты, геологи, моряки. В навигации до сих пор используются нидерландские названия сторон горизонта: норд, зюйд, ост, вест (север, юг, восток, запад).</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g12_r31" src="img/5c7884a1b72c.jpg" alt="Компас в центре, вокруг — стороны горизонта С, В, Ю, З и шкала от 0 до 360 градусов. Стрелки-дуги от севера по часовой стрелке показывают азимуты: на нефтяную вышку — 150°, на плотину — 250°, на дерево и на мельницу — знак вопроса" style="max-width:420px"><figcaption><span class="src">из учебника</span><b>Рис. 31.</b> Определение азимута на различные объекты<br><span style="color:var(--soft)">▲ Определи азимут на дерево и на мельницу (задание 6 в конце параграфа).</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 320" role="img" aria-label="Роза сторон горизонта. Основные: север — норд, 0°; восток — ост, 90°; юг — зюйд, 180°; запад — вест, 270°. Промежуточные: северо-восток 45°, юго-восток 135°, юго-запад 225°, северо-запад 315°"><use href="#g12-storony"/></svg><figcaption>Четыре основные стороны и четыре промежуточные — с азимутами.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 244" role="img" aria-label="Слева: от севера по часовой стрелке до предмета на северо-западе — азимут 300°, а не 60°. Справа: из точки А в точку Б по азимуту 60°, обратно из Б в А — по азимуту 240°, на 180° больше"><use href="#g12-azimut"/></svg><figcaption>Азимут считают только по часовой стрелке. А обратный путь — на 180° больше.</figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 346" role="img" aria-label="Вид сверху на горизонт Москвы, ты в центре. 21 июня Солнце восходит на северо-востоке и заходит на северо-западе, в марте и сентябре — на востоке и западе, 21 декабря — на юго-востоке и юго-западе. В полдень Солнце на юге, а тень показывает на север"><use href="#g12-solnce"/></svg><figcaption>Солнце — тоже ориентир, если знать, когда и где оно бывает.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">На полях учебника</span><p><b>Ориентирование</b> — умение определять своё местоположение на местности относительно сторон горизонта и различных объектов.</p></div>
+<div class="side yellow"><span class="slab">На полях учебника</span><p><b>Азимут</b> — угол между направлением на север и направлением на любой объект по ходу часовой стрелки.</p></div>
+<div class="blocknote"><b>«На востоке восходит Солнце».</b> Точно на востоке Солнце восходит только в дни равноденствия — 20 (21) марта и 22 (23) сентября (§ 11). В Москве летом оно восходит на северо-востоке, а зимой — на юго-востоке (схема выше). Поэтому по восходу восток находят только примерно. Надёжнее полдень: в полдень Солнце на юге, а тень показывает на север.</div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Уметь ориентироваться необходимо, чтобы правильно определять своё местоположение в пространстве.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Папин компас и компас в телефоне</span></div><div class="lifebody"><p>У папы есть обычный компас, а в телефоне — компас-приложение. Попроси папин компас и подожди, пока стрелка успокоится. Синий конец покажет на север.</p><p>Окна у вас выходят на юг и на север. Проверь компасом: какие окна смотрят на север, а какие на юг? Солнце в окна какой стороны попадает чаще?</p><p>Повернись лицом к северу: справа будет восток, слева — запад, за спиной — юг.</p></div><p class="lifebook">В учебнике это называется: <b>намагниченная стрелка компаса синим концом всегда направлена на север</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Твои ориентиры</span></div><div class="lifebody"><p>От дома до «Пятёрочки» около 400 м, до «динозаврика» — около 500 м, от подъезда до метро — около 800 м. «Пятёрочка», «динозаврик», метро — это и есть твои ориентиры. По ним ты знаешь, куда идти.</p><p>А в машине Яндекс Навигатор показывает дорогу и где повернуть.</p></div><p class="lifebook">В учебнике это называется: <b>хорошо запоминающиеся предметы-ориентиры</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Тень в полдень — на север</span></div><div class="lifebody"><p>Вспомни гномон из § 9. В полдень его тень показывает на север — так можно найти север без компаса. А само Солнце в полдень на юге.</p><p>Если сделаешь опыт с гномоном в зале, сверь полуденную тень с папиным компасом: совпадёт?</p></div><p class="lifebook">В учебнике это называется: <b>положение Солнца на небе</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Компас у геологов</span></div><div class="lifebody"><p>Учебник пишет, что компасом пользуются геологи. Мама — геолог. Спроси её, нужен ли компас в поездках на карьеры и в «закопушки» и как им там пользуются.</p></div><p class="lifebook">В учебнике это называется: <b>компас используют военные, геодезисты, геологи, моряки</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Почему азимут на запад — 270°, а не 90°? Ведь от севера до запада всего четверть круга.</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Как отсчитывают азимут — в какую сторону? Схема «Как считать азимут».</div>
+<div class="rev ans" id="a3" hidden>Азимут отсчитывают от севера только по часовой стрелке: север — 0°, восток — 90°, юг — 180°, запад — 270°. По часовой стрелке до запада три четверти круга — 270°.</div>
+</div>
+<div class="think">
+<p class="qt">4. Ты стоишь лицом на север. Где будет Солнце в полдень? А твоя тень?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Абзац про компас: что сзади, если встать лицом к северу? И схема «Где Солнце восходит и заходит».</div>
+<div class="rev ans" id="a4" hidden>В полдень Солнце на юге, то есть у тебя за спиной. Тень ляжет перед тобой — на север.</div>
+</div>
+<div class="think">
+<p class="qt">5. Когда удобнее ориентиры, а когда — стороны горизонта?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Первый абзац раздела: кому помогают стороны горизонта и звёзды?</div>
+<div class="rev ans" id="a5" hidden>Ориентиры удобны там, где их видно и знаешь: в своём районе, в городе. А стороны горизонта помогают везде, даже где ориентиров нет: в лесу, в море, в поле. Так ориентировались древние мореходы.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Для чего человеку необходим план местности?</h2></div>
+<div class="easy">
+<p>Планами люди пользуются очень давно. В поисках пищи и материалов для орудий труда люди ходили по окрестностям и запоминали, что где. Эти «картинки в памяти» рисовали палочками, костями, камнями на скалах и дереве. А когда появилась письменность — на папирусе, бумаге, глиняных табличках.</p>
+<p>Сначала это были простые рисунки маленьких участков: стоянки, реки, озёра, отдельные деревья. Потом на план стали наносить всё больше. Планы становились сложнее и охватывали всё бо́льшие территории.</p>
+<p><span class="big">Зачем план сегодня?</span> План показывает небольшой участок и помогает на нём ориентироваться: что где стоит, что рядом с чем и какого оно примерно размера (рис. 32). Мебель в квартире расставляют по плану комнат. А с планом города легко не заблудиться на экскурсии.</p>
+<p><span class="big">Большие территории.</span> Для них нужны <span class="term" role="button" tabindex="0" data-t="topo"><b>топографические <span class="tl">карты</span></b></span>, <span class="term" role="button" tabindex="0" data-t="aero"><b><span class="tl">аэрофотоснимки</span></b></span> и <span class="term" role="button" tabindex="0" data-t="kosmo"><b>космические <span class="tl">снимки</span></b></span>. Перед тем как строить дома, дороги, заводы, местность изучают очень подробно. Поэтому первыми на место выезжают <span class="term" role="button" tabindex="0" data-t="geodez">геодезисты и <span class="tl">топографы</span></span>.</p>
+<p><span class="term" role="button" tabindex="0" data-t="plan"><b>План <span class="tl">местности</span></b></span> — это чертёж небольшого участка земной поверхности, сделанный в уменьшенном виде условными знаками.</p>
+</div>
+<div class="book" hidden>
+<p>Издавна человек в своей хозяйственной деятельности использовал <span class="term" role="button" tabindex="0" data-t="plan">план <span class="tl">местности</span></span>. Перемещение по окрестностям в поисках пищи и орудий труда вырабатывало наблюдательность. В памяти закреплялись зрительные образы окружающего пространства. Эти образы с помощью палочек, костей, камней изображали на скалах, дереве, а затем, после возникновения письменности, — на папирусе, бумаге, глиняных табличках. Сначала это были примитивные рисунки небольших участков окружающей территории. На них изображались места стоянок, реки, озёра, отдельные деревья. Постепенно люди пытались нанести на план всё больше информации. Планы становились сложнее и охватывали всё бо́льшие территории.</p>
+<p>План даёт представление о небольшом участке территории и помогает ориентироваться на нём. По плану можно определить взаимное расположение объектов и их приблизительные размеры. В повседневной жизни мы часто пользуемся разными видами планов (рис. 32). Чтобы удобно расставить мебель в квартире, мы рисуем план комнат. Перед экскурсией мы приобретаем план города и, изучив его, свободно ориентируемся в незнакомом месте.</p>
+<p>Для решения сложных задач на больших территориях используют <span class="term" role="button" tabindex="0" data-t="topo"><b><span class="tl">топографические</span></b></span> (от греческого слова <i>топос</i> — место) <b>карты</b>, <span class="term" role="button" tabindex="0" data-t="aero"><b><span class="tl">аэрофотоснимки</span></b></span> и <span class="term" role="button" tabindex="0" data-t="kosmo"><b>космические <span class="tl">снимки</span></b></span>. Например, для проектирования и строительства домов, дорог, заводов необходимо детальное изучение местности. Поэтому на место будущих работ первыми выезжают <span class="term" role="button" tabindex="0" data-t="geodez">геодезисты и <span class="tl">топографы</span></span>.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g12_r32" src="img/48be9e98f49d.jpg" alt="План центральной части посёлка: улицы Лесная и Вокзальная, здания, детский сад, аптека, магазин, школа, лес, кустарники, аллеи, отдельные деревья. Стрелка С—Ю, масштаб 1:3000, условные знаки" style="max-width:420px"><figcaption><span class="src">из учебника</span><b>Рис. 32.</b> План центральной части посёлка Алексеево<br><span style="color:var(--soft)">▲ Найди на плане школу и детский сад. Какой из них севернее?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 226" role="img" aria-label="Один и тот же уголок трижды. Сбоку — домик с крышей и дерево, как видят глаза. Сверху — крыша прямоугольником, крона кругом, дорожка полосой. План — здание розовым прямоугольником, дерево условным знаком, тропинка пунктиром, стрелка на север"><use href="#g12-plan"/></svg><figcaption>Из рисунка — в план: смотрим сверху и рисуем условными знаками.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">На полях учебника</span><p><b>План местности</b> — это чертёж небольшого участка земной поверхности, выполненный в уменьшенном виде условными знаками.</p></div>
+<div class="side yellow"><span class="slab">На полях учебника</span><p>Местность на плане изображается: 1) на <b>плоскости</b>; 2) в <b>уменьшенном</b> виде без искажений; 3) с помощью <b>условных знаков</b>.</p></div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>План местности позволяет на небольшом участке территории определить расположение объектов относительно друг друга и сторон горизонта, их размеры и расстояние между ними.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">План твоей комнаты</span></div><div class="lifebody"><p>Учебник пишет: чтобы удобно расставить мебель, рисуют план комнат. Нарисуй план своей комнаты — вид сверху. Кровать, стол, шкаф — прямоугольниками, окно и дверь — на стенах.</p><p>Проверь папиным компасом, где север, и нарисуй стрелку «С». Сохрани план: в § 13 ты научишься рисовать его в масштабе.</p></div><p class="lifebook">В учебнике это называется: <b>чтобы удобно расставить мебель в квартире, мы рисуем план комнат</b></p></aside>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Лабиринт сверху</span></div><div class="lifebody"><p>Лабиринты ты проходила в парке и в Майнкрафте. Изнутри легко заблудиться: стены кругом, не видно, куда ведёт проход. А посмотришь сверху, на план, — и выход сразу виден.</p><p>Вот зачем нужен план: он показывает весь участок сразу, и ты понимаешь, что где.</p></div><p class="lifebook">В учебнике это называется: <b>по плану можно определить взаимное расположение объектов</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">6. Чем план отличается от обычного рисунка местности?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Рамка «Местность на плане изображается» и схема «Сбоку → сверху → план».</div>
+<div class="rev ans" id="a6" hidden>Рисунок показывает местность, как видят глаза, — сбоку. План — вид сверху, на плоскости, в уменьшенном виде без искажений и условными знаками. По плану можно узнать, что где находится и какого оно размера.</div>
+</div>
+<div class="think">
+<p class="qt">7. Для строительства дороги одного плана мало. Почему?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Последний абзац раздела.</div>
+<div class="rev ans" id="a7" hidden>План — для небольшого участка. А дорога или завод занимают большую территорию, и местность надо изучить очень подробно. Для этого нужны топографические карты, аэрофотоснимки и космические снимки, а первыми на место выезжают геодезисты и топографы.</div>
+</div>
+<div class="think">
+<p class="qt">8. Что рисовали на первых планах и почему именно это?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Первый абзац раздела: зачем люди ходили по окрестностям?</div>
+<div class="rev ans" id="a8" hidden>Места стоянок, реки, озёра, отдельные деревья. Это важно было помнить, чтобы находить пищу и материалы для орудий труда и возвращаться обратно.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги параграфа</h2></div>
+<div class="rubric">Запомните</div>
+<div class="remember"><span>Ориентирование</span><span>Азимут</span><span>Компас</span><span>План местности</span><span>Топографическая карта</span><span>Аэрофотоснимок</span><span>Космический снимок</span></div>
+<div class="rubric">Это я знаю</div>
+<div class="ask"><b>Вопросы учебника</b><ol><li>Назовите все основные и промежуточные стороны горизонта. (Найдите в Интернете иллюстрацию, на которой показаны промежуточные стороны горизонта.)</li><li>Что означает умение ориентироваться?</li><li>Что называется азимутом? Азимут может изменяться: а) от 0° до 45°; б) от 0° до 90°; в) от 0° до 180°; г) от 0° до 360°.</li><li>На Северном полюсе любое из направлений будет: а) северным; б) южным; в) западным; г) восточным.</li><li>Что называется планом местности?</li></ol></div>
+<div class="blocknote"><b>Промежуточные стороны горизонта.</b> Вопрос 1 спрашивает о промежуточных сторонах горизонта, а в тексте параграфа о них ничего нет — учебник предлагает поискать иллюстрацию в Интернете. Искать не нужно: она на схеме «Стороны горизонта» в первом разделе. Промежуточные стороны понадобятся и в задании 8.</div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к вопросу 1</button></div>
+<div class="rev hint" id="r1" hidden>Основные — север, восток, юг, запад. Промежуточные — между ними, их название складывается из двух соседних: северо-восток (между севером и востоком), юго-восток, юго-запад, северо-запад.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Подсказка к вопросам 3 и 4</button></div>
+<div class="rev hint" id="r2" hidden><b>3.</b> Азимут отсчитывают от севера по часовой стрелке полный круг. Сколько градусов в полном круге? <b>4.</b> Вспомни § 10: на Северном полюсе, куда ни посмотри, везде…</div></div>
+<div class="rubric">Это я могу</div>
+<div class="ask"><b>Задания учебника</b><ol start="6"><li>Используя рисунок 31 на с. 44, определите азимут на дерево, нефтяную вышку, плотину, мельницу.</li><li>Прочитайте фрагмент текста параграфа «Для чего человеку необходим план местности?» и на его основе составьте развёрнутый план этого фрагмента.</li><li>Рассмотрите рисунок 33. В каком направлении вы будете возвращаться домой, если в школу вы шли по азимуту 45°: а) на юг; б) на северо-запад; в) на северо-восток; г) на запад; д) на юго-запад?</li><li>Рассмотрите рисунок 34. В каком направлении движется каждая лодка?</li></ol></div>
+</div>
+<div class="strip">
+<figure class="photo"><div class="fig"><img id="ph-g12_r33" src="img/a999e3266d17.jpg" alt="План: внизу слева Дом, вверху справа Школа, между ними пунктир «азимут = 45°», стрелка туда и стрелка со знаком вопроса обратно. Стрелка С—Ю показывает север вверх" style="max-width:360px"><figcaption><span class="src">из учебника</span><b>Рис. 33.</b> План местности</figcaption></div></figure>
+<figure class="photo"><div class="fig"><img id="ph-g12_r34" src="img/b834c150297b.jpg" alt="Бухта сверху, стрелка С—Ю показывает север вверх. Пять лодок с флажками-номерами плывут в разные стороны: острый конец лодки — нос" style="max-width:360px"><figcaption><span class="src">из учебника</span><b>Рис. 34.</b> Схема движения лодок в бухте</figcaption></div></figure>
+</div>
+<div class="col">
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к заданию 6</button></div>
+<div class="rev hint" id="r3" hidden>Для вышки и плотины азимут написан на рисунке: 150° и 250°. Для дерева и мельницы проведи взглядом пунктир от центра компаса до шкалы — какое число на шкале? Не забудь: считаем от 0 по часовой стрелке.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Проверь себя: задание 6</button></div>
+<div class="rev ans" id="r4" hidden>Дерево — примерно 40°, нефтяная вышка — 150°, плотина — 250°, мельница — примерно 290°. Рисунок мелкий, поэтому у тебя может получиться на 5—10° иначе — это нормально.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r5" aria-expanded="false">Подсказка к заданию 7</button></div>
+<div class="rev hint" id="r5" hidden>Развёрнутый план — это пункты с подпунктами. Например: 1. Как появились первые планы: а) зачем люди ходили по окрестностям; б) на чём рисовали. 2. Какими были первые планы. 3. Зачем нужен план сегодня. 4. Что нужно для больших территорий.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r6" aria-expanded="false">Подсказка к заданию 8</button></div>
+<div class="rev hint" id="r6" hidden>Азимут 45° — это северо-восток. Обратный путь всегда в противоположную сторону: прибавь 180° (схема «Как считать азимут»). Какая сторона горизонта у азимута 225°?</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r7" aria-expanded="false">Подсказка к заданию 9</button></div>
+<div class="rev hint" id="r7" hidden>Север на рисунке вверху. Нос лодки — острый конец, у носа флажок с номером. Посмотри, куда смотрит нос каждой лодки, и назови сторону горизонта — основную или промежуточную.</div></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r8" aria-expanded="false">Проверь себя: задание 9</button></div>
+<div class="rev ans" id="r8" hidden>1 — на запад, 2 — на северо-запад, 3 — на северо-восток, 4 — на юг, 5 — на восток.</div></div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt9" data-n="8">
+<div class="sortlab">Какой это азимут?</div>
+<div class="sitem" data-r="0"><p class="stext">Север</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">90°</button><button class="sbtn" data-b="2">180°</button><button class="sbtn" data-b="3">270°</button></div><p class="swhy" hidden>Азимут отсчитывают от севера.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Восток</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">90°</button><button class="sbtn" data-b="2">180°</button><button class="sbtn" data-b="3">270°</button></div><p class="swhy" hidden>Четверть круга по часовой стрелке.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Юг</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">90°</button><button class="sbtn" data-b="2">180°</button><button class="sbtn" data-b="3">270°</button></div><p class="swhy" hidden>Полкруга.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Запад</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">90°</button><button class="sbtn" data-b="2">180°</button><button class="sbtn" data-b="3">270°</button></div><p class="swhy" hidden>Три четверти круга по часовой стрелке.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Норд</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">90°</button><button class="sbtn" data-b="2">180°</button><button class="sbtn" data-b="3">270°</button></div><p class="swhy" hidden>Норд по-нидерландски — север.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Ост</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">90°</button><button class="sbtn" data-b="2">180°</button><button class="sbtn" data-b="3">270°</button></div><p class="swhy" hidden>Ост — восток.</p></div>
+<div class="sitem" data-r="2"><p class="stext">Зюйд</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">90°</button><button class="sbtn" data-b="2">180°</button><button class="sbtn" data-b="3">270°</button></div><p class="swhy" hidden>Зюйд — юг.</p></div>
+<div class="sitem" data-r="3"><p class="stext">Вест</p><div class="sbtns"><button class="sbtn" data-b="0">0°</button><button class="sbtn" data-b="1">90°</button><button class="sbtn" data-b="2">180°</button><button class="sbtn" data-b="3">270°</button></div><p class="swhy" hidden>Вест — запад.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt10" data-n="6">
+<div class="sortlab">Что для этого нужно?</div>
+<div class="sitem" data-r="0"><p class="stext">Расставить мебель в квартире</p><div class="sbtns"><button class="sbtn" data-b="0">план</button><button class="sbtn" data-b="1">топографическая карта и снимки</button></div><p class="swhy" hidden>План комнат — небольшой участок.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Не заблудиться на экскурсии в незнакомом городе</p><div class="sbtns"><button class="sbtn" data-b="0">план</button><button class="sbtn" data-b="1">топографическая карта и снимки</button></div><p class="swhy" hidden>План города.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Найти дорогу от дома до «Пятёрочки»</p><div class="sbtns"><button class="sbtn" data-b="0">план</button><button class="sbtn" data-b="1">топографическая карта и снимки</button></div><p class="swhy" hidden>Небольшой участок — хватит плана.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Построить дорогу через большую территорию</p><div class="sbtns"><button class="sbtn" data-b="0">план</button><button class="sbtn" data-b="1">топографическая карта и снимки</button></div><p class="swhy" hidden>Большая территория, нужно подробное изучение.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Спроектировать завод</p><div class="sbtns"><button class="sbtn" data-b="0">план</button><button class="sbtn" data-b="1">топографическая карта и снимки</button></div><p class="swhy" hidden>Перед стройкой местность изучают очень подробно.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Изучить местность для новой железной дороги</p><div class="sbtns"><button class="sbtn" data-b="0">план</button><button class="sbtn" data-b="1">топографическая карта и снимки</button></div><p class="swhy" hidden>Сначала выезжают геодезисты и топографы.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ориентирование</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 320" aria-hidden="true"><use href="#g12-storony"/></svg><span class="ftext">Умение определить, где ты, по сторонам горизонта и предметам.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Стороны горизонта</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 320" aria-hidden="true"><use href="#g12-storony"/></svg><span class="ftext">С, В, Ю, З и промежуточные: СВ, ЮВ, ЮЗ, СЗ.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Азимут</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 244" aria-hidden="true"><use href="#g12-azimut"/></svg><span class="ftext">Угол от севера по часовой стрелке до предмета: 0°—360°.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Компас</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 320" aria-hidden="true"><use href="#g12-storony"/></svg><span class="ftext">Синий конец стрелки — на север. Им примерно измеряют азимут.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">План местности</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 226" aria-hidden="true"><use href="#g12-plan"/></svg><span class="ftext">Чертёж небольшого участка сверху, уменьшенный, условными знаками.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Топографическая карта</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 226" aria-hidden="true"><use href="#g12-plan"/></svg><span class="ftext">Подробная карта большой территории — для стройки дорог и заводов.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Аэрофотоснимок</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 226" aria-hidden="true"><use href="#g12-plan"/></svg><span class="ftext">Фотография местности сверху, с самолёта.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Космический снимок</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 226" aria-hidden="true"><use href="#g12-plan"/></svg><span class="ftext">Снимок Земли из космоса, со спутника.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. От какого направления отсчитывают азимут?</h3><div class="opts">
+<button class="opt" data-ok="1">От севера</button>
+<button class="opt">От юга</button>
+<button class="opt">От востока</button>
+<button class="opt">От Солнца</button></div>
+<div class="fb">От севера, по часовой стрелке.</div></div>
+<div class="q"><h3>2. Азимут на восток — это…</h3><div class="opts">
+<button class="opt">0°</button>
+<button class="opt" data-ok="1">90°</button>
+<button class="opt">180°</button>
+<button class="opt">270°</button></div>
+<div class="fb">Восток — четверть круга по часовой стрелке от севера.</div></div>
+<div class="q"><h3>3. Как называется сторона горизонта между севером и востоком?</h3><div class="opts">
+<button class="opt" data-ok="1">Северо-восток</button>
+<button class="opt">Юго-восток</button>
+<button class="opt">Северо-запад</button>
+<button class="opt">Юго-запад</button></div>
+<div class="fb">Название складывается из двух соседних основных сторон: северо-восток, азимут 45°.</div></div>
+<div class="q"><h3>4. Куда показывает синий конец стрелки компаса?</h3><div class="opts">
+<button class="opt" data-ok="1">На север</button>
+<button class="opt">На юг</button>
+<button class="opt">На восток</button>
+<button class="opt">Туда, куда идёшь</button></div>
+<div class="fb">На север. Встань к нему лицом: справа восток, слева запад, сзади юг.</div></div>
+<div class="q"><h3>5. Ты шла по азимуту 90°. По какому азимуту вернуться обратно?</h3><div class="opts">
+<button class="opt" data-ok="1">270°</button>
+<button class="opt">90°</button>
+<button class="opt">180°</button>
+<button class="opt">0°</button></div>
+<div class="fb">Обратный азимут на 180° больше: 90° + 180° = 270°, то есть на запад.</div></div>
+<div class="q"><h3>6. Чем план местности отличается от рисунка?</h3><div class="opts">
+<button class="opt" data-ok="1">Вид сверху, в уменьшенном виде, условными знаками</button>
+<button class="opt">Он всегда цветной</button>
+<button class="opt">На нём только дороги</button>
+<button class="opt">Его рисуют сбоку</button></div>
+<div class="fb">На плане местность изображается на плоскости, в уменьшенном виде без искажений, условными знаками.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>Зачем уметь ориентироваться</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl11" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl11" hidden><ol><li>Определить, где ты, и выбрать направление: найти улицу, станцию, дорогу из леса.</li><li>Помогают ориентиры: заметные дома, вывески, мосты, деревья, овраги, озёра.</li><li>И стороны горизонта, Солнце и звёзды — как у древних мореходов.</li></ol></div>
+</div>
+<div class="think">
+<h3>Азимут и компас</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl12" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl12" hidden><ol><li>Азимут — угол от севера по часовой стрелке до предмета, от 0° до 360°.</li><li>Север — 0°, восток — 90°, юг — 180°, запад — 270°.</li><li>Компас: синий конец стрелки — на север; моряки говорят норд, зюйд, ост, вест.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как появились планы</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl13" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl13" hidden><ol><li>Люди запоминали окрестности в поисках пищи и материалов для орудий.</li><li>Рисовали на скалах и дереве, потом на папирусе, бумаге, глиняных табличках.</li><li>Сначала простые рисунки — стоянки, реки, озёра; потом планы стали сложнее и больше.</li></ol></div>
+</div>
+<div class="think">
+<h3>Что такое план местности</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl14" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl14" hidden><ol><li>Чертёж небольшого участка в уменьшенном виде условными знаками.</li><li>На плоскости, в уменьшенном виде без искажений, условными знаками.</li><li>По плану видно, что где, что рядом с чем, какого размера; для больших территорий — топографические карты и снимки.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g11.html">‹ §11 Солнечный свет на Земле</a>
+  <span class="pn cur">§12 Ориентирование на местности</span>
+ </div>
+</div>
+
+<footer><div class="wrap">География, 5—6 классы. А. И. Алексеев и др., «Полярная звезда», 2023. § 12, с. 44—46; с. 43 — открывашка раздела «План и карта». Страница сделана для Вероники.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'g12-storony':'0 0 360 320','g12-azimut':'0 0 360 244','g12-solnce':'0 0 360 346','g12-plan':'0 0 360 226'};
+
+var T={
+orientir:{w:"Ориентир",k:"что это",p:"g12_r32",t:"Заметный предмет, по которому легко найти дорогу: необычный дом, вывеска, дорожный знак, мост, раскидистое дерево, овраг, озеро.",r:"",e:"От дома до «Пятёрочки» около 400 м, до «динозаврика» — около 500 м, до метро — около 800 м: это твои ориентиры."},
+storony:{w:"Стороны горизонта",k:"направления",s:"g12-storony",t:"Четыре основные — север, юг, запад, восток — и четыре промежуточные между ними: северо-восток, юго-восток, юго-запад, северо-запад.",r:"",e:""},
+azimut:{w:"Азимут",k:"угол",s:"g12-azimut",t:"Угол между направлением на север и направлением на предмет, по часовой стрелке. От 0° до 360°: север — 0°, восток — 90°, юг — 180°, запад — 270°.",r:"<b>ас-сумут</b> (араб.) — пути, направления",e:""},
+kompas:{w:"Компас",k:"прибор",s:"g12-storony",t:"Прибор с намагниченной стрелкой: её синий конец всегда показывает на север. С компасом примерно измеряют азимут.",r:"",e:"У папы есть обычный компас, а ещё компас есть в телефоне."},
+orient:{w:"Ориентирование",k:"умение",s:"g12-storony",t:"Умение определить, где ты находишься, относительно сторон горизонта и разных предметов.",r:"от лат. <b>oriens</b> — восток, восходящее Солнце: раньше прежде всего находили восток",e:""},
+plan:{w:"План местности",k:"чертёж",s:"g12-plan",t:"Чертёж небольшого участка земной поверхности, сделанный в уменьшенном виде условными знаками. Вид сверху, на плоскости.",r:"<b>planum</b> (лат.) — плоский",e:""},
+topo:{w:"Топографическая карта",k:"карта",p:"g12_open",t:"Подробная карта большой территории. Нужна, например, чтобы строить дома, дороги, заводы. Такую карту ты увидишь в § 13.",r:"<b>топос</b> (греч.) — место, <b>графо</b> — пишу",e:""},
+aero:{w:"Аэрофотоснимок",k:"снимок",p:"g12_open",t:"Фотография местности, снятая сверху с самолёта.",r:"<b>аэро</b> (греч.) — воздух",e:""},
+kosmo:{w:"Космический снимок",k:"снимок",p:"g12_open",t:"Снимок Земли из космоса, со спутника. На нём видны огромные участки — целые города, моря, горы.",r:"",e:""},
+geodez:{w:"Геодезисты и топографы",k:"профессии",s:"g12-plan",t:"Специалисты, которые точно измеряют местность и составляют по измерениям планы и карты. Перед стройкой они выезжают на место первыми.",r:"",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('geography:g12:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('geography:g12:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('geography:g12:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('geography:g12:read_'+id,on?'1':'0')});
+  });
+});
+
+/* --- увеличение карт, схем и картинок по нажатию (на телефоне мелкие подписи) --- */
+var zoom=document.createElement('div');zoom.className='zoom';zoom.hidden=true;
+zoom.setAttribute('role','dialog');zoom.setAttribute('aria-modal','true');zoom.setAttribute('aria-label','Увеличенная картинка');
+zoom.innerHTML='<div class="zoombar"><span>Двигай пальцем, чтобы рассмотреть</span><button class="zoomclose">Закрыть ✕</button></div><div class="zoomin"></div>';
+document.body.appendChild(zoom);
+function openZoom(el){
+  var box=zoom.querySelector('.zoomin');box.innerHTML='';
+  var c=el.cloneNode(true);c.removeAttribute('id');
+  if(c.tagName.toLowerCase()==='svg'){
+    var v=(c.getAttribute('viewBox')||'0 0 400 300').split(/\s+/);
+    c.style.width=Math.round(Math.max(parseFloat(v[2])*2.3,window.innerWidth-24))+'px';
+  }else{
+    c.style.width=Math.round(Math.max((el.naturalWidth||600)*1.1,window.innerWidth*1.5))+'px';
+  }
+  c.style.maxWidth='none';c.style.height='auto';
+  box.appendChild(c);zoom.hidden=false;document.documentElement.style.overflow='hidden';
+  zoom.querySelector('.zoomclose').focus();
+}
+function closeZoom(){zoom.hidden=true;document.documentElement.style.overflow='';}
+document.addEventListener('click',function(e){
+  if(e.target.closest('.zoomclose')){closeZoom();return}
+  var s=e.target.closest('.fig svg, .photo img, .banner img');
+  if(s&&!zoom.contains(s)){openZoom(s);}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!zoom.hidden)closeZoom()});
+
+</script>
+</body>
+</html>
