@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Что находится под земной корой, чем отличается кора под материками и океанами и как движение плит меняет поверхность Земли.">
+<title>§21 Земная кора — верхняя часть литосферы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+
+:root{
+  --paper:#F1EADC; --paper2:#E8DFCC; --card:#FFFBF2;
+  --ink:#221F1A; --soft:#5F5648; --line:#D9CDB7;
+  --ochre:#D9901A; --red:#BE4527; --ice:#2F6F8F; --moss:#5E7A3A;
+  --ok:#3D7A38; --no:#B03A2E;
+  --illpaper:#FFFBF2; --illink:#2B2620;
+  --brown:#8B5E3C; --brownD:#5E3D26; --sky:#C6E2EF; --snow:#EDF5F9;
+  --green:#7FA34A; --stone:#BCB2A2; --water:#6FA8C4; --flame:#E8721C;
+  --sh:0 3px 0 rgba(43,38,32,.13);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --paper:#15120E; --paper2:#1D1913; --card:#221E17;
+  --ink:#F3EADB; --soft:#B6A994; --line:#3A3227;
+  --ochre:#F0AE3A; --red:#E4673F; --ice:#73B4CF; --moss:#9CBE63;
+  --ok:#7BC46F; --no:#F07A63;
+  --illpaper:#2A251D; --illink:#F1E7D6;
+  --brown:#A97A50; --brownD:#7A5133; --sky:#27424F; --snow:#CBDEE7;
+  --green:#8FB25C; --stone:#6E6659; --water:#7FB6D1; --flame:#F58A32;
+  --sh:0 3px 0 rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:18px; line-height:1.68; letter-spacing:.005em;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Unbounded","Golos Text",system-ui,sans-serif;letter-spacing:-.01em;text-wrap:balance}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+.col{max-width:640px;margin-inline:auto}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.hero{background:var(--paper2);border-bottom:3px solid var(--line);padding-block:26px 30px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#FFF6E9;
+  font-family:"Unbounded",sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;
+  padding:6px 13px;border-radius:999px;text-transform:uppercase}
+h1{font-weight:800;font-size:clamp(28px,6.4vw,44px);line-height:1.08;margin:14px 0 10px}
+.lede{color:var(--soft);font-size:17px;margin:0;max-width:44ch}
+.qbox{margin-top:20px;background:var(--card);border:3px solid var(--line);border-radius:16px;
+  padding:14px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--sh);max-width:620px}
+.qbox .qm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:17px}
+.qbox b{font-weight:600}
+
+/* ---------- панель ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);
+  border-bottom:2px solid var(--line);padding-block:9px}
+.bar .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.seg{display:inline-flex;background:var(--paper2);border:2px solid var(--line);border-radius:999px;padding:3px;gap:3px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:none;color:var(--soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.jump{display:flex;gap:5px;flex-wrap:wrap}
+.jump a{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--card);border:2px solid var(--line);color:var(--soft);
+  font-family:"Unbounded";font-weight:600;font-size:13px;text-decoration:none}
+.jump a:hover{border-color:var(--ochre);color:var(--ink)}
+
+/* ---------- секции ---------- */
+section{padding-block:34px;border-bottom:2px dashed var(--line)}
+.shead{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.snum{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-family:"Unbounded";font-weight:800;font-size:20px;box-shadow:var(--sh)}
+h2{font-size:clamp(21px,4.4vw,27px);font-weight:600;margin:0;line-height:1.2}
+.easy p:last-child,.book p:last-child{margin-bottom:0}
+.easy p{font-size:19px}
+.easy .big{font-weight:600}
+
+/* ---------- иллюстрации ---------- */
+figure{margin:24px 0}
+.fig{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px 14px 10px;box-shadow:var(--sh)}
+.fig svg{display:block;width:100%;height:auto;max-width:480px;margin-inline:auto}
+figcaption{font-size:15px;color:var(--soft);margin-top:9px;line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:24px 0}
+.grid2 figure{margin:0}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.strip figure{margin:0}
+.strip .fig{padding:10px 10px 8px}
+.strip figcaption{font-size:14px;text-align:center;font-weight:600;color:var(--ink)}
+
+/* ---------- термины ---------- */
+.term{font:inherit;font-weight:600;color:var(--red);background:none;border:0;padding:0 1px;cursor:pointer;
+  border-bottom:2.5px dotted var(--red);line-height:1.3}
+.term:hover{background:var(--ochre);color:#22190A;border-bottom-color:transparent;border-radius:4px}
+.term .tl{white-space:nowrap}
+.term .tl::after{content:"";display:inline-block;width:14px;height:14px;margin-left:3px;vertical-align:-2px;
+  background:var(--red);border-radius:50%;
+  -webkit-mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E");
+  mask:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 5h16v11H7l-3 3z'/%3E%3C/svg%3E")}
+.term:hover .tl::after{background:#22190A}
+
+/* ---------- модалка ---------- */
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;
+  background:rgba(20,16,10,.62);backdrop-filter:blur(3px)}
+.sheet[hidden]{display:none!important}
+.sheetcard{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:18px;
+  max-width:470px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 10px 0 rgba(20,16,10,.25)}
+.sheetcard h3{margin:0 0 4px;font-size:23px;font-weight:600}
+.sheetcard .kind{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sheetcard svg{display:block;width:100%;height:auto;margin:6px 0 12px}
+.sheetcard p{font-size:18px;margin:0}
+.closebtn{margin-top:16px;width:100%;font:inherit;font-weight:600;font-size:17px;padding:12px;
+  border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+
+/* ---------- вопросы учебника ---------- */
+.ask{background:var(--paper2);border-left:7px solid var(--ochre);border-radius:0 14px 14px 0;
+  padding:13px 16px;margin:22px 0 0;font-size:17px}
+.ask b{display:block;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.ask ol{margin:0;padding-left:20px}
+.ask li{margin:3px 0}
+
+/* ---------- угадайка ---------- */
+.flip{margin:0}
+.flipbtn{width:100%;background:var(--card);border:3px solid var(--line);border-radius:18px;
+  padding:12px 12px 10px;cursor:pointer;font:inherit;box-shadow:var(--sh);display:block}
+.flipbtn:hover{border-color:var(--ochre)}
+.flipbtn svg{display:block;width:100%;height:auto}
+.flipword{margin-top:8px;font-family:"Unbounded";font-weight:600;font-size:15px;color:var(--soft);min-height:1.5em}
+.flipbtn.open .flipword{color:var(--red)}
+
+/* ---------- тест ---------- */
+.q{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.q h3{font-size:18px;font-weight:600;margin:0 0 12px;font-family:"Golos Text",sans-serif;line-height:1.4}
+.q .opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:17px;text-align:left;padding:11px 14px;border-radius:12px;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--ochre)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));font-weight:600}
+.opt.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--paper));opacity:.85}
+.fb{margin-top:10px;font-size:16px;color:var(--soft);display:none}
+.fb.on{display:block}
+.score{background:var(--ochre);color:#22190A;border-radius:18px;padding:16px;text-align:center;
+  font-family:"Unbounded";font-weight:600;font-size:18px;box-shadow:var(--sh)}
+
+/* ---------- прочитано ---------- */
+.done{margin-top:20px}
+.donebtn{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--card);color:var(--soft)}
+.donebtn[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.jump a.read{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+
+
+/* ---------- вопросы посложнее ---------- */
+.blocknote{background:var(--ochre);color:#22190A;border-radius:14px;padding:12px 16px;
+  font-weight:600;font-size:16px;margin:0 0 20px;line-height:1.5}
+.sublabel{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin:30px 0 14px;color:var(--ink)}
+.think-label{display:flex;align-items:center;gap:9px;font-size:16px}
+.think-label::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.think-label::after{content:"по параграфу, ничего нового";font-family:"Golos Text",sans-serif;font-weight:400;font-size:14px;color:var(--soft)}
+.think{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}
+.think>p.qt{font-size:18px;font-weight:600;margin:0 0 12px;line-height:1.45}
+.think h3{font-family:"Golos Text",sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.35}
+.revbtns{display:flex;gap:8px;flex-wrap:wrap}
+.revbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 15px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--soft)}
+.revbtn:hover{border-color:var(--ochre);color:var(--ink)}
+.revbtn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rev{margin-top:12px;padding:12px 15px;border-radius:12px;font-size:17px;line-height:1.55}
+.rev.hint{background:var(--paper2);color:var(--soft)}
+.rev.ans{background:color-mix(in srgb,var(--moss) 15%,var(--card));border-left:6px solid var(--moss)}
+.rev.plan{background:var(--paper2)}
+.rev ol{margin:0;padding-left:22px}
+.rev li{margin:5px 0}
+
+/* ---------- переход между параграфами ---------- */
+.pnav{background:var(--paper2);border-bottom:2px solid var(--line);padding-block:10px}
+.pnav .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pn{font-size:14px;font-weight:600;text-decoration:none;color:var(--soft);background:var(--card);
+  border:2px solid var(--line);border-radius:999px;padding:7px 14px;display:inline-block}
+a.pn:hover{border-color:var(--ochre);color:var(--ink)}
+.pn.cur{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.pn.dim{opacity:.55}
+.pnav.bottom{border-bottom:0;border-top:2px solid var(--line);background:transparent;padding-block:22px}
+
+.strip4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+.strip4 figure{margin:0}
+.strip4 figcaption{padding:8px 10px 10px;text-align:center}
+.strip4 .src{margin:0}
+footer{padding-block:28px 40px;color:var(--soft);font-size:15px;text-align:center}
+@media (prefers-reduced-motion:no-preference){
+  .fig,.q,.flipbtn{transition:border-color .15s ease}
+}
+@media (max-width:520px){
+  body{font-size:17px}
+  .easy p{font-size:18px}
+  .strip{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+}
+
+/* ---------- карточки-угадайки ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin:22px 0}
+.flipbtn{text-align:center}
+.fword{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;color:var(--ink);
+  padding:22px 4px;line-height:1.25}
+.flipbtn[aria-expanded="true"] .fword{font-size:15px;padding:4px 4px 10px;color:var(--red)}
+.fhint{display:block;font-size:13px;color:var(--soft);padding-bottom:14px}
+.flipbtn[aria-expanded="true"] .fhint{display:none}
+.fans svg{width:100%;height:auto;display:block}
+.ftext{display:block;font-size:15px;color:var(--soft);margin-top:8px;line-height:1.45;text-align:left}
+
+/* ---------- фото из учебника ---------- */
+.photo .fig{padding:0;overflow:hidden}
+.photo img{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.photo figcaption{padding:11px 14px 12px}
+.src{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);
+  border:2px solid var(--line);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+/* ---------- хронология ---------- */
+.chrono{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.chip{position:relative;font:inherit;font-size:17px;font-weight:600;padding:16px 12px;border-radius:16px;
+  border:3px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:var(--sh)}
+.chip:hover:not(:disabled){border-color:var(--ochre)}
+.chip.picked{background:var(--moss);border-color:var(--moss);color:#FFF8EA}
+.chip.bad{background:color-mix(in srgb,var(--no) 18%,var(--card));border-color:var(--no)}
+.chip .ord{position:absolute;top:-10px;left:-10px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:"Unbounded",sans-serif}
+.chip:not(.picked) .ord{display:none}
+.chronofb{font-size:17px;margin-top:6px;min-height:1.6em;color:var(--soft)}
+.chronofb.win{color:var(--ok);font-weight:600}
+
+/* ===== География: морская гамма (синий вместо красного), блоки учебника «Полярная звезда» ===== */
+:root{
+  --red:#1B6A8C; --ochre:#E2A31F; --leaf:#1B6A8C; --life:#8A4CB0; --lifebg:#F2E9F8;
+  --pa:#C9672C; --pb:#1B6A8C; --pink:#C23C86; --pinkbg:#FBE4F0; --yel:#FFF3C4; --yelb:#D9A21A;
+  --grn:#E3F2E1; --grnb:#3E8E4A; --sea:#BFE0EE; --land:#F3E6C4; --landb:#B9A57A;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}}
+:root[data-theme="dark"]{
+  --red:#6CC3E0; --ochre:#F0B84A; --leaf:#6CC3E0; --life:#C79BE6; --lifebg:#271E30;
+  --pa:#EE9A62; --pb:#6CC3E0; --pink:#F08CC2; --pinkbg:#35202C; --yel:#33301C; --yelb:#E8C25A;
+  --grn:#1E2E21; --grnb:#7BC48A; --sea:#1D3946; --land:#3A3426; --landb:#7E7055;
+}
+.term:hover{background:var(--ochre);color:#22190A}
+
+/* --- плашка рубрики учебника («Это интересно», «Моя лаборатория») --- */
+.rubric{display:inline-block;margin:28px 0 12px;background:var(--pink);color:#FFF6FB;
+  font-family:"Unbounded",sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:8px;transform:skewX(-8deg)}
+
+/* --- Из жизни Вероники --- */
+.life{background:var(--lifebg);border:3px solid var(--life);border-radius:18px;padding:14px 16px;
+  margin:22px 0;box-shadow:var(--sh)}
+.lifehead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.lifetag{display:inline-block;background:var(--life);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+:root[data-theme="dark"] .lifetag{color:#101822}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lifetag{color:#101822}}
+.lifewho{font-weight:600;font-size:16px;color:var(--ink)}
+.lifebody p{margin:0 0 .6em;font-size:18px}
+.lifebody p:last-child{margin:0}
+.lifebook{margin:10px 0 0;padding-top:9px;border-top:2px dashed var(--life);font-size:16px;color:var(--soft)}
+.lifebook b{color:var(--ink)}
+.lifepic{display:block;width:100%;max-width:420px;border-radius:12px;margin:4px auto 10px}
+
+/* --- Не перепутай --- */
+.pair{margin:24px 0}
+.pairlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.pairlab::before{content:"!";width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#22190A;
+  display:grid;place-items:center;font-size:14px}
+.pairrow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch}
+.paircard{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px 13px;box-shadow:var(--sh)}
+.paircard b{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;line-height:1.25}
+.paircard p{margin:0;font-size:16px;line-height:1.45}
+.pa{border-color:var(--pa)} .pa b{color:var(--pa)}
+.pb{border-color:var(--pb)} .pb b{color:var(--pb)}
+.pairne{align-self:center;font-family:"Unbounded";font-weight:800;font-size:24px;color:var(--soft)}
+.pairkey{margin:10px 0 0;font-size:16px;color:var(--soft)}
+.pairkey b{color:var(--ink)}
+@media (max-width:520px){
+  .pairrow{grid-template-columns:1fr}
+  .pairne{justify-self:center;line-height:1}
+}
+
+/* --- игра-сортировка --- */
+.sortgame{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sh)}
+.sortlab{font-family:"Unbounded",sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+.sortnote{color:var(--soft);font-size:16px;margin:0 0 10px}
+.sitem{border-top:2px dashed var(--line);padding:12px 0 4px}
+.stext{margin:0 0 8px;font-size:18px;font-weight:600}
+.sbtns{display:flex;flex-wrap:wrap;gap:8px}
+.sbtn{font:inherit;font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:2.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.sbtn:hover:not(:disabled){border-color:var(--ochre)}
+.sbtn:disabled{cursor:default}
+.sbtn.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.sbtn.wrong{border-color:var(--no);color:var(--no);opacity:.7;text-decoration:line-through}
+.swhy{margin:8px 0 4px;font-size:16px;color:var(--soft);line-height:1.45}
+.swhy.try{color:var(--no)}
+.sscore{margin:12px 0 0;font-weight:600;color:var(--ok);min-height:1.4em}
+
+/* --- карточка термина: разбор слова и пример --- */
+.sheetroot{margin:0 0 10px!important;font-size:16px!important;background:var(--paper2);border-radius:10px;padding:8px 11px}
+.sheetroot b{color:var(--red)}
+.sheetex{margin:12px 0 0!important;font-size:16px!important;background:var(--lifebg);border-left:5px solid var(--life);
+  border-radius:0 10px 10px 0;padding:8px 11px}
+
+/* термин — строчный элемент, чтобы длинное слово переносилось как текст */
+span.term{display:inline;text-align:left;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.score:empty{display:none}
+.ask{margin-bottom:18px}
+.sym{font-size:1.45em;line-height:1;vertical-align:-.08em;font-weight:700;font-family:"DejaVu Sans","Segoe UI Symbol","Apple Symbols",sans-serif}
+
+/* --- дневник опыта (таблица с полями) --- */
+.diary{background:var(--card);border:3px solid var(--leaf);border-radius:18px;padding:14px;margin:22px 0;box-shadow:var(--sh)}
+.diary h3{font-family:"Unbounded",sans-serif;font-size:16px;font-weight:600;margin:0 0 4px}
+.diary .dnote{font-size:15px;color:var(--soft);margin:0 0 10px}
+.diary .dwrap{overflow-x:auto}
+.diary table{border-collapse:collapse;width:100%;min-width:300px;font-size:15px}
+.diary th,.diary td{border:2px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top}
+.diary th{background:var(--paper2);font-weight:600}
+.diary td:first-child{font-weight:600;width:40%}
+.diary input{width:100%;min-width:0;font:inherit;font-size:15px;padding:6px 7px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.diary input:focus{outline:3px solid var(--ochre);outline-offset:1px}
+.diary .dsaved{font-size:13px;color:var(--ok);min-height:1.3em;margin:8px 0 0}
+
+:root[data-theme="dark"] .rubric{color:#20101A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rubric{color:#20101A}}
+
+/* --- вывод (розовая плашка учебника) --- */
+.vyvod{margin:24px 0;background:var(--pinkbg);border-left:8px solid var(--pink);border-radius:0 16px 16px 0;
+  padding:13px 16px 14px;box-shadow:var(--sh)}
+.vyvod .vlab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:4px}
+.vyvod p{margin:0;font-size:18px;font-weight:600;line-height:1.5}
+
+/* --- заметки на полях учебника --- */
+.side{margin:22px 0;border-radius:14px;padding:12px 15px;font-size:17px;line-height:1.5;border:2.5px solid}
+.side .slab{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.side.yellow{background:var(--yel);border-color:var(--yelb)} .side.yellow .slab{color:var(--yelb)}
+.side.green{background:var(--grn);border-color:var(--grnb)} .side.green .slab{color:var(--grnb)}
+.side p{margin:0}
+
+/* --- запомните --- */
+.remember{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.remember span{background:var(--card);border:2.5px solid var(--pink);border-radius:999px;padding:6px 13px;
+  font-weight:600;font-size:16px;box-shadow:var(--sh)}
+
+/* --- заставка параграфа --- */
+.banner{margin:0;background:var(--paper2);border-bottom:3px solid var(--line)}
+.banner .wrap{padding-block:14px}
+.banner img{display:block;width:100%;max-width:860px;height:auto;max-height:220px;object-fit:cover;margin:0 auto;border-radius:16px;border:3px solid var(--line)}
+.banner figcaption{text-align:center;margin-top:6px}
+
+/* --- таблица учебника для заполнения --- */
+.ttab{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:var(--card)}
+.ttab th,.ttab td{border:2px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.ttab th{background:var(--paper2);font-weight:600}
+.tscroll{overflow-x:auto}
+
+/* маленькие картинки учебника (портреты) не растягиваем на всю ширину */
+.photo img.small{max-width:320px}
+
+/* --- увеличение по нажатию --- */
+.fig{position:relative}
+.fig svg,.photo img{cursor:zoom-in}
+.fig:has(> svg)::after{content:"⤢ нажми на картинку — увеличится";display:block;margin-top:6px;text-align:right;
+  font-size:12px;font-weight:600;color:var(--soft);pointer-events:none}
+.zoom{position:fixed;inset:0;z-index:120;background:var(--paper);overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom[hidden]{display:none!important}
+.zoombar{position:sticky;top:0;left:0;z-index:2;display:flex;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--paper2);border-bottom:2px solid var(--line);font-size:14px;color:var(--soft)}
+.zoomclose{white-space:nowrap;font:inherit;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.zoomin{padding:14px}
+.zoomin svg,.zoomin img{display:block;background:var(--card);border-radius:12px}
+
+/* жирное слово внутри задания учебника — обычное, а не заголовок блока */
+.ask li b,.ask p b,.ask ol b{display:inline;font-size:inherit;letter-spacing:normal;text-transform:none;color:inherit;margin:0}
+
+</style>
+<style id="ub-bar-css">
+.ub-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:10px max(16px,calc((100vw - 1100px)/2));margin:0;
+  background:var(--ub-c);color:#fff;font:600 15px/1.3 "Golos Text",system-ui,-apple-system,sans-serif;
+  position:relative;z-index:50}
+.ub-bar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:9px;
+  background:rgba(255,255,255,.14)}
+.ub-bar a:hover,.ub-bar a:focus-visible{background:rgba(255,255,255,.26);outline:none}
+.ub-bar .ub-subj{opacity:.92;font-weight:500}
+.ub-bar .ub-toc{margin-left:auto}
+@media print{.ub-bar{display:none}}
+</style>
+</head>
+<body>
+<nav class="ub-bar" style="--ub-c:#2F6F8F" aria-label="Навигация по учебникам"><a class="ub-home" href="../index.html">← Учебники Вероники</a><span class="ub-subj">География</span><a class="ub-toc" href="index.html">☰ Параграфы</a></nav>
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--illink)"/></marker>
+<marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--red)"/></marker>
+<marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="var(--moss)"/></marker>
+</defs>
+<symbol id="g21-earth" viewBox="0 0 360 206">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180" y="18" text-anchor="middle" font-size="14" font-weight="800" fill="var(--soft,#5F5648)">Земля в разрезе</text>
+<circle cx="98" cy="101" r="69" fill="var(--moss,#5E7A3A)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<circle cx="98" cy="101" r="63" fill="var(--pa,#C9672C)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<circle cx="98" cy="101" r="40" fill="var(--ochre,#E2A31F)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<circle cx="98" cy="101" r="21" fill="var(--pink,#C23C86)" stroke="var(--card,#FFFBF2)" stroke-width="1.2"/>
+<path d="M144 51 L185 45 H216" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M152 74 H216" fill="none" stroke="var(--pa,#C9672C)" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M134 101 H216" fill="none" stroke="var(--ochre,#E2A31F)" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M110 115 L158 138 H216" fill="none" stroke="var(--pink,#C23C86)" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="226" y="49" text-anchor="start" font-size="12" font-weight="800" fill="var(--illink,#2B2620)">Земная кора</text>
+<text x="226" y="78" text-anchor="start" font-size="12" font-weight="800" fill="var(--illink,#2B2620)">Мантия</text>
+<text x="226" y="105" text-anchor="start" font-size="12" font-weight="800" fill="var(--illink,#2B2620)">Внешнее ядро</text>
+<text x="226" y="123" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">жидкое</text>
+<text x="226" y="143" text-anchor="start" font-size="12" font-weight="800" fill="var(--illink,#2B2620)">Внутреннее ядро</text>
+<text x="226" y="161" text-anchor="start" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">твёрдое</text>
+<text x="180" y="192" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">Толщина слоёв показана условно</text>
+</g>
+</symbol>
+<symbol id="g21-crust" viewBox="0 0 360 259">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180" y="18" text-anchor="middle" font-size="14" font-weight="800" fill="var(--soft,#5F5648)">Кора под материком и океаном</text>
+<text x="101" y="43" text-anchor="middle" font-size="13" font-weight="800" fill="var(--illink,#2B2620)">Материк</text>
+<text x="262" y="43" text-anchor="middle" font-size="13" font-weight="800" fill="var(--illink,#2B2620)">Океан</text>
+<text x="101" y="61" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">около 35 км</text>
+<text x="262" y="61" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">обычно 5–10 км</text>
+<rect x="33" y="76" width="137" height="26" fill="var(--ochre,#E2A31F)" opacity="0.35"/>
+<rect x="33" y="102" width="137" height="26" fill="var(--pink,#C23C86)" opacity="0.23"/>
+<rect x="33" y="128" width="137" height="26" fill="var(--pa,#C9672C)" opacity="0.32"/>
+<rect x="33" y="154" width="137" height="31" fill="var(--moss,#5E7A3A)" opacity="0.26"/>
+<rect x="194" y="76" width="137" height="52" fill="var(--sea,#BFE0EE)" opacity="0.82"/>
+<rect x="194" y="128" width="137" height="26" fill="var(--ochre,#E2A31F)" opacity="0.35"/>
+<rect x="194" y="154" width="137" height="26" fill="var(--pa,#C9672C)" opacity="0.32"/>
+<rect x="194" y="180" width="137" height="31" fill="var(--moss,#5E7A3A)" opacity="0.26"/>
+<text x="101" y="93" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)">Осадочный слой</text>
+<text x="101" y="119" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)">Гранитный слой</text>
+<text x="101" y="145" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)">Базальтовый слой</text>
+<text x="101" y="173" text-anchor="middle" font-size="11" font-weight="600" fill="var(--illink,#2B2620)">Жёсткая мантия</text>
+<text x="262" y="105" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)">Вода</text>
+<text x="262" y="145" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)">Осадочный слой</text>
+<text x="262" y="171" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)">Базальтовый слой</text>
+<text x="262" y="200" text-anchor="middle" font-size="11" font-weight="600" fill="var(--illink,#2B2620)">Жёсткая мантия</text>
+<path d="M29 76 H21 V185 H29" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M335 128 H343 V211 H335" fill="none" stroke="var(--moss,#5E7A3A)" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="180" y="232" text-anchor="middle" font-size="11" font-weight="600" fill="var(--illink,#2B2620)">Скобка показывает литосферу</text>
+<text x="180" y="249" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">Слои показаны без масштаба</text>
+</g>
+</symbol>
+<symbol id="g21-forces" viewBox="0 0 360 167">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180" y="18" text-anchor="middle" font-size="14" font-weight="800" fill="var(--soft,#5F5648)">Что меняет поверхность Земли</text>
+<rect x="10" y="37" width="163" height="110" fill="var(--pa,#C9672C)" opacity="0.15"/>
+<rect x="187" y="37" width="163" height="110" fill="var(--red,#1B6A8C)" opacity="0.14"/>
+<text x="91" y="58" text-anchor="middle" font-size="13" font-weight="800" fill="var(--illink,#2B2620)">Внутренние силы</text>
+<text x="269" y="58" text-anchor="middle" font-size="13" font-weight="800" fill="var(--illink,#2B2620)">Внешние силы</text>
+<text x="91" y="82" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)">Энергия недр</text>
+<text x="269" y="82" text-anchor="middle" font-size="12" font-weight="600" fill="var(--illink,#2B2620)">На поверхности</text>
+<text x="91" y="110" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">Движение плит</text>
+<text x="91" y="130" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">Вулканы и землетрясения</text>
+<text x="269" y="110" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">Вода, ветер, температура</text>
+<text x="269" y="130" text-anchor="middle" font-size="11" font-weight="600" fill="var(--soft,#5F5648)">Живые организмы и люди</text>
+</g>
+</symbol>
+<symbol id="g21-plates" viewBox="0 0 360 186">
+<g font-family="Golos Text, Arial, sans-serif">
+<text x="180" y="18" text-anchor="middle" font-size="14" font-weight="800" fill="var(--soft,#5F5648)">Границы литосферных плит</text>
+<text x="90" y="46" text-anchor="middle" font-size="13" font-weight="800" fill="var(--illink,#2B2620)">Плиты расходятся</text>
+<text x="269" y="46" text-anchor="middle" font-size="13" font-weight="800" fill="var(--illink,#2B2620)">Плиты сближаются</text>
+<rect x="12" y="83" width="155" height="61" fill="var(--pa,#C9672C)" opacity="0.18"/>
+<rect x="193" y="83" width="155" height="61" fill="var(--pa,#C9672C)" opacity="0.18"/>
+<path d="M13 86 H70 L88 102 L69 111 H13 Z" fill="var(--red,#1B6A8C)" stroke="var(--red,#1B6A8C)" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M166 86 H113 L94 102 L114 111 H166 Z" fill="var(--moss,#5E7A3A)" stroke="var(--moss,#5E7A3A)" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M90 131 V107 M84 114 L90 107 L96 114" fill="none" stroke="var(--pink,#C23C86)" stroke-width="2.3" stroke-linejoin="round"/>
+<path d="M75 72 H42 M48 67 L42 72 L48 77 M105 72 H138 M132 67 L138 72 L132 77" fill="none" stroke="var(--illink,#2B2620)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M194 86 H250 L294 122 L284 137 L243 107 H194 Z" fill="var(--red,#1B6A8C)" stroke="var(--red,#1B6A8C)" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M262 86 L277 81 L285 72 L296 86 H347 V107 H282 Z" fill="var(--moss,#5E7A3A)" stroke="var(--moss,#5E7A3A)" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M209 72 H239 M233 67 L239 72 L233 77 M334 68 H311 M317 63 L311 68 L317 73" fill="none" stroke="var(--illink,#2B2620)" stroke-width="2" stroke-linejoin="round"/>
+<text x="90" y="168" text-anchor="middle" font-size="11" font-weight="600" fill="var(--illink,#2B2620)">Магма поднимается</text>
+<text x="269" y="168" text-anchor="middle" font-size="11" font-weight="600" fill="var(--illink,#2B2620)">Одна плита уходит вниз</text>
+</g>
+</symbol>
+
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">География · § 21</span>
+    <h1>Земная кора — верхняя часть литосферы</h1>
+    <p class="lede">Что находится под земной корой, чем отличается кора под материками и океанами и как движение плит меняет поверхность Земли.</p>
+    <div class="qbox"><span class="qm">?</span>
+      <div><b>О чём параграф:</b><br>Как устроена Земля. Что такое земная кора. Как внутренние и внешние силы меняют её поверхность. Что такое литосферные плиты.</div></div>
+  </div>
+</header>
+
+<figure class="banner"><div class="wrap"><img id="ph-g21_banner" src="img/684282ed907c.jpg" alt="Раскалённая лава течёт по склону"><figcaption><span class="src">из учебника</span>Заставка параграфа</figcaption></div></figure>
+<div class="pnav">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g20.html">‹ §20 Учимся с «Полярной звездой» (3)</a>
+  <span class="pn cur">§21 Земная кора</span>
+ </div>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="seg" role="group" aria-label="Версия текста">
+      <button id="mEasy" aria-pressed="true">По-простому</button>
+      <button id="mBook" aria-pressed="false">Как в учебнике</button>
+    </div>
+    <nav class="jump" aria-label="Разделы"><a href="#s0" data-j="s0" title="Литосфера — твёрдая оболочка Земли">◆</a><a href="#s1" data-j="s1" title="Каково внутреннее строение Земли? Что такое земная кора?">1</a><a href="#s2" data-j="s2" title="Какие проявления внутренних и внешних сил мы видим на земной поверхности?">2</a><a href="#s3" data-j="s3" title="Из каких крупных блоков состоит литосфера?">3</a><a href="#s4" data-j="s4" title="Итоги параграфа">★</a><a href="#sch" title="Проверь себя">✓</a><a href="#stell" title="Расскажи вслух">!</a></nav>
+  </div>
+</div>
+
+<main>
+
+<section id="s0">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">◆</span><h2>Литосфера — твёрдая оболочка Земли</h2></div>
+<div class="rubric">Новый раздел учебника</div>
+<div class="easy">
+<p>Горы, равнины, вулканы и камни у нас под ногами — всё это поможет разобраться, как устроена твёрдая оболочка Земли.</p>
+<p>На первой странице раздела — академик <b>Александр Ферсман</b>, исследователь минералов и горных пород. Рядом фрагмент картины Диего Веласкеса «Кузница Вулкана». Кузница напоминает о древнегреческом мифе: люди представляли, что глубоко под землёй работает бог огня Гефест.</p>
+</div>
+<div class="book" hidden>
+<p>«Литос» в переводе с греческого — камень.</p>
+<p>Академик А. Е. Ферсман (1883—1945) — блестящий знаток минералов и горных пород.</p>
+<p>Древние греки считали, что глубоко в недрах жил в своей кузнице Гефест — бог огня.</p>
+<p>Фрагмент картины испанского художника Диего Веласкеса «Кузница Вулкана».</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g21_open" src="img/0e8f4d05c704.jpg" alt="Вулкан и лава, портрет Ферсмана, образец породы, повреждённое здание, фрагмент «Кузницы Вулкана», равнина и горы" style="max-width:520px"><figcaption><span class="src">из учебника</span>Первая страница раздела «Литосфера — твёрдая оболочка Земли» (с. 71).</figcaption></div></figure>
+<div class="col">
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">1. Почему на одной странице оказались и кузница, и вулкан?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h1" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a1" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h1" hidden>Посмотри, что на фотографии выходит из вулкана, и вспомни, что делают в кузнице.</div>
+<div class="rev ans" id="a1" hidden>Светящаяся лава напоминала людям огонь и раскалённый металл. Так в мифе появилось объяснение извержений.</div>
+</div>
+<div class="think">
+<p class="qt">2. С чего геолог мог бы начать знакомство с литосферой дома?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h2" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a2" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h2" hidden>Посмотри, что изображено прямо под портретом Ферсмана.</div>
+<div class="rev ans" id="a2" hidden>Можно рассмотреть образец горной породы или минерала. Камень в руке — маленькая часть твёрдой оболочки Земли.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s0" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s1">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">1</span><h2>Каково внутреннее строение Земли? Что такое земная кора?</h2></div>
+<div class="easy">
+<p>Представь Землю размером с яблоко. Её наружный каменный слой, <span class="term" role="button" tabindex="0" data-t="crust">земная <span class="tl">кора</span></span>, был бы даже тоньше яблочной кожуры.</p>
+</div>
+<div class="book" hidden>
+<p>По современным представлениям, в центре Земли находится металлическое <span class="term" role="button" tabindex="0" data-t="core"><span class="tl">ядро</span></span> из железа и никеля (рис. 50). Внутренняя часть ядра твёрдая, внешняя — жидкая.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 206" role="img" aria-label="Разрез Земли с четырьмя цветными зонами"><use href="#g21-earth"/></svg><figcaption>От поверхности до центра: земная кора → мантия → внешнее ядро → внутреннее ядро. Толщина слоёв показана условно.</figcaption></div></figure>
+<div class="col">
+<div class="easy">
+<p>Под корой лежит <span class="term" role="button" tabindex="0" data-t="mantle"><span class="tl">мантия</span></span>. Большая часть мантии состоит из горячей твёрдой породы. Эта порода очень медленно меняет форму и перемещается.</p>
+<p>В центре Земли находится <span class="term" role="button" tabindex="0" data-t="core"><span class="tl">ядро</span></span> из железа и никеля. Внешнее ядро жидкое. Внутреннее ядро твёрдое.</p>
+<p>Земная кора и жёсткая верхняя часть мантии вместе образуют <span class="term" role="button" tabindex="0" data-t="lithosphere"><span class="tl">литосферу</span></span>.</p>
+</div>
+<div class="book" hidden>
+<p>Температура ядра 6000 °C (как на поверхности Солнца). Далее идёт <span class="term" role="button" tabindex="0" data-t="mantle"><span class="tl">мантия</span></span> (от греческого слова <i>мантион</i> — покрывало, плащ). Температура вещества в мантии достигает 2000 °C. Но из-за высокого давления оно не плавится, а находится в особом состоянии, обладая свойствами жидкого и твёрдого тела. Под давлением вещество мантии может медленно перемещаться.</p>
+<p>Над мантией располагается твёрдая оболочка Земли — <span class="term" role="button" tabindex="0" data-t="crust">земная <span class="tl">кора</span></span>. Толщина земной коры во много раз меньше среднего радиуса Земли, равного 6371 км. Если сравнить земной шар, например, с яблоком, то земная кора будет даже тоньше, чем его кожура.</p>
+<p>Начиная с глубины 20—30 м, температура земной коры увеличивается в среднем на 3 °C на каждые 100 м.</p>
+<p><span class="term" role="button" tabindex="0" data-t="lithosphere"><span class="tl">Литосфера</span></span> включает в себя земную кору с прилегающей твёрдой частью верхней мантии.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g21_r50" src="img/6c3377a18635.jpg" alt="Разрез Земли. От поверхности к центру: кора 35 км, мантия 2800 км, внешнее ядро 2250 км, внутреннее ядро 1250 км" style="max-width:440px"><figcaption><span class="src">из учебника</span><b>Рис. 50.</b> Внутреннее строение Земли<br><span style="color:var(--soft)">▲ Найди самую тонкую оболочку и покажи, где проходит граница между двумя частями ядра.</span></figcaption></div></figure>
+<div class="col">
+<div class="easy">
+<p><b>Под материками</b> кора в среднем около <b>35 км</b>. Под горными системами — 50–60 км, под Гималаями — около 80 км. В школьной схеме у материковой коры три слоя: осадочный, гранитный и базальтовый.</p>
+<p><b>Под океанами</b> кора обычно <b>5–10 км</b>. В школьной схеме два слоя: осадочный и базальтовый.</p>
+</div>
+<div class="book" hidden>
+<p>Под материками и океанами земная кора неодинакова. Материковая состоит из трёх слоёв: осадочного, гранитного и базальтового. Мощность её в среднем около 35 км, а под горными системами ещё больше — 50—60 км. А максимальная мощность — под самыми высокими горами — <b><i>Гималаями</i></b> (около 80 км).</p>
+<p>В океанической земной коре только два слоя: осадочный и базальтовый. Поэтому и мощность её меньше — обычно от 5 до 10 км.</p>
+</div>
+</div>
+<figure><div class="fig"><svg viewBox="0 0 360 259" role="img" aria-label="Сравнение материковой и океанической коры и границы литосферы"><use href="#g21-crust"/></svg><figcaption>Осадочный слой есть в обеих колонках. Гранитный в схеме есть только у материковой коры.</figcaption></div></figure>
+<div class="col">
+<div class="side yellow"><span class="slab">Главное</span><p>Материковая земная кора <b>толще</b>, чем океаническая. В океанической земной коре нет <b>гранитного слоя</b>.</p></div>
+<div class="blocknote"><b>Что значит «пластичная»?</b> Горячая порода мантии в основном твёрдая. Если на неё очень долго действует сила, она может понемногу менять форму, как пластилин под грузом. <a href="https://www.usgs.gov/faqs/are-tectonic-plates-floating-magma" target="_blank" rel="noopener">Пояснение USGS</a>.</div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Земная кора — верхняя часть литосферы. Строение земной коры под материками и океанами неодинаково.</p></div>
+<div class="pair"><div class="pairlab">Не перепутай</div><div class="pairrow"><div class="paircard pa"><b>Земная кора</b><p>Наружный слой горных пород.</p></div><div class="pairne" aria-hidden="true">≠</div><div class="paircard pb"><b>Литосфера</b><p>Земная кора вместе с жёсткой верхней частью мантии.</p></div></div><p class="pairkey">Кора целиком входит в литосферу.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Три слоя из пластилина</span></div><div class="lifebody"><p>Представь, что делаешь разрез Земли из пластилина. Скатай маленький шарик для ядра, оберни его толстым слоем другого цвета, а сверху положи самый тонкий. Разрежь шарик ниткой и покажи каждый из трёх слоёв.</p><p>Какой слой пришлось сделать заметно толще настоящего, чтобы его было видно?</p></div></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">3. Почему каменная оболочка под Гималаями всё равно считается тонкой?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h3" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a3" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h3" hidden>Сравни 80 км с радиусом Земли — 6371 км.</div>
+<div class="rev ans" id="a3" hidden>Под Гималаями кора толще обычной материковой. Но по сравнению с радиусом всей Земли это всё равно тонкий слой.</div>
+</div>
+<div class="think">
+<p class="qt">4. Что окажется под корой, если на схеме двигаться вниз? В какой момент мы ещё в литосфере?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h4" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a4" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h4" hidden>Проведи пальцем от поверхности через границу коры и мантии.</div>
+<div class="rev ans" id="a4" hidden>Под корой начинается мантия. Сразу под границей коры её верхняя часть ещё жёсткая и входит в литосферу.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s1" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s2">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">2</span><h2>Какие проявления внутренних и внешних сил мы видим на земной поверхности?</h2></div>
+<div class="easy">
+<p><b>Михаил Ломоносов</b> (1711–1765) писал, что Земля менялась со временем. Сегодня мы можем объяснить, откуда берутся эти изменения.</p>
+<p><span class="term" role="button" tabindex="0" data-t="inner">Внутренние <span class="tl">силы</span></span> связаны с энергией земных недр. Землетрясение, извержение или выход горячего источника можно заметить сразу. Движение материков, подъём гор и изменение берегов лучше видны на очень длинном отрезке времени.</p>
+<p><span class="term" role="button" tabindex="0" data-t="outer">Внешние <span class="tl">силы</span></span> действуют на поверхности. Солнце нагревает Землю и даёт энергию многим из этих процессов. Река размывает породу и углубляет долину. Ветер переносит песок. Перепады температуры и живые организмы помогают разрушать породы. Люди тоже меняют поверхность, когда роют карьеры и каналы или строят дамбы.</p>
+</div>
+<div class="book" hidden>
+<p>Михаил Васильевич Ломоносов (1711—1765) (рис. 51) в своём знаменитом труде «О слоях земных» писал: «Твёрдо помнить должно, что видимые телесные на земле вещи и весь мир не в таком состоянии были с начала от создания, как ныне находим, но великие происходили в нём перемены...»</p>
+<p>Сегодня учёные знают, что есть внешние и внутренние силы, которые приводят в движение все природные процессы. Это энергия, излучаемая Солнцем, и энергия, заключённая в недрах Земли.</p>
+<p>Время от времени земные глубины напоминают нам о том, что внутри них что-то происходит. Мы можем видеть, как энергия недр прорывается на поверхность, вызывая землетрясения, извержения вулканов и выход горячих источников. Правда, мы не можем увидеть, как движутся континенты, поднимаются и опускаются огромные участки земной коры, вырастают горы, меняются очертания морских берегов. Такие изменения становятся заметны лишь через сотни и тысячи лет.</p>
+<p>Одновременно с <span class="term" role="button" tabindex="0" data-t="inner">внутренними <span class="tl">силами</span></span> работают и <span class="term" role="button" tabindex="0" data-t="outer">внешние <span class="tl">силы</span></span>. Ветер, текучие воды, колебания температур, деятельность растений и животных со временем также изменяют земную поверхность. Горы разрушаются, а обломки пород постепенно измельчаются и перемещаются. Реки вырабатывают свои долины. Ветер переносит мельчайшие частицы, меняя, например, облик песчаных пустынь. Человек — тоже внешняя сила. Люди создают карьеры и шахты, строят дамбы и роют каналы. Неудивительно, что они стремятся как можно лучше изучить и глубины Земли, и глубины космоса.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g21_r51" src="img/721ca89add15.jpg" alt="Портрет Михаила Васильевича Ломоносова" style="max-width:230px"><figcaption><span class="src">из учебника</span><b>Рис. 51.</b> М. В. Ломоносов. Его идеи рождены в золотой век просвещения России<br><span style="color:var(--soft)">▲ Прочитай цитату Ломоносова. Какую мысль о Земле он высказал?</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 167" role="img" aria-label="Две группы сил: внутренние действуют из недр, внешние — на поверхности"><use href="#g21-forces"/></svg><figcaption>Представь одну гору: силы из недр могут поднимать породы, а дождь и ветер в то же время меняют её склоны.</figcaption></div></figure>
+<div class="col">
+<div class="vyvod"><span class="vlab">Вывод</span><p>Внутренние и внешние силы Земли создают все неровности на её поверхности.</p></div>
+<aside class="life"><div class="lifehead"><span class="lifetag">Из жизни Вероники</span><span class="lifewho">Утёс над Волгой в Ягодном</span></div><div class="lifebody"><p>В Ягодном ты спускалась с дедушкой Толей от утёса к Волге. Вспомни склон и реку. Представь, что после дождя по склону потекла вода и унесла немного песка. Какая сила сработала?</p></div><p class="lifebook">В учебнике это называется: <b>действие текучей воды</b></p></aside>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">5. Гора поднимается, а ручьи размывают её склон. Могут ли оба процесса идти одновременно?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h5" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a5" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h5" hidden>Где начинается подъём горы? Где текут ручьи?</div>
+<div class="rev ans" id="a5" hidden>Да. Подъём связан с внутренними силами, а вода действует снаружи. Они могут менять одну и ту же гору одновременно.</div>
+</div>
+<div class="think">
+<p class="qt">6. На берегу появился обрыв после землетрясения. В другом месте похожий обрыв замечен рядом с карьером. Достаточно ли внешнего вида, чтобы понять причину?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h6" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a6" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h6" hidden>Кто или что могло изменить поверхность в каждом случае?</div>
+<div class="rev ans" id="a6" hidden>Нет. Землетрясение связано с энергией недр, а карьер выкапывают люди. Для объяснения нужно узнать, как возник каждый обрыв.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s2" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s3">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">3</span><h2>Из каких крупных блоков состоит литосфера?</h2></div>
+<div class="easy">
+<p>Твёрдая оболочка разделена на крупные блоки — <span class="term" role="button" tabindex="0" data-t="plate">литосферные <span class="tl">плиты</span></span>. Они лежат на пластичном слое верхней мантии и движутся со скоростью в несколько сантиметров в год. За сотни миллионов лет путь измеряется уже тысячами километров.</p>
+<p>В одних местах плиты расходятся. Расплавленная порода — <span class="term" role="button" tabindex="0" data-t="magma"><span class="tl">магма</span></span> — может подняться и застыть, добавив новую породу. В других местах плиты сближаются: одна может уйти под другую, а породы могут сжаться и подняться.</p>
+<p>У восточного края Азии Тихоокеанская плита погружается под соседние плиты. У таких границ происходят землетрясения и извержения. Движение плит также связано с образованием гор.</p>
+</div>
+<div class="book" hidden>
+<p>Литосфера только внешне сплошная. На самом деле она состоит из отдельных жёстких, устойчивых, малоподвижных блоков — <span class="term" role="button" tabindex="0" data-t="plate">литосферных <span class="tl">плит</span></span> (рис. 52). Плиты разъединены разломами. Литосферные плиты лежат на пластичном слое в средней части верхней мантии и «плавают» по нему с очень малой скоростью, всего лишь несколько сантиметров в год. Но за сотни миллионов лет геологической истории Земли они передвинулись на тысячи километров.</p>
+<p>По современным представлениям, литосферные плиты в результате активности внутренних сил Земли в одних местах раздвигаются, в других сталкиваются и наползают друг на друга. По разломам в земную кору проникают потоки расплавленного вещества мантии — <span class="term" role="button" tabindex="0" data-t="magma"><span class="tl">магмы</span></span> (от греческого слова <i>магма</i> — тесто, месиво, густая мазь). Магма застывает, и твёрдая оболочка восстанавливается.</p>
+<p>Например, вдоль Восточной Азии более плотная Тихоокеанская литосферная плита погружается под другие плиты. Там, где это происходит, мы наблюдаем извержения вулканов и землетрясения. Постепенно слои земной коры сминаются в складки — идёт процесс горообразования.</p>
+</div>
+</div>
+<figure class="photo"><div class="fig"><img id="ph-g21_r52" src="img/7004fb362e1f.jpg" alt="Карта литосферных плит мира. В легенде показаны границы схождения, расхождения и разломы" style="max-width:640px"><figcaption><span class="src">из учебника</span><b>Рис. 52.</b> Литосферные плиты<br><span style="color:var(--soft)">▲ Найди плиту Наска у западного берега Южной Америки. По легенде определи, сходятся ли плиты здесь.</span></figcaption></div></figure>
+<figure><div class="fig"><svg viewBox="0 0 360 186" role="img" aria-label="Две схемы границ плит: расхождение и погружение одной плиты при сближении"><use href="#g21-plates"/></svg><figcaption>Стрелки показывают движение плит. Слева магма поднимается между расходящимися плитами. Справа одна плита уходит под другую.</figcaption></div></figure>
+<div class="col">
+<div class="blocknote"><b>Как понимать слово «плавают»?</b> Плиты лежат на слое горячей породы, которая очень медленно деформируется. Расплав появляется лишь в отдельных местах. <a href="https://www.usgs.gov/faqs/are-tectonic-plates-floating-magma" target="_blank" rel="noopener">Пояснение USGS</a>.</div>
+<div class="vyvod"><span class="vlab">Вывод</span><p>Литосфера разбита на крупные блоки — литосферные плиты, которые очень медленно перемещаются по пластичному слою мантии.</p></div>
+<div class="sublabel think-label">Подумай и ответь</div>
+<div class="think">
+<p class="qt">7. Плита смещается на 3 см в год. Сколько получится за миллион лет, если скорость не изменится?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h7" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a7" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h7" hidden>Сначала переведи 3 см в метры, потом умножь на миллион.</div>
+<div class="rev ans" id="a7" hidden>0,03 м × 1 000 000 = 30 000 м, или 30 км. Незаметное за год движение становится большим на геологических отрезках времени.</div>
+</div>
+<div class="think">
+<p class="qt">8. На карте видна цепочка вулканов у края материка. Как проверить, связана ли она с движением плит?</p>
+<div class="revbtns"><button class="revbtn" data-rev="h8" aria-expanded="false">Подсказка</button><button class="revbtn" data-rev="a8" aria-expanded="false">Ответ</button></div>
+<div class="rev hint" id="h8" hidden>Открой карту плит и найди в легенде обозначение границы схождения.</div>
+<div class="rev ans" id="a8" hidden>Сопоставь цепочку вулканов с границами плит. Совпадение с зоной схождения подскажет, что здесь одна плита может погружаться под другую.</div>
+</div>
+<div class="done"><button class="donebtn" data-s="s3" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="s4">
+ <div class="wrap">
+<div class="col">
+<div class="shead"><span class="snum">★</span><h2>Итоги параграфа</h2></div>
+<div class="rubric">Запомните</div>
+<div class="remember"><span>Ядро Земли</span><span>Мантия</span><span>Земная кора</span><span>Литосфера</span><span>Внутренние и внешние силы Земли</span><span>Литосферные плиты</span><span>Магма</span></div>
+<div class="rubric">Откройте атлас</div>
+<div class="ask"><b>Задание 1</b>
+<ol><li>Найдите на карте горы, протянувшиеся вдоль границ литосферных плит: <b>Гималаи, Альпы, Кордильеры, Анды</b>. Какая карта вам понадобится?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r1" aria-expanded="false">Подсказка к заданию 1</button></div>
+<div class="rev hint" id="r1" hidden>Возьми физическую карту мира, чтобы найти горы, и сравни её с картой литосферных плит (рис. 52). Анды идут вдоль западного края Южной Америки, а Кордильеры — вдоль западной части Северной Америки.</div></div>
+<div class="rubric">Это я знаю</div>
+<div class="ask"><b>Вопросы учебника</b><ol start="2"><li>Дайте определение понятия «литосфера».</li><li>Что называется внутренними силами Земли? Для чего их необходимо изучать?</li><li>Какие процессы происходят под воздействием внешних сил Земли?</li><li>Самую высокую температуру имеет: а) земная кора, б) мантия, в) ядро.</li><li>Установите соответствие.<br>1) Земная кора. 2) Мантия. 3) Ядро.<br>А) В переводе на русский язык означает «покрывало». Б) Толщина от 5 до 80 км. В) Основной элемент состава — железо.</li><li>В чём заключаются особенности внутренних сфер Земли: а) ядра, б) мантии, в) земной коры?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r2" aria-expanded="false">Проверь себя: вопросы 2–7</button></div>
+<div class="rev ans" id="r2" hidden><b>2.</b> Литосфера — кора и жёсткая верхняя часть мантии. <b>3.</b> Внутренние силы связаны с энергией недр. Их изучают, чтобы понимать землетрясения, вулканизм и образование гор. <b>4.</b> Внешние силы разрушают породы, переносят обломки, меняют русла рек и поверхность суши. <b>5.</b> в) ядро. <b>6.</b> 1 — Б, 2 — А, 3 — В. <b>7.</b> Внешнее ядро жидкое, внутреннее твёрдое. Мантия — толстый слой горячих пород. Кора — тонкий наружный слой.</div></div>
+<div class="rubric">Это я могу</div>
+<div class="ask"><b>Задание учебника</b><ol start="8"><li>Нарисуйте схему внутреннего строения земного шара. Из каких частей он состоит?</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r3" aria-expanded="false">Подсказка к заданию 8</button></div>
+<div class="rev hint" id="r3" hidden>Нарисуй четыре круга с общим центром. Подпиши изнутри наружу: внутреннее ядро, внешнее ядро, мантия, земная кора. Кору покажи самой тонкой полоской.</div></div>
+<div class="rubric">Это мне интересно</div>
+<div class="ask"><b>Задание учебника</b><ol start="9"><li>«Земная кора — это…». Продолжите составление статьи для географического словаря. Статья должна содержать определение и существенные характеристики земной коры. Обсудите результаты в группе и отметьте лучшие.</li></ol></div>
+<div class="think">
+<div class="revbtns"><button class="revbtn" data-rev="r4" aria-expanded="false">Начало словарной статьи</button></div>
+<div class="rev hint" id="r4" hidden>Земная кора — наружный каменный слой Земли. Вместе с жёсткой частью верхней мантии он образует литосферу. Добавь, чем кора под материками отличается от коры под океанами.</div></div>
+<div class="done"><button class="donebtn" data-s="s4" aria-pressed="false">Отметить прочитанным</button></div>
+</div>
+ </div>
+</section>
+
+<section id="sch">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">✓</span><h2>Проверь себя</h2></div>
+<div class="sortgame" id="srt5" data-n="5">
+<div class="sortlab">Где действует сила?</div>
+<div class="sitem" data-r="0"><p class="stext">Извергается вулкан</p><div class="sbtns"><button class="sbtn" data-b="0">Из недр</button><button class="sbtn" data-b="1">На поверхности</button></div><p class="swhy" hidden>Расплав поднимается из глубины.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Река углубляет долину</p><div class="sbtns"><button class="sbtn" data-b="0">Из недр</button><button class="sbtn" data-b="1">На поверхности</button></div><p class="swhy" hidden>Текучая вода выносит обломки.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Плиты сближаются</p><div class="sbtns"><button class="sbtn" data-b="0">Из недр</button><button class="sbtn" data-b="1">На поверхности</button></div><p class="swhy" hidden>Движение плит связано с процессами в недрах Земли.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Ветер переносит песок</p><div class="sbtns"><button class="sbtn" data-b="0">Из недр</button><button class="sbtn" data-b="1">На поверхности</button></div><p class="swhy" hidden>Так меняется форма песчаных холмов.</p></div>
+<div class="sitem" data-r="1"><p class="stext">Экскаватор расширяет карьер</p><div class="sbtns"><button class="sbtn" data-b="0">Из недр</button><button class="sbtn" data-b="1">На поверхности</button></div><p class="swhy" hidden>Здесь рельеф меняют люди.</p></div>
+<p class="sscore"></p></div>
+<div class="sortgame" id="srt6" data-n="3">
+<div class="sortlab">Какая это кора?</div>
+<div class="sitem" data-r="1"><p class="stext">Обычно 5–10 км</p><div class="sbtns"><button class="sbtn" data-b="0">Материковая</button><button class="sbtn" data-b="1">Океаническая</button></div><p class="swhy" hidden>Такова обычная толщина коры под океанами.</p></div>
+<div class="sitem" data-r="0"><p class="stext">В среднем около 35 км</p><div class="sbtns"><button class="sbtn" data-b="0">Материковая</button><button class="sbtn" data-b="1">Океаническая</button></div><p class="swhy" hidden>Под горами такая кора бывает ещё толще.</p></div>
+<div class="sitem" data-r="0"><p class="stext">Есть гранитный слой в школьной схеме</p><div class="sbtns"><button class="sbtn" data-b="0">Материковая</button><button class="sbtn" data-b="1">Океаническая</button></div><p class="swhy" hidden>В школьной схеме под океаном всего два слоя.</p></div>
+<p class="sscore"></p></div>
+<div class="sublabel">Вспомни слова</div>
+</div>
+<div class="cards">
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Ядро Земли</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 206" aria-hidden="true"><use href="#g21-earth"/></svg><span class="ftext">Центр Земли. Внешнее ядро жидкое, внутреннее твёрдое.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Мантия</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 206" aria-hidden="true"><use href="#g21-earth"/></svg><span class="ftext">Между корой и ядром. Её горячая порода может очень медленно менять форму.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Земная кора</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 259" aria-hidden="true"><use href="#g21-crust"/></svg><span class="ftext">Тонкий наружный каменный слой Земли.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Литосфера</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 259" aria-hidden="true"><use href="#g21-crust"/></svg><span class="ftext">Земная кора и жёсткая верхняя часть мантии.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Внутренние силы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 167" aria-hidden="true"><use href="#g21-forces"/></svg><span class="ftext">Энергия недр. Движение плит, вулканы, землетрясения, подъём гор.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Внешние силы</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 167" aria-hidden="true"><use href="#g21-forces"/></svg><span class="ftext">Вода, ветер, перепады температуры, живые организмы и деятельность людей меняют рельеф.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Литосферная плита</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 186" aria-hidden="true"><use href="#g21-plates"/></svg><span class="ftext">Большой жёсткий блок литосферы. Движется на несколько сантиметров в год.</span></span></button></div>
+<div class="flip"><button class="flipbtn" aria-expanded="false"><span class="fword">Магма</span><span class="fhint">нажми, чтобы проверить</span><span class="fans" hidden><svg viewBox="0 0 360 186" aria-hidden="true"><use href="#g21-plates"/></svg><span class="ftext">Расплавленная горная порода в недрах. На поверхности — лава.</span></span></button></div>
+</div>
+<div class="col" id="quiz">
+<div class="sublabel" style="margin-top:8px">Шесть вопросов</div>
+<div class="q"><h3>1. Что входит в литосферу?</h3><div class="opts">
+<button class="opt" data-ok="1">Кора и жёсткая часть верхней мантии</button>
+<button class="opt">Только кора</button>
+<button class="opt">Вся мантия и ядро</button></div>
+<div class="fb">Литосфера включает кору и только жёсткую верхушку мантии.</div></div>
+<div class="q"><h3>2. Какая часть ядра жидкая?</h3><div class="opts">
+<button class="opt">Внутренняя</button>
+<button class="opt">Обе части</button>
+<button class="opt" data-ok="1">Внешняя</button></div>
+<div class="fb">Внутреннее ядро твёрдое, внешнее — жидкое.</div></div>
+<div class="q"><h3>3. Где кора обычно тоньше?</h3><div class="opts">
+<button class="opt">Под высокими горами</button>
+<button class="opt" data-ok="1">Под океанами</button>
+<button class="opt">Под материками</button></div>
+<div class="fb">Под океанами обычно 5–10 км, под материками в среднем около 35 км.</div></div>
+<div class="q"><h3>4. Где видно действие внешних сил?</h3><div class="opts">
+<button class="opt">Горячий источник бьёт из недр</button>
+<button class="opt">Вулкан извергается</button>
+<button class="opt" data-ok="1">Река размывает берег</button></div>
+<div class="fb">Текучая вода размывает породы на поверхности.</div></div>
+<div class="q"><h3>5. С какой скоростью движутся литосферные плиты?</h3><div class="opts">
+<button class="opt" data-ok="1">Обычно несколько сантиметров в год</button>
+<button class="opt">Обычно несколько километров в год</button>
+<button class="opt">Обычно несколько метров в час</button></div>
+<div class="fb">Несколько сантиметров в год за миллионы лет складываются в большое расстояние.</div></div>
+<div class="q"><h3>6. Что может произойти там, где плиты расходятся?</h3><div class="opts">
+<button class="opt">Одна плита обязательно ныряет под другую</button>
+<button class="opt" data-ok="1">Магма поднимается и застывает</button>
+<button class="opt">Внешнее ядро выходит на поверхность</button></div>
+<div class="fb">В зоне расхождения магма может подняться и образовать новую породу.</div></div>
+<p class="score" id="score"></p>
+</div>
+ </div>
+</section>
+
+<section id="stell">
+ <div class="wrap">
+  <div class="col">
+<div class="shead"><span class="snum">!</span><h2>Расскажи вслух</h2></div>
+<div class="blocknote">Выбери тему и расскажи по плану — как будто отвечаешь у доски. Всё, что нужно сказать, есть в параграфе выше.</div>
+<div class="think">
+<h3>От поверхности до центра</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl7" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl7" hidden><ol><li>Назови три главные части Земли.</li><li>Сравни две части ядра.</li><li>Покажи, что входит в литосферу.</li></ol></div>
+</div>
+<div class="think">
+<h3>Кора под материком и океаном</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl8" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl8" hidden><ol><li>Назови обычную толщину каждого типа.</li><li>Сравни слои по схеме.</li><li>Объясни, где кора самая толстая.</li></ol></div>
+</div>
+<div class="think">
+<h3>Как меняется рельеф</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl9" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl9" hidden><ol><li>Назови источник внутренних сил.</li><li>Приведи пример работы воды или ветра.</li><li>Покажи, как обе силы меняют одну гору.</li></ol></div>
+</div>
+<div class="think">
+<h3>Что происходит на границах плит</h3>
+<div class="revbtns"><button class="revbtn" data-rev="pl10" aria-expanded="false">План ответа</button></div>
+<div class="rev plan" id="pl10" hidden><ol><li>Объясни, из чего состоит плита.</li><li>Покажи схождение и расхождение.</li><li>Расскажи, как магма может образовать новую породу.</li></ol></div>
+</div>
+</div>
+ </div>
+</section>
+
+</main>
+
+<div class="pnav bottom">
+ <div class="wrap">
+  <a class="pn" href="index.html">☰ Все параграфы</a>
+  <a class="pn" href="g20.html">‹ §20 Учимся с «Полярной звездой» (3)</a>
+  <span class="pn cur">§21 Земная кора</span>
+ </div>
+</div>
+
+<footer><div class="wrap">География, 5–6 классы. А. И. Алексеев и др., «Полярная звезда», 2023. §21, с. 72–74, открытие раздела — с. 71.</div></footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheetcard">
+    <div class="kind" id="sheetKind"></div>
+    <h3 id="sheetTitle"></h3>
+    <div id="sheetPic"></div>
+    <p class="sheetroot" id="sheetRoot" hidden></p>
+    <p id="sheetText"></p>
+    <p class="sheetex" id="sheetEx" hidden></p>
+    <button class="closebtn" id="sheetClose">Понятно</button>
+  </div>
+</div>
+
+<script>
+
+var VB={'g21-earth':'0 0 360 206','g21-crust':'0 0 360 259','g21-forces':'0 0 360 167','g21-plates':'0 0 360 186'};
+
+var T={
+core:{w:"Ядро Земли",k:"что это",s:"g21-earth",t:"Ядро в центре Земли состоит в основном из железа и никеля. Внешнее ядро жидкое. Внутреннее ядро твёрдое. Температура в центре Земли достигает примерно 6000 °C.",r:"",e:""},
+mantle:{w:"Мантия",k:"что это",s:"g21-earth",t:"Слой между земной корой и ядром. Горячая порода мантии в основном твёрдая и способна очень медленно деформироваться.",r:"<b>мантион</b> (греч.) — покрывало, плащ",e:""},
+crust:{w:"Земная кора",k:"что это",s:"g21-crust",t:"Наружный каменный слой Земли. Под материками он обычно толще, чем под океанами. По оценке из учебника, начиная с глубины 20–30 м, температура коры растёт в среднем на 3 °C на каждые 100 м.",r:"",e:""},
+lithosphere:{w:"Литосфера",k:"что это",s:"g21-crust",t:"Твёрдая внешняя оболочка Земли. В неё входят земная кора и жёсткая верхняя часть мантии.",r:"<b>литос</b> (греч.) — камень",e:""},
+inner:{w:"Внутренние силы Земли",k:"что делают",s:"g21-forces",t:"Связаны с энергией земных недр. Из-за них движутся плиты, возникают землетрясения, извергаются вулканы и поднимаются горы.",r:"",e:""},
+outer:{w:"Внешние силы Земли",k:"что делают",s:"g21-forces",t:"Меняют поверхность Земли. Вода, ветер, перепады температуры и живые организмы разрушают или перемещают породы. Люди тоже меняют рельеф.",r:"",e:""},
+plate:{w:"Литосферная плита",k:"что это",s:"g21-plates",t:"Крупный жёсткий блок литосферы. Плиты перемещаются относительно друг друга обычно на несколько сантиметров в год.",r:"",e:""},
+magma:{w:"Магма",k:"что это",s:"g21-plates",t:"Расплавленная горная порода в недрах. Когда она выходит на поверхность, её называют лавой.",r:"<b>магма</b> (греч.) — тесто, месиво, густая мазь",e:""}
+};
+
+function ls(fn){try{return fn()}catch(e){return null}}
+
+/* карточки «вспомни слово» берут картинку из уже вшитой выше — без второй копии */
+document.querySelectorAll('img[data-ph]').forEach(function(im){
+  var src=document.getElementById('ph-'+im.getAttribute('data-ph'));
+  if(src)im.setAttribute('src',src.getAttribute('src'));
+});
+
+document.querySelectorAll('.fig svg').forEach(function(sv){
+  var v=(sv.getAttribute('viewBox')||'').split(/\s+/);
+  if(v.length===4)sv.style.maxWidth=Math.round(parseFloat(v[2])*1.45)+'px';
+});
+
+var mEasy=document.getElementById('mEasy'),mBook=document.getElementById('mBook');
+function setMode(easy){
+  document.querySelectorAll('.easy').forEach(function(el){el.hidden=!easy});
+  document.querySelectorAll('.book').forEach(function(el){el.hidden=easy});
+  mEasy.setAttribute('aria-pressed',easy?'true':'false');
+  mBook.setAttribute('aria-pressed',easy?'false':'true');
+  ls(function(){localStorage.setItem('geography:g21:mode',easy?'easy':'book')});
+}
+mEasy.addEventListener('click',function(){setMode(true)});
+mBook.addEventListener('click',function(){setMode(false)});
+if(ls(function(){return localStorage.getItem('geography:g21:mode')})==='book')setMode(false);
+
+var sheet=document.getElementById('sheet'),lastFocus=null;
+function openTerm(key){
+  var d=T[key];if(!d)return;
+  document.getElementById('sheetKind').textContent=d.k;
+  document.getElementById('sheetTitle').textContent=d.w;
+  document.getElementById('sheetText').textContent=d.t;
+  var rr=document.getElementById('sheetRoot');rr.innerHTML=d.r||'';rr.hidden=!d.r;
+  var ee=document.getElementById('sheetEx');ee.innerHTML=d.e?('<span class="lifetag">Из жизни</span> '+d.e):'';ee.hidden=!d.e;
+  var pic=document.getElementById('sheetPic'),html='',im=null;
+  if(d.s)html='<svg viewBox="'+VB[d.s]+'" aria-hidden="true"><use href="#'+d.s+'"/></svg>';
+  else if(d.p){var el=document.getElementById('ph-'+d.p);
+    if(el){im=new Image();im.src=el.getAttribute('src');im.alt='';im.style.cssText='max-width:240px;margin:0 auto;border-radius:12px';}}
+  pic.innerHTML=html;if(im)pic.appendChild(im);
+  lastFocus=document.activeElement;sheet.hidden=false;
+  document.getElementById('sheetClose').focus();
+}
+function closeTerm(){sheet.hidden=true;if(lastFocus)lastFocus.focus()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.term');
+  if(b){openTerm(b.dataset.t);return}
+  if(e.target.id==='sheetClose'||e.target===sheet)closeTerm();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)closeTerm()});
+document.addEventListener('keydown',function(e){
+  var b=e.target.closest&&e.target.closest('.term');
+  if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openTerm(b.dataset.t);}
+});
+
+document.addEventListener('click',function(e){
+  var r=e.target.closest('.revbtn');if(!r||!r.dataset.rev)return;
+  var box=document.getElementById(r.dataset.rev);if(!box)return;
+  var open=!box.hidden;box.hidden=open;r.setAttribute('aria-expanded',open?'false':'true');
+});
+
+document.querySelectorAll('.flipbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',open?'false':'true');
+    b.querySelector('.fans').hidden=open;
+  });
+});
+
+
+var answered=0,right=0,score=document.getElementById('score'),NQ=6;
+document.querySelectorAll('.q').forEach(function(q){
+  q.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click',function(){
+      if(q.dataset.done)return;
+      q.dataset.done='1';answered++;
+      if(o.dataset.ok==='1')right++;
+      q.querySelectorAll('.opt').forEach(function(x){
+        x.disabled=true;
+        if(x.dataset.ok==='1')x.classList.add('right');
+        else if(x===o)x.classList.add('wrong');
+      });
+      q.querySelector('.fb').classList.add('on');
+      score.textContent=answered<NQ?('Отвечено: '+answered+' из '+NQ+' · правильных '+right)
+        :(right===NQ?('Все '+NQ+' — верно! 🎉'):('Правильных: '+right+' из '+NQ));
+    });
+  });
+});
+
+document.querySelectorAll('.sortgame').forEach(function(g){
+  var n=+g.dataset.n,done=0,ok=0,sc=g.querySelector('.sscore');
+  g.querySelectorAll('.sitem').forEach(function(it){
+    it.querySelectorAll('.sbtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(it.dataset.done)return;
+        var good=b.dataset.b===it.dataset.r;
+        if(!good){b.classList.add('wrong');b.disabled=true;it.classList.add('tried');
+          var w=it.querySelector('.swhy');w.hidden=false;w.classList.add('try');
+          w.dataset.full=w.dataset.full||w.innerHTML;w.innerHTML='Не то. Подумай ещё — попробуй другую кнопку.';return;}
+        it.dataset.done='1';done++;if(!it.classList.contains('tried'))ok++;
+        b.classList.add('right');
+        it.querySelectorAll('.sbtn').forEach(function(x){x.disabled=true});
+        var w=it.querySelector('.swhy');w.classList.remove('try');w.innerHTML=w.dataset.full||w.innerHTML;w.hidden=false;
+        sc.textContent=done<n?('Разобрано '+done+' из '+n):('Готово! С первого раза: '+ok+' из '+n);
+      });
+    });
+  });
+});
+document.querySelectorAll('.donebtn').forEach(function(b){
+  var id=b.dataset.s,chip=document.querySelector('.jump a[data-j="'+id+'"]');
+  function paint(on){
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Прочитано ✓':'Отметить прочитанным';
+    if(chip)chip.classList.toggle('read',on);
+  }
+  paint(ls(function(){return localStorage.getItem('geography:g21:read_'+id)})==='1');
+  b.addEventListener('click',function(){
+    var on=b.getAttribute('aria-pressed')!=='true';
+    paint(on);ls(function(){localStorage.setItem('geography:g21:read_'+id,on?'1':'0')});
+  });
+});
+
+/* --- увеличение карт, схем и картинок по нажатию (на телефоне мелкие подписи) --- */
+var zoom=document.createElement('div');zoom.className='zoom';zoom.hidden=true;
+zoom.setAttribute('role','dialog');zoom.setAttribute('aria-modal','true');zoom.setAttribute('aria-label','Увеличенная картинка');
+zoom.innerHTML='<div class="zoombar"><span>Двигай пальцем, чтобы рассмотреть</span><button class="zoomclose">Закрыть ✕</button></div><div class="zoomin"></div>';
+document.body.appendChild(zoom);
+function openZoom(el){
+  var box=zoom.querySelector('.zoomin');box.innerHTML='';
+  var c=el.cloneNode(true);c.removeAttribute('id');
+  if(c.tagName.toLowerCase()==='svg'){
+    var v=(c.getAttribute('viewBox')||'0 0 400 300').split(/\s+/);
+    c.style.width=Math.round(Math.max(parseFloat(v[2])*2.3,window.innerWidth-24))+'px';
+  }else{
+    c.style.width=Math.round(Math.max((el.naturalWidth||600)*1.1,window.innerWidth*1.5))+'px';
+  }
+  c.style.maxWidth='none';c.style.height='auto';
+  box.appendChild(c);zoom.hidden=false;document.documentElement.style.overflow='hidden';
+  zoom.querySelector('.zoomclose').focus();
+}
+function closeZoom(){zoom.hidden=true;document.documentElement.style.overflow='';}
+document.addEventListener('click',function(e){
+  if(e.target.closest('.zoomclose')){closeZoom();return}
+  var s=e.target.closest('.fig svg, .photo img, .banner img');
+  if(s&&!zoom.contains(s)){openZoom(s);}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!zoom.hidden)closeZoom()});
+
+</script>
+</body>
+</html>
